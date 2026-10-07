@@ -1,0 +1,79 @@
+# CI do ai-scouting (spec 101: FR-001, SC-003, US1 cen. 3; research R14).
+# Os contratos (e o core, na integração) vêm da tag do agentic-app, que é privado: a deploy key só de leitura do
+# agentic-app fica no segredo AGENTIC_APP_DEPLOY_KEY deste repositório.
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          python-version: "3.14"
+      - run: uv sync --locked
+      - run: uv run ruff check
+      - run: uv run ruff format --check
+      - run: uv run mypy
+      - run: uv run lint-imports
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.12", "3.14"]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          python-version: ${{ matrix.python }}
+      - run: uv sync --locked
+      # Sem o grupo platform, a integração é pulada: é a suíte padrão, só com os contratos (SC-003).
+      - run: uv run pytest
+
+  # O pack instalado normalmente, num ambiente só com os contratos: é aqui que a etapa de distribuição da conformidade
+  # confere a faixa declarada (na instalação editável ela não tem o que verificar).
+  clean-env:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Instalar o pack só com os contratos (Python 3.12, o piso)
+        run: |
+          uv venv --python 3.12 /tmp/clean
+          uv pip install --python /tmp/clean/bin/python . pytest
+      - run: /tmp/clean/bin/python -m pytest -q tests --ignore=tests/integration
+
+  # US1 cen. 1–2 na plataforma real, pelo perfil test (research R9).
+  platform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          python-version: "3.14"
+      - run: uv sync --locked --group platform
+      - run: uv run --group platform pytest tests/integration

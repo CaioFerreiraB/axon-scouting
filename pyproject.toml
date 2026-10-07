@@ -1,0 +1,70 @@
+[project]
+name = "ai-scouting"
+version = "0.1.0"
+description = "Pack de domínio escoteiro da plataforma Agentic AI (specs 1xx em agentic-app)."
+readme = "README.md"
+# Piso dos contratos, não o do core: o pack depende só de ai-core-contracts (spec 101, research R3).
+requires-python = ">=3.12"
+dependencies = ["ai-core-contracts>=0.1,<0.2"]
+
+[project.entry-points."ai_core.packs"]
+scouting = "ai_scouting.pack:ScoutingPack"
+
+[dependency-groups]
+dev = ["pytest", "mypy", "ruff", "import-linter"]
+# Só a integração com a plataforma (research R9): o core exige Python 3.14 e nunca é dependência de runtime.
+platform = ["ai-core ; python_version >= '3.14'"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+# Os contratos (e o core, para a integração) vêm da tag do repositório da plataforma (ADR-021, research R2).
+[tool.uv.sources]
+ai-core-contracts = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "contracts-v0.1.0", subdirectory = "ai-core/packages/contracts" }
+ai-core = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "contracts-v0.1.0", subdirectory = "ai-core/packages/core" }
+
+[build-system]
+requires = ["uv_build>=0.12,<0.13"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["ai_scouting"]
+
+[tool.mypy]
+strict = true
+python_version = "3.12"
+files = ["src"]
+
+# Fronteiras do pack (spec 101, research R13; contracts/packaging.md).
+[tool.importlinter]
+root_packages = ["ai_scouting", "ai_core_contracts"]
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "o pack não importa o core"
+type = "forbidden"
+source_modules = ["ai_scouting"]
+forbidden_modules = ["ai_core", "ai_generic"]
+
+[[tool.importlinter.contracts]]
+name = "só o pack.py compõe"
+type = "layers"
+layers = ["ai_scouting.pack", "ai_scouting.context | ai_scouting.prompts"]
+
+[[tool.importlinter.contracts]]
+name = "a derivação não alcança modelo nem MCP"
+type = "forbidden"
+source_modules = ["ai_scouting.context"]
+forbidden_modules = ["ai_core_contracts.llm", "ai_core_contracts.mcp"]
+# O `__init__` dos contratos reexporta tudo: o que se proíbe é o uso direto da API de modelo e de MCP.
+allow_indirect_imports = true
