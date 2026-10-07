@@ -59,12 +59,12 @@ forbidden_modules = ["ai_core", "ai_generic"]
 [[tool.importlinter.contracts]]
 name = "só o pack.py compõe"
 type = "layers"
-layers = ["ai_scouting.pack", "ai_scouting.context | ai_scouting.prompts"]
+layers = ["ai_scouting.pack", "ai_scouting.context | ai_scouting.prompts | ai_scouting.validators"]
 
 [[tool.importlinter.contracts]]
-name = "a derivação não alcança modelo nem MCP"
+name = "derivação e validators não alcançam modelo nem MCP"
 type = "forbidden"
-source_modules = ["ai_scouting.context"]
+source_modules = ["ai_scouting.context", "ai_scouting.validators"]
 forbidden_modules = ["ai_core_contracts.llm", "ai_core_contracts.mcp"]
 # O `__init__` dos contratos reexporta tudo: o que se proíbe é o uso direto da API de modelo e de MCP.
 allow_indirect_imports = true
