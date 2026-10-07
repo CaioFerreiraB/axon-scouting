@@ -5,13 +5,27 @@ description = "Pack de domínio escoteiro da plataforma Agentic AI (specs 1xx em
 readme = "README.md"
 # Piso dos contratos, não o do core: o pack depende só de ai-core-contracts (spec 101, research R3).
 requires-python = ">=3.12"
-dependencies = ["ai-core-contracts>=0.1,<0.2"]
+dependencies = [
+    "ai-core-contracts>=0.1,<0.2",
+    # Índice e ingestão (spec 102, research R2): só os adapters os importam (import-linter abaixo).
+    "qdrant-client>=1.19,<2",
+    "onnxruntime>=1.24.2",
+    "tokenizers>=0.20,<1",
+    "numpy",
+    "snowballstemmer>=3,<4",
+    "pypdfium2>=5,<6",
+    "pyyaml>=6,<7",
+]
 
 [project.entry-points."ai_core.packs"]
 scouting = "ai_scouting.pack:ScoutingPack"
 
+# CLI offline da ingestão (spec 102, research R17); o pack.py compõe.
+[project.scripts]
+ai-scouting-corpus = "ai_scouting.pack:corpus_cli"
+
 [dependency-groups]
-dev = ["pytest", "mypy", "ruff", "import-linter"]
+dev = ["pytest", "mypy", "ruff", "import-linter", "fpdf2", "types-PyYAML"]
 # Só a integração com a plataforma (research R9): o core exige Python 3.14 e nunca é dependência de runtime.
 platform = ["ai-core ; python_version >= '3.14'"]
 
@@ -36,6 +50,8 @@ line-length = 120
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+# Travessão e sinal de menos são texto legítimo em português (cabeçalhos de norma, fórmulas nas docstrings).
+allowed-confusables = ["–", "−"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["ai_scouting"]
@@ -44,6 +60,11 @@ known-first-party = ["ai_scouting"]
 strict = true
 python_version = "3.12"
 files = ["src"]
+
+# Sem tipos publicados; só os adapters os importam (import-linter).
+[[tool.mypy.overrides]]
+module = ["snowballstemmer", "onnxruntime", "onnxruntime.*", "pypdfium2", "pypdfium2.*"]
+ignore_missing_imports = true
 
 # Fronteiras do pack (spec 101, research R13; contracts/packaging.md).
 [tool.importlinter]
@@ -59,7 +80,7 @@ forbidden_modules = ["ai_core", "ai_generic"]
 [[tool.importlinter.contracts]]
 name = "só o pack.py compõe"
 type = "layers"
-layers = ["ai_scouting.pack", "ai_scouting.context | ai_scouting.prompts | ai_scouting.validators"]
+layers = ["ai_scouting.pack", "ai_scouting.context | ai_scouting.prompts | ai_scouting.validators | ai_scouting.rag"]
 
 [[tool.importlinter.contracts]]
 name = "derivação e validators não alcançam modelo nem MCP"
@@ -68,3 +89,58 @@ source_modules = ["ai_scouting.context", "ai_scouting.validators"]
 forbidden_modules = ["ai_core_contracts.llm", "ai_core_contracts.mcp"]
 # O `__init__` dos contratos reexporta tudo: o que se proíbe é o uso direto da API de modelo e de MCP.
 allow_indirect_imports = true
+
+# Índice e ingestão (spec 102, research R18).
+[[tool.importlinter.contracts]]
+name = "camadas do índice"
+type = "layers"
+layers = [
+    "ai_scouting.rag.index.adapters",
+    "ai_scouting.rag.index.domain",
+    "ai_scouting.rag.index.ports",
+    "ai_scouting.rag.index.api",
+]
+
+[[tool.importlinter.contracts]]
+name = "camadas da ingestão"
+type = "layers"
+layers = [
+    "ai_scouting.rag.ingestion.adapters",
+    "ai_scouting.rag.ingestion.service",
+    "ai_scouting.rag.ingestion.ports | ai_scouting.rag.ingestion.domain",
+]
+
+[[tool.importlinter.contracts]]
+name = "o api.py do índice não importa o resto do índice nem a ingestão"
+type = "forbidden"
+source_modules = ["ai_scouting.rag.index.api"]
+forbidden_modules = [
+    "ai_scouting.rag.index.domain",
+    "ai_scouting.rag.index.ports",
+    "ai_scouting.rag.index.adapters",
+    "ai_scouting.rag.ingestion",
+]
+
+[[tool.importlinter.contracts]]
+name = "infraestrutura só em adapters/"
+type = "forbidden"
+source_modules = [
+    "ai_scouting.rag.index.api",
+    "ai_scouting.rag.index.domain",
+    "ai_scouting.rag.index.ports",
+    "ai_scouting.rag.ingestion.domain",
+    "ai_scouting.rag.ingestion.ports",
+    "ai_scouting.rag.ingestion.service",
+]
+forbidden_modules = ["qdrant_client", "onnxruntime", "tokenizers", "numpy", "snowballstemmer", "pypdfium2", "yaml"]
+
+[[tool.importlinter.contracts]]
+name = "os outros módulos do pack veem só o seam do índice"
+type = "forbidden"
+source_modules = ["ai_scouting.context", "ai_scouting.prompts", "ai_scouting.validators"]
+forbidden_modules = [
+    "ai_scouting.rag.ingestion",
+    "ai_scouting.rag.index.domain",
+    "ai_scouting.rag.index.ports",
+    "ai_scouting.rag.index.adapters",
+]
