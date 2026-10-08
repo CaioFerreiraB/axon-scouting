@@ -1,0 +1,49 @@
+# Catálogo do corpus do pack scouting (spec 102): uma entrada por versão de documento; os PDFs ficam ao lado, nos
+# caminhos de `file`. Corpus inicial (SC-005) baixado do site oficial da UEB e revisado pelo curador em 2026-10-08.
+# Versões e datas tiradas dos próprios documentos; o que o PDF não diz está marcado com "A CONFIRMAR" (valor
+# provisório, aceito na revisão). Ingestão: `ai-scouting-corpus ingest corpus/corpus.yaml`.
+documents:
+  # Capa: "ABRIL DE 2025 · Versão 2.1 · Alterações feitas em 31.08.2026"; incorpora as alterações do CAN até fev/2025.
+  - file: por/POR_2025_21.pdf
+    source_url: https://www.escoteiros.org.br/wp-content/uploads/2020/07/POR_2025_21.pdf
+    document_id: por
+    version: "2025.2.1"
+    type: por
+    title: "Princípios, Organização e Regras (POR)"
+    jurisdiction: nacional
+    publication_date: 2026-08-31
+    effective_date: 2025-04-01   # A CONFIRMAR: início da edição 2025 (abril/2025) ou a data da versão 2.1?
+
+  - file: estatuto/Estatuto_2024_Atualizado.pdf
+    source_url: https://www.escoteiros.org.br/wp-content/uploads/2020/07/Estatuto_2024_Atualizado.pdf
+    document_id: estatuto
+    version: "2024"
+    type: estatuto
+    title: "Estatuto da União dos Escoteiros do Brasil"
+    jurisdiction: nacional
+    effective_date: 2024-01-01   # A CONFIRMAR: o PDF não traz a data de aprovação na Assembleia Nacional
+
+  # Assinada em Curitiba, 02/10/2021; "entra em vigor na data de sua publicação". Altera as Regras 001, 002, 003 e
+  # 010 do POR — já incorporadas ao POR 2025. A CONFIRMAR: segue vigente como documento próprio?
+  - file: resolucoes/Resolucao-CAN-08-2021.pdf
+    source_url: https://escoteiros.org.br/wp-content/uploads/2021/10/Resolucao-CAN-08-2021-alteracao-dos-fundamentos.pdf
+    document_id: resolucao-can-2021-08
+    version: "1"
+    type: resolucao
+    title: "Resolução CAN 08/2021 — altera as Regras 001, 002, 003 e 010 do POR"
+    jurisdiction: nacional
+    publication_date: 2021-10-02
+    effective_date: 2021-10-02
+
+  # "2ª edição - Março de 2016". A CONFIRMAR: segue vigente depois da transição do Programa Educativo
+  # (Resolução CAN 05/2025)?
+  - file: manuais/Escotistas_em_acao_ramo_lobinho.pdf
+    source_url: https://www.escoteiros.org.br/wp-content/uploads/2016/02/Escotistas_em_acao_ramo_lobinho.pdf
+    document_id: escotistas-em-acao-lobinho
+    version: "2"
+    type: manual
+    title: "Escotistas em Ação — Ramo Lobinho"
+    branch: lobinho
+    jurisdiction: nacional
+    publication_date: 2016-03-01
+    effective_date: 2016-03-01

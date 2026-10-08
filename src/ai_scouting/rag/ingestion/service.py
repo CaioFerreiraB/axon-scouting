@@ -195,6 +195,7 @@ class IngestionService:
             fields=fields,
             content_key=content_key(parsed.source_sha256, entry.document_type.value, entry.title, parsed.parser),
             source_file=entry.file,
+            source_url=entry.source_url,
             source_sha256=parsed.source_sha256,
             chunk_ids=tuple(ids),
             pages=parsed.pages,

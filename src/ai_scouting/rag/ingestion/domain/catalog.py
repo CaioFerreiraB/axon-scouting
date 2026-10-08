@@ -17,7 +17,7 @@ from typing import Final
 from ai_scouting.rag.index.api import BRANCHES, DocumentType, ValidityStatus
 
 REQUIRED: Final = ("file", "document_id", "version", "type", "title", "jurisdiction", "effective_date")
-OPTIONAL: Final = ("branch", "publication_date", "expiry_date", "supersedes", "status")
+OPTIONAL: Final = ("branch", "publication_date", "expiry_date", "supersedes", "status", "source_url")
 DECLARABLE_STATUS: Final = (ValidityStatus.RASCUNHO, ValidityStatus.REVOGADO)
 """Os únicos status que o curador escreve; `vigente` e `substituido` são derivados (research R4)."""
 
@@ -43,6 +43,8 @@ class CatalogEntry:
     expiry_date: date | None = None
     supersedes: str | None = None
     status: ValidityStatus | None = None
+    source_url: str | None = None
+    """Link oficial do arquivo (proveniência); não entra na chave de conteúdo."""
 
     @property
     def doc_key(self) -> str:
@@ -173,6 +175,7 @@ def _validate_entry(number: int, item: object, base_dir: PurePath) -> tuple[Cata
             expiry_date=_opt(values.get("expiry_date"), date),
             supersedes=_opt_str(values.get("supersedes")),
             status=_opt(values.get("status"), ValidityStatus),
+            source_url=_opt_str(values.get("source_url")),
         ),
         [],
     )
@@ -249,6 +252,12 @@ def _status(value: object) -> ValidityStatus:
     return ValidityStatus(str(value))
 
 
+def _url(value: object) -> str:
+    if not isinstance(value, str) or not re.fullmatch(r"https?://\S+", value):
+        raise _Invalid("esperado o link http(s) do arquivo, sem espaços")
+    return value
+
+
 _PARSERS: Final = {
     "file": _file,
     "document_id": _document_id,
@@ -262,6 +271,7 @@ _PARSERS: Final = {
     "expiry_date": _date,
     "supersedes": _version,
     "status": _status,
+    "source_url": _url,
 }
 
 

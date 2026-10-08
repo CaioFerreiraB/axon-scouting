@@ -174,3 +174,18 @@ def test_entradas_validas_e_linhagens_com_entrada_invalida() -> None:
     assert resultado.entries == ()
     assert [e.doc_key for e in resultado.valid] == ["manual-pioneiro-2026"]
     assert resultado.invalid_documents == frozenset({"por", "estatuto"})
+
+
+def test_link_do_arquivo() -> None:
+    url = "https://www.escoteiros.org.br/wp-content/uploads/2020/07/POR_2025_21.pdf"
+    resultado = validar(entrada(source_url=url))
+    assert resultado.ok and resultado.entries[0].source_url == url
+    assert validar(entrada()).entries[0].source_url is None  # opcional
+
+
+@pytest.mark.parametrize(
+    "url", ["ftp://exemplo/x.pdf", "escoteiros.org.br/x.pdf", "https://exemplo/com espaço.pdf", 42]
+)
+def test_link_invalido(url: object) -> None:
+    resultado = validar(entrada(source_url=url))
+    assert "source_url" in unico_problema(resultado)

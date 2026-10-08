@@ -78,6 +78,7 @@ class StoredDocument:
     source_file: str
     source_sha256: str
     chunk_ids: tuple[str, ...]
+    source_url: str | None = None
 
     @property
     def doc_key(self) -> str:
@@ -112,6 +113,7 @@ class Original:
     pages: tuple[str, ...]
     source_file: str
     source_sha256: str
+    source_url: str | None = None
 
 
 @runtime_checkable

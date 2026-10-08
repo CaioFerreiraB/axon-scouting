@@ -99,6 +99,8 @@ async def _dispatch(args: argparse.Namespace, compose: Composition) -> int:
         f"{original.document_title} ({original.version}) · {pages} · {original.source_file} "
         f"(sha256 {original.source_sha256[:12]})"
     )
+    if original.source_url:
+        header += f"\n{original.source_url}"
     _print(compose.out, compose, "\n\n".join([header, *original.pages]))
     return OK
 

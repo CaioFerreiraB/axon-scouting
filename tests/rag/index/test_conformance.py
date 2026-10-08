@@ -365,6 +365,7 @@ def test_original_das_paginas_do_chunk(target: Target) -> None:
         assert (original.page_start, original.page_end) == (3, 3)
         assert original.pages == ("Art. 41 …\nArt. 42 …",)
         assert (original.source_file, original.source_sha256) == ("norma-x-1.pdf", "0" * 64)
+        assert original.source_url == "https://exemplo.org/norma-x-1.pdf"
         assert await index.original("inexistente#x@p1") is None
 
     run(target, scenario)

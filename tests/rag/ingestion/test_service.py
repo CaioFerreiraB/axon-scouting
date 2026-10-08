@@ -438,3 +438,16 @@ def test_problemas_de_catalogo_e_de_linhagem_juntos() -> None:
     assert any("manual-x" in p and "vigente" in p for p in relatorio.problems)
     assert not any("norma-x" in p and "linhagem" in p for p in relatorio.problems)  # linhagem com entrada inválida
     assert amb.publicado() is None
+
+
+def test_link_do_arquivo_vai_para_o_registro_e_para_o_original() -> None:
+    amb = Ambiente()
+    url = "https://www.escoteiros.org.br/manual-x.pdf"
+    relatorio = amb.ingest(catalogo(entrada(source_url=url)))
+    assert amb.storage.builds[relatorio.build].documents["manual-x-2026"].source_url == url
+    original = asyncio.run(amb.service.original("manual-x-2026#4.2@p2"))
+    assert original is not None and original.source_url == url
+    amb.embedder.passages = 0
+    novo = amb.ingest(catalogo(entrada(source_url="https://www.escoteiros.org.br/outro.pdf")))
+    assert amb.embedder.passages == 0  # trocar o link não recodifica
+    assert amb.storage.builds[novo.build].documents["manual-x-2026"].source_url.endswith("outro.pdf")

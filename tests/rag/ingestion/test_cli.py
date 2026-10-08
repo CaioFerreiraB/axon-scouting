@@ -22,6 +22,7 @@ BASE = Path("/corpus")
 SEGREDO = "s3cr3t-qdrant-key"
 ENTRADA = {
     "file": "manual.pdf",
+    "source_url": "https://www.escoteiros.org.br/manual.pdf",
     "document_id": "manual-x",
     "version": "2026",
     "type": "manual",
@@ -165,6 +166,7 @@ def test_original_e_reindex() -> None:
     assert saida.run("original", "manual-x-2026#4.2@p2") == 0
     texto = saida.out.getvalue()
     assert "Manual X (2026) · p. 2 · manual.pdf" in texto
+    assert "https://www.escoteiros.org.br/manual.pdf" in texto
     assert "4.2 Acampamento\nMais." in texto
     assert saida.run("original", "nada#x@p1") == 1
     assert saida.run("reindex", "/corpus/corpus.yaml") == 0

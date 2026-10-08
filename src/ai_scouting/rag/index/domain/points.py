@@ -59,6 +59,7 @@ def original_of(chunk: IndexedChunk, record: DocumentRecord) -> Original:
         pages=record.pages[chunk.page_start - 1 : chunk.page_end],
         source_file=record.source_file,
         source_sha256=record.source_sha256,
+        source_url=record.source_url,
     )
 
 
@@ -87,6 +88,7 @@ def document_to_payload(record: DocumentRecord) -> dict[str, Any]:
         "content_key": record.content_key,
         "source_file": record.source_file,
         "source_sha256": record.source_sha256,
+        "source_url": record.source_url,
         "chunk_ids": list(record.chunk_ids),
         "pages": list(record.pages),
     }
@@ -98,6 +100,7 @@ def stored_from_payload(payload: Mapping[str, Any]) -> StoredDocument:
         content_key=payload["content_key"],
         source_file=payload["source_file"],
         source_sha256=payload["source_sha256"],
+        source_url=payload.get("source_url"),
         chunk_ids=tuple(payload["chunk_ids"]),
     )
 

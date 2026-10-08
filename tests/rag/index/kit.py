@@ -83,6 +83,7 @@ def registro(fields: DocumentFields, chunks: Sequence[IndexedChunk], pages: Sequ
         content_key=f"ck-{fields.doc_key}",
         source_file=f"{fields.doc_key}.pdf",
         source_sha256="0" * 64,
+        source_url=f"https://exemplo.org/{fields.doc_key}.pdf",
         chunk_ids=tuple(c.chunk_id for c in chunks),
         pages=tuple(pages),
     )
