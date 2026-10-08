@@ -11,25 +11,32 @@ import dataclasses
 from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Final
 
-from ai_scouting.rag.index.api import IndexedChunk, IndexVersion
+from ai_scouting.rag.index.api import NORMATIVE_TYPES, IndexedChunk, IndexVersion
 from ai_scouting.rag.index.ports import (
     Build,
     DocumentFields,
     DocumentRecord,
+    DocumentStore,
     Embedder,
     EncodedChunk,
     IndexWriter,
+    Original,
     SparseEncoder,
     StoredDocument,
 )
 from ai_scouting.rag.ingestion.domain.catalog import CatalogEntry, validate_catalog
-from ai_scouting.rag.ingestion.domain.chunking import ChunkDraft, ChunkingPolicy, narrative_chunks
+from ai_scouting.rag.ingestion.domain.chunking import ChunkDraft, ChunkingPolicy, estimate_tokens, narrative_chunks
 from ai_scouting.rag.ingestion.domain.ids import chunk_ids, content_key
 from ai_scouting.rag.ingestion.domain.lineage import Validity, derive_lineages
 from ai_scouting.rag.ingestion.domain.report import DocumentOutcome, IngestionReport
+from ai_scouting.rag.ingestion.domain.structure import UNIT_BY_TYPE, normative_chunks
 from ai_scouting.rag.ingestion.domain.text import Line, clean_pages
 from ai_scouting.rag.ingestion.ports import Clock, DocumentParser
+
+DENSE_LIMIT: Final = 512
+"""Tokens que o embedding denso lê (o e5 trunca); unidade maior ganha aviso — o esparso cobre o texto inteiro."""
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -54,6 +61,7 @@ class IngestionService:
         embedder: Embedder,
         sparse: SparseEncoder,
         writer: IndexWriter,
+        store: DocumentStore,
         clock: Clock,
         policy: ChunkingPolicy | None = None,
     ) -> None:
@@ -61,12 +69,21 @@ class IngestionService:
         self._embedder = embedder
         self._sparse = sparse
         self._writer = writer
+        self._store = store
         self._clock = clock
         self._policy = policy or ChunkingPolicy()
 
     async def ingest(self, catalog: object, base_dir: Path) -> IngestionReport:
         """Publica um build que espelha o catálogo, reaproveitando os vetores do que não mudou."""
         return await self._run(catalog, base_dir, reuse=True)
+
+    async def reindex(self, catalog: object, base_dir: Path) -> IngestionReport:
+        """Recodifica tudo com a configuração atual e publica — o caminho para trocar embedder ou chunking (US5)."""
+        return await self._run(catalog, base_dir, reuse=False)
+
+    async def original(self, chunk_id: str) -> Original | None:
+        """O texto original das páginas de um chunk do build publicado (FR-009)."""
+        return await self._store.original(chunk_id)
 
     async def status(self) -> IndexStatus:
         build = await self._writer.published()
@@ -93,7 +110,7 @@ class IngestionService:
             return IngestionReport(problems=tuple(problems))
 
         previous: dict[str, StoredDocument] = {}
-        if reuse and published is not None:
+        if published is not None:
             previous = {d.doc_key: d for d in await self._writer.documents(published.name)}
 
         build = await self._writer.create(version)
@@ -103,7 +120,8 @@ class IngestionService:
                 record = item.record
                 old = previous.get(record.doc_key)
                 reused = (
-                    published is not None
+                    reuse
+                    and published is not None
                     and old is not None
                     and old.content_key == record.content_key
                     and old.chunk_ids == record.chunk_ids
@@ -137,12 +155,12 @@ class IngestionService:
 
     def _prepare(self, catalog: object, base_dir: Path) -> tuple[list[_Prepared], list[str]]:
         validated = validate_catalog(catalog, base_dir)
-        if not validated.ok:
-            return [], [p.message for p in validated.problems]
-        lineages = derive_lineages(validated.entries)
-        problems = [f"linhagem {p.document_id}: {p.message}" for p in lineages.problems]
+        problems = [p.message for p in validated.problems]
+        entries = [e for e in validated.valid if e.document_id not in validated.invalid_documents]
+        lineages = derive_lineages(entries)
+        problems += [f"linhagem {p.document_id}: {p.message}" for p in lineages.problems]
         prepared: list[_Prepared] = []
-        for entry in sorted(validated.entries, key=lambda e: e.doc_key):
+        for entry in sorted(entries, key=lambda e: e.doc_key):
             try:
                 item = self._prepare_document(entry, lineages.validities.get(entry.doc_key))
             except _Rejected as rejected:
@@ -184,8 +202,22 @@ class IngestionService:
         return _Prepared(record=record, chunks=chunks, normative_units=units, warnings=tuple(warnings))
 
     def _drafts(self, entry: CatalogEntry, lines: Sequence[Line]) -> tuple[list[ChunkDraft], int, list[str]]:
-        """Os chunks do documento, o número de unidades normativas e os avisos da estratégia."""
-        return narrative_chunks(lines, entry.title, self._policy), 0, []
+        """Os chunks do documento, o número de unidades normativas e os avisos da estratégia (FR-002)."""
+        if entry.document_type not in NORMATIVE_TYPES:
+            return narrative_chunks(lines, entry.title, self._policy), 0, []
+        result = normative_chunks(lines, entry.title, self._policy, unit=UNIT_BY_TYPE[entry.document_type])
+        if result.units == 0:  # clarificação 3: normativo sem unidade vira janelas, com aviso
+            return (
+                narrative_chunks(lines, entry.title, self._policy),
+                0,
+                ["normativo sem unidade reconhecida: dividido em janelas"],
+            )
+        warnings = [
+            f"unidade {d.section_key} com ~{tokens} tokens estimados (o embedding denso trunca em {DENSE_LIMIT})"
+            for d in result.drafts
+            if d.normative and (tokens := estimate_tokens(d.body)) > DENSE_LIMIT
+        ]
+        return result.drafts, result.units, warnings
 
     async def _encode(self, chunks: Sequence[IndexedChunk]) -> list[EncodedChunk]:
         dense = await self._embedder.embed_passages([c.text for c in chunks])

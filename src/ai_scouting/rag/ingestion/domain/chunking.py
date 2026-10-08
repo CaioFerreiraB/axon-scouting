@@ -20,15 +20,50 @@ _CHAPTER: Final = re.compile(r"^CAP[IÍ]TULO\s+(\d+|[IVXLCDM]+)\b", re.IGNORECAS
 _NUMBERED: Final = re.compile(r"^(\d+(?:\.\d+){0,3})\.?\s+(\S.*)$")
 _TERMINAL: Final = (".", ";", ":", ",", "!", "?")
 _PARAGRAPH_END: Final = (".", "!", "?", ":", ";")
+_ITEM: Final = re.compile(r"^(?:[a-z]\)|§|[IVXLC]+\s*[–—-])")
+"""Alínea (`a)`), parágrafo de norma (`§`) e inciso (`I –`) começam parágrafo mesmo sem maiúscula."""
 MAX_NUMBERED_HEADING: Final = 80
 MAX_CAPS_HEADING: Final = 60
 
 
+_BOUNDARY: Final = re.compile(r"[.!?…]+[\"”»)']*\s+(?=[A-ZÀ-ÖØ-Ý0-9\"“«(])")
+ABBREVIATIONS: Final = frozenset(
+    {
+        "art",
+        "arts",
+        "nº",
+        "n",
+        "no",
+        "sr",
+        "sra",
+        "srs",
+        "dr",
+        "dra",
+        "p",
+        "pp",
+        "pág",
+        "pag",
+        "ex",
+        "etc",
+        "inc",
+        "cap",
+    }
+)
+"""Abreviações que terminam em ponto sem terminar a frase ("Art. 5", "nº. 3", "p. 12")."""
+
+
 @dataclass(frozen=True, slots=True, kw_only=True)
 class ChunkingPolicy:
+    """Faixa das janelas em tokens estimados. Configurável pela composição (`pack.py`, harness da 105), não pelo
+    curador: mudar é outra versão do índice (research R8)."""
+
     window_min: int = 300
     window_max: int = 600
     strategy: str = "estrutural-v1"
+
+    def __post_init__(self) -> None:
+        if not 0 < self.window_min < self.window_max:
+            raise ValueError(f"janela inválida: {self.window_min}-{self.window_max} (0 < mínimo < máximo)")
 
     def identity(self) -> str:
         return f"{self.strategy};janela={self.window_min}-{self.window_max}"
@@ -70,12 +105,36 @@ class _Paragraph:
     text: str
     page_start: int
     page_end: int
+    starts: tuple[tuple[int, int], ...] = ()
+    """(posição no texto, página) do começo de cada linha — dá a página de cada frase."""
+
+    def page_at(self, offset: int) -> int:
+        page = self.page_start
+        for start, line_page in self.starts:
+            if start > offset:
+                break
+            page = line_page
+        return page
+
+
+@dataclass(frozen=True, slots=True)
+class _Piece:
+    text: str
+    page_start: int
+    page_end: int
+    opens_paragraph: bool
 
 
 def narrative_chunks(
-    lines: Sequence[Line], title: str, policy: ChunkingPolicy, *, section_key: str | None = None
+    lines: Sequence[Line],
+    title: str,
+    policy: ChunkingPolicy,
+    *,
+    section_key: str | None = None,
+    context: Sequence[str] = (),
 ) -> list[ChunkDraft]:
-    """Janelas de um texto narrativo. `section_key` fixa a chave da seção inicial (ex.: `preambulo`)."""
+    """Janelas de um texto narrativo. `section_key` fixa a chave da seção inicial (ex.: `preambulo`); `context` entra no
+    prefixo depois do título (ex.: o anexo de uma norma)."""
     chunks: list[ChunkDraft] = []
     path: dict[int, str] = {}
     unnamed = 0
@@ -89,7 +148,7 @@ def narrative_chunks(
         if key is None:
             unnamed += 1
             key = f"s{unnamed}"
-        prefix = "[" + " · ".join([title, *(path[level] for level in sorted(path))]) + "]"
+        prefix = "[" + " · ".join([title, *context, *(path[level] for level in sorted(path))]) + "]"
         chunks.extend(
             ChunkDraft(
                 section_key=key,
@@ -106,6 +165,8 @@ def narrative_chunks(
 
     for line in lines:
         heading = _heading(line.text)
+        if heading is not None and heading.key is None and section_key is not None:
+            heading = None  # numa seção de chave fixa (preâmbulo, anexo), linha em maiúsculas é texto
         if heading is None:
             body.append(line)
             continue
@@ -161,24 +222,98 @@ def _paragraphs(lines: Sequence[Line]) -> list[_Paragraph]:
     return paragraphs
 
 
+def paragraph_text(lines: Sequence[Line]) -> str:
+    """As linhas unidas em parágrafos, um por linha do resultado."""
+    return "\n".join(p.text for p in _paragraphs(lines))
+
+
 def _join(lines: list[Line]) -> _Paragraph:
-    return _Paragraph(text=" ".join(line.text for line in lines), page_start=lines[0].page, page_end=lines[-1].page)
+    starts, offset = [], 0
+    for line in lines:
+        starts.append((offset, line.page))
+        offset += len(line.text) + 1
+    return _Paragraph(
+        text=" ".join(line.text for line in lines),
+        page_start=lines[0].page,
+        page_end=lines[-1].page,
+        starts=tuple(starts),
+    )
+
+
+def split_sentences(text: str) -> list[str]:
+    """Frases: pontuação final seguida de espaço e maiúscula, número ou aspas — salvo depois de abreviação."""
+    sentences: list[str] = []
+    start = 0
+    for match in _BOUNDARY.finditer(text):
+        before = text[start : match.start()].split()
+        word = before[-1].casefold() if before else ""
+        if text[match.start()] == "." and (word in ABBREVIATIONS or (len(word) == 1 and word.isalpha())):
+            continue
+        sentences.append(text[start : match.end()].strip())
+        start = match.end()
+    rest = text[start:].strip()
+    if rest:
+        sentences.append(rest)
+    return sentences
+
+
+def _sentence_pieces(paragraph: _Paragraph) -> list[_Piece]:
+    pieces: list[_Piece] = []
+    offset = 0
+    for index, sentence in enumerate(split_sentences(paragraph.text)):
+        begin = paragraph.text.find(sentence, offset)
+        offset = begin + len(sentence)
+        pieces.append(
+            _Piece(
+                text=sentence,
+                page_start=paragraph.page_at(begin),
+                page_end=paragraph.page_at(offset - 1),
+                opens_paragraph=index == 0,
+            )
+        )
+    return pieces
+
+
+def _render(pieces: Sequence[_Piece]) -> str:
+    parts: list[str] = []
+    for index, piece in enumerate(pieces):
+        if index:
+            parts.append("\n" if piece.opens_paragraph else " ")
+        parts.append(piece.text)
+    return "".join(parts)
 
 
 def _windows(paragraphs: list[_Paragraph], policy: ChunkingPolicy) -> list[tuple[str, int, int]]:
-    """Empacotamento guloso de parágrafos até `window_max` tokens estimados."""
+    """Empacotamento guloso até `window_max` tokens estimados, preferindo fronteira de parágrafo.
+
+    Parágrafo que não cabe: se a janela já passou do mínimo, ela fecha ali; senão (ou se ele sozinho passa do máximo),
+    o parágrafo entra frase a frase. Frase nunca é cortada; a frase única maior que o máximo fica inteira.
+    """
     windows: list[tuple[str, int, int]] = []
-    current: list[_Paragraph] = []
-    for paragraph in paragraphs:
-        candidate = "\n".join(p.text for p in [*current, paragraph])
-        if current and estimate_tokens(candidate) > policy.window_max:
-            windows.append(_window(current))
+    current: list[_Piece] = []
+
+    def fits(pieces: Sequence[_Piece]) -> bool:
+        return estimate_tokens(_render(pieces)) <= policy.window_max
+
+    def flush() -> None:
+        nonlocal current
+        if current:
+            windows.append((_render(current), current[0].page_start, current[-1].page_end))
             current = []
-        current.append(paragraph)
-    if current:
-        windows.append(_window(current))
+
+    for paragraph in paragraphs:
+        whole = _Piece(paragraph.text, paragraph.page_start, paragraph.page_end, opens_paragraph=True)
+        if fits([*current, whole]):
+            current.append(whole)
+            continue
+        if current and estimate_tokens(_render(current)) >= policy.window_min:
+            flush()
+            if fits([whole]):
+                current.append(whole)
+                continue
+        for piece in _sentence_pieces(paragraph):
+            if current and not fits([*current, piece]):
+                flush()
+            current.append(piece)
+    flush()
     return windows
-
-
-def _window(paragraphs: list[_Paragraph]) -> tuple[str, int, int]:
-    return "\n".join(p.text for p in paragraphs), paragraphs[0].page_start, paragraphs[-1].page_end

@@ -12,7 +12,7 @@ from datetime import date, datetime
 from typing import Any, Final
 
 from ai_scouting.rag.index.api import DocumentType, EmbeddingModel, IndexedChunk, IndexVersion, ValidityStatus
-from ai_scouting.rag.index.ports import DocumentFields, DocumentRecord, StoredDocument
+from ai_scouting.rag.index.ports import DocumentFields, DocumentRecord, Original, StoredDocument
 
 NAMESPACE_CHUNK: Final = uuid.UUID("5d0f3c1e-7f4b-5a43-9a11-2c6e8b0f1a01")
 NAMESPACE_DOCUMENT: Final = uuid.UUID("5d0f3c1e-7f4b-5a43-9a11-2c6e8b0f1a02")
@@ -45,6 +45,21 @@ def with_document(chunk: IndexedChunk, fields: DocumentFields) -> IndexedChunk:
 
 def _fields_dict(fields: DocumentFields) -> dict[str, Any]:
     return {f.name: getattr(fields, f.name) for f in dataclasses.fields(fields)}
+
+
+def original_of(chunk: IndexedChunk, record: DocumentRecord) -> Original:
+    """As páginas brutas da faixa do chunk (FR-009)."""
+    return Original(
+        chunk_id=chunk.chunk_id,
+        doc_key=record.doc_key,
+        document_title=record.fields.document_title,
+        version=record.fields.version,
+        page_start=chunk.page_start,
+        page_end=chunk.page_end,
+        pages=record.pages[chunk.page_start - 1 : chunk.page_end],
+        source_file=record.source_file,
+        source_sha256=record.source_sha256,
+    )
 
 
 def chunk_to_payload(chunk: IndexedChunk) -> dict[str, Any]:

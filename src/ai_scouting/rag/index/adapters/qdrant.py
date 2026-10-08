@@ -19,6 +19,7 @@ from qdrant_client import AsyncQdrantClient
 from qdrant_client import models as m
 
 from ai_scouting.rag.index.api import IndexedChunk, IndexFilters, IndexUnavailable, IndexVersion, ValidityStatus
+from ai_scouting.rag.index.domain.compatibility import check_encoders
 from ai_scouting.rag.index.domain.points import (
     build_name,
     chunk_from_payload,
@@ -26,13 +27,23 @@ from ai_scouting.rag.index.domain.points import (
     chunk_to_payload,
     document_point_id,
     document_to_payload,
+    original_of,
+    record_from_payload,
     stored_from_payload,
     version_from_json,
     version_to_json,
     with_document,
 )
 from ai_scouting.rag.index.domain.scoring import ordered
-from ai_scouting.rag.index.ports import Build, DocumentRecord, Embedder, EncodedChunk, SparseEncoder, StoredDocument
+from ai_scouting.rag.index.ports import (
+    Build,
+    DocumentRecord,
+    Embedder,
+    EncodedChunk,
+    Original,
+    SparseEncoder,
+    StoredDocument,
+)
 
 DENSE: Final = "dense"
 SPARSE: Final = "sparse"
@@ -51,7 +62,8 @@ class QdrantIndex:
     # --- ChunkIndex -------------------------------------------------------------------------------------------
 
     async def search(self, query: str, *, filters: IndexFilters, limit: int) -> list[IndexedChunk]:
-        await self._require_published()
+        published = await self._require_published()
+        check_encoders(published.version, self._embedder.model(), self._sparse.identity())
         sparse_query = self._sparse.encode_query(query)
         if not sparse_query.indices:
             return []
@@ -86,6 +98,24 @@ class QdrantIndex:
 
     async def version(self) -> IndexVersion:
         return (await self._require_published()).version
+
+    # --- DocumentStore ----------------------------------------------------------------------------------------
+
+    async def original(self, chunk_id: str) -> Original | None:
+        published = await self._require_published()
+        async with self._errors():
+            points = await self._client.retrieve(
+                collection_name=published.name, ids=[chunk_point_id(chunk_id)], with_payload=True
+            )
+            if not points:
+                return None
+            chunk = chunk_from_payload(_payload(points[0]))
+            documents = await self._client.retrieve(
+                collection_name=published.name, ids=[document_point_id(chunk.doc_key)], with_payload=True
+            )
+        if not documents:
+            raise IndexUnavailable(f"build {published.name} sem o registro do documento {chunk.doc_key}")
+        return original_of(chunk, record_from_payload(_payload(documents[0])))
 
     # --- IndexWriter ------------------------------------------------------------------------------------------
 

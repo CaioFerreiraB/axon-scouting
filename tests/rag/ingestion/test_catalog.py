@@ -162,3 +162,15 @@ def test_todos_os_problemas_acumulados() -> None:
     assert not resultado.ok
     assert [p.entry for p in resultado.problems] == [1, 2, 3]
     assert resultado.entries == ()
+
+
+def test_entradas_validas_e_linhagens_com_entrada_invalida() -> None:
+    resultado = validar(
+        entrada(),
+        entrada(file="b.pdf", document_id="por", version="1", type="lei"),
+        entrada(file="/x.pdf", document_id="estatuto"),
+    )
+    assert not resultado.ok
+    assert resultado.entries == ()
+    assert [e.doc_key for e in resultado.valid] == ["manual-pioneiro-2026"]
+    assert resultado.invalid_documents == frozenset({"por", "estatuto"})

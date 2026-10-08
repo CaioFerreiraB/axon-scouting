@@ -93,6 +93,7 @@ def corpus_cli() -> None:
                 embedder=embedder,
                 sparse=sparse,
                 writer=index,
+                store=index,
                 clock=SystemClock(),
             )
         finally:

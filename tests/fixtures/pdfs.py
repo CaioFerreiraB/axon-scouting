@@ -66,3 +66,28 @@ NARRATIVE_PAGES: Sequence[Sequence[str]] = (
 
 def narrative_pdf(path: Path, pages: Sequence[Sequence[str]] = NARRATIVE_PAGES) -> Path:
     return write_pdf(path, pages)
+
+
+NORMATIVE_PAGES: Sequence[Sequence[str]] = (
+    (
+        "O Conselho de Administração Nacional, no uso de suas atribuições, resolve:",
+        "CAPÍTULO I - Das Disposições Gerais",
+        "Art. 1º Esta norma regula as atividades externas.",
+        "Art. 2º As atividades dependem de autorização dos responsáveis.",
+        "CAPÍTULO II - Das Atividades",
+        "SEÇÃO I",
+        "Do planejamento",
+        "Art. 41. O grupo mantém registro das atividades.",
+        "Art. 42. O responsável pela atividade deverá:",
+        "I - comunicar os pais;",
+        "II - registrar a atividade.",
+    ),
+    (
+        "Parágrafo único. O registro fica com o grupo por cinco anos.",
+        "Art. 43. A autorização dos pais é obrigatória.",
+    ),
+)
+
+
+def normative_pdf(path: Path, pages: Sequence[Sequence[str]] = NORMATIVE_PAGES) -> Path:
+    return write_pdf(path, pages)

@@ -1,0 +1,20 @@
+"""Os ids que a 101 publica nos filtros são os valores que o índice da 102 filtra (spec 102 research R3; T049).
+
+Nota para a US5 da 101: se o léxico ganhar ramo ou tipo novo, o modelo do índice precisa acompanhar.
+"""
+
+from __future__ import annotations
+
+from ai_scouting.context.lexicon import LEXICON
+from ai_scouting.rag.index.api import BRANCHES, DocumentType
+
+
+def test_ramos_do_lexico_sao_os_do_indice() -> None:
+    assert set(LEXICON.branches) == set(BRANCHES)
+
+
+def test_tipos_do_lexico_sao_os_do_indice() -> None:
+    tipos = {t.value for t in DocumentType}
+    assert set(LEXICON.document_types) == tipos
+    assert {tipo for topico in LEXICON.topics for tipo in topico.document_types} <= tipos
+    assert {tipo for sinais in LEXICON.type_signals.values() for tipo in sinais} <= tipos

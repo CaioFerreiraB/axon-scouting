@@ -55,11 +55,15 @@ def main(argv: Sequence[str], compose: Composition) -> int:
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="ai-scouting-corpus", description="Ingestão do corpus do pack scouting.")
     commands = parser.add_subparsers(dest="command", required=True)
-    ingest = commands.add_parser(
-        "ingest", help="publica um build que espelha o catálogo, reaproveitando o que não mudou"
-    )
-    ingest.add_argument("catalog", type=Path, help="caminho do corpus.yaml")
+    for name, help_text in (
+        ("ingest", "publica um build que espelha o catálogo, reaproveitando o que não mudou"),
+        ("reindex", "recodifica tudo com a configuração atual e publica uma versão nova do índice"),
+    ):
+        command = commands.add_parser(name, help=help_text)
+        command.add_argument("catalog", type=Path, help="caminho do corpus.yaml")
     commands.add_parser("status", help="versão publicada e documentos por linhagem")
+    original = commands.add_parser("original", help="texto original das páginas de um chunk")
+    original.add_argument("chunk_id")
     model = commands.add_parser("model", help="modelo de embedding")
     model_commands = model.add_subparsers(dest="model_command", required=True)
     fetch = model_commands.add_parser("fetch", help="baixa a revisão fixada do e5-small e confere os sha256")
@@ -72,16 +76,30 @@ async def _dispatch(args: argparse.Namespace, compose: Composition) -> int:
         for path, digest in compose.fetch_model(args.directory):
             _print(compose.out, compose, f"{path}  sha256 {digest}")
         return OK
-    if args.command == "ingest":
+    if args.command in ("ingest", "reindex"):
         catalog, base_dir = compose.load_catalog(args.catalog)
         started = time.perf_counter()
         async with compose.open_service(True) as service:
-            report = await service.ingest(catalog, base_dir)
+            run = service.ingest if args.command == "ingest" else service.reindex
+            report = await run(catalog, base_dir)
         _print(compose.out, compose, _report(compose.index_name, report, time.perf_counter() - started))
         return OK if report.ok else REJECTED
+    if args.command == "status":
+        async with compose.open_service(False) as service:
+            status = await service.status()
+        _print(compose.out, compose, _status(compose.index_name, status))
+        return OK
     async with compose.open_service(False) as service:
-        status = await service.status()
-    _print(compose.out, compose, _status(compose.index_name, status))
+        original = await service.original(args.chunk_id)
+    if original is None:
+        _print(compose.err, compose, f"chunk inexistente no índice publicado: {args.chunk_id}")
+        return REJECTED
+    pages = f"p. {original.page_start}" + (f"–{original.page_end}" if original.page_end != original.page_start else "")
+    header = (
+        f"{original.document_title} ({original.version}) · {pages} · {original.source_file} "
+        f"(sha256 {original.source_sha256[:12]})"
+    )
+    _print(compose.out, compose, "\n\n".join([header, *original.pages]))
     return OK
 
 

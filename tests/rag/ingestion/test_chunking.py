@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
-from ai_scouting.rag.ingestion.domain.chunking import ChunkingPolicy, estimate_tokens, narrative_chunks
+import random
+
+import pytest
+
+from ai_scouting.rag.ingestion.domain.chunking import ChunkingPolicy, estimate_tokens, narrative_chunks, split_sentences
 from ai_scouting.rag.ingestion.domain.text import Line
 
 
@@ -84,3 +88,112 @@ def test_paginas_da_janela() -> None:
     (chunk,) = narrative_chunks(texto, "Manual X", ChunkingPolicy())
     assert (chunk.page_start, chunk.page_end) == (2, 3)
     assert chunk.body == "Começa numa página e termina na outra."
+
+
+# --- propriedades (US4, T043) ------------------------------------------------------------------------------------
+
+PALAVRAS = [
+    "patrulha",
+    "atividade",
+    "escoteiro",
+    "tropa",
+    "monitor",
+    "acampamento",
+    "cardápio",
+    "material",
+    "lenço",
+    "jogo",
+    "trilha",
+    "fogo",
+]
+
+
+def frase(rng: random.Random) -> str:
+    palavras = [rng.choice(PALAVRAS) for _ in range(rng.randint(4, 40))]
+    return palavras[0].capitalize() + " " + " ".join(palavras[1:]) + "."
+
+
+def texto_gerado(semente: int) -> list[Line]:
+    """Seções com cabeçalho numerado e parágrafos de 1 a 12 frases, numa página por seção."""
+    rng = random.Random(semente)
+    linhas_: list[Line] = []
+    for secao in range(1, rng.randint(2, 5)):
+        linhas_.append(Line(text=f"{secao} Seção gerada", page=secao))
+        for _ in range(rng.randint(1, 8)):
+            linhas_.append(Line(text=" ".join(frase(rng) for _ in range(rng.randint(1, 12))), page=secao))
+            linhas_.append(Line(text="", page=secao))
+    return linhas_
+
+
+def _normalizado(texto: str) -> str:
+    return " ".join(texto.split())
+
+
+@pytest.mark.parametrize("semente", range(40))
+def test_propriedades_das_janelas(semente: int) -> None:
+    politica = ChunkingPolicy()
+    texto = texto_gerado(semente)
+    chunks = narrative_chunks(texto, "Manual", politica)
+    por_secao: dict[str, list[object]] = {}
+    for chunk in chunks:
+        por_secao.setdefault(chunk.section_key, []).append(chunk)
+    for secao, janelas in por_secao.items():
+        for i, janela in enumerate(janelas):
+            corpo = janela.body  # type: ignore[attr-defined]
+            assert corpo.endswith("."), (secao, corpo[-40:])  # nenhuma frase cortada
+            tokens = estimate_tokens(corpo)
+            assert tokens <= politica.window_max
+            if i < len(janelas) - 1:  # só a última janela da seção pode ficar abaixo do mínimo
+                assert tokens >= politica.window_min, (secao, i, tokens)
+    corpo_total = _normalizado(" ".join(c.body for c in chunks))
+    original = _normalizado(" ".join(linha.text for linha in texto if linha.text and not linha.text[0].isdigit()))
+    assert corpo_total == original  # nada perdido, nada repetido (sem sobreposição)
+
+
+def test_paragrafo_grande_divide_em_frases() -> None:
+    frases = [f"A patrulha número {n} prepara o acampamento com cuidado e atenção." for n in range(80)]
+    chunks = narrative_chunks([Line(text=" ".join(frases), page=1)], "Manual", ChunkingPolicy())
+    assert len(chunks) > 1
+    assert all(c.body.endswith("atenção.") for c in chunks)
+
+
+def test_frase_maior_que_o_maximo_fica_inteira() -> None:
+    gigante = "A " + " ".join(["patrulha"] * 400) + "."
+    (chunk,) = narrative_chunks([Line(text=gigante, page=1)], "Manual", ChunkingPolicy())
+    assert chunk.body == gigante
+
+
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "Conforme o Art. 5 do estatuto, a patrulha decide.",
+        "A resolução nº. 3 regula o tema.",
+        "O Sr. Silva e a Sra. Souza coordenam.",
+        "Veja a p. 12 do manual.",
+        "Leve material, ex. lanterna, corda etc. para o campo.",
+    ],
+)
+def test_abreviacoes_nao_terminam_frase(texto: str) -> None:
+    assert split_sentences(texto) == [texto]
+
+
+def test_separa_frases() -> None:
+    assert split_sentences("Primeira frase. Segunda frase! Terceira? «Quarta» frase. 5 itens.") == [
+        "Primeira frase.",
+        "Segunda frase!",
+        "Terceira?",
+        "«Quarta» frase.",
+        "5 itens.",
+    ]
+
+
+def test_cabecalho_sempre_quebra() -> None:
+    texto = linhas("1 Primeira", "Texto curto.", "2 Segunda", "Outro texto curto.")
+    assert [c.body for c in narrative_chunks(texto, "M", ChunkingPolicy())] == ["Texto curto.", "Outro texto curto."]
+
+
+def test_politica_valida() -> None:
+    assert ChunkingPolicy(window_min=200, window_max=400).identity() == "estrutural-v1;janela=200-400"
+    for minimo, maximo in ((400, 400), (500, 400), (0, 400), (-1, 10)):
+        with pytest.raises(ValueError):
+            ChunkingPolicy(window_min=minimo, window_max=maximo)

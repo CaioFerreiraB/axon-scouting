@@ -22,14 +22,16 @@ from ai_scouting.rag.index.api import (
     IndexUnavailable,
     IndexVersion,
 )
+from ai_scouting.rag.index.domain.compatibility import check_encoders
 from ai_scouting.rag.index.domain.filters import matches
-from ai_scouting.rag.index.domain.points import build_name, stored, with_document
+from ai_scouting.rag.index.domain.points import build_name, original_of, stored, with_document
 from ai_scouting.rag.index.domain.scoring import cosine, idf, ordered, rrf, sparse_score
 from ai_scouting.rag.index.ports import (
     Build,
     DocumentRecord,
     Embedder,
     EncodedChunk,
+    Original,
     SparseEncoder,
     StoredDocument,
 )
@@ -103,6 +105,7 @@ class MemoryIndex:
 
     async def search(self, query: str, *, filters: IndexFilters, limit: int) -> list[IndexedChunk]:
         build = self._published_build()
+        check_encoders(build.version, self._embedder.model(), self._sparse.identity())
         sparse_query = self._sparse.encode_query(query)
         if not sparse_query.indices:
             return []
@@ -130,6 +133,15 @@ class MemoryIndex:
 
     async def version(self) -> IndexVersion:
         return self._published_build().version
+
+    # --- DocumentStore ----------------------------------------------------------------------------------------
+
+    async def original(self, chunk_id: str) -> Original | None:
+        build = self._published_build()
+        encoded = build.chunks.get(chunk_id)
+        if encoded is None:
+            return None
+        return original_of(encoded.chunk, build.documents[encoded.chunk.doc_key])
 
     # --- IndexWriter ------------------------------------------------------------------------------------------
 

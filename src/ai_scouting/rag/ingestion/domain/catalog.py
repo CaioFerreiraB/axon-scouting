@@ -64,7 +64,12 @@ class CatalogProblem:
 @dataclass(frozen=True, slots=True, kw_only=True)
 class CatalogResult:
     entries: tuple[CatalogEntry, ...]
+    """Todas as entradas, só quando não há problema."""
     problems: tuple[CatalogProblem, ...]
+    valid: tuple[CatalogEntry, ...] = ()
+    """As entradas válidas, mesmo com problema em outras — para relatar o que mais houver."""
+    invalid_documents: frozenset[str] = frozenset()
+    """Linhagens com alguma entrada inválida: a vigência delas não é avaliada (daria erros falsos)."""
 
     @property
     def ok(self) -> bool:
@@ -88,11 +93,14 @@ def validate_catalog(raw: object, base_dir: PurePath) -> CatalogResult:
         )
     entries: list[CatalogEntry] = []
     problems: list[CatalogProblem] = []
+    invalid: set[str] = set()
     for number, item in enumerate(raw["documents"], start=1):
         entry, found = _validate_entry(number, item, base_dir)
         problems.extend(found)
         if entry is not None:
             entries.append(entry)
+        elif isinstance(item, Mapping) and isinstance(item.get("document_id"), str):
+            invalid.add(item["document_id"])
     seen: dict[tuple[str, str], int] = {}
     for entry in entries:
         pair = (entry.document_id, entry.version)
@@ -105,10 +113,16 @@ def validate_catalog(raw: object, base_dir: PurePath) -> CatalogResult:
                     message=f"entrada {entry.entry}: {entry.label} repete a entrada {seen[pair]}",
                 )
             )
+            invalid.add(entry.document_id)
         else:
             seen[pair] = entry.entry
     problems.sort(key=lambda p: p.entry or 0)
-    return CatalogResult(entries=() if problems else tuple(entries), problems=tuple(problems))
+    return CatalogResult(
+        entries=() if problems else tuple(entries),
+        problems=tuple(problems),
+        valid=tuple(entries),
+        invalid_documents=frozenset(invalid),
+    )
 
 
 def _validate_entry(number: int, item: object, base_dir: PurePath) -> tuple[CatalogEntry | None, list[CatalogProblem]]:

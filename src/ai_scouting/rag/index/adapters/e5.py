@@ -28,7 +28,8 @@ REVISION: Final = "614241f622f53c4eeff9890bdc4f31cfecc418b3"
 BASE_URL: Final = f"https://huggingface.co/{NAME}/resolve/{REVISION}"
 DIMENSIONS: Final = 384
 MAX_TOKENS: Final = 512
-BATCH: Final = 16
+BATCH: Final = 8
+"""Lote de inferência: o pico de memória cresce com lote vezes tokens ao quadrado; 8 cabe folgado nos 12 GB do alvo."""
 
 
 @dataclass(frozen=True, slots=True)
@@ -78,7 +79,11 @@ class E5Embedder:
                 pad = tokenizer.token_to_id("<pad>")
                 tokenizer.enable_padding(pad_id=1 if pad is None else pad, pad_token="<pad>")
                 self._tokenizer = tokenizer
-                self._session = ort.InferenceSession(str(self._dir / "model.onnx"), providers=["CPUExecutionProvider"])
+                options = ort.SessionOptions()
+                options.enable_cpu_mem_arena = False  # a arena reteria o pico do maior lote pelo resto do processo
+                self._session = ort.InferenceSession(
+                    str(self._dir / "model.onnx"), sess_options=options, providers=["CPUExecutionProvider"]
+                )
             return self._session, self._tokenizer
 
     def _encode(self, texts: list[str]) -> list[tuple[float, ...]]:

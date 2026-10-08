@@ -50,6 +50,7 @@ class Saida:
                 embedder=HashingEmbedder(),
                 sparse=Bm25Encoder(),
                 writer=index,
+                store=index,
                 clock=FixedClock(datetime(2026, 10, 7, 15, 30, tzinfo=UTC)),
             )
 
@@ -139,3 +140,32 @@ def test_uso_invalido() -> None:
     with pytest.raises(SystemExit) as exc:
         Saida({}).run("desconhecido")
     assert exc.value.code == 2
+
+
+def test_status_por_linhagem_e_status() -> None:
+    saida = Saida(
+        {
+            "documents": [
+                {**ENTRADA, "file": "m2023.pdf", "version": "2023", "effective_date": date(2023, 1, 1)},
+                {**ENTRADA, "version": "2026", "supersedes": "2023"},
+            ]
+        }
+    )
+    saida.parser.put(BASE / "m2023.pdf", ["Versão antiga do manual.", "Mais texto."])
+    assert saida.run("ingest", "/corpus/corpus.yaml") == 0
+    assert saida.run("status") == 0
+    linhas = [linha.split() for linha in saida.out.getvalue().splitlines() if linha.startswith("manual-x ")]
+    assert linhas == [["manual-x", "2023", "substituido", "1"], ["manual-x", "2026", "vigente", "2"]]
+    assert sum(1 for linha in linhas if linha[2] == "vigente") == 1  # SC-003
+
+
+def test_original_e_reindex() -> None:
+    saida = Saida({"documents": [ENTRADA]})
+    saida.run("ingest", "/corpus/corpus.yaml")
+    assert saida.run("original", "manual-x-2026#4.2@p2") == 0
+    texto = saida.out.getvalue()
+    assert "Manual X (2026) · p. 2 · manual.pdf" in texto
+    assert "4.2 Acampamento\nMais." in texto
+    assert saida.run("original", "nada#x@p1") == 1
+    assert saida.run("reindex", "/corpus/corpus.yaml") == 0
+    assert "codificado" in saida.out.getvalue().split("build")[-1]

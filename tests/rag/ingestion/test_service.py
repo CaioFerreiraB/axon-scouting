@@ -10,8 +10,9 @@ from typing import Any
 
 from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
 from ai_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
-from ai_scouting.rag.index.api import DocumentType, ValidityStatus
+from ai_scouting.rag.index.api import DocumentType, IndexFilters, ValidityStatus
 from ai_scouting.rag.ingestion.adapters.memory import FixedClock, MemoryParser
+from ai_scouting.rag.ingestion.domain.chunking import ChunkingPolicy
 from ai_scouting.rag.ingestion.service import IngestionService
 
 BASE = Path("/corpus")
@@ -67,6 +68,7 @@ class Ambiente:
             embedder=embedder,
             sparse=Bm25Encoder(),
             writer=index,
+            store=index,
             clock=FixedClock(INSTANTE),
         )
 
@@ -205,3 +207,234 @@ def test_status() -> None:
     assert [(d.doc_key, d.fields.status, len(d.chunk_ids)) for d in status.documents] == [
         ("manual-x-2026", ValidityStatus.VIGENTE, 3)
     ]
+
+
+# --- US2 -------------------------------------------------------------------------------------------------------
+
+NORMA_PAGINAS = [
+    "O Conselho resolve:\nCAPÍTULO II – Das Atividades\nSEÇÃO I\nDo planejamento\n"
+    "Art. 41. O grupo mantém registro.\nArt. 42. O responsável deverá:\nI – comunicar os pais;",
+    "Parágrafo único. O registro fica com o grupo.\nArt. 43. A autorização é obrigatória.",
+]
+
+
+def test_us2_por_divide_por_regra() -> None:
+    amb = Ambiente()
+    amb.parser.put(
+        BASE / "por.pdf",
+        [
+            "CAPÍTULO 1\nFundamentos\nREGRA\n001 DEFINIÇÃO\nO Escotismo é um movimento.\n"
+            "REGRA\n002 PROPÓSITO\nContribuir."
+        ],
+    )
+    relatorio = amb.ingest(
+        catalogo(entrada(file="por.pdf", document_id="por", version="2025", type="por", title="POR", branch=...))
+    )
+    assert relatorio.ok and relatorio.documents[0].normative_units == 2
+    artigos = sorted(e.chunk.article for e in amb.storage.builds[relatorio.build].chunks.values())
+    assert artigos == ["Regra 001", "Regra 002"]
+
+
+def test_us2_norma_um_chunk_por_unidade() -> None:
+    for tipo in ("resolucao", "estatuto"):
+        amb = Ambiente()
+        amb.parser.put(BASE / "norma.pdf", NORMA_PAGINAS)
+        relatorio = amb.ingest(
+            catalogo(
+                entrada(file="norma.pdf", document_id="norma-x", version="1", type=tipo, title="Norma X", branch=...)
+            )
+        )
+        assert relatorio.ok, relatorio.problems
+        assert relatorio.documents[0].normative_units == 3
+        chunks = {e.chunk.chunk_id: e.chunk for e in amb.storage.builds[relatorio.build].chunks.values()}
+        normativos = [c for c in chunks.values() if c.article]
+        assert sorted(c.article for c in normativos) == ["Art. 41", "Art. 42", "Art. 43"]
+        for chunk in normativos:  # SC-001: caminho ancestral completo e citação derivável
+            assert chunk.text.startswith("[Norma X · Capítulo II · Seção I]\n")
+            assert chunk.to_chunk().section == chunk.article
+        art42 = chunks["norma-x-1#art42@p1"]
+        assert (art42.page_start, art42.page_end) == (1, 2)
+        assert "Parágrafo único" in art42.text
+        assert art42.chapter == "Capítulo II – Das Atividades"
+        assert "norma-x-1#preambulo@p1" in chunks
+
+
+def test_us2_manual_com_artigo_no_texto_continua_narrativo() -> None:
+    amb = Ambiente()
+    amb.parser.put(BASE / "m.pdf", ["4.2 Regras\nConforme o Art. 3 do estatuto, a patrulha decide.\nArt. 3 é citado."])
+    relatorio = amb.ingest(catalogo(entrada(file="m.pdf")))
+    assert relatorio.ok and relatorio.documents[0].normative_units == 0
+    assert all(e.chunk.article is None for e in amb.storage.builds[relatorio.build].chunks.values())
+
+
+def test_us2_normativo_sem_unidade_vira_janelas_com_aviso() -> None:
+    amb = Ambiente()
+    amb.parser.put(BASE / "r.pdf", ["Resolução sem artigos numerados.\nApenas texto corrido."])
+    relatorio = amb.ingest(catalogo(entrada(file="r.pdf", type="resolucao", branch=...)))
+    assert relatorio.ok
+    (doc,) = relatorio.documents
+    assert doc.normative_units == 0 and doc.chunks == 1
+    assert doc.warnings == ("normativo sem unidade reconhecida: dividido em janelas",)
+
+
+def test_us2_unidade_longa_avisa() -> None:
+    amb = Ambiente()
+    longo = "Art. 1º " + " ".join(["A atividade exige cuidado."] * 90)
+    amb.parser.put(BASE / "e.pdf", [longo])
+    relatorio = amb.ingest(catalogo(entrada(file="e.pdf", type="estatuto", branch=...)))
+    assert relatorio.ok
+    (aviso,) = relatorio.documents[0].warnings
+    assert aviso.startswith("unidade art1 com ~") and "trunca em 512" in aviso
+
+
+# --- US3 -------------------------------------------------------------------------------------------------------
+
+HOJE = date(2026, 10, 7)
+V2023: dict[str, Any] = {"file": "m2023.pdf", "version": "2023", "effective_date": date(2023, 1, 1)}
+V2026: dict[str, Any] = {
+    "file": "m2026.pdf",
+    "version": "2026",
+    "effective_date": date(2026, 3, 1),
+    "supersedes": "2023",
+}
+
+
+def ambiente_com_versoes() -> Ambiente:
+    amb = Ambiente()
+    amb.parser.put(BASE / "m2023.pdf", MANUAL_PAGINAS)
+    amb.parser.put(BASE / "m2026.pdf", ["APRESENTAÇÃO\nEdição revista do manual.", "4.2 Acampamento\nNovo cardápio."])
+    return amb
+
+
+def chunks_de(amb: Ambiente, build: str, doc_key: str) -> list[Any]:
+    return [e.chunk for e in amb.storage.builds[build].chunks.values() if e.chunk.doc_key == doc_key]
+
+
+def test_us3_sucessor_marca_o_antecessor_sem_recodificar() -> None:
+    amb = ambiente_com_versoes()
+    primeiro = amb.ingest(catalogo(entrada(**V2023)))
+    assert [(d.doc_key, d.status) for d in primeiro.documents] == [("manual-x-2023", ValidityStatus.VIGENTE)]
+    amb.embedder.passages = 0
+
+    segundo = amb.ingest(catalogo(entrada(**V2023), entrada(**V2026)))
+    assert segundo.ok, segundo.problems
+    assert [(d.doc_key, d.status, d.reused) for d in segundo.documents] == [
+        ("manual-x-2023", ValidityStatus.SUBSTITUIDO, True),
+        ("manual-x-2026", ValidityStatus.VIGENTE, False),
+    ]
+    assert amb.embedder.passages == segundo.documents[1].chunks  # só a 2026 foi codificada
+    for chunk in chunks_de(amb, segundo.build, "manual-x-2023"):
+        assert chunk.status is ValidityStatus.SUBSTITUIDO
+        assert chunk.superseded_by == "manual-x-2026"
+        assert chunk.expiry_date == date(2026, 2, 28)
+
+    filtros = IndexFilters(effective_from=HOJE, effective_until=HOJE)
+    achados = asyncio.run(amb.index.search("manual acampamento cardápio", filters=filtros, limit=10))
+    assert achados and {c.doc_key for c in achados} == {"manual-x-2026"}
+
+
+def test_us3_duas_vigentes_na_linhagem_rejeita() -> None:
+    amb = ambiente_com_versoes()
+    publicado = amb.ingest(catalogo(entrada(**V2023))).build
+    relatorio = amb.ingest(catalogo(entrada(**V2023), entrada(**{**V2026, "supersedes": ...})))
+    assert not relatorio.ok
+    (problema,) = relatorio.problems
+    assert "manual-x" in problema and "2023" in problema and "2026" in problema and "vigente" in problema
+    assert amb.publicado() == publicado
+
+
+def test_us3_rascunho_indexado_mas_fora_da_busca() -> None:
+    amb = ambiente_com_versoes()
+    relatorio = amb.ingest(catalogo(entrada(**V2023), entrada(**{**V2026, "status": "rascunho"})))
+    assert relatorio.ok
+    assert [(d.doc_key, d.status) for d in relatorio.documents] == [
+        ("manual-x-2023", ValidityStatus.VIGENTE),
+        ("manual-x-2026", ValidityStatus.RASCUNHO),
+    ]
+    assert chunks_de(amb, relatorio.build, "manual-x-2026")
+    amplo = IndexFilters(effective_from=date(2000, 1, 1), effective_until=date(2100, 1, 1), include_superseded=True)
+    achados = asyncio.run(amb.index.search("manual edição revista cardápio", filters=amplo, limit=20))
+    assert achados and "manual-x-2026" not in {c.doc_key for c in achados}
+
+
+# --- US4 -------------------------------------------------------------------------------------------------------
+
+
+def test_us4_politica_diferente_exige_reindex() -> None:
+    amb = Ambiente()
+    publicado = amb.ingest(catalogo(entrada())).build
+    index = MemoryIndex("scouting", amb.embedder, Bm25Encoder(), storage=amb.storage)
+    outra = IngestionService(
+        parser=amb.parser,
+        embedder=amb.embedder,
+        sparse=Bm25Encoder(),
+        writer=index,
+        store=index,
+        clock=FixedClock(INSTANTE),
+        policy=ChunkingPolicy(window_min=200, window_max=400),
+    )
+    relatorio = amb.ingest(catalogo(entrada()), outra)
+    assert not relatorio.ok and any("janela=200-400" in p and "reindex" in p for p in relatorio.problems)
+    assert amb.publicado() == publicado
+
+
+# --- US5 -------------------------------------------------------------------------------------------------------
+
+
+def test_us5_reindex_com_outro_embedder() -> None:
+    amb = ambiente_com_versoes()
+    primeiro = amb.ingest(catalogo(entrada(**V2023), entrada(**V2026)))
+    antes = {k: sorted(b.chunks) for k, b in amb.storage.builds.items()}[primeiro.build]
+    novo = CountingEmbedder(fingerprint="novo", dimensions=32)
+    servico = amb.servico(novo)
+    relatorio = asyncio.run(servico.reindex(catalogo(entrada(**V2023), entrada(**V2026)), BASE))
+    assert relatorio.ok, relatorio.problems
+    assert relatorio.build == amb.publicado() and list(amb.storage.builds) == [relatorio.build]
+    build = amb.storage.builds[relatorio.build]
+    assert sorted(build.chunks) == antes  # mesmos chunk_ids
+    assert sorted(build.documents) == ["manual-x-2023", "manual-x-2026"]  # mesmos documentos
+    assert not any(d.reused for d in relatorio.documents)
+    assert novo.passages == len(antes)
+    assert build.version.embedding.fingerprint == "novo" and build.version.built_at == INSTANTE
+    assert {len(e.dense) for e in build.chunks.values()} == {32}
+
+    # reindexar de novo, com a mesma configuração, dá os mesmos ids e contagens (FR-010)
+    outra_vez = asyncio.run(servico.reindex(catalogo(entrada(**V2023), entrada(**V2026)), BASE))
+    assert sorted(amb.storage.builds[outra_vez.build].chunks) == antes
+    assert [(d.doc_key, d.chunks) for d in outra_vez.documents] == [(d.doc_key, d.chunks) for d in relatorio.documents]
+
+    # o ingest com a configuração antiga agora recusa e manda reindexar
+    recusado = amb.ingest(catalogo(entrada(**V2023), entrada(**V2026)))
+    assert not recusado.ok and any("reindex" in p for p in recusado.problems)
+
+
+def test_us5_reindex_com_catalogo_rejeitado_nao_escreve() -> None:
+    amb = ambiente_com_versoes()
+    publicado = amb.ingest(catalogo(entrada(**V2023))).build
+    relatorio = asyncio.run(
+        amb.servico(CountingEmbedder(fingerprint="novo")).reindex(catalogo(entrada(**V2023, title=...)), BASE)
+    )
+    assert not relatorio.ok
+    assert amb.publicado() == publicado and list(amb.storage.builds) == [publicado]
+
+
+def test_us5_original_de_qualquer_chunk() -> None:
+    amb = Ambiente()
+    amb.ingest(catalogo(entrada()))
+    original = asyncio.run(amb.service.original("manual-x-2026#4.2@p2"))
+    assert original is not None
+    assert original.pages == (MANUAL_PAGINAS[1],)
+    assert asyncio.run(amb.service.original("nada#x@p1")) is None
+
+
+def test_problemas_de_catalogo_e_de_linhagem_juntos() -> None:
+    """O curador vê tudo de uma vez: campo ausente numa linhagem e duas vigentes em outra (quickstart §4)."""
+    amb = ambiente_com_versoes()
+    amb.parser.put(BASE / "norma.pdf", ["Art. 1º Texto."])
+    norma = entrada(file="norma.pdf", document_id="norma-x", version="1", type="resolucao", title=..., branch=...)
+    relatorio = amb.ingest(catalogo(entrada(**V2023), entrada(**{**V2026, "supersedes": ...}), norma))
+    assert not relatorio.ok
+    assert any("title" in p for p in relatorio.problems)
+    assert any("manual-x" in p and "vigente" in p for p in relatorio.problems)
+    assert not any("norma-x" in p and "linhagem" in p for p in relatorio.problems)  # linhagem com entrada inválida
+    assert amb.publicado() is None

@@ -41,6 +41,7 @@ def servico(client: AsyncQdrantClient) -> tuple[IngestionService, QdrantIndex]:
         embedder=embedder,
         sparse=sparse,
         writer=index,
+        store=index,
         clock=FixedClock(datetime(2026, 10, 7, 15, 30, tzinfo=UTC)),
     )
     return service, index
@@ -75,3 +76,46 @@ def test_manual_ponta_a_ponta(tmp_path: Path) -> None:
     resultado = asyncio.run(cenario())
     assert resultado["antes"] == resultado["depois"]
     assert resultado["antes"] == ["manual-x-2026#s1@p1", "manual-x-2026#4@p1", "manual-x-2026#4.2@p2"]
+
+
+def test_norma_ponta_a_ponta(tmp_path: Path) -> None:
+    pdfs.normative_pdf(tmp_path / "norma.pdf")
+    catalogo = {
+        "documents": [
+            {
+                "file": "norma.pdf",
+                "document_id": "norma-x",
+                "version": "1",
+                "type": "resolucao",
+                "title": "Norma X",
+                "jurisdiction": "nacional",
+                "effective_date": date(2024, 1, 1),
+            }
+        ]
+    }
+
+    async def cenario() -> list[Any]:
+        client = AsyncQdrantClient(location=":memory:")
+        try:
+            service, index = servico(client)
+            relatorio = await service.ingest(catalogo, tmp_path)
+            assert relatorio.ok, relatorio.problems
+            assert relatorio.documents[0].normative_units == 5
+            ids = list((await service.status()).documents[0].chunk_ids)
+            return await index.get(ids)
+        finally:
+            await client.close()
+
+    chunks = {c.chunk_id: c for c in asyncio.run(cenario())}
+    assert list(chunks) == [
+        "norma-x-1#preambulo@p1",
+        "norma-x-1#art1@p1",
+        "norma-x-1#art2@p1",
+        "norma-x-1#art41@p1",
+        "norma-x-1#art42@p1",
+        "norma-x-1#art43@p2",
+    ]
+    art42 = chunks["norma-x-1#art42@p1"]
+    assert art42.text.startswith("[Norma X · Capítulo II · Seção I]\nArt. 42.")
+    assert (art42.page_start, art42.page_end) == (1, 2)
+    assert art42.section == "Seção I – Do planejamento"
