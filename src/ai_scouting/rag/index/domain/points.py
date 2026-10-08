@@ -17,6 +17,8 @@ from ai_scouting.rag.index.ports import DocumentFields, DocumentRecord, Original
 NAMESPACE_CHUNK: Final = uuid.UUID("5d0f3c1e-7f4b-5a43-9a11-2c6e8b0f1a01")
 NAMESPACE_DOCUMENT: Final = uuid.UUID("5d0f3c1e-7f4b-5a43-9a11-2c6e8b0f1a02")
 
+_COMPUTED: Final = ("score", "similarity")
+"""Calculados na busca, nunca gravados."""
 _DOCUMENT_DATES: Final = ("effective_date", "publication_date", "expiry_date", "successor_expiry_date")
 
 
@@ -64,20 +66,22 @@ def original_of(chunk: IndexedChunk, record: DocumentRecord) -> Original:
 
 
 def chunk_to_payload(chunk: IndexedChunk) -> dict[str, Any]:
-    payload = {f.name: _json(getattr(chunk, f.name)) for f in dataclasses.fields(chunk) if f.name != "score"}
+    payload = {f.name: _json(getattr(chunk, f.name)) for f in dataclasses.fields(chunk) if f.name not in _COMPUTED}
     payload["kind"] = "chunk"
     return payload
 
 
-def chunk_from_payload(payload: Mapping[str, Any], score: float | None = None) -> IndexedChunk:
+def chunk_from_payload(
+    payload: Mapping[str, Any], score: float | None = None, similarity: float | None = None
+) -> IndexedChunk:
     values: dict[str, Any] = {
-        f.name: payload.get(f.name) for f in dataclasses.fields(IndexedChunk) if f.name != "score"
+        f.name: payload.get(f.name) for f in dataclasses.fields(IndexedChunk) if f.name not in _COMPUTED
     }
     for name in _DOCUMENT_DATES:
         values[name] = _date(values[name])
     values["document_type"] = DocumentType(values["document_type"])
     values["status"] = ValidityStatus(values["status"])
-    return IndexedChunk(**values, score=score)
+    return IndexedChunk(**values, score=score, similarity=similarity)
 
 
 def document_to_payload(record: DocumentRecord) -> dict[str, Any]:

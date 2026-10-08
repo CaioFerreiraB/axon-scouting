@@ -1,4 +1,4 @@
-"""Derivação e validators não leem o relógio do sistema (101 FR-005, US2 cen. 4, R13; 104 FR-006, R8).
+"""Derivação, validators e retrieval não leem o relógio (101 FR-005, R13; 104 FR-006, R8; 103 FR-002).
 
 O tempo vem só da Turn View (`reference_time`, ADR-013). Este teste varre o código de `context/` e de `validators/` em
 busca de chamadas de relógio; o import-linter cuida de modelo e MCP.
@@ -11,11 +11,16 @@ from pathlib import Path
 import pytest
 
 import ai_scouting.context
+import ai_scouting.rag.retrieval
 import ai_scouting.validators
 
-PURE = (Path(ai_scouting.context.__file__).parent, Path(ai_scouting.validators.__file__).parent)
+PURE = (
+    Path(ai_scouting.context.__file__).parent,
+    Path(ai_scouting.validators.__file__).parent,
+    Path(ai_scouting.rag.retrieval.__file__).parent,  # 103 FR-002: a vigência vem nos filtros, nunca do relógio
+)
 CLOCK_CALLS = (".now(", ".today(", "utcnow", "time.time(", "time.monotonic(")
-SOURCES = sorted(path for folder in PURE for path in folder.glob("*.py"))
+SOURCES = sorted(path for folder in PURE for path in folder.rglob("*.py"))
 
 
 @pytest.mark.parametrize("source", SOURCES, ids=lambda path: f"{path.parent.name}/{path.name}")

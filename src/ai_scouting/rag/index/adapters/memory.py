@@ -124,7 +124,12 @@ class MemoryIndex:
         sparse = [e for s, e in sorted(scored, key=lambda p: (-p[0], p[1].chunk.chunk_id)) if s > 0][:limit]
 
         fused = rrf([[e.chunk.chunk_id for e in dense], [e.chunk.chunk_id for e in sparse]])
-        hits = [dataclasses.replace(build.chunks[chunk_id].chunk, score=score) for chunk_id, score in fused.items()]
+        hits = [
+            dataclasses.replace(
+                build.chunks[chunk_id].chunk, score=score, similarity=cosine(dense_query, build.chunks[chunk_id].dense)
+            )
+            for chunk_id, score in fused.items()
+        ]
         return ordered(hits)[:limit]
 
     async def get(self, chunk_ids: Sequence[str]) -> list[IndexedChunk]:

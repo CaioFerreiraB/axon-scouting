@@ -150,3 +150,12 @@ def test_mismatch_nomeia_os_dois() -> None:
     assert "hashing-test (sha256 fixo)" in str(erro)
     assert erro.index == "e5-small (sha256 ca456c06)"
     assert erro.encoder == "hashing-test (sha256 fixo)"
+
+
+def test_similaridade_valida_e_fora_da_conversao() -> None:
+    assert chunk(similarity=0.42).similarity == 0.42
+    assert chunk(similarity=1.0000001).similarity == 1.0000001  # tolerância de arredondamento
+    for fora in (1.01, -1.01):
+        with pytest.raises(ValueError, match="similarity"):
+            chunk(similarity=fora)
+    assert chunk(score=0.5, similarity=0.9).to_chunk().score == 0.5  # to_chunk usa a fusão (ADR-025)

@@ -54,6 +54,7 @@ NORMATIVE_TYPES: Final = frozenset({DocumentType.POR, DocumentType.RESOLUCAO, Do
 BRANCHES: Final = ("lobinho", "escoteiro", "senior", "pioneiro")
 """Ids de ramo (os da 101). Documento sem ramo é geral."""
 
+_ROUNDING: Final = 1e-6
 _CHUNK_ID: Final = re.compile(r"^[a-z0-9][a-z0-9._~#@-]*$")
 
 
@@ -88,6 +89,8 @@ class IndexedChunk:
     superseded_by: str | None = None
     successor_expiry_date: date | None = None
     score: float | None = None
+    similarity: float | None = None
+    """Cosseno entre o vetor denso da pergunta e o do trecho; só em `search` (ADR-025)."""
 
     def __post_init__(self) -> None:
         if not _CHUNK_ID.match(self.chunk_id):
@@ -97,6 +100,8 @@ class IndexedChunk:
         if self.page_start < 1 or self.page_end < self.page_start:
             raise ValueError(f"faixa de páginas inválida em {self.chunk_id}: {self.page_start}–{self.page_end}")
         _require_branch(self.branch)
+        if self.similarity is not None and not -1.0 - _ROUNDING <= self.similarity <= 1.0 + _ROUNDING:
+            raise ValueError(f"similarity fora de [-1, 1] em {self.chunk_id}: {self.similarity}")
 
     @property
     def citation_section(self) -> str | None:

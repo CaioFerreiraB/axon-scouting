@@ -410,3 +410,26 @@ def test_mesma_instancia_ve_a_versao_nova(target: Target) -> None:
         assert await nova.search("uniforme", filters=DEFAULT, limit=3)
 
     run(target, scenario)
+
+
+# --- similaridade densa (ADR-025; spec 103 T003) ------------------------------------------------------------------
+
+
+def test_similaridade_em_cada_resultado(target: Target) -> None:
+    async def scenario(make: Make) -> None:
+        embedder = HashingEmbedder()
+        index = make(embedder, Bm25Encoder())
+        await publicar(index)
+        alvo = NORMA_TRECHOS[1]
+        achados = await index.search(alvo.text, filters=DEFAULT, limit=10)
+        assert achados and all(c.similarity is not None and -1.0 <= c.similarity <= 1.0 for c in achados)
+        maior = max(achados, key=lambda c: c.similarity or -2.0)
+        assert maior.chunk_id == alvo.chunk_id  # o trecho com o mesmo texto da pergunta é o mais próximo
+        pergunta = await embedder.embed_query(alvo.text)
+        for chunk in achados:  # o mesmo cosseno em todo adapter, para os mesmos vetores
+            (vetor,) = await embedder.embed_passages([chunk.text])
+            esperado = sum(a * b for a, b in zip(pergunta, vetor, strict=True))
+            assert chunk.similarity == pytest.approx(esperado, abs=1e-5)
+        assert all(c.similarity is None for c in await index.get([alvo.chunk_id]))
+
+    run(target, scenario)

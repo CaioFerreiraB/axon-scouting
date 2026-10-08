@@ -34,7 +34,7 @@ from ai_scouting.rag.index.domain.points import (
     version_to_json,
     with_document,
 )
-from ai_scouting.rag.index.domain.scoring import ordered
+from ai_scouting.rag.index.domain.scoring import cosine, ordered
 from ai_scouting.rag.index.ports import (
     Build,
     DocumentRecord,
@@ -84,8 +84,13 @@ class QdrantIndex:
                 query=m.FusionQuery(fusion=m.Fusion.RRF),
                 limit=limit,
                 with_payload=True,
+                with_vectors=[DENSE],
             )
-        return ordered(chunk_from_payload(_payload(p), score=p.score) for p in response.points)[:limit]
+        hits = (
+            chunk_from_payload(_payload(p), score=p.score, similarity=cosine(dense_query, _dense(p)))
+            for p in response.points
+        )
+        return ordered(hits)[:limit]
 
     async def get(self, chunk_ids: Sequence[str]) -> list[IndexedChunk]:
         await self._require_published()
@@ -254,6 +259,13 @@ def _payload(point: Any) -> dict[str, Any]:
     payload = point.payload
     assert payload is not None
     return dict(payload)
+
+
+def _dense(point: Any) -> list[float]:
+    """O vetor denso devolvido pela busca (`with_vectors=["dense"]`); o Qdrant o guarda normalizado."""
+    vectors = point.vector
+    assert isinstance(vectors, dict) and DENSE in vectors
+    return list(vectors[DENSE])
 
 
 def _document_point(document: DocumentRecord) -> m.PointStruct:

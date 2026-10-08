@@ -144,3 +144,30 @@ forbidden_modules = [
     "ai_scouting.rag.index.ports",
     "ai_scouting.rag.index.adapters",
 ]
+
+# Retrieval (spec 103, research R9): só o api.py do índice, nenhuma infraestrutura.
+[[tool.importlinter.contracts]]
+name = "camadas do retrieval"
+type = "layers"
+layers = [
+    "ai_scouting.rag.retrieval.retriever | ai_scouting.rag.retrieval.reranker",
+    "ai_scouting.rag.retrieval.domain",
+]
+
+[[tool.importlinter.contracts]]
+name = "o retrieval vê do índice só o api.py"
+type = "forbidden"
+source_modules = ["ai_scouting.rag.retrieval"]
+forbidden_modules = [
+    "ai_scouting.rag.index.domain",
+    "ai_scouting.rag.index.ports",
+    "ai_scouting.rag.index.adapters",
+    "ai_scouting.rag.ingestion",
+    "qdrant_client",
+    "onnxruntime",
+    "tokenizers",
+    "numpy",
+    "snowballstemmer",
+    "pypdfium2",
+    "yaml",
+]
