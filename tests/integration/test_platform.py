@@ -28,7 +28,11 @@ PACKS = """
 packs:
   scouting:
     enabled: true
+    config:
+      qdrant_path: {qdrant}
+      embedder: hashing
 """
+"""Na Fase 5 a carga precisa de configuração (T037): o default `e5` exige o diretório do modelo."""
 
 ASSISTANTS = """
 assistants:
@@ -53,7 +57,7 @@ def plataforma(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Iterator[Any]
         monkeypatch.delenv(name)
     packs = tmp_path / "packs.yaml"
     assistants = tmp_path / "assistants.yaml"
-    packs.write_text(PACKS, encoding="utf-8")
+    packs.write_text(PACKS.format(qdrant=tmp_path / "qdrant"), encoding="utf-8")
     assistants.write_text(ASSISTANTS, encoding="utf-8")
     monkeypatch.setenv("AI_CORE_PACKS_FILE", str(packs))
     monkeypatch.setenv("AI_CORE_ASSISTANTS_FILE", str(assistants))
@@ -67,7 +71,7 @@ def test_pack_carrega_pelo_entry_point(plataforma: Any) -> None:
     entry = plataforma.packs.entry("scouting")
     assert entry is not None
     assert entry.status == "enabled", entry.error
-    assert entry.version == "0.1.0"
+    assert entry.version == "0.2.0"
     assert entry.contract_version == "0.1"
 
 
@@ -84,3 +88,27 @@ def test_plataforma_compoe_as_instrucoes_de_dominio(plataforma: Any) -> None:
 
     assert response.status_code == 200, response.text
     assert response.json()["choices"][0]["message"]["content"]
+
+
+@pytest.mark.parametrize(
+    ("config", "esperado"),
+    [("{embedder: e5}", "embedding_dir"), ("{embedder: hashing, api_key: segredo}", "api_key")],
+    ids=["e5-sem-diretorio", "chave-no-arquivo"],
+)
+def test_configuracao_invalida_deixa_o_pack_em_erro(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, config: str, esperado: str
+) -> None:
+    """Edge Case "configuração inválida" e FR-012: o pack não carrega, e o erro aparece na introspecção."""
+    for name in [name for name in os.environ if name.startswith("AI_CORE_")]:
+        monkeypatch.delenv(name)
+    packs = tmp_path / "packs.yaml"
+    packs.write_text(f"packs:\n  scouting:\n    enabled: true\n    config: {config}\n", encoding="utf-8")
+    monkeypatch.setenv("AI_CORE_PACKS_FILE", str(packs))
+    montada = platform(profile="test")
+    try:
+        entry = montada.packs.entry("scouting")
+        assert entry is not None and entry.status == "error"
+        assert esperado in (entry.error or "")
+        assert "segredo" not in (entry.error or "")
+    finally:
+        montada.aclose()

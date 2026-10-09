@@ -1,6 +1,6 @@
 [project]
 name = "ai-scouting"
-version = "0.1.0"
+version = "0.2.0"
 description = "Pack de domínio escoteiro da plataforma Agentic AI (specs 1xx em agentic-app)."
 readme = "README.md"
 # Piso dos contratos, não o do core: o pack depende só de ai-core-contracts (spec 101, research R3).
@@ -32,10 +32,12 @@ platform = ["ai-core ; python_version >= '3.14'"]
 [tool.uv]
 default-groups = ["dev"]
 
-# Os contratos (e o core, para a integração) vêm da tag do repositório da plataforma (ADR-021, research R2).
+# Os contratos (e o core, para a integração) vêm da mesma tag do repositório da plataforma (ADR-021, research R2,
+# R22): o core resolve os contratos da própria tag, e o uv não aceita duas fontes para a mesma distribuição. Na v0.2.0
+# os contratos são os da contracts-v0.1.1 (0.1.1).
 [tool.uv.sources]
-ai-core-contracts = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "contracts-v0.1.0", subdirectory = "ai-core/packages/contracts" }
-ai-core = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "contracts-v0.1.0", subdirectory = "ai-core/packages/core" }
+ai-core-contracts = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "v0.2.0", subdirectory = "ai-core/packages/contracts" }
+ai-core = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "v0.2.0", subdirectory = "ai-core/packages/core" }
 
 [build-system]
 requires = ["uv_build>=0.12,<0.13"]
