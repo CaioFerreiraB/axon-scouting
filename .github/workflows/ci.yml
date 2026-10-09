@@ -1,6 +1,8 @@
 # CI do ai-scouting (spec 101: FR-001, SC-003, US1 cen. 3; research R14).
 # Os contratos (e o core, na integração) vêm da tag do agentic-app, que é privado: a deploy key só de leitura do
-# agentic-app fica no segredo AGENTIC_APP_DEPLOY_KEY deste repositório.
+# agentic-app fica no segredo AGENTIC_APP_DEPLOY_KEY deste repositório. A partir da v0.2.0 o agentic-app tem os
+# submódulos ai-scouting e agentic-deploy, que o uv tentaria inicializar ao clonar a tag e que a deploy key não lê; o
+# pacote não precisa deles, então cada job os marca com `update = none` antes de resolver as dependências.
 name: ci
 
 on:
@@ -17,6 +19,10 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - name: Pular os submódulos do agentic-app
+        run: |
+          git config --global submodule.ai-scouting.update none
+          git config --global submodule.agentic-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -37,6 +43,10 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - name: Pular os submódulos do agentic-app
+        run: |
+          git config --global submodule.ai-scouting.update none
+          git config --global submodule.agentic-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -54,6 +64,10 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - name: Pular os submódulos do agentic-app
+        run: |
+          git config --global submodule.ai-scouting.update none
+          git config --global submodule.agentic-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -71,6 +85,10 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - name: Pular os submódulos do agentic-app
+        run: |
+          git config --global submodule.ai-scouting.update none
+          git config --global submodule.agentic-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -93,6 +111,10 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - name: Pular os submódulos do agentic-app
+        run: |
+          git config --global submodule.ai-scouting.update none
+          git config --global submodule.agentic-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
