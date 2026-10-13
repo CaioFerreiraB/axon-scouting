@@ -1,0 +1,17 @@
+# Assistants da avaliação do scouting (spec 105, research R6). O harness da 009 roda cada item como `svc:eval` (o
+# principal default de `ai-core eval run`), que a ACL precisa admitir. Sem `flow`: o preferido do pack, `rag_first`.
+# No perfil `test` (a CI) o provider `ollama` é o simulado da 011 — resposta fixa, sem citação —; no `memory`, o Ollama
+# local de verdade. Uso: `AI_CORE_ASSISTANTS_FILE=eval/assistants.yaml`.
+assistants:
+  scouting:
+    visibility: public
+    auth:
+      schemes: [oidc, api_key]
+      allow: ["svc:eval"]
+    packs: [scouting]
+    collections: [scouting]
+    models:
+      generation: ollama/qwen3:1.7b
+      allow: ["ollama/*"]
+api_keys:
+  admin_group: admin

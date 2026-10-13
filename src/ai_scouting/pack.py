@@ -1,11 +1,12 @@
 """`ScoutingPack`: o pack de domínio escoteiro (spec 101).
 
-Composition root do pack (ADR-012): aqui só se compõe — as políticas vivem em `context/`, `prompts/`, `rag/` e
-`validators/`. A 101 não faz I/O, então não declara porta secundária (princípio XIII). Na Fase 5 (research R16–R20) o
-manifest declara o flow preferido `rag_first`, a coleção `scouting` e o esquema de configuração, e o pack publica a
-recuperação da 103 — o índice da 102 no Qdrant, pelo `config` do `packs.yaml` — e os validators da 104. A chave do
-Qdrant vem só do ambiente (`AI_SCOUTING_QDRANT_API_KEY`, FR-012). Os imports de infraestrutura ficam dentro dos hooks:
-ler a identidade do pack (002) continua barato.
+Composition root do pack (ADR-012): aqui só se compõe — as políticas vivem em `context/`, `prompts/`, `rag/`,
+`validators/` e `eval/`. A 101 não faz I/O, então não declara porta secundária (princípio XIII). Na Fase 5 (research
+R16–R20) o manifest declara o flow preferido `rag_first`, a coleção `scouting` e o esquema de configuração, e o pack
+publica a recuperação da 103 — o índice da 102 no Qdrant, pelo `config` do `packs.yaml` — e os validators da 104; na
+Fase 6, as métricas de domínio da 105 (hook `eval_metrics`, ADR-027). A chave do Qdrant vem só do ambiente
+(`AI_SCOUTING_QDRANT_API_KEY`, FR-012). Os imports de infraestrutura ficam dentro dos hooks: ler a identidade do pack
+(002) continua barato.
 """
 
 from __future__ import annotations
@@ -25,12 +26,13 @@ from ai_core_contracts import (
     Reranker,
     TurnView,
 )
+from ai_core_contracts.eval import EvalMetric
 
 from ai_scouting.context.derivation import derive_context, to_slice
 from ai_scouting.context.periods import reference_day
 from ai_scouting.prompts import SYSTEM_PROMPT
 
-VERSION: Final = "0.2.0"
+VERSION: Final = "0.3.0"
 """Versão do manifest; igual à da distribuição `ai-scouting` (verificado em tests/test_pack.py)."""
 
 COLLECTION: Final = "scouting"
@@ -140,7 +142,8 @@ def _require_model(directory: str | None) -> None:
 
 
 class ScoutingPack(PackBase):
-    """Instruções de domínio, a derivação determinística de contexto, a recuperação da 103 e os validators da 104."""
+    """Instruções de domínio, a derivação determinística de contexto, a recuperação da 103, os validators da 104 e as
+    métricas de domínio da 105."""
 
     name = "scouting"
     contract_version = "0.1"
@@ -201,6 +204,12 @@ class ScoutingPack(PackBase):
         from ai_scouting.validators.notice import ValidityNoticeValidator
 
         return (CitationIntegrityValidator(), ValidityNoticeValidator())
+
+    def eval_metrics(self, ctx: PackContext) -> Sequence[EvalMetric]:
+        """As métricas de domínio que o harness da 009 reporta como `scouting:<nome>` (spec 105, ADR-027)."""
+        from ai_scouting.eval import ContextAccuracy, CurrentDocumentRate, ValidityNoticeRate
+
+        return (ContextAccuracy(), CurrentDocumentRate(), ValidityNoticeRate())
 
     async def prepare_context(self, view: TurnView, ctx: PackContext) -> Mapping[str, JSONValue]:
         """Contexto e filtros de recuperação derivados da pergunta, sem modelo e sem relógio (FR-004, FR-005)."""

@@ -10,8 +10,8 @@ resolution-markers = [
 
 [[package]]
 name = "ai-core"
-version = "0.2.0"
-source = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git?subdirectory=ai-core%2Fpackages%2Fcore&tag=v0.2.0#98a031647635077863acf7236d882f6238148208" }
+version = "0.3.0"
+source = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git?subdirectory=ai-core%2Fpackages%2Fcore&tag=v0.3.0#7573a8e4e4f2b25213624eadaf9b9bdd8e24594a" }
 dependencies = [
     { name = "ai-core-contracts" },
     { name = "fastapi" },
@@ -29,15 +29,15 @@ dependencies = [
 
 [[package]]
 name = "ai-core-contracts"
-version = "0.1.1"
-source = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git?subdirectory=ai-core%2Fpackages%2Fcontracts&tag=v0.2.0#98a031647635077863acf7236d882f6238148208" }
+version = "0.1.2"
+source = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git?subdirectory=ai-core%2Fpackages%2Fcontracts&tag=v0.3.0#7573a8e4e4f2b25213624eadaf9b9bdd8e24594a" }
 dependencies = [
     { name = "typing-extensions" },
 ]
 
 [[package]]
 name = "ai-scouting"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "." }
 dependencies = [
     { name = "ai-core-contracts" },
@@ -65,7 +65,7 @@ platform = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ai-core-contracts", git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git?subdirectory=ai-core%2Fpackages%2Fcontracts&tag=v0.2.0" },
+    { name = "ai-core-contracts", git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git?subdirectory=ai-core%2Fpackages%2Fcontracts&tag=v0.3.0" },
     { name = "numpy" },
     { name = "onnxruntime", specifier = ">=1.24.2" },
     { name = "pypdfium2", specifier = ">=5,<6" },
@@ -84,7 +84,7 @@ dev = [
     { name = "ruff" },
     { name = "types-pyyaml" },
 ]
-platform = [{ name = "ai-core", marker = "python_full_version >= '3.14'", git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git?subdirectory=ai-core%2Fpackages%2Fcore&tag=v0.2.0" }]
+platform = [{ name = "ai-core", marker = "python_full_version >= '3.14'", git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git?subdirectory=ai-core%2Fpackages%2Fcore&tag=v0.3.0" }]
 
 [[package]]
 name = "annotated-doc"

@@ -1,12 +1,12 @@
 [project]
 name = "ai-scouting"
-version = "0.2.0"
+version = "0.3.0"
 description = "Pack de domínio escoteiro da plataforma Agentic AI (specs 1xx em agentic-app)."
 readme = "README.md"
 # Piso dos contratos, não o do core: o pack depende só de ai-core-contracts (spec 101, research R3).
 requires-python = ">=3.12"
 dependencies = [
-    "ai-core-contracts>=0.1,<0.2",
+    "ai-core-contracts>=0.1.2,<0.2",
     # Índice e ingestão (spec 102, research R2): só os adapters os importam (import-linter abaixo).
     "qdrant-client>=1.19,<2",
     "onnxruntime>=1.24.2",
@@ -33,11 +33,11 @@ platform = ["ai-core ; python_version >= '3.14'"]
 default-groups = ["dev"]
 
 # Os contratos (e o core, para a integração) vêm da mesma tag do repositório da plataforma (ADR-021, research R2,
-# R22): o core resolve os contratos da própria tag, e o uv não aceita duas fontes para a mesma distribuição. Na v0.2.0
-# os contratos são os da contracts-v0.1.1 (0.1.1).
+# R22): o core resolve os contratos da própria tag, e o uv não aceita duas fontes para a mesma distribuição. Na v0.3.0
+# os contratos são os 0.1.2, com `ai_core_contracts.eval` (métricas de domínio, spec 105, ADR-027).
 [tool.uv.sources]
-ai-core-contracts = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "v0.2.0", subdirectory = "ai-core/packages/contracts" }
-ai-core = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "v0.2.0", subdirectory = "ai-core/packages/core" }
+ai-core-contracts = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "v0.3.0", subdirectory = "ai-core/packages/contracts" }
+ai-core = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "v0.3.0", subdirectory = "ai-core/packages/core" }
 
 [build-system]
 requires = ["uv_build>=0.12,<0.13"]
@@ -82,12 +82,18 @@ forbidden_modules = ["ai_core", "ai_generic"]
 [[tool.importlinter.contracts]]
 name = "só o pack.py compõe"
 type = "layers"
-layers = ["ai_scouting.pack", "ai_scouting.context | ai_scouting.prompts | ai_scouting.validators | ai_scouting.rag"]
+# As métricas (spec 105, research R10) ficam entre o pack e o resto: leem a derivação de `context/`, e os módulos da camada
+# de baixo são independentes entre si.
+layers = [
+    "ai_scouting.pack",
+    "ai_scouting.eval",
+    "ai_scouting.context | ai_scouting.prompts | ai_scouting.validators | ai_scouting.rag",
+]
 
 [[tool.importlinter.contracts]]
-name = "derivação e validators não alcançam modelo nem MCP"
+name = "derivação, validators e métricas não alcançam modelo nem MCP"
 type = "forbidden"
-source_modules = ["ai_scouting.context", "ai_scouting.validators"]
+source_modules = ["ai_scouting.context", "ai_scouting.validators", "ai_scouting.eval"]
 forbidden_modules = ["ai_core_contracts.llm", "ai_core_contracts.mcp"]
 # O `__init__` dos contratos reexporta tudo: o que se proíbe é o uso direto da API de modelo e de MCP.
 allow_indirect_imports = true
@@ -133,13 +139,14 @@ source_modules = [
     "ai_scouting.rag.ingestion.domain",
     "ai_scouting.rag.ingestion.ports",
     "ai_scouting.rag.ingestion.service",
+    "ai_scouting.eval",
 ]
 forbidden_modules = ["qdrant_client", "onnxruntime", "tokenizers", "numpy", "snowballstemmer", "pypdfium2", "yaml"]
 
 [[tool.importlinter.contracts]]
 name = "os outros módulos do pack veem só o seam do índice"
 type = "forbidden"
-source_modules = ["ai_scouting.context", "ai_scouting.prompts", "ai_scouting.validators"]
+source_modules = ["ai_scouting.context", "ai_scouting.prompts", "ai_scouting.validators", "ai_scouting.eval"]
 forbidden_modules = [
     "ai_scouting.rag.ingestion",
     "ai_scouting.rag.index.domain",

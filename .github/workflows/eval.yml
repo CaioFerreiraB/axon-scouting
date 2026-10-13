@@ -1,0 +1,85 @@
+# Avaliação do scouting contra a linha de base (spec 105 FR-005, clarificação 2; research R7, R8).
+# Roda quando muda o que pode mexer na recuperação ou no contexto — corpus, RAG, prompt, derivação, métricas, pack,
+# conjunto de avaliação ou dependências: ingere o corpus real num Qdrant de serviço, com o e5 em cache, e roda o conjunto
+# semente pelo harness da 009 no perfil `test` (gerador simulado, sem modelo pago nem juiz). Só métricas determinísticas
+# barram: saída 1 (regressão além da tolerância) ou 2 (entrada inválida) falham o job. Rodadas com modelo real e juiz
+# são manuais (quickstart da 105, passo 5).
+name: eval
+
+on:
+  pull_request:
+    paths:
+      - "corpus/**"
+      - "src/ai_scouting/rag/**"
+      - "src/ai_scouting/prompts/**"
+      - "src/ai_scouting/context/**"
+      - "src/ai_scouting/eval/**"
+      - "src/ai_scouting/pack.py"
+      - "eval/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/eval.yml"
+  push:
+    branches: [main]
+    paths:
+      - "corpus/**"
+      - "src/ai_scouting/rag/**"
+      - "src/ai_scouting/prompts/**"
+      - "src/ai_scouting/context/**"
+      - "src/ai_scouting/eval/**"
+      - "src/ai_scouting/pack.py"
+      - "eval/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/eval.yml"
+  workflow_dispatch:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      qdrant:
+        image: qdrant/qdrant:v1.19.2
+        ports:
+          - 6333:6333
+    env:
+      AI_SCOUTING_QDRANT_URL: http://localhost:6333
+      AI_SCOUTING_EMBEDDING_DIR: .cache/e5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
+      - name: Pular os submódulos do agentic-app
+        run: |
+          git config --global submodule.ai-scouting.update none
+          git config --global submodule.agentic-deploy.update none
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          python-version: "3.14"
+      - run: uv sync --locked --group platform
+      # O e5 fixado por revisão e sha256 em e5.py: a chave muda só quando o modelo muda.
+      - uses: actions/cache@v4
+        with:
+          path: .cache/e5
+          key: e5-${{ hashFiles('src/ai_scouting/rag/index/adapters/e5.py') }}
+      - name: Modelo de embedding (só baixa o que falta ou difere)
+        run: uv run ai-scouting-corpus model fetch .cache/e5
+      - name: Ingestão do corpus real
+        run: uv run ai-scouting-corpus ingest corpus/corpus.yaml
+      - name: Conjunto de avaliação contra a linha de base
+        env:
+          AI_CORE_PROFILE: test
+          AI_CORE_PACKS_FILE: eval/packs.yaml
+          AI_CORE_ASSISTANTS_FILE: eval/assistants.yaml
+        run: >-
+          uv run --group platform ai-core eval run
+          --golden eval/golden.yaml --baseline eval/baseline.json --report report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-report
+          path: report.json
+          if-no-files-found: ignore

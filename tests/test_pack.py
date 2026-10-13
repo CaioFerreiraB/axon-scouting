@@ -1,5 +1,5 @@
-"""Identidade, manifest e capacidades do pack scouting na Fase 5 (spec 101 FR-003, FR-010, FR-012; research R19, R20;
-T034).
+"""Identidade, manifest e capacidades do pack scouting (spec 101 FR-003, FR-010, FR-012; research R19, R20; T034; e as
+métricas de domínio da 105, T010).
 
 Só `ai_core_contracts`, o kit de testes e o próprio pack — nada do core (SC-003). Cada carga usa um `qdrant_path` novo:
 o Qdrant embutido trava o diretório por cliente aberto.
@@ -31,7 +31,7 @@ def test_identity_is_readable_on_the_class() -> None:
 def test_manifest_da_fase_5() -> None:
     assert ScoutingPack().manifest() == PackManifest(
         name="scouting",
-        version="0.2.0",
+        version="0.3.0",
         preferred_flow="rag_first",
         requires_collections=("scouting",),
         config_schema=SCOUTING_CONFIG_SCHEMA,
@@ -58,6 +58,9 @@ def test_capacidades_publicadas(tmp_path: Path) -> None:
     assert retriever.name == "search_docs" and retriever.collections == frozenset({"scouting"})
     assert isinstance(pack.reranker(ctx), MetadataReranker)
     assert [validator.name for validator in pack.validators(ctx)] == ["citation_integrity", "validity_notice"]
+    metrics = pack.eval_metrics(ctx)
+    assert [metric.name for metric in metrics] == ["context_accuracy", "current_document_rate", "validity_notice_rate"]
+    assert [metric.deterministic for metric in metrics] == [True, True, False]
 
 
 @pytest.mark.parametrize(

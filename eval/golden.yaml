@@ -1,0 +1,160 @@
+# Conjunto dourado SEMENTE PROVISÓRIO do scouting (spec 105, clarificação 1 de 2026-10-13).
+#
+# Perguntas escritas a partir dos próprios documentos do corpus, sem curadoria: provam o pipeline de avaliação e dão ao
+# CI uma linha de base (eval/baseline.json). Nenhuma decisão de calibração se toma sobre elas (FR-001). A curadoria, depois
+# do desenvolvimento, troca o conteúdo pelas 30–50 perguntas reais; o formato e a validação ficam.
+#
+# Formato: o da 009 (contracts/eval-harness.md, version 1). Regras do domínio: specs/105/contracts/golden-set.md —
+# validadas em tests/eval/test_golden.py. `extra.context` é o contexto que se espera da derivação da 101; datas entre aspas.
+version: 1
+name: scouting-semente
+assistant: scouting
+items:
+  - id: s01
+    question: "Como é feito o Sinal de Promessa?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    expected_documents:
+      - document: "Princípios, Organização e Regras (POR)"
+        chunk_id: "por-2025.2.1#regra159@p118"
+    reference_answer: >-
+      O Sinal de Promessa é feito à altura do ombro, com o antebraço dobrado e a mão direita formando o Sinal Escoteiro
+      ou o Sinal do Lobinho, conforme o caso (POR, Regra 159).
+    expected_citations:
+      - document: "Princípios, Organização e Regras (POR)"
+    extra:
+      provisional: true
+      context: { branch: null, topics: [promessa_e_lei] }
+
+  - id: s02
+    question: "Qual é considerada a data de fundação de uma UEL?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    expected_documents:
+      - document: "Princípios, Organização e Regras (POR)"
+        chunk_id: "por-2025.2.1#regra31@p37"
+    reference_answer: >-
+      A data de realização da assembleia de criação da UEL, ou a data da ata da entidade patrocinadora nomeando a
+      diretoria, antes de esgotado o prazo da Autorização Provisória (POR, Capítulo 5).
+    expected_citations:
+      - document: "Princípios, Organização e Regras (POR)"
+    extra:
+      provisional: true
+      context: { branch: null, topics: [gestao_do_grupo] }
+
+  - id: s03
+    question: "Quais são os artigos da Lei do Lobinho?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    expected_documents:
+      - document: "Princípios, Organização e Regras (POR)"
+        chunk_id: "por-2025.2.1#regra9@p17"
+    reference_answer: >-
+      São cinco: o Lobinho ouve sempre os Velhos Lobos; pensa primeiro nos outros; abre os olhos e os ouvidos; é limpo
+      e está sempre alegre; diz sempre a verdade (POR, Regra 009).
+    expected_citations:
+      - document: "Princípios, Organização e Regras (POR)"
+    extra:
+      provisional: true
+      context: { branch: lobinho, topics: [promessa_e_lei] }
+
+  - id: s04
+    question: "Quando foi fundada a União dos Escoteiros do Brasil?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    expected_documents:
+      - document: "Estatuto da União dos Escoteiros do Brasil"
+        chunk_id: "estatuto-2024#art1@p4"
+    reference_answer: "Em 4 de novembro de 1924 (Estatuto da UEB, Art. 1º)."
+    expected_citations:
+      - document: "Estatuto da União dos Escoteiros do Brasil"
+    extra:
+      provisional: true
+      context: { branch: null, topics: [] }
+
+  - id: s05
+    question: "Segundo o estatuto, qual é o mandato da Diretoria de Grupo e quantos membros ela tem?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    expected_documents:
+      - document: "Estatuto da União dos Escoteiros do Brasil"
+        chunk_id: "estatuto-2024#art35@p24"
+    reference_answer: >-
+      Mandato de dois anos, com no mínimo três membros eleitos pela Assembleia de Grupo, um deles o Diretor-Presidente
+      (Estatuto da UEB, Art. 35).
+    expected_citations:
+      - document: "Estatuto da União dos Escoteiros do Brasil"
+    extra:
+      provisional: true
+      context: { branch: null, topics: [gestao_do_grupo], document_types: [estatuto] }
+
+  - id: s06
+    question: "O que a Resolução CAN 08/2021 determinou sobre os materiais impressos?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    expected_documents:
+      - document: "Resolução CAN 08/2021 — altera as Regras 001, 002, 003 e 010 do POR"
+        chunk_id: "resolucao-can-2021-08-1#art6@p3"
+    reference_answer: >-
+      Que todos os materiais impressos a partir daquela data observem a nova redação dos Fundamentos do Escotismo
+      Brasileiro, com erratas para inserção no material já impresso (Resolução CAN 08/2021, Art. 6º).
+    expected_citations:
+      - document: "Resolução CAN 08/2021 — altera as Regras 001, 002, 003 e 010 do POR"
+    extra:
+      provisional: true
+      context: { document_types: [resolucao], include_superseded: false }
+
+  # Consulta histórica (FR-002, US1 cen. 2): em 2022 o POR 2025 ainda não vigorava; a redação vinha da Resolução.
+  - id: s07
+    question: "Em 2022, qual era o propósito do Escotismo?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    expected_documents:
+      - document: "Resolução CAN 08/2021 — altera as Regras 001, 002, 003 e 010 do POR"
+        chunk_id: "resolucao-can-2021-08-1#art2@p1"
+    reference_answer: >-
+      Contribuir para que crianças, adolescentes e jovens assumam seu próprio desenvolvimento e alcancem seu pleno
+      potencial físico, intelectual, afetivo, social, espiritual e do caráter, como cidadãs e cidadãos responsáveis e
+      membros ativos de suas comunidades (Regra 002 na redação da Resolução CAN 08/2021, Art. 2º).
+    expected_citations:
+      - document: "Resolução CAN 08/2021 — altera as Regras 001, 002, 003 e 010 do POR"
+    extra:
+      provisional: true
+      context:
+        branch: null
+        include_superseded: true
+        previous_version: false
+        effective_from: "2022-01-01"
+        effective_until: "2022-12-31"
+
+  - id: s08
+    question: "Como é realizada a Roca de Conselho na alcateia?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    expected_documents:
+      - document: "Escotistas em Ação — Ramo Lobinho"
+        chunk_id: "escotistas-em-acao-lobinho-2#s2@p28"
+    reference_answer: >-
+      É convocada com uma semana de antecedência e realizada com certa formalidade, com os participantes uniformizados;
+      início e fim podem ser marcados por uma oração ou reflexão, o Hino do Lobinho ou o Grande Uivo.
+    expected_citations:
+      - document: "Escotistas em Ação — Ramo Lobinho"
+    extra:
+      provisional: true
+      context: { branch: lobinho }
+
+  - id: s09
+    question: "Quais nós o lobinho aprende a fazer na primeira fase do Caminho da Jângal?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    expected_documents:
+      - document: "Escotistas em Ação — Ramo Lobinho"
+        chunk_id: "escotistas-em-acao-lobinho-2#7@p63"
+    reference_answer: >-
+      Os nós direito, direito alceado, aselha e de correr, sabendo para que servem e aplicando-os numa atividade
+      (atividade I6).
+    expected_citations:
+      - document: "Escotistas em Ação — Ramo Lobinho"
+    extra:
+      provisional: true
+      context: { branch: lobinho }
+
+  # Fora do corpus: nenhum documento responde; a resposta esperada é o caminho sem trechos do prompt da 101.
+  - id: s10
+    question: "Qual é a previsão do tempo para o acampamento deste fim de semana?"
+    reference_time: "2026-10-13T12:00:00-03:00"
+    reference_answer: "Nenhum documento oficial foi encontrado para a pergunta."
+    extra:
+      provisional: true
+      context: { branch: null, topics: [acampamento] }

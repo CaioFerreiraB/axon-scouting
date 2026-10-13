@@ -6,3 +6,5 @@ dist/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+# Avaliação local (spec 105): o e5 e os relatórios.
+.cache/

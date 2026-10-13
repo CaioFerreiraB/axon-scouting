@@ -1,0 +1,542 @@
+{
+  "version": 1,
+  "golden_set": "scouting-semente",
+  "assistant": "scouting",
+  "judge": null,
+  "started_at": "2026-01-01T12:00:00+00:00",
+  "core_version": "0.3.0",
+  "k": [
+    5,
+    20
+  ],
+  "metrics": [
+    {
+      "name": "recall@5",
+      "value": 0.8888888888888888,
+      "variance": null,
+      "n": 9,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "recall@20",
+      "value": 0.8888888888888888,
+      "variance": null,
+      "n": 9,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "mrr",
+      "value": 0.7222222222222222,
+      "variance": null,
+      "n": 9,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "delivered_recall",
+      "value": 0.8888888888888888,
+      "variance": null,
+      "n": 9,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "rerank_gain",
+      "value": 0.0,
+      "variance": null,
+      "n": 9,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "citation_resolvable_rate",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "citation_invented_rate",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "expected_citation_recall",
+      "value": 0.0,
+      "variance": null,
+      "n": 9,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "faithfulness",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "coverage",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "latency_ms_p50",
+      "value": 0.0,
+      "variance": null,
+      "n": 10,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "latency_ms_p95",
+      "value": 250.0,
+      "variance": null,
+      "n": 10,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "ttft_ms_p50",
+      "value": 0.0,
+      "variance": null,
+      "n": 10,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "ttft_ms_p95",
+      "value": 250.0,
+      "variance": null,
+      "n": 10,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "tokens_per_answer",
+      "value": 9.0,
+      "variance": null,
+      "n": 10,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "model_calls_per_answer",
+      "value": 1.0,
+      "variance": null,
+      "n": 10,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "generation_tokens_per_s",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "controller_invalid_rate",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "error_rate",
+      "value": 0.0,
+      "variance": null,
+      "n": 10,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "scouting:context_accuracy",
+      "value": 0.9,
+      "variance": null,
+      "n": 10,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "scouting:current_document_rate",
+      "value": 1.0,
+      "variance": null,
+      "n": 9,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "scouting:validity_notice_rate",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "flag_rate:ungrounded",
+      "value": 1.0,
+      "variance": null,
+      "n": 10,
+      "deterministic": false,
+      "better": null
+    },
+    {
+      "name": "gate_route:generate",
+      "value": 1.0,
+      "variance": null,
+      "n": 10,
+      "deterministic": false,
+      "better": null
+    }
+  ],
+  "items": [
+    {
+      "id": "s01",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 1.0,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 250.0,
+        "ttft_ms": 250.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "s02",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 1.0,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 0.5,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "s03",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 0.5,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 0.5,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "s04",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 1.0,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "s05",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 1.0,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "s06",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 1.0,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "s07",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 0.5,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": null,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "s08",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 0.5,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "s09",
+      "metrics": {
+        "recall@5": 0.0,
+        "recall@20": 0.0,
+        "mrr": 0.0,
+        "delivered_recall": 0.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": [
+        "evidência não vista: Escotistas em Ação — Ramo Lobinho"
+      ]
+    },
+    {
+      "id": "s10",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    }
+  ],
+  "invalid": [],
+  "annotations": []
+}

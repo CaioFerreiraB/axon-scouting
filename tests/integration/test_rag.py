@@ -1,9 +1,10 @@
 """US5 cen. 1 ponta a ponta na plataforma, pelo perfil `test` e sem rede (spec 101 SC-004, FR-011; research R23; T036).
 
-Grupo opcional `platform` (core `v0.2.0`, com o `rag_first` e o ADR-026). O corpus sintético da 103 é publicado num
-Qdrant embutido com o embedder de teste; o pack é configurado pelo `packs.yaml` e o Assistant `scouting` não declara
-`flow` — roda no preferido, `rag_first`. A geração é um provider escrito aqui, só com tipos do contrato 001, trocado na
-montagem pela porta `providers` da 011: ele cita o primeiro identificador que vir depois de `id:` no contexto.
+Grupo opcional `platform` (core `v0.3.0`; o `rag_first` e o ADR-026 vêm da `v0.2.0`). O corpus sintético da 103 é
+publicado num Qdrant embutido com o embedder de teste; o pack é configurado pelo `packs.yaml` e o Assistant `scouting`
+não declara `flow` — roda no preferido, `rag_first`. A geração é um provider escrito aqui, só com tipos do contrato 001,
+trocado na montagem pela porta `providers` da 011: ele cita o primeiro identificador que vir depois de `id:` no
+contexto.
 """
 
 from __future__ import annotations
