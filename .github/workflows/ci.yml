@@ -3,7 +3,8 @@
 # no segredo AGENTIC_APP_DEPLOY_KEY deste repositório (o segredo guarda o nome de antes do ADR-037). A partir da v0.2.0
 # o axon tem dois submódulos, que o uv tentaria inicializar ao clonar a tag e que a deploy key não lê; o pacote não
 # precisa deles, então cada job os marca com `update = none` antes de resolver as dependências. Na v0.7.0-rc1 eles
-# ainda se chamam ai-scouting e agentic-deploy no .gitmodules.
+# ainda se chamam ai-scouting e agentic-deploy no .gitmodules; a partir da tag seguinte, axon-scouting e axon-deploy.
+# Os jobs marcam os quatro nomes até o pack passar a uma tag com os nomes novos.
 name: ci
 
 on:
@@ -24,6 +25,8 @@ jobs:
         run: |
           git config --global submodule.ai-scouting.update none
           git config --global submodule.agentic-deploy.update none
+          git config --global submodule.axon-scouting.update none
+          git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -48,6 +51,8 @@ jobs:
         run: |
           git config --global submodule.ai-scouting.update none
           git config --global submodule.agentic-deploy.update none
+          git config --global submodule.axon-scouting.update none
+          git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -69,6 +74,8 @@ jobs:
         run: |
           git config --global submodule.ai-scouting.update none
           git config --global submodule.agentic-deploy.update none
+          git config --global submodule.axon-scouting.update none
+          git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -90,6 +97,8 @@ jobs:
         run: |
           git config --global submodule.ai-scouting.update none
           git config --global submodule.agentic-deploy.update none
+          git config --global submodule.axon-scouting.update none
+          git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -116,6 +125,8 @@ jobs:
         run: |
           git config --global submodule.ai-scouting.update none
           git config --global submodule.agentic-deploy.update none
+          git config --global submodule.axon-scouting.update none
+          git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true

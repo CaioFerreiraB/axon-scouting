@@ -55,6 +55,8 @@ jobs:
         run: |
           git config --global submodule.ai-scouting.update none
           git config --global submodule.agentic-deploy.update none
+          git config --global submodule.axon-scouting.update none
+          git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
