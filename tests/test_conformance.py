@@ -1,7 +1,8 @@
 """Suíte de conformidade de pack publicada com os contratos (spec 101 FR-001, SC-003; T011, T035).
 
 Na Fase 5 a carga precisa de configuração: sem ela, o default `e5` exige `embedding_dir` e o pack não carrega (fail
-closed). Cada chamada usa um `qdrant_path` próprio — o Qdrant embutido trava o diretório por cliente aberto.
+closed). Desde o ADR-043 a suíte carrega o artefato do índice distribuído com o pacote, em memória, com o embedder de
+teste: a carga não busca, então os vetores do e5 do artefato não entram em jogo.
 
 Roda todas as etapas, inclusive imports (o pack não importa o core) e distribuição (a faixa declarada de
 `axon-ai-contracts` cabe na derivada da `contract_version`). Na instalação editável, a etapa de distribuição não tem o
@@ -36,7 +37,7 @@ DISTRIBUTION_IS_VISIBLE = "axon-scouting" in (packages_distributions().get("axon
 
 
 def config(tmp_path: Path) -> dict[str, JSONValue]:
-    return {"qdrant_path": str(tmp_path / "qdrant"), "embedder": "hashing"}
+    return {"embedder": "hashing"}
 
 
 def test_pack_conforms(tmp_path: Path) -> None:

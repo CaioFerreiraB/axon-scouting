@@ -21,6 +21,7 @@ from axon_scouting.rag.index.ports import (
     DocumentStore,
     Embedder,
     EncodedChunk,
+    IndexExport,
     IndexWriter,
     Original,
     SparseEncoder,
@@ -230,6 +231,21 @@ class IngestionService:
 
 class _Rejected(Exception):
     pass
+
+
+async def copy_index(source: IndexExport, writer: IndexWriter) -> Build:
+    """Publica em `writer` um build igual ao publicado em `source` — mesma versão, documentos e vetores (ADR-043, item
+    4: o Qdrant carregado a partir do artefato). Tudo ou nada: falha descarta o build novo."""
+    version, documents = await source.export()
+    build = await writer.create(version)
+    try:
+        for record, chunks in documents:
+            await writer.write(build.name, record, chunks)
+        await writer.publish(build.name)
+    except BaseException:
+        await writer.discard(build.name)
+        raise
+    return build
 
 
 def _fields(entry: CatalogEntry, validity: Validity) -> DocumentFields:

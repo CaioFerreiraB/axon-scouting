@@ -1,12 +1,13 @@
 [project]
 name = "axon-scouting"
-version = "0.4.0"
+version = "0.5.0"
 description = "Pack de domínio escoteiro da plataforma Axon (specs 1xx em axon)."
 readme = "README.md"
 # Piso dos contratos, não o do core: o pack depende só de axon-ai-contracts (spec 101, research R3).
 requires-python = ">=3.12"
 dependencies = [
-    "axon-ai-contracts>=0.2,<0.3",
+    # 0.2.1: o hook `prepare` e o `PackContext.data_dir` (ADR-041).
+    "axon-ai-contracts>=0.2.1,<0.3",
     # Índice e ingestão (spec 102, research R2): só os adapters os importam (import-linter abaixo).
     "qdrant-client>=1.19,<2",
     "onnxruntime>=1.24.2",
@@ -34,10 +35,10 @@ default-groups = ["dev"]
 
 # Os contratos (e o core, para a integração) vêm da mesma tag do repositório da plataforma (ADR-021, research R2,
 # R22): o core resolve os contratos da própria tag, e o uv não aceita duas fontes para a mesma distribuição. Na
-# v0.7.0-rc1 os contratos são os 0.2.0, com os nomes da Axon (ADR-037, research R25).
+# v0.7.0-rc4 os contratos são os 0.2.1, com o hook `prepare` (ADR-041).
 [tool.uv.sources]
-axon-ai-contracts = { git = "ssh://git@github.com/CaioFerreiraB/axon.git", tag = "v0.7.0-rc1", subdirectory = "axon-ai/packages/contracts" }
-axon-ai = { git = "ssh://git@github.com/CaioFerreiraB/axon.git", tag = "v0.7.0-rc1", subdirectory = "axon-ai/packages/core" }
+axon-ai-contracts = { git = "ssh://git@github.com/CaioFerreiraB/axon.git", tag = "v0.7.0-rc4", subdirectory = "axon-ai/packages/contracts" }
+axon-ai = { git = "ssh://git@github.com/CaioFerreiraB/axon.git", tag = "v0.7.0-rc4", subdirectory = "axon-ai/packages/core" }
 
 [build-system]
 requires = ["uv_build>=0.12,<0.13"]

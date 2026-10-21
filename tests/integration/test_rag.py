@@ -1,7 +1,8 @@
 """US5 cen. 1 ponta a ponta na plataforma, pelo perfil `test` e sem rede (spec 101 SC-004, FR-011; research R23; T036).
 
 Grupo opcional `platform` (core `v0.3.0`; o `rag_first` e o ADR-026 vêm da `v0.2.0`). O corpus sintético da 103 é
-publicado num Qdrant embutido com o embedder de teste; o pack é configurado pelo `packs.yaml` e o Assistant `scouting`
+publicado num artefato do índice (ADR-043: o índice de produção, em memória) com o embedder de teste; o pack é
+configurado pelo `packs.yaml` e o Assistant `scouting`
 não declara `flow` — roda no preferido, `rag_first`. A geração é um provider escrito aqui, só com tipos do contrato 001,
 trocado na montagem pela porta `providers` da 011: ele cita o primeiro identificador que vir depois de `id:` no
 contexto.
@@ -25,12 +26,11 @@ from axon_ai.bootstrap.profiles import TEST_OIDC_TOKEN
 from axon_ai.bootstrap.wiring import platform
 from axon_ai_contracts import ChatChunk, ChatMessage, ChatResponse, JSONValue
 from fastapi.testclient import TestClient
-from qdrant_client import AsyncQdrantClient
 from rag.retrieval.corpus import publicar
 
+from axon_scouting.rag.index.adapters.artifact import ArtifactIndex
 from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
 from axon_scouting.rag.index.adapters.memory import HashingEmbedder
-from axon_scouting.rag.index.adapters.qdrant import QdrantIndex
 
 ID = re.compile(r"id: ([^\]\s]+)\]")
 SEM_TRECHOS = "Nenhum documento oficial foi encontrado para a pergunta."
@@ -93,26 +93,19 @@ class CitingProvider:
 
 
 def _publish(path: Path) -> None:
-    async def go() -> None:
-        client = AsyncQdrantClient(path=str(path))
-        try:
-            embedder, sparse = HashingEmbedder(), Bm25Encoder()
-            await publicar(QdrantIndex(client, "scouting", embedder, sparse), embedder, sparse)
-        finally:
-            await client.close()  # o modo embutido trava o diretório: a plataforma abre depois
-
-    asyncio.run(go())
+    embedder, sparse = HashingEmbedder(), Bm25Encoder()
+    asyncio.run(publicar(ArtifactIndex(path, embedder, sparse), embedder, sparse))
 
 
 @pytest.fixture
 def montar(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Iterator[Any]:
     for name in [name for name in os.environ if name.startswith(("AXON_", "AI_CORE_", "AI_SCOUTING_"))]:
         monkeypatch.delenv(name)
-    qdrant = tmp_path / "qdrant"
-    _publish(qdrant)
+    index = tmp_path / "index"
+    _publish(index)
     packs = tmp_path / "packs.yaml"
     packs.write_text(
-        f"packs:\n  scouting:\n    enabled: true\n    config:\n      qdrant_path: {qdrant}\n      embedder: hashing\n",
+        f"packs:\n  scouting:\n    enabled: true\n    config:\n      index_dir: {index}\n      embedder: hashing\n",
         encoding="utf-8",
     )
     assistants = tmp_path / "assistants.yaml"

@@ -14,7 +14,7 @@ from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
 from axon_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
 from axon_scouting.rag.index.api import IndexUnavailable
 from axon_scouting.rag.ingestion.adapters.catalog_yaml import CatalogUnreadable
-from axon_scouting.rag.ingestion.adapters.cli import Composition, ConfigurationError, main
+from axon_scouting.rag.ingestion.adapters.cli import Composition, ConfigurationError, ServiceOptions, main
 from axon_scouting.rag.ingestion.adapters.memory import FixedClock, MemoryParser
 from axon_scouting.rag.ingestion.service import IngestionService
 
@@ -39,10 +39,12 @@ class Saida:
         self.catalogo = catalogo
         self.falha = falha
         self.parser = MemoryParser({BASE / "manual.pdf": ["APRESENTAÇÃO\nTexto do manual.", "4.2 Acampamento\nMais."]})
+        self.opcoes: list[ServiceOptions] = []
 
     def composition(self) -> Composition:
         @asynccontextmanager
-        async def open_service(needs_model: bool) -> AsyncIterator[IngestionService]:
+        async def open_service(options: ServiceOptions) -> AsyncIterator[IngestionService]:
+            self.opcoes.append(options)
             if self.falha is not None:
                 raise self.falha
             index = MemoryIndex("scouting", HashingEmbedder(), Bm25Encoder(), storage=self.storage)
@@ -63,9 +65,14 @@ class Saida:
         def fetch_model(directory: Path) -> Sequence[tuple[Path, str]]:
             return [(directory / "model.onnx", "ca456c06")]
 
+        async def load_qdrant(options: ServiceOptions) -> str:
+            self.opcoes.append(options)
+            return "scouting__20261007T153000Z"
+
         return Composition(
             index_name="scouting",
             open_service=open_service,
+            load_qdrant=load_qdrant,
             load_catalog=load_catalog,
             fetch_model=fetch_model,
             secrets=(SEGREDO,),
@@ -171,3 +178,29 @@ def test_original_e_reindex() -> None:
     assert saida.run("original", "nada#x@p1") == 1
     assert saida.run("reindex", "/corpus/corpus.yaml") == 0
     assert "codificado" in saida.out.getvalue().split("build")[-1]
+
+
+def test_embedder_e_diretorio_chegam_a_composicao() -> None:
+    """ADR-043: `ingest` codifica com o modelo escolhido e grava no artefato pedido; o default é o e5 e o do pacote."""
+    saida = Saida({"documents": [ENTRADA]})
+    saida.run("ingest", "/corpus/corpus.yaml")
+    saida.run("reindex", "/corpus/corpus.yaml", "--embedder", "pplx", "--dir", "/tmp/artefato")
+    saida.run("status", "--embedder", "pplx")
+    assert saida.opcoes == [
+        ServiceOptions(needs_model=True),
+        ServiceOptions(needs_model=True, embedder="pplx", directory=Path("/tmp/artefato")),
+        ServiceOptions(needs_model=False, embedder="pplx"),
+    ]
+
+
+def test_load_qdrant() -> None:
+    saida = Saida({})
+    assert saida.run("load-qdrant", "--embedder", "pplx") == 0
+    assert "build scouting__20261007T153000Z publicado no Qdrant a partir do artefato" in saida.out.getvalue()
+    assert saida.opcoes == [ServiceOptions(needs_model=False, embedder="pplx")]
+
+
+def test_embedder_desconhecido() -> None:
+    with pytest.raises(SystemExit) as exc:
+        Saida({}).run("ingest", "x.yaml", "--embedder", "bge")
+    assert exc.value.code == 2

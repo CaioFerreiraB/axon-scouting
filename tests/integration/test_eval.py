@@ -70,7 +70,8 @@ def ambiente(tmp_path_factory: pytest.TempPathFactory) -> dict[str, str]:
     asyncio.run(publish())
     packs = base / "packs.yaml"
     packs.write_text(
-        f"packs:\n  scouting:\n    enabled: true\n    config:\n      qdrant_path: {qdrant}\n      embedder: hashing\n",
+        f"packs:\n  scouting:\n    enabled: true\n    config:\n      store: qdrant\n      qdrant_path: {qdrant}\n"
+        "      embedder: hashing\n",
         encoding="utf-8",
     )
     env = {

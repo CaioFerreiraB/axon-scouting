@@ -10,12 +10,18 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
+import os
 import threading
 import urllib.request
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import IO, Final
+
+# Antes do import: o onnxruntime não coleta telemetria nem tenta gravar um id de dispositivo — num sistema de arquivos
+# somente leitura, isso viraria um aviso a cada processo. Era uma linha da imagem da instalação; desde o ADR-042 a
+# instalação não conhece pack, e quem sabe que usa o onnxruntime é o pack.
+os.environ.setdefault("ORT_DISABLE_TELEMETRY", "1")
 
 import numpy as np
 import onnxruntime as ort

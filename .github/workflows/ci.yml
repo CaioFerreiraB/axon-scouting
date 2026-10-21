@@ -2,9 +2,8 @@
 # Os contratos (e o core, na integração) vêm da tag do axon, que é privado: a deploy key só de leitura do axon fica
 # no segredo AGENTIC_APP_DEPLOY_KEY deste repositório (o segredo guarda o nome de antes do ADR-037). A partir da v0.2.0
 # o axon tem dois submódulos, que o uv tentaria inicializar ao clonar a tag e que a deploy key não lê; o pacote não
-# precisa deles, então cada job os marca com `update = none` antes de resolver as dependências. Na v0.7.0-rc1 eles
-# ainda se chamam ai-scouting e agentic-deploy no .gitmodules; a partir da tag seguinte, axon-scouting e axon-deploy.
-# Os jobs marcam os quatro nomes até o pack passar a uma tag com os nomes novos.
+# precisa deles, então cada job os marca com `update = none` antes de resolver as dependências (na v0.7.0-rc4, os
+# submódulos axon-scouting e axon-deploy).
 name: ci
 
 on:
@@ -23,8 +22,6 @@ jobs:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
       - name: Pular os submódulos do axon
         run: |
-          git config --global submodule.ai-scouting.update none
-          git config --global submodule.agentic-deploy.update none
           git config --global submodule.axon-scouting.update none
           git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
@@ -49,8 +46,6 @@ jobs:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
       - name: Pular os submódulos do axon
         run: |
-          git config --global submodule.ai-scouting.update none
-          git config --global submodule.agentic-deploy.update none
           git config --global submodule.axon-scouting.update none
           git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
@@ -72,8 +67,6 @@ jobs:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
       - name: Pular os submódulos do axon
         run: |
-          git config --global submodule.ai-scouting.update none
-          git config --global submodule.agentic-deploy.update none
           git config --global submodule.axon-scouting.update none
           git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
@@ -95,8 +88,6 @@ jobs:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
       - name: Pular os submódulos do axon
         run: |
-          git config --global submodule.ai-scouting.update none
-          git config --global submodule.agentic-deploy.update none
           git config --global submodule.axon-scouting.update none
           git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
@@ -123,8 +114,6 @@ jobs:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
       - name: Pular os submódulos do axon
         run: |
-          git config --global submodule.ai-scouting.update none
-          git config --global submodule.agentic-deploy.update none
           git config --global submodule.axon-scouting.update none
           git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6

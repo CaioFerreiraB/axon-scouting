@@ -1,11 +1,9 @@
 # Packs da avaliação do scouting (spec 105, research R6): o que a CI (`.github/workflows/eval.yml`) e o mantenedor usam
-# com `axon eval run`, a partir da raiz do repositório — o `embedding_dir` é relativo a ela. O e5 vem de
-# `axon-scouting-corpus model fetch .cache/e5`; o Qdrant, de um servidor local com o corpus ingerido
-# (`axon-scouting-corpus ingest corpus/corpus.yaml`). Uso: `AXON_PACKS_FILE=eval/packs.yaml`.
+# com `axon eval run`, a partir da raiz do repositório — o `embedding_dir` é relativo a ela. Desde o ADR-043 o índice é
+# o artefato do pacote, carregado em memória: sem Qdrant nem ingestão. O e5 vem de
+# `axon-scouting-corpus model fetch .cache/e5`. Uso: `AXON_PACKS_FILE=eval/packs.yaml`.
 packs:
   scouting:
     enabled: true
     config:
-      qdrant_url: "http://localhost:6333"
-      index: scouting
       embedding_dir: .cache/e5

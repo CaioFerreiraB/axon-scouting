@@ -1,7 +1,8 @@
 # Avaliação do scouting contra a linha de base (spec 105 FR-005, clarificação 2; research R7, R8).
 # Roda quando muda o que pode mexer na recuperação ou no contexto — corpus, RAG, prompt, derivação, métricas, pack,
-# conjunto de avaliação ou dependências: ingere o corpus real num Qdrant de serviço, com o e5 em cache, e roda o conjunto
-# semente pelo harness da 009 no perfil `test` (gerador simulado, sem modelo pago nem juiz). Só métricas determinísticas
+# conjunto de avaliação ou dependências: com o e5 em cache, carrega o artefato do índice do pacote em memória (ADR-043:
+# sem Qdrant nem ingestão no CI) e roda o conjunto semente pelo harness da 009 no perfil `test` (gerador simulado, sem
+# modelo pago nem juiz). Só métricas determinísticas
 # barram: saída 1 (regressão além da tolerância) ou 2 (entrada inválida) falham o job. Rodadas com modelo real e juiz
 # são manuais (quickstart da 105, passo 5).
 name: eval
@@ -38,14 +39,6 @@ jobs:
   eval:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    services:
-      qdrant:
-        image: qdrant/qdrant:v1.19.2
-        ports:
-          - 6333:6333
-    env:
-      AXON_SCOUTING_QDRANT_URL: http://localhost:6333
-      AXON_SCOUTING_EMBEDDING_DIR: .cache/e5
     steps:
       - uses: actions/checkout@v5
       - uses: webfactory/ssh-agent@v0.9.0
@@ -53,8 +46,6 @@ jobs:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
       - name: Pular os submódulos do axon
         run: |
-          git config --global submodule.ai-scouting.update none
-          git config --global submodule.agentic-deploy.update none
           git config --global submodule.axon-scouting.update none
           git config --global submodule.axon-deploy.update none
       - uses: astral-sh/setup-uv@v6
@@ -69,8 +60,14 @@ jobs:
           key: e5-${{ hashFiles('src/axon_scouting/rag/index/adapters/e5.py') }}
       - name: Modelo de embedding (só baixa o que falta ou difere)
         run: uv run axon-scouting-corpus model fetch .cache/e5
-      - name: Ingestão do corpus real
-        run: uv run axon-scouting-corpus ingest corpus/corpus.yaml
+      # O artefato commitado precisa espelhar o corpus: reingerir num diretório temporário dá os mesmos trechos.
+      - name: O artefato espelha o corpus
+        env:
+          AXON_SCOUTING_EMBEDDING_DIR: .cache/e5
+        run: |
+          uv run axon-scouting-corpus ingest corpus/corpus.yaml --dir "$RUNNER_TEMP/index"
+          cmp src/axon_scouting/data/index/chunks.jsonl "$RUNNER_TEMP/index/chunks.jsonl"
+          cmp src/axon_scouting/data/index/documents.jsonl "$RUNNER_TEMP/index/documents.jsonl"
       - name: Conjunto de avaliação contra a linha de base
         env:
           AXON_PROFILE: test

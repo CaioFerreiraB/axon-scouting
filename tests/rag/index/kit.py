@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import dataclasses
 import os
+import tempfile
 import uuid
 from collections.abc import Awaitable, Callable, Sequence
 from datetime import UTC, date, datetime
+from pathlib import Path
 from typing import Any, Protocol
 
 from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
@@ -111,6 +113,20 @@ class MemoryTarget:
     async def run(self, scenario: Scenario) -> None:
         storage = MemoryStorage()
         await scenario(lambda e, s: MemoryIndex("scouting", e, s, storage=storage))
+
+
+class ArtifactTarget:
+    """O artefato em disco (ADR-043): cada instância lê o mesmo diretório, como processos diferentes leriam."""
+
+    name = "artefato"
+    multi_model = True
+
+    async def run(self, scenario: Scenario) -> None:
+        from axon_scouting.rag.index.adapters.artifact import ArtifactIndex
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "index"
+            await scenario(lambda e, s: ArtifactIndex(root, e, s))
 
 
 def qdrant_targets() -> list[Any]:

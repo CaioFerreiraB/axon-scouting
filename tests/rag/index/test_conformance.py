@@ -26,6 +26,7 @@ from axon_scouting.rag.index.ports import StoredDocument
 
 from .kit import (
     INSTANTE,
+    ArtifactTarget,
     Index,
     Make,
     MemoryTarget,
@@ -72,7 +73,7 @@ PAGINAS = ("p1", "p2", "Art. 41 …\nArt. 42 …", "Art. 43 …")
 
 
 def _targets() -> list[Target]:
-    return [MemoryTarget(), *qdrant_targets()]
+    return [MemoryTarget(), ArtifactTarget(), *qdrant_targets()]
 
 
 @pytest.fixture(params=_targets(), ids=lambda t: t.name)
@@ -403,10 +404,17 @@ def test_mesma_instancia_ve_a_versao_nova(target: Target) -> None:
         assert await antiga.search("uniforme", filters=DEFAULT, limit=3)
         novo_embedder = outro_embedder("v2", dimensions=32)
         nova = make(novo_embedder, Bm25Encoder())
-        await publicar(nova, versao(novo_embedder, built_at=INSTANTE.replace(hour=16)))
-        assert (await antiga.version()).embedding.fingerprint == "v2"
-        with pytest.raises(IndexMismatch):
-            await antiga.search("uniforme", filters=DEFAULT, limit=3)
+        build = await publicar(nova, versao(novo_embedder, built_at=INSTANTE.replace(hour=16)))
+        assert (await antiga.published()) is not None and (await antiga.published()).name == build  # type: ignore[union-attr]
+        if getattr(target, "multi_model", False):
+            # O artefato guarda os vetores de mais de um modelo (ADR-043): os da antiga foram preservados, porque os
+            # textos não mudaram, e ela continua buscando com os dela.
+            assert (await antiga.version()).embedding.fingerprint == "hashing-v1"
+            assert await antiga.search("uniforme", filters=DEFAULT, limit=3)
+        else:
+            assert (await antiga.version()).embedding.fingerprint == "v2"
+            with pytest.raises(IndexMismatch):
+                await antiga.search("uniforme", filters=DEFAULT, limit=3)
         assert await nova.search("uniforme", filters=DEFAULT, limit=3)
 
     run(target, scenario)

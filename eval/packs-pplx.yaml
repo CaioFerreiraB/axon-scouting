@@ -1,0 +1,7 @@
+# O mesmo conjunto com o embedder remoto (ADR-043, item 7): `AXON_PACKS_FILE=eval/packs-pplx.yaml`, com
+# AXON_SCOUTING_EMBEDDING_API_KEY no ambiente. Compare os dois relatórios com `axon eval compare`.
+packs:
+  scouting:
+    enabled: true
+    config:
+      embedder: pplx

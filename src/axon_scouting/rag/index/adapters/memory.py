@@ -86,6 +86,25 @@ class MemoryStorage:
     builds: dict[str, _Build] = field(default_factory=dict)
     aliases: dict[str, str] = field(default_factory=dict)
 
+    def put(
+        self, name: str, version: IndexVersion, chunks: Sequence[EncodedChunk], documents: Sequence[DocumentRecord]
+    ) -> None:
+        """Um build pronto, de uma vez (o `ArtifactIndex` carrega o artefato assim)."""
+        self.builds[name] = _Build(
+            version=version,
+            chunks={encoded.chunk.chunk_id: encoded for encoded in chunks},
+            documents={record.doc_key: record for record in documents},
+        )
+
+    def export(self, name: str) -> tuple[IndexVersion, list[EncodedChunk], list[DocumentRecord]]:
+        """O build inteiro, com os trechos em ordem de `chunk_id` e os documentos em ordem de `doc_key`."""
+        build = self.builds[name]
+        return (
+            build.version,
+            [build.chunks[chunk_id] for chunk_id in sorted(build.chunks)],
+            [build.documents[doc_key] for doc_key in sorted(build.documents)],
+        )
+
 
 class MemoryIndex:
     def __init__(

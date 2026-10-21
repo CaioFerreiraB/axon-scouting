@@ -29,6 +29,7 @@ packs:
   scouting:
     enabled: true
     config:
+      store: qdrant
       qdrant_path: {qdrant}
       embedder: hashing
 """
@@ -71,8 +72,8 @@ def test_pack_carrega_pelo_entry_point(plataforma: Any) -> None:
     entry = plataforma.packs.entry("scouting")
     assert entry is not None
     assert entry.status == "enabled", entry.error
-    assert entry.version == "0.4.0"
-    assert entry.contract_version == "0.2"
+    assert entry.version == "0.5.0"
+    assert entry.contract_version == "0.2.1"
 
 
 def test_plataforma_compoe_as_instrucoes_de_dominio(plataforma: Any) -> None:

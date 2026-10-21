@@ -164,3 +164,11 @@ class IndexWriter(Protocol):
 @runtime_checkable
 class DocumentStore(Protocol):
     async def original(self, chunk_id: str) -> Original | None: ...
+
+
+@runtime_checkable
+class IndexExport(Protocol):
+    async def export(self) -> tuple[IndexVersion, list[tuple[DocumentRecord, list[EncodedChunk]]]]:
+        """O build publicado inteiro, documento a documento, com os vetores do modelo da instância (ADR-043: o
+        artefato carrega outro índice sem PDF nem modelo)."""
+        ...

@@ -2,6 +2,10 @@
 
 Quem monta os adapters é o `pack.py` (`corpus_cli`), que entrega uma `Composition`. Códigos de saída: 0 sucesso; 1
 rejeição (nada aplicado); 2 uso, configuração ou infraestrutura (nada aplicado). Segredos nunca aparecem na saída.
+
+Desde o ADR-043, `ingest` e `reindex` gravam o artefato do índice (`--dir`; default, o do pacote) com os vetores do
+modelo de `--embedder`, preservando os dos outros modelos; `load-qdrant` carrega o artefato num Qdrant, sem PDF nem
+modelo.
 """
 
 from __future__ import annotations
@@ -10,7 +14,7 @@ import argparse
 import asyncio
 import sys
 import time
-from collections.abc import Callable, Sequence
+from collections.abc import Awaitable, Callable, Sequence
 from contextlib import AbstractAsyncContextManager
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -28,11 +32,26 @@ class ConfigurationError(Exception):
     """Variável ausente ou inválida, modelo com hash errado: nada foi tentado."""
 
 
+EMBEDDERS = ("e5", "pplx")
+
+
+@dataclass(frozen=True, slots=True, kw_only=True)
+class ServiceOptions:
+    """O que o comando pede da composição: se codifica (e precisa do modelo), com qual modelo, e qual artefato."""
+
+    needs_model: bool
+    embedder: str = "e5"
+    directory: Path | None = None
+    """O diretório do artefato; `None` é o do pacote."""
+
+
 @dataclass(frozen=True, slots=True, kw_only=True)
 class Composition:
     index_name: str
-    open_service: Callable[[bool], AbstractAsyncContextManager[IngestionService]]
-    """Monta o serviço; o argumento diz se o comando codifica (e precisa do modelo de embedding)."""
+    open_service: Callable[[ServiceOptions], AbstractAsyncContextManager[IngestionService]]
+    """Monta o serviço sobre o artefato, com o modelo das opções."""
+    load_qdrant: Callable[[ServiceOptions], Awaitable[str]]
+    """Carrega o artefato no Qdrant configurado e devolve o nome do build publicado."""
     load_catalog: Callable[[Path], tuple[object, Path]]
     fetch_model: Callable[[Path], Sequence[tuple[Path, str]]]
     secrets: Sequence[str] = ()
@@ -56,14 +75,17 @@ def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="axon-scouting-corpus", description="Ingestão do corpus do pack scouting.")
     commands = parser.add_subparsers(dest="command", required=True)
     for name, help_text in (
-        ("ingest", "publica um build que espelha o catálogo, reaproveitando o que não mudou"),
-        ("reindex", "recodifica tudo com a configuração atual e publica uma versão nova do índice"),
+        ("ingest", "grava o artefato que espelha o catálogo, reaproveitando o que não mudou"),
+        ("reindex", "recodifica tudo com o modelo escolhido e grava uma versão nova do artefato"),
     ):
         command = commands.add_parser(name, help=help_text)
         command.add_argument("catalog", type=Path, help="caminho do corpus.yaml")
-    commands.add_parser("status", help="versão publicada e documentos por linhagem")
+        _options(command)
+    _options(commands.add_parser("status", help="versão do artefato, modelos e documentos por linhagem"))
     original = commands.add_parser("original", help="texto original das páginas de um chunk")
     original.add_argument("chunk_id")
+    _options(original)
+    _options(commands.add_parser("load-qdrant", help="carrega o artefato no Qdrant (sem PDF nem modelo)"))
     model = commands.add_parser("model", help="modelo de embedding")
     model_commands = model.add_subparsers(dest="model_command", required=True)
     fetch = model_commands.add_parser("fetch", help="baixa a revisão fixada do e5-small e confere os sha256")
@@ -71,25 +93,37 @@ def _parser() -> argparse.ArgumentParser:
     return parser
 
 
+def _options(command: argparse.ArgumentParser) -> None:
+    command.add_argument("--embedder", choices=EMBEDDERS, default="e5", help="modelo denso (default: e5)")
+    command.add_argument("--dir", type=Path, default=None, help="diretório do artefato (default: o do pacote)")
+
+
 async def _dispatch(args: argparse.Namespace, compose: Composition) -> int:
     if args.command == "model":
         for path, digest in compose.fetch_model(args.directory):
             _print(compose.out, compose, f"{path}  sha256 {digest}")
         return OK
+    if args.command == "load-qdrant":
+        build = await compose.load_qdrant(ServiceOptions(needs_model=False, embedder=args.embedder, directory=args.dir))
+        line = f"índice {compose.index_name} — build {build} publicado no Qdrant a partir do artefato"
+        _print(compose.out, compose, line)
+        return OK
     if args.command in ("ingest", "reindex"):
         catalog, base_dir = compose.load_catalog(args.catalog)
         started = time.perf_counter()
-        async with compose.open_service(True) as service:
+        options = ServiceOptions(needs_model=True, embedder=args.embedder, directory=args.dir)
+        async with compose.open_service(options) as service:
             run = service.ingest if args.command == "ingest" else service.reindex
             report = await run(catalog, base_dir)
         _print(compose.out, compose, _report(compose.index_name, report, time.perf_counter() - started))
         return OK if report.ok else REJECTED
+    options = ServiceOptions(needs_model=False, embedder=args.embedder, directory=args.dir)
     if args.command == "status":
-        async with compose.open_service(False) as service:
+        async with compose.open_service(options) as service:
             status = await service.status()
         _print(compose.out, compose, _status(compose.index_name, status))
         return OK
-    async with compose.open_service(False) as service:
+    async with compose.open_service(options) as service:
         original = await service.original(args.chunk_id)
     if original is None:
         _print(compose.err, compose, f"chunk inexistente no índice publicado: {args.chunk_id}")
