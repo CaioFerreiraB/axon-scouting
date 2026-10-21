@@ -75,3 +75,9 @@ confere que o artefato commitado espelha o corpus.
 
 Para comparar os modelos (ADR-043, item 7), a mesma rodada com `AXON_PACKS_FILE=eval/packs-pplx.yaml` (e
 `AXON_SCOUTING_EMBEDDING_API_KEY`) e `--report`, e depois `axon eval compare` dos dois relatórios.
+
+## Licença
+
+[MIT](LICENSE). Os PDFs de `corpus/` e o texto deles no artefato do índice são documentos oficiais da União dos
+Escoteiros do Brasil, redistribuídos com o link de origem de cada um (`source_url` em `corpus/corpus.yaml`); a licença
+MIT cobre o código, não esses documentos.
