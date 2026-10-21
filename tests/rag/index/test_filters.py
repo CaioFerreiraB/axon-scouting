@@ -7,8 +7,8 @@ from datetime import date
 
 import pytest
 
-from ai_scouting.rag.index.api import DocumentType, IndexedChunk, IndexFilters, ValidityStatus
-from ai_scouting.rag.index.domain.filters import matches
+from axon_scouting.rag.index.api import DocumentType, IndexedChunk, IndexFilters, ValidityStatus
+from axon_scouting.rag.index.domain.filters import matches
 
 HOJE = date(2026, 10, 7)
 

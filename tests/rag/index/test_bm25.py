@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.ports import SparseEncoder
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.ports import SparseEncoder
 
 
 @pytest.fixture

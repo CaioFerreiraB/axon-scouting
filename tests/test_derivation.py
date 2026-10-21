@@ -7,11 +7,11 @@ import json
 from datetime import UTC, date, datetime
 
 import pytest
-from ai_core_contracts.testing import pack_context, turn_view
+from axon_ai_contracts.testing import pack_context, turn_view
 
-from ai_scouting.context.derivation import ScoutingContext, derive_context, to_slice
-from ai_scouting.context.periods import Validity
-from ai_scouting.pack import ScoutingPack
+from axon_scouting.context.derivation import ScoutingContext, derive_context, to_slice
+from axon_scouting.context.periods import Validity
+from axon_scouting.pack import ScoutingPack
 
 DIA = date(2026, 10, 7)
 HOJE = Validity.day(DIA)

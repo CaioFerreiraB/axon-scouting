@@ -1,12 +1,12 @@
 [project]
-name = "ai-scouting"
-version = "0.3.0"
-description = "Pack de domínio escoteiro da plataforma Agentic AI (specs 1xx em agentic-app)."
+name = "axon-scouting"
+version = "0.4.0"
+description = "Pack de domínio escoteiro da plataforma Axon (specs 1xx em axon)."
 readme = "README.md"
-# Piso dos contratos, não o do core: o pack depende só de ai-core-contracts (spec 101, research R3).
+# Piso dos contratos, não o do core: o pack depende só de axon-ai-contracts (spec 101, research R3).
 requires-python = ">=3.12"
 dependencies = [
-    "ai-core-contracts>=0.1.2,<0.2",
+    "axon-ai-contracts>=0.2,<0.3",
     # Índice e ingestão (spec 102, research R2): só os adapters os importam (import-linter abaixo).
     "qdrant-client>=1.19,<2",
     "onnxruntime>=1.24.2",
@@ -17,27 +17,27 @@ dependencies = [
     "pyyaml>=6,<7",
 ]
 
-[project.entry-points."ai_core.packs"]
-scouting = "ai_scouting.pack:ScoutingPack"
+[project.entry-points."axon.packs"]
+scouting = "axon_scouting.pack:ScoutingPack"
 
 # CLI offline da ingestão (spec 102, research R17); o pack.py compõe.
 [project.scripts]
-ai-scouting-corpus = "ai_scouting.pack:corpus_cli"
+axon-scouting-corpus = "axon_scouting.pack:corpus_cli"
 
 [dependency-groups]
 dev = ["pytest", "mypy", "ruff", "import-linter", "fpdf2", "types-PyYAML"]
 # Só a integração com a plataforma (research R9): o core exige Python 3.14 e nunca é dependência de runtime.
-platform = ["ai-core ; python_version >= '3.14'"]
+platform = ["axon-ai ; python_version >= '3.14'"]
 
 [tool.uv]
 default-groups = ["dev"]
 
 # Os contratos (e o core, para a integração) vêm da mesma tag do repositório da plataforma (ADR-021, research R2,
-# R22): o core resolve os contratos da própria tag, e o uv não aceita duas fontes para a mesma distribuição. Na v0.3.0
-# os contratos são os 0.1.2, com `ai_core_contracts.eval` (métricas de domínio, spec 105, ADR-027).
+# R22): o core resolve os contratos da própria tag, e o uv não aceita duas fontes para a mesma distribuição. Na
+# v0.7.0-rc1 os contratos são os 0.2.0, com os nomes da Axon (ADR-037, research R25).
 [tool.uv.sources]
-ai-core-contracts = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "v0.3.0", subdirectory = "ai-core/packages/contracts" }
-ai-core = { git = "ssh://git@github.com/CaioFerreiraB/agentic-app.git", tag = "v0.3.0", subdirectory = "ai-core/packages/core" }
+axon-ai-contracts = { git = "ssh://git@github.com/CaioFerreiraB/axon.git", tag = "v0.7.0-rc1", subdirectory = "axon-ai/packages/contracts" }
+axon-ai = { git = "ssh://git@github.com/CaioFerreiraB/axon.git", tag = "v0.7.0-rc1", subdirectory = "axon-ai/packages/core" }
 
 [build-system]
 requires = ["uv_build>=0.12,<0.13"]
@@ -56,7 +56,7 @@ select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
 allowed-confusables = ["–", "−"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["ai_scouting"]
+known-first-party = ["axon_scouting"]
 
 [tool.mypy]
 strict = true
@@ -70,14 +70,14 @@ ignore_missing_imports = true
 
 # Fronteiras do pack (spec 101, research R13; contracts/packaging.md).
 [tool.importlinter]
-root_packages = ["ai_scouting", "ai_core_contracts"]
+root_packages = ["axon_scouting", "axon_ai_contracts"]
 include_external_packages = true
 
 [[tool.importlinter.contracts]]
 name = "o pack não importa o core"
 type = "forbidden"
-source_modules = ["ai_scouting"]
-forbidden_modules = ["ai_core", "ai_generic"]
+source_modules = ["axon_scouting"]
+forbidden_modules = ["axon_ai", "axon_generic"]
 
 [[tool.importlinter.contracts]]
 name = "só o pack.py compõe"
@@ -85,16 +85,16 @@ type = "layers"
 # As métricas (spec 105, research R10) ficam entre o pack e o resto: leem a derivação de `context/`, e os módulos da camada
 # de baixo são independentes entre si.
 layers = [
-    "ai_scouting.pack",
-    "ai_scouting.eval",
-    "ai_scouting.context | ai_scouting.prompts | ai_scouting.validators | ai_scouting.rag",
+    "axon_scouting.pack",
+    "axon_scouting.eval",
+    "axon_scouting.context | axon_scouting.prompts | axon_scouting.validators | axon_scouting.rag",
 ]
 
 [[tool.importlinter.contracts]]
 name = "derivação, validators e métricas não alcançam modelo nem MCP"
 type = "forbidden"
-source_modules = ["ai_scouting.context", "ai_scouting.validators", "ai_scouting.eval"]
-forbidden_modules = ["ai_core_contracts.llm", "ai_core_contracts.mcp"]
+source_modules = ["axon_scouting.context", "axon_scouting.validators", "axon_scouting.eval"]
+forbidden_modules = ["axon_ai_contracts.llm", "axon_ai_contracts.mcp"]
 # O `__init__` dos contratos reexporta tudo: o que se proíbe é o uso direto da API de modelo e de MCP.
 allow_indirect_imports = true
 
@@ -103,55 +103,55 @@ allow_indirect_imports = true
 name = "camadas do índice"
 type = "layers"
 layers = [
-    "ai_scouting.rag.index.adapters",
-    "ai_scouting.rag.index.domain",
-    "ai_scouting.rag.index.ports",
-    "ai_scouting.rag.index.api",
+    "axon_scouting.rag.index.adapters",
+    "axon_scouting.rag.index.domain",
+    "axon_scouting.rag.index.ports",
+    "axon_scouting.rag.index.api",
 ]
 
 [[tool.importlinter.contracts]]
 name = "camadas da ingestão"
 type = "layers"
 layers = [
-    "ai_scouting.rag.ingestion.adapters",
-    "ai_scouting.rag.ingestion.service",
-    "ai_scouting.rag.ingestion.ports | ai_scouting.rag.ingestion.domain",
+    "axon_scouting.rag.ingestion.adapters",
+    "axon_scouting.rag.ingestion.service",
+    "axon_scouting.rag.ingestion.ports | axon_scouting.rag.ingestion.domain",
 ]
 
 [[tool.importlinter.contracts]]
 name = "o api.py do índice não importa o resto do índice nem a ingestão"
 type = "forbidden"
-source_modules = ["ai_scouting.rag.index.api"]
+source_modules = ["axon_scouting.rag.index.api"]
 forbidden_modules = [
-    "ai_scouting.rag.index.domain",
-    "ai_scouting.rag.index.ports",
-    "ai_scouting.rag.index.adapters",
-    "ai_scouting.rag.ingestion",
+    "axon_scouting.rag.index.domain",
+    "axon_scouting.rag.index.ports",
+    "axon_scouting.rag.index.adapters",
+    "axon_scouting.rag.ingestion",
 ]
 
 [[tool.importlinter.contracts]]
 name = "infraestrutura só em adapters/"
 type = "forbidden"
 source_modules = [
-    "ai_scouting.rag.index.api",
-    "ai_scouting.rag.index.domain",
-    "ai_scouting.rag.index.ports",
-    "ai_scouting.rag.ingestion.domain",
-    "ai_scouting.rag.ingestion.ports",
-    "ai_scouting.rag.ingestion.service",
-    "ai_scouting.eval",
+    "axon_scouting.rag.index.api",
+    "axon_scouting.rag.index.domain",
+    "axon_scouting.rag.index.ports",
+    "axon_scouting.rag.ingestion.domain",
+    "axon_scouting.rag.ingestion.ports",
+    "axon_scouting.rag.ingestion.service",
+    "axon_scouting.eval",
 ]
 forbidden_modules = ["qdrant_client", "onnxruntime", "tokenizers", "numpy", "snowballstemmer", "pypdfium2", "yaml"]
 
 [[tool.importlinter.contracts]]
 name = "os outros módulos do pack veem só o seam do índice"
 type = "forbidden"
-source_modules = ["ai_scouting.context", "ai_scouting.prompts", "ai_scouting.validators", "ai_scouting.eval"]
+source_modules = ["axon_scouting.context", "axon_scouting.prompts", "axon_scouting.validators", "axon_scouting.eval"]
 forbidden_modules = [
-    "ai_scouting.rag.ingestion",
-    "ai_scouting.rag.index.domain",
-    "ai_scouting.rag.index.ports",
-    "ai_scouting.rag.index.adapters",
+    "axon_scouting.rag.ingestion",
+    "axon_scouting.rag.index.domain",
+    "axon_scouting.rag.index.ports",
+    "axon_scouting.rag.index.adapters",
 ]
 
 # Retrieval (spec 103, research R9): só o api.py do índice, nenhuma infraestrutura.
@@ -159,19 +159,19 @@ forbidden_modules = [
 name = "camadas do retrieval"
 type = "layers"
 layers = [
-    "ai_scouting.rag.retrieval.retriever | ai_scouting.rag.retrieval.reranker",
-    "ai_scouting.rag.retrieval.domain",
+    "axon_scouting.rag.retrieval.retriever | axon_scouting.rag.retrieval.reranker",
+    "axon_scouting.rag.retrieval.domain",
 ]
 
 [[tool.importlinter.contracts]]
 name = "o retrieval vê do índice só o api.py"
 type = "forbidden"
-source_modules = ["ai_scouting.rag.retrieval"]
+source_modules = ["axon_scouting.rag.retrieval"]
 forbidden_modules = [
-    "ai_scouting.rag.index.domain",
-    "ai_scouting.rag.index.ports",
-    "ai_scouting.rag.index.adapters",
-    "ai_scouting.rag.ingestion",
+    "axon_scouting.rag.index.domain",
+    "axon_scouting.rag.index.ports",
+    "axon_scouting.rag.index.adapters",
+    "axon_scouting.rag.ingestion",
     "qdrant_client",
     "onnxruntime",
     "tokenizers",

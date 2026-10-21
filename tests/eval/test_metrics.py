@@ -7,10 +7,10 @@ from datetime import UTC, datetime, timedelta, timezone
 from typing import Any
 
 import pytest
-from ai_core_contracts import Citation
-from ai_core_contracts.eval import EvalChunk, EvalItem, EvalMetric, EvalObservation
+from axon_ai_contracts import Citation
+from axon_ai_contracts.eval import EvalChunk, EvalItem, EvalMetric, EvalObservation
 
-from ai_scouting.eval import ContextAccuracy, CurrentDocumentRate, ValidityNoticeRate
+from axon_scouting.eval import ContextAccuracy, CurrentDocumentRate, ValidityNoticeRate
 
 BRASILIA = timezone(timedelta(hours=-3))
 MEIO_DIA = datetime(2026, 10, 13, 12, tzinfo=BRASILIA)

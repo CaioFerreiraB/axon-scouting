@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import pytest
 
-from ai_scouting.rag.ingestion.domain.chunking import ChunkingPolicy
-from ai_scouting.rag.ingestion.domain.structure import normative_chunks
-from ai_scouting.rag.ingestion.domain.text import Line
+from axon_scouting.rag.ingestion.domain.chunking import ChunkingPolicy
+from axon_scouting.rag.ingestion.domain.structure import normative_chunks
+from axon_scouting.rag.ingestion.domain.text import Line
 
 POLITICA = ChunkingPolicy()
 

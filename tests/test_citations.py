@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from ai_scouting.validators.citations import extract, key, rewrite
+from axon_scouting.validators.citations import extract, key, rewrite
 
 
 def test_extract_na_ordem_e_como_escrito() -> None:

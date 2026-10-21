@@ -6,11 +6,11 @@ import asyncio
 from typing import Any
 
 import pytest
-from ai_core_contracts import Citation, ValidationResult
-from ai_core_contracts.testing import turn_view, validator_context
+from axon_ai_contracts import Citation, ValidationResult
+from axon_ai_contracts.testing import turn_view, validator_context
 
-from ai_scouting.validators import ValidityNoticeValidator
-from ai_scouting.validators.notice import NON_CURRENT_NOTICE, UNCONFIRMED_NOTICE
+from axon_scouting.validators import ValidityNoticeValidator
+from axon_scouting.validators.notice import NON_CURRENT_NOTICE, UNCONFIRMED_NOTICE
 
 
 def citacao(

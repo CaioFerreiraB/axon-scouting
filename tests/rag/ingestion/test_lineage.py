@@ -7,9 +7,9 @@ from datetime import date
 from pathlib import PurePosixPath
 from typing import Any
 
-from ai_scouting.rag.index.api import ValidityStatus
-from ai_scouting.rag.ingestion.domain.catalog import CatalogEntry, validate_catalog
-from ai_scouting.rag.ingestion.domain.lineage import LineageResult, Validity, derive_lineages
+from axon_scouting.rag.index.api import ValidityStatus
+from axon_scouting.rag.ingestion.domain.catalog import CatalogEntry, validate_catalog
+from axon_scouting.rag.ingestion.domain.lineage import LineageResult, Validity, derive_lineages
 
 
 def versoes(*specs: dict[str, Any]) -> tuple[CatalogEntry, ...]:

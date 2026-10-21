@@ -8,8 +8,8 @@ from typing import Any
 
 import pytest
 
-from ai_scouting.rag.index.api import DocumentType, ValidityStatus
-from ai_scouting.rag.ingestion.domain.catalog import CatalogResult, validate_catalog
+from axon_scouting.rag.index.api import DocumentType, ValidityStatus
+from axon_scouting.rag.ingestion.domain.catalog import CatalogResult, validate_catalog
 
 BASE = PurePosixPath("/corpus")
 

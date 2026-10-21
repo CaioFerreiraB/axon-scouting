@@ -9,9 +9,9 @@ from __future__ import annotations
 import asyncio
 
 import pytest
-from ai_core_contracts.testing import chunk, turn_view, validator_context
+from axon_ai_contracts.testing import chunk, turn_view, validator_context
 
-from ai_scouting.validators import CitationIntegrityValidator
+from axon_scouting.validators import CitationIntegrityValidator
 
 CONTEXTO = (
     chunk("man-pio-2026#4.2", document="Manual Pioneiro", version="2026", status="vigente"),

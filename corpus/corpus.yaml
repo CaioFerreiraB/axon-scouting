@@ -1,7 +1,7 @@
 # Catálogo do corpus do pack scouting (spec 102): uma entrada por versão de documento; os PDFs ficam ao lado, nos
 # caminhos de `file`. Corpus inicial (SC-005) baixado do site oficial da UEB e revisado pelo curador em 2026-10-08.
 # Versões e datas tiradas dos próprios documentos; o que o PDF não diz está marcado com "A CONFIRMAR" (valor
-# provisório, aceito na revisão). Ingestão: `ai-scouting-corpus ingest corpus/corpus.yaml`.
+# provisório, aceito na revisão). Ingestão: `axon-scouting-corpus ingest corpus/corpus.yaml`.
 documents:
   # Capa: "ABRIL DE 2025 · Versão 2.1 · Alterações feitas em 31.08.2026"; incorpora as alterações do CAN até fev/2025.
   - file: por/POR_2025_21.pdf

@@ -1,7 +1,7 @@
-"""O harness da 009 com o pack scouting, pelo comando `ai-core eval run` (spec 105 US1, US2; contracts/golden-set.md
+"""O harness da 009 com o pack scouting, pelo comando `axon eval run` (spec 105 US1, US2; contracts/golden-set.md
 regra 8 e contracts/domain-metrics.md verificação 4; research R5, R8; T012).
 
-Grupo opcional `platform`. Usa só a superfície que a 011 publica: as variáveis `AI_CORE_*` e o comando `ai-core` do
+Grupo opcional `platform`. Usa só a superfície que a 011 publica: as variáveis `AXON_*` e o comando `axon` do
 próprio ambiente, num processo por rodada — que solta a trava do Qdrant embutido ao sair. O corpus sintético da 103 é
 publicado com o embedder de teste; a geração é o provider simulado do perfil `test` (resposta fixa, sem citação).
 """
@@ -19,17 +19,17 @@ from typing import Any
 import pytest
 import yaml
 
-pytest.importorskip("ai_core", reason="ai-core não instalado: rode com o grupo platform (Python 3.14)")
+pytest.importorskip("axon_ai", reason="axon-ai não instalado: rode com o grupo platform (Python 3.14)")
 
 from qdrant_client import AsyncQdrantClient
 from rag.retrieval.corpus import publicar
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder
-from ai_scouting.rag.index.adapters.qdrant import QdrantIndex
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder
+from axon_scouting.rag.index.adapters.qdrant import QdrantIndex
 
 ROOT = Path(__file__).resolve().parents[2]
-AI_CORE = Path(sys.executable).with_name("ai-core")
+AXON = Path(sys.executable).with_name("axon")
 METRICS = ("scouting:context_accuracy", "scouting:current_document_rate", "scouting:validity_notice_rate")
 
 SINTETICO = """
@@ -73,18 +73,20 @@ def ambiente(tmp_path_factory: pytest.TempPathFactory) -> dict[str, str]:
         f"packs:\n  scouting:\n    enabled: true\n    config:\n      qdrant_path: {qdrant}\n      embedder: hashing\n",
         encoding="utf-8",
     )
-    env = {name: value for name, value in os.environ.items() if not name.startswith(("AI_CORE_", "AI_SCOUTING_"))}
+    env = {
+        name: value for name, value in os.environ.items() if not name.startswith(("AXON_", "AI_CORE_", "AI_SCOUTING_"))
+    }
     env |= {
-        "AI_CORE_PROFILE": "test",
-        "AI_CORE_PACKS_FILE": str(packs),
-        "AI_CORE_ASSISTANTS_FILE": str(ROOT / "eval" / "assistants.yaml"),
+        "AXON_PROFILE": "test",
+        "AXON_PACKS_FILE": str(packs),
+        "AXON_ASSISTANTS_FILE": str(ROOT / "eval" / "assistants.yaml"),
     }
     return env
 
 
 def _eval_run(env: dict[str, str], *args: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
-        [str(AI_CORE), "eval", "run", *args], env=env, cwd=ROOT, capture_output=True, text=True, timeout=300
+        [str(AXON), "eval", "run", *args], env=env, cwd=ROOT, capture_output=True, text=True, timeout=300
     )
 
 

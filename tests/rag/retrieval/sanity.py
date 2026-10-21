@@ -1,6 +1,6 @@
 """Sanidade do retrieval com o e5 e o corpus real (spec 103 quickstart §2; T020). Não é teste da CI.
 
-Uso: `AI_SCOUTING_QDRANT_URL=… AI_SCOUTING_EMBEDDING_DIR=… [AI_SCOUTING_INDEX=scouting] uv run python
+Uso: `AXON_SCOUTING_QDRANT_URL=… AXON_SCOUTING_EMBEDDING_DIR=… [AXON_SCOUTING_INDEX=scouting] uv run python
 tests/rag/retrieval/sanity.py` — com o índice ingerido a partir de `corpus/corpus.yaml`.
 """
 
@@ -15,12 +15,12 @@ from pathlib import Path
 
 from qdrant_client import AsyncQdrantClient
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.e5 import E5Embedder
-from ai_scouting.rag.index.adapters.qdrant import QdrantIndex
-from ai_scouting.rag.retrieval.domain.ordering import FUSION_SCORE
-from ai_scouting.rag.retrieval.reranker import MetadataReranker
-from ai_scouting.rag.retrieval.retriever import ScoutingRetriever
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.e5 import E5Embedder
+from axon_scouting.rag.index.adapters.qdrant import QdrantIndex
+from axon_scouting.rag.retrieval.domain.ordering import FUSION_SCORE
+from axon_scouting.rag.retrieval.reranker import MetadataReranker
+from axon_scouting.rag.retrieval.retriever import ScoutingRetriever
 
 HOJE = date.today().isoformat()  # o roteiro faz o papel da 101: fixa o dia de referência
 PERGUNTAS: list[tuple[str, dict[str, object]]] = [
@@ -33,11 +33,11 @@ PERGUNTAS: list[tuple[str, dict[str, object]]] = [
 
 
 async def main() -> None:
-    client = AsyncQdrantClient(url=os.environ.get("AI_SCOUTING_QDRANT_URL", "http://localhost:6333"))
+    client = AsyncQdrantClient(url=os.environ.get("AXON_SCOUTING_QDRANT_URL", "http://localhost:6333"))
     index = QdrantIndex(
         client,
-        os.environ.get("AI_SCOUTING_INDEX", "scouting"),
-        E5Embedder(Path(os.environ["AI_SCOUTING_EMBEDDING_DIR"]).expanduser()),
+        os.environ.get("AXON_SCOUTING_INDEX", "scouting"),
+        E5Embedder(Path(os.environ["AXON_SCOUTING_EMBEDDING_DIR"]).expanduser()),
         Bm25Encoder(),
     )
     retriever = ScoutingRetriever(index)

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from ai_scouting.rag.retrieval.domain.config import RetrievalConfig
+from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
 
 
 def test_defaults() -> None:

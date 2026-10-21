@@ -8,12 +8,12 @@ from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import Any
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
-from ai_scouting.rag.index.api import DocumentType, IndexFilters, ValidityStatus
-from ai_scouting.rag.ingestion.adapters.memory import FixedClock, MemoryParser
-from ai_scouting.rag.ingestion.domain.chunking import ChunkingPolicy
-from ai_scouting.rag.ingestion.service import IngestionService
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
+from axon_scouting.rag.index.api import DocumentType, IndexFilters, ValidityStatus
+from axon_scouting.rag.ingestion.adapters.memory import FixedClock, MemoryParser
+from axon_scouting.rag.ingestion.domain.chunking import ChunkingPolicy
+from axon_scouting.rag.ingestion.service import IngestionService
 
 BASE = Path("/corpus")
 INSTANTE = datetime(2026, 10, 7, 15, 30, tzinfo=UTC)

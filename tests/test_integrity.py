@@ -6,11 +6,11 @@ import asyncio
 from typing import Any
 
 import pytest
-from ai_core_contracts import ValidationResult
-from ai_core_contracts.testing import chunk, turn_view, validator_context
+from axon_ai_contracts import ValidationResult
+from axon_ai_contracts.testing import chunk, turn_view, validator_context
 
-from ai_scouting.validators import CitationIntegrityValidator
-from ai_scouting.validators.integrity import UNGROUNDED_NOTICE
+from axon_scouting.validators import CitationIntegrityValidator
+from axon_scouting.validators.integrity import UNGROUNDED_NOTICE
 
 A = chunk(
     "man-pio-2026#4.2.1@p87", document="Manual Pioneiro", version="2026", status="vigente", section="4.2.1", page=87

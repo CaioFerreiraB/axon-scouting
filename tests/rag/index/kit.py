@@ -9,11 +9,11 @@ from collections.abc import Awaitable, Callable, Sequence
 from datetime import UTC, date, datetime
 from typing import Any, Protocol
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
-from ai_scouting.rag.index.api import ChunkIndex, DocumentType, IndexedChunk, IndexVersion, ValidityStatus
-from ai_scouting.rag.index.domain.points import with_document
-from ai_scouting.rag.index.ports import (
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
+from axon_scouting.rag.index.api import ChunkIndex, DocumentType, IndexedChunk, IndexVersion, ValidityStatus
+from axon_scouting.rag.index.domain.points import with_document
+from axon_scouting.rag.index.ports import (
     DocumentFields,
     DocumentRecord,
     DocumentStore,
@@ -114,11 +114,11 @@ class MemoryTarget:
 
 
 def qdrant_targets() -> list[Any]:
-    """Os alvos Qdrant (modo local sempre; servidor com `AI_SCOUTING_TEST_QDRANT_URL`), quando o adapter existe."""
+    """Os alvos Qdrant (modo local sempre; servidor com `AXON_SCOUTING_TEST_QDRANT_URL`), quando o adapter existe."""
     try:
         from qdrant_client import AsyncQdrantClient
 
-        from ai_scouting.rag.index.adapters.qdrant import QdrantIndex
+        from axon_scouting.rag.index.adapters.qdrant import QdrantIndex
     except ImportError:  # pragma: no cover - o adapter chega na T031
         return []
 
@@ -150,7 +150,7 @@ def qdrant_targets() -> list[Any]:
                 await client.close()
 
     targets: list[Any] = [LocalTarget()]
-    url = os.environ.get("AI_SCOUTING_TEST_QDRANT_URL")
+    url = os.environ.get("AXON_SCOUTING_TEST_QDRANT_URL")
     if url:
         targets.append(ServerTarget(url))
     return targets

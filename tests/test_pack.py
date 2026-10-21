@@ -1,7 +1,7 @@
 """Identidade, manifest e capacidades do pack scouting (spec 101 FR-003, FR-010, FR-012; research R19, R20; T034; e as
 métricas de domínio da 105, T010).
 
-Só `ai_core_contracts`, o kit de testes e o próprio pack — nada do core (SC-003). Cada carga usa um `qdrant_path` novo:
+Só `axon_ai_contracts`, o kit de testes e o próprio pack — nada do core (SC-003). Cada carga usa um `qdrant_path` novo:
 o Qdrant embutido trava o diretório por cliente aberto.
 """
 
@@ -11,11 +11,11 @@ from importlib.metadata import version
 from pathlib import Path
 
 import pytest
-from ai_core_contracts import NamedRetriever, PackManifest
-from ai_core_contracts.testing import pack_context
+from axon_ai_contracts import NamedRetriever, PackManifest
+from axon_ai_contracts.testing import pack_context
 
-from ai_scouting.pack import SCOUTING_CONFIG_SCHEMA, ScoutingPack
-from ai_scouting.rag.retrieval.reranker import MetadataReranker
+from axon_scouting.pack import SCOUTING_CONFIG_SCHEMA, ScoutingPack
+from axon_scouting.rag.retrieval.reranker import MetadataReranker
 
 
 def config(tmp_path: Path, **extra: object) -> dict[str, object]:
@@ -25,13 +25,13 @@ def config(tmp_path: Path, **extra: object) -> dict[str, object]:
 def test_identity_is_readable_on_the_class() -> None:
     """A 002 lê `name` e `contract_version` da classe, antes de instanciar."""
     assert ScoutingPack.name == "scouting"
-    assert ScoutingPack.contract_version == "0.1"
+    assert ScoutingPack.contract_version == "0.2"
 
 
 def test_manifest_da_fase_5() -> None:
     assert ScoutingPack().manifest() == PackManifest(
         name="scouting",
-        version="0.3.0",
+        version="0.4.0",
         preferred_flow="rag_first",
         requires_collections=("scouting",),
         config_schema=SCOUTING_CONFIG_SCHEMA,
@@ -39,7 +39,7 @@ def test_manifest_da_fase_5() -> None:
 
 
 def test_manifest_version_matches_the_distribution() -> None:
-    assert ScoutingPack().manifest().version == version("ai-scouting")
+    assert ScoutingPack().manifest().version == version("axon-scouting")
 
 
 def test_system_prompt_is_stable() -> None:
@@ -73,7 +73,7 @@ def test_configuracao_invalida_impede_a_carga(tmp_path: Path, extra: dict[str, o
 
 
 def test_servidor_por_url_com_a_chave_do_ambiente_nao_toca_a_rede(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setenv("AI_SCOUTING_QDRANT_API_KEY", "chave-de-teste")
+    monkeypatch.setenv("AXON_SCOUTING_QDRANT_API_KEY", "chave-de-teste")
     ctx = pack_context("scouting", {"qdrant_url": "https://qdrant.invalid:6333", "embedder": "hashing"})
     (retriever,) = ScoutingPack().retrievers(ctx)
     assert retriever.name == "search_docs"

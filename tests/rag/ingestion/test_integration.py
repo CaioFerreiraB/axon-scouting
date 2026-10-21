@@ -10,14 +10,14 @@ from typing import Any
 from fixtures import pdfs
 from qdrant_client import AsyncQdrantClient
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder
-from ai_scouting.rag.index.adapters.qdrant import QdrantIndex
-from ai_scouting.rag.index.api import IndexFilters
-from ai_scouting.rag.ingestion.adapters.catalog_yaml import load_catalog
-from ai_scouting.rag.ingestion.adapters.memory import FixedClock
-from ai_scouting.rag.ingestion.adapters.pdfium import PdfiumParser
-from ai_scouting.rag.ingestion.service import IngestionService
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder
+from axon_scouting.rag.index.adapters.qdrant import QdrantIndex
+from axon_scouting.rag.index.api import IndexFilters
+from axon_scouting.rag.ingestion.adapters.catalog_yaml import load_catalog
+from axon_scouting.rag.ingestion.adapters.memory import FixedClock
+from axon_scouting.rag.ingestion.adapters.pdfium import PdfiumParser
+from axon_scouting.rag.ingestion.service import IngestionService
 
 HOJE = date(2026, 10, 7)
 CATALOGO = """

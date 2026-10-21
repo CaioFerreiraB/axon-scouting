@@ -10,7 +10,7 @@ import re
 
 import pytest
 
-from ai_scouting.prompts import SYSTEM_PROMPT
+from axon_scouting.prompts import SYSTEM_PROMPT
 
 NORMALIZED = " ".join(SYSTEM_PROMPT.split()).casefold()
 """O texto é quebrado em linhas; as frases do contrato podem cruzar uma quebra."""

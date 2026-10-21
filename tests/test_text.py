@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from ai_scouting.context.text import contains_term, normalize
+from axon_scouting.context.text import contains_term, normalize
 
 
 @pytest.mark.parametrize(

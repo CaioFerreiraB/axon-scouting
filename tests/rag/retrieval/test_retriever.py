@@ -7,14 +7,14 @@ from collections.abc import Mapping
 from typing import Any
 
 import pytest
-from ai_core_contracts import Chunk, NamedRetriever, Retriever
+from axon_ai_contracts import Chunk, NamedRetriever, Retriever
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
-from ai_scouting.rag.index.api import IndexMismatch, IndexUnavailable
-from ai_scouting.rag.retrieval.domain.filters import InvalidFilters
-from ai_scouting.rag.retrieval.domain.ordering import BRANCH_MATCH, FUSION_SCORE, TYPE_MATCH, sort_key
-from ai_scouting.rag.retrieval.retriever import ScoutingRetriever, search_docs
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
+from axon_scouting.rag.index.api import IndexMismatch, IndexUnavailable
+from axon_scouting.rag.retrieval.domain.filters import InvalidFilters
+from axon_scouting.rag.retrieval.domain.ordering import BRANCH_MATCH, FUSION_SCORE, TYPE_MATCH, sort_key
+from axon_scouting.rag.retrieval.retriever import ScoutingRetriever, search_docs
 
 from .corpus import filtros, indice
 
@@ -174,6 +174,6 @@ def test_nenhum_resultado_apos_filtros_e_vazio() -> None:
 
 
 def _f(raw: Mapping[str, Any]) -> Any:
-    from ai_scouting.rag.retrieval.domain.filters import index_filters
+    from axon_scouting.rag.retrieval.domain.filters import index_filters
 
     return index_filters(raw)

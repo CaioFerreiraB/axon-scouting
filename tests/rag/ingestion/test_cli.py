@@ -1,4 +1,4 @@
-"""CLI `ai-scouting-corpus` (spec 102 contracts/ingestion-cli.md; T026, T041, T046)."""
+"""CLI `axon-scouting-corpus` (spec 102 contracts/ingestion-cli.md; T026, T041, T046)."""
 
 from __future__ import annotations
 
@@ -10,13 +10,13 @@ from pathlib import Path
 
 import pytest
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
-from ai_scouting.rag.index.api import IndexUnavailable
-from ai_scouting.rag.ingestion.adapters.catalog_yaml import CatalogUnreadable
-from ai_scouting.rag.ingestion.adapters.cli import Composition, ConfigurationError, main
-from ai_scouting.rag.ingestion.adapters.memory import FixedClock, MemoryParser
-from ai_scouting.rag.ingestion.service import IngestionService
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
+from axon_scouting.rag.index.api import IndexUnavailable
+from axon_scouting.rag.ingestion.adapters.catalog_yaml import CatalogUnreadable
+from axon_scouting.rag.ingestion.adapters.cli import Composition, ConfigurationError, main
+from axon_scouting.rag.ingestion.adapters.memory import FixedClock, MemoryParser
+from axon_scouting.rag.ingestion.service import IngestionService
 
 BASE = Path("/corpus")
 SEGREDO = "s3cr3t-qdrant-key"
@@ -106,7 +106,7 @@ def test_catalogo_ilegivel_e_inexistente() -> None:
 
 
 @pytest.mark.parametrize(
-    "falha", [ConfigurationError("AI_SCOUTING_EMBEDDING_DIR ausente"), IndexUnavailable("índice fora do ar")]
+    "falha", [ConfigurationError("AXON_SCOUTING_EMBEDDING_DIR ausente"), IndexUnavailable("índice fora do ar")]
 )
 def test_configuracao_ou_infraestrutura(falha: Exception) -> None:
     saida = Saida({"documents": [ENTRADA]}, falha=falha)

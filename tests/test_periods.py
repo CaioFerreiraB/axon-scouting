@@ -6,8 +6,8 @@ from datetime import UTC, date, datetime
 
 import pytest
 
-from ai_scouting.context.periods import Validity, find_period, reference_day
-from ai_scouting.context.text import normalize
+from axon_scouting.context.periods import Validity, find_period, reference_day
+from axon_scouting.context.text import normalize
 
 # --- US2: o dia de referência e a vigência default ---------------------------------------------------------------
 

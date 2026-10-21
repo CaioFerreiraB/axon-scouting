@@ -6,9 +6,9 @@ import dataclasses
 from datetime import UTC, date, datetime
 
 import pytest
-from ai_core_contracts import Chunk
+from axon_ai_contracts import Chunk
 
-from ai_scouting.rag.index.api import (
+from axon_scouting.rag.index.api import (
     BRANCHES,
     NORMATIVE_TYPES,
     STATUS_LABELS,

@@ -9,10 +9,10 @@ from pathlib import Path
 import pytest
 from qdrant_client import AsyncQdrantClient
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder
-from ai_scouting.rag.index.adapters.qdrant import QdrantIndex
-from ai_scouting.rag.retrieval.retriever import ScoutingRetriever
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder
+from axon_scouting.rag.index.adapters.qdrant import QdrantIndex
+from axon_scouting.rag.retrieval.retriever import ScoutingRetriever
 
 from .corpus import filtros, indice, publicar
 
@@ -37,12 +37,12 @@ def test_qdrant_local_igual_a_memoria() -> None:
     assert set(memoria) == set(qdrant)
 
 
-@pytest.mark.skipif(not os.environ.get("AI_SCOUTING_EMBEDDING_DIR"), reason="AI_SCOUTING_EMBEDDING_DIR ausente")
+@pytest.mark.skipif(not os.environ.get("AXON_SCOUTING_EMBEDDING_DIR"), reason="AXON_SCOUTING_EMBEDDING_DIR ausente")
 def test_parafrase_com_e5() -> None:
-    from ai_scouting.rag.index.adapters.e5 import E5Embedder
+    from axon_scouting.rag.index.adapters.e5 import E5Embedder
 
     async def go() -> list[tuple[str, float]]:
-        embedder = E5Embedder(Path(os.environ["AI_SCOUTING_EMBEDDING_DIR"]))
+        embedder = E5Embedder(Path(os.environ["AXON_SCOUTING_EMBEDDING_DIR"]))
         retriever = ScoutingRetriever(await indice(embedder))
         achados = await retriever.search("o que é preciso para acampar com a tropa?", top_k=5, filters=filtros())
         return [(c.chunk_id, c.score) for c in achados]

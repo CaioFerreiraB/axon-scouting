@@ -5,8 +5,8 @@ from __future__ import annotations
 import re
 from collections import Counter
 
-from ai_scouting.context.lexicon import LEXICON
-from ai_scouting.context.text import normalize
+from axon_scouting.context.lexicon import LEXICON
+from axon_scouting.context.text import normalize
 
 ID = re.compile(r"^[a-z][a-z0-9_]*$")
 

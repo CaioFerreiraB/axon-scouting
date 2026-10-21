@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from ai_scouting.rag.ingestion.domain.text import Line, clean_pages
+from axon_scouting.rag.ingestion.domain.text import Line, clean_pages
 
 
 def textos(linhas: list[Line]) -> list[str]:

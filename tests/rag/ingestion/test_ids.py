@@ -6,7 +6,7 @@ import re
 
 import pytest
 
-from ai_scouting.rag.ingestion.domain.ids import chunk_ids, content_key, doc_key, slug
+from axon_scouting.rag.ingestion.domain.ids import chunk_ids, content_key, doc_key, slug
 
 
 def test_formato_do_design() -> None:

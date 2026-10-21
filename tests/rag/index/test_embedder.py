@@ -10,22 +10,22 @@ from pathlib import Path
 
 import pytest
 
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder
-from ai_scouting.rag.index.ports import Embedder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder
+from axon_scouting.rag.index.ports import Embedder
 
 
 def _targets() -> list[object]:
     targets: list[object] = [pytest.param(lambda: HashingEmbedder(), id="hashing")]
-    directory = os.environ.get("AI_SCOUTING_EMBEDDING_DIR")
+    directory = os.environ.get("AXON_SCOUTING_EMBEDDING_DIR")
     try:
-        from ai_scouting.rag.index.adapters.e5 import E5Embedder
+        from axon_scouting.rag.index.adapters.e5 import E5Embedder
     except ImportError:  # pragma: no cover - o adapter chega na T032
         return targets
     targets.append(
         pytest.param(
             lambda: E5Embedder(Path(directory or ".")),
             id="e5",
-            marks=pytest.mark.skipif(not directory, reason="AI_SCOUTING_EMBEDDING_DIR ausente"),
+            marks=pytest.mark.skipif(not directory, reason="AXON_SCOUTING_EMBEDDING_DIR ausente"),
         )
     )
     return targets
@@ -67,13 +67,13 @@ def test_hashing_parametrizavel() -> None:
 def _arquivo(conteudo: bytes) -> object:
     import hashlib
 
-    from ai_scouting.rag.index.adapters.e5 import ModelFile
+    from axon_scouting.rag.index.adapters.e5 import ModelFile
 
     return ModelFile("onnx/x.bin", "x.bin", hashlib.sha256(conteudo).hexdigest())
 
 
 def test_fetch_nao_baixa_arquivo_integro(tmp_path: Path) -> None:
-    from ai_scouting.rag.index.adapters.e5 import fetch
+    from axon_scouting.rag.index.adapters.e5 import fetch
 
     (tmp_path / "x.bin").write_bytes(b"pesos")
     chamadas: list[str] = []
@@ -88,7 +88,7 @@ def test_fetch_nao_baixa_arquivo_integro(tmp_path: Path) -> None:
 
 
 def test_fetch_baixa_e_confere(tmp_path: Path) -> None:
-    from ai_scouting.rag.index.adapters.e5 import fetch
+    from axon_scouting.rag.index.adapters.e5 import fetch
 
     urls: list[str] = []
 
@@ -102,7 +102,7 @@ def test_fetch_baixa_e_confere(tmp_path: Path) -> None:
 
 
 def test_fetch_recusa_hash_errado(tmp_path: Path) -> None:
-    from ai_scouting.rag.index.adapters.e5 import fetch
+    from axon_scouting.rag.index.adapters.e5 import fetch
 
     with pytest.raises(ValueError, match=r"x\.bin"):
         fetch(tmp_path, files=[_arquivo(b"pesos")], opener=lambda url: io.BytesIO(b"outros"))  # type: ignore[list-item]
@@ -110,7 +110,7 @@ def test_fetch_recusa_hash_errado(tmp_path: Path) -> None:
 
 
 def test_revisao_fixada() -> None:
-    from ai_scouting.rag.index.adapters.e5 import FILES, REVISION
+    from axon_scouting.rag.index.adapters.e5 import FILES, REVISION
 
     assert REVISION == "614241f622f53c4eeff9890bdc4f31cfecc418b3"
     assert [(f.remote, f.sha256[:8]) for f in FILES] == [
@@ -120,10 +120,10 @@ def test_revisao_fixada() -> None:
 
 
 def test_e5_aproxima_parafrase() -> None:
-    directory = os.environ.get("AI_SCOUTING_EMBEDDING_DIR")
+    directory = os.environ.get("AXON_SCOUTING_EMBEDDING_DIR")
     if not directory:
-        pytest.skip("AI_SCOUTING_EMBEDDING_DIR ausente")
-    from ai_scouting.rag.index.adapters.e5 import E5Embedder
+        pytest.skip("AXON_SCOUTING_EMBEDDING_DIR ausente")
+    from axon_scouting.rag.index.adapters.e5 import E5Embedder
 
     embedder = E5Embedder(Path(directory))
     modelo = embedder.model()

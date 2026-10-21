@@ -7,8 +7,8 @@ from typing import Any
 
 import pytest
 
-from ai_scouting.rag.index.api import DocumentType, IndexFilters
-from ai_scouting.rag.retrieval.domain.filters import InvalidFilters, index_filters
+from axon_scouting.rag.index.api import DocumentType, IndexFilters
+from axon_scouting.rag.retrieval.domain.filters import InvalidFilters, index_filters
 
 CONTRATO = {  # o exemplo de specs/101-scouting-pack/contracts/retrieval-filters.md
     "branch": "pioneiro",

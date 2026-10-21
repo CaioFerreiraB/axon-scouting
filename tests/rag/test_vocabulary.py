@@ -5,8 +5,8 @@ Nota para a US5 da 101: se o léxico ganhar ramo ou tipo novo, o modelo do índi
 
 from __future__ import annotations
 
-from ai_scouting.context.lexicon import LEXICON
-from ai_scouting.rag.index.api import BRANCHES, DocumentType
+from axon_scouting.context.lexicon import LEXICON
+from axon_scouting.rag.index.api import BRANCHES, DocumentType
 
 
 def test_ramos_do_lexico_sao_os_do_indice() -> None:

@@ -17,10 +17,10 @@ from typing import Any
 import pytest
 import yaml
 
-from ai_scouting.context.derivation import derive_context
-from ai_scouting.context.lexicon import LEXICON
-from ai_scouting.context.periods import reference_day
-from ai_scouting.eval import CONTEXT_FIELDS, expected_context, is_historical
+from axon_scouting.context.derivation import derive_context
+from axon_scouting.context.lexicon import LEXICON
+from axon_scouting.context.periods import reference_day
+from axon_scouting.eval import CONTEXT_FIELDS, expected_context, is_historical
 
 ROOT = Path(__file__).resolve().parents[2]
 GOLDEN = ROOT / "eval" / "golden.yaml"

@@ -6,9 +6,9 @@ from datetime import UTC, datetime, timedelta
 
 import pytest
 
-from ai_scouting.rag.ingestion.adapters.clock import SystemClock
-from ai_scouting.rag.ingestion.adapters.memory import FixedClock
-from ai_scouting.rag.ingestion.ports import Clock
+from axon_scouting.rag.ingestion.adapters.clock import SystemClock
+from axon_scouting.rag.ingestion.adapters.memory import FixedClock
+from axon_scouting.rag.ingestion.ports import Clock
 
 INSTANTE = datetime(2026, 10, 7, 15, 30, tzinfo=UTC)
 

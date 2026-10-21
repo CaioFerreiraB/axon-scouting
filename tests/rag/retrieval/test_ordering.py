@@ -5,11 +5,11 @@ from __future__ import annotations
 import dataclasses
 from datetime import date
 
-from ai_core_contracts import Chunk
-from ai_core_contracts.testing import chunk as chunk_cru
+from axon_ai_contracts import Chunk
+from axon_ai_contracts.testing import chunk as chunk_cru
 
-from ai_scouting.rag.index.api import DocumentType, IndexedChunk, IndexFilters, ValidityStatus
-from ai_scouting.rag.retrieval.domain.ordering import BRANCH_MATCH, FUSION_SCORE, TYPE_MATCH, marks, ordered
+from axon_scouting.rag.index.api import DocumentType, IndexedChunk, IndexFilters, ValidityStatus
+from axon_scouting.rag.retrieval.domain.ordering import BRANCH_MATCH, FUSION_SCORE, TYPE_MATCH, marks, ordered
 
 DIA = date(2026, 10, 7)
 BASE = IndexedChunk(

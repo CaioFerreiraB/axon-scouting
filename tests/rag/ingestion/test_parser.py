@@ -9,9 +9,9 @@ from pathlib import Path
 import pytest
 from fixtures import pdfs
 
-from ai_scouting.rag.ingestion.adapters.memory import MemoryParser
-from ai_scouting.rag.ingestion.adapters.pdfium import PdfiumParser
-from ai_scouting.rag.ingestion.ports import DocumentParser
+from axon_scouting.rag.ingestion.adapters.memory import MemoryParser
+from axon_scouting.rag.ingestion.adapters.pdfium import PdfiumParser
+from axon_scouting.rag.ingestion.ports import DocumentParser
 
 PAGINAS = (("Primeira página com acentuação: ação, órgão.",), ("Segunda página.", "Outra linha."))
 

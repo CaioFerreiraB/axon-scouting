@@ -4,7 +4,7 @@ Na Fase 5 a carga precisa de configuração: sem ela, o default `e5` exige `embe
 closed). Cada chamada usa um `qdrant_path` próprio — o Qdrant embutido trava o diretório por cliente aberto.
 
 Roda todas as etapas, inclusive imports (o pack não importa o core) e distribuição (a faixa declarada de
-`ai-core-contracts` cabe na derivada da `contract_version`). Na instalação editável, a etapa de distribuição não tem o
+`axon-ai-contracts` cabe na derivada da `contract_version`). Na instalação editável, a etapa de distribuição não tem o
 que verificar e emite `distribution.not_found`; no ambiente limpo (job `clean-env`), o relatório vem sem nenhum item.
 """
 
@@ -14,10 +14,10 @@ from datetime import UTC, datetime
 from importlib.metadata import packages_distributions
 from pathlib import Path
 
-from ai_core_contracts import JSONValue
-from ai_core_contracts.testing import assert_pack_conforms, check_pack, turn_view
+from axon_ai_contracts import JSONValue
+from axon_ai_contracts.testing import assert_pack_conforms, check_pack, turn_view
 
-from ai_scouting.pack import ScoutingPack
+from axon_scouting.pack import ScoutingPack
 
 REFERENCE = datetime(2026, 10, 7, 12, tzinfo=UTC)
 
@@ -31,7 +31,7 @@ QUESTIONS = (
 
 VIEWS = tuple(turn_view(question=question, reference_time=REFERENCE) for question in QUESTIONS)
 
-DISTRIBUTION_IS_VISIBLE = "ai-scouting" in (packages_distributions().get("ai_scouting") or [])
+DISTRIBUTION_IS_VISIBLE = "axon-scouting" in (packages_distributions().get("axon_scouting") or [])
 """Verdadeiro na instalação normal (ambiente limpo); falso na editável (`uv sync`)."""
 
 

@@ -6,8 +6,13 @@ import random
 
 import pytest
 
-from ai_scouting.rag.ingestion.domain.chunking import ChunkingPolicy, estimate_tokens, narrative_chunks, split_sentences
-from ai_scouting.rag.ingestion.domain.text import Line
+from axon_scouting.rag.ingestion.domain.chunking import (
+    ChunkingPolicy,
+    estimate_tokens,
+    narrative_chunks,
+    split_sentences,
+)
+from axon_scouting.rag.ingestion.domain.text import Line
 
 
 def linhas(*textos: str, pagina: int = 1) -> list[Line]:

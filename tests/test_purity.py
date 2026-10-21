@@ -10,16 +10,16 @@ from pathlib import Path
 
 import pytest
 
-import ai_scouting.context
-import ai_scouting.eval
-import ai_scouting.rag.retrieval
-import ai_scouting.validators
+import axon_scouting.context
+import axon_scouting.eval
+import axon_scouting.rag.retrieval
+import axon_scouting.validators
 
 PURE = (
-    Path(ai_scouting.context.__file__).parent,
-    Path(ai_scouting.validators.__file__).parent,
-    Path(ai_scouting.rag.retrieval.__file__).parent,  # 103 FR-002: a vigência vem nos filtros, nunca do relógio
-    Path(ai_scouting.eval.__file__).parent,  # 105 R10: o dia vem do `reference_time` do item
+    Path(axon_scouting.context.__file__).parent,
+    Path(axon_scouting.validators.__file__).parent,
+    Path(axon_scouting.rag.retrieval.__file__).parent,  # 103 FR-002: a vigência vem nos filtros, nunca do relógio
+    Path(axon_scouting.eval.__file__).parent,  # 105 R10: o dia vem do `reference_time` do item
 )
 CLOCK_CALLS = (".now(", ".today(", "utcnow", "time.time(", "time.monotonic(")
 SOURCES = sorted(path for folder in PURE for path in folder.rglob("*.py"))

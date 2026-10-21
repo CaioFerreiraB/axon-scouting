@@ -7,11 +7,11 @@ import inspect
 import random
 
 import pytest
-from ai_core_contracts import Chunk, Reranker
-from ai_core_contracts.testing import chunk as chunk_cru
+from axon_ai_contracts import Chunk, Reranker
+from axon_ai_contracts.testing import chunk as chunk_cru
 
-from ai_scouting.rag.retrieval.domain.ordering import BRANCH_MATCH, FUSION_SCORE, TYPE_MATCH, sort_key
-from ai_scouting.rag.retrieval.reranker import MetadataReranker
+from axon_scouting.rag.retrieval.domain.ordering import BRANCH_MATCH, FUSION_SCORE, TYPE_MATCH, sort_key
+from axon_scouting.rag.retrieval.reranker import MetadataReranker
 
 
 def anotado(chunk_id: str, fusao: float, *, status: str = "vigente", ramo: bool = False, score: float = 0.5) -> Chunk:

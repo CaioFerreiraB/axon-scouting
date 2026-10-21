@@ -10,11 +10,11 @@ on:
   pull_request:
     paths:
       - "corpus/**"
-      - "src/ai_scouting/rag/**"
-      - "src/ai_scouting/prompts/**"
-      - "src/ai_scouting/context/**"
-      - "src/ai_scouting/eval/**"
-      - "src/ai_scouting/pack.py"
+      - "src/axon_scouting/rag/**"
+      - "src/axon_scouting/prompts/**"
+      - "src/axon_scouting/context/**"
+      - "src/axon_scouting/eval/**"
+      - "src/axon_scouting/pack.py"
       - "eval/**"
       - "pyproject.toml"
       - "uv.lock"
@@ -23,11 +23,11 @@ on:
     branches: [main]
     paths:
       - "corpus/**"
-      - "src/ai_scouting/rag/**"
-      - "src/ai_scouting/prompts/**"
-      - "src/ai_scouting/context/**"
-      - "src/ai_scouting/eval/**"
-      - "src/ai_scouting/pack.py"
+      - "src/axon_scouting/rag/**"
+      - "src/axon_scouting/prompts/**"
+      - "src/axon_scouting/context/**"
+      - "src/axon_scouting/eval/**"
+      - "src/axon_scouting/pack.py"
       - "eval/**"
       - "pyproject.toml"
       - "uv.lock"
@@ -44,14 +44,14 @@ jobs:
         ports:
           - 6333:6333
     env:
-      AI_SCOUTING_QDRANT_URL: http://localhost:6333
-      AI_SCOUTING_EMBEDDING_DIR: .cache/e5
+      AXON_SCOUTING_QDRANT_URL: http://localhost:6333
+      AXON_SCOUTING_EMBEDDING_DIR: .cache/e5
     steps:
       - uses: actions/checkout@v5
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.AGENTIC_APP_DEPLOY_KEY }}
-      - name: Pular os submódulos do agentic-app
+      - name: Pular os submódulos do axon
         run: |
           git config --global submodule.ai-scouting.update none
           git config --global submodule.agentic-deploy.update none
@@ -64,18 +64,18 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: .cache/e5
-          key: e5-${{ hashFiles('src/ai_scouting/rag/index/adapters/e5.py') }}
+          key: e5-${{ hashFiles('src/axon_scouting/rag/index/adapters/e5.py') }}
       - name: Modelo de embedding (só baixa o que falta ou difere)
-        run: uv run ai-scouting-corpus model fetch .cache/e5
+        run: uv run axon-scouting-corpus model fetch .cache/e5
       - name: Ingestão do corpus real
-        run: uv run ai-scouting-corpus ingest corpus/corpus.yaml
+        run: uv run axon-scouting-corpus ingest corpus/corpus.yaml
       - name: Conjunto de avaliação contra a linha de base
         env:
-          AI_CORE_PROFILE: test
-          AI_CORE_PACKS_FILE: eval/packs.yaml
-          AI_CORE_ASSISTANTS_FILE: eval/assistants.yaml
+          AXON_PROFILE: test
+          AXON_PACKS_FILE: eval/packs.yaml
+          AXON_ASSISTANTS_FILE: eval/assistants.yaml
         run: >-
-          uv run --group platform ai-core eval run
+          uv run --group platform axon eval run
           --golden eval/golden.yaml --baseline eval/baseline.json --report report.json
       - uses: actions/upload-artifact@v4
         if: always()

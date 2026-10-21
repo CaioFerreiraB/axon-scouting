@@ -19,18 +19,18 @@ from typing import Any
 
 import pytest
 
-pytest.importorskip("ai_core", reason="ai-core não instalado: rode com o grupo platform (Python 3.14)")
+pytest.importorskip("axon_ai", reason="axon-ai não instalado: rode com o grupo platform (Python 3.14)")
 
-from ai_core.bootstrap.profiles import TEST_OIDC_TOKEN
-from ai_core.bootstrap.wiring import platform
-from ai_core_contracts import ChatChunk, ChatMessage, ChatResponse, JSONValue
+from axon_ai.bootstrap.profiles import TEST_OIDC_TOKEN
+from axon_ai.bootstrap.wiring import platform
+from axon_ai_contracts import ChatChunk, ChatMessage, ChatResponse, JSONValue
 from fastapi.testclient import TestClient
 from qdrant_client import AsyncQdrantClient
 from rag.retrieval.corpus import publicar
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder
-from ai_scouting.rag.index.adapters.qdrant import QdrantIndex
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder
+from axon_scouting.rag.index.adapters.qdrant import QdrantIndex
 
 ID = re.compile(r"id: ([^\]\s]+)\]")
 SEM_TRECHOS = "Nenhum documento oficial foi encontrado para a pergunta."
@@ -106,7 +106,7 @@ def _publish(path: Path) -> None:
 
 @pytest.fixture
 def montar(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Iterator[Any]:
-    for name in [name for name in os.environ if name.startswith(("AI_CORE_", "AI_SCOUTING_"))]:
+    for name in [name for name in os.environ if name.startswith(("AXON_", "AI_CORE_", "AI_SCOUTING_"))]:
         monkeypatch.delenv(name)
     qdrant = tmp_path / "qdrant"
     _publish(qdrant)
@@ -117,8 +117,8 @@ def montar(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Iterator[Any]:
     )
     assistants = tmp_path / "assistants.yaml"
     assistants.write_text(ASSISTANTS, encoding="utf-8")
-    monkeypatch.setenv("AI_CORE_PACKS_FILE", str(packs))
-    monkeypatch.setenv("AI_CORE_ASSISTANTS_FILE", str(assistants))
+    monkeypatch.setenv("AXON_PACKS_FILE", str(packs))
+    monkeypatch.setenv("AXON_ASSISTANTS_FILE", str(assistants))
     montadas: list[Any] = []
 
     def montar(**env: str) -> tuple[Any, CitingProvider]:
@@ -157,23 +157,23 @@ def test_pergunta_coberta_responde_com_uma_chamada_e_citacao_resolvivel(montar: 
 
     texto = payload["choices"][0]["message"]["content"]
     assert "[1]" in texto and "[[" not in texto
-    (citacao,) = payload["x_ai_core"]["citations"]
+    (citacao,) = payload["x_axon"]["citations"]
     assert citacao["chunk_id"] == citado.group(1)
     assert citacao["document"] and citacao["page"]
 
-    tipos = [r.type for r in plataforma.trace.trace(payload["x_ai_core"]["request_id"]).records]
+    tipos = [r.type for r in plataforma.trace.trace(payload["x_axon"]["request_id"]).records]
     assert tipos.count("model_call") == 1, "SC-004: uma chamada de modelo no caminho coberto"
-    gates = [r for r in plataforma.trace.trace(payload["x_ai_core"]["request_id"]).records if r.type == "coverage_gate"]
+    gates = [r for r in plataforma.trace.trace(payload["x_axon"]["request_id"]).records if r.type == "coverage_gate"]
     assert [g.attributes["route"] for g in gates] == ["generate"]
 
 
 def test_sem_trechos_responde_sem_citar_e_marca_nao_fundamentada(montar: Any) -> None:
-    plataforma, geracao = montar(AI_CORE_RAG_MIN_SCORE="1")
+    plataforma, geracao = montar(AXON_RAG_MIN_SCORE="1")
     payload = _ask(plataforma, "Qual é a receita de bolo de cenoura?")
 
     (mensagens,) = geracao.calls
     assert [m for m in mensagens if m["role"] == "tool"] == []
     assert payload["choices"][0]["message"]["content"].startswith(SEM_TRECHOS)
-    assert "ungrounded" in payload["x_ai_core"]["flags"]
-    assert {e["kind"] for e in payload["x_ai_core"]["errors"]} == {"CoverageInsufficient", "ValidatorIssue"}
+    assert "ungrounded" in payload["x_axon"]["flags"]
+    assert {e["kind"] for e in payload["x_axon"]["errors"]} == {"CoverageInsufficient", "ValidatorIssue"}
     assert payload["choices"][0]["finish_reason"] == "stop", "registros `notice`, nenhuma falha"

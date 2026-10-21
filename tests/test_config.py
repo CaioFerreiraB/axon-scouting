@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pytest
 
-from ai_scouting.pack import COLLECTION, SCOUTING_CONFIG_SCHEMA, ScoutingConfig, read_config
+from axon_scouting.pack import COLLECTION, SCOUTING_CONFIG_SCHEMA, ScoutingConfig, read_config
 
 SENTINELA = "chave-sentinela-que-nunca-aparece"
 
@@ -114,7 +114,7 @@ def test_esquema() -> None:
     ],
 )
 def test_a_chave_nunca_aparece_nos_erros(config: dict[str, object], monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setenv("AI_SCOUTING_QDRANT_API_KEY", SENTINELA)
+    monkeypatch.setenv("AXON_SCOUTING_QDRANT_API_KEY", SENTINELA)
     with pytest.raises(ValueError) as error:
         read_config(config)  # type: ignore[arg-type]
     assert SENTINELA not in str(error.value)

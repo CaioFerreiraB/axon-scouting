@@ -1,6 +1,6 @@
 """Suíte de conformidade do seam `ChunkIndex` e das portas `IndexWriter`/`DocumentStore` (spec 102
 contracts/chunk-index.md; T019, T040, T045). Roda contra o `MemoryIndex`, o `QdrantIndex` em modo local e, com
-`AI_SCOUTING_TEST_QDRANT_URL`, o `QdrantIndex` contra o servidor.
+`AXON_SCOUTING_TEST_QDRANT_URL`, o `QdrantIndex` contra o servidor.
 """
 
 from __future__ import annotations
@@ -12,9 +12,9 @@ from typing import Any
 
 import pytest
 
-from ai_scouting.rag.index.adapters.bm25 import Bm25Encoder
-from ai_scouting.rag.index.adapters.memory import HashingEmbedder
-from ai_scouting.rag.index.api import (
+from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+from axon_scouting.rag.index.adapters.memory import HashingEmbedder
+from axon_scouting.rag.index.api import (
     DocumentType,
     IndexFilters,
     IndexMismatch,
@@ -22,7 +22,7 @@ from ai_scouting.rag.index.api import (
     IndexVersion,
     ValidityStatus,
 )
-from ai_scouting.rag.index.ports import StoredDocument
+from axon_scouting.rag.index.ports import StoredDocument
 
 from .kit import (
     INSTANTE,
