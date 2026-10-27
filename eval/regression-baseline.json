@@ -94,7 +94,7 @@
       "name": "latency_ms_p50",
       "value": 0.0,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": false,
       "better": "lower"
     },
@@ -102,7 +102,7 @@
       "name": "latency_ms_p95",
       "value": 0.0,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": false,
       "better": "lower"
     },
@@ -110,7 +110,7 @@
       "name": "ttft_ms_p50",
       "value": 0.0,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": false,
       "better": "lower"
     },
@@ -118,7 +118,7 @@
       "name": "ttft_ms_p95",
       "value": 0.0,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": false,
       "better": "lower"
     },
@@ -126,7 +126,7 @@
       "name": "tokens_per_answer",
       "value": 9.0,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": false,
       "better": "lower"
     },
@@ -134,7 +134,7 @@
       "name": "model_calls_per_answer",
       "value": 1.0,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": false,
       "better": "lower"
     },
@@ -158,7 +158,7 @@
       "name": "error_rate",
       "value": 0.0,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": false,
       "better": "lower"
     },
@@ -166,7 +166,7 @@
       "name": "scouting:context_accuracy",
       "value": 1.0,
       "variance": null,
-      "n": 7,
+      "n": 8,
       "deterministic": true,
       "better": "higher"
     },
@@ -174,7 +174,7 @@
       "name": "scouting:current_document_rate",
       "value": 1.0,
       "variance": null,
-      "n": 20,
+      "n": 25,
       "deterministic": true,
       "better": "higher"
     },
@@ -190,15 +190,15 @@
       "name": "scouting:absence_claim_rate",
       "value": 0.0,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": false,
       "better": "lower"
     },
     {
       "name": "scouting:fact_recall",
-      "value": 0.9,
+      "value": 0.7633928571428571,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": true,
       "better": "higher"
     },
@@ -206,15 +206,23 @@
       "name": "flag_rate:ungrounded",
       "value": 1.0,
       "variance": null,
-      "n": 20,
+      "n": 28,
+      "deterministic": false,
+      "better": null
+    },
+    {
+      "name": "gate_route:fallback",
+      "value": 0.10714285714285714,
+      "variance": null,
+      "n": 28,
       "deterministic": false,
       "better": null
     },
     {
       "name": "gate_route:generate",
-      "value": 1.0,
+      "value": 0.8928571428571429,
       "variance": null,
-      "n": 20,
+      "n": 28,
       "deterministic": false,
       "better": null
     }
@@ -919,10 +927,293 @@
       "gate_route": "generate",
       "failure": null,
       "warnings": []
+    },
+    {
+      "id": "especialidades-pioneiro",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": null,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "CoverageInsufficient",
+        "ValidatorIssue"
+      ],
+      "gate_route": "fallback",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "especialidades-senior",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": null,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "CoverageInsufficient",
+        "ValidatorIssue"
+      ],
+      "gate_route": "fallback",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "especialidades-guia",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": null,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "CoverageInsufficient",
+        "ValidatorIssue"
+      ],
+      "gate_route": "fallback",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "etapas-escoteiro",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "etapas-cada-ramo",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "ciclo-de-vida-do-adulto",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "politicas-nacionais",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.375
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "pessoa-nicholas",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
     }
   ],
   "invalid": [],
   "annotations": [
-    "105 R18: a faixa etária também na redação da Regra 013; índice scouting__20261027T124608Z, e5"
+    "105 R19: + 8 perguntas do teste no dev (especialidades, etapas, adultos, políticas, pessoa); antes do ADR-046"
   ]
 }

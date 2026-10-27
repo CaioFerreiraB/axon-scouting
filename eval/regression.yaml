@@ -9,9 +9,9 @@
 #
 # Não é a semente da curadoria (golden.yaml) nem substitui as perguntas reais: cobre padrões, não uma pergunta — o mesmo
 # conceito por ramo, paráfrases, agregados ("cada ramo"), comparação, conceitos vizinhos (lema × marco simbólico) e
-# regras do POR cujo corpo se perdia na ingestão. `extra.group` agrupa os itens no relatório; `extra.context.branches`
-# é a derivação esperada das facetas (ADR-045), medida pela `scouting:context_accuracy`. Nenhuma calibração se
-# decide sobre ele (FR-001); ele diz se uma mudança estrutural melhorou ou piorou a recuperação.
+# regras do POR cujo corpo se perdia na ingestão; listas ("quais políticas") e pessoas. `extra.group` agrupa os itens;
+# `extra.context.branches` é a derivação esperada das facetas (ADR-045), medida pela `scouting:context_accuracy`.
+# Nenhuma calibração se decide sobre ele (FR-001); ele diz se uma mudança estrutural melhorou ou piorou a recuperação.
 version: 1
 name: scouting-regressao
 assistant: scouting
@@ -247,3 +247,96 @@ items:
       group: normativo
       facts:
         - "o Sinal do Ramo Filhotes é feito com os dedos indicador e médio estendidos"
+
+  # --- Perguntas do teste no ambiente de dev de 2026-10-27 (105 R19): especialidades, etapas, adultos, políticas e
+  # pessoas. As sem resposta no corpus (chapas de 2025, "Ana Beatriz Reali", parecer de 2025) não viram item.
+  - id: especialidades-pioneiro
+    question: "Quais são as especialidades para o Ramo Pioneiro, e como funciona a conquista de especialidades?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Há dois caminhos para conquistar uma especialidade: por um projeto (conhecer, fazer e compartilhar) ou por
+      certificação externa (Guia de Especialidades e Insígnias — Ramos Sênior e Pioneiro).
+    extra:
+      group: individual
+      facts:
+        - "para conquistar uma especialidade existem dois caminhos"
+
+  - id: especialidades-senior
+    question: "Quais são as especialidades para o Ramo Sênior?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      As do Guia de Especialidades e Insígnias — Ramos Sênior e Pioneiro, conquistadas por projeto ou por
+      certificação externa.
+    extra:
+      group: individual
+      facts:
+        - ["para conquistar uma especialidade existem dois caminhos", "outra forma de conquistar uma especialidade e por meio de certificacao externa"]
+
+  - id: especialidades-guia
+    question: "Procure as especialidades no guia de especialidades do ramo sênior e pioneiro"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "O Guia de Especialidades e Insígnias — Ramos Sênior e Pioneiro."
+    extra:
+      group: individual
+      facts:
+        - ["para conquistar uma especialidade existem dois caminhos", "outra forma de conquistar uma especialidade e por meio de certificacao externa"]
+
+  - id: etapas-escoteiro
+    question: "Quais as etapas do ramo escoteiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Pistas, Trilha, Rumo e Travessia."
+    extra:
+      group: individual
+      facts:
+        - ["pistas, trilha, rumo e travessia", "pistas trilha rumo travessia"]
+
+  - id: etapas-cada-ramo
+    question: "Quais são as etapas de progressão de cada ramo?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Lobinho: Pata Tenra, Saltador, Rastreador e Caçador; Escoteiro: Pistas, Trilha, Rumo e Travessia; Sênior:
+      Escalada, Conquista e Azimute; Pioneiro: Descoberta, Destino e Horizonte.
+    extra:
+      group: agregado
+      context: { branches: [filhotes, lobinho, escoteiro, senior, pioneiro] }
+      facts:
+        - ["pata tenra, saltador, rastreador e caçador", "pata tenra saltador rastreador cacador"]
+        - ["pistas, trilha, rumo e travessia", "pistas trilha rumo travessia"]
+        - ["escalada, conquista e azimute", "escalada conquista azimute"]
+        - "descoberta, destino e horizonte"
+
+  - id: ciclo-de-vida-do-adulto
+    question: "Como funciona o ciclo de vida do adulto no movimento escoteiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Três fases para cada cargo: captação, desempenho e decisões para o futuro."
+    extra:
+      group: individual
+      facts:
+        - "captação, desempenho e decisões para o futuro"
+
+  - id: politicas-nacionais
+    question: "Quais são as políticas nacionais que existem?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Adultos, Diversidade e Inclusão, Envolvimento Juvenil, Espaços Seguros, Gestão de Riscos, Programa Educativo,
+      Relações Institucionais e Governamentais e Relações Internacionais.
+    extra:
+      group: lista
+      facts:
+        - "política nacional de adultos"
+        - "política nacional de diversidade e inclusão"
+        - "política nacional de envolvimento juvenil"
+        - "política nacional de espaços seguros"
+        - "política nacional de gestão de riscos"
+        - "política nacional de programa educativo"
+        - "política nacional de relações institucionais"
+        - "política nacional de relações internacionais"
+
+  - id: pessoa-nicholas
+    question: "O que você sabe sobre Nicholas Picin Casagrande?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Aparece em atas do CAN e em documentos regionais de São Paulo."
+    extra:
+      group: pessoa
+      facts:
+        - "nicholas picin casagrande"

@@ -22,7 +22,7 @@ from axon_scouting.eval import FACTS_KEY
 ROOT = Path(__file__).resolve().parents[2]
 REGRESSION = ROOT / "eval" / "regression.yaml"
 CHUNKS = ROOT / "src" / "axon_scouting" / "data" / "index" / "chunks.jsonl"
-GROUPS = frozenset({"individual", "agregado", "comparativo", "normativo"})
+GROUPS = frozenset({"individual", "agregado", "comparativo", "normativo", "lista", "pessoa"})
 
 
 def _problems(regression: Mapping[str, Any], texts: list[str]) -> list[str]:
@@ -77,11 +77,11 @@ def test_regressao_sem_problemas(regression: Mapping[str, Any], texts: list[str]
 
 
 def test_regressao_cobre_os_padroes(regression: Mapping[str, Any]) -> None:
-    """Os padrões da revisão: o mesmo conceito por ramo, agregado, comparação e regra normativa (FR-015)."""
+    """Os padrões da revisão: o mesmo conceito por ramo, agregado, comparação, regra normativa, lista e pessoa (FR-015)."""
     groups = {item["extra"]["group"] for item in regression["items"]}
     assert groups == GROUPS
     agregados = [item for item in regression["items"] if item["extra"]["group"] == "agregado"]
-    assert len({len(item["extra"][FACTS_KEY]) for item in agregados}) == 1, "agregados cobrem os cinco ramos"
+    assert all(len(item["extra"][FACTS_KEY]) >= 4 for item in agregados), "agregados cobrem os ramos que o corpus enuncia"
 
 
 @pytest.mark.parametrize(
