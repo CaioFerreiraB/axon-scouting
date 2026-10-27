@@ -77,11 +77,14 @@ def test_regressao_sem_problemas(regression: Mapping[str, Any], texts: list[str]
 
 
 def test_regressao_cobre_os_padroes(regression: Mapping[str, Any]) -> None:
-    """Os padrões da revisão: o mesmo conceito por ramo, agregado, comparação, regra normativa, lista e pessoa (FR-015)."""
+    """Os padrões da revisão: o mesmo conceito por ramo, agregado, comparação, regra normativa, lista e pessoa
+    (FR-015)."""
     groups = {item["extra"]["group"] for item in regression["items"]}
     assert groups == GROUPS
     agregados = [item for item in regression["items"] if item["extra"]["group"] == "agregado"]
-    assert all(len(item["extra"][FACTS_KEY]) >= 4 for item in agregados), "agregados cobrem os ramos que o corpus enuncia"
+    assert all(len(item["extra"][FACTS_KEY]) >= 4 for item in agregados), (
+        "agregados cobrem os ramos que o corpus enuncia"
+    )
 
 
 @pytest.mark.parametrize(

@@ -17,9 +17,9 @@ from typing import Final
 
 from axon_ai_contracts import Chunk, JSONValue, NamedRetriever
 
-from axon_scouting.rag.index.api import ChunkIndex, IndexedChunk, IndexFilters
+from axon_scouting.rag.index.api import ChunkIndex, DocumentType, IndexedChunk, IndexFilters
 from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
-from axon_scouting.rag.retrieval.domain.filters import facets, index_filters
+from axon_scouting.rag.retrieval.domain.filters import facets, index_filters, suggested_types
 from axon_scouting.rag.retrieval.domain.ordering import FACET, FACET_ORDER, FACET_RANK, FUSION_SCORE, marks, ordered
 
 TOOL_NAME: Final = "search_docs"
@@ -51,12 +51,20 @@ class ScoutingRetriever:
         limit = self._config.limit(top_k)
         index_filters_ = index_filters(filters)
         branches = facets(filters)
+        preferred = suggested_types(filters)
         if not branches:
             found = await self._index.search(query, filters=index_filters_, limit=limit)
-            return ordered([_to_chunk(chunk, index_filters_) for chunk in found])
-        return ordered(await self._by_facet(query, index_filters_, branches, limit))
+            return ordered([_to_chunk(chunk, index_filters_, preferred) for chunk in found])
+        return ordered(await self._by_facet(query, index_filters_, branches, limit, preferred))
 
-    async def _by_facet(self, query: str, base: IndexFilters, branches: tuple[str, ...], limit: int) -> list[Chunk]:
+    async def _by_facet(
+        self,
+        query: str,
+        base: IndexFilters,
+        branches: tuple[str, ...],
+        limit: int,
+        preferred: tuple[DocumentType, ...],
+    ) -> list[Chunk]:
         """Uma busca por ramo, `limit` repartido; um trecho achado por duas facetas fica só na primeira.
 
         Cada faceta busca com o `limit` inteiro e guarda os primeiros: o índice corta as listas densa e esparsa no
@@ -71,7 +79,7 @@ class ScoutingRetriever:
             kept = [chunk for chunk in found if chunk.chunk_id not in seen][:per_facet]
             for rank, chunk in enumerate(kept):  # a posição conta só o que a faceta guardou: toda faceta tem um 0
                 seen.add(chunk.chunk_id)
-                marked = _to_chunk(chunk, facet_filters)
+                marked = _to_chunk(chunk, facet_filters, preferred)
                 metadata = {**marked.metadata, FACET: branch, FACET_RANK: rank, FACET_ORDER: order}
                 chunks.append(dataclasses.replace(marked, metadata=metadata))
         return ordered(chunks)[:limit]
@@ -84,9 +92,13 @@ def search_docs(retriever: ScoutingRetriever, *, collection: str = "scouting") -
     )
 
 
-def _to_chunk(chunk: IndexedChunk, filters: IndexFilters) -> Chunk:
+def _to_chunk(chunk: IndexedChunk, filters: IndexFilters, preferred: tuple[DocumentType, ...] = ()) -> Chunk:
     """O `Chunk` da 102 com o score trocado pela similaridade e as marcas de ordem nos metadados (R2, R8)."""
     base = chunk.to_chunk()
     similarity = 0.0 if chunk.similarity is None else min(max(chunk.similarity, 0.0), 1.0)
-    metadata: dict[str, JSONValue] = {**base.metadata, FUSION_SCORE: float(chunk.score or 0.0), **marks(chunk, filters)}
+    metadata: dict[str, JSONValue] = {
+        **base.metadata,
+        FUSION_SCORE: float(chunk.score or 0.0),
+        **marks(chunk, filters, preferred),
+    }
     return dataclasses.replace(base, score=similarity, metadata=metadata)

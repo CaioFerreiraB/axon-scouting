@@ -1,8 +1,9 @@
 """Derivação de contexto da pergunta: ramo, temas, tipos de documento e vigência (spec 101 FR-004 a FR-006).
 
-Função pura de (pergunta, dia de referência, léxico) — sem modelo, sem relógio, sem I/O (princípio V, SC-002). Na
-dúvida, a derivação não filtra: ramo ambíguo resulta em nenhum filtro de ramo (research R8). Mais de um ramo, ou um
-marcador de totalidade ("cada ramo"), resulta em facetas — `branches` —, uma busca por ramo na 103 (ADR-045).
+Função pura de (pergunta, dia de referência, léxico) — sem modelo, sem relógio, sem I/O (princípio V, SC-002). Só o
+tipo de documento citado filtra; o sugerido pelos temas só ordena (ADR-046). Na dúvida, a derivação não filtra: ramo
+ambíguo resulta em nenhum filtro de ramo (research R8). Mais de um ramo, ou um marcador de totalidade ("cada ramo"),
+resulta em facetas — `branches` —, uma busca por ramo na 103 (ADR-045).
 """
 
 from __future__ import annotations
@@ -29,6 +30,9 @@ class ScoutingContext:
     """Facetas: dois ramos ou mais, na ordem do léxico (ADR-045); com elas, `branch` é `None`."""
     topics: tuple[str, ...]
     document_types: tuple[str, ...]
+    """Os tipos que a pergunta cita ("segundo o estatuto"): filtram a busca."""
+    suggested_types: tuple[str, ...]
+    """Os tipos que os temas e os sinais sugerem: só desempatam a ordem, nunca excluem (ADR-046)."""
     validity: Validity
     include_superseded: bool
     previous_version: bool
@@ -44,7 +48,8 @@ def derive_context(question: str, reference_day: date, lexicon: Lexicon = LEXICO
         branch=branch,
         branches=branches,
         topics=tuple(topic.id for topic in topics),
-        document_types=_document_types(text, lexicon, topics),
+        document_types=_cited_types(text, lexicon),
+        suggested_types=_suggested_types(text, lexicon, topics),
         # Consulta histórica (US3): o período citado, ou o dia de referência quando a pergunta mira a versão anterior.
         validity=period or Validity.day(reference_day),
         include_superseded=period is not None or previous,
@@ -60,6 +65,7 @@ def to_slice(context: ScoutingContext) -> dict[str, JSONValue]:
         "branches": list(context.branches),
         "topics": list(context.topics),
         "document_types": list(context.document_types),
+        "suggested_types": list(context.suggested_types),
         "effective_from": context.validity.start.isoformat(),
         "effective_until": context.validity.end.isoformat(),
         "include_superseded": context.include_superseded,
@@ -84,13 +90,20 @@ def _branches(text: str, lexicon: Lexicon) -> tuple[str | None, tuple[str, ...]]
     return None, found if len(found) > 1 else ()
 
 
-def _document_types(text: str, lexicon: Lexicon, topics: tuple[Topic, ...]) -> tuple[str, ...]:
-    """Os tipos citados; sem citação, os sugeridos pelos sinais e pelos temas. Sempre na ordem do léxico."""
-    explicit = {kind for kind, terms in lexicon.document_types.items() if _matches(text, terms)}
-    if not explicit:
-        for term, kinds in lexicon.type_signals.items():
-            if contains_term(text, term):
-                explicit.update(kinds)
-        for topic in topics:
-            explicit.update(topic.document_types)
-    return tuple(kind for kind in lexicon.document_types if kind in explicit)
+def _cited_types(text: str, lexicon: Lexicon) -> tuple[str, ...]:
+    """Os tipos que a pergunta nomeia, na ordem do léxico."""
+    return tuple(kind for kind, terms in lexicon.document_types.items() if _matches(text, terms))
+
+
+def _suggested_types(text: str, lexicon: Lexicon, topics: tuple[Topic, ...]) -> tuple[str, ...]:
+    """Sem tipo citado, os que os sinais e os temas sugerem, na ordem do léxico; com tipo citado, nenhum — o filtro já
+    decide (ADR-046)."""
+    if _cited_types(text, lexicon):
+        return ()
+    suggested: set[str] = set()
+    for term, kinds in lexicon.type_signals.items():
+        if contains_term(text, term):
+            suggested.update(kinds)
+    for topic in topics:
+        suggested.update(topic.document_types)
+    return tuple(kind for kind in lexicon.document_types if kind in suggested)

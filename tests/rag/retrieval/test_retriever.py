@@ -226,3 +226,20 @@ def test_trecho_de_outra_faceta_nao_tira_a_posicao_zero() -> None:
     for faceta in ("escoteiro", "pioneiro"):
         posicoes = sorted(chunk.metadata["facet_rank"] for chunk in achados if chunk.metadata["facet"] == faceta)
         assert posicoes == list(range(len(posicoes)))
+
+
+# --- tipo sugerido ordena, não filtra (ADR-046) ---------------------------------------------------------------------
+
+
+def test_tipo_sugerido_nao_exclui_e_marca_o_desempate() -> None:
+    """`suggested_types` não tira nenhum documento: só liga a marca de tipo, que desempata a ordem."""
+    sem = buscar("acampamento da tropa", top_k=30)
+    com = buscar("acampamento da tropa", filtros(suggested_types=["por"]), top_k=30)
+    assert {chunk.chunk_id for chunk in com} == {chunk.chunk_id for chunk in sem}
+    for chunk in com:
+        assert chunk.metadata[TYPE_MATCH] is (chunk.metadata["document_type"] == "por")
+
+
+def test_tipo_sugerido_invalido_e_erro() -> None:
+    with pytest.raises(InvalidFilters, match="suggested_types"):
+        buscar("acampamento", filtros(suggested_types=["ata"]))

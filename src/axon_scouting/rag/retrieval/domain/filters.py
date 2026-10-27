@@ -3,7 +3,8 @@ research R3, R13; ADR-045).
 
 Sem relógio: sem as datas não há como escolher a vigência, e "hoje" seria um chute. Chave desconhecida é erro — o
 contrato da 101 diz que nenhuma chave nova entra sem atualizar a 103. Os temas são aceitos e ignorados na v1. As
-facetas (`branches`, dois ramos ou mais) não são filtro do índice: o retriever faz uma busca por ramo.
+facetas (`branches`, dois ramos ou mais) não são filtro do índice: o retriever faz uma busca por ramo. Os tipos
+sugeridos (`suggested_types`) também não: só desempatam a ordem (ADR-046).
 """
 
 from __future__ import annotations
@@ -22,6 +23,7 @@ KNOWN: Final = frozenset(
         "branches",
         "topics",
         "document_types",
+        "suggested_types",
         "effective_from",
         "effective_until",
         "include_superseded",
@@ -111,10 +113,15 @@ def _branch(raw: Mapping[str, JSONValue]) -> str | None:
     return value
 
 
-def _types(raw: Mapping[str, JSONValue]) -> tuple[DocumentType, ...]:
-    value = raw.get("document_types")
+def suggested_types(raw: Mapping[str, JSONValue] | None) -> tuple[DocumentType, ...]:
+    """Os tipos sugeridos pelos temas da pergunta: preferência de ordem, nunca filtro (ADR-046)."""
+    return _types(raw or {}, "suggested_types")
+
+
+def _types(raw: Mapping[str, JSONValue], key: str = "document_types") -> tuple[DocumentType, ...]:
+    value = raw.get(key)
     if value is None:
         return ()
     if not isinstance(value, list) or any(not isinstance(item, str) or item not in _TYPES for item in value):
-        raise InvalidFilters("document_types", f"esperada lista de tipos conhecidos, veio {value!r}")
+        raise InvalidFilters(key, f"esperada lista de tipos conhecidos, veio {value!r}")
     return tuple(DocumentType(item) for item in value)

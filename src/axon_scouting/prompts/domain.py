@@ -1,13 +1,13 @@
 """Fragmento de instruções do pack scouting na Fase 5 (spec 101 FR-008, FR-009, FR-011, FR-022, US4, US8; research R21,
-R24, R36).
+R24, R36, R37).
 
 Constante Python, não arquivo de dados: nada a declarar no empacotamento e nada que possa faltar no wheel. Com o corpus,
 o bloco "sem documentos" da Fase 4 deu lugar a quatro: as prioridades de fonte (US4, na ordem), a citação `[[id]]` pelo
 identificador que o core mostra depois de `id:` em cada trecho (104 FR-007, ADR-026), o caminho sem trechos (FR-011) e
 a vigência. Desde a revisão do RAG de 2026-10-27, mais três: a cobertura parcial (o que não veio nos trechos não é o
 que não existe nos documentos), o conceito perguntado (sem trocar por um vizinho) e a resposta por ramo. O exemplo de
-citação é sintético — nunca um id do corpus. O texto não manda chamar ferramenta: no `agentic`, o prompt de pack só
-chega à geração.
+citação é sintético — nunca um id do corpus. A resposta fala de documentos consultados, nunca de "trechos" (R37). O
+texto não manda chamar ferramenta: no `agentic`, o prompt de pack só chega à geração.
 """
 
 from __future__ import annotations
@@ -35,16 +35,19 @@ encontrado para a pergunta, não cite nem nomeie documento, manual, resolução 
 vigente na fonte oficial da instituição.
 
 Se os trechos respondem só parte da pergunta: responda, com citação, a parte que eles cobrem e diga com clareza o que
-não apareceu nos trechos recebidos. Os trechos são uma amostra da busca, não o acervo inteiro: nunca afirme que algo não
-existe nos documentos oficiais, nem que os documentos não tratam do assunto, só porque não veio nos trechos. Sugira
-perguntar de novo sobre o que faltou, de forma mais específica.
+você não encontrou, com palavras simples — por exemplo, "não encontrei essa informação nos documentos que consultei".
+Os trechos são uma amostra da busca, não o acervo inteiro: nunca afirme que algo não existe nos documentos oficiais, nem
+que os documentos não tratam do assunto. Sugira perguntar de novo sobre o que faltou, de forma mais específica.
+
+Ao falar com a pessoa, fale dos documentos, nunca do mecanismo: não use as palavras "trecho", "busca", "ferramenta",
+"contexto" ou "recuperação" na resposta. Quem pergunta não sabe o que elas significam aqui.
 
 Responda ao conceito perguntado. O movimento tem conceitos vizinhos que não são a mesma coisa — por exemplo, o lema, o
-marco simbólico, a ênfase educativa, o símbolo e o sinal de cada ramo. Se a pergunta é sobre um deles e os trechos só
-trazem outro, não apresente um no lugar do outro: diga qual veio e que o perguntado não apareceu.
+marco simbólico, a ênfase educativa, o símbolo e o sinal de cada ramo. Se a pergunta é sobre um deles e você só
+encontrou outro, não apresente um no lugar do outro: diga o que encontrou e que não encontrou o que foi perguntado.
 
 Quando a pergunta é sobre vários ramos, organize a resposta por ramo, na ordem das idades (Filhotes, Lobinho, Escoteiro,
-Sênior, Pioneiro), e marque os ramos para os quais os trechos não trouxeram a informação.
+Sênior, Pioneiro), e marque os ramos para os quais você não encontrou a informação.
 
 Vigência: se um trecho vier de uma versão substituída ou revogada, diga isso ao usar a informação; numa pergunta sobre o
 presente, prefira o que está vigente.

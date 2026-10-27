@@ -174,7 +174,7 @@
       "name": "scouting:current_document_rate",
       "value": 1.0,
       "variance": null,
-      "n": 25,
+      "n": 28,
       "deterministic": true,
       "better": "higher"
     },
@@ -196,7 +196,7 @@
     },
     {
       "name": "scouting:fact_recall",
-      "value": 0.7633928571428571,
+      "value": 0.8705357142857143,
       "variance": null,
       "n": 28,
       "deterministic": true,
@@ -211,16 +211,8 @@
       "better": null
     },
     {
-      "name": "gate_route:fallback",
-      "value": 0.10714285714285714,
-      "variance": null,
-      "n": 28,
-      "deterministic": false,
-      "better": null
-    },
-    {
       "name": "gate_route:generate",
-      "value": 0.8928571428571429,
+      "value": 1.0,
       "variance": null,
       "n": 28,
       "deterministic": false,
@@ -947,20 +939,19 @@
         "controller_invalid_rate": null,
         "error_rate": 0.0,
         "scouting:context_accuracy": null,
-        "scouting:current_document_rate": null,
+        "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
         "ungrounded"
       ],
       "issue_kinds": [
-        "CoverageInsufficient",
         "ValidatorIssue"
       ],
-      "gate_route": "fallback",
+      "gate_route": "generate",
       "failure": null,
       "warnings": []
     },
@@ -983,20 +974,19 @@
         "controller_invalid_rate": null,
         "error_rate": 0.0,
         "scouting:context_accuracy": null,
-        "scouting:current_document_rate": null,
+        "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
         "ungrounded"
       ],
       "issue_kinds": [
-        "CoverageInsufficient",
         "ValidatorIssue"
       ],
-      "gate_route": "fallback",
+      "gate_route": "generate",
       "failure": null,
       "warnings": []
     },
@@ -1019,20 +1009,19 @@
         "controller_invalid_rate": null,
         "error_rate": 0.0,
         "scouting:context_accuracy": null,
-        "scouting:current_document_rate": null,
+        "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
         "ungrounded"
       ],
       "issue_kinds": [
-        "CoverageInsufficient",
         "ValidatorIssue"
       ],
-      "gate_route": "fallback",
+      "gate_route": "generate",
       "failure": null,
       "warnings": []
     },
@@ -1214,6 +1203,6 @@
   ],
   "invalid": [],
   "annotations": [
-    "105 R19: + 8 perguntas do teste no dev (especialidades, etapas, adultos, políticas, pessoa); antes do ADR-046"
+    "ADR-046: tipo sugerido ordena, só o citado filtra; tempo relativo; prompt sem 'trechos'; fatos de especialidades com redações alternativas (105 R19)"
   ]
 }

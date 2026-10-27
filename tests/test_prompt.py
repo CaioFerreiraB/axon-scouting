@@ -60,7 +60,7 @@ def test_o_bloco_da_fase_4_saiu() -> None:
     "frase",
     [
         "só parte da pergunta",
-        "não apareceu nos trechos",
+        "não encontrei essa informação nos documentos que consultei",
         "amostra da busca",
         "nunca afirme que algo não existe nos documentos oficiais",
         "conceito perguntado",
@@ -76,3 +76,11 @@ def test_nenhum_fato_do_corpus_no_prompt() -> None:
     """As orientações são genéricas: nenhuma formulação, lema ou regra que uma pergunta do conjunto espera."""
     for fato in ("ser livre como os lobos", "viver aventuras", "sempre alerta", "melhor possível", "regra 0", "158"):
         assert fato not in NORMALIZED
+
+
+def test_a_resposta_nao_fala_do_mecanismo() -> None:
+    """101 R37: quem pergunta não sabe o que é um trecho; o prompt proíbe as palavras do mecanismo na resposta."""
+    assert "não use as palavras" in NORMALIZED
+    for palavra in ("trecho", "busca", "ferramenta"):
+        assert f'"{palavra}"' in NORMALIZED
+    assert "não apareceu nos trechos" not in NORMALIZED

@@ -14,7 +14,11 @@ def test_ramos_do_lexico_sao_os_do_indice() -> None:
 
 
 def test_tipos_do_lexico_sao_os_do_indice() -> None:
+    """Todo tipo que a derivação publica existe no índice; e o sugerido por tema ou sinal está entre os citáveis — a
+    derivação só publica tipos do léxico (ADR-046: `programa_educativo` saiu do léxico, porque nenhum documento o
+    tem)."""
     tipos = {t.value for t in DocumentType}
-    assert set(LEXICON.document_types) == tipos
-    assert {tipo for topico in LEXICON.topics for tipo in topico.document_types} <= tipos
-    assert {tipo for sinais in LEXICON.type_signals.values() for tipo in sinais} <= tipos
+    citaveis = set(LEXICON.document_types)
+    assert citaveis <= tipos
+    assert {tipo for topico in LEXICON.topics for tipo in topico.document_types} <= citaveis
+    assert {tipo for sinais in LEXICON.type_signals.values() for tipo in sinais} <= citaveis

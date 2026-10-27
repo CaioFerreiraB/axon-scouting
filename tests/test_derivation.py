@@ -25,7 +25,8 @@ def test_us2_cenario_1() -> None:
         branch="pioneiro",
         branches=(),
         topics=("lideranca",),
-        document_types=("manual", "programa_educativo"),
+        document_types=(),
+        suggested_types=("manual", "guia"),
         validity=HOJE,
         include_superseded=False,
         previous_version=False,
@@ -36,7 +37,8 @@ def test_us2_cenario_2_sem_ramo() -> None:
     contexto = derive_context("Como funciona a promessa?", DIA)
     assert contexto.branch is None
     assert contexto.topics == ("promessa_e_lei",)
-    assert contexto.document_types == ("manual", "por")
+    assert contexto.document_types == ()
+    assert contexto.suggested_types == ("manual", "por")
     assert contexto.validity == HOJE
 
 
@@ -59,6 +61,7 @@ def test_ramo(pergunta: str, ramo: str | None) -> None:
 def test_tipo_citado_prevalece_sobre_os_sugeridos() -> None:
     contexto = derive_context("O que diz o estatuto sobre liderança?", DIA)
     assert contexto.document_types == ("estatuto",)
+    assert contexto.suggested_types == ()
     assert contexto.topics == ("lideranca",)
 
 
@@ -68,6 +71,7 @@ def test_pergunta_vazia_da_o_contexto_default() -> None:
         branches=(),
         topics=(),
         document_types=(),
+        suggested_types=(),
         validity=HOJE,
         include_superseded=False,
         previous_version=False,
@@ -84,7 +88,8 @@ def test_fatia_com_ramo() -> None:
             "branch": "pioneiro",
             "branches": [],
             "topics": ["lideranca"],
-            "document_types": ["manual", "programa_educativo"],
+            "document_types": [],
+            "suggested_types": ["manual", "guia"],
             "effective_from": "2026-10-07",
             "effective_until": "2026-10-07",
             "include_superseded": False,
@@ -93,7 +98,7 @@ def test_fatia_com_ramo() -> None:
         "retrieval_filters": {
             "branch": "pioneiro",
             "topics": ["lideranca"],
-            "document_types": ["manual", "programa_educativo"],
+            "suggested_types": ["manual", "guia"],
             "effective_from": "2026-10-07",
             "effective_until": "2026-10-07",
             "include_superseded": False,
@@ -129,7 +134,8 @@ def test_historico_us3_cenario_1() -> None:
     assert contexto.validity == Validity(start=date(2023, 1, 1), end=date(2023, 12, 31))
     assert contexto.include_superseded is True
     assert contexto.previous_version is False
-    assert contexto.document_types == ("por", "resolucao")
+    assert contexto.document_types == ()
+    assert contexto.suggested_types == ("por", "resolucao")
 
 
 def test_historico_us3_cenario_2() -> None:
@@ -149,7 +155,7 @@ def test_historico_antigamente_mira_a_versao_anterior() -> None:
 def test_historico_filtros_com_o_periodo() -> None:
     filtros = to_slice(derive_context("Qual era a regra em 2023?", DIA))["retrieval_filters"]
     assert filtros == {
-        "document_types": ["por", "resolucao"],
+        "suggested_types": ["por", "resolucao"],
         "effective_from": "2023-01-01",
         "effective_until": "2023-12-31",
         "include_superseded": True,
@@ -183,3 +189,38 @@ def test_facetas(pergunta: str, branch: str | None, branches: tuple[str, ...]) -
 def test_fatia_com_facetas_nao_tem_branch() -> None:
     filtros = to_slice(derive_context("Qual o lema de cada ramo?", DIA))["retrieval_filters"]
     assert isinstance(filtros, dict) and "branch" not in filtros and filtros["branches"] == list(TODOS)
+
+
+# --- tipo citado filtra, sugerido ordena; tempo relativo (ADR-046) -------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("pergunta", "citados", "sugeridos"),
+    [
+        ("Quais são as especialidades para o Ramo Sênior?", (), ("guia",)),
+        ("Procure as especialidades no guia de especialidades do ramo sênior", ("guia",), ()),
+        ("O que a Política Nacional de Programa Educativo define?", (), ()),
+        ("Quais foram as chapas concorrentes à diretoria regional?", (), ("por", "resolucao", "estatuto")),
+    ],
+)
+def test_so_o_tipo_citado_filtra(pergunta: str, citados: tuple[str, ...], sugeridos: tuple[str, ...]) -> None:
+    contexto = derive_context(pergunta, DIA)
+    assert (contexto.document_types, contexto.suggested_types) == (citados, sugeridos)
+    filtros = to_slice(contexto)["retrieval_filters"]
+    assert isinstance(filtros, dict) and filtros.get("document_types", []) == list(citados)
+
+
+@pytest.mark.parametrize(
+    ("pergunta", "ano"),
+    [
+        ("Qual o parecer da comissão fiscal sobre as contas do último ano?", 2025),
+        ("E no ano passado?", 2025),
+        ("O que mudou no ano anterior?", 2025),
+        ("Quais resoluções saíram este ano?", 2026),
+        ("O que foi aprovado no ano atual?", 2026),
+    ],
+)
+def test_tempo_relativo(pergunta: str, ano: int) -> None:
+    contexto = derive_context(pergunta, date(2026, 10, 27))
+    assert contexto.validity == Validity(start=date(ano, 1, 1), end=date(ano, 12, 31))
+    assert contexto.include_superseded is True

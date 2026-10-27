@@ -117,7 +117,11 @@ def _context_problems(context: Mapping[str, Any]) -> list[str]:
     branches = context.get("branches", [])
     if not isinstance(branches, list) or any(item not in LEXICON.branches for item in branches):
         problems.append(f"branches precisa ser uma lista de ramos do léxico: {branches!r}")
-    for key, known in (("topics", TOPICS), ("document_types", frozenset(LEXICON.document_types))):
+    for key, known in (
+        ("topics", TOPICS),
+        ("document_types", frozenset(LEXICON.document_types)),
+        ("suggested_types", frozenset(LEXICON.document_types)),
+    ):
         if key in context:
             values = context[key]
             if not isinstance(values, list):

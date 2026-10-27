@@ -259,7 +259,7 @@ items:
     extra:
       group: individual
       facts:
-        - "para conquistar uma especialidade existem dois caminhos"
+        - ["para conquistar uma especialidade existem dois caminhos", "certificação externa"]
 
   - id: especialidades-senior
     question: "Quais são as especialidades para o Ramo Sênior?"
@@ -270,7 +270,7 @@ items:
     extra:
       group: individual
       facts:
-        - ["para conquistar uma especialidade existem dois caminhos", "outra forma de conquistar uma especialidade e por meio de certificacao externa"]
+        - ["para conquistar uma especialidade existem dois caminhos", "certificação externa"]
 
   - id: especialidades-guia
     question: "Procure as especialidades no guia de especialidades do ramo sênior e pioneiro"
@@ -279,7 +279,7 @@ items:
     extra:
       group: individual
       facts:
-        - ["para conquistar uma especialidade existem dois caminhos", "outra forma de conquistar uma especialidade e por meio de certificacao externa"]
+        - ["para conquistar uma especialidade existem dois caminhos", "certificação externa", "as especialidades nos ramos sênior e pioneiro"]
 
   - id: etapas-escoteiro
     question: "Quais as etapas do ramo escoteiro?"

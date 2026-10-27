@@ -14,7 +14,7 @@ from typing import Final
 
 from axon_ai_contracts import Chunk
 
-from axon_scouting.rag.index.api import IndexedChunk, IndexFilters, ValidityStatus
+from axon_scouting.rag.index.api import DocumentType, IndexedChunk, IndexFilters, ValidityStatus
 
 FUSION_SCORE: Final = "fusion_score"
 BRANCH_MATCH: Final = "branch_match"
@@ -26,11 +26,13 @@ FACET_ORDER: Final = "facet_order"
 """Posição da faceta na lista pedida."""
 
 
-def marks(chunk: IndexedChunk, filters: IndexFilters) -> dict[str, bool]:
-    """Específico do ramo pedido (geral não casa) e do tipo sugerido pela pergunta."""
+def marks(chunk: IndexedChunk, filters: IndexFilters, preferred: Sequence[DocumentType] = ()) -> dict[str, bool]:
+    """Específico do ramo pedido (geral não casa) e de um tipo da pergunta: o citado (que já filtrou) ou o sugerido
+    pelos temas, que só desempata (ADR-046)."""
+    types = (*filters.document_types, *preferred)
     return {
         BRANCH_MATCH: filters.branch is not None and chunk.branch == filters.branch,
-        TYPE_MATCH: bool(filters.document_types) and chunk.document_type in filters.document_types,
+        TYPE_MATCH: bool(types) and chunk.document_type in types,
     }
 
 

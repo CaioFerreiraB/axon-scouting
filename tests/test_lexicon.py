@@ -51,4 +51,4 @@ def test_ids_unicos_e_ascii() -> None:
 
 def test_ramos_e_tipos_da_spec() -> None:
     assert tuple(LEXICON.branches) == ("filhotes", "lobinho", "escoteiro", "senior", "pioneiro")
-    assert tuple(LEXICON.document_types) == ("manual", "programa_educativo", "por", "resolucao", "estatuto", "guia")
+    assert tuple(LEXICON.document_types) == ("manual", "por", "resolucao", "estatuto", "guia")

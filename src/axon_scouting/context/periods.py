@@ -64,14 +64,18 @@ _EXACT_WORDS: Final = re.compile(rf"\b(?:em|no dia) (\d{{1,2}}) de ({_MONTH}) de
 _MONTH_YEAR: Final = re.compile(rf"\b(?:em|no mes de|durante) ({_MONTH}) de {_YEAR}\b")
 _YEAR_MARKED: Final = re.compile(rf"\b(?:em|no ano de|durante) {_YEAR}\b")
 """Ano só conta como período depois de uma marca temporal: "resolução 3/2023" não é consulta histórica."""
-_LAST_YEAR: Final = re.compile(r"\bano passado\b")
+_LAST_YEAR: Final = re.compile(r"\b(?:ano passado|ultimo ano|ano anterior)\b")
+"""O ano anterior ao dia de referência ("as contas do último ano")."""
+_THIS_YEAR: Final = re.compile(r"\b(?:este ano|neste ano|deste ano|ano atual|ano corrente)\b")
+"""O ano do dia de referência."""
 
 
 def find_period(normalized: str, reference_day: date) -> Validity | None:
     """O primeiro período citado na pergunta (texto já normalizado), ou None.
 
-    Data exata → um dia; mês com ano → o mês; ano com marca → o ano; "ano passado" → o ano anterior ao dia de
-    referência. Data impossível não é período. Com dois períodos, vence o primeiro na ordem do texto (research R8).
+    Data exata → um dia; mês com ano → o mês; ano com marca → o ano; "ano passado", "último ano" ou "ano anterior" →
+    o ano anterior ao dia de referência; "este ano" ou "ano atual" → o ano do dia de referência. Data impossível não é
+    período. Com dois períodos, vence o primeiro na ordem do texto (research R8).
     """
     found = [candidate for candidate in _candidates(normalized, reference_day) if candidate[1] is not None]
     if not found:
@@ -86,6 +90,7 @@ def _candidates(text: str, reference_day: date) -> Iterator[tuple[int, Validity 
         (_MONTH_YEAR, lambda m: _month(int(m[2]), MONTHS.index(m[1]) + 1)),
         (_YEAR_MARKED, lambda m: _year(int(m[1]))),
         (_LAST_YEAR, lambda _m: _year(reference_day.year - 1)),
+        (_THIS_YEAR, lambda _m: _year(reference_day.year)),
     )
     for pattern, read in readers:
         for match in pattern.finditer(text):

@@ -27,6 +27,7 @@ CONTEXT_FIELDS: Final = (
     "branches",
     "topics",
     "document_types",
+    "suggested_types",
     "effective_from",
     "effective_until",
     "include_superseded",
@@ -181,6 +182,7 @@ def _derived(context: ScoutingContext) -> dict[str, JSONValue]:
         "branches": list(context.branches),
         "topics": list(context.topics),
         "document_types": list(context.document_types),
+        "suggested_types": list(context.suggested_types),
         "effective_from": context.validity.start.isoformat(),
         "effective_until": context.validity.end.isoformat(),
         "include_superseded": context.include_superseded,
@@ -189,6 +191,6 @@ def _derived(context: ScoutingContext) -> dict[str, JSONValue]:
 
 
 def _matches(key: str, expected: JSONValue, derived: JSONValue) -> bool:
-    if key in ("branches", "topics", "document_types"):
+    if key in ("branches", "topics", "document_types", "suggested_types"):
         return isinstance(expected, list | tuple) and isinstance(derived, list) and set(expected) == set(derived)
     return expected == derived

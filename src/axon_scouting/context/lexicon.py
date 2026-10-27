@@ -18,7 +18,8 @@ from typing import Final
 
 @dataclass(frozen=True, slots=True, kw_only=True)
 class Topic:
-    """Tema da pergunta: os termos que o reconhecem e os tipos de documento em que costuma estar."""
+    """Tema da pergunta: os termos que o reconhecem e os tipos de documento em que costuma estar — uma preferência de
+    ordem, nunca um filtro (ADR-046)."""
 
     id: str
     terms: tuple[str, ...]
@@ -35,9 +36,9 @@ class Lexicon:
     """Termos que lembram um ramo mas também nomeiam o movimento ou outra coisa: nunca filtram."""
     topics: tuple[Topic, ...]
     document_types: Mapping[str, tuple[str, ...]]
-    """Tipo de documento → termos que o citam explicitamente."""
+    """Tipo de documento → termos que o citam explicitamente. Só o tipo citado filtra (ADR-046)."""
     type_signals: Mapping[str, tuple[str, ...]]
-    """Termo que aponta tipos de documento sem nomeá-los → esses tipos."""
+    """Termo que aponta tipos de documento sem nomeá-los → esses tipos, como preferência de ordem (ADR-046)."""
     previous_markers: tuple[str, ...]
     """Consulta à versão anterior sem data."""
 
@@ -105,28 +106,32 @@ LEXICON: Final = Lexicon(
         "guias",
     ),
     topics=(
-        Topic(id="lideranca", terms=("lideranca", "lider", "lideres", "liderar"), document_types=("manual",)),
+        Topic(id="lideranca", terms=("lideranca", "lider", "lideres", "liderar"), document_types=("manual", "guia")),
         Topic(
             id="progressao",
             terms=("progressao", "progressao pessoal"),
-            document_types=("manual", "programa_educativo"),
+            document_types=("manual", "guia"),
         ),
-        Topic(id="especialidades", terms=("especialidade", "especialidades"), document_types=("programa_educativo",)),
+        Topic(id="especialidades", terms=("especialidade", "especialidades"), document_types=("guia",)),
         Topic(
             id="insignias",
             terms=("insignia", "insignias", "distintivo", "distintivos"),
-            document_types=("programa_educativo",),
+            document_types=("guia", "por"),
         ),
         Topic(
             id="promessa_e_lei",
             terms=("promessa", "promessa escoteira", "lei escoteira", "lei do escoteiro"),
             document_types=("manual", "por"),
         ),
-        Topic(id="metodo_escoteiro", terms=("metodo escoteiro",), document_types=("manual", "programa_educativo")),
+        Topic(id="metodo_escoteiro", terms=("metodo escoteiro",), document_types=("manual", "guia")),
         Topic(
             id="sistema_de_patrulhas", terms=("sistema de patrulhas", "sistema de equipes"), document_types=("manual",)
         ),
-        Topic(id="uniforme", terms=("uniforme", "uniformes", "vestuario", "lenco", "lencos"), document_types=("por",)),
+        Topic(
+            id="uniforme",
+            terms=("uniforme", "uniformes", "vestuario", "lenco", "lencos"),
+            document_types=("por", "resolucao"),
+        ),
         Topic(
             id="cerimonias",
             terms=("cerimonia", "cerimonias", "investidura", "cerimonia de passagem"),
@@ -146,7 +151,7 @@ LEXICON: Final = Lexicon(
         Topic(
             id="servico_comunitario",
             terms=("servico comunitario", "acao comunitaria", "boa acao"),
-            document_types=("manual", "programa_educativo"),
+            document_types=("manual", "guia"),
         ),
         Topic(id="meio_ambiente", terms=("meio ambiente", "natureza", "ambiental"), document_types=("manual",)),
         Topic(
@@ -163,19 +168,20 @@ LEXICON: Final = Lexicon(
     document_types=MappingProxyType(
         {
             "manual": ("manual", "manuais"),
-            "programa_educativo": ("programa educativo", "programa de jovens"),
+            # "Programa educativo" nomeia um assunto, não um tipo de documento: nenhum documento do catálogo tem esse
+            # tipo, e citá-lo filtrava tudo (ADR-046). O tipo continua no esquema do índice.
             # A sigla "POR" normalizada é a preposição "por": só o nome por extenso e a sigla com pontos casam.
             "por": ("principios organizacao e regras", "p o r"),
             "resolucao": ("resolucao", "resolucoes"),
             "estatuto": ("estatuto", "estatutos"),
             # "guia" sozinho também nomeia a escoteira do Ramo Sênior: só a forma de título casa.
-            "guia": ("guia do", "guia da", "guia para"),
+            "guia": ("guia do", "guia da", "guia de", "guia para"),
         }
     ),
     type_signals=MappingProxyType(
         {
-            "competencia": ("programa_educativo", "manual"),
-            "competencias": ("programa_educativo", "manual"),
+            "competencia": ("manual", "guia"),
+            "competencias": ("manual", "guia"),
             "regra": ("por", "resolucao"),
             "regras": ("por", "resolucao"),
             "norma": ("por", "resolucao"),
