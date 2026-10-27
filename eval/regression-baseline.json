@@ -187,8 +187,16 @@
       "better": "higher"
     },
     {
+      "name": "scouting:absence_claim_rate",
+      "value": 0.0,
+      "variance": null,
+      "n": 20,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
       "name": "scouting:fact_recall",
-      "value": 0.8099999999999999,
+      "value": 0.9,
       "variance": null,
       "n": 20,
       "deterministic": true,
@@ -233,6 +241,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -267,6 +276,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -301,6 +311,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -335,6 +346,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -369,6 +381,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -403,6 +416,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -437,6 +451,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -471,6 +486,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 0.8
       },
       "citations": [],
@@ -505,6 +521,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 0.4
       },
       "citations": [],
@@ -539,6 +556,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 0.8
       },
       "citations": [],
@@ -573,6 +591,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 0.4
       },
       "citations": [],
@@ -607,6 +626,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -641,6 +661,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -675,6 +696,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -709,6 +731,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -743,6 +766,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 0.8
       },
       "citations": [],
@@ -777,7 +801,8 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.0
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -811,7 +836,8 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.0
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.8
       },
       "citations": [],
       "flags": [
@@ -845,6 +871,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -879,6 +906,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
       },
       "citations": [],
@@ -895,6 +923,6 @@
   ],
   "invalid": [],
   "annotations": [
-    "ADR-045: Filhotes como ramo e busca por faceta; índice scouting__20261027T131401Z, e5"
+    "105 R18: a faixa etária também na redação da Regra 013; índice scouting__20261027T124608Z, e5"
   ]
 }

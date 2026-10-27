@@ -3,7 +3,9 @@
 # Nasceu da revisão do RAG de 2026-10-27 (docs/revisao-rag-scouting-2026-10.md no axon): "Qual o marco simbólico dos 5
 # ramos?" chegava à geração com uma das cinco formulações. Cada item declara em `extra.facts` os fatos que precisam
 # chegar aos trechos entregues — texto do próprio corpus, casado palavra a palavra depois da normalização da 101; uma
-# lista dentro da lista são redações alternativas. A métrica é `scouting:fact_recall` (determinística).
+# lista dentro da lista são redações alternativas — a faixa etária, por exemplo, vem "entre 11 e 14 anos" nas regras de
+# cada ramo e "de 11 a 14 anos" na Regra 013 do POR (105 research R18). A métrica é `scouting:fact_recall`
+# (determinística).
 #
 # Não é a semente da curadoria (golden.yaml) nem substitui as perguntas reais: cobre padrões, não uma pergunta — o mesmo
 # conceito por ramo, paráfrases, agregados ("cada ramo"), comparação, conceitos vizinhos (lema × marco simbólico) e
@@ -209,7 +211,7 @@ items:
     extra:
       group: individual
       facts:
-        - "entre seis anos e meio e dez anos"
+        - ["entre seis anos e meio e dez anos", "de 6 anos e meio a 10 anos"]
 
   - id: idade-cada-ramo
     question: "Qual a faixa etária de cada ramo?"
@@ -220,11 +222,11 @@ items:
       group: agregado
       context: { branches: [filhotes, lobinho, escoteiro, senior, pioneiro] }
       facts:
-        - "entre 5 anos e 6 anos"
-        - "entre seis anos e meio e dez anos"
-        - "entre 11 e 14 anos"
-        - "entre 15 e 17 anos"
-        - "entre 18 e 22 anos incompletos"
+        - ["entre 5 anos e 6 anos", "de 5 a 6 anos"]
+        - ["entre seis anos e meio e dez anos", "de 6 anos e meio a 10 anos"]
+        - ["entre 11 e 14 anos", "de 11 a 14 anos"]
+        - ["entre 15 e 17 anos", "de 15 a 17 anos"]
+        - ["entre 18 e 22 anos incompletos", "de 18 a 22 anos"]
 
   - id: regra-054
     question: "O que diz a Regra 054 do POR?"
