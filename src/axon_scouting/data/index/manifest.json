@@ -1,13 +1,13 @@
 {
   "format": 1,
   "index": "scouting",
-  "build": "scouting__20261026T133325Z",
-  "chunking": "estrutural-v1;janela=300-600",
+  "build": "scouting__20261027T124608Z",
+  "chunking": "estrutural-v2;janela=250-450",
   "sparse": "bm25-pt-v1;k1=1.2;b=0.75;avgdl=256",
-  "built_at": "2026-10-26T13:33:25.787764+00:00",
+  "built_at": "2026-10-27T12:46:08.688078+00:00",
   "files": {
-    "chunks.jsonl": "65dd73b66caddcbcdc25216cd70bb8e212c862d566054ac8c06c6e118a80f9e2",
-    "documents.jsonl": "ec4a63e44881c43704a05d86392b22e1858f1a57e1ec805b00a7f21a2f945209"
+    "chunks.jsonl": "54b4718d802f58f5c9bf2d22f7f850feba5c91d0b072986e453a04dc3c3c0528",
+    "documents.jsonl": "30699823285f0422bd315b305d2f749375d58da0088c350bdf04a76ddd51b3ac"
   },
   "models": [
     {
@@ -15,14 +15,7 @@
       "fingerprint": "ca456c06b3a9505ddfd9131408916dd79290368331e7d76bb621f1cba6bc8665",
       "dimensions": 384,
       "file": "vectors/intfloat-multilingual-e5-small-ca456c06b3a9.f32",
-      "sha256": "a8ef213e1772af1c01291b28cded7893416003eee24771882d46cb94f5e740e5"
-    },
-    {
-      "name": "openrouter/perplexity/pplx-embed-v1-0.6b",
-      "fingerprint": "perplexity/pplx-embed-v1-0.6b:1024:l2",
-      "dimensions": 1024,
-      "file": "vectors/openrouter-perplexity-pplx-embed-v1-0-6b-perplexity-p.f32",
-      "sha256": "11037b8e5e39282325d28bc08784b2c02fb561b2bc17f3469c396445454a7348"
+      "sha256": "7051153ac4506c717011612fb5a6fc9e1af59489f2d06d2fb1c1037287f84f1b"
     }
   ]
 }

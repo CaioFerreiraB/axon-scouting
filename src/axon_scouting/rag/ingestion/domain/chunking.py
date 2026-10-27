@@ -10,7 +10,7 @@ from __future__ import annotations
 import math
 import re
 from collections.abc import Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Final
 
 from axon_scouting.rag.ingestion.domain.ids import slug
@@ -24,6 +24,9 @@ _ITEM: Final = re.compile(r"^(?:[a-z]\)|§|[IVXLC]+\s*[–—-])")
 """Alínea (`a)`), parágrafo de norma (`§`) e inciso (`I –`) começam parágrafo mesmo sem maiúscula."""
 MAX_NUMBERED_HEADING: Final = 80
 MAX_CAPS_HEADING: Final = 60
+MIN_BODY_LETTERS: Final = 40
+"""Corpo com menos letras que isso e sem nenhuma frase terminada ("O Marco Simbólico" entre dois cabeçalhos) não vira
+trecho: segue para o corpo da seção seguinte (research R28). Frase curta de verdade ("Use o lenço.") fica."""
 
 
 _BOUNDARY: Final = re.compile(r"[.!?…]+[\"”»)']*\s+(?=[A-ZÀ-ÖØ-Ý0-9\"“«(])")
@@ -57,9 +60,9 @@ class ChunkingPolicy:
     """Faixa das janelas em tokens estimados. Configurável pela composição (`pack.py`, harness da 105), não pelo
     curador: mudar é outra versão do índice (research R8)."""
 
-    window_min: int = 300
-    window_max: int = 600
-    strategy: str = "estrutural-v1"
+    window_min: int = 250
+    window_max: int = 450
+    strategy: str = "estrutural-v2"
 
     def __post_init__(self) -> None:
         if not 0 < self.window_min < self.window_max:
@@ -140,11 +143,16 @@ def narrative_chunks(
     unnamed = 0
     key = section_key
     body: list[Line] = []
+    carried: list[Line] = []
 
-    def flush() -> None:
-        nonlocal unnamed, key
+    def flush(*, last: bool = False) -> None:
+        nonlocal unnamed, key, carried
         if not any(line.text for line in body):
             return
+        if is_stub(body) and not last:
+            carried = [*carried, *body]  # sem corpo que valha um trecho: vai com a seção seguinte
+            return
+        body[:0], carried = carried, []
         if key is None:
             unnamed += 1
             key = f"s{unnamed}"
@@ -167,6 +175,10 @@ def narrative_chunks(
         heading = _heading(line.text)
         if heading is not None and heading.key is None and section_key is not None:
             heading = None  # numa seção de chave fixa (preâmbulo, anexo), linha em maiúsculas é texto
+        if path and not any(item.text for item in body) and _continues_heading(path[max(path)], line.text, heading):
+            current = path[max(path)]
+            path[max(path)] = f"{current} – {line.text}" if _CHAPTER.fullmatch(current) else f"{current} {line.text}"
+            continue
         if heading is None:
             body.append(line)
             continue
@@ -181,7 +193,33 @@ def narrative_chunks(
         else:
             key = heading.key
     flush()
+    if carried:  # sobra curta no fim do texto: entra no último trecho, ou vira o único
+        if chunks:
+            last = chunks[-1]
+            chunks[-1] = replace(last, body=f"{last.body}\n{paragraph_text(carried)}", page_end=carried[-1].page)
+        else:
+            body, carried = carried, []
+            flush(last=True)
     return chunks
+
+
+def is_stub(lines: Sequence[Line]) -> bool:
+    """Poucas letras e nenhuma frase terminada: um título solto, não um trecho (research R28)."""
+    letters = sum(ch.isalpha() for line in lines for ch in line.text)
+    return letters < MIN_BODY_LETTERS and not _has_sentence("\n".join(line.text for line in lines))
+
+
+def _continues_heading(current: str, text: str, heading: _Heading | None) -> bool:
+    """Linha logo depois de um título, antes de qualquer corpo, que é parte dele: o nome do capítulo depois de
+    "CAPÍTULO 3", ou a segunda linha de um título em maiúsculas (que pode terminar em vírgula)."""
+    if not text or len(text) > MAX_NUMBERED_HEADING or (heading is not None and heading.key is not None):
+        return False
+    if _CHAPTER.fullmatch(current):
+        return text[:1].isupper() and not text.endswith(_PARAGRAPH_END)
+    letters = [ch for ch in current if ch.isalpha()]
+    caps = bool(letters) and all(ch.isupper() for ch in letters)
+    line_letters = [ch for ch in text if ch.isalpha()]
+    return caps and len(line_letters) >= 3 and all(ch.isupper() for ch in line_letters) and not text.endswith(".")
 
 
 def _heading(text: str) -> _Heading | None:
@@ -274,6 +312,21 @@ def _sentence_pieces(paragraph: _Paragraph) -> list[_Piece]:
     return pieces
 
 
+def _word_slices(piece: _Piece, window_max: int) -> list[_Piece]:
+    """A frase como está, ou, maior que a janela, em fatias de palavras inteiras que cabem nela."""
+    if estimate_tokens(piece.text) <= window_max:
+        return [piece]
+    slices: list[_Piece] = []
+    words: list[str] = []
+    for word in piece.text.split():
+        if words and estimate_tokens(" ".join([*words, word])) > window_max:
+            slices.append(replace(piece, text=" ".join(words), opens_paragraph=piece.opens_paragraph and not slices))
+            words = []
+        words.append(word)
+    slices.append(replace(piece, text=" ".join(words), opens_paragraph=piece.opens_paragraph and not slices))
+    return slices
+
+
 def _render(pieces: Sequence[_Piece]) -> str:
     parts: list[str] = []
     for index, piece in enumerate(pieces):
@@ -287,7 +340,8 @@ def _windows(paragraphs: list[_Paragraph], policy: ChunkingPolicy) -> list[tuple
     """Empacotamento guloso até `window_max` tokens estimados, preferindo fronteira de parágrafo.
 
     Parágrafo que não cabe: se a janela já passou do mínimo, ela fecha ali; senão (ou se ele sozinho passa do máximo),
-    o parágrafo entra frase a frase. Frase nunca é cortada; a frase única maior que o máximo fica inteira.
+    o parágrafo entra frase a frase. Frase não é cortada, salvo a maior que o máximo — uma lista de nomes sem
+    pontuação, num relatório —, que se divide entre palavras (research R28).
     """
     windows: list[tuple[str, int, int]] = []
     current: list[_Piece] = []
@@ -311,9 +365,26 @@ def _windows(paragraphs: list[_Paragraph], policy: ChunkingPolicy) -> list[tuple
             if fits([whole]):
                 current.append(whole)
                 continue
-        for piece in _sentence_pieces(paragraph):
-            if current and not fits([*current, piece]):
-                flush()
-            current.append(piece)
+        for sentence in _sentence_pieces(paragraph):
+            for piece in _word_slices(sentence, policy.window_max):
+                if current and not fits([*current, piece]):
+                    flush()
+                current.append(piece)
     flush()
-    return windows
+    return _without_stub_windows(windows)
+
+
+def _without_stub_windows(windows: list[tuple[str, int, int]]) -> list[tuple[str, int, int]]:
+    """Janela sem frase e com poucas letras (a sobra do fim de uma seção longa) junta-se à anterior (research R28)."""
+    merged: list[tuple[str, int, int]] = []
+    for text, start, end in windows:
+        if merged and sum(ch.isalpha() for ch in text) < MIN_BODY_LETTERS and not _has_sentence(text):
+            previous, first, _ = merged[-1]
+            merged[-1] = (f"{previous}\n{text}", first, end)
+        else:
+            merged.append((text, start, end))
+    return merged
+
+
+def _has_sentence(text: str) -> bool:
+    return any(line.rstrip().endswith(_PARAGRAPH_END) for line in text.split("\n"))

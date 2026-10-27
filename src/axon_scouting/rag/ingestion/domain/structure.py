@@ -15,7 +15,13 @@ from dataclasses import dataclass, field
 from typing import Final, Literal
 
 from axon_scouting.rag.index.api import DocumentType
-from axon_scouting.rag.ingestion.domain.chunking import ChunkDraft, ChunkingPolicy, narrative_chunks, paragraph_text
+from axon_scouting.rag.ingestion.domain.chunking import (
+    ChunkDraft,
+    ChunkingPolicy,
+    is_stub,
+    narrative_chunks,
+    paragraph_text,
+)
 from axon_scouting.rag.ingestion.domain.ids import slug
 from axon_scouting.rag.ingestion.domain.text import Line
 
@@ -53,6 +59,10 @@ UNIT_BY_TYPE: Final[dict[DocumentType, UnitKind]] = {
 _SPLIT_MARKERS: Final = frozenset({"regra", "art", "art.", "artigo"})
 """Marcador que o PDF põe sozinho na linha, com o número na seguinte ("REGRA" / "001 DEFINIÇÃO…", no POR)."""
 _SENTENCE_END: Final = (".", ":", ";", "!", "?")
+_OPEN_ENDINGS: Final = frozenset(
+    {"a", "à", "ao", "com", "da", "das", "de", "do", "dos", "e", "em", "na", "nas", "no", "nos", "o", "para"}
+)
+"""Nome de agrupamento que termina assim continua na linha seguinte ("Segurança nas" / "Atividades Escoteiras")."""
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -91,18 +101,25 @@ class _State:
     unit: Unit | None = None
     unit_path: dict[int, Heading] = field(default_factory=dict)
     buffer: list[Line] = field(default_factory=list)
+    carried: list[Line] = field(default_factory=list)
+    """Texto solto curto e sem frase entre duas unidades (o nome de uma seção que não se reconheceu): entra na unidade
+    seguinte, depois do título dela (research R28)."""
 
     def labels(self, path: dict[int, Heading]) -> list[str]:
-        return [path[level].label for level in sorted(path)]
+        """O caminho no prefixo, com o nome de cada agrupamento ("Capítulo 8 – Ramo Filhotes"; research R28)."""
+        return [path[level].metadata for level in sorted(path)]
 
-    def flush(self) -> None:
+    def flush(self, *, last: bool = False) -> None:
         if not any(line.text for line in self.buffer):
             self.buffer = []
             self.unit = None
             return
-        if self.unit is not None:
+        if self.unit is None and not last and is_stub(self.buffer):
+            self.carried = [*self.carried, *self.buffer]
+        elif self.unit is not None:
             self._flush_unit(self.unit)
         else:
+            self.buffer[:0], self.carried = self.carried, []
             self._flush_loose()
         self.buffer = []
         self.unit = None
@@ -111,10 +128,12 @@ class _State:
         path = self.unit_path
         lines = [line for line in self.buffer if line.text]
         head, rest = lines[0], self.buffer[self.buffer.index(lines[0]) + 1 :]
+        if self.carried:  # parágrafo próprio, depois do título da unidade
+            rest, self.carried = [*self.carried, Line(text="", page=self.carried[-1].page), *rest], []
         body = (
             f"{head.text}\n{paragraph_text(rest)}".rstrip()  # título da regra em maiúsculas é parágrafo próprio
             if _is_caps(head.text)
-            else paragraph_text(self.buffer)
+            else paragraph_text([head, *rest])
         )
         self.drafts.append(
             ChunkDraft(
@@ -153,7 +172,8 @@ def normative_chunks(lines: Sequence[Line], title: str, policy: ChunkingPolicy, 
         text = line.text
         folded = _fold(text)
         if named is not None:
-            continues = text[:1].islower() or (_is_caps(named.name or "") and _is_caps(text))
+            open_name = (named.name or "").split()[-1:] in ([word] for word in _OPEN_ENDINGS)
+            continues = text[:1].islower() or open_name or (_is_caps(named.name or "") and _is_caps(text))
             if continues and not _is_marker(folded) and len(text) <= MAX_HEADING and not text.endswith(_SENTENCE_END):
                 named = Heading(level=named.level, label=named.label, name=f"{named.name} {text}")
                 _set_heading(state, named)  # nome em duas linhas: "Orientação Patrimonial" / "e Financeira"
@@ -173,6 +193,7 @@ def normative_chunks(lines: Sequence[Line], title: str, policy: ChunkingPolicy, 
             state.flush()
             _set_heading(state, grouping)
             pending_name = grouping if grouping.name is None else None
+            named = grouping if grouping.name is not None else None  # o nome na mesma linha também continua
             previous = ""
             continue
         found = _unit(folded, line.text, unit)
@@ -186,6 +207,9 @@ def normative_chunks(lines: Sequence[Line], title: str, policy: ChunkingPolicy, 
         if text:
             previous = text
     state.flush()
+    if state.carried:  # sobra no fim: vira texto solto, como antes
+        state.buffer, state.carried = state.carried, []
+        state.flush(last=True)
     if state.units == 0:
         return NormativeResult(drafts=[], units=0)
     return NormativeResult(drafts=state.drafts, units=state.units)

@@ -268,7 +268,9 @@ def _line(payload: dict[str, Any]) -> str:
 
 
 def _jsonl(path: Path, sha256: str) -> list[dict[str, Any]]:
-    return [json.loads(line) for line in _read(path, sha256).decode().splitlines() if line]
+    """Uma linha por `\n`, a única quebra que o `_line` grava: o `json.dumps` sem `ensure_ascii` deixa U+0085 e
+    U+2028 como estão, e o `splitlines` os trataria como fim de linha (texto de PDF com fonte corrompida os traz)."""
+    return [json.loads(line) for line in _read(path, sha256).decode().split("\n") if line]
 
 
 def _read(path: Path, sha256: str) -> bytes:

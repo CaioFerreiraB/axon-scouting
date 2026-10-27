@@ -63,7 +63,7 @@ def esperado() -> dict[str, dict[str, Any]]:
 
 @pytest.fixture(scope="module")
 def gravado() -> dict[str, dict[str, Any]]:
-    records = (json.loads(line) for line in DOCUMENTS.read_text(encoding="utf-8").splitlines() if line)
+    records = (json.loads(line) for line in DOCUMENTS.read_text(encoding="utf-8").split("\n") if line)
     return {
         record["doc_key"]: {key: record.get(key) for key in ("fields", "source_file", "source_url")}
         for record in records

@@ -91,3 +91,16 @@ NORMATIVE_PAGES: Sequence[Sequence[str]] = (
 
 def normative_pdf(path: Path, pages: Sequence[Sequence[str]] = NORMATIVE_PAGES) -> Path:
     return write_pdf(path, pages)
+
+
+def positioned_pdf(path: Path, items: Sequence[tuple[float, str]]) -> Path:
+    """Uma página com cada texto na altura `y` (mm, de cima), desenhados na ordem dada — como o POR, que desenha o
+    título de cada regra depois do corpo da página."""
+    pdf = _pdf()
+    pdf.add_page()
+    for y, text in items:
+        pdf.set_xy(20, y)
+        pdf.cell(0, 6, _latin1(text))
+    path.parent.mkdir(parents=True, exist_ok=True)
+    pdf.output(str(path))
+    return path

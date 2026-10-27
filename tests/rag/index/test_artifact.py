@@ -64,6 +64,27 @@ def test_outra_instancia_le_o_artefato(tmp_path: Path) -> None:
     assert achados[0].similarity is not None
 
 
+def test_separador_unicode_no_texto_nao_quebra_a_leitura(tmp_path: Path) -> None:
+    """Texto de PDF com fonte corrompida traz U+0085 e U+2028, que o JSON sem `ensure_ascii` grava como estão: o
+    leitor separa as linhas só em `\\n` (102 research R29)."""
+    root = tmp_path / "index"
+    estranho = [trecho(DOC, "4.1", 10, "[Manual X · 4.1]\nTexto com \x85 e \u2028 no meio.")]
+
+    async def publicar() -> None:
+        index = ArtifactIndex(root, E5_FALSO, Bm25Encoder())
+        build = await index.create(versao(E5_FALSO, built_at=INSTANTE))
+        pages = ("página com \x85 corrompida",) * 11
+        await index.write(
+            build.name, registro(DOC, estranho, pages), await codificar(estranho, E5_FALSO, Bm25Encoder())
+        )
+        await index.publish(build.name)
+
+    asyncio.run(publicar())
+    leitora = ArtifactIndex(root, E5_FALSO, Bm25Encoder())
+    (achado,) = asyncio.run(leitora.get([estranho[0].chunk_id]))
+    assert "\x85" in achado.text and "\u2028" in achado.text
+
+
 def test_dois_modelos_no_mesmo_artefato(tmp_path: Path) -> None:
     """ADR-043, item 2: um build por modelo, os trechos iguais; cada leitor usa os próprios vetores."""
     root = tmp_path / "index"

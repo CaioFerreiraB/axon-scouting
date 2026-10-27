@@ -97,3 +97,39 @@ def test_credito_de_foto_colado_sai() -> None:
         "Fundamentos do Escotismo",
         "Contato: grupo@escoteiros.org.br.",
     ]
+
+
+# --- passada de 2026-10-27 (US6, research R27) ------------------------------------------------------------------
+
+
+def test_cabecalho_corrido_em_bloco_de_varias_linhas_sai() -> None:
+    """O Manual de Filhotes: "CAPÍTULO 3" e o nome do capítulo no topo de cada página, e o número embaixo."""
+    nomes = ("um", "dois", "três", "quatro", "cinco")
+    paginas = [
+        "CAPÍTULO 3\nO Marco Simbólico\n" + "\n".join(f"Linha {c} da página {nome}." for c in "abcdefg") + f"\n{n}"
+        for n, nome in enumerate(nomes, start=1)
+    ]
+    assert textos(clean_pages(paginas))[:2] == ["Linha a da página um.", "Linha b da página um."]
+
+
+def test_titulo_do_capitulo_nas_paginas_dele_sai() -> None:
+    """Corrido só no trecho do capítulo: 80% das páginas entre a primeira e a última ocorrência."""
+    outras = [f"Abertura {n}.\nCorpo a{n}.\nCorpo b{n}." for n in range(1, 7)]
+    capitulo = [f"As Atividades\nCorpo c{n}.\nCorpo d{n}." for n in range(1, 5)]
+    assert "As Atividades" not in textos(clean_pages([*outras, *capitulo]))
+
+
+def test_marcador_de_regra_no_topo_de_muitas_paginas_fica() -> None:
+    paginas = [f"REGRA\n{n:03d} TITULO {n}\nCorpo da regra {n}.\nMais corpo {n}." for n in range(1, 7)]
+    assert textos(clean_pages(paginas)).count("REGRA") == 6
+
+
+def test_hifen_de_quebra_do_pdfium() -> None:
+    assert textos(clean_pages(["Elementos que com\ufffepõem o marco."])) == ["Elementos que compõem o marco."]
+    assert textos(clean_pages(["ATA DA UEB\ufffeRealizada no dia 3."])) == ["ATA DA UEB", "Realizada no dia 3."]
+    assert textos(clean_pages(["Hífen sua\u00ad\nve no fim."])) == ["Hífen suave no fim."]
+
+
+def test_numero_de_pagina_colado_ao_titulo_sai() -> None:
+    assert textos(clean_pages(["30IDENTIDADE E SÍMBOLOS\nTexto."])) == ["IDENTIDADE E SÍMBOLOS", "Texto."]
+    assert textos(clean_pages(["2026 foi um ano.\n3D Escotismo."])) == ["2026 foi um ano.", "3D Escotismo."]

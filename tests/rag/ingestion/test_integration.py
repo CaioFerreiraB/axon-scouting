@@ -116,6 +116,6 @@ def test_norma_ponta_a_ponta(tmp_path: Path) -> None:
         "norma-x-1#art43@p2",
     ]
     art42 = chunks["norma-x-1#art42@p1"]
-    assert art42.text.startswith("[Norma X · Capítulo II · Seção I]\nArt. 42.")
+    assert art42.text.startswith("[Norma X · Capítulo II – Das Atividades · Seção I – Do planejamento]\nArt. 42.")
     assert (art42.page_start, art42.page_end) == (1, 2)
     assert art42.section == "Seção I – Do planejamento"

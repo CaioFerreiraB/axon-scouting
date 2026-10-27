@@ -182,7 +182,7 @@ class IngestionService:
             raise _Rejected(f"{entry.file} sem camada de texto (OCR fora do escopo)")
         warnings = [f"página {n} sem texto" for n, page in enumerate(parsed.pages, start=1) if not page.strip()]
 
-        drafts, units, chunk_warnings = self._drafts(entry, clean_pages(parsed.pages))
+        drafts, units, chunk_warnings = self._drafts(entry, clean_pages(parsed.for_chunking))
         if not drafts:
             raise _Rejected(f"{entry.file} sem texto aproveitável depois da limpeza")
         warnings.extend(chunk_warnings)

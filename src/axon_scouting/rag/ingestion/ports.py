@@ -14,11 +14,20 @@ from typing import Protocol, runtime_checkable
 
 @dataclass(frozen=True, slots=True, kw_only=True)
 class ParsedDocument:
-    """O texto bruto de cada página (a primeira é a 1) e a identidade da fonte e do parser."""
+    """O texto bruto de cada página (a primeira é a 1) e a identidade da fonte e do parser.
+
+    `reading` é o texto de cada página na ordem de leitura (`domain/layout.py`), quando o parser conhece a posição das
+    linhas; vazio, vale `pages`. O original preservado (FR-009) é sempre `pages`.
+    """
 
     source_sha256: str
     pages: tuple[str, ...]
     parser: str
+    reading: tuple[str, ...] = ()
+
+    @property
+    def for_chunking(self) -> tuple[str, ...]:
+        return self.reading or self.pages
 
 
 @runtime_checkable

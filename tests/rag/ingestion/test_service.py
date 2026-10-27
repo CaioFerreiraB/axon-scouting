@@ -109,7 +109,7 @@ def test_us1_cen1_chunks_com_id_metadados_e_duas_representacoes() -> None:
     assert ids == ["manual-x-2026#4.2@p2", "manual-x-2026#4@p1", "manual-x-2026#s1@p1"]
     registro = build.documents["manual-x-2026"]
     assert registro.pages == tuple(MANUAL_PAGINAS)
-    assert relatorio.version is not None and relatorio.version.chunking == "estrutural-v1;janela=300-600"
+    assert relatorio.version is not None and relatorio.version.chunking == "estrutural-v2;janela=250-450"
 
 
 def test_us1_cen2_reingestao_reaproveita_com_os_mesmos_ids() -> None:
@@ -250,7 +250,7 @@ def test_us2_norma_um_chunk_por_unidade() -> None:
         normativos = [c for c in chunks.values() if c.article]
         assert sorted(c.article for c in normativos) == ["Art. 41", "Art. 42", "Art. 43"]
         for chunk in normativos:  # SC-001: caminho ancestral completo e citação derivável
-            assert chunk.text.startswith("[Norma X · Capítulo II · Seção I]\n")
+            assert chunk.text.startswith("[Norma X · Capítulo II – Das Atividades · Seção I – Do planejamento]\n")
             assert chunk.to_chunk().section == chunk.article
         art42 = chunks["norma-x-1#art42@p1"]
         assert (art42.page_start, art42.page_end) == (1, 2)

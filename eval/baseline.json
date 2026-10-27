@@ -12,7 +12,7 @@
   "metrics": [
     {
       "name": "recall@5",
-      "value": 0.7777777777777778,
+      "value": 0.6666666666666666,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -20,7 +20,7 @@
     },
     {
       "name": "recall@20",
-      "value": 0.7777777777777778,
+      "value": 0.6666666666666666,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -28,7 +28,7 @@
     },
     {
       "name": "mrr",
-      "value": 0.5777777777777778,
+      "value": 0.4351851851851852,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -36,7 +36,7 @@
     },
     {
       "name": "delivered_recall",
-      "value": 0.7777777777777778,
+      "value": 0.6666666666666666,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -217,7 +217,7 @@
       "metrics": {
         "recall@5": 1.0,
         "recall@20": 1.0,
-        "mrr": 0.5,
+        "mrr": 1.0,
         "delivered_recall": 1.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
@@ -287,7 +287,7 @@
       "metrics": {
         "recall@5": 1.0,
         "recall@20": 1.0,
-        "mrr": 0.5,
+        "mrr": 0.3333333333333333,
         "delivered_recall": 1.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
@@ -321,7 +321,7 @@
       "metrics": {
         "recall@5": 1.0,
         "recall@20": 1.0,
-        "mrr": 1.0,
+        "mrr": 0.3333333333333333,
         "delivered_recall": 1.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
@@ -459,7 +459,7 @@
       "metrics": {
         "recall@5": 1.0,
         "recall@20": 1.0,
-        "mrr": 0.2,
+        "mrr": 0.25,
         "delivered_recall": 1.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
@@ -491,10 +491,10 @@
     {
       "id": "s09",
       "metrics": {
-        "recall@5": 1.0,
-        "recall@20": 1.0,
-        "mrr": 1.0,
-        "delivered_recall": 1.0,
+        "recall@5": 0.0,
+        "recall@20": 0.0,
+        "mrr": 0.0,
+        "delivered_recall": 0.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
         "citation_invented_rate": null,
@@ -520,7 +520,9 @@
       ],
       "gate_route": "generate",
       "failure": null,
-      "warnings": []
+      "warnings": [
+        "evidência não vista: Manual do Escotista — Ramo Lobinho"
+      ]
     },
     {
       "id": "s10",
@@ -559,6 +561,6 @@
   ],
   "invalid": [],
   "annotations": [
-    "corpus 593 documentos, índice scouting__20261026T133325Z, e5"
+    "102 US6: ordem de leitura, blocos corridos, estrutural-v2; índice scouting__20261027T124608Z, e5"
   ]
 }

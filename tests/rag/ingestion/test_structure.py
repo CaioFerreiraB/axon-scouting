@@ -52,7 +52,9 @@ def test_um_chunk_por_artigo_com_prefixo_e_metadados() -> None:
     chaves = [d.section_key for d in resultado.drafts]
     assert chaves == ["preambulo", "art41", "art42", "art42-a", "art43"]
     art42 = por_chave(resultado.drafts)["art42"]
-    assert art42.prefix == "[Lei X · Título II · Capítulo III · Seção I]"  # type: ignore[attr-defined]
+    assert (
+        art42.prefix == "[Lei X · Título II – DA ORGANIZAÇÃO · Capítulo III – Dos Associados · Seção I – Dos direitos]"
+    )  # type: ignore[attr-defined]
     assert art42.article == "Art. 42"  # type: ignore[attr-defined]
     assert art42.chapter == "Capítulo III – Dos Associados"  # type: ignore[attr-defined]
     assert art42.section == "Seção I – Dos direitos"  # type: ignore[attr-defined]
@@ -79,7 +81,10 @@ def test_artigo_citado_no_meio_da_frase_nao_e_unidade() -> None:
 
 def test_subsecao_entra_no_caminho() -> None:
     art43 = por_chave(normative_chunks(LEI, "Lei X", POLITICA, unit="article").drafts)["art43"]
-    assert art43.prefix == "[Lei X · Título II · Capítulo III · Seção I · Subseção I]"  # type: ignore[attr-defined]
+    caminho = (
+        "Título II – DA ORGANIZAÇÃO · Capítulo III – Dos Associados · Seção I – Dos direitos · Subseção I – Dos deveres"
+    )
+    assert art43.prefix == f"[Lei X · {caminho}]"  # type: ignore[attr-defined]
     assert art43.subsection == "Subseção I – Dos deveres"  # type: ignore[attr-defined]
 
 
@@ -240,3 +245,26 @@ def test_nome_em_maiusculas_em_duas_linhas() -> None:
     norma = linhas(["TÍTULO IV", "DO PATRIMÔNIO, DA RECEITA E DA", "ADMINISTRAÇÃO", "Art. 60. O patrimônio é da UEB."])
     (draft,) = normative_chunks(norma, "Estatuto", POLITICA, unit="article").drafts
     assert draft.section_key == "art60"
+
+
+# --- passada de 2026-10-27 (US6, research R28) ------------------------------------------------------------------
+
+
+def test_nome_do_capitulo_em_duas_linhas_e_titulo_solto_entra_na_regra() -> None:
+    """O POR: "CAPÍTULO 15 – Segurança nas" / "Atividades Escoteiras"; e um nome solto entre o capítulo e a regra."""
+    texto = linhas(
+        [
+            "CAPÍTULO 15 – Segurança nas",
+            "Atividades Escoteiras",
+            "REGRA 141 ORIENTAÇÃO GERAL",
+            "I - A segurança é a principal preocupação.",
+            "CAPÍTULO 16 – Políticas",
+            "Proteção Infantojuvenil",
+            "REGRA 142 PROTEÇÃO",
+            "I - Toda atividade protege a criança.",
+        ]
+    )
+    result = normative_chunks(texto, "POR", ChunkingPolicy(), unit="rule")
+    r141, r142 = result.drafts
+    assert r141.chapter == "Capítulo 15 – Segurança nas Atividades Escoteiras"
+    assert r142.body.splitlines()[:2] == ["REGRA 142 PROTEÇÃO", "Proteção Infantojuvenil"]

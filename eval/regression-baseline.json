@@ -188,7 +188,7 @@
     },
     {
       "name": "scouting:fact_recall",
-      "value": 0.52,
+      "value": 0.75,
       "variance": null,
       "n": 20,
       "deterministic": true,
@@ -369,7 +369,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -471,7 +471,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.2
+        "scouting:fact_recall": 0.4
       },
       "citations": [],
       "flags": [
@@ -505,7 +505,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.2
+        "scouting:fact_recall": 0.4
       },
       "citations": [],
       "flags": [
@@ -539,7 +539,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.4
+        "scouting:fact_recall": 0.2
       },
       "citations": [],
       "flags": [
@@ -641,7 +641,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -709,7 +709,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -743,7 +743,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 0.6
       },
       "citations": [],
       "flags": [
@@ -811,7 +811,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.2
+        "scouting:fact_recall": 0.0
       },
       "citations": [],
       "flags": [
@@ -845,7 +845,7 @@
         "scouting:context_accuracy": null,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -895,6 +895,6 @@
   ],
   "invalid": [],
   "annotations": [
-    "corpus 593 documentos, índice scouting__20261026T133325Z, e5"
+    "102 US6: ordem de leitura, blocos corridos, estrutural-v2; índice scouting__20261027T124608Z, e5"
   ]
 }

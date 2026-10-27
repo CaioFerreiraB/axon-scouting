@@ -84,7 +84,8 @@ vigência e proveniência; `tests/rag/ingestion/test_artifact_catalog.py`); a re
 originais.
 
 Para comparar os modelos (ADR-043, item 7), a mesma rodada com `AXON_PACKS_FILE=eval/packs-pplx.yaml` (e
-`AXON_SCOUTING_EMBEDDING_API_KEY`) e `--report`, e depois `axon eval compare` dos dois relatórios.
+`AXON_SCOUTING_EMBEDDING_API_KEY`) e `--report`, e depois `axon eval compare` dos dois relatórios. Desde a
+reindexação de 2026-10-27 (102 US6) o artefato só tem os vetores do e5: antes, `reindex --embedder pplx` com a chave.
 
 ## Licença
 

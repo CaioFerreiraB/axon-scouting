@@ -69,7 +69,7 @@ def regression() -> Mapping[str, Any]:
 
 @pytest.fixture(scope="module")
 def texts() -> list[str]:
-    return [normalize(json.loads(line)["text"]) for line in CHUNKS.read_text(encoding="utf-8").splitlines() if line]
+    return [normalize(json.loads(line)["text"]) for line in CHUNKS.read_text(encoding="utf-8").split("\n") if line]
 
 
 def test_regressao_sem_problemas(regression: Mapping[str, Any], texts: list[str]) -> None:

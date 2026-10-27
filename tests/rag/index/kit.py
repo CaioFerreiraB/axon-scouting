@@ -40,7 +40,7 @@ def versao(embedder: Embedder | None = None, sparse: SparseEncoder | None = None
     embedder = embedder or HashingEmbedder()
     sparse = sparse or Bm25Encoder()
     base = IndexVersion(
-        chunking="estrutural-v1;janela=300-600",
+        chunking="estrutural-v2;janela=250-450",
         embedding=embedder.model(),
         sparse=sparse.identity(),
         built_at=INSTANTE,

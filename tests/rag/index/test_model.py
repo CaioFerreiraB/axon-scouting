@@ -119,7 +119,7 @@ def test_to_chunk_secao_mais_especifica_e_score_ausente() -> None:
 
 def versao(**changes: object) -> IndexVersion:
     base = IndexVersion(
-        chunking="estrutural-v1;janela=300-600",
+        chunking="estrutural-v2;janela=250-450",
         embedding=EmbeddingModel(name="intfloat/multilingual-e5-small", fingerprint="ca456c06", dimensions=384),
         sparse="bm25-pt-v1;k1=1.2;b=0.75;avgdl=256",
         built_at=datetime(2026, 10, 7, 15, 30, tzinfo=UTC),
@@ -129,7 +129,7 @@ def versao(**changes: object) -> IndexVersion:
 
 def test_versao_compativel_ignora_data() -> None:
     assert versao().compatible_with(versao(built_at=datetime(2027, 1, 1, tzinfo=UTC)))
-    assert not versao().compatible_with(versao(chunking="estrutural-v1;janela=200-400"))
+    assert not versao().compatible_with(versao(chunking="estrutural-v2;janela=200-400"))
     assert not versao().compatible_with(versao(sparse="bm25-pt-v2"))
     for embedding in (
         EmbeddingModel(name="BAAI/bge-m3", fingerprint="ca456c06", dimensions=384),

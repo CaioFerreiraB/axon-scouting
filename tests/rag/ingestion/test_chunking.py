@@ -27,7 +27,7 @@ def paragrafo(n_palavras: int, palavra: str = "atividade") -> str:
 
 
 def test_identidade_da_politica() -> None:
-    assert ChunkingPolicy().identity() == "estrutural-v1;janela=300-600"
+    assert ChunkingPolicy().identity() == "estrutural-v2;janela=250-450"
     assert estimate_tokens("a" * 9) == 3
 
 
@@ -162,10 +162,13 @@ def test_paragrafo_grande_divide_em_frases() -> None:
     assert all(c.body.endswith("atenção.") for c in chunks)
 
 
-def test_frase_maior_que_o_maximo_fica_inteira() -> None:
-    gigante = "A " + " ".join(["patrulha"] * 400) + "."
-    (chunk,) = narrative_chunks([Line(text=gigante, page=1)], "Manual", ChunkingPolicy())
-    assert chunk.body == gigante
+def test_frase_maior_que_o_maximo_se_divide_entre_palavras() -> None:
+    """Uma lista sem pontuação (nomes num relatório) não vira um trecho que o embedder truncaria (research R28)."""
+    gigante = "A " + " ".join(f"patrulha{n}" for n in range(400)) + "."
+    policy = ChunkingPolicy()
+    chunks = narrative_chunks([Line(text=gigante, page=1)], "Manual", policy)
+    assert len(chunks) > 1 and all(estimate_tokens(chunk.body) <= policy.window_max for chunk in chunks)
+    assert " ".join(chunk.body for chunk in chunks) == gigante
 
 
 @pytest.mark.parametrize(
@@ -198,7 +201,50 @@ def test_cabecalho_sempre_quebra() -> None:
 
 
 def test_politica_valida() -> None:
-    assert ChunkingPolicy(window_min=200, window_max=400).identity() == "estrutural-v1;janela=200-400"
+    assert ChunkingPolicy(window_min=200, window_max=400).identity() == "estrutural-v2;janela=200-400"
     for minimo, maximo in ((400, 400), (500, 400), (0, 400), (-1, 10)):
         with pytest.raises(ValueError):
             ChunkingPolicy(window_min=minimo, window_max=maximo)
+
+
+# --- passada de 2026-10-27 (US6, research R28) ------------------------------------------------------------------
+
+
+def test_corpo_sem_frase_vai_para_a_secao_seguinte() -> None:
+    """Nenhum trecho só com "O Marco Simbólico": o resto sem frase segue com o corpo da seção seguinte."""
+    texto = linhas("1 Uniforme", "O Marco Simbólico", "2 Promessa", "A promessa é feita na cerimônia.")
+    (chunk,) = narrative_chunks(texto, "Manual", ChunkingPolicy())
+    assert chunk.section_key == "2" and chunk.body.startswith("O Marco Simbólico")
+
+
+def test_capitulo_sem_corpo_nao_vira_trecho() -> None:
+    texto = linhas("CAPÍTULO 3", "O Marco Simbólico", "CAPÍTULO 4", "Corpo do capítulo quatro com uma frase.")
+    assert [chunk.section_key for chunk in narrative_chunks(texto, "Manual", ChunkingPolicy())] == ["cap4"]
+
+
+def test_nome_do_capitulo_entra_no_titulo() -> None:
+    texto = linhas("CAPÍTULO 3", "O Marco Simbólico", "O marco simbólico do ramo é uma frase.")
+    (chunk,) = narrative_chunks(texto, "Manual", ChunkingPolicy())
+    assert (
+        chunk.prefix == "[Manual · CAPÍTULO 3 – O Marco Simbólico]"
+        and chunk.chapter == "CAPÍTULO 3 – O Marco Simbólico"
+    )
+
+
+def test_titulo_em_maiusculas_em_varias_linhas() -> None:
+    texto = linhas(
+        "UM MARCO SIMBÓLICO: “UM", "TERRITÓRIO DE BRINCAR,", "APRENDER E CRESCER JUNTOS”", "O marco é a frase."
+    )
+    (chunk,) = narrative_chunks(texto, "Manual", ChunkingPolicy())
+    assert chunk.prefix == "[Manual · UM MARCO SIMBÓLICO: “UM TERRITÓRIO DE BRINCAR, APRENDER E CRESCER JUNTOS”]"
+
+
+def test_secao_curta_com_frase_fica() -> None:
+    texto = linhas("1 Uniforme", "Use o lenço.", "2 Promessa", "A promessa é feita na cerimônia.")
+    assert [chunk.section_key for chunk in narrative_chunks(texto, "Manual", ChunkingPolicy())] == ["1", "2"]
+
+
+def test_sobra_curta_no_fim_entra_no_ultimo_trecho() -> None:
+    texto = linhas("1 Uniforme", "Use o lenço na atividade semanal.", "2 Fim", "Créditos")
+    (chunk,) = narrative_chunks(texto, "Manual", ChunkingPolicy())
+    assert chunk.body.endswith("Créditos")

@@ -93,7 +93,7 @@ def test_ingest_com_sucesso() -> None:
     assert saida.run("ingest", "/corpus/corpus.yaml") == 0
     texto = saida.out.getvalue()
     assert "índice scouting — build scouting__20261007T153000Z publicado" in texto
-    assert "versão: estrutural-v1;janela=300-600 · hashing-test" in texto
+    assert "versão: estrutural-v2;janela=250-450 · hashing-test" in texto
     assert "manual-x-2026" in texto and "codificado" in texto
     assert "duração: 0m00s" in texto
     assert saida.run("ingest", "/corpus/corpus.yaml") == 0
