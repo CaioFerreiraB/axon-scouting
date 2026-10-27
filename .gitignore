@@ -8,3 +8,10 @@ dist/
 .ruff_cache/
 # Avaliação local (spec 105): o e5 e os relatórios.
 .cache/
+# Originais do corpus (PDFs e o que mais o curador baixou): ficam só na máquina de quem ingere, fora do remoto. Vão para
+# o git o catálogo (corpus.yaml), a proveniência com URL e sha256 de cada original (fontes.yaml) e o artefato do índice.
+# Os três PDFs versionados antes desta regra (POR, Estatuto e Resolução CAN 08/2021) continuam no histórico.
+corpus/**/*.pdf
+corpus/**/*.PDF
+corpus/sao-paulo/relatorios-anuais/relatorioAnual_2025
+corpus/nacional/rede-nacional-de-jovens-lideres/*.xlsx
