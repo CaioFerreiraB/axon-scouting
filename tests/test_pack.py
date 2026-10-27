@@ -57,7 +57,7 @@ def test_identity_is_readable_on_the_class() -> None:
 def test_manifest_da_fase_5() -> None:
     assert ScoutingPack().manifest() == PackManifest(
         name="scouting",
-        version="0.5.0",
+        version="0.6.0",
         preferred_flow="rag_first",
         requires_collections=("scouting",),
         config_schema=SCOUTING_CONFIG_SCHEMA,
