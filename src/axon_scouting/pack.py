@@ -321,9 +321,15 @@ class ScoutingPack(PackBase):
         """As métricas de domínio que o harness da 009 reporta como `scouting:<nome>` (spec 105, ADR-027). A de fatos
         (FR-014) lê o texto dos trechos entregues no artefato, e só existe com o índice em memória — o da avaliação
         (FR-013); o artefato só é lido quando uma rodada a consulta."""
-        from axon_scouting.eval import ContextAccuracy, CurrentDocumentRate, FactRecall, ValidityNoticeRate
+        from axon_scouting.eval import (
+            AbsenceClaimRate,
+            ContextAccuracy,
+            CurrentDocumentRate,
+            FactRecall,
+            ValidityNoticeRate,
+        )
 
-        metrics: list[EvalMetric] = [ContextAccuracy(), CurrentDocumentRate(), ValidityNoticeRate()]
+        metrics: list[EvalMetric] = [ContextAccuracy(), CurrentDocumentRate(), ValidityNoticeRate(), AbsenceClaimRate()]
         config = read_config(ctx.config, ctx.data_dir, require_model=False)
         if config.store == "memory":
             from axon_scouting.rag.index.adapters.artifact import chunk_texts

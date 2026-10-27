@@ -1,0 +1,19 @@
+# O Assistant da avaliação com o modelo de geração da instalação, pelo OpenRouter (spec 105 R17): a rodada manual que
+# mede o prompt — `scouting:absence_claim_rate`, fidelidade e cobertura pelo juiz — com uma resposta de verdade. Precisa
+# de `AXON_OPENROUTER_API_KEY` no ambiente; o perfil `memory` monta o provider. Uso:
+#   AXON_PROFILE=memory AXON_PACKS_FILE=eval/packs.yaml AXON_ASSISTANTS_FILE=eval/assistants-openrouter.yaml \
+#     uv run --python 3.14 --group platform axon eval run --golden eval/regression.yaml \
+#     --judge openrouter/<modelo> --report .cache/real.json
+assistants:
+  scouting:
+    visibility: public
+    auth:
+      schemes: [oidc, api_key]
+      allow: ["svc:eval"]
+    packs: [scouting]
+    collections: [scouting]
+    models:
+      generation: openrouter/z-ai/glm-5.3-flash
+      allow: ["openrouter/*"]
+api_keys:
+  admin_group: admin

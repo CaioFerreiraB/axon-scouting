@@ -7,6 +7,7 @@ por uma função injetada pelo `pack.py`.
 
 from __future__ import annotations
 
+import re
 from collections.abc import Callable, Mapping, Sequence
 from typing import Final, Literal
 
@@ -90,6 +91,36 @@ class FactRecall:
             return None
         texts = [normalize(self._text_of(chunk.chunk_id) or "") for chunk in observation.delivered]
         return sum(fact_found(fact, texts) for fact in facts) / len(facts)
+
+
+_SOURCES: Final = r"(?:documento|documentos|norma|normas|fonte|fontes|acervo|material|materiais)"
+ABSENCE_CLAIMS: Final = (
+    re.compile(
+        rf"\bnao (?:existe|existem|ha|consta|constam)\b.{{0,60}}\b(?:nos|nas|em nenhum|em nenhuma) {_SOURCES}\b"
+    ),
+    re.compile(
+        rf"\b{_SOURCES}(?: oficiais| oficial)? (?:nao|nada) (?:traz|trazem|contem|menciona|mencionam|trata|tratam|"
+        r"define|definem|apresenta|apresentam|informa|informam)\b"
+    ),
+    re.compile(r"\bnenhum documento (?:oficial )?(?:foi encontrado|trata|menciona|traz|define)\b"),
+)
+"""Afirmações de que o acervo não tem a informação, sobre a resposta normalizada pela 101. "Não apareceu nos trechos"
+não casa: os trechos são uma amostra da busca, e dizer isso é o que o prompt pede (FR-022)."""
+
+
+class AbsenceClaimRate:
+    """Em item cujos fatos existem no corpus (`extra.facts`), 1 se a resposta afirma que os documentos não trazem a
+    informação, senão 0 (FR-017; research R17). Depende da geração: não barra o CI — é para a rodada com modelo real."""
+
+    name = "absence_claim_rate"
+    better: Literal["higher", "lower"] = "lower"
+    deterministic = False
+
+    def measure(self, item: EvalItem, observation: EvalObservation) -> float | None:
+        if not expected_facts(item.extra):
+            return None
+        answer = normalize(observation.answer)
+        return 1.0 if any(pattern.search(answer) for pattern in ABSENCE_CLAIMS) else 0.0
 
 
 class ContextAccuracy:

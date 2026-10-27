@@ -85,8 +85,13 @@ def test_capacidades_publicadas(tmp_path: Path) -> None:
     assert isinstance(pack.reranker(ctx), MetadataReranker)
     assert [validator.name for validator in pack.validators(ctx)] == ["citation_integrity", "validity_notice"]
     metrics = pack.eval_metrics(ctx)
-    assert [metric.name for metric in metrics] == ["context_accuracy", "current_document_rate", "validity_notice_rate"]
-    assert [metric.deterministic for metric in metrics] == [True, True, False]
+    assert [metric.name for metric in metrics] == [
+        "context_accuracy",
+        "current_document_rate",
+        "validity_notice_rate",
+        "absence_claim_rate",
+    ]
+    assert [metric.deterministic for metric in metrics] == [True, True, False, False]
 
 
 @pytest.mark.parametrize(

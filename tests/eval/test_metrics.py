@@ -10,7 +10,14 @@ import pytest
 from axon_ai_contracts import Citation
 from axon_ai_contracts.eval import EvalChunk, EvalItem, EvalMetric, EvalObservation
 
-from axon_scouting.eval import ContextAccuracy, CurrentDocumentRate, FactRecall, ValidityNoticeRate, expected_facts
+from axon_scouting.eval import (
+    AbsenceClaimRate,
+    ContextAccuracy,
+    CurrentDocumentRate,
+    FactRecall,
+    ValidityNoticeRate,
+    expected_facts,
+)
 
 BRASILIA = timezone(timedelta(hours=-3))
 MEIO_DIA = datetime(2026, 10, 13, 12, tzinfo=BRASILIA)
@@ -61,6 +68,7 @@ def _citation(status: str | None) -> Citation:
         (CurrentDocumentRate(), "current_document_rate", "higher", True),
         (ValidityNoticeRate(), "validity_notice_rate", "higher", False),
         (FactRecall({}.get), "fact_recall", "higher", True),
+        (AbsenceClaimRate(), "absence_claim_rate", "lower", False),
     ],
 )
 def test_superficie(metric: EvalMetric, name: str, better: str, deterministic: bool) -> None:
@@ -244,3 +252,25 @@ def test_fact_recall(facts: list[object], delivered: list[str], expected: float)
 
 def test_fact_recall_sem_fatos_nao_conta() -> None:
     assert FactRecall(TEXTOS.get).measure(_item(), _entregues("por#s8@p62")) is None
+
+
+# --- afirmação de ausência no acervo (FR-017 da 105; research R17) -------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("resposta", "esperado"),
+    [
+        ("Os documentos oficiais não trazem as demais formulações.", 1.0),
+        ("Não há, nos documentos consultados, o marco do Ramo Escoteiro.", 1.0),
+        ("Nenhum documento oficial foi encontrado para a pergunta.", 1.0),
+        ("O marco do Lobinho é “Ser livre como os lobos” [1]. Os demais não apareceram nos trechos recebidos.", 0.0),
+        ("Os trechos consultados não trazem o lema do Ramo Sênior.", 0.0),
+    ],
+)
+def test_absence_claim(resposta: str, esperado: float) -> None:
+    observacao = EvalObservation(answer=resposta)
+    assert AbsenceClaimRate().measure(_fatos("ser livre como os lobos"), observacao) == esperado
+
+
+def test_absence_claim_sem_fatos_nao_conta() -> None:
+    assert AbsenceClaimRate().measure(_item(), EvalObservation(answer="Os documentos não trazem isso.")) is None

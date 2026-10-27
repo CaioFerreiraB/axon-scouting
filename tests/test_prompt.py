@@ -51,3 +51,28 @@ def test_o_prompt_nao_manda_chamar_ferramenta(instrucao: str) -> None:
 
 def test_o_bloco_da_fase_4_saiu() -> None:
     assert "nenhum documento institucional foi consultado" not in NORMALIZED
+
+
+# --- revisão do RAG de 2026-10-27 (FR-022, US8; research R36) ------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "frase",
+    [
+        "só parte da pergunta",
+        "não apareceu nos trechos",
+        "amostra da busca",
+        "nunca afirme que algo não existe nos documentos oficiais",
+        "conceito perguntado",
+        "não apresente um no lugar do outro",
+        "organize a resposta por ramo",
+    ],
+)
+def test_cobertura_parcial_conceito_e_ramos(frase: str) -> None:
+    assert frase in NORMALIZED
+
+
+def test_nenhum_fato_do_corpus_no_prompt() -> None:
+    """As orientações são genéricas: nenhuma formulação, lema ou regra que uma pergunta do conjunto espera."""
+    for fato in ("ser livre como os lobos", "viver aventuras", "sempre alerta", "melhor possível", "regra 0", "158"):
+        assert fato not in NORMALIZED
