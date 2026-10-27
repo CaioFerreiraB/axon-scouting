@@ -16,7 +16,8 @@ import dataclasses
 import hashlib
 import json
 import shutil
-from collections.abc import Sequence
+import threading
+from collections.abc import Callable, Sequence
 from pathlib import Path
 from typing import Any
 
@@ -227,6 +228,28 @@ class ArtifactIndex:
             data = pack_vectors([vectors[row] for row in rows], entry.model.dimensions)
             carried.append((dataclasses.replace(entry, sha256=_sha(data)), data))
         return carried
+
+
+def chunk_texts(root: Path) -> Callable[[str], str | None]:
+    """O texto de cada trecho do artefato em `root`, por `chunk_id` — para a métrica de fatos da 105 (research R13).
+
+    Lê `chunks.jsonl` só na primeira consulta, conferindo o sha256 do manifesto, e guarda só o texto: o pack declara a
+    métrica em toda carga, mas só uma rodada de avaliação a consulta.
+    """
+    texts: dict[str, str] = {}
+    lock = threading.Lock()
+    loaded = False
+
+    def text_of(chunk_id: str) -> str | None:
+        nonlocal loaded
+        with lock:
+            if not loaded:
+                manifest = manifest_from_json(json.loads((root / MANIFEST).read_text(encoding="utf-8")))
+                texts.update((line["chunk_id"], line["text"]) for line in _jsonl(root / CHUNKS, manifest.chunks_sha256))
+                loaded = True
+        return texts.get(chunk_id)
+
+    return text_of
 
 
 def _chunk_line(encoded: EncodedChunk) -> dict[str, Any]:

@@ -15,6 +15,7 @@ from pathlib import Path
 
 import pytest
 from axon_ai_contracts import NamedRetriever, PackManifest
+from axon_ai_contracts.eval import EvalChunk, EvalItem, EvalObservation
 from axon_ai_contracts.testing import pack_context, turn_view
 from rag.index.kit import campos, codificar, registro, trecho, versao
 
@@ -120,6 +121,21 @@ def test_indice_em_memoria_pelo_artefato(tmp_path: Path) -> None:
     assert isinstance(filtros, dict)
     resultado = asyncio.run(retriever.retriever.search(pergunta, top_k=3, filters=filtros))
     assert [chunk.document for chunk in resultado] == ["Manual X"]
+
+
+def test_metrica_de_fatos_le_o_texto_do_artefato(tmp_path: Path) -> None:
+    """105 FR-014: com o índice em memória, a `fact_recall` acha o fato no texto do trecho entregue, pelo id."""
+    root = artefato(tmp_path / "index")
+    metrics = ScoutingPack().eval_metrics(pack_context("scouting", {"embedder": "hashing", "index_dir": str(root)}))
+    assert [metric.name for metric in metrics][-1] == "fact_recall"
+    item = EvalItem(
+        id="f1",
+        question="acampamento",
+        reference_time=datetime(2026, 10, 7, 12, tzinfo=UTC),
+        extra={"facts": ["acampamento de patrulha exige planejamento", "fato que não está no trecho"]},
+    )
+    entregue = EvalChunk(chunk_id="manual-x-2026#4.1@p1", score=0.9, document="Manual X")
+    assert metrics[-1].measure(item, EvalObservation(answer="", delivered=[entregue])) == 0.5
 
 
 def test_artefato_ausente_impede_a_carga(tmp_path: Path) -> None:

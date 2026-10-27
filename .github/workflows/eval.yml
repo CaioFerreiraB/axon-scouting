@@ -1,10 +1,11 @@
 # Avaliação do scouting contra a linha de base (spec 105 FR-005, clarificação 2; research R7, R8).
 # Roda quando muda o que pode mexer na recuperação ou no contexto — corpus, RAG, prompt, derivação, métricas, pack,
 # conjunto de avaliação ou dependências: com o e5 em cache, carrega o artefato do índice do pacote em memória (ADR-043:
-# sem Qdrant nem ingestão no CI) e roda o conjunto semente pelo harness da 009 no perfil `test` (gerador simulado, sem
-# modelo pago nem juiz). Só métricas determinísticas
-# barram: saída 1 (regressão além da tolerância) ou 2 (entrada inválida) falham o job. Rodadas com modelo real e juiz
-# são manuais (quickstart da 105, passo 5).
+# sem Qdrant nem ingestão no CI) e roda o conjunto semente e o de regressão da recuperação (US6) pelo harness da 009 no
+# perfil `test` (gerador simulado, sem modelo pago nem juiz). Só métricas determinísticas barram: saída 1 (regressão
+# além da tolerância) ou 2 (entrada inválida) falham o job. Rodadas com modelo real e juiz são manuais (quickstart da
+# 105, passo 5). Os PDFs do corpus ficam fora do git (research R14): o CI confere o artefato contra o catálogo, não
+# reingere.
 name: eval
 
 on:
@@ -60,14 +61,11 @@ jobs:
           key: e5-${{ hashFiles('src/axon_scouting/rag/index/adapters/e5.py') }}
       - name: Modelo de embedding (só baixa o que falta ou difere)
         run: uv run axon-scouting-corpus model fetch .cache/e5
-      # O artefato commitado precisa espelhar o corpus: reingerir num diretório temporário dá os mesmos trechos.
-      - name: O artefato espelha o corpus
-        env:
-          AXON_SCOUTING_EMBEDDING_DIR: .cache/e5
-        run: |
-          uv run axon-scouting-corpus ingest corpus/corpus.yaml --dir "$RUNNER_TEMP/index"
-          cmp src/axon_scouting/data/index/chunks.jsonl "$RUNNER_TEMP/index/chunks.jsonl"
-          cmp src/axon_scouting/data/index/documents.jsonl "$RUNNER_TEMP/index/documents.jsonl"
+      # O artefato commitado precisa espelhar o catálogo. Sem os PDFs no git, a conferência é pelo que o catálogo
+      # decide — documentos, metadados, vigência e proveniência (105 research R14); a reingestão byte a byte fica com
+      # quem tem os originais (`axon-scouting-corpus ingest`).
+      - name: O artefato espelha o catálogo
+        run: uv run pytest -q tests/rag/ingestion/test_artifact_catalog.py tests/eval
       - name: Conjunto de avaliação contra a linha de base
         env:
           AXON_PROFILE: test
@@ -76,9 +74,20 @@ jobs:
         run: >-
           uv run --group platform axon eval run
           --golden eval/golden.yaml --baseline eval/baseline.json --report report.json
+      # Os fatos que precisam chegar à geração (US6, `scouting:fact_recall`).
+      - name: Conjunto de regressão da recuperação contra a linha de base
+        env:
+          AXON_PROFILE: test
+          AXON_PACKS_FILE: eval/packs.yaml
+          AXON_ASSISTANTS_FILE: eval/assistants.yaml
+        run: >-
+          uv run --group platform axon eval run
+          --golden eval/regression.yaml --baseline eval/regression-baseline.json --report regression-report.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: eval-report
-          path: report.json
+          path: |
+            report.json
+            regression-report.json
           if-no-files-found: ignore

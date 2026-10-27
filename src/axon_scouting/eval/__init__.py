@@ -7,19 +7,27 @@ conjunto dourado e lê o trace é o harness da 009; aqui só se mede, item a ite
 from axon_scouting.eval.metrics import (
     CONTEXT_FIELDS,
     CONTEXT_KEY,
+    FACTS_KEY,
     ContextAccuracy,
     CurrentDocumentRate,
+    FactRecall,
     ValidityNoticeRate,
     expected_context,
+    expected_facts,
+    fact_found,
     is_historical,
 )
 
 __all__ = [
     "CONTEXT_FIELDS",
     "CONTEXT_KEY",
+    "FACTS_KEY",
     "ContextAccuracy",
     "CurrentDocumentRate",
+    "FactRecall",
     "ValidityNoticeRate",
     "expected_context",
+    "expected_facts",
+    "fact_found",
     "is_historical",
 ]

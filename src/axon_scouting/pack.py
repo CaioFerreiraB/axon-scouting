@@ -173,6 +173,17 @@ def _count(config: Mapping[str, JSONValue], name: str, default: int) -> int:
     return value
 
 
+def _artifact_root(config: ScoutingConfig) -> Path:
+    """O diretório do artefato do índice: o configurado ou o que vem no pacote (ADR-043)."""
+    root = Path(config.index_dir).expanduser() if config.index_dir is not None else PACKAGED_INDEX
+    if not (root / "manifest.json").is_file():
+        raise ValueError(
+            f"config do scouting: {root} não tem um artefato do índice (manifest.json) — gere com "
+            "`axon-scouting-corpus ingest`"
+        )
+    return root
+
+
 def _require_model(directory: str | None) -> None:
     if directory is None:
         raise ValueError(
@@ -264,13 +275,7 @@ class ScoutingPack(PackBase):
         if config.store == "memory":
             from axon_scouting.rag.index.adapters.artifact import ArtifactIndex
 
-            root = Path(config.index_dir).expanduser() if config.index_dir is not None else PACKAGED_INDEX
-            if not (root / "manifest.json").is_file():
-                raise ValueError(
-                    f"config do scouting: {root} não tem um artefato do índice (manifest.json) — gere com "
-                    "`axon-scouting-corpus ingest`"
-                )
-            index = ArtifactIndex(root, embedder, Bm25Encoder())
+            index = ArtifactIndex(_artifact_root(config), embedder, Bm25Encoder())
         else:
             from qdrant_client import AsyncQdrantClient
 
@@ -313,10 +318,18 @@ class ScoutingPack(PackBase):
         return (CitationIntegrityValidator(), ValidityNoticeValidator())
 
     def eval_metrics(self, ctx: PackContext) -> Sequence[EvalMetric]:
-        """As métricas de domínio que o harness da 009 reporta como `scouting:<nome>` (spec 105, ADR-027)."""
-        from axon_scouting.eval import ContextAccuracy, CurrentDocumentRate, ValidityNoticeRate
+        """As métricas de domínio que o harness da 009 reporta como `scouting:<nome>` (spec 105, ADR-027). A de fatos
+        (FR-014) lê o texto dos trechos entregues no artefato, e só existe com o índice em memória — o da avaliação
+        (FR-013); o artefato só é lido quando uma rodada a consulta."""
+        from axon_scouting.eval import ContextAccuracy, CurrentDocumentRate, FactRecall, ValidityNoticeRate
 
-        return (ContextAccuracy(), CurrentDocumentRate(), ValidityNoticeRate())
+        metrics: list[EvalMetric] = [ContextAccuracy(), CurrentDocumentRate(), ValidityNoticeRate()]
+        config = read_config(ctx.config, ctx.data_dir, require_model=False)
+        if config.store == "memory":
+            from axon_scouting.rag.index.adapters.artifact import chunk_texts
+
+            metrics.append(FactRecall(chunk_texts(_artifact_root(config))))
+        return tuple(metrics)
 
     async def prepare_context(self, view: TurnView, ctx: PackContext) -> Mapping[str, JSONValue]:
         """Contexto e filtros de recuperação derivados da pergunta, sem modelo e sem relógio (FR-004, FR-005)."""

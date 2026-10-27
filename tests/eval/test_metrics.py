@@ -10,7 +10,7 @@ import pytest
 from axon_ai_contracts import Citation
 from axon_ai_contracts.eval import EvalChunk, EvalItem, EvalMetric, EvalObservation
 
-from axon_scouting.eval import ContextAccuracy, CurrentDocumentRate, ValidityNoticeRate
+from axon_scouting.eval import ContextAccuracy, CurrentDocumentRate, FactRecall, ValidityNoticeRate, expected_facts
 
 BRASILIA = timezone(timedelta(hours=-3))
 MEIO_DIA = datetime(2026, 10, 13, 12, tzinfo=BRASILIA)
@@ -60,6 +60,7 @@ def _citation(status: str | None) -> Citation:
         (ContextAccuracy(), "context_accuracy", "higher", True),
         (CurrentDocumentRate(), "current_document_rate", "higher", True),
         (ValidityNoticeRate(), "validity_notice_rate", "higher", False),
+        (FactRecall({}.get), "fact_recall", "higher", True),
     ],
 )
 def test_superficie(metric: EvalMetric, name: str, better: str, deterministic: bool) -> None:
@@ -189,3 +190,57 @@ def test_duas_chamadas_dao_o_mesmo_valor() -> None:
     observation = _observation(delivered=(VIGENTES[0], _chunk("s1", "substituido")))
     for metric in (ACCURACY, CURRENT, NOTICE):
         assert metric.measure(item, observation) == metric.measure(item, observation)
+
+
+# --- fatos entregues (FR-014; research R13) ------------------------------------------------------------------------
+
+TEXTOS = {
+    "por#s8@p62": "[POR · Capítulo 9]\nII - O marco simbólico do Ramo Lobinho é “Ser Livre como os Lobos”.",
+    "manual#cap3@p56": "O marco simbólico do Ramo Sênior, “Viver aventuras, superar desafios”, traduz…",
+    "manual#hifen@p1": "Identifica os elementos que com\ufffepõem o marco.",
+}
+
+
+def _fatos(*facts: object) -> EvalItem:
+    return EvalItem(id="f1", question="pergunta", reference_time=MEIO_DIA, extra={"facts": list(facts)})
+
+
+def _entregues(*ids: str) -> EvalObservation:
+    return _observation(delivered=[_chunk(chunk_id, "vigente") for chunk_id in ids])
+
+
+def test_fatos_normalizados_e_alternativas() -> None:
+    assert expected_facts({"facts": ["Ser livre como os LOBOS!", ["Viver aventuras", "superar desafios"], 3, []]}) == (
+        ("ser livre como os lobos",),
+        ("viver aventuras", "superar desafios"),
+    )
+    assert expected_facts({}) == () and expected_facts({"facts": "texto"}) == ()
+
+
+@pytest.mark.parametrize(
+    ("facts", "delivered", "expected"),
+    [
+        (["ser livre como os lobos", "viver aventuras, superar desafios"], ["por#s8@p62", "manual#cap3@p56"], 1.0),
+        (["ser livre como os lobos", "viver aventuras, superar desafios"], ["por#s8@p62"], 0.5),
+        ([["explorar o mundo", "ser livre como os lobos"]], ["por#s8@p62"], 1.0),
+        (["ser livre como os lobos"], [], 0.0),
+        (["ser livre como os lobos"], ["desconhecido"], 0.0),
+        (["livre como os lobo"], ["por#s8@p62"], 0.0),
+        (["compõem o marco"], ["manual#hifen@p1"], 0.0),
+    ],
+    ids=[
+        "todos",
+        "metade",
+        "alternativa",
+        "nada-entregue",
+        "texto-desconhecido",
+        "palavra-inteira",
+        "hifen-do-pdfium-conta-como-ausente",
+    ],
+)
+def test_fact_recall(facts: list[object], delivered: list[str], expected: float) -> None:
+    assert FactRecall(TEXTOS.get).measure(_fatos(*facts), _entregues(*delivered)) == expected
+
+
+def test_fact_recall_sem_fatos_nao_conta() -> None:
+    assert FactRecall(TEXTOS.get).measure(_item(), _entregues("por#s8@p62")) is None

@@ -30,9 +30,11 @@ completa e defaults: `read_config` em `src/axon_scouting/pack.py` e o `contracts
 
 ## Corpus e o artefato do índice
 
-`corpus/` guarda o catálogo curado (`corpus.yaml`) e os PDFs oficiais que ele cita, no git normal (spec 102,
-clarificação de 2026-10-08). Cada entrada traz o link oficial do arquivo em `source_url`; o formato completo está em
-`specs/102-scouting-corpus-ingestion/contracts/corpus-catalog.md`, no `axon`.
+`corpus/` guarda o catálogo curado (`corpus.yaml`), a proveniência de cada original (`fontes.yaml`: URL, página de
+origem, sha256, duplicatas e notas de curadoria) e o `README.md` da curadoria. Os PDFs ficam **fora do git**
+(`.gitignore`, desde 2026-10-26): só a máquina de quem ingere os tem, baixados pelos links do `fontes.yaml`; os três
+versionados antes disso continuam no histórico. Cada entrada traz o link oficial do arquivo em `source_url`; o formato
+completo está em `specs/102-scouting-corpus-ingestion/contracts/corpus-catalog.md`, no `axon`.
 
 A ingestão roda aqui, no desenvolvimento, e nunca na instalação: ela grava o artefato do pacote, que se commita. Os
 trechos são os mesmos para qualquer modelo; cada modelo acrescenta o próprio conjunto de vetores.
@@ -54,7 +56,8 @@ lançar uma versão nova do pack.
 spec 009), e o pack publica as métricas de domínio pelo hook `eval_metrics` (spec 105): `context_accuracy` (a
 derivação de contexto contra o `extra.context` do item), `current_document_rate` (trechos vigentes entregues ao
 modelo) e `validity_notice_rate` (aviso de vigência quando a resposta cita fonte não vigente). As duas primeiras são
-determinísticas e, com as de recuperação, são as únicas que barram uma regressão.
+determinísticas e, com as de recuperação, são as únicas que barram uma regressão. Com o índice em memória, também
+`fact_recall` (determinística): a fração dos fatos de `extra.facts` que aparecem no texto dos trechos entregues.
 
 O `eval/golden.yaml` é uma **semente provisória**: perguntas escritas a partir do corpus, sem curadoria, para provar o
 pipeline e dar ao CI uma linha de base. Nenhuma calibração se decide sobre ela; a curadoria troca o conteúdo pelas
@@ -67,11 +70,18 @@ AXON_PROFILE=test AXON_PACKS_FILE=eval/packs.yaml AXON_ASSISTANTS_FILE=eval/assi
   uv run --python 3.14 --group platform axon eval run --golden eval/golden.yaml --baseline eval/baseline.json
 ```
 
+O `eval/regression.yaml` é o **conjunto de regressão da recuperação** (spec 105 US6): cada item declara os fatos que
+precisam chegar à geração — o mesmo conceito por ramo, paráfrases, agregados ("cada ramo"), comparação e regras do POR
+—, validado por `tests/eval/test_regression.py` (todo fato existe no artefato). Roda da mesma forma, com
+`--golden eval/regression.yaml --baseline eval/regression-baseline.json`.
+
 Saída 0 sem regressão, 1 com regressão determinística, 2 com entrada inválida. A linha de base (`eval/baseline.json`)
 só muda de propósito: a mesma rodada com `--update-baseline` (com regressão, também `--force`), num commit que diz por
 quê. O workflow `eval` faz isso a cada mudança de corpus, RAG, prompt, derivação, métricas, pack, `eval/` ou
-dependências, com o artefato em memória e o gerador simulado do perfil `test` — sem modelo pago nem juiz; ele também
-confere que o artefato commitado espelha o corpus.
+dependências, com o artefato em memória e o gerador simulado do perfil `test` — sem modelo pago nem juiz —, para os
+dois conjuntos. Sem os PDFs, ele confere que o artefato commitado espelha o **catálogo** (documentos, metadados,
+vigência e proveniência; `tests/rag/ingestion/test_artifact_catalog.py`); a reingestão byte a byte é de quem tem os
+originais.
 
 Para comparar os modelos (ADR-043, item 7), a mesma rodada com `AXON_PACKS_FILE=eval/packs-pplx.yaml` (e
 `AXON_SCOUTING_EMBEDDING_API_KEY`) e `--report`, e depois `axon eval compare` dos dois relatórios.
@@ -79,5 +89,5 @@ Para comparar os modelos (ADR-043, item 7), a mesma rodada com `AXON_PACKS_FILE=
 ## Licença
 
 [MIT](LICENSE). Os PDFs de `corpus/` e o texto deles no artefato do índice são documentos oficiais da União dos
-Escoteiros do Brasil, redistribuídos com o link de origem de cada um (`source_url` em `corpus/corpus.yaml`); a licença
+Escoteiros do Brasil e das regiões, com o link de origem de cada um (`source_url` em `corpus/corpus.yaml`); a licença
 MIT cobre o código, não esses documentos.

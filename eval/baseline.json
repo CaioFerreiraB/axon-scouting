@@ -4,7 +4,7 @@
   "assistant": "scouting",
   "judge": null,
   "started_at": "2026-01-01T12:00:00+00:00",
-  "core_version": "0.3.0",
+  "core_version": "0.7.0rc4",
   "k": [
     5,
     20
@@ -12,7 +12,7 @@
   "metrics": [
     {
       "name": "recall@5",
-      "value": 0.8888888888888888,
+      "value": 0.7777777777777778,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -20,7 +20,7 @@
     },
     {
       "name": "recall@20",
-      "value": 0.8888888888888888,
+      "value": 0.7777777777777778,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -28,7 +28,7 @@
     },
     {
       "name": "mrr",
-      "value": 0.7222222222222222,
+      "value": 0.5777777777777778,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -36,7 +36,7 @@
     },
     {
       "name": "delivered_recall",
-      "value": 0.8888888888888888,
+      "value": 0.7777777777777778,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -187,6 +187,14 @@
       "better": "higher"
     },
     {
+      "name": "scouting:fact_recall",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
       "name": "flag_rate:ungrounded",
       "value": 1.0,
       "variance": null,
@@ -209,7 +217,7 @@
       "metrics": {
         "recall@5": 1.0,
         "recall@20": 1.0,
-        "mrr": 1.0,
+        "mrr": 0.5,
         "delivered_recall": 1.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
@@ -224,7 +232,8 @@
         "error_rate": 0.0,
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
-        "scouting:validity_notice_rate": null
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
       },
       "citations": [],
       "flags": [
@@ -240,10 +249,10 @@
     {
       "id": "s02",
       "metrics": {
-        "recall@5": 1.0,
-        "recall@20": 1.0,
-        "mrr": 1.0,
-        "delivered_recall": 1.0,
+        "recall@5": 0.0,
+        "recall@20": 0.0,
+        "mrr": 0.0,
+        "delivered_recall": 0.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
         "citation_invented_rate": null,
@@ -257,7 +266,8 @@
         "error_rate": 0.0,
         "scouting:context_accuracy": 0.5,
         "scouting:current_document_rate": 1.0,
-        "scouting:validity_notice_rate": null
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
       },
       "citations": [],
       "flags": [
@@ -268,7 +278,9 @@
       ],
       "gate_route": "generate",
       "failure": null,
-      "warnings": []
+      "warnings": [
+        "evidência não vista: Princípios, Organização e Regras (POR)"
+      ]
     },
     {
       "id": "s03",
@@ -290,7 +302,8 @@
         "error_rate": 0.0,
         "scouting:context_accuracy": 0.5,
         "scouting:current_document_rate": 1.0,
-        "scouting:validity_notice_rate": null
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
       },
       "citations": [],
       "flags": [
@@ -323,7 +336,8 @@
         "error_rate": 0.0,
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
-        "scouting:validity_notice_rate": null
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
       },
       "citations": [],
       "flags": [
@@ -356,7 +370,8 @@
         "error_rate": 0.0,
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
-        "scouting:validity_notice_rate": null
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
       },
       "citations": [],
       "flags": [
@@ -389,7 +404,8 @@
         "error_rate": 0.0,
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
-        "scouting:validity_notice_rate": null
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
       },
       "citations": [],
       "flags": [
@@ -404,72 +420,6 @@
     },
     {
       "id": "s07",
-      "metrics": {
-        "recall@5": 1.0,
-        "recall@20": 1.0,
-        "mrr": 0.5,
-        "delivered_recall": 1.0,
-        "rerank_gain": 0.0,
-        "citation_resolvable_rate": null,
-        "citation_invented_rate": null,
-        "expected_citation_recall": 0.0,
-        "latency_ms": 0.0,
-        "ttft_ms": 0.0,
-        "tokens_per_answer": 9.0,
-        "model_calls_per_answer": 1.0,
-        "generation_tokens_per_s": null,
-        "controller_invalid_rate": null,
-        "error_rate": 0.0,
-        "scouting:context_accuracy": 1.0,
-        "scouting:current_document_rate": null,
-        "scouting:validity_notice_rate": null
-      },
-      "citations": [],
-      "flags": [
-        "ungrounded"
-      ],
-      "issue_kinds": [
-        "ValidatorIssue"
-      ],
-      "gate_route": "generate",
-      "failure": null,
-      "warnings": []
-    },
-    {
-      "id": "s08",
-      "metrics": {
-        "recall@5": 1.0,
-        "recall@20": 1.0,
-        "mrr": 0.5,
-        "delivered_recall": 1.0,
-        "rerank_gain": 0.0,
-        "citation_resolvable_rate": null,
-        "citation_invented_rate": null,
-        "expected_citation_recall": 0.0,
-        "latency_ms": 0.0,
-        "ttft_ms": 0.0,
-        "tokens_per_answer": 9.0,
-        "model_calls_per_answer": 1.0,
-        "generation_tokens_per_s": null,
-        "controller_invalid_rate": null,
-        "error_rate": 0.0,
-        "scouting:context_accuracy": 1.0,
-        "scouting:current_document_rate": 1.0,
-        "scouting:validity_notice_rate": null
-      },
-      "citations": [],
-      "flags": [
-        "ungrounded"
-      ],
-      "issue_kinds": [
-        "ValidatorIssue"
-      ],
-      "gate_route": "generate",
-      "failure": null,
-      "warnings": []
-    },
-    {
-      "id": "s09",
       "metrics": {
         "recall@5": 0.0,
         "recall@20": 0.0,
@@ -487,8 +437,9 @@
         "controller_invalid_rate": null,
         "error_rate": 0.0,
         "scouting:context_accuracy": 1.0,
-        "scouting:current_document_rate": 1.0,
-        "scouting:validity_notice_rate": null
+        "scouting:current_document_rate": null,
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
       },
       "citations": [],
       "flags": [
@@ -500,8 +451,76 @@
       "gate_route": "generate",
       "failure": null,
       "warnings": [
-        "evidência não vista: Escotistas em Ação — Ramo Lobinho"
+        "evidência não vista: Resolução CAN 08/2021 — altera as Regras 001, 002, 003 e 010 do POR"
       ]
+    },
+    {
+      "id": "s08",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 0.2,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "s09",
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@20": 1.0,
+        "mrr": 1.0,
+        "delivered_recall": 1.0,
+        "rerank_gain": 0.0,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": 0.0,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": 1.0,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
     },
     {
       "id": "s10",
@@ -523,7 +542,8 @@
         "error_rate": 0.0,
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
-        "scouting:validity_notice_rate": null
+        "scouting:validity_notice_rate": null,
+        "scouting:fact_recall": null
       },
       "citations": [],
       "flags": [
@@ -538,5 +558,7 @@
     }
   ],
   "invalid": [],
-  "annotations": []
+  "annotations": [
+    "corpus 593 documentos, índice scouting__20261026T133325Z, e5"
+  ]
 }

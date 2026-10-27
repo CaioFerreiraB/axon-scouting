@@ -120,32 +120,35 @@ items:
         effective_from: "2022-01-01"
         effective_until: "2022-12-31"
 
+  # s08 e s09 citavam o "Escotistas em Ação — Ramo Lobinho", que saiu do catálogo em 2026-10-26; as mesmas perguntas
+  # passaram ao Manual do Escotista — Ramo Lobinho (revisão do RAG, 105 research R14).
   - id: s08
     question: "Como é realizada a Roca de Conselho na alcateia?"
     reference_time: "2026-10-13T12:00:00-03:00"
     expected_documents:
-      - document: "Escotistas em Ação — Ramo Lobinho"
-        chunk_id: "escotistas-em-acao-lobinho-2#s2@p28"
+      - document: "Manual do Escotista — Ramo Lobinho"
+        chunk_id: "manual-escotista-lobinho-1.3#cap4@p116"
     reference_answer: >-
-      É convocada com uma semana de antecedência e realizada com certa formalidade, com os participantes uniformizados;
-      início e fim podem ser marcados por uma oração ou reflexão, o Hino do Lobinho ou o Grande Uivo.
+      Com certa formalidade: é convocada com pelo menos uma semana de antecedência, informando os temas; todos
+      participam com o uniforme ou vestuário correto; acontece num local escolhido pela alcateia, de preferência ao ar
+      livre e sem interrupções, ou na Gruta.
     expected_citations:
-      - document: "Escotistas em Ação — Ramo Lobinho"
+      - document: "Manual do Escotista — Ramo Lobinho"
     extra:
       provisional: true
       context: { branch: lobinho }
 
   - id: s09
-    question: "Quais nós o lobinho aprende a fazer na primeira fase do Caminho da Jângal?"
+    question: "Quais nós o lobinho precisa aplicar num acampamento com a alcateia, na progressão pessoal?"
     reference_time: "2026-10-13T12:00:00-03:00"
     expected_documents:
-      - document: "Escotistas em Ação — Ramo Lobinho"
-        chunk_id: "escotistas-em-acao-lobinho-2#7@p63"
+      - document: "Manual do Escotista — Ramo Lobinho"
+        chunk_id: "manual-escotista-lobinho-1.3#cap9@p297"
     reference_answer: >-
-      Os nós direito, direito alceado, aselha e de correr, sabendo para que servem e aplicando-os numa atividade
-      (atividade I6).
+      Os nós direito, escota alceado, aselha, de correr e volta do fiel, sabendo suas funções, durante um acampamento
+      com a alcateia.
     expected_citations:
-      - document: "Escotistas em Ação — Ramo Lobinho"
+      - document: "Manual do Escotista — Ramo Lobinho"
     extra:
       provisional: true
       context: { branch: lobinho }

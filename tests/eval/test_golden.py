@@ -166,12 +166,18 @@ def test_semente_tem_entre_8_e_12_itens(semente: Mapping[str, Any]) -> None:
     assert 8 <= len(semente["items"]) <= 12
 
 
-def test_semente_cobre_os_quatro_documentos_um_historico_e_um_fora_do_corpus(
+COBERTOS = frozenset({"por", "estatuto", "resolucao", "manual"})
+"""Os tipos que a semente cobre (FR-002: fontes normativas). Com o catálogo de 593 documentos, cobrir todos os títulos
+deixou de fazer sentido (research R14)."""
+
+
+def test_semente_cobre_os_tipos_normativos_um_historico_e_um_fora_do_corpus(
     semente: Mapping[str, Any], catalog: Mapping[str, Any]
 ) -> None:
     items = semente["items"]
-    cited = {evidence["document"] for item in items for evidence in item.get("expected_documents") or []}
-    assert cited == {entry["title"] for entry in catalog["documents"]}
+    type_of = {entry["title"]: entry["type"] for entry in catalog["documents"]}
+    cited = {type_of.get(evidence["document"]) for item in items for evidence in item.get("expected_documents") or []}
+    assert cited >= COBERTOS
     assert any(is_historical(item.get("extra") or {}) for item in items), "FR-002: ao menos uma consulta histórica"
     assert any(not item.get("expected_documents") for item in items), "ao menos uma pergunta fora do corpus"
 

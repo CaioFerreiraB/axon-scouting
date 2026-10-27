@@ -1,0 +1,239 @@
+# Conjunto de regressão da recuperação do scouting (spec 105 US6, FR-014 a FR-016; research R13, R15).
+#
+# Nasceu da revisão do RAG de 2026-10-27 (docs/revisao-rag-scouting-2026-10.md no axon): "Qual o marco simbólico dos 5
+# ramos?" chegava à geração com uma das cinco formulações. Cada item declara em `extra.facts` os fatos que precisam
+# chegar aos trechos entregues — texto do próprio corpus, casado palavra a palavra depois da normalização da 101; uma
+# lista dentro da lista são redações alternativas. A métrica é `scouting:fact_recall` (determinística).
+#
+# Não é a semente da curadoria (golden.yaml) nem substitui as perguntas reais: cobre padrões, não uma pergunta — o mesmo
+# conceito por ramo, paráfrases, agregados ("cada ramo"), comparação, conceitos vizinhos (lema × marco simbólico) e
+# regras do POR cujo corpo se perdia na ingestão. `extra.group` agrupa os itens no relatório. Nenhuma calibração se
+# decide sobre ele (FR-001); ele diz se uma mudança estrutural melhorou ou piorou a recuperação.
+version: 1
+name: scouting-regressao
+assistant: scouting
+items:
+  - id: marco-filhotes
+    question: "Qual o marco simbólico do Ramo Filhotes?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Um território de brincar, aprender e crescer juntos”.
+    extra:
+      group: individual
+      facts:
+        - "Um território de brincar, aprender e crescer juntos"
+
+  - id: marco-lobinho
+    question: "Qual o marco simbólico do Ramo Lobinho?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Ser livre como os lobos”.
+    extra:
+      group: individual
+      facts:
+        - "Ser livre como os lobos"
+
+  - id: marco-escoteiro
+    question: "Qual o marco simbólico do Ramo Escoteiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Descobrir novos territórios com um grupo de amigos”.
+    extra:
+      group: individual
+      facts:
+        - "Descobrir novos territórios com um grupo de amigos"
+
+  - id: marco-senior
+    question: "Qual o marco simbólico do Ramo Sênior?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Viver aventuras, superar desafios”.
+    extra:
+      group: individual
+      facts:
+        - "Viver aventuras, superar desafios"
+
+  - id: marco-pioneiro
+    question: "Qual o marco simbólico do Ramo Pioneiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Explorar o mundo, ampliar horizontes”.
+    extra:
+      group: individual
+      facts:
+        - "Explorar o mundo, ampliar horizontes"
+
+  - id: marco-filhotes-parafrase
+    question: "Que frase resume o marco simbólico dos filhotes?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Um território de brincar, aprender e crescer juntos”.
+    extra:
+      group: individual
+      facts:
+        - "Um território de brincar, aprender e crescer juntos"
+
+  - id: marco-pioneiro-parafrase
+    question: "Qual é a frase simbólica do clã pioneiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Explorar o mundo, ampliar horizontes”.
+    extra:
+      group: individual
+      facts:
+        - "Explorar o mundo, ampliar horizontes"
+
+  - id: marco-5-ramos
+    question: "Qual o marco simbólico dos 5 ramos?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Filhotes: “Um território de brincar, aprender e crescer juntos”; Lobinho: “Ser livre como os lobos”; Escoteiro: “Descobrir novos territórios com um grupo de amigos”; Sênior: “Viver aventuras, superar desafios”; Pioneiro: “Explorar o mundo, ampliar horizontes”.
+    extra:
+      group: agregado
+      facts:
+        - "Um território de brincar, aprender e crescer juntos"
+        - "Ser livre como os lobos"
+        - "Descobrir novos territórios com um grupo de amigos"
+        - "Viver aventuras, superar desafios"
+        - "Explorar o mundo, ampliar horizontes"
+
+  - id: marco-cada-ramo
+    question: "Qual o marco simbólico de cada ramo?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Filhotes: “Um território de brincar, aprender e crescer juntos”; Lobinho: “Ser livre como os lobos”; Escoteiro: “Descobrir novos territórios com um grupo de amigos”; Sênior: “Viver aventuras, superar desafios”; Pioneiro: “Explorar o mundo, ampliar horizontes”.
+    extra:
+      group: agregado
+      facts:
+        - "Um território de brincar, aprender e crescer juntos"
+        - "Ser livre como os lobos"
+        - "Descobrir novos territórios com um grupo de amigos"
+        - "Viver aventuras, superar desafios"
+        - "Explorar o mundo, ampliar horizontes"
+
+  - id: marco-cinco-ramos
+    question: "Quais os marcos simbólicos dos cinco ramos?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Filhotes: “Um território de brincar, aprender e crescer juntos”; Lobinho: “Ser livre como os lobos”; Escoteiro: “Descobrir novos territórios com um grupo de amigos”; Sênior: “Viver aventuras, superar desafios”; Pioneiro: “Explorar o mundo, ampliar horizontes”.
+    extra:
+      group: agregado
+      facts:
+        - "Um território de brincar, aprender e crescer juntos"
+        - "Ser livre como os lobos"
+        - "Descobrir novos territórios com um grupo de amigos"
+        - "Viver aventuras, superar desafios"
+        - "Explorar o mundo, ampliar horizontes"
+
+  - id: marco-ramos-nomeados
+    question: "Qual a frase do marco simbólico dos ramos Filhotes, Lobinho, Escoteiro, Sênior e Pioneiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Filhotes: “Um território de brincar, aprender e crescer juntos”; Lobinho: “Ser livre como os lobos”; Escoteiro: “Descobrir novos territórios com um grupo de amigos”; Sênior: “Viver aventuras, superar desafios”; Pioneiro: “Explorar o mundo, ampliar horizontes”.
+    extra:
+      group: agregado
+      facts:
+        - "Um território de brincar, aprender e crescer juntos"
+        - "Ser livre como os lobos"
+        - "Descobrir novos territórios com um grupo de amigos"
+        - "Viver aventuras, superar desafios"
+        - "Explorar o mundo, ampliar horizontes"
+
+  - id: marco-lobinho-senior
+    question: "Qual a diferença entre o marco simbólico do Ramo Lobinho e o do Ramo Sênior?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Lobinho: “Ser livre como os lobos”; Sênior: “Viver aventuras, superar desafios”.
+    extra:
+      group: comparativo
+      facts:
+        - "Ser livre como os lobos"
+        - "Viver aventuras, superar desafios"
+
+  - id: lema-lobinho
+    question: "Qual o lema do Ramo Lobinho?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Melhor Possível” (POR). O lema não é o marco simbólico do ramo.
+    extra:
+      group: individual
+      facts:
+        - "o lema do Ramo Lobinho é Melhor Possível"
+
+  - id: lema-pioneiro
+    question: "Qual o lema do Ramo Pioneiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Servir” (POR). O lema não é o marco simbólico do ramo.
+    extra:
+      group: individual
+      facts:
+        - "o lema do Ramo Pioneiro é Servir"
+
+  - id: lema-filhotes
+    question: "Qual o lema do Ramo Filhotes?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      “Viver Juntos” (POR). O lema não é o marco simbólico do ramo.
+    extra:
+      group: individual
+      facts:
+        - "o lema do Ramo Filhotes é Viver Juntos"
+
+  - id: lema-cada-ramo
+    question: "Qual o lema de cada ramo?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Filhotes: “Viver Juntos”; Lobinho: “Melhor Possível”; Escoteiro: “Sempre Alerta”; Sênior: “Sempre Alerta”; Pioneiro: “Servir” (POR).
+    extra:
+      group: agregado
+      facts:
+        - "o lema do Ramo Filhotes é Viver Juntos"
+        - "o lema do Ramo Lobinho é Melhor Possível"
+        - "o lema do Ramo Escoteiro é Sempre Alerta"
+        - "o lema do Ramo Sênior é Sempre Alerta"
+        - "o lema do Ramo Pioneiro é Servir"
+
+  - id: idade-lobinho
+    question: "Qual a idade para ser lobinho?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Entre seis anos e meio e dez anos (POR).
+    extra:
+      group: individual
+      facts:
+        - "entre seis anos e meio e dez anos"
+
+  - id: idade-cada-ramo
+    question: "Qual a faixa etária de cada ramo?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Filhotes: 5 e 6 anos; Lobinho: seis anos e meio a dez; Escoteiro: 11 a 14; Sênior: 15 a 17; Pioneiro: 18 a 22 incompletos (POR).
+    extra:
+      group: agregado
+      facts:
+        - "entre 5 anos e 6 anos"
+        - "entre seis anos e meio e dez anos"
+        - "entre 11 e 14 anos"
+        - "entre 15 e 17 anos"
+        - "entre 18 e 22 anos incompletos"
+
+  - id: regra-054
+    question: "O que diz a Regra 054 do POR?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      A Regra 054 (Lema dos Filhotes): o lema do Ramo Filhotes é “Viver Juntos”.
+    extra:
+      group: normativo
+      facts:
+        - "o lema do Ramo Filhotes é Viver Juntos"
+
+  - id: sinal-filhotes
+    question: "Como é feito o sinal do Ramo Filhotes?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Com os dedos indicador e médio estendidos, juntos (POR).
+    extra:
+      group: normativo
+      facts:
+        - "o Sinal do Ramo Filhotes é feito com os dedos indicador e médio estendidos"

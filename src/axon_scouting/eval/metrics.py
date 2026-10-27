@@ -1,12 +1,13 @@
-"""Métricas de domínio do scouting para o harness da 009 (spec 105, FR-003; research R2, R3; ADR-027).
+"""Métricas de domínio do scouting para o harness da 009 (spec 105, FR-003, FR-014; research R2, R3, R13; ADR-027).
 
 Puras e síncronas: leem o item (`EvalItem`) e o que a execução produziu (`EvalObservation`), sem relógio — o dia vem do
-`reference_time` do item — e sem I/O.
+`reference_time` do item — e sem I/O. O texto dos trechos entregues, que o `EvalChunk` não traz, chega à `FactRecall`
+por uma função injetada pelo `pack.py`.
 """
 
 from __future__ import annotations
 
-from collections.abc import Mapping
+from collections.abc import Callable, Mapping, Sequence
 from typing import Final, Literal
 
 from axon_ai_contracts import JSONValue
@@ -14,6 +15,7 @@ from axon_ai_contracts.eval import EvalItem, EvalObservation
 
 from axon_scouting.context.derivation import ScoutingContext, derive_context
 from axon_scouting.context.periods import reference_day
+from axon_scouting.context.text import contains_term, normalize
 from axon_scouting.rag.index.api import ValidityStatus
 
 CONTEXT_KEY: Final = "context"
@@ -30,6 +32,9 @@ CONTEXT_FIELDS: Final = (
 )
 """Os campos que `extra.context` pode declarar (data-model.md); só os declarados contam."""
 
+FACTS_KEY: Final = "facts"
+"""A chave de `EvalItem.extra` com os fatos que precisam chegar à geração (FR-014)."""
+
 
 def expected_context(extra: Mapping[str, JSONValue]) -> Mapping[str, JSONValue]:
     """O contexto esperado que o item declara, ou vazio."""
@@ -41,6 +46,49 @@ def is_historical(extra: Mapping[str, JSONValue]) -> bool:
     """Item histórico: `extra.context` com `include_superseded` ou `previous_version` verdadeiro."""
     context = expected_context(extra)
     return context.get("include_superseded") is True or context.get("previous_version") is True
+
+
+def expected_facts(extra: Mapping[str, JSONValue]) -> tuple[tuple[str, ...], ...]:
+    """Os fatos que o item declara em `extra.facts`, normalizados: cada fato é um texto ou uma lista de redações
+    alternativas (basta uma); o contrato entrega as listas como tuplas. Entrada que não é texto nem lista de textos é
+    ignorada — a validação é dos testes."""
+    raw = extra.get(FACTS_KEY)
+    if not isinstance(raw, list | tuple):
+        return ()
+    facts: list[tuple[str, ...]] = []
+    for fact in raw:
+        alternatives = [fact] if isinstance(fact, str) else fact if isinstance(fact, list | tuple) else []
+        normalized = tuple(normalize(text) for text in alternatives if isinstance(text, str) and normalize(text))
+        if normalized:
+            facts.append(normalized)
+    return tuple(facts)
+
+
+def fact_found(fact: tuple[str, ...], texts: Sequence[str]) -> bool:
+    """Alguma redação do fato aparece inteira (palavra a palavra) em algum dos textos já normalizados."""
+    return any(contains_term(text, alternative) for alternative in fact for text in texts)
+
+
+class FactRecall:
+    """Fração dos fatos de `extra.facts` presentes no texto dos trechos entregues à geração (FR-014; research R13).
+
+    Mede a recuperação pelo conteúdo, não pelo `chunk_id`: sobrevive a mudança de chunking e diz se a informação
+    chegou, qualquer que seja o documento que a trouxe. Trecho cujo texto a função não conhece conta como vazio.
+    """
+
+    name = "fact_recall"
+    better: Literal["higher", "lower"] = "higher"
+    deterministic = True
+
+    def __init__(self, text_of: Callable[[str], str | None]) -> None:
+        self._text_of = text_of
+
+    def measure(self, item: EvalItem, observation: EvalObservation) -> float | None:
+        facts = expected_facts(item.extra)
+        if not facts:
+            return None
+        texts = [normalize(self._text_of(chunk.chunk_id) or "") for chunk in observation.delivered]
+        return sum(fact_found(fact, texts) for fact in facts) / len(facts)
 
 
 class ContextAccuracy:
