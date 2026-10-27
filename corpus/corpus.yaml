@@ -139,6 +139,7 @@ documents:
     type: manual
     title: Começando uma Ninhada — Ramo Filhotes
     jurisdiction: nacional
+    branch: filhotes
     publication_date: 2026-05-07
     effective_date: 2026-05-07
 
@@ -184,6 +185,7 @@ documents:
     type: manual
     title: Competências e Rotas de Aprendizagem — Ramo Filhotes
     jurisdiction: nacional
+    branch: filhotes
     publication_date: 2026-01-01
     effective_date: 2026-01-01
 
@@ -313,6 +315,7 @@ documents:
     type: manual
     title: Manual do Escotista — Ramo Filhotes
     jurisdiction: nacional
+    branch: filhotes
     publication_date: 2026-10-01
     effective_date: 2026-10-01
 

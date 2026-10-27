@@ -177,3 +177,52 @@ def _f(raw: Mapping[str, Any]) -> Any:
     from axon_scouting.rag.retrieval.domain.filters import index_filters
 
     return index_filters(raw)
+
+
+# --- facetas (FR-011, R13; ADR-045) --------------------------------------------------------------------------------
+
+
+def test_facetas_intercalam_os_ramos_sem_repetir() -> None:
+    """Uma busca por ramo: o primeiro de cada faceta antes do segundo de qualquer uma; trecho geral só uma vez."""
+    achados = buscar("acampamento da tropa", filtros(branches=["escoteiro", "pioneiro"]), top_k=6)
+    ids = [chunk.chunk_id for chunk in achados]
+    assert len(ids) == len(set(ids)) <= 6
+    primeiros = [(chunk.metadata["facet"], chunk.metadata["facet_rank"]) for chunk in achados[:2]]
+    assert sorted(primeiros) == [("escoteiro", 0), ("pioneiro", 0)]
+    assert [chunk.metadata["facet_rank"] for chunk in achados] == sorted(
+        chunk.metadata["facet_rank"] for chunk in achados
+    )
+    for chunk in achados:
+        assert chunk.metadata["branch"] in (None, chunk.metadata["facet"])
+        assert chunk.metadata[BRANCH_MATCH] is (chunk.metadata["branch"] == chunk.metadata["facet"])
+
+
+def test_a_ordem_das_facetas_sobrevive_ao_reranker() -> None:
+    from axon_scouting.rag.retrieval.reranker import MetadataReranker
+
+    achados = buscar("acampamento da tropa", filtros(branches=["escoteiro", "pioneiro"]), top_k=6)
+    reordenados = asyncio.run(MetadataReranker().rerank("acampamento da tropa", list(reversed(achados)), top_k=2))
+    assert sorted(chunk.metadata["facet"] for chunk in reordenados) == ["escoteiro", "pioneiro"]
+
+
+@pytest.mark.parametrize(
+    "branches",
+    [["escoteiro"], ["escoteiro", "escoteiro"], ["escoteiro", "patrulha"], "escoteiro"],
+    ids=["um-so", "repetido", "desconhecido", "texto"],
+)
+def test_facetas_invalidas(branches: object) -> None:
+    with pytest.raises(InvalidFilters, match="branches"):
+        buscar("acampamento", filtros(branches=branches))
+
+
+def test_branch_e_branches_juntos_e_erro() -> None:
+    with pytest.raises(InvalidFilters, match="branches"):
+        buscar("acampamento", filtros(branch="pioneiro", branches=["escoteiro", "pioneiro"]))
+
+
+def test_trecho_de_outra_faceta_nao_tira_a_posicao_zero() -> None:
+    """O trecho geral que a primeira faceta já levou não conta na segunda: ela também começa em 0."""
+    achados = buscar("acampamento da tropa", filtros(branches=["escoteiro", "pioneiro"]), top_k=30)
+    for faceta in ("escoteiro", "pioneiro"):
+        posicoes = sorted(chunk.metadata["facet_rank"] for chunk in achados if chunk.metadata["facet"] == faceta)
+        assert posicoes == list(range(len(posicoes)))

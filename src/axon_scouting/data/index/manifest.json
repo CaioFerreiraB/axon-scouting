@@ -1,13 +1,13 @@
 {
   "format": 1,
   "index": "scouting",
-  "build": "scouting__20261027T124608Z",
+  "build": "scouting__20261027T131401Z",
   "chunking": "estrutural-v2;janela=250-450",
   "sparse": "bm25-pt-v1;k1=1.2;b=0.75;avgdl=256",
-  "built_at": "2026-10-27T12:46:08.688078+00:00",
+  "built_at": "2026-10-27T13:14:01.397575+00:00",
   "files": {
-    "chunks.jsonl": "54b4718d802f58f5c9bf2d22f7f850feba5c91d0b072986e453a04dc3c3c0528",
-    "documents.jsonl": "30699823285f0422bd315b305d2f749375d58da0088c350bdf04a76ddd51b3ac"
+    "chunks.jsonl": "792fb2db9206857818c408e84d78b81c9f80df3d935af29b5df43dd1217f7925",
+    "documents.jsonl": "faf1a2f2c167ea13ccab840c142c418feb7489fcb2f778d899a1e086f54fc055"
   },
   "models": [
     {

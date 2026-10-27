@@ -23,6 +23,7 @@ def test_us2_cenario_1() -> None:
     contexto = derive_context("Quais competências do Pioneiro estão relacionadas à liderança?", DIA)
     assert contexto == ScoutingContext(
         branch="pioneiro",
+        branches=(),
         topics=("lideranca",),
         document_types=("manual", "programa_educativo"),
         validity=HOJE,
@@ -64,6 +65,7 @@ def test_tipo_citado_prevalece_sobre_os_sugeridos() -> None:
 def test_pergunta_vazia_da_o_contexto_default() -> None:
     assert derive_context("", DIA) == ScoutingContext(
         branch=None,
+        branches=(),
         topics=(),
         document_types=(),
         validity=HOJE,
@@ -80,6 +82,7 @@ def test_fatia_com_ramo() -> None:
     assert fatia == {
         "context": {
             "branch": "pioneiro",
+            "branches": [],
             "topics": ["lideranca"],
             "document_types": ["manual", "programa_educativo"],
             "effective_from": "2026-10-07",
@@ -152,3 +155,31 @@ def test_historico_filtros_com_o_periodo() -> None:
         "include_superseded": True,
         "previous_version": False,
     }
+
+
+# --- facetas e o Ramo Filhotes (ADR-045) ---------------------------------------------------------------------------
+
+TODOS = ("filhotes", "lobinho", "escoteiro", "senior", "pioneiro")
+
+
+@pytest.mark.parametrize(
+    ("pergunta", "branch", "branches"),
+    [
+        ("Qual o marco simbólico dos 5 ramos?", None, TODOS),
+        ("Qual o lema de cada ramo?", None, TODOS),
+        ("Quais os marcos simbólicos dos cinco ramos?", None, TODOS),
+        ("Qual a frase do marco simbólico dos ramos Filhotes, Lobinho, Escoteiro, Sênior e Pioneiro?", None, TODOS),
+        ("Qual a diferença entre o marco simbólico do Ramo Lobinho e o do Ramo Sênior?", None, ("lobinho", "senior")),
+        ("Qual o marco simbólico do Ramo Filhotes?", "filhotes", ()),
+        ("Quantas crianças cabem numa ninhada?", "filhotes", ()),
+        ("O que é a promessa escoteira?", None, ()),
+    ],
+)
+def test_facetas(pergunta: str, branch: str | None, branches: tuple[str, ...]) -> None:
+    contexto = derive_context(pergunta, DIA)
+    assert (contexto.branch, contexto.branches) == (branch, branches)
+
+
+def test_fatia_com_facetas_nao_tem_branch() -> None:
+    filtros = to_slice(derive_context("Qual o lema de cada ramo?", DIA))["retrieval_filters"]
+    assert isinstance(filtros, dict) and "branch" not in filtros and filtros["branches"] == list(TODOS)

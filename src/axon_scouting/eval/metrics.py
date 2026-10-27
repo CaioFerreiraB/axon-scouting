@@ -23,6 +23,7 @@ CONTEXT_KEY: Final = "context"
 
 CONTEXT_FIELDS: Final = (
     "branch",
+    "branches",
     "topics",
     "document_types",
     "effective_from",
@@ -146,6 +147,7 @@ def _derived(context: ScoutingContext) -> dict[str, JSONValue]:
     """A derivação na forma de `extra.context` (a mesma da fatia publicada pelo pack)."""
     return {
         "branch": context.branch,
+        "branches": list(context.branches),
         "topics": list(context.topics),
         "document_types": list(context.document_types),
         "effective_from": context.validity.start.isoformat(),
@@ -156,6 +158,6 @@ def _derived(context: ScoutingContext) -> dict[str, JSONValue]:
 
 
 def _matches(key: str, expected: JSONValue, derived: JSONValue) -> bool:
-    if key in ("topics", "document_types"):
+    if key in ("branches", "topics", "document_types"):
         return isinstance(expected, list | tuple) and isinstance(derived, list) and set(expected) == set(derived)
     return expected == derived

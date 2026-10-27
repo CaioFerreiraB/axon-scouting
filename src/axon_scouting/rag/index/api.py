@@ -51,8 +51,8 @@ class DocumentType(StrEnum):
 NORMATIVE_TYPES: Final = frozenset({DocumentType.POR, DocumentType.RESOLUCAO, DocumentType.ESTATUTO})
 """Divididos por artigo ou regra; os demais tipos, em janelas (FR-002)."""
 
-BRANCHES: Final = ("lobinho", "escoteiro", "senior", "pioneiro")
-"""Ids de ramo (os da 101). Documento sem ramo é geral."""
+BRANCHES: Final = ("filhotes", "lobinho", "escoteiro", "senior", "pioneiro")
+"""Ids de ramo (os da 101), na ordem das idades; `filhotes` desde o ADR-045. Documento sem ramo é geral."""
 
 _ROUNDING: Final = 1e-6
 _CHUNK_ID: Final = re.compile(r"^[a-z0-9][a-z0-9._~#@-]*$")

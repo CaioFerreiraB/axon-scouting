@@ -1,7 +1,8 @@
 """Derivação de contexto da pergunta: ramo, temas, tipos de documento e vigência (spec 101 FR-004 a FR-006).
 
 Função pura de (pergunta, dia de referência, léxico) — sem modelo, sem relógio, sem I/O (princípio V, SC-002). Na
-dúvida, a derivação não filtra: ramo ambíguo ou mais de um ramo resultam em nenhum filtro de ramo (research R8).
+dúvida, a derivação não filtra: ramo ambíguo resulta em nenhum filtro de ramo (research R8). Mais de um ramo, ou um
+marcador de totalidade ("cada ramo"), resulta em facetas — `branches` —, uma busca por ramo na 103 (ADR-045).
 """
 
 from __future__ import annotations
@@ -24,6 +25,8 @@ class ScoutingContext:
     """O contexto derivado da pergunta (Key Entity "Scouting Context")."""
 
     branch: str | None
+    branches: tuple[str, ...]
+    """Facetas: dois ramos ou mais, na ordem do léxico (ADR-045); com elas, `branch` é `None`."""
     topics: tuple[str, ...]
     document_types: tuple[str, ...]
     validity: Validity
@@ -36,8 +39,10 @@ def derive_context(question: str, reference_day: date, lexicon: Lexicon = LEXICO
     topics = tuple(topic for topic in lexicon.topics if _matches(text, topic.terms))
     period = find_period(text, reference_day)
     previous = _matches(text, lexicon.previous_markers)
+    branch, branches = _branches(text, lexicon)
     return ScoutingContext(
-        branch=_branch(text, lexicon),
+        branch=branch,
+        branches=branches,
         topics=tuple(topic.id for topic in topics),
         document_types=_document_types(text, lexicon, topics),
         # Consulta histórica (US3): o período citado, ou o dia de referência quando a pergunta mira a versão anterior.
@@ -52,6 +57,7 @@ def to_slice(context: ScoutingContext) -> dict[str, JSONValue]:
     recuperação, que omitem o que não restringe."""
     full: dict[str, JSONValue] = {
         "branch": context.branch,
+        "branches": list(context.branches),
         "topics": list(context.topics),
         "document_types": list(context.document_types),
         "effective_from": context.validity.start.isoformat(),
@@ -67,10 +73,15 @@ def _matches(text: str, terms: tuple[str, ...]) -> bool:
     return any(contains_term(text, term) for term in terms)
 
 
-def _branch(text: str, lexicon: Lexicon) -> str | None:
-    """Exatamente um ramo casado; nenhum, mais de um ou só termo ambíguo → sem filtro."""
-    found = [branch for branch, terms in lexicon.branches.items() if _matches(text, terms)]
-    return found[0] if len(found) == 1 else None
+def _branches(text: str, lexicon: Lexicon) -> tuple[str | None, tuple[str, ...]]:
+    """Exatamente um ramo casado → filtro; marcador de totalidade → os cinco ramos como facetas; dois ou mais casados →
+    eles como facetas; nenhum ou só termo ambíguo → nada."""
+    if _matches(text, lexicon.all_branches):
+        return None, tuple(lexicon.branches)
+    found = tuple(branch for branch, terms in lexicon.branches.items() if _matches(text, terms))
+    if len(found) == 1:
+        return found[0], ()
+    return None, found if len(found) > 1 else ()
 
 
 def _document_types(text: str, lexicon: Lexicon, topics: tuple[Topic, ...]) -> tuple[str, ...]:

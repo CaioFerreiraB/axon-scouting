@@ -1,7 +1,9 @@
-"""Os `retrieval_filters` da 101 → `IndexFilters` da 102 (spec 103 FR-002, FR-003, FR-009; research R3).
+"""Os `retrieval_filters` da 101 → `IndexFilters` da 102 e as facetas (spec 103 FR-002, FR-003, FR-009, FR-011;
+research R3, R13; ADR-045).
 
 Sem relógio: sem as datas não há como escolher a vigência, e "hoje" seria um chute. Chave desconhecida é erro — o
-contrato da 101 diz que nenhuma chave nova entra sem atualizar a 103. Os temas são aceitos e ignorados na v1.
+contrato da 101 diz que nenhuma chave nova entra sem atualizar a 103. Os temas são aceitos e ignorados na v1. As
+facetas (`branches`, dois ramos ou mais) não são filtro do índice: o retriever faz uma busca por ramo.
 """
 
 from __future__ import annotations
@@ -17,6 +19,7 @@ from axon_scouting.rag.index.api import BRANCHES, DocumentType, IndexFilters
 KNOWN: Final = frozenset(
     {
         "branch",
+        "branches",
         "topics",
         "document_types",
         "effective_from",
@@ -35,6 +38,25 @@ class InvalidFilters(ValueError):
         self.key = key
         where = f" ({key})" if key else ""
         super().__init__(f"filtros de recuperação inválidos{where}: {message}")
+
+
+def facets(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:
+    """As facetas pedidas (`branches`), na ordem recebida; nenhuma, `()`. Os demais filtros são de `index_filters`."""
+    value = (raw or {}).get("branches")
+    if value is None:
+        return ()
+    if (
+        not isinstance(value, list)
+        or len(value) < 2
+        or len(set(value)) != len(value)
+        or any(not isinstance(item, str) or item not in BRANCHES for item in value)
+    ):
+        raise InvalidFilters(
+            "branches", f"esperados dois ramos ou mais, sem repetir, de {', '.join(BRANCHES)}: {value!r}"
+        )
+    if (raw or {}).get("branch") is not None:
+        raise InvalidFilters("branches", "branch e branches juntos — a derivação publica um ou outro")
+    return tuple(str(item) for item in value)
 
 
 def index_filters(raw: Mapping[str, JSONValue] | None) -> IndexFilters:

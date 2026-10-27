@@ -164,9 +164,9 @@
     },
     {
       "name": "scouting:context_accuracy",
-      "value": null,
+      "value": 1.0,
       "variance": null,
-      "n": 0,
+      "n": 7,
       "deterministic": true,
       "better": "higher"
     },
@@ -188,7 +188,7 @@
     },
     {
       "name": "scouting:fact_recall",
-      "value": 0.75,
+      "value": 0.8099999999999999,
       "variance": null,
       "n": 20,
       "deterministic": true,
@@ -468,10 +468,10 @@
         "generation_tokens_per_s": null,
         "controller_invalid_rate": null,
         "error_rate": 0.0,
-        "scouting:context_accuracy": null,
+        "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.4
+        "scouting:fact_recall": 0.8
       },
       "citations": [],
       "flags": [
@@ -502,7 +502,7 @@
         "generation_tokens_per_s": null,
         "controller_invalid_rate": null,
         "error_rate": 0.0,
-        "scouting:context_accuracy": null,
+        "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:fact_recall": 0.4
@@ -536,10 +536,10 @@
         "generation_tokens_per_s": null,
         "controller_invalid_rate": null,
         "error_rate": 0.0,
-        "scouting:context_accuracy": null,
+        "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.2
+        "scouting:fact_recall": 0.8
       },
       "citations": [],
       "flags": [
@@ -570,7 +570,7 @@
         "generation_tokens_per_s": null,
         "controller_invalid_rate": null,
         "error_rate": 0.0,
-        "scouting:context_accuracy": null,
+        "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:fact_recall": 0.4
@@ -604,7 +604,7 @@
         "generation_tokens_per_s": null,
         "controller_invalid_rate": null,
         "error_rate": 0.0,
-        "scouting:context_accuracy": null,
+        "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:fact_recall": 1.0
@@ -740,10 +740,10 @@
         "generation_tokens_per_s": null,
         "controller_invalid_rate": null,
         "error_rate": 0.0,
-        "scouting:context_accuracy": null,
+        "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
-        "scouting:fact_recall": 0.6
+        "scouting:fact_recall": 0.8
       },
       "citations": [],
       "flags": [
@@ -808,7 +808,7 @@
         "generation_tokens_per_s": null,
         "controller_invalid_rate": null,
         "error_rate": 0.0,
-        "scouting:context_accuracy": null,
+        "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:fact_recall": 0.0
@@ -895,6 +895,6 @@
   ],
   "invalid": [],
   "annotations": [
-    "102 US6: ordem de leitura, blocos corridos, estrutural-v2; índice scouting__20261027T124608Z, e5"
+    "ADR-045: Filhotes como ramo e busca por faceta; índice scouting__20261027T131401Z, e5"
   ]
 }

@@ -17,7 +17,7 @@ O esquema exige `effective_date` mesmo quando o documento não informa dia ou vi
 
 Somente revogações integrais expressas foram registradas; alteração de artigo, consolidação e a cláusula genérica “revogam-se as disposições em contrário” não revogam automaticamente outro documento inteiro. `expiry_date` é inclusivo e usa a véspera da data-base do ato revogador. Uma revogação cujo ato não informa o dia mantém a ressalva de data provisória.
 
-O contrato atual oferece apenas `por`, `estatuto`, `resolucao`, `manual`, `programa_educativo` e `guia`. Atas, relatórios, políticas, regulamentos, ofícios e outros textos institucionais usam `manual`, que preserva sua leitura em janelas de texto. Instruções normativas usam `resolucao`. Título, caminho e proveniência mantêm a categoria editorial original. O ramo Filhotes e documentos de vários ramos ficam sem `branch`, porque o campo existente aceita somente um entre lobinho, escoteiro, senior e pioneiro. Não houve mudança de código ou contrato para acomodar essas categorias.
+O contrato atual oferece apenas `por`, `estatuto`, `resolucao`, `manual`, `programa_educativo` e `guia`. Atas, relatórios, políticas, regulamentos, ofícios e outros textos institucionais usam `manual`, que preserva sua leitura em janelas de texto. Instruções normativas usam `resolucao`. Título, caminho e proveniência mantêm a categoria editorial original. Documentos de vários ramos ficam sem `branch`. Desde o ADR-045 (2026-10-27), o campo aceita também `filhotes`, e os três documentos do Ramo Filhotes o declaram. Não houve mudança de código ou contrato para acomodar essas categorias.
 
 ## Conferências e pendências
 

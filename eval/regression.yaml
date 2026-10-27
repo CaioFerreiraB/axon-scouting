@@ -7,7 +7,8 @@
 #
 # Não é a semente da curadoria (golden.yaml) nem substitui as perguntas reais: cobre padrões, não uma pergunta — o mesmo
 # conceito por ramo, paráfrases, agregados ("cada ramo"), comparação, conceitos vizinhos (lema × marco simbólico) e
-# regras do POR cujo corpo se perdia na ingestão. `extra.group` agrupa os itens no relatório. Nenhuma calibração se
+# regras do POR cujo corpo se perdia na ingestão. `extra.group` agrupa os itens no relatório; `extra.context.branches`
+# é a derivação esperada das facetas (ADR-045), medida pela `scouting:context_accuracy`. Nenhuma calibração se
 # decide sobre ele (FR-001); ele diz se uma mudança estrutural melhorou ou piorou a recuperação.
 version: 1
 name: scouting-regressao
@@ -90,6 +91,7 @@ items:
       Filhotes: “Um território de brincar, aprender e crescer juntos”; Lobinho: “Ser livre como os lobos”; Escoteiro: “Descobrir novos territórios com um grupo de amigos”; Sênior: “Viver aventuras, superar desafios”; Pioneiro: “Explorar o mundo, ampliar horizontes”.
     extra:
       group: agregado
+      context: { branches: [filhotes, lobinho, escoteiro, senior, pioneiro] }
       facts:
         - "Um território de brincar, aprender e crescer juntos"
         - "Ser livre como os lobos"
@@ -104,6 +106,7 @@ items:
       Filhotes: “Um território de brincar, aprender e crescer juntos”; Lobinho: “Ser livre como os lobos”; Escoteiro: “Descobrir novos territórios com um grupo de amigos”; Sênior: “Viver aventuras, superar desafios”; Pioneiro: “Explorar o mundo, ampliar horizontes”.
     extra:
       group: agregado
+      context: { branches: [filhotes, lobinho, escoteiro, senior, pioneiro] }
       facts:
         - "Um território de brincar, aprender e crescer juntos"
         - "Ser livre como os lobos"
@@ -118,6 +121,7 @@ items:
       Filhotes: “Um território de brincar, aprender e crescer juntos”; Lobinho: “Ser livre como os lobos”; Escoteiro: “Descobrir novos territórios com um grupo de amigos”; Sênior: “Viver aventuras, superar desafios”; Pioneiro: “Explorar o mundo, ampliar horizontes”.
     extra:
       group: agregado
+      context: { branches: [filhotes, lobinho, escoteiro, senior, pioneiro] }
       facts:
         - "Um território de brincar, aprender e crescer juntos"
         - "Ser livre como os lobos"
@@ -132,6 +136,7 @@ items:
       Filhotes: “Um território de brincar, aprender e crescer juntos”; Lobinho: “Ser livre como os lobos”; Escoteiro: “Descobrir novos territórios com um grupo de amigos”; Sênior: “Viver aventuras, superar desafios”; Pioneiro: “Explorar o mundo, ampliar horizontes”.
     extra:
       group: agregado
+      context: { branches: [filhotes, lobinho, escoteiro, senior, pioneiro] }
       facts:
         - "Um território de brincar, aprender e crescer juntos"
         - "Ser livre como os lobos"
@@ -146,6 +151,7 @@ items:
       Lobinho: “Ser livre como os lobos”; Sênior: “Viver aventuras, superar desafios”.
     extra:
       group: comparativo
+      context: { branches: [lobinho, senior] }
       facts:
         - "Ser livre como os lobos"
         - "Viver aventuras, superar desafios"
@@ -187,6 +193,7 @@ items:
       Filhotes: “Viver Juntos”; Lobinho: “Melhor Possível”; Escoteiro: “Sempre Alerta”; Sênior: “Sempre Alerta”; Pioneiro: “Servir” (POR).
     extra:
       group: agregado
+      context: { branches: [filhotes, lobinho, escoteiro, senior, pioneiro] }
       facts:
         - "o lema do Ramo Filhotes é Viver Juntos"
         - "o lema do Ramo Lobinho é Melhor Possível"
@@ -211,6 +218,7 @@ items:
       Filhotes: 5 e 6 anos; Lobinho: seis anos e meio a dez; Escoteiro: 11 a 14; Sênior: 15 a 17; Pioneiro: 18 a 22 incompletos (POR).
     extra:
       group: agregado
+      context: { branches: [filhotes, lobinho, escoteiro, senior, pioneiro] }
       facts:
         - "entre 5 anos e 6 anos"
         - "entre seis anos e meio e dez anos"

@@ -48,7 +48,7 @@ def test_vocabularios() -> None:
     assert set(STATUS_LABELS) == set(ValidityStatus)
     assert [t.value for t in DocumentType] == ["por", "resolucao", "estatuto", "manual", "programa_educativo", "guia"]
     assert {t.value for t in NORMATIVE_TYPES} == {"por", "resolucao", "estatuto"}
-    assert BRANCHES == ("lobinho", "escoteiro", "senior", "pioneiro")
+    assert BRANCHES == ("filhotes", "lobinho", "escoteiro", "senior", "pioneiro")
 
 
 def test_filtros_recusam_intervalo_invertido() -> None:

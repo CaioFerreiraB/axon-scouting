@@ -29,6 +29,8 @@ class Topic:
 class Lexicon:
     branches: Mapping[str, tuple[str, ...]]
     """Ramo → termos não ambíguos."""
+    all_branches: tuple[str, ...]
+    """Pergunta sobre todos os ramos ("cada ramo", "os 5 ramos"): as facetas são os cinco (ADR-045)."""
     ambiguous: tuple[str, ...]
     """Termos que lembram um ramo mas também nomeiam o movimento ou outra coisa: nunca filtram."""
     topics: tuple[Topic, ...]
@@ -43,6 +45,7 @@ class Lexicon:
 LEXICON: Final = Lexicon(
     branches=MappingProxyType(
         {
+            "filhotes": ("filhote", "filhotes", "ramo filhotes", "ninhada", "ninhadas"),
             "lobinho": (
                 "lobinho",
                 "lobinhos",
@@ -76,6 +79,19 @@ LEXICON: Final = Lexicon(
                 "rovers",
             ),
         }
+    ),
+    all_branches=(
+        "cada ramo",
+        "todos os ramos",
+        "os ramos",
+        "dos ramos",
+        "nos ramos",
+        "aos ramos",
+        "pelos ramos",
+        "entre os ramos",
+        "5 ramos",
+        "cinco ramos",
+        "por ramo",
     ),
     ambiguous=(
         "escoteiro",
