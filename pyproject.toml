@@ -162,7 +162,7 @@ forbidden_modules = [
 name = "camadas do retrieval"
 type = "layers"
 layers = [
-    "axon_scouting.rag.retrieval.retriever | axon_scouting.rag.retrieval.reranker",
+    "axon_scouting.rag.retrieval.retriever | axon_scouting.rag.retrieval.reranker | axon_scouting.rag.retrieval.catalog",
     "axon_scouting.rag.retrieval.domain",
 ]
 

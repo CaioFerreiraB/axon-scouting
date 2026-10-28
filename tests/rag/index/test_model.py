@@ -10,15 +10,15 @@ from axon_ai_contracts import Chunk
 
 from axon_scouting.rag.index.api import (
     BRANCHES,
-    NORMATIVE_TYPES,
+    SCOPES,
     STATUS_LABELS,
-    DocumentType,
     EmbeddingModel,
     IndexedChunk,
     IndexFilters,
     IndexMismatch,
     IndexVersion,
     ValidityStatus,
+    taxonomy_id,
 )
 
 
@@ -29,7 +29,7 @@ def chunk(**changes: object) -> IndexedChunk:
         doc_key="por-2025",
         document_id="por",
         version="2025",
-        document_type=DocumentType.POR,
+        document_type="por",
         document_title="Princípios, Organização e Regras (POR)",
         jurisdiction="nacional",
         page_start=9,
@@ -46,8 +46,7 @@ def test_vocabularios() -> None:
     assert [s.value for s in ValidityStatus] == ["vigente", "revogado", "substituido", "rascunho"]
     assert STATUS_LABELS[ValidityStatus.SUBSTITUIDO] == "substituído"
     assert set(STATUS_LABELS) == set(ValidityStatus)
-    assert [t.value for t in DocumentType] == ["por", "resolucao", "estatuto", "manual", "programa_educativo", "guia"]
-    assert {t.value for t in NORMATIVE_TYPES} == {"por", "resolucao", "estatuto"}
+    assert SCOPES == ("mundial", "interamericano", "nacional", "regional", "local")
     assert BRANCHES == ("filhotes", "lobinho", "escoteiro", "senior", "pioneiro")
 
 
@@ -56,12 +55,21 @@ def test_filtros_recusam_intervalo_invertido() -> None:
         IndexFilters(effective_from=date(2026, 10, 8), effective_until=date(2026, 10, 7))
 
 
-def test_filtros_normalizam_tipos_e_recusam_desconhecidos() -> None:
+def test_id_da_taxonomia() -> None:
+    """ADR-049: o tipo, o órgão e o nível são ids derivados dos rótulos da taxonomia."""
+    assert taxonomy_id("P.O.R.") == "por"
+    assert taxonomy_id("Planejamento Estratégico") == "planejamento_estrategico"
+    assert taxonomy_id("Conselho de Administração Nacional") == "conselho_de_administracao_nacional"
+
+
+def test_filtros_recusam_o_que_nao_e_id_da_taxonomia() -> None:
     dia = date(2026, 10, 7)
-    filtros = IndexFilters(effective_from=dia, effective_until=dia, document_types=("manual", "por"))  # type: ignore[arg-type]
-    assert filtros.document_types == (DocumentType.MANUAL, DocumentType.POR)
+    filtros = IndexFilters(effective_from=dia, effective_until=dia, document_types=("manual", "ata"), bodies=("can",))
+    assert filtros.document_types == ("manual", "ata") and filtros.bodies == ("can",)
     with pytest.raises(ValueError):
-        IndexFilters(effective_from=dia, effective_until=dia, document_types=("lei",))  # type: ignore[arg-type]
+        IndexFilters(effective_from=dia, effective_until=dia, document_types=("Resolução",))
+    with pytest.raises(ValueError, match="abrangência"):
+        IndexFilters(effective_from=dia, effective_until=dia, scopes=("estadual",))
     with pytest.raises(ValueError, match="branch"):
         IndexFilters(effective_from=dia, effective_until=dia, branch="pioneiros")
 

@@ -1,0 +1,242 @@
+# Estrutura dos documentos do corpus (ADR-048, ADR-050), lida pela ingestão a cada execução.
+#
+# O `corpus.yaml` diz o que cada documento é (vigência, abrangência); a `taxonomia.yaml`, onde ele mora e o seu tipo
+# semântico (a pasta do arquivo é a entrada da taxonomia); este arquivo diz como ele se organiza por dentro: a árvore de
+# unidades que a ingestão (102) monta e que a busca (103) usa para enumerar e para entregar o contexto do pai.
+#
+# O perfil de um documento é o da primeira regra de `documents` que casa com ele; sem regra, o do tipo semântico da
+# pasta (`profile_by_type`). A ingestão recusa documento fora de uma pasta da taxonomia ou de tipo sem perfil.
+#
+# O esqueleto da árvore vem das fontes abaixo, nesta ordem de autoridade; o perfil diz quais valem para o documento:
+#   marcadores — Art., Regra, §, Título/Capítulo/Seção (o que a `structure.py` já reconhece)
+#   sumário    — a página de índice do PDF, que hoje a limpeza descarta (entradas com pontilhado e página)
+#   bookmarks  — os marcadores de navegação do PDF
+#   rodapé     — o cabeçalho ou rodapé corrido de cada página, sem o número; hoje a limpeza o descarta
+#   títulos    — a hierarquia de títulos: pela tipografia (fonte, tamanho, negrito) quando o documento tem estilo de
+#                título (ADR-050); senão, pelo texto (maiúsculas, numeração), como na `estrutural-v3'
+# Dos campos de um perfil, a ingestão usa o nome (o comportamento no código) e `sources` (sumário, bookmarks e rodapé
+# só chegam à árvore se estiverem na lista); `units` só é validado, e `about`/`fallback`/`note` documentam.
+# A janela (250–450 tokens) continua sendo o tamanho do trecho que vai para a busca: uma unidade maior que a janela vira
+# filhos aninhados, e uma unidade menor fica num trecho só.
+version: 1
+
+# Tipos de unidade: o que um nó da árvore é. O nome entra no rótulo do trecho ("Especialidade: Gastronomia") e é o que a
+# derivação (101) reconhece numa pergunta de enumeração ("quais são as especialidades" → `especialidade`).
+unit_kinds:
+  documento: {plural: documentos}
+  capitulo: {label: Capítulo, plural: capítulos}
+  secao: {label: Seção, plural: seções}
+  regra: {label: Regra, plural: regras}
+  artigo: {label: Artigo, plural: artigos}
+  paragrafo: {label: Parágrafo, plural: parágrafos}
+  item_de_pauta: {label: Item de pauta, plural: [itens de pauta, pautas, assuntos]}
+  slide: {label: Slide, plural: slides}
+  pergunta: {label: Pergunta, plural: perguntas}
+  eixo: {label: Eixo, plural: eixos}
+  bloco: {label: Bloco, plural: [blocos, blocos de aprendizagem]}
+  especialidade: {label: Especialidade, plural: especialidades}
+  nivel: {label: Nível, plural: níveis}
+  grupo_de_insignias: {label: Grupo, plural: []}
+  insignia: {label: Insígnia, plural: [insígnias, distintivos]}
+  competencia: {label: Competência, plural: competências}
+  reuniao: {label: Reunião, plural: reuniões}
+  cargo: {label: Cargo, plural: [cargos, funções]}
+
+# Nomes que valem em mais de um documento: os quatro eixos da Progressão Pessoal e os 18 blocos de cada um, conferidos
+# no rodapé dos quatro guias de progressão (Povo Livre, Descoberta, Desafio, Horizonte) — o mesmo mapa nos quatro.
+vocabulary:
+  eixo:
+    Habilidades para a Vida:
+      - Aprendizagem Contínua  # "… e Desenvolvimento Vocacional" no Pioneiro; o nome varia por ramo (casa pelo início)
+      - Autonomia e Liderança
+      - Criatividade e Inovação
+      - Inteligência Emocional
+    Meio Ambiente:
+      - Consumo Responsável
+      - Mudanças Climáticas
+      - Preservação da Biodiversidade
+      - Vida ao Ar Livre
+    Paz e Desenvolvimento:  # "Paz e Compreensão" no texto da p. 20 do guia Sênior/Pioneiro; o rodapé diz Desenvolvimento
+      - Comunidade
+      - Democracia
+      - Herança Cultural
+      - Promoção da Paz
+      - Valores
+    Saúde e Bem-estar:
+      - Cuidado com o Corpo
+      - Espiritualidade
+      - Hábitos Saudáveis
+      - Saúde Mental
+      - Vínculos Saudáveis
+  aliases:
+    Paz e Compreensão: Paz e Desenvolvimento
+
+# Perfis: como montar a árvore. `units` lista os níveis, do mais alto ao mais baixo; `fallback` é o que vale quando a
+# fonte não aparece no documento (resolução sem artigo, ata sem itens numerados).
+profiles:
+  regras:
+    about: Norma cuja unidade é a regra (o POR).
+    sources: [marcadores, sumário]
+    units: [capitulo, regra]
+    fallback: títulos
+
+  artigos:
+    about: >-
+      Norma cuja unidade é o artigo. Título, capítulo e seção agrupam; parágrafos, incisos e alíneas ficam no trecho do
+      artigo e só viram filhos quando o artigo passa da janela. Preâmbulo, considerandos e anexos são seções.
+    sources: [marcadores]
+    units: [capitulo, secao, artigo, paragrafo]
+    fallback: títulos
+
+  secoes_numeradas:
+    about: Documento organizado por seções numeradas ("4. Conceitos" → "4.1 Risco"), a hierarquia pela numeração.
+    sources: [bookmarks, sumário, títulos]
+    units: [secao]
+    fallback: títulos
+
+  capitulos:
+    about: Livro ou manual organizado por capítulos e seções; o capítulo também aparece no rodapé corrido.
+    sources: [bookmarks, sumário, rodapé, títulos]
+    units: [capitulo, secao]
+    fallback: títulos
+
+  progressao:
+    about: >-
+      Guia de progressão do jovem: capítulos pelo sumário ou bookmarks; dentro da Progressão Pessoal, o eixo vem do
+      rodapé e o bloco é o título que casa um bloco do vocabulário daquele eixo.
+    sources: [bookmarks, sumário, rodapé, títulos]
+    units: [capitulo, eixo, bloco, secao]
+    fallback: títulos
+
+  especialidades:
+    about: >-
+      Guia de especialidades e insígnias: o eixo (ou o grupo de insígnias) vem do rodapé; cada entrada do sumário na
+      faixa declarada é uma especialidade (ou insígnia); as seções dela (níveis, Conhecer/Fazer/Compartilhar) são filhos.
+    sources: [sumário, rodapé, títulos]
+    units: [eixo, especialidade, secao]
+    fallback: títulos
+
+  ata:
+    about: >-
+      Ata de reunião: uma abertura (data, local, presentes, até o primeiro item) e um item de pauta por item numerado
+      ("01) DATA", "08) PROJETOS…", "1. Abertura"); cerca de metade das atas numera. Sem numeração, janelas.
+    sources: [marcadores, títulos]
+    units: [item_de_pauta]
+    fallback: janelas
+
+  relatorio:
+    about: Relatório com seções por área e muitas tabelas; as tabelas são trechos com forma de lista.
+    sources: [sumário, bookmarks, títulos]
+    units: [capitulo, secao]
+    fallback: títulos
+
+  comunicado:
+    about: >-
+      Documento curto (ofício, carta, parecer, recomendação, edital, boletim): o documento inteiro é a unidade, e as
+      janelas são filhos dele quando ele passa de uma.
+    sources: []
+    units: [documento]
+    fallback: janelas
+
+  apresentacao:
+    about: Slides exportados para PDF; cada página é um slide.
+    sources: [páginas]
+    units: [slide]
+    fallback: janelas
+
+  perguntas:
+    about: Perguntas frequentes; cada pergunta numerada terminada em "?" é uma unidade, com a resposta dentro.
+    sources: [marcadores]
+    units: [pergunta]
+    fallback: janelas
+
+# O perfil padrão de cada tipo semântico da taxonomia: é aqui que o mapeamento do acervo decide a segmentação.
+profile_by_type:
+  P.O.R.: regras
+  Estatuto: artigos
+  Regulamento: artigos
+  Resolução: artigos
+  Política: secoes_numeradas
+  Ata: ata
+  Relatório: relatorio
+  Planejamento Estratégico: relatorio
+  Manual: capitulos
+  Apresentação: apresentacao
+  Parecer: comunicado
+  Ofício: comunicado
+  Manifestação: comunicado
+  Posicionamento: comunicado
+  Edital: comunicado
+  Recomendação: comunicado
+  Boletim: comunicado
+
+# Exceções ao tipo: os documentos com forma própria. `folder` casa a pasta do arquivo (sem o `ocr/`) e `match`, o
+# document_id, ambos por padrão glob. Ordem importa.
+documents:
+  # --- Guias de especialidades (Programa Educativo / Guias de Jovens) ----------------------------------------------
+  - match: [guia-especialidades-insignias-senior-pioneiro]
+    profile: especialidades
+    branches: [senior, pioneiro]
+    units:
+      - {kind: especialidade, pages: 24-221, source: sumário, parent: eixo}
+      - {kind: grupo_de_insignias, pages: 223-246, name: Insígnias de Interesse Especial — Ramo Sênior, branches: [senior]}
+      - {kind: grupo_de_insignias, pages: 247-256, name: Insígnias de Interesse Especial — Ramo Pioneiro, branches: [pioneiro]}
+      - {kind: grupo_de_insignias, pages: 257-280, name: Insígnias Globais — Ramos Sênior e Pioneiro}
+      - {kind: insignia, pages: 224-280, source: sumário, parent: grupo_de_insignias}
+    note: >-
+      Os títulos de eixo são imagem; o eixo vem do rodapé ("24 Habilidades para a Vida"). A tabela da p. 20 lista as 32
+      especialidades e o sumário (p. 6–9) as 32 e as 16 insígnias (6 do Sênior, 3 do Pioneiro, 7 globais) com página.
+
+  - match: [guia-especialidades-insignias-lobinho-escoteiro]
+    profile: especialidades
+    branches: [lobinho, escoteiro]
+    units:
+      - {kind: especialidade, pages: 24-379, source: sumário, parent: eixo}
+      - {kind: grupo_de_insignias, pages: 381-410, name: Insígnias de Interesse Especial e Insígnias Globais — Ramo Lobinho, branches: [lobinho]}
+      - {kind: grupo_de_insignias, pages: 411-445, name: Insígnias de Interesse Especial e Insígnias Globais — Ramo Escoteiro, branches: [escoteiro]}
+      - {kind: insignia, pages: 383-445, source: sumário, parent: grupo_de_insignias}
+    note: >-
+      174 especialidades em ordem alfabética dentro de cada eixo (o eixo no rodapé: Habilidades p. 24–135, Meio
+      Ambiente p. 138–197, Paz e Desenvolvimento p. 200–271, Saúde e Bem-estar p. 274–379), cada uma com Nível 1 e 2;
+      18 insígnias, 9 do Lobinho e 9 do Escoteiro (o ramo no rodapé). Os níveis 1 e 2 ficam no texto dos trechos da
+      especialidade (são seções curtas; a junção das seções pequenas os mantém juntos, ADR-050).
+
+  # --- Guias de progressão e manuais do escotista ------------------------------------------------------------------
+  - folder: [programa-educativo/guias-de-jovens, programa-educativo/manuais-de-escotistas]
+    profile: progressao
+    note: >-
+      Capítulos pelos bookmarks (39–64 por manual) ou pelo sumário (Filhotes e os guias); o eixo pelo rodapé nos guias
+      e, no capítulo do Sistema de Progressão dos manuais (rodapé do capítulo), pelo vocabulário a partir do bloco.
+
+  # --- Manuais com unidade própria ---------------------------------------------------------------------------------
+  - match: ["competencias-rotas-aprendizagem-*"]
+    profile: capitulos
+    units:
+      - kind: competencia
+        source: títulos
+        under: [Competências Essenciais, Competências Específicas]
+        trim: "^(n[íi]vel|preliminar|intermedi[áa]rio|avan[çc]ado)$|\\s+(preliminar|intermedi[áa]rio|avan[çc]ado|comportamentos desejados|descritivo do grau)\\b.*$"
+    note: >-
+      Cada competência é um título (pela tipografia) logo abaixo de "COMPETÊNCIAS ESSENCIAIS" ou "COMPETÊNCIAS
+      ESPECÍFICAS"; Preliminar, Intermediário e Avançado ficam no texto dela.
+
+  - match: ["primeiros-meses-*"]
+    profile: capitulos
+    units:
+      - {kind: reuniao, source: títulos, pattern: "^(?:\\d+\\s*[ªao]\\s*)?reuni[ãa]o\\s+(?:de|do|da)\\s"}
+    note: >-
+      "1ª Reunião de Alcateia", "7ª Reunião do Clã de Pioneiros…"; no Clã, a maioria vem sem o ordinal ("Reunião de
+      Clã de Pioneiros - Visita a…"). Na Tropa Escoteira o sumário usa tracejado em vez de pontilhado e vazou para o
+      texto — o detector de sumário aceita os dois.
+
+  - match: [perfis-cargos-funcoes-local]
+    profile: capitulos
+    sources: [títulos]
+    units:
+      - {kind: cargo, source: títulos, under: [Linha Escotista, Linha Dirigente]}
+    note: >-
+      Um descritivo por cargo ou função: o título do cargo (pela tipografia, "CHEFE DE ALCATEIA") logo abaixo da linha
+      ("LINHA ESCOTISTA", "LINHA DIRIGENTE"); "A quem se dirige", "Área", "Sobre" e "Funções" ficam no texto dele.
+
+  - match: ["faq-*"]
+    profile: perguntas

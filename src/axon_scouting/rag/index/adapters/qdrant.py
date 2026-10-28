@@ -18,10 +18,23 @@ from typing import Any, Final
 from qdrant_client import AsyncQdrantClient
 from qdrant_client import models as m
 
-from axon_scouting.rag.index.api import IndexedChunk, IndexFilters, IndexUnavailable, IndexVersion, ValidityStatus
+from axon_scouting.rag.index.api import (
+    CatalogEntry,
+    IndexedChunk,
+    IndexFilters,
+    IndexUnavailable,
+    IndexVersion,
+    UnitEntry,
+    UnitKind,
+    ValidityStatus,
+)
 from axon_scouting.rag.index.domain.compatibility import check_encoders
+from axon_scouting.rag.index.domain.filters import matches
+from axon_scouting.rag.index.domain.outline import outline_of, units_of
 from axon_scouting.rag.index.domain.points import (
+    FILTER_BRANCHES,
     build_name,
+    catalog_entry,
     chunk_from_payload,
     chunk_point_id,
     chunk_to_payload,
@@ -48,7 +61,18 @@ from axon_scouting.rag.index.ports import (
 DENSE: Final = "dense"
 SPARSE: Final = "sparse"
 BATCH: Final = 64
-KEYWORD_FIELDS: Final = ("kind", "doc_key", "document_id", "status", "branch", "document_type")
+KEYWORD_FIELDS: Final = (
+    "kind",
+    "doc_key",
+    "document_id",
+    "status",
+    "branch",
+    "document_type",
+    "bodies",
+    "scope",
+    FILTER_BRANCHES,
+    "shape",
+)
 DATE_FIELDS: Final = ("effective_date", "expiry_date", "successor_expiry_date")
 
 
@@ -121,6 +145,29 @@ class QdrantIndex:
         if not documents:
             raise IndexUnavailable(f"build {published.name} sem o registro do documento {chunk.doc_key}")
         return original_of(chunk, record_from_payload(_payload(documents[0])))
+
+    # --- DocumentCatalog --------------------------------------------------------------------------------------
+
+    async def catalog(self, *, filters: IndexFilters) -> list[CatalogEntry]:
+        """Os pontos de documento do build publicado, filtrados aqui: são centenas, e o predicado é o da memória."""
+        build = await self._require_published()
+        documents = await self.documents(build.name)
+        return [entry for entry in map(catalog_entry, documents) if matches(filters, entry)]
+
+    # --- DocumentOutline --------------------------------------------------------------------------------------
+
+    async def unit_kinds(self) -> tuple[UnitKind, ...]:
+        return (await self._require_published()).version.unit_kinds
+
+    async def units(self, kind: str, *, filters: IndexFilters) -> list[UnitEntry]:
+        """Dos pontos de documento, como o catálogo: são centenas, e o predicado é o da memória."""
+        build = await self._require_published()
+        return units_of(await self.documents(build.name), kind, filters)
+
+    async def outline(self, doc_key: str) -> list[UnitEntry]:
+        build = await self._require_published()
+        document = next((d for d in await self.documents(build.name) if d.doc_key == doc_key), None)
+        return [] if document is None else outline_of(document)
 
     # --- IndexWriter ------------------------------------------------------------------------------------------
 
@@ -288,12 +335,18 @@ def _filter(filters: IndexFilters) -> m.Filter:
     """A semântica de `domain/filters.py` (research R5) em condições do Qdrant."""
     must: list[Any] = [_match("kind", "chunk")]
     must_not: list[Any] = [_match("status", ValidityStatus.RASCUNHO.value)]
-    if filters.branch is not None:
-        must.append(m.Filter(should=[_match("branch", filters.branch), _empty("branch")]))
+    if filters.branch is not None:  # os ramos efetivos do trecho; sem nenhum, geral (domain/filters.py)
+        must.append(m.Filter(should=[_match(FILTER_BRANCHES, filters.branch), _empty(FILTER_BRANCHES)]))
+    if filters.shape is not None:
+        must.append(_match("shape", filters.shape))
+    else:  # o sumário só entra quando pedido (domain/filters.py)
+        must_not.append(_match("shape", "outline"))
     if filters.document_types:
-        must.append(
-            m.FieldCondition(key="document_type", match=m.MatchAny(any=[t.value for t in filters.document_types]))
-        )
+        must.append(m.FieldCondition(key="document_type", match=m.MatchAny(any=list(filters.document_types))))
+    if filters.bodies:
+        must.append(m.FieldCondition(key="bodies", match=m.MatchAny(any=list(filters.bodies))))
+    if filters.scopes:
+        must.append(m.FieldCondition(key="scope", match=m.MatchAny(any=list(filters.scopes))))
     until, start = filters.effective_until, filters.effective_from
     if filters.previous_version:
         must += [

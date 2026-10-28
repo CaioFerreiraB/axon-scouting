@@ -6,15 +6,24 @@ que os dois concordam. Só datas e o vínculo de sucessão decidem a vigência �
 
 from __future__ import annotations
 
-from axon_scouting.rag.index.api import IndexedChunk, IndexFilters, ValidityStatus
+from axon_scouting.rag.index.api import CatalogEntry, IndexedChunk, IndexFilters, ValidityStatus
 
 
-def matches(filters: IndexFilters, chunk: IndexedChunk) -> bool:
+def matches(filters: IndexFilters, chunk: IndexedChunk | CatalogEntry) -> bool:
+    """O trecho — ou o documento do catálogo, que tem os mesmos campos de vigência (ADR-047) — passa nos filtros."""
     if chunk.status is ValidityStatus.RASCUNHO:
         return False
-    if filters.branch is not None and chunk.branch not in (None, filters.branch):
-        return False
+    if filters.branch is not None:
+        branches = chunk.effective_branches if isinstance(chunk, IndexedChunk) else _document_branches(chunk)
+        if branches and filters.branch not in branches:
+            return False
+    if isinstance(chunk, IndexedChunk) and chunk.shape != filters.shape and (filters.shape or chunk.shape == "outline"):
+        return False  # o sumário (`outline`) fica fora da busca comum
     if filters.document_types and chunk.document_type not in filters.document_types:
+        return False
+    if filters.bodies and not set(chunk.bodies) & set(filters.bodies):
+        return False
+    if filters.scopes and chunk.scope not in filters.scopes:
         return False
     until = filters.effective_until
     if filters.previous_version:
@@ -32,3 +41,7 @@ def matches(filters: IndexFilters, chunk: IndexedChunk) -> bool:
         if not filters.include_superseded and chunk.expiry_date < until:
             return False
     return True
+
+
+def _document_branches(entry: CatalogEntry) -> tuple[str, ...]:
+    return (entry.branch,) if entry.branch else ()

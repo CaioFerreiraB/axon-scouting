@@ -8,7 +8,7 @@ from typing import Any
 
 import pytest
 
-from axon_scouting.rag.index.api import DocumentType, ValidityStatus
+from axon_scouting.rag.index.api import ValidityStatus
 from axon_scouting.rag.ingestion.domain.catalog import CatalogResult, validate_catalog
 
 BASE = PurePosixPath("/corpus")
@@ -19,7 +19,6 @@ def entrada(**changes: Any) -> dict[str, Any]:
         "file": "manuais/pioneiro-2026.pdf",
         "document_id": "manual-pioneiro",
         "version": "2026",
-        "type": "manual",
         "title": "Manual do Ramo Pioneiro",
         "branch": "pioneiro",
         "jurisdiction": "nacional",
@@ -46,7 +45,6 @@ def test_catalogo_valido_do_contrato() -> None:
             file="por/por-2025.pdf",
             document_id="por",
             version="2025",
-            type="por",
             title="POR",
             branch=...,
             effective_date="2025-01-01",
@@ -56,7 +54,6 @@ def test_catalogo_valido_do_contrato() -> None:
             file="por/por-2023.pdf",
             document_id="por",
             version="2023",
-            type="por",
             title="POR",
             branch=...,
             publication_date=date(2023, 3, 1),
@@ -66,7 +63,6 @@ def test_catalogo_valido_do_contrato() -> None:
             file="res.pdf",
             document_id="resolucao-2024-03",
             version="1",
-            type="resolucao",
             branch=...,
             status="revogado",
             expiry_date=date(2025, 12, 31),
@@ -75,7 +71,6 @@ def test_catalogo_valido_do_contrato() -> None:
     assert resultado.ok, resultado.problems
     manual, por2025, por2023, resolucao = resultado.entries
     assert manual.path == PurePosixPath("/corpus/manuais/pioneiro-2026.pdf")
-    assert manual.document_type is DocumentType.MANUAL
     assert manual.branch == "pioneiro"
     assert manual.doc_key == "manual-pioneiro-2026"
     assert por2025.effective_date == date(2025, 1, 1)
@@ -91,7 +86,7 @@ def test_raiz_sem_documents() -> None:
     assert "documents" in unico_problema(validate_catalog(["x"], BASE))
 
 
-@pytest.mark.parametrize("campo", ["file", "document_id", "version", "type", "title", "jurisdiction", "effective_date"])
+@pytest.mark.parametrize("campo", ["file", "document_id", "version", "title", "jurisdiction", "effective_date"])
 def test_obrigatorio_ausente(campo: str) -> None:
     resultado = validar(entrada(**{campo: ...}))
     mensagem = unico_problema(resultado)
@@ -118,7 +113,6 @@ def test_campo_desconhecido() -> None:
         ("document_id", "-manual"),
         ("version", "2026-1"),
         ("version", "v 2"),
-        ("type", "lei"),
         ("branch", "pioneiros"),
         ("status", "vigente"),
         ("status", "substituido"),
@@ -158,7 +152,7 @@ def test_revogado_exige_fim_de_vigencia() -> None:
 
 
 def test_todos_os_problemas_acumulados() -> None:
-    resultado = validar(entrada(title=...), entrada(file="b.pdf", version="2027", type="lei"), entrada(file="/x.pdf"))
+    resultado = validar(entrada(title=...), entrada(file="b.pdf", version="2027", type="por"), entrada(file="/x.pdf"))
     assert not resultado.ok
     assert [p.entry for p in resultado.problems] == [1, 2, 3]
     assert resultado.entries == ()
@@ -167,7 +161,7 @@ def test_todos_os_problemas_acumulados() -> None:
 def test_entradas_validas_e_linhagens_com_entrada_invalida() -> None:
     resultado = validar(
         entrada(),
-        entrada(file="b.pdf", document_id="por", version="1", type="lei"),
+        entrada(file="b.pdf", document_id="por", version="1", type="por"),  # o campo saiu (ADR-049)
         entrada(file="/x.pdf", document_id="estatuto"),
     )
     assert not resultado.ok
@@ -189,3 +183,11 @@ def test_link_do_arquivo() -> None:
 def test_link_invalido(url: object) -> None:
     resultado = validar(entrada(source_url=url))
     assert "source_url" in unico_problema(resultado)
+
+
+def test_type_saiu_do_catalogo() -> None:
+    """ADR-049: o tipo do documento é o da taxonomia; o campo antigo é recusado com o motivo."""
+    resultado = validar(entrada(type="manual"))
+    assert not resultado.ok
+    (problema,) = resultado.problems
+    assert problema.fields == ("type",) and "taxonomia" in problema.message

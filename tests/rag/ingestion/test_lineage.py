@@ -18,7 +18,6 @@ def versoes(*specs: dict[str, Any]) -> tuple[CatalogEntry, ...]:
         entry: dict[str, Any] = {
             "file": f"{spec.get('document_id', 'manual-x')}-{spec['version']}.pdf",
             "document_id": "manual-x",
-            "type": "manual",
             "title": "Manual X",
             "jurisdiction": "nacional",
         }
@@ -118,7 +117,7 @@ def test_erros_de_linhagem() -> None:
 
 
 def test_linhagens_sao_independentes() -> None:
-    resultado = derive_lineages(versoes(V2023, {**V2023, "document_id": "por", "type": "por"}))
+    resultado = derive_lineages(versoes(V2023, {**V2023, "document_id": "por"}))
     assert resultado.ok
     assert {v.status for v in resultado.validities.values()} == {ValidityStatus.VIGENTE}
 

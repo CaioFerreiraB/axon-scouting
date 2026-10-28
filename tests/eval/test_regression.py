@@ -1,4 +1,4 @@
-"""O conjunto de regressão da recuperação, só com os contratos (spec 105 US6, FR-015; research R15).
+"""Os conjuntos de regressão e do acervo, só com os contratos (spec 105 US6, FR-015; research R15, R22).
 
 Confere o formato que o harness da 009 lê e as regras do domínio: todo item declara fatos em `extra.facts`, e todo fato
 existe no texto do artefato do índice — um fato que nenhum trecho contém tornaria o item impossível, e a métrica
@@ -21,11 +21,14 @@ from axon_scouting.eval import FACTS_KEY
 
 ROOT = Path(__file__).resolve().parents[2]
 REGRESSION = ROOT / "eval" / "regression.yaml"
+ACERVO = ROOT / "eval" / "acervo.yaml"
 CHUNKS = ROOT / "src" / "axon_scouting" / "data" / "index" / "chunks.jsonl"
 GROUPS = frozenset({"individual", "agregado", "comparativo", "normativo", "lista", "pessoa"})
+ACERVO_GROUPS = frozenset({"simples", "lista", "comparativo", "multidocumento", "normativo"})
+SPLITS = frozenset({"desenvolvimento", "controle"})
 
 
-def _problems(regression: Mapping[str, Any], texts: list[str]) -> list[str]:
+def _problems(regression: Mapping[str, Any], texts: list[str], groups: frozenset[str] = GROUPS) -> list[str]:
     problems: list[str] = []
     if regression.get("version") != 1 or regression.get("assistant") != "scouting":
         problems.append("cabeçalho: version 1 e assistant scouting")
@@ -45,8 +48,8 @@ def _problems(regression: Mapping[str, Any], texts: list[str]) -> list[str]:
         if moment is None or moment.utcoffset() is None:
             problems.append(f"{tag}: reference_time precisa ser ISO 8601 com fuso")
         extra = raw.get("extra") or {}
-        if extra.get("group") not in GROUPS:
-            problems.append(f"{tag}: extra.group fora de {sorted(GROUPS)}: {extra.get('group')!r}")
+        if extra.get("group") not in groups:
+            problems.append(f"{tag}: extra.group fora de {sorted(groups)}: {extra.get('group')!r}")
         facts = extra.get(FACTS_KEY)
         if not isinstance(facts, list) or not facts:
             problems.append(f"{tag}: extra.facts precisa ser uma lista não vazia")
@@ -107,3 +110,17 @@ def test_problemas_nomeiam_o_item(change: dict[str, Any], expected: str) -> None
     regression = {"version": 1, "assistant": "scouting", "items": [item]}
     problems = _problems(regression, ["o marco e ser livre como os lobos"])
     assert len(problems) == 1 and "item 'x'" in problems[0] and expected in problems[0]
+
+
+def test_acervo_sem_problemas(texts: list[str]) -> None:
+    """Research R22: as perguntas escritas lendo os PDFs, com os fatos presentes no artefato."""
+    acervo = yaml.safe_load(ACERVO.read_text(encoding="utf-8"))
+    assert _problems(acervo, texts, ACERVO_GROUPS) == []
+
+
+def test_acervo_tem_controle_em_cada_grupo() -> None:
+    """Cada grupo tem perguntas de desenvolvimento e de controle: a correção que só melhora o que se olhou aparece."""
+    items = yaml.safe_load(ACERVO.read_text(encoding="utf-8"))["items"]
+    assert {item["extra"]["split"] for item in items} == SPLITS
+    for group in ACERVO_GROUPS:
+        assert {item["extra"]["split"] for item in items if item["extra"]["group"] == group} == SPLITS, group

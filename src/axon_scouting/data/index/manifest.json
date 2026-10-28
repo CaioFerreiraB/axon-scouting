@@ -1,13 +1,13 @@
 {
   "format": 1,
   "index": "scouting",
-  "build": "scouting__20261027T131401Z",
-  "chunking": "estrutural-v2;janela=250-450",
+  "build": "scouting__20261028T165626Z",
+  "chunking": "estrutural-v5;janela=250-450;teto=512:e5-tok:0b44a9d7b51c",
   "sparse": "bm25-pt-v1;k1=1.2;b=0.75;avgdl=256",
-  "built_at": "2026-10-27T13:14:01.397575+00:00",
+  "built_at": "2026-10-28T16:56:26.556250+00:00",
   "files": {
-    "chunks.jsonl": "792fb2db9206857818c408e84d78b81c9f80df3d935af29b5df43dd1217f7925",
-    "documents.jsonl": "faf1a2f2c167ea13ccab840c142c418feb7489fcb2f778d899a1e086f54fc055"
+    "chunks.jsonl": "2ef0d1d177af74c91f7f5d63ecc54312305c76c1284ad6e130e32038a467fcf2",
+    "documents.jsonl": "ea6f9c95328ad404dc5948a59c1146b41a0ed4c242d28d2d4cf4b276257ca732"
   },
   "models": [
     {
@@ -15,7 +15,138 @@
       "fingerprint": "ca456c06b3a9505ddfd9131408916dd79290368331e7d76bb621f1cba6bc8665",
       "dimensions": 384,
       "file": "vectors/intfloat-multilingual-e5-small-ca456c06b3a9.f32",
-      "sha256": "7051153ac4506c717011612fb5a6fc9e1af59489f2d06d2fb1c1037287f84f1b"
+      "sha256": "7deda2113444e3b82d609da36ae6c99d7d6c70ab8cd5173a2199380623eea4f7"
+    }
+  ],
+  "unit_kinds": [
+    {
+      "name": "documento",
+      "label": "Documento",
+      "plurals": [
+        "documentos"
+      ]
+    },
+    {
+      "name": "capitulo",
+      "label": "Capítulo",
+      "plurals": [
+        "capítulos"
+      ]
+    },
+    {
+      "name": "secao",
+      "label": "Seção",
+      "plurals": [
+        "seções"
+      ]
+    },
+    {
+      "name": "regra",
+      "label": "Regra",
+      "plurals": [
+        "regras"
+      ]
+    },
+    {
+      "name": "artigo",
+      "label": "Artigo",
+      "plurals": [
+        "artigos"
+      ]
+    },
+    {
+      "name": "paragrafo",
+      "label": "Parágrafo",
+      "plurals": [
+        "parágrafos"
+      ]
+    },
+    {
+      "name": "item_de_pauta",
+      "label": "Item de pauta",
+      "plurals": [
+        "itens de pauta",
+        "pautas",
+        "assuntos"
+      ]
+    },
+    {
+      "name": "slide",
+      "label": "Slide",
+      "plurals": [
+        "slides"
+      ]
+    },
+    {
+      "name": "pergunta",
+      "label": "Pergunta",
+      "plurals": [
+        "perguntas"
+      ]
+    },
+    {
+      "name": "eixo",
+      "label": "Eixo",
+      "plurals": [
+        "eixos"
+      ]
+    },
+    {
+      "name": "bloco",
+      "label": "Bloco",
+      "plurals": [
+        "blocos",
+        "blocos de aprendizagem"
+      ]
+    },
+    {
+      "name": "especialidade",
+      "label": "Especialidade",
+      "plurals": [
+        "especialidades"
+      ]
+    },
+    {
+      "name": "nivel",
+      "label": "Nível",
+      "plurals": [
+        "níveis"
+      ]
+    },
+    {
+      "name": "grupo_de_insignias",
+      "label": "Grupo",
+      "plurals": []
+    },
+    {
+      "name": "insignia",
+      "label": "Insígnia",
+      "plurals": [
+        "insígnias",
+        "distintivos"
+      ]
+    },
+    {
+      "name": "competencia",
+      "label": "Competência",
+      "plurals": [
+        "competências"
+      ]
+    },
+    {
+      "name": "reuniao",
+      "label": "Reunião",
+      "plurals": [
+        "reuniões"
+      ]
+    },
+    {
+      "name": "cargo",
+      "label": "Cargo",
+      "plurals": [
+        "cargos",
+        "funções"
+      ]
     }
   ]
 }

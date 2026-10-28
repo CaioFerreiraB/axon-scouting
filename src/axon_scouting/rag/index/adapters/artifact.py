@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import Any
 
 from axon_scouting.rag.index.adapters.memory import MemoryIndex, MemoryStorage
-from axon_scouting.rag.index.api import IndexedChunk, IndexFilters, IndexVersion
+from axon_scouting.rag.index.api import CatalogEntry, IndexedChunk, IndexFilters, IndexVersion, UnitEntry, UnitKind
 from axon_scouting.rag.index.domain.artifact import (
     CHUNKS,
     DOCUMENTS,
@@ -35,11 +35,14 @@ from axon_scouting.rag.index.domain.artifact import (
     unpack_vectors,
     vectors_file,
 )
+from axon_scouting.rag.index.domain.outline import outline_of
 from axon_scouting.rag.index.domain.points import (
+    catalog_entry,
     chunk_from_payload,
     chunk_to_payload,
     document_to_payload,
     record_from_payload,
+    stored_from_payload,
 )
 from axon_scouting.rag.index.ports import (
     Build,
@@ -95,6 +98,22 @@ class ArtifactIndex:
     async def original(self, chunk_id: str) -> Original | None:
         self._sync()
         return await self._memory.original(chunk_id)
+
+    async def catalog(self, *, filters: IndexFilters) -> list[CatalogEntry]:
+        self._sync()
+        return await self._memory.catalog(filters=filters)
+
+    async def unit_kinds(self) -> tuple[UnitKind, ...]:
+        self._sync()
+        return await self._memory.unit_kinds()
+
+    async def units(self, kind: str, *, filters: IndexFilters) -> list[UnitEntry]:
+        self._sync()
+        return await self._memory.units(kind, filters=filters)
+
+    async def outline(self, doc_key: str) -> list[UnitEntry]:
+        self._sync()
+        return await self._memory.outline(doc_key)
 
     # --- IndexWriter: builds em memória até publicar --------------------------------------------------------------
 
@@ -190,6 +209,7 @@ class ArtifactIndex:
             chunks_sha256=_sha(chunks_data),
             documents_sha256=_sha(documents_data),
             models=tuple(models),
+            unit_kinds=version.unit_kinds,
         )
         files[MANIFEST] = (json.dumps(manifest_to_json(manifest), ensure_ascii=False, indent=2) + "\n").encode()
 
@@ -250,6 +270,48 @@ def chunk_texts(root: Path) -> Callable[[str], str | None]:
         return texts.get(chunk_id)
 
     return text_of
+
+
+def catalog_entries(root: Path) -> Callable[[str], CatalogEntry | None]:
+    """A entrada de catálogo de cada documento do artefato em `root`, por `doc_key` — para a métrica de fatos ler as
+    fichas da lista de documentos (ADR-047). Lê `documents.jsonl` só na primeira consulta, como `chunk_texts`."""
+    entries: dict[str, CatalogEntry] = {}
+    lock = threading.Lock()
+    loaded = False
+
+    def entry_of(doc_key: str) -> CatalogEntry | None:
+        nonlocal loaded
+        with lock:
+            if not loaded:
+                manifest = manifest_from_json(json.loads((root / MANIFEST).read_text(encoding="utf-8")))
+                for raw in _jsonl(root / DOCUMENTS, manifest.documents_sha256):
+                    entry = catalog_entry(stored_from_payload(raw))
+                    entries[entry.doc_key] = entry
+                loaded = True
+        return entries.get(doc_key)
+
+    return entry_of
+
+
+def document_outlines(root: Path) -> tuple[Callable[[str], list[UnitEntry]], tuple[UnitKind, ...]]:
+    """A árvore de cada documento do artefato em `root`, por `doc_key`, e os tipos de unidade do build — para a métrica
+    de fatos refazer as fichas da lista de unidades (ADR-048). Lê na primeira consulta, como `chunk_texts`."""
+    outlines: dict[str, list[UnitEntry]] = {}
+    lock = threading.Lock()
+    loaded = False
+    manifest = manifest_from_json(json.loads((root / MANIFEST).read_text(encoding="utf-8")))
+
+    def outline(doc_key: str) -> list[UnitEntry]:
+        nonlocal loaded
+        with lock:
+            if not loaded:
+                for raw in _jsonl(root / DOCUMENTS, manifest.documents_sha256):
+                    document = stored_from_payload(raw)
+                    outlines[document.doc_key] = outline_of(document)
+                loaded = True
+        return outlines.get(doc_key, [])
+
+    return outline, manifest.unit_kinds
 
 
 def _chunk_line(encoded: EncodedChunk) -> dict[str, Any]:

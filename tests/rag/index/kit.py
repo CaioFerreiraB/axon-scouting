@@ -13,7 +13,14 @@ from typing import Any, Protocol
 
 from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
 from axon_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
-from axon_scouting.rag.index.api import ChunkIndex, DocumentType, IndexedChunk, IndexVersion, ValidityStatus
+from axon_scouting.rag.index.api import (
+    ChunkIndex,
+    DocumentCatalog,
+    DocumentOutline,
+    IndexedChunk,
+    IndexVersion,
+    ValidityStatus,
+)
 from axon_scouting.rag.index.domain.points import with_document
 from axon_scouting.rag.index.ports import (
     DocumentFields,
@@ -28,7 +35,7 @@ from axon_scouting.rag.index.ports import (
 INSTANTE = datetime(2026, 10, 7, 15, 30, tzinfo=UTC)
 
 
-class Index(ChunkIndex, IndexWriter, DocumentStore, Protocol):
+class Index(ChunkIndex, DocumentCatalog, DocumentOutline, IndexWriter, DocumentStore, Protocol):
     """O que os adapters do índice implementam juntos."""
 
 
@@ -52,7 +59,7 @@ def campos(document_id: str = "manual-x", version: str = "2026", **changes: Any)
     base = DocumentFields(
         document_id=document_id,
         version=version,
-        document_type=DocumentType.MANUAL,
+        document_type="manual",
         document_title="Manual X",
         jurisdiction="nacional",
         effective_date=date(2026, 3, 1),

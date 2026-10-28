@@ -6,8 +6,9 @@ O catálogo contém **593 documentos únicos**, com **57 cópias OCR** para leit
 
 - `corpus.yaml`: catálogo compatível com o contrato atual da ingestão.
 - `fontes.yaml`: URLs, páginas de origem, rótulos oficiais, caminhos, tamanho, SHA-256, duplicatas, relação entre original e OCR e notas de curadoria.
-- `nacional/` e `sao-paulo/`: novos downloads organizados por órgão/categoria; os arquivos previamente fornecidos mantêm seus caminhos.
-- `ocr/`: derivados de leitura. O catálogo aponta para eles quando necessário, mantendo o link da fonte original. OCR é transcrição automática e deve ser conferido contra a imagem quando a precisão da redação importar. Assinaturas digitais se referem ao PDF original, não ao derivado.
+- `taxonomia.yaml`: o mapeamento semântico do acervo (categoria, subcategoria, nível e tipo), do mantenedor, com as linhas inferidas marcadas. Cada entrada é uma pasta: `<categoria>/<subcategoria>/<nível>/`, e o documento de uma região fica na subpasta dela (`…/sao-paulo/`). Desde 27/10/2026 todo original mora na pasta da sua entrada.
+- `estrutura.yaml`: como cada documento se organiza por dentro (ADR-048, ADR-050) — o perfil vem do tipo da taxonomia, com as exceções.
+- `ocr/`: derivados de leitura, no mesmo caminho do original. O catálogo aponta para eles quando necessário, mantendo o link da fonte original. OCR é transcrição automática e deve ser conferido contra a imagem quando a precisão da redação importar. Assinaturas digitais se referem ao PDF original, não ao derivado.
 
 ## Critérios do catálogo
 
@@ -17,7 +18,9 @@ O esquema exige `effective_date` mesmo quando o documento não informa dia ou vi
 
 Somente revogações integrais expressas foram registradas; alteração de artigo, consolidação e a cláusula genérica “revogam-se as disposições em contrário” não revogam automaticamente outro documento inteiro. `expiry_date` é inclusivo e usa a véspera da data-base do ato revogador. Uma revogação cujo ato não informa o dia mantém a ressalva de data provisória.
 
-O contrato atual oferece apenas `por`, `estatuto`, `resolucao`, `manual`, `programa_educativo` e `guia`. Atas, relatórios, políticas, regulamentos, ofícios e outros textos institucionais usam `manual`, que preserva sua leitura em janelas de texto. Instruções normativas usam `resolucao`. Título, caminho e proveniência mantêm a categoria editorial original. Documentos de vários ramos ficam sem `branch`. Desde o ADR-045 (2026-10-27), o campo aceita também `filhotes`, e os três documentos do Ramo Filhotes o declaram. Não houve mudança de código ou contrato para acomodar essas categorias.
+Desde o ADR-049 (2026-10-28) o catálogo **não tem `type`**: o tipo de cada documento é o da `taxonomia.yaml`, pela pasta do arquivo (Ata, Regulamento, Resolução, Política, Manual…), e é dele que saem o perfil de corte (`estrutura.yaml`) e o filtro de tipo da busca; a categoria (o órgão) e o nível da mesma entrada também filtram. Para pôr um documento novo, basta colocá-lo na pasta da entrada certa da taxonomia — ou criar a entrada. Documentos de vários ramos ficam sem `branch`; desde o ADR-045 (2026-10-27), o campo aceita também `filhotes`.
+
+Documento digitalizado (sem camada de texto) entra pela transcrição em `ocr/<caminho do original>.txt`, uma página por bloco separado por quebra de página (ADR-050): `uv run python scripts/ocr.py tesseract <pdf>` faz a de partida, com o Tesseract local, e `scripts/ocr-codex-prompt.md` descreve a revisão página a página. As 57 cópias OCR em PDF de antes continuam valendo até a revisão chegar.
 
 ## Conferências e pendências
 
@@ -30,30 +33,54 @@ O contrato atual oferece apenas `por`, `estatuto`, `resolucao`, `manual`, `progr
 
 ## Distribuição dos documentos únicos
 
-| Categoria/pasta | Documentos |
+| Pasta (taxonomia) | Documentos |
 |---|---:|
-| `documentos institucionais` | 4 |
-| `estatuto` | 1 |
-| `manuais` | 35 |
-| `nacional/atas-assembleia-nacional` | 39 |
-| `nacional/atas-can` | 104 |
-| `nacional/atas-comissao-fiscal` | 2 |
-| `nacional/atas-conselho-consultivo` | 14 |
-| `nacional/oficios-den` | 5 |
-| `nacional/rede-nacional-de-jovens-lideres` | 41 |
-| `nacional/relatorios-comissao-fiscal` | 1 |
-| `nacional/resolucoes-can` | 147 |
-| `nacional/resolucoes-den` | 45 |
-| `politicas` | 12 |
-| `por` | 1 |
-| `resolucoes` | 1 |
-| `sao-paulo/atas-conselho-consultivo` | 19 |
-| `sao-paulo/atas-frjl-sp` | 19 |
-| `sao-paulo/instrucoes-normativas` | 10 |
-| `sao-paulo/regulamentos` | 4 |
-| `sao-paulo/relatorios-anuais` | 13 |
-| `sao-paulo/resolucoes-regionais` | 71 |
-| `sao-paulo/transparencia-financeiro` | 5 |
+| `assembleias/atas/nacional` | 39 |
+| `assembleias/regulamentos/nacional` | 1 |
+| `comissao-de-etica/regulamentos/regional/sao-paulo` | 1 |
+| `comissao-fiscal/atas/nacional` | 2 |
+| `comissao-fiscal/oficios/regional/sao-paulo` | 1 |
+| `comissao-fiscal/pareceres/regional/sao-paulo` | 3 |
+| `comissao-fiscal/relatorios/nacional` | 1 |
+| `conselho-consultivo/atas/nacional` | 14 |
+| `conselho-consultivo/atas/regional/sao-paulo` | 19 |
+| `conselho-de-administracao-nacional/atas` | 104 |
+| `conselho-de-administracao-nacional/manifestacoes` | 1 |
+| `conselho-de-administracao-nacional/regulamentos` | 1 |
+| `conselho-de-administracao-nacional/resolucoes` | 149 |
+| `conselho-de-velhos-lobos/regulamentos/regional/sao-paulo` | 1 |
+| `conselho-jovem/regulamentos/regional/sao-paulo` | 1 |
+| `diretoria-executiva-nacional/oficios` | 5 |
+| `diretoria-executiva-nacional/resolucoes` | 43 |
+| `diretoria-regional/instrucoes-normativas/sao-paulo` | 10 |
+| `diretoria-regional/oficios/sao-paulo` | 1 |
+| `diretoria-regional/resolucoes/sao-paulo` | 71 |
+| `espacos-seguros/politicas/interamericano` | 1 |
+| `espacos-seguros/politicas/nacional` | 2 |
+| `gestao-de-adultos/manuais` | 11 |
+| `gestao-de-adultos/politicas/mundial` | 1 |
+| `gestao-de-adultos/politicas/nacional` | 1 |
+| `gestao-institucional-e-governanca/estatutos/nacional` | 1 |
+| `gestao-institucional-e-governanca/manuais` | 5 |
+| `gestao-institucional-e-governanca/politicas/nacional` | 6 |
+| `gestao-institucional-e-governanca/por` | 1 |
+| `gestao-institucional-e-governanca/regulamentos/regional/sao-paulo` | 1 |
+| `gestao-institucional-e-governanca/relatorios/regional/sao-paulo` | 13 |
+| `programa-educativo/guias-de-jovens` | 6 |
+| `programa-educativo/manuais` | 6 |
+| `programa-educativo/manuais-de-escotistas` | 5 |
+| `programa-educativo/politicas/nacional` | 1 |
+| `rede-de-jovens-lideres/apresentacoes/nacional` | 4 |
+| `rede-de-jovens-lideres/atas/nacional` | 14 |
+| `rede-de-jovens-lideres/atas/regional/sao-paulo` | 19 |
+| `rede-de-jovens-lideres/boletins/nacional` | 4 |
+| `rede-de-jovens-lideres/editais/nacional` | 5 |
+| `rede-de-jovens-lideres/manuais/nacional` | 4 |
+| `rede-de-jovens-lideres/planejamento/nacional` | 1 |
+| `rede-de-jovens-lideres/posicionamentos/nacional` | 5 |
+| `rede-de-jovens-lideres/recomendacoes/nacional` | 4 |
+| `rede-de-jovens-lideres/regulamentos/nacional` | 1 |
+| `relacoes-institucionais/politicas/nacional` | 3 |
 
 ## Validação
 

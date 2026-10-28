@@ -6,12 +6,12 @@ from datetime import date
 
 from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
 from axon_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
-from axon_scouting.rag.index.api import DocumentType, IndexedChunk, ValidityStatus
+from axon_scouting.rag.index.api import IndexedChunk, ValidityStatus
 from axon_scouting.rag.index.ports import DocumentFields, Embedder
 
 from ..index.kit import Index, campos, codificar, registro, trecho, versao
 
-POR = campos("por", "2025", document_title="POR", document_type=DocumentType.POR, effective_date=date(2025, 4, 1))
+POR = campos("por", "2025", document_title="POR", document_type="por", effective_date=date(2025, 4, 1))
 MANUAL_2023 = campos(
     "manual-x",
     "2023",

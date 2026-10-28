@@ -54,6 +54,8 @@ class Composition:
     """Carrega o artefato no Qdrant configurado e devolve o nome do build publicado."""
     load_catalog: Callable[[Path], tuple[object, Path]]
     fetch_model: Callable[[Path], Sequence[tuple[Path, str]]]
+    load_structure: Callable[[Path], tuple[object, object] | None] = lambda _base_dir: None
+    """A taxonomia e a estrutura ao lado do catálogo (ADR-048); `None` = o perfil pelo `type`."""
     secrets: Sequence[str] = ()
     out: TextIO = field(default_factory=lambda: sys.stdout)
     err: TextIO = field(default_factory=lambda: sys.stderr)
@@ -110,11 +112,12 @@ async def _dispatch(args: argparse.Namespace, compose: Composition) -> int:
         return OK
     if args.command in ("ingest", "reindex"):
         catalog, base_dir = compose.load_catalog(args.catalog)
+        structure = compose.load_structure(base_dir)
         started = time.perf_counter()
         options = ServiceOptions(needs_model=True, embedder=args.embedder, directory=args.dir)
         async with compose.open_service(options) as service:
             run = service.ingest if args.command == "ingest" else service.reindex
-            report = await run(catalog, base_dir)
+            report = await run(catalog, base_dir, structure)
         _print(compose.out, compose, _report(compose.index_name, report, time.perf_counter() - started))
         return OK if report.ok else REJECTED
     options = ServiceOptions(needs_model=False, embedder=args.embedder, directory=args.dir)

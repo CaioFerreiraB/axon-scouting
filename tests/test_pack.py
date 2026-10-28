@@ -79,9 +79,11 @@ def test_capacidades_publicadas(tmp_path: Path) -> None:
     pack = ScoutingPack()
     ctx = pack_context("scouting", config(tmp_path))
     assert tuple(pack.tools(ctx)) == ()
-    (retriever,) = pack.retrievers(ctx)
-    assert isinstance(retriever, NamedRetriever)
+    retriever, lista, unidades = pack.retrievers(ctx)
+    assert isinstance(retriever, NamedRetriever) and isinstance(lista, NamedRetriever)
     assert retriever.name == "search_docs" and retriever.collections == frozenset({"scouting"})
+    assert lista.name == "list_documents" and lista.collections == frozenset({"scouting"})
+    assert unidades.name == "list_units" and unidades.collections == frozenset({"scouting"})
     assert isinstance(pack.reranker(ctx), MetadataReranker)
     assert [validator.name for validator in pack.validators(ctx)] == ["citation_integrity", "validity_notice"]
     metrics = pack.eval_metrics(ctx)
@@ -108,7 +110,7 @@ def test_servidor_por_url_com_a_chave_do_ambiente_nao_toca_a_rede(monkeypatch: p
     ctx = pack_context(
         "scouting", {"store": "qdrant", "qdrant_url": "https://qdrant.invalid:6333", "embedder": "hashing"}
     )
-    (retriever,) = ScoutingPack().retrievers(ctx)
+    retriever, *_ = ScoutingPack().retrievers(ctx)
     assert retriever.name == "search_docs"
     assert "chave-de-teste" not in repr(retriever)
 
@@ -118,7 +120,7 @@ def test_indice_em_memoria_pelo_artefato(tmp_path: Path) -> None:
     root = artefato(tmp_path / "index")
     pack = ScoutingPack()
     ctx = pack_context("scouting", {"embedder": "hashing", "index_dir": str(root)})
-    (retriever,) = pack.retrievers(ctx)
+    retriever, *_ = pack.retrievers(ctx)
     pergunta = "acampamento de patrulha"
     depois_da_vigencia = datetime(2026, 10, 7, 12, tzinfo=UTC)
     fatia = asyncio.run(pack.prepare_context(turn_view(question=pergunta, reference_time=depois_da_vigencia), ctx))
@@ -152,7 +154,7 @@ def test_pplx_carrega_sem_a_chave(tmp_path: Path, monkeypatch: pytest.MonkeyPatc
     """O `packs check` do build não tem segredos: a falta da chave aparece na busca, não na carga."""
     monkeypatch.delenv("AXON_SCOUTING_EMBEDDING_API_KEY", raising=False)
     root = artefato(tmp_path / "index")
-    (retriever,) = ScoutingPack().retrievers(pack_context("scouting", {"embedder": "pplx", "index_dir": str(root)}))
+    retriever, *_ = ScoutingPack().retrievers(pack_context("scouting", {"embedder": "pplx", "index_dir": str(root)}))
     assert retriever.name == "search_docs"
 
 

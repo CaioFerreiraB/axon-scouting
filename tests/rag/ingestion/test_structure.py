@@ -268,3 +268,18 @@ def test_nome_do_capitulo_em_duas_linhas_e_titulo_solto_entra_na_regra() -> None
     r141, r142 = result.drafts
     assert r141.chapter == "Capítulo 15 – Segurança nas Atividades Escoteiras"
     assert r142.body.splitlines()[:2] == ["REGRA 142 PROTEÇÃO", "Proteção Infantojuvenil"]
+
+
+def test_sobra_da_capa_nao_corta_a_frase_do_primeiro_artigo() -> None:
+    """Research R32: a unidade que começa numa frase recebe a sobra antes dela, não depois da primeira linha."""
+    texto = linhas(
+        ["UNIÃO DOS ESCOTEIROS DO BRASIL", "ÍNDICE"],
+        [
+            "Art. 1º - A União dos Escoteiros do Brasil, “UEB”, fundada em 04 de novembro",
+            "de 1924, é uma associação de âmbito nacional.",
+            "Art. 2º - São fins da UEB organizar o Escotismo.",
+        ],
+    )
+    (primeiro, _) = normative_chunks(texto, "Estatuto", POLITICA, unit="article").drafts
+    assert "fundada em 04 de novembro de 1924" in primeiro.body
+    assert primeiro.body.startswith("UNIÃO DOS ESCOTEIROS DO BRASIL")

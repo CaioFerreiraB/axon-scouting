@@ -20,7 +20,7 @@
     },
     {
       "name": "recall@20",
-      "value": 0.6666666666666666,
+      "value": 0.7777777777777778,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -28,7 +28,7 @@
     },
     {
       "name": "mrr",
-      "value": 0.4351851851851852,
+      "value": 0.5509259259259259,
       "variance": null,
       "n": 9,
       "deterministic": true,
@@ -187,6 +187,14 @@
       "better": "higher"
     },
     {
+      "name": "scouting:absence_claim_rate",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
       "name": "scouting:fact_recall",
       "value": null,
       "variance": null,
@@ -233,6 +241,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -267,6 +276,7 @@
         "scouting:context_accuracy": 0.5,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -287,7 +297,7 @@
       "metrics": {
         "recall@5": 1.0,
         "recall@20": 1.0,
-        "mrr": 0.3333333333333333,
+        "mrr": 0.5,
         "delivered_recall": 1.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
@@ -303,6 +313,7 @@
         "scouting:context_accuracy": 0.5,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -337,6 +348,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -371,6 +383,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -405,6 +418,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -439,6 +453,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": null,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -459,7 +474,7 @@
       "metrics": {
         "recall@5": 1.0,
         "recall@20": 1.0,
-        "mrr": 0.25,
+        "mrr": 1.0,
         "delivered_recall": 1.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
@@ -475,6 +490,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -492,8 +508,8 @@
       "id": "s09",
       "metrics": {
         "recall@5": 0.0,
-        "recall@20": 0.0,
-        "mrr": 0.0,
+        "recall@20": 1.0,
+        "mrr": 0.125,
         "delivered_recall": 0.0,
         "rerank_gain": 0.0,
         "citation_resolvable_rate": null,
@@ -509,6 +525,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -520,9 +537,7 @@
       ],
       "gate_route": "generate",
       "failure": null,
-      "warnings": [
-        "evidência não vista: Manual do Escotista — Ramo Lobinho"
-      ]
+      "warnings": []
     },
     {
       "id": "s10",
@@ -545,6 +560,7 @@
         "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": null,
         "scouting:fact_recall": null
       },
       "citations": [],
@@ -560,7 +576,5 @@
     }
   ],
   "invalid": [],
-  "annotations": [
-    "102 US6: ordem de leitura, blocos corridos, estrutural-v2; índice scouting__20261027T124608Z, e5"
-  ]
+  "annotations": []
 }

@@ -9,6 +9,7 @@ segue a regra do `-` no fim da linha.
 from __future__ import annotations
 
 import re
+import unicodedata
 from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Final
@@ -19,8 +20,8 @@ _PAGE_NUMBER: Final = re.compile(
 _HYPHENATED: Final = re.compile(r"[^\W\d_]-$")
 _PHOTO_CREDIT: Final = re.compile(r"(?<=\w)@\s+[A-ZÀ-Ý][\w'. -]*$")
 """Crédito de foto colado ao fim da linha pela diagramação ("…Escotismo@ Guillerme Ferreira Heck")."""
-_TOC_ENTRY: Final = re.compile(r"(?:\.\s?){4,}\s*\d+$|(?:…\s*){2,}\d+$")
-"""Linha de índice: pontilhado até o número da página."""
+_TOC_ENTRY: Final = re.compile(r"(?:\.\s?){4,}\s*\d+$|(?:…\s*){2,}\d+$|(?:-\s?){4,}\s*\d+$")
+"""Linha de índice: pontilhado (ou tracejado, ADR-048) até o número da página."""
 _SOFT_HYPHEN_AT_END: Final = re.compile(r"[\u00ad\ufffe](?=\r?\n)")
 _SOFT_BREAK: Final = re.compile(r"\ufffe\s*(?=[A-ZÀ-Ý0-9\"“(])")
 """U+FFFE antes de maiúscula: o PDFium juntou duas linhas ("…DA UEB" + U+FFFE + "Realizada no dia…")."""
@@ -50,7 +51,7 @@ class Line:
 
 def clean_pages(pages: Sequence[str]) -> list[Line]:
     per_page = [[] if _is_toc(page) else _page_lines(page) for page in pages]
-    running = _running_lines(per_page)
+    running = _running_lines(per_page, pages)
     lines: list[Line] = []
     for number, page_lines in enumerate(per_page, start=1):
         content = _without_running(page_lines, running)
@@ -99,12 +100,14 @@ def _edges(lines: list[str]) -> list[str]:
     return [line for line in dict.fromkeys(edges) if not _PROTECTED.match(line)]
 
 
-def _running_lines(per_page: list[list[str]]) -> set[str]:
+def _running_lines(per_page: list[list[str]], raw_pages: Sequence[str] = ()) -> set[str]:
     """Linhas (com dígitos neutralizados) nas bordas de no mínimo 3 páginas, e: em mais da metade delas, em 80% das
     páginas entre a primeira e a última ocorrência (o título do capítulo nas páginas dele), ou sempre trazendo o número
-    da própria página (o cabeçalho corrido que muda por capítulo)."""
+    da própria página (o cabeçalho corrido que muda por capítulo) — inclusive colado a ele ("100MEIO AMBIENTE", o eixo
+    no rodapé dos guias de progressão; ADR-050)."""
     if len(per_page) < MIN_PAGES_FOR_RUNNING:
         return set()
+    flat = [" ".join(page.split()) for page in raw_pages]
     pages: dict[str, list[int]] = {}
     numbered: dict[str, bool] = {}
     for number, lines in enumerate(per_page, start=1):
@@ -112,6 +115,8 @@ def _running_lines(per_page: list[list[str]]) -> set[str]:
             pages.setdefault(key, []).append(number)
             tokens = line.split()
             carries = len(tokens) > 1 and str(number) in (tokens[0], tokens[-1])
+            if not carries and number <= len(flat):
+                carries = f"{number}{line}" in flat[number - 1] or f"{line}{number}" in flat[number - 1]
             numbered[key] = numbered.get(key, True) and carries
     return {
         key
@@ -148,3 +153,39 @@ def _collapse_blanks(lines: list[Line]) -> list[Line]:
     while result and not result[-1].text:
         result.pop()
     return result
+
+
+# --- estrutura que a limpeza tira do texto (ADR-048) ---------------------------------------------------------------
+
+
+def fold(text: str) -> str:
+    """Sem caixa, sem acento e com os espaços colapsados — para comparar títulos e rótulos."""
+    decomposed = unicodedata.normalize("NFKD", text.casefold())
+    return " ".join("".join(ch for ch in decomposed if not unicodedata.combining(ch)).split())
+
+
+def toc_pages(pages: Sequence[str]) -> list[int]:
+    """As páginas de índice (a primeira é a 1), que `clean_pages` descarta."""
+    return [number for number, page in enumerate(pages, start=1) if _is_toc(page)]
+
+
+def running_labels(pages: Sequence[str]) -> list[tuple[str, ...]]:
+    """Para cada página, as linhas corridas que `clean_pages` tira das bordas, sem o número da página nas pontas
+    ("24 Habilidades para a Vida" → "Habilidades para a Vida"): o eixo, o grupo ou o capítulo do rodapé."""
+    per_page = [[] if _is_toc(page) else _page_lines(page) for page in pages]
+    running = _running_lines(per_page, pages)
+    labels: list[tuple[str, ...]] = []
+    for page_lines in per_page:
+        edges = _edges(page_lines) if running else []
+        found = [_without_page_number(line) for line in edges if _key(line) in running]
+        labels.append(tuple(dict.fromkeys(label for label in found if any(ch.isalpha() for ch in label))))
+    return labels
+
+
+def _without_page_number(line: str) -> str:
+    tokens = line.split()
+    while len(tokens) > 1 and tokens[0].isdigit():
+        tokens = tokens[1:]
+    while len(tokens) > 1 and tokens[-1].isdigit():
+        tokens = tokens[:-1]
+    return " ".join(tokens)

@@ -24,6 +24,11 @@ class ParsedDocument:
     pages: tuple[str, ...]
     parser: str
     reading: tuple[str, ...] = ()
+    bookmarks: tuple[tuple[int, str, int], ...] = ()
+    """Os marcadores de navegação do PDF: (nível, título, página), o nível 0 no topo (ADR-048)."""
+    headings: tuple[tuple[int, str, int], ...] = ()
+    """Os títulos pela tipografia (ADR-050): (página, texto com os espaços colapsados, nível); vazio quando o documento
+    não tem estilo de título ou o parser não lê fonte (a transcrição de OCR)."""
 
     @property
     def for_chunking(self) -> tuple[str, ...]:
@@ -42,3 +47,22 @@ class Clock(Protocol):
     def now(self) -> datetime:
         """Instante atual em UTC (com fuso)."""
         ...
+
+
+@runtime_checkable
+class TokenCounter(Protocol):
+    """Os tokens que o embedder lê de um trecho (ADR-050): o teto da divisão. A identidade entra na versão do índice."""
+
+    def identity(self) -> str: ...
+
+    def count(self, text: str) -> int: ...
+
+
+class EstimatedTokens:
+    """`TokenCounter` sem tokenizador: a estimativa do core (`⌈caracteres/4⌉`), para as suítes."""
+
+    def identity(self) -> str:
+        return "estimativa"
+
+    def count(self, text: str) -> int:
+        return -(-len(text) // 4)

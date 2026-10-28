@@ -16,8 +16,16 @@ from typing import Any
 
 import pytest
 
-from axon_scouting.rag.ingestion.adapters.catalog_yaml import load_catalog
+from axon_scouting.rag.ingestion.adapters.catalog_yaml import load_catalog, load_structure
 from axon_scouting.rag.ingestion.domain.catalog import CatalogEntry, validate_catalog
+from axon_scouting.rag.ingestion.domain.corpus_structure import (
+    CorpusStructure,
+    Resolution,
+    bodies_of,
+    parse_structure,
+    scope_of,
+    type_of,
+)
 from axon_scouting.rag.ingestion.domain.lineage import Validity, derive_lineages
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -29,13 +37,15 @@ def _iso(value: date | None) -> str | None:
     return None if value is None else value.isoformat()
 
 
-def _expected(entry: CatalogEntry, validity: Validity) -> dict[str, Any]:
+def _expected(entry: CatalogEntry, validity: Validity, resolution: Resolution) -> dict[str, Any]:
     """O registro que a ingestão gravaria para a entrada, na forma do `documents.jsonl` (sem o texto)."""
+    taxonomy = resolution.classification
+    assert taxonomy is not None
     return {
         "fields": {
             "document_id": entry.document_id,
             "version": entry.version,
-            "document_type": entry.document_type.value,
+            "document_type": type_of(resolution),
             "document_title": entry.title,
             "jurisdiction": entry.jurisdiction,
             "effective_date": _iso(validity.effective_date),
@@ -45,6 +55,12 @@ def _expected(entry: CatalogEntry, validity: Validity) -> dict[str, Any]:
             "expiry_date": _iso(validity.expiry_date),
             "superseded_by": validity.superseded_by,
             "successor_expiry_date": _iso(validity.successor_expiry_date),
+            "category": taxonomy.category,
+            "subcategory": taxonomy.subcategory,
+            "level": taxonomy.level,
+            "semantic_type": taxonomy.semantic_type,
+            "bodies": list(bodies_of(resolution)),
+            "scope": scope_of(resolution, entry.jurisdiction),
         },
         "source_file": entry.file,
         "source_url": entry.source_url,
@@ -58,7 +74,22 @@ def esperado() -> dict[str, dict[str, Any]]:
     assert validated.ok, [problem.message for problem in validated.problems]
     lineages = derive_lineages(validated.entries)
     assert lineages.ok, [problem.message for problem in lineages.problems]
-    return {entry.doc_key: _expected(entry, lineages.validities[entry.doc_key]) for entry in validated.entries}
+    structure = _structure(base_dir)
+    expected: dict[str, dict[str, Any]] = {}
+    for entry in validated.entries:
+        taxonomy = structure.classify(entry.file)
+        assert taxonomy is not None, f"{entry.file}: pasta fora da taxonomia"
+        resolution = structure.resolve(entry.document_id, taxonomy)
+        expected[entry.doc_key] = _expected(entry, lineages.validities[entry.doc_key], resolution)
+    return expected
+
+
+def _structure(base_dir: Path) -> CorpusStructure:
+    raw = load_structure(base_dir)
+    assert raw is not None, "corpus/ sem taxonomia.yaml e estrutura.yaml"
+    structure, problems = parse_structure(*raw)
+    assert structure is not None, problems
+    return structure
 
 
 @pytest.fixture(scope="module")

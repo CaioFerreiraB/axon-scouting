@@ -15,7 +15,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Any, Final
 
-from axon_scouting.rag.index.api import EmbeddingModel, IndexVersion
+from axon_scouting.rag.index.api import EmbeddingModel, IndexVersion, UnitKind
+from axon_scouting.rag.index.domain.points import unit_kinds_from_json, unit_kinds_to_json
 
 FORMAT: Final = 1
 """Versão do formato dos arquivos; um formato que este código não lê é recusado na carga."""
@@ -49,6 +50,7 @@ class Manifest:
     chunks_sha256: str
     documents_sha256: str
     models: tuple[ModelVectors, ...]
+    unit_kinds: tuple[UnitKind, ...] = ()
 
     def vectors_of(self, model: EmbeddingModel) -> ModelVectors | None:
         """O conjunto do modelo pedido (mesmo nome, impressão digital e dimensões), ou `None`."""
@@ -62,7 +64,13 @@ class Manifest:
             if not self.models:
                 raise ValueError(f"artefato {self.build} sem nenhum conjunto de vetores")
             entry = self.models[0]
-        return IndexVersion(chunking=self.chunking, embedding=entry.model, sparse=self.sparse, built_at=self.built_at)
+        return IndexVersion(
+            chunking=self.chunking,
+            embedding=entry.model,
+            sparse=self.sparse,
+            built_at=self.built_at,
+            unit_kinds=self.unit_kinds,
+        )
 
 
 def vectors_file(model: EmbeddingModel) -> str:
@@ -117,6 +125,7 @@ def manifest_to_json(manifest: Manifest) -> dict[str, Any]:
             }
             for entry in manifest.models
         ],
+        **({"unit_kinds": unit_kinds_to_json(manifest.unit_kinds)} if manifest.unit_kinds else {}),
     }
 
 
@@ -142,4 +151,5 @@ def manifest_from_json(raw: Mapping[str, Any]) -> Manifest:
             )
             for entry in raw["models"]
         ),
+        unit_kinds=unit_kinds_from_json(raw.get("unit_kinds")),
     )

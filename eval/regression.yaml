@@ -322,6 +322,8 @@ items:
       Relações Institucionais e Governamentais e Relações Internacionais.
     extra:
       group: lista
+      context:
+        catalog: {kind: politica, terms: [nacionais]}
       facts:
         - "política nacional de adultos"
         - "política nacional de diversidade e inclusão"

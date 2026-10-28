@@ -4,7 +4,9 @@ research R3, R13; ADR-045).
 Sem relógio: sem as datas não há como escolher a vigência, e "hoje" seria um chute. Chave desconhecida é erro — o
 contrato da 101 diz que nenhuma chave nova entra sem atualizar a 103. Os temas são aceitos e ignorados na v1. As
 facetas (`branches`, dois ramos ou mais) não são filtro do índice: o retriever faz uma busca por ramo. Os tipos
-sugeridos (`suggested_types`) também não: só desempatam a ordem (ADR-046).
+sugeridos (`suggested_types`) também não: só desempatam a ordem (ADR-046). O pedido de lista (`catalog`) é da tool de
+lista de documentos (ADR-047), e o de enumeração (`enumeration`), da tool de unidades (ADR-048); a busca por trechos
+ignora os dois.
 """
 
 from __future__ import annotations
@@ -15,7 +17,9 @@ from typing import Final
 
 from axon_ai_contracts import JSONValue
 
-from axon_scouting.rag.index.api import BRANCHES, DocumentType, IndexFilters
+from axon_scouting.rag.index.api import BRANCHES, SCOPES, IndexFilters, taxonomy_id
+from axon_scouting.rag.retrieval.domain.catalog import CatalogRequest
+from axon_scouting.rag.retrieval.domain.units import EnumerationRequest
 
 KNOWN: Final = frozenset(
     {
@@ -24,13 +28,17 @@ KNOWN: Final = frozenset(
         "topics",
         "document_types",
         "suggested_types",
+        "bodies",
+        "suggested_bodies",
+        "scopes",
         "effective_from",
         "effective_until",
         "include_superseded",
         "previous_version",
+        "catalog",
+        "enumeration",
     }
 )
-_TYPES: Final = frozenset(t.value for t in DocumentType)
 
 
 class InvalidFilters(ValueError):
@@ -81,7 +89,9 @@ def index_filters(raw: Mapping[str, JSONValue] | None) -> IndexFilters:
         include_superseded=_flag(raw, "include_superseded"),
         previous_version=_flag(raw, "previous_version"),
         branch=_branch(raw),
-        document_types=_types(raw),
+        document_types=_ids(raw, "document_types"),
+        bodies=_ids(raw, "bodies"),
+        scopes=_scopes(raw),
     )
 
 
@@ -113,15 +123,66 @@ def _branch(raw: Mapping[str, JSONValue]) -> str | None:
     return value
 
 
-def suggested_types(raw: Mapping[str, JSONValue] | None) -> tuple[DocumentType, ...]:
+def catalog_request(raw: Mapping[str, JSONValue] | None) -> CatalogRequest | None:
+    """O pedido de lista de documentos (ADR-047); `None` quando a pergunta não pede uma."""
+    value = (raw or {}).get("catalog")
+    if value is None:
+        return None
+    kind = value.get("kind") if isinstance(value, Mapping) else None
+    terms = value.get("terms", []) if isinstance(value, Mapping) else None
+    if (
+        not isinstance(kind, str)
+        or not kind.strip()
+        or not isinstance(terms, list)
+        or any(not isinstance(term, str) for term in terms)
+    ):
+        raise InvalidFilters("catalog", f"esperado {{'kind': texto, 'terms': [textos]}}, veio {value!r}")
+    return CatalogRequest(kind=kind, terms=tuple(str(term) for term in terms))
+
+
+def enumeration_request(raw: Mapping[str, JSONValue] | None) -> EnumerationRequest | None:
+    """O pedido de enumeração (ADR-048); `None` quando a pergunta não pede uma."""
+    value = (raw or {}).get("enumeration")
+    if value is None:
+        return None
+    kind = value.get("unit_kind") if isinstance(value, Mapping) else None
+    terms = value.get("terms", []) if isinstance(value, Mapping) else None
+    if (
+        not isinstance(value, Mapping)
+        or (kind is not None and (not isinstance(kind, str) or not kind.strip()))
+        or not isinstance(terms, list)
+        or any(not isinstance(term, str) for term in terms)
+    ):
+        raise InvalidFilters(
+            "enumeration", f"esperado {{'unit_kind': texto ou null, 'terms': [textos]}}, veio {value!r}"
+        )
+    return EnumerationRequest(unit_kind=kind, terms=tuple(str(term) for term in terms))
+
+
+def suggested_types(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:
     """Os tipos sugeridos pelos temas da pergunta: preferência de ordem, nunca filtro (ADR-046)."""
-    return _types(raw or {}, "suggested_types")
+    return _ids(raw or {}, "suggested_types")
 
 
-def _types(raw: Mapping[str, JSONValue], key: str = "document_types") -> tuple[DocumentType, ...]:
+def suggested_bodies(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:
+    """Os órgãos que a pergunta nomeia sem citar um tipo nem pedir lista: só desempatam (ADR-049)."""
+    return _ids(raw or {}, "suggested_bodies")
+
+
+def _ids(raw: Mapping[str, JSONValue], key: str) -> tuple[str, ...]:
+    """Uma lista de ids da taxonomia (ADR-049); id que nenhum documento tem não acha nada, sem erro."""
     value = raw.get(key)
     if value is None:
         return ()
-    if not isinstance(value, list) or any(not isinstance(item, str) or item not in _TYPES for item in value):
-        raise InvalidFilters(key, f"esperada lista de tipos conhecidos, veio {value!r}")
-    return tuple(DocumentType(item) for item in value)
+    if not isinstance(value, list) or any(not isinstance(i, str) or not i or taxonomy_id(i) != i for i in value):
+        raise InvalidFilters(key, f"esperada lista de ids da taxonomia (minúsculas, dígitos e _), veio {value!r}")
+    return tuple(str(item) for item in value)
+
+
+def _scopes(raw: Mapping[str, JSONValue]) -> tuple[str, ...]:
+    value = raw.get("scopes")
+    if value is None:
+        return ()
+    if not isinstance(value, list) or any(item not in SCOPES for item in value):
+        raise InvalidFilters("scopes", f"esperada lista de abrangências ({', '.join(SCOPES)}), veio {value!r}")
+    return tuple(str(item) for item in value)

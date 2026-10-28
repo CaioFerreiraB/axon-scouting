@@ -16,15 +16,19 @@ from collections.abc import Sequence
 from dataclasses import dataclass, field
 
 from axon_scouting.rag.index.api import (
+    CatalogEntry,
     EmbeddingModel,
     IndexedChunk,
     IndexFilters,
     IndexUnavailable,
     IndexVersion,
+    UnitEntry,
+    UnitKind,
 )
 from axon_scouting.rag.index.domain.compatibility import check_encoders
 from axon_scouting.rag.index.domain.filters import matches
-from axon_scouting.rag.index.domain.points import build_name, original_of, stored, with_document
+from axon_scouting.rag.index.domain.outline import outline_of, units_of
+from axon_scouting.rag.index.domain.points import build_name, catalog_entry, original_of, stored, with_document
 from axon_scouting.rag.index.domain.scoring import cosine, idf, ordered, rrf, sparse_score
 from axon_scouting.rag.index.ports import (
     Build,
@@ -157,6 +161,24 @@ class MemoryIndex:
 
     async def version(self) -> IndexVersion:
         return self._published_build().version
+
+    # --- DocumentCatalog --------------------------------------------------------------------------------------
+
+    async def catalog(self, *, filters: IndexFilters) -> list[CatalogEntry]:
+        entries = (catalog_entry(stored(r)) for _, r in sorted(self._published_build().documents.items()))
+        return [entry for entry in entries if matches(filters, entry)]
+
+    # --- DocumentOutline --------------------------------------------------------------------------------------
+
+    async def unit_kinds(self) -> tuple[UnitKind, ...]:
+        return self._published_build().version.unit_kinds
+
+    async def units(self, kind: str, *, filters: IndexFilters) -> list[UnitEntry]:
+        return units_of((stored(r) for r in self._published_build().documents.values()), kind, filters)
+
+    async def outline(self, doc_key: str) -> list[UnitEntry]:
+        record = self._published_build().documents.get(doc_key)
+        return [] if record is None else outline_of(stored(record))
 
     # --- DocumentStore ----------------------------------------------------------------------------------------
 

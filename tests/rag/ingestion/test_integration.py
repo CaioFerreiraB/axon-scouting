@@ -17,7 +17,10 @@ from axon_scouting.rag.index.api import IndexFilters
 from axon_scouting.rag.ingestion.adapters.catalog_yaml import load_catalog
 from axon_scouting.rag.ingestion.adapters.memory import FixedClock
 from axon_scouting.rag.ingestion.adapters.pdfium import PdfiumParser
+from axon_scouting.rag.ingestion.domain.chunking import ChunkingPolicy
 from axon_scouting.rag.ingestion.service import IngestionService
+
+from .structure_kit import STRUCTURE
 
 HOJE = date(2026, 10, 7)
 CATALOGO = """
@@ -25,7 +28,6 @@ documents:
   - file: manuais/manual-x.pdf
     document_id: manual-x
     version: "2026"
-    type: manual
     title: Manual X
     branch: pioneiro
     jurisdiction: nacional
@@ -43,6 +45,7 @@ def servico(client: AsyncQdrantClient) -> tuple[IngestionService, QdrantIndex]:
         writer=index,
         store=index,
         clock=FixedClock(datetime(2026, 10, 7, 15, 30, tzinfo=UTC)),
+        policy=ChunkingPolicy(window_min=1),  # cada título com o seu trecho: o teste é do reaproveitamento
     )
     return service, index
 
@@ -56,7 +59,7 @@ def test_manual_ponta_a_ponta(tmp_path: Path) -> None:
         client = AsyncQdrantClient(location=":memory:")
         try:
             service, index = servico(client)
-            primeiro = await service.ingest(catalogo, base)
+            primeiro = await service.ingest(catalogo, base, STRUCTURE)
             assert primeiro.ok, primeiro.problems
             assert (await index.published()) is not None
             filtros = IndexFilters(effective_from=HOJE, effective_until=HOJE, branch="pioneiro")
@@ -66,7 +69,7 @@ def test_manual_ponta_a_ponta(tmp_path: Path) -> None:
             status = await service.status()
             ids = list(status.documents[0].chunk_ids)
             assert [c.chunk_id for c in await index.get(ids)] == ids
-            segundo = await service.ingest(catalogo, base)
+            segundo = await service.ingest(catalogo, base, STRUCTURE)
             assert segundo.ok and [d.reused for d in segundo.documents] == [True]
             status = await service.status()
             return {"antes": ids, "depois": list(status.documents[0].chunk_ids)}
@@ -79,14 +82,14 @@ def test_manual_ponta_a_ponta(tmp_path: Path) -> None:
 
 
 def test_norma_ponta_a_ponta(tmp_path: Path) -> None:
-    pdfs.normative_pdf(tmp_path / "norma.pdf")
+    (tmp_path / "resolucao").mkdir()
+    pdfs.normative_pdf(tmp_path / "resolucao" / "norma.pdf")
     catalogo = {
         "documents": [
             {
-                "file": "norma.pdf",
+                "file": "resolucao/norma.pdf",
                 "document_id": "norma-x",
                 "version": "1",
-                "type": "resolucao",
                 "title": "Norma X",
                 "jurisdiction": "nacional",
                 "effective_date": date(2024, 1, 1),
@@ -98,7 +101,7 @@ def test_norma_ponta_a_ponta(tmp_path: Path) -> None:
         client = AsyncQdrantClient(location=":memory:")
         try:
             service, index = servico(client)
-            relatorio = await service.ingest(catalogo, tmp_path)
+            relatorio = await service.ingest(catalogo, tmp_path, STRUCTURE)
             assert relatorio.ok, relatorio.problems
             assert relatorio.documents[0].normative_units == 5
             ids = list((await service.status()).documents[0].chunk_ids)
@@ -114,7 +117,7 @@ def test_norma_ponta_a_ponta(tmp_path: Path) -> None:
         "norma-x-1#art41@p1",
         "norma-x-1#art42@p1",
         "norma-x-1#art43@p2",
-    ]
+    ]  # sem sumário: artigos não entram nele, e sobram menos de 4 capítulos e seções (ADR-048)
     art42 = chunks["norma-x-1#art42@p1"]
     assert art42.text.startswith("[Norma X · Capítulo II – Das Atividades · Seção I – Do planejamento]\nArt. 42.")
     assert (art42.page_start, art42.page_end) == (1, 2)

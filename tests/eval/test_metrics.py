@@ -274,3 +274,13 @@ def test_absence_claim(resposta: str, esperado: float) -> None:
 
 def test_absence_claim_sem_fatos_nao_conta() -> None:
     assert AbsenceClaimRate().measure(_item(), EvalObservation(answer="Os documentos não trazem isso.")) is None
+
+
+def test_contexto_pedido_de_lista() -> None:
+    """O `extra` chega congelado (termos em tupla); a espécie e os termos contam (ADR-047)."""
+    pergunta = "Quais são as políticas nacionais que existem?"
+    certo = {"catalog": {"kind": "politica", "terms": ["nacionais"]}}
+    assert ACCURACY.measure(_item(pergunta, context=certo), _observation()) == 1.0
+    errado = {"catalog": {"kind": "manual", "terms": ["nacionais"]}}
+    assert ACCURACY.measure(_item(pergunta, context=errado), _observation()) == 0.0
+    assert ACCURACY.measure(_item(context={"catalog": None}), _observation()) == 1.0

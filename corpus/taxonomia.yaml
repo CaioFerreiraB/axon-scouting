@@ -1,0 +1,193 @@
+# Taxonomia do acervo: o mapeamento semântico do mantenedor ("Mapeamento de documentos.csv", 2026-10-27) e as linhas
+# inferidas pelo mesmo padrão para os documentos do corpus que ele não cobre (`origem: inferido`).
+#
+# Cada entrada é uma pasta de corpus/ — `<categoria>/<subcategoria>/<nível>` —, e todo arquivo do corpus mora numa
+# delas. A subcategoria vazia vira o plural do tipo ("Regulamento" → `regulamentos`); o nível vazio ou "-" não vira
+# pasta. Documento de uma região fica numa subpasta da entrada com o nome dela (`conselho-consultivo/atas/regional/
+# sao-paulo/`, `diretoria-regional/resolucoes/sao-paulo/`), e o de uma unidade local, numa com o nome da unidade
+# (`…/local/<uel>/`). As cópias OCR repetem o caminho do original sob `ocr/`.
+#
+# O `tipo` é o tipo semântico do documento — mais fino que o `type` do `corpus.yaml`, que o contrato da 102 limita a
+# seis valores — e dá o perfil de estrutura padrão do documento (`estrutura.yaml`, `profile_by_type`).
+version: 1
+
+entries:
+  # --- Assembleias --------------------------------------------------------------------------------------------------
+  - {categoria: Assembleias, nivel: Nacional, tipo: Regulamento, pasta: assembleias/regulamentos/nacional,
+     documento: Regulamento da Assembleia Nacional dos Escoteiros do Brasil}
+  - {categoria: Assembleias, subcategoria: Atas, nivel: Nacional, tipo: Ata, pasta: assembleias/atas/nacional,
+     documento: Atas de assembleias nacionais}
+  - {categoria: Assembleias, subcategoria: Atas, nivel: Regional, tipo: Ata, pasta: assembleias/atas/regional,
+     documento: Atas de assembleias regionais}
+  - {categoria: Assembleias, subcategoria: Atas, nivel: Local, tipo: Ata, pasta: assembleias/atas/local,
+     documento: Atas de assembleias locais}
+
+  # --- Comissão de Ética --------------------------------------------------------------------------------------------
+  - {categoria: Comissão de Ética, subcategoria: Atas, nivel: Nacional, tipo: Ata, pasta: comissao-de-etica/atas/nacional,
+     documento: Atas da Comissão de Ética Nacional}
+  - {categoria: Comissão de Ética, subcategoria: Atas, nivel: Regional, tipo: Ata, pasta: comissao-de-etica/atas/regional,
+     documento: Atas da Comissão de Ética Regional}
+  - {categoria: Comissão de Ética, subcategoria: Atas, nivel: Local, tipo: Ata, pasta: comissao-de-etica/atas/local,
+     documento: Atas da Comissão de Ética Local}
+  - {categoria: Comissão de Ética, subcategoria: Relatório, nivel: Nacional, tipo: Relatório,
+     pasta: comissao-de-etica/relatorios/nacional, documento: Relatórios da Comissão de Ética Nacional}
+  - {categoria: Comissão de Ética, subcategoria: Relatório, nivel: Regional, tipo: Relatório,
+     pasta: comissao-de-etica/relatorios/regional, documento: Relatórios da Comissão de Ética Regional}
+  - {categoria: Comissão de Ética, subcategoria: Relatório, nivel: Local, tipo: Relatório,
+     pasta: comissao-de-etica/relatorios/local, documento: Relatórios da Comissão de Ética da UEL}
+  - {categoria: Comissão de Ética, nivel: Nacional, tipo: Regulamento, pasta: comissao-de-etica/regulamentos/nacional,
+     documento: Regulamento da Comissão de Ética Nacional}
+  - {categoria: Comissão de Ética, nivel: Regional, tipo: Regulamento, pasta: comissao-de-etica/regulamentos/regional,
+     documento: Regulamento da Comissão de Ética Regional}
+
+  # --- Comissão Fiscal ----------------------------------------------------------------------------------------------
+  - {categoria: Comissão Fiscal, subcategoria: Pareceres, nivel: Nacional, tipo: Parecer,
+     pasta: comissao-fiscal/pareceres/nacional, documento: Pareceres da Comissão Fiscal Nacional}
+  - {categoria: Comissão Fiscal, subcategoria: Pareceres, nivel: Regional, tipo: Parecer,
+     pasta: comissao-fiscal/pareceres/regional, documento: Pareceres da Comissão Fiscal Regional}
+  - {categoria: Comissão Fiscal, subcategoria: Pareceres, nivel: Local, tipo: Parecer,
+     pasta: comissao-fiscal/pareceres/local, documento: Pareceres da Comissão Fiscal Local}
+  - {categoria: Comissão Fiscal, subcategoria: Atas, nivel: Nacional, tipo: Ata, pasta: comissao-fiscal/atas/nacional,
+     documento: Atas da Comissão Fiscal Nacional}
+  - {categoria: Comissão Fiscal, subcategoria: Atas, nivel: Regional, tipo: Ata, pasta: comissao-fiscal/atas/regional,
+     documento: Atas da Comissão Fiscal Regional}
+  - {categoria: Comissão Fiscal, subcategoria: Atas, nivel: Local, tipo: Ata, pasta: comissao-fiscal/atas/local,
+     documento: Atas da Comissão Fiscal Local}
+  - {categoria: Comissão Fiscal, subcategoria: Relatório, nivel: Nacional, tipo: Relatório,
+     pasta: comissao-fiscal/relatorios/nacional, documento: Relatórios da Comissão Fiscal Nacional}
+  - {categoria: Comissão Fiscal, subcategoria: Relatório, nivel: Regional, tipo: Relatório,
+     pasta: comissao-fiscal/relatorios/regional, documento: Relatórios da Comissão Fiscal Regional}
+  - {categoria: Comissão Fiscal, subcategoria: Relatório, nivel: Local, tipo: Relatório,
+     pasta: comissao-fiscal/relatorios/local, documento: Relatórios da Comissão Fiscal da UEL}
+  - {categoria: Comissão Fiscal, subcategoria: Ofícios, nivel: Regional, tipo: Ofício, pasta: comissao-fiscal/oficios/regional,
+     documento: Ofícios da Comissão Fiscal Regional, origem: inferido}
+
+  # --- Conselho Consultivo ------------------------------------------------------------------------------------------
+  - {categoria: Conselho Consultivo, subcategoria: Atas, nivel: Nacional, tipo: Ata, pasta: conselho-consultivo/atas/nacional,
+     documento: Atas do Conselho Consultivo Nacional}
+  - {categoria: Conselho Consultivo, subcategoria: Atas, nivel: Regional, tipo: Ata, pasta: conselho-consultivo/atas/regional,
+     documento: Atas do Conselho Consultivo Regional}
+
+  # --- Conselho de Administração Nacional ---------------------------------------------------------------------------
+  - {categoria: Conselho de Administração Nacional, tipo: Regulamento, pasta: conselho-de-administracao-nacional/regulamentos,
+     documento: Regulamento Interno do Conselho de Administração Nacional da UEB}
+  - {categoria: Conselho de Administração Nacional, subcategoria: Atas, tipo: Ata, pasta: conselho-de-administracao-nacional/atas,
+     documento: Atas do CAN}
+  - {categoria: Conselho de Administração Nacional, subcategoria: Resoluções, tipo: Resolução,
+     pasta: conselho-de-administracao-nacional/resolucoes, documento: Resoluções do CAN (e as conjuntas CAN-DEN)}
+  - {categoria: Conselho de Administração Nacional, subcategoria: Manifestações, tipo: Manifestação,
+     pasta: conselho-de-administracao-nacional/manifestacoes, documento: Manifestações e decisões do CAN sobre recursos,
+     origem: inferido}
+
+  # --- Conselhos regionais ------------------------------------------------------------------------------------------
+  - {categoria: Conselho de Velhos Lobos, nivel: Regional, tipo: Regulamento, pasta: conselho-de-velhos-lobos/regulamentos/regional,
+     documento: Regulamento do Conselho Regional dos Portadores da Medalha de Velhos Lobos}
+  - {categoria: Conselho Jovem, nivel: Regional, tipo: Regulamento, pasta: conselho-jovem/regulamentos/regional,
+     documento: Regulamento do Conselho Regional Jovem}
+
+  # --- Diretorias ---------------------------------------------------------------------------------------------------
+  - {categoria: Diretoria Executiva Nacional, subcategoria: Ofícios, tipo: Ofício, pasta: diretoria-executiva-nacional/oficios,
+     documento: Ofícios da DEN}
+  - {categoria: Diretoria Executiva Nacional, subcategoria: Resoluções, tipo: Resolução,
+     pasta: diretoria-executiva-nacional/resolucoes, documento: Resoluções da DEN}
+  - {categoria: Diretoria Regional, subcategoria: Instruções Normativas, tipo: Resolução,
+     pasta: diretoria-regional/instrucoes-normativas, documento: Instruções Normativas da DR}
+  - {categoria: Diretoria Regional, subcategoria: Resoluções, tipo: Resolução, pasta: diretoria-regional/resolucoes,
+     documento: Resolução da DR}
+  - {categoria: Diretoria Regional, subcategoria: Ofícios, tipo: Ofício, pasta: diretoria-regional/oficios,
+     documento: Ofícios da DR, origem: inferido}
+
+  # --- Espaços Seguros ----------------------------------------------------------------------------------------------
+  - {categoria: Espaços Seguros, subcategoria: Políticas, nivel: Interamericano, tipo: Política,
+     pasta: espacos-seguros/politicas/interamericano, documento: Política Interamericana de Diversidades e Inclusão}
+  - {categoria: Espaços Seguros, subcategoria: Políticas, nivel: Nacional, tipo: Política, pasta: espacos-seguros/politicas/nacional,
+     documento: Política Nacional de Diversidades e Inclusão; Política Nacional de Espaços Seguros}
+
+  # --- Gestão de Adultos --------------------------------------------------------------------------------------------
+  - {categoria: Gestão de Adultos, tipo: Manual, pasta: gestao-de-adultos/manuais,
+     documento: "Bullying e Cyberbullying; Competências e Rotas de Aprendizagem (Dirigente e os seis ramos); Começando
+       uma Ninhada; Perfis: Cargos e Funções; Captando e Engajando Adultos; Padrões de Atividades Escoteiras"}
+  - {categoria: Gestão de Adultos, subcategoria: Políticas, nivel: Mundial, tipo: Política, pasta: gestao-de-adultos/politicas/mundial,
+     documento: Marco de Referência da Insígnia de Madeira}
+  - {categoria: Gestão de Adultos, subcategoria: Políticas, nivel: Nacional, tipo: Política, pasta: gestao-de-adultos/politicas/nacional,
+     documento: Política Nacional de Gestão de Adultos}
+
+  # --- Gestão Institucional e Governança ----------------------------------------------------------------------------
+  - {categoria: Gestão Institucional e Governança, tipo: Manual, pasta: gestao-institucional-e-governanca/manuais,
+     documento: "Façamos um Plano de Grupo; Manual para Convocação de Assembleia Regional; Manual Institucional — ECA
+       Digital; Como Abrir uma Unidade Escoteira Local; Como Fazer uma Assembleia de Grupo Escoteiro"}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Estatutos, nivel: Nacional, tipo: Estatuto,
+     pasta: gestao-institucional-e-governanca/estatutos/nacional, documento: Estatuto da União dos Escoteiros do Brasil}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Estatutos, nivel: Local, tipo: Estatuto,
+     pasta: gestao-institucional-e-governanca/estatutos/local, documento: Estatutos de Grupos Escoteiros}
+  - {categoria: Gestão Institucional e Governança, tipo: P.O.R., pasta: gestao-institucional-e-governanca/por, documento: P.O.R.}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Regulamentos, nivel: Regional, tipo: Regulamento,
+     pasta: gestao-institucional-e-governanca/regulamentos/regional, documento: Regulamento Regional}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Regulamentos, nivel: Local, tipo: Regulamento,
+     pasta: gestao-institucional-e-governanca/regulamentos/local, documento: Regulamento Interno das Unidades Escoteiras Locais}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Relatórios, nivel: Nacional, tipo: Relatório,
+     pasta: gestao-institucional-e-governanca/relatorios/nacional, documento: Relatório Anual}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Relatórios, nivel: Regional, tipo: Relatório,
+     pasta: gestao-institucional-e-governanca/relatorios/regional, documento: Relatório Anual}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Políticas, nivel: Nacional, tipo: Política,
+     pasta: gestao-institucional-e-governanca/politicas/nacional,
+     documento: "Código de Conduta; Políticas Nacionais de Governança Institucional, de Tratamento de Dados, de
+       Envolvimento Juvenil, de Gestão de Riscos e de Compras"}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Planejamento, nivel: Nacional, tipo: Planejamento Estratégico,
+     pasta: gestao-institucional-e-governanca/planejamento/nacional, documento: Planejamento Estratégico Nacional}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Planejamento, nivel: Regional, tipo: Planejamento Estratégico,
+     pasta: gestao-institucional-e-governanca/planejamento/regional,
+     documento: Planejamento Estratégico Regional; Plano de Ação Regional}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Planejamento, nivel: Local, tipo: Planejamento Estratégico,
+     pasta: gestao-institucional-e-governanca/planejamento/local, documento: Plano de Ação Local}
+
+  # --- Programa Educativo -------------------------------------------------------------------------------------------
+  - {categoria: Programa Educativo, subcategoria: Manuais de escotistas, tipo: Manual, pasta: programa-educativo/manuais-de-escotistas,
+     documento: Manual do Escotista dos ramos Filhotes, Lobinho, Escoteiro, Sênior e Pioneiro}
+  - {categoria: Programa Educativo, subcategoria: Guias de Jovens, tipo: Manual, pasta: programa-educativo/guias-de-jovens,
+     documento: "Guias do Povo Livre, da Descoberta Escoteira, do Desafio Sênior e do Horizonte Pioneiro; Guias de
+       Especialidades e Insígnias (Lobinho e Escoteiro; Sênior e Pioneiro)"}
+  - {categoria: Programa Educativo, tipo: Manual, pasta: programa-educativo/manuais,
+     documento: "Recomendações para o Uso de Celulares; Os Primeiros Meses (Clã, Alcateia, Tropa Escoteira, Tropa Sênior);
+       Como Falar com Crianças e Jovens sobre Guerra"}
+  - {categoria: Programa Educativo, subcategoria: Políticas, nivel: Nacional, tipo: Política, pasta: programa-educativo/politicas/nacional,
+     documento: Política Nacional de Programa Educativo}
+  # Pedido do mantenedor em 2026-10-28: as atas do Fórum Regional Pioneiro (e da Assembleia Regional Pioneira, que o
+  # antecedeu) da Região de São Paulo, organizadas pela Comissão Regional Pioneira.
+  - {categoria: Programa Educativo, subcategoria: Comissão Regional Pioneira, nivel: Regional, tipo: Ata,
+     pasta: programa-educativo/comissao-regional-pioneira/regional,
+     documento: Atas do Fórum Regional Pioneiro e da Assembleia Regional Pioneira}
+
+  # --- Rede de Jovens Líderes ---------------------------------------------------------------------------------------
+  - {categoria: Rede de Jovens Líderes, nivel: Nacional, tipo: Regulamento, pasta: rede-de-jovens-lideres/regulamentos/nacional,
+     documento: Regulamento Geral da Rede Nacional de Jovens Líderes}
+  - {categoria: Rede de Jovens Líderes, subcategoria: Atas, nivel: Nacional, tipo: Ata, pasta: rede-de-jovens-lideres/atas/nacional,
+     documento: Atas do Fórum Nacional de Jovens Líderes}
+  - {categoria: Rede de Jovens Líderes, subcategoria: Atas, nivel: Regional, tipo: Ata, pasta: rede-de-jovens-lideres/atas/regional,
+     documento: Atas do Fórum Regional de Jovens Líderes}
+  - {categoria: Rede de Jovens Líderes, subcategoria: Manuais, nivel: Nacional, tipo: Manual, pasta: rede-de-jovens-lideres/manuais/nacional,
+     documento: "10 Passos para Ativar a Rede; Grupos de Trabalho; FAQ da RNJL; Envolvimento em Organizações de Juventude",
+     origem: inferido}
+  - {categoria: Rede de Jovens Líderes, subcategoria: Posicionamentos, nivel: Nacional, tipo: Posicionamento,
+     pasta: rede-de-jovens-lideres/posicionamentos/nacional,
+     documento: "Cartas abertas, notas e posicionamentos da Rede (Princípios 2021, PNRI 2023, Ataques à Brasília, Eventos
+       Discriminatórios, Carta de Natal)", origem: inferido}
+  - {categoria: Rede de Jovens Líderes, subcategoria: Editais, nivel: Nacional, tipo: Edital, pasta: rede-de-jovens-lideres/editais/nacional,
+     documento: "Editais de convocação do FNJL e de seleção (ILT, facilitadores do NNJL), com esclarecimentos e
+       resultados", origem: inferido}
+  - {categoria: Rede de Jovens Líderes, subcategoria: Recomendações, nivel: Nacional, tipo: Recomendação,
+     pasta: rede-de-jovens-lideres/recomendacoes/nacional, documento: Recomendações do Fórum Nacional, origem: inferido}
+  - {categoria: Rede de Jovens Líderes, subcategoria: Boletins, nivel: Nacional, tipo: Boletim, pasta: rede-de-jovens-lideres/boletins/nacional,
+     documento: Boletins Rede Padrão, origem: inferido}
+  - {categoria: Rede de Jovens Líderes, subcategoria: Apresentações, nivel: Nacional, tipo: Apresentação,
+     pasta: rede-de-jovens-lideres/apresentacoes/nacional, documento: Material apresentado nos ENNR e apresentações da Rede,
+     origem: inferido}
+  - {categoria: Rede de Jovens Líderes, subcategoria: Planejamento, nivel: Nacional, tipo: Planejamento Estratégico,
+     pasta: rede-de-jovens-lideres/planejamento/nacional,
+     documento: Planos e propostas da Rede e o modelo de plano de ação dos núcleos regionais, origem: inferido}
+
+  # --- Relações Institucionais --------------------------------------------------------------------------------------
+  - {categoria: Relações Institucionais, subcategoria: Políticas, nivel: Nacional, tipo: Política,
+     pasta: relacoes-institucionais/politicas/nacional,
+     documento: "Atuação dos Escoteiros do Brasil em Crises Humanitárias; Políticas Nacionais de Relações
+       Institucionais e Governamentais e de Relações Internacionais"}

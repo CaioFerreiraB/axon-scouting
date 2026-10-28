@@ -10,17 +10,26 @@ from typing import Any
 
 from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
 from axon_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
-from axon_scouting.rag.index.api import DocumentType, IndexFilters, ValidityStatus
+from axon_scouting.rag.index.api import IndexFilters, ValidityStatus
 from axon_scouting.rag.ingestion.adapters.memory import FixedClock, MemoryParser
 from axon_scouting.rag.ingestion.domain.chunking import ChunkingPolicy
+from axon_scouting.rag.ingestion.ports import ParsedDocument
 from axon_scouting.rag.ingestion.service import IngestionService
+
+from .structure_kit import STRUCTURE, pasta
 
 BASE = Path("/corpus")
 INSTANTE = datetime(2026, 10, 7, 15, 30, tzinfo=UTC)
 
+# Cada seção com mais que o mínimo da janela (250 tokens estimados): a junção das seções pequenas (ADR-050) não as
+# junta, e cada título abre o seu trecho.
+_ENCHIMENTO = " A equipe registra o que aprendeu e combina os próximos passos com a patrulha." * 13
 MANUAL_PAGINAS = [
-    "APRESENTAÇÃO\nEste manual orienta a vida em patrulha.\n4 Programa de Atividades\nO programa tem ciclos.",
-    "4.2 Acampamento\nO acampamento de patrulha exige cardápio e autorização dos responsáveis.",
+    "APRESENTAÇÃO\nEste manual orienta a vida em patrulha."
+    + _ENCHIMENTO
+    + "\n4 Programa de Atividades\nO programa tem ciclos."
+    + _ENCHIMENTO,
+    "4.2 Acampamento\nO acampamento de patrulha exige cardápio e autorização dos responsáveis." + _ENCHIMENTO,
 ]
 
 
@@ -35,11 +44,14 @@ class CountingEmbedder(HashingEmbedder):
 
 
 def entrada(**changes: Any) -> dict[str, Any]:
+    """Uma entrada do catálogo; `type` (que saiu do catálogo, ADR-049) vira a pasta da taxonomia do tipo."""
+    tipo = changes.pop("type", "manual")
+    if "file" in changes and changes["file"] is not ...:
+        changes["file"] = pasta(tipo, changes["file"])
     base: dict[str, Any] = {
-        "file": "manual.pdf",
+        "file": pasta(tipo, "manual.pdf"),
         "document_id": "manual-x",
         "version": "2026",
-        "type": "manual",
         "title": "Manual X",
         "branch": "pioneiro",
         "jurisdiction": "nacional",
@@ -53,9 +65,25 @@ def catalogo(*entradas: dict[str, Any]) -> dict[str, Any]:
     return {"documents": list(entradas)}
 
 
+class PorNome:
+    """O parser das suítes acha o arquivo pelo nome, em qualquer pasta da taxonomia."""
+
+    def __init__(self, parser: MemoryParser) -> None:
+        self.parser = parser
+
+    def put(self, path: Path, pages: Sequence[str]) -> None:
+        self.parser.put(path, pages)
+
+    def parse(self, path: Path) -> ParsedDocument:
+        try:
+            return self.parser.parse(path)
+        except FileNotFoundError:
+            return self.parser.parse(BASE / path.name)
+
+
 class Ambiente:
     def __init__(self, **embedder: Any) -> None:
-        self.parser = MemoryParser({BASE / "manual.pdf": MANUAL_PAGINAS})
+        self.parser = PorNome(MemoryParser({BASE / "manual.pdf": MANUAL_PAGINAS}))
         self.storage = MemoryStorage()
         self.embedder = CountingEmbedder(**embedder)
         self.index = MemoryIndex("scouting", self.embedder, Bm25Encoder(), storage=self.storage)
@@ -73,7 +101,7 @@ class Ambiente:
         )
 
     def ingest(self, raw: object, service: IngestionService | None = None) -> Any:
-        return asyncio.run((service or self.service).ingest(raw, BASE))
+        return asyncio.run((service or self.service).ingest(raw, BASE, STRUCTURE))
 
     def publicado(self) -> str | None:
         return self.storage.aliases.get("scouting")
@@ -97,7 +125,7 @@ def test_us1_cen1_chunks_com_id_metadados_e_duas_representacoes() -> None:
         assert chunk_id.startswith("manual-x-2026#")
         assert chunk.text.startswith("[Manual X")
         assert (chunk.document_type, chunk.document_title, chunk.branch, chunk.jurisdiction) == (
-            DocumentType.MANUAL,
+            "manual",
             "Manual X",
             "pioneiro",
             "nacional",
@@ -109,7 +137,10 @@ def test_us1_cen1_chunks_com_id_metadados_e_duas_representacoes() -> None:
     assert ids == ["manual-x-2026#4.2@p2", "manual-x-2026#4@p1", "manual-x-2026#s1@p1"]
     registro = build.documents["manual-x-2026"]
     assert registro.pages == tuple(MANUAL_PAGINAS)
-    assert relatorio.version is not None and relatorio.version.chunking == "estrutural-v2;janela=250-450"
+    assert (
+        relatorio.version is not None
+        and relatorio.version.chunking == "estrutural-v5;janela=250-450;teto=512:estimativa"
+    )
 
 
 def test_us1_cen2_reingestao_reaproveita_com_os_mesmos_ids() -> None:
@@ -164,7 +195,7 @@ def test_pdf_sem_camada_de_texto_e_pagina_vazia() -> None:
     amb.parser.put(BASE / "scan.pdf", ["", "  \n "])
     relatorio = amb.ingest(catalogo(entrada(file="scan.pdf")))
     assert not relatorio.ok
-    assert any("sem camada de texto (OCR fora do escopo)" in p for p in relatorio.problems)
+    assert any("sem camada de texto: transcreva em ocr/" in p for p in relatorio.problems)
 
     amb.parser.put(BASE / "capa.pdf", ["", *MANUAL_PAGINAS])
     relatorio = amb.ingest(catalogo(entrada(file="capa.pdf")))
@@ -277,14 +308,19 @@ def test_us2_normativo_sem_unidade_vira_janelas_com_aviso() -> None:
     assert doc.warnings == ("normativo sem unidade reconhecida: dividido em janelas",)
 
 
-def test_us2_unidade_longa_avisa() -> None:
+def test_unidade_longa_e_dividida_no_teto_sem_aviso() -> None:
+    """ADR-050: nada passa do teto do embedder; a parte diz de que artigo é."""
     amb = Ambiente()
-    longo = "Art. 1º " + " ".join(["A atividade exige cuidado."] * 90)
-    amb.parser.put(BASE / "e.pdf", [longo])
+    incisos = "\n".join(
+        f"{romano} - A atividade exige cuidado redobrado em todo o percurso."
+        for romano in [f"{numero})" for numero in range(1, 41)]
+    )
+    amb.parser.put(BASE / "e.pdf", [f"Art. 1º São deveres do associado:\n{incisos}"])
     relatorio = amb.ingest(catalogo(entrada(file="e.pdf", type="estatuto", branch=...)))
-    assert relatorio.ok
-    (aviso,) = relatorio.documents[0].warnings
-    assert aviso.startswith("unidade art1 com ~") and "trunca em 512" in aviso
+    assert relatorio.ok and not relatorio.documents[0].warnings
+    textos = [c.chunk.text for c in amb.storage.builds[amb.publicado() or ""].chunks.values()]
+    assert len(textos) > 1 and all(-(-len(t) // 4) <= 512 for t in textos)
+    assert any("Art. 1 (parte 2 de" in t and "São deveres do associado" in t for t in textos)
 
 
 # --- US3 -------------------------------------------------------------------------------------------------------
@@ -387,7 +423,7 @@ def test_us5_reindex_com_outro_embedder() -> None:
     antes = {k: sorted(b.chunks) for k, b in amb.storage.builds.items()}[primeiro.build]
     novo = CountingEmbedder(fingerprint="novo", dimensions=32)
     servico = amb.servico(novo)
-    relatorio = asyncio.run(servico.reindex(catalogo(entrada(**V2023), entrada(**V2026)), BASE))
+    relatorio = asyncio.run(servico.reindex(catalogo(entrada(**V2023), entrada(**V2026)), BASE, STRUCTURE))
     assert relatorio.ok, relatorio.problems
     assert relatorio.build == amb.publicado() and list(amb.storage.builds) == [relatorio.build]
     build = amb.storage.builds[relatorio.build]
@@ -399,7 +435,7 @@ def test_us5_reindex_com_outro_embedder() -> None:
     assert {len(e.dense) for e in build.chunks.values()} == {32}
 
     # reindexar de novo, com a mesma configuração, dá os mesmos ids e contagens (FR-010)
-    outra_vez = asyncio.run(servico.reindex(catalogo(entrada(**V2023), entrada(**V2026)), BASE))
+    outra_vez = asyncio.run(servico.reindex(catalogo(entrada(**V2023), entrada(**V2026)), BASE, STRUCTURE))
     assert sorted(amb.storage.builds[outra_vez.build].chunks) == antes
     assert [(d.doc_key, d.chunks) for d in outra_vez.documents] == [(d.doc_key, d.chunks) for d in relatorio.documents]
 
@@ -412,7 +448,9 @@ def test_us5_reindex_com_catalogo_rejeitado_nao_escreve() -> None:
     amb = ambiente_com_versoes()
     publicado = amb.ingest(catalogo(entrada(**V2023))).build
     relatorio = asyncio.run(
-        amb.servico(CountingEmbedder(fingerprint="novo")).reindex(catalogo(entrada(**V2023, title=...)), BASE)
+        amb.servico(CountingEmbedder(fingerprint="novo")).reindex(
+            catalogo(entrada(**V2023, title=...)), BASE, STRUCTURE
+        )
     )
     assert not relatorio.ok
     assert amb.publicado() == publicado and list(amb.storage.builds) == [publicado]
@@ -451,3 +489,83 @@ def test_link_do_arquivo_vai_para_o_registro_e_para_o_original() -> None:
     novo = amb.ingest(catalogo(entrada(source_url="https://www.escoteiros.org.br/outro.pdf")))
     assert amb.embedder.passages == 0  # trocar o link não recodifica
     assert amb.storage.builds[novo.build].documents["manual-x-2026"].source_url.endswith("outro.pdf")
+
+
+# --- US7: árvore de unidades (ADR-048) ---------------------------------------------------------------------------
+
+TAXONOMIA = {
+    "version": 1,
+    "entries": [
+        {"categoria": "Assembleias", "nivel": "Nacional", "tipo": "Regulamento", "pasta": "assembleias/regulamentos"},
+        {"categoria": "Programa Educativo", "tipo": "Manual", "pasta": "programa-educativo/manuais"},
+    ],
+}
+ESTRUTURA = {
+    "version": 1,
+    "unit_kinds": {
+        "capitulo": {"label": "Capítulo"},
+        "secao": {"label": "Seção"},
+        "artigo": {"label": "Artigo", "plural": "artigos"},
+    },
+    "profiles": {
+        "artigos": {"sources": ["marcadores"], "units": ["capitulo", "secao", "artigo"]},
+        "capitulos": {"sources": ["títulos"], "units": ["capitulo", "secao"]},
+    },
+    "profile_by_type": {"Regulamento": "artigos", "Manual": "capitulos"},
+    "documents": [],
+}
+
+
+def ingerir_com_estrutura(amb: Ambiente, raw: object, estrutura: dict[str, Any] | None = None) -> Any:
+    return asyncio.run(amb.service.ingest(raw, BASE, (TAXONOMIA, estrutura or ESTRUTURA)))
+
+
+def test_us7_regulamento_catalogado_como_manual_e_cortado_por_artigo() -> None:
+    amb = Ambiente()
+    amb.parser.put(BASE / "assembleias/regulamentos/reg.pdf", NORMA_PAGINAS)
+    relatorio = ingerir_com_estrutura(
+        amb, catalogo(entrada(file="assembleias/regulamentos/reg.pdf", document_id="reg-x", version="1", branch=...))
+    )
+    assert relatorio.ok, relatorio.problems
+    assert relatorio.documents[0].normative_units == 3  # o tipo semântico dá `artigos`, mesmo com `type: manual`
+    build = amb.storage.builds[relatorio.build]
+    art42 = build.chunks["reg-x-1#art42@p1"].chunk
+    assert art42.unit_kind == "artigo" and art42.category == "Assembleias" and art42.semantic_type == "Regulamento"
+    assert [u.kind for u in art42.path] == ["capitulo", "secao", "artigo"]
+    registro = build.documents["reg-x-1"]
+    assert registro.fields.level == "Nacional"
+    assert [u.title for u in registro.units if u.kind == "artigo"] == ["Art. 41", "Art. 42", "Art. 43"]
+    assert relatorio.version is not None and [k.name for k in relatorio.version.unit_kinds] == [
+        "capitulo",
+        "secao",
+        "artigo",
+    ]
+
+
+def test_us7_arquivo_fora_da_taxonomia_recusa() -> None:
+    amb = Ambiente()
+    relatorio = ingerir_com_estrutura(amb, catalogo(entrada()))
+    assert not relatorio.ok and amb.publicado() is None
+    assert any("pasta fora da taxonomia" in p for p in relatorio.problems)
+
+
+def test_us7_estrutura_invalida_recusa_tudo() -> None:
+    amb = Ambiente()
+    amb.parser.put(BASE / "programa-educativo/manuais/m.pdf", MANUAL_PAGINAS)
+    ruim = {**ESTRUTURA, "profile_by_type": {"Manual": "capitulos"}}  # o Regulamento da taxonomia fica sem perfil
+    relatorio = ingerir_com_estrutura(amb, catalogo(entrada(file="programa-educativo/manuais/m.pdf")), ruim)
+    assert not relatorio.ok and any("'Regulamento'" in p for p in relatorio.problems)
+
+
+def test_us7_mudar_a_estrutura_recodifica() -> None:
+    amb = Ambiente()
+    amb.parser.put(BASE / "programa-educativo/manuais/m.pdf", MANUAL_PAGINAS)
+    raw = catalogo(entrada(file="programa-educativo/manuais/m.pdf"))
+    assert ingerir_com_estrutura(amb, raw).ok
+    repetido = ingerir_com_estrutura(amb, raw)
+    assert repetido.documents[0].reused
+    outra = {**ESTRUTURA, "documents": [{"match": ["manual-x"], "profile": "capitulos", "branches": ["senior"]}]}
+    mudou = ingerir_com_estrutura(amb, raw, outra)
+    assert mudou.ok and not mudou.documents[0].reused
+    chunk = next(iter(amb.storage.builds[mudou.build].chunks.values())).chunk
+    assert chunk.branches == ("senior",) and chunk.effective_branches == ("senior",)

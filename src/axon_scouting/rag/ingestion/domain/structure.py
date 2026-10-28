@@ -14,12 +14,12 @@ from collections.abc import Sequence
 from dataclasses import dataclass, field
 from typing import Final, Literal
 
-from axon_scouting.rag.index.api import DocumentType
 from axon_scouting.rag.ingestion.domain.chunking import (
     ChunkDraft,
     ChunkingPolicy,
     is_stub,
     narrative_chunks,
+    paragraph_pages,
     paragraph_text,
 )
 from axon_scouting.rag.ingestion.domain.ids import slug
@@ -50,12 +50,6 @@ ARTICLE: Final = re.compile(r"^art(?:igo)?\.?\s*(\d+)(?:-([a-z])(?![a-z]))?(?![0
 RULE: Final = re.compile(r"^regra\s+(\d+)(?![0-9])")
 MAX_HEADING: Final = 80
 UnitKind = Literal["article", "rule"]
-UNIT_BY_TYPE: Final[dict[DocumentType, UnitKind]] = {
-    DocumentType.POR: "rule",
-    DocumentType.ESTATUTO: "article",
-    DocumentType.RESOLUCAO: "article",
-}
-"""A unidade de cada tipo normativo: a resolução cita regras do POR dentro dos artigos (corpus real, SC-005)."""
 _SPLIT_MARKERS: Final = frozenset({"regra", "art", "art.", "artigo"})
 """Marcador que o PDF põe sozinho na linha, com o número na seguinte ("REGRA" / "001 DEFINIÇÃO…", no POR)."""
 _SENTENCE_END: Final = (".", ":", ";", "!", "?")
@@ -128,13 +122,17 @@ class _State:
         path = self.unit_path
         lines = [line for line in self.buffer if line.text]
         head, rest = lines[0], self.buffer[self.buffer.index(lines[0]) + 1 :]
-        if self.carried:  # parágrafo próprio, depois do título da unidade
+        if self.carried and _is_caps(head.text):  # parágrafo próprio, depois do título da unidade
             rest, self.carried = [*self.carried, Line(text="", page=self.carried[-1].page), *rest], []
-        body = (
-            f"{head.text}\n{paragraph_text(rest)}".rstrip()  # título da regra em maiúsculas é parágrafo próprio
-            if _is_caps(head.text)
-            else paragraph_text([head, *rest])
-        )
+        elif self.carried:  # a unidade começa numa frase ("Art. 1º - A União…"): a sobra vem antes, sem cortá-la
+            head, rest = self.carried[0], [*self.carried[1:], Line(text="", page=head.page), head, *rest]
+            self.carried = []
+        if _is_caps(head.text):  # título da regra em maiúsculas é parágrafo próprio
+            body = f"{head.text}\n{paragraph_text(rest)}".rstrip()
+            pages = (head.page, *paragraph_pages(rest))
+        else:
+            body = paragraph_text([head, *rest])
+            pages = paragraph_pages([head, *rest])
         self.drafts.append(
             ChunkDraft(
                 section_key=unit.key,
@@ -147,6 +145,7 @@ class _State:
                 subsection=_meta(path, 4),
                 article=unit.label,
                 normative=True,
+                line_pages=pages if len(pages) == len(body.split("\n")) else (),
             )
         )
 

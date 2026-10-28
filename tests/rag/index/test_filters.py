@@ -7,7 +7,7 @@ from datetime import date
 
 import pytest
 
-from axon_scouting.rag.index.api import DocumentType, IndexedChunk, IndexFilters, ValidityStatus
+from axon_scouting.rag.index.api import IndexedChunk, IndexFilters, ValidityStatus
 from axon_scouting.rag.index.domain.filters import matches
 
 HOJE = date(2026, 10, 7)
@@ -18,7 +18,7 @@ M2023 = IndexedChunk(
     doc_key="manual-x-2023",
     document_id="manual-x",
     version="2023",
-    document_type=DocumentType.MANUAL,
+    document_type="manual",
     document_title="Manual X",
     jurisdiction="nacional",
     page_start=1,
@@ -52,14 +52,14 @@ RASCUNHO = dataclasses.replace(M2026, chunk_id="manual-x-2027#s1@p1", version="2
 REVOGADA = dataclasses.replace(
     M2026,
     chunk_id="res-1-1#art1@p1",
-    document_type=DocumentType.RESOLUCAO,
+    document_type="resolucao",
     effective_date=date(2024, 5, 10),
     expiry_date=date(2025, 12, 31),
     status=ValidityStatus.REVOGADO,
 )
 PIONEIRO = dataclasses.replace(M2026, chunk_id="pio-1#s1@p1", branch="pioneiro")
 ESCOTEIRO = dataclasses.replace(M2026, chunk_id="esc-1#s1@p1", branch="escoteiro")
-POR = dataclasses.replace(M2026, chunk_id="por-1#regra1@p1", document_type=DocumentType.POR)
+POR = dataclasses.replace(M2026, chunk_id="por-1#regra1@p1", document_type="por")
 
 
 def dia(d: date, **kw: object) -> IndexFilters:
@@ -105,9 +105,9 @@ def periodo(inicio: date, fim: date, **kw: object) -> IndexFilters:
         (dia(HOJE, branch="pioneiro"), ESCOTEIRO, False),
         (dia(HOJE), ESCOTEIRO, True),
         # tipos: vazio = todos
-        (dia(HOJE, document_types=(DocumentType.POR,)), POR, True),
-        (dia(HOJE, document_types=(DocumentType.POR,)), M2026, False),
-        (dia(HOJE, document_types=(DocumentType.POR, DocumentType.MANUAL)), M2026, True),
+        (dia(HOJE, document_types=("por",)), POR, True),
+        (dia(HOJE, document_types=("por",)), M2026, False),
+        (dia(HOJE, document_types=("por", "manual")), M2026, True),
     ],
 )
 def test_semantica(filtros: IndexFilters, chunk: IndexedChunk, esperado: bool) -> None:

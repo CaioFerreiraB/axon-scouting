@@ -12,10 +12,10 @@ from datetime import date
 from typing import Final, Protocol, runtime_checkable
 
 from axon_scouting.rag.index.api import (
-    DocumentType,
     EmbeddingModel,
     IndexedChunk,
     IndexVersion,
+    UnitNode,
     ValidityStatus,
 )
 
@@ -53,7 +53,8 @@ class DocumentFields:
 
     document_id: str
     version: str
-    document_type: DocumentType
+    document_type: str
+    """O id do tipo na taxonomia (ADR-049)."""
     document_title: str
     jurisdiction: str
     effective_date: date
@@ -63,6 +64,14 @@ class DocumentFields:
     expiry_date: date | None = None
     superseded_by: str | None = None
     successor_expiry_date: date | None = None
+    category: str | None = None
+    subcategory: str | None = None
+    level: str | None = None
+    semantic_type: str | None = None
+    """A entrada da taxonomia do acervo (ADR-048)."""
+    bodies: tuple[str, ...] = ()
+    """Os órgãos (ids da categoria e da subcategoria; ADR-049)."""
+    scope: str | None = None
 
     @property
     def doc_key(self) -> str:
@@ -79,6 +88,8 @@ class StoredDocument:
     source_sha256: str
     chunk_ids: tuple[str, ...]
     source_url: str | None = None
+    units: tuple[UnitNode, ...] = ()
+    """A árvore do documento em pré-ordem (ADR-048)."""
 
     @property
     def doc_key(self) -> str:

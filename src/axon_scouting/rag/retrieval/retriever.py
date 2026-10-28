@@ -4,8 +4,9 @@ Busca híbrida no índice da 102 com os filtros que a 101 publicou, traduzidos s
 com proveniência completa e `score` = similaridade densa (o número absoluto que o portão do `rag_first` compara), na
 ordem da fusão com os empates desfeitos por metadados — as marcas vão nos metadados para o reranker reconstruir a
 ordem. Com facetas (`branches`, ADR-045), uma busca por ramo — a pergunta seguida do nome do ramo, com o filtro dele —,
-intercaladas: o primeiro de cada ramo, depois o segundo. Erros do índice (`IndexUnavailable`, `IndexMismatch`) passam
-sem tradução: são explícitos (FR-007).
+intercaladas: o primeiro de cada ramo, depois o segundo. Trechos de texto idêntico (o mesmo bloco repetido em cada
+insígnia) ficam um só, com os rótulos dos outros nos metadados (FR-016, ADR-048). Erros do índice (`IndexUnavailable`,
+`IndexMismatch`) passam sem tradução: são explícitos (FR-007).
 """
 
 from __future__ import annotations
@@ -17,10 +18,19 @@ from typing import Final
 
 from axon_ai_contracts import Chunk, JSONValue, NamedRetriever
 
-from axon_scouting.rag.index.api import ChunkIndex, DocumentType, IndexedChunk, IndexFilters
+from axon_scouting.rag.index.api import ChunkIndex, IndexedChunk, IndexFilters, Shape
+from axon_scouting.rag.retrieval.domain.catalog import BRANCH_NAMES
 from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
-from axon_scouting.rag.retrieval.domain.filters import facets, index_filters, suggested_types
-from axon_scouting.rag.retrieval.domain.ordering import FACET, FACET_ORDER, FACET_RANK, FUSION_SCORE, marks, ordered
+from axon_scouting.rag.retrieval.domain.filters import facets, index_filters, suggested_bodies, suggested_types
+from axon_scouting.rag.retrieval.domain.ordering import (
+    ALSO_IN,
+    FACET,
+    FACET_ORDER,
+    FACET_RANK,
+    FUSION_SCORE,
+    marks,
+    ordered,
+)
 
 TOOL_NAME: Final = "search_docs"
 TOOL_DESCRIPTION: Final = (
@@ -28,34 +38,32 @@ TOOL_DESCRIPTION: Final = (
     "só os vigentes na data da conversa; numa consulta sobre um período passado, também as versões anteriores, "
     "marcadas como tal. Devolve cada trecho com documento, versão e página."
 )
-BRANCH_NAMES: Final = {
-    "filhotes": "Filhotes",
-    "lobinho": "Lobinho",
-    "escoteiro": "Escoteiro",
-    "senior": "Sênior",
-    "pioneiro": "Pioneiro",
-}
-"""O nome de cada ramo na subbusca da faceta ("… Ramo Sênior")."""
 
 
 class ScoutingRetriever:
     """Implementa `Retriever` (001) sobre o `ChunkIndex` da 102."""
 
-    def __init__(self, index: ChunkIndex, config: RetrievalConfig | None = None) -> None:
+    def __init__(self, index: ChunkIndex, config: RetrievalConfig | None = None, *, shape: Shape | None = None) -> None:
         self._index = index
         self._config = config or RetrievalConfig()
+        self._shape = shape
+        """Só trechos dessa forma (a tool de unidades busca as listas, ADR-048)."""
 
     async def search(
         self, query: str, *, top_k: int | None = None, filters: Mapping[str, JSONValue] | None = None
     ) -> list[Chunk]:
         limit = self._config.limit(top_k)
-        index_filters_ = index_filters(filters)
+        index_filters_ = dataclasses.replace(index_filters(filters), shape=self._shape)
         branches = facets(filters)
-        preferred = suggested_types(filters)
+        preferred = (suggested_types(filters), suggested_bodies(filters))
         if not branches:
             found = await self._index.search(query, filters=index_filters_, limit=limit)
-            return ordered([_to_chunk(chunk, index_filters_, preferred) for chunk in found])
-        return ordered(await self._by_facet(query, index_filters_, branches, limit, preferred))
+            unique = without_repeats(ordered([_to_chunk(chunk, index_filters_, *preferred) for chunk in found]))
+            if len(unique) < len(found):  # o que a junção liberou vem da mesma busca, um pouco mais funda
+                found = await self._index.search(query, filters=index_filters_, limit=limit + len(found) - len(unique))
+                unique = without_repeats(ordered([_to_chunk(chunk, index_filters_, *preferred) for chunk in found]))
+            return unique[:limit]
+        return without_repeats(ordered(await self._by_facet(query, index_filters_, branches, limit, preferred)))
 
     async def _by_facet(
         self,
@@ -63,7 +71,7 @@ class ScoutingRetriever:
         base: IndexFilters,
         branches: tuple[str, ...],
         limit: int,
-        preferred: tuple[DocumentType, ...],
+        preferred: tuple[tuple[str, ...], tuple[str, ...]],
     ) -> list[Chunk]:
         """Uma busca por ramo, `limit` repartido; um trecho achado por duas facetas fica só na primeira.
 
@@ -79,7 +87,7 @@ class ScoutingRetriever:
             kept = [chunk for chunk in found if chunk.chunk_id not in seen][:per_facet]
             for rank, chunk in enumerate(kept):  # a posição conta só o que a faceta guardou: toda faceta tem um 0
                 seen.add(chunk.chunk_id)
-                marked = _to_chunk(chunk, facet_filters, preferred)
+                marked = _to_chunk(chunk, facet_filters, *preferred)
                 metadata = {**marked.metadata, FACET: branch, FACET_RANK: rank, FACET_ORDER: order}
                 chunks.append(dataclasses.replace(marked, metadata=metadata))
         return ordered(chunks)[:limit]
@@ -92,13 +100,32 @@ def search_docs(retriever: ScoutingRetriever, *, collection: str = "scouting") -
     )
 
 
-def _to_chunk(chunk: IndexedChunk, filters: IndexFilters, preferred: tuple[DocumentType, ...] = ()) -> Chunk:
+def without_repeats(chunks: list[Chunk]) -> list[Chunk]:
+    """Um trecho por corpo: o de melhor posição fica, com os rótulos dos de texto idêntico em `also_in` (FR-016)."""
+    kept: dict[str, Chunk] = {}
+    also: dict[str, list[str]] = {}
+    for chunk in chunks:
+        body = " ".join(chunk.text.split("\n", 1)[-1].split()).casefold()
+        if body in kept:
+            also[body].append(chunk.text.split("\n", 1)[0])
+            continue
+        kept[body] = chunk
+        also[body] = []
+    return [
+        dataclasses.replace(chunk, metadata={**chunk.metadata, ALSO_IN: also[body]}) if also[body] else chunk
+        for body, chunk in kept.items()
+    ]
+
+
+def _to_chunk(
+    chunk: IndexedChunk, filters: IndexFilters, preferred: tuple[str, ...] = (), bodies: tuple[str, ...] = ()
+) -> Chunk:
     """O `Chunk` da 102 com o score trocado pela similaridade e as marcas de ordem nos metadados (R2, R8)."""
     base = chunk.to_chunk()
     similarity = 0.0 if chunk.similarity is None else min(max(chunk.similarity, 0.0), 1.0)
     metadata: dict[str, JSONValue] = {
         **base.metadata,
         FUSION_SCORE: float(chunk.score or 0.0),
-        **marks(chunk, filters, preferred),
+        **marks(chunk, filters, preferred, bodies),
     }
     return dataclasses.replace(base, score=similarity, metadata=metadata)

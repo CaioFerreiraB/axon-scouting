@@ -242,4 +242,4 @@ def test_tipo_sugerido_nao_exclui_e_marca_o_desempate() -> None:
 
 def test_tipo_sugerido_invalido_e_erro() -> None:
     with pytest.raises(InvalidFilters, match="suggested_types"):
-        buscar("acampamento", filtros(suggested_types=["ata"]))
+        buscar("acampamento", filtros(suggested_types=["Ata"]))

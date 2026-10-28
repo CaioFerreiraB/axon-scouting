@@ -11,12 +11,23 @@ from collections.abc import Mapping
 from datetime import date, datetime
 from typing import Any, Final
 
-from axon_scouting.rag.index.api import DocumentType, EmbeddingModel, IndexedChunk, IndexVersion, ValidityStatus
+from axon_scouting.rag.index.api import (
+    CatalogEntry,
+    EmbeddingModel,
+    IndexedChunk,
+    IndexVersion,
+    UnitKind,
+    UnitNode,
+    UnitRef,
+    ValidityStatus,
+)
 from axon_scouting.rag.index.ports import DocumentFields, DocumentRecord, Original, StoredDocument
 
 NAMESPACE_CHUNK: Final = uuid.UUID("5d0f3c1e-7f4b-5a43-9a11-2c6e8b0f1a01")
 NAMESPACE_DOCUMENT: Final = uuid.UUID("5d0f3c1e-7f4b-5a43-9a11-2c6e8b0f1a02")
 
+FILTER_BRANCHES: Final = "filter_branches"
+"""Os ramos efetivos do trecho (os dele, senão o do documento), gravados à parte para o filtro do armazenamento."""
 _COMPUTED: Final = ("score", "similarity")
 """Calculados na busca, nunca gravados."""
 _DOCUMENT_DATES: Final = ("effective_date", "publication_date", "expiry_date", "successor_expiry_date")
@@ -67,6 +78,9 @@ def original_of(chunk: IndexedChunk, record: DocumentRecord) -> Original:
 
 def chunk_to_payload(chunk: IndexedChunk) -> dict[str, Any]:
     payload = {f.name: _json(getattr(chunk, f.name)) for f in dataclasses.fields(chunk) if f.name not in _COMPUTED}
+    payload["path"] = [{"unit_id": u.unit_id, "kind": u.kind, "title": u.title} for u in chunk.path]
+    payload["branches"] = list(chunk.branches)
+    payload[FILTER_BRANCHES] = list(chunk.effective_branches)  # o filtro do Qdrant lê só este campo
     payload["kind"] = "chunk"
     return payload
 
@@ -79,8 +93,11 @@ def chunk_from_payload(
     }
     for name in _DOCUMENT_DATES:
         values[name] = _date(values[name])
-    values["document_type"] = DocumentType(values["document_type"])
     values["status"] = ValidityStatus(values["status"])
+    values["bodies"] = tuple(values["bodies"] or ())
+    values["path"] = tuple(UnitRef(**ref) for ref in values["path"] or ())  # artefato anterior ao ADR-048: sem árvore
+    values["branches"] = tuple(values["branches"] or ())
+    values["shape"] = values["shape"] or "prose"
     return IndexedChunk(**values, score=score, similarity=similarity)
 
 
@@ -94,7 +111,20 @@ def document_to_payload(record: DocumentRecord) -> dict[str, Any]:
         "source_sha256": record.source_sha256,
         "source_url": record.source_url,
         "chunk_ids": list(record.chunk_ids),
+        "units": [_unit_json(unit) for unit in record.units],
         "pages": list(record.pages),
+    }
+
+
+def _unit_json(unit: UnitNode) -> dict[str, Any]:
+    return {
+        "unit_id": unit.unit_id,
+        "kind": unit.kind,
+        "title": unit.title,
+        "page_start": unit.page_start,
+        "page_end": unit.page_end,
+        "parent": unit.parent,
+        "branches": list(unit.branches),
     }
 
 
@@ -106,6 +136,9 @@ def stored_from_payload(payload: Mapping[str, Any]) -> StoredDocument:
         source_sha256=payload["source_sha256"],
         source_url=payload.get("source_url"),
         chunk_ids=tuple(payload["chunk_ids"]),
+        units=tuple(
+            UnitNode(**{**raw, "branches": tuple(raw.get("branches") or ())}) for raw in payload.get("units") or ()
+        ),
     )
 
 
@@ -120,12 +153,17 @@ def stored(record: DocumentRecord) -> StoredDocument:
     return StoredDocument(**{f.name: getattr(record, f.name) for f in dataclasses.fields(StoredDocument)})
 
 
+def catalog_entry(document: StoredDocument) -> CatalogEntry:
+    """A entrada do catálogo (ADR-047): os campos do documento, a chave e o link do original."""
+    return CatalogEntry(doc_key=document.doc_key, source_url=document.source_url, **_fields_dict(document.fields))
+
+
 def _fields_from(raw: Mapping[str, Any]) -> DocumentFields:
     values: dict[str, Any] = dict(raw)
     for name in _DOCUMENT_DATES:
         values[name] = _date(values.get(name))
-    values["document_type"] = DocumentType(values["document_type"])
     values["status"] = ValidityStatus(values["status"])
+    values["bodies"] = tuple(values.get("bodies") or ())
     return DocumentFields(**values)
 
 
@@ -139,7 +177,18 @@ def version_to_json(version: IndexVersion) -> dict[str, Any]:
         },
         "sparse": version.sparse,
         "built_at": version.built_at.isoformat(),
+        **({"unit_kinds": unit_kinds_to_json(version.unit_kinds)} if version.unit_kinds else {}),
     }
+
+
+def unit_kinds_to_json(kinds: tuple[UnitKind, ...]) -> list[dict[str, Any]]:
+    return [{"name": k.name, "label": k.label, "plurals": list(k.plurals)} for k in kinds]
+
+
+def unit_kinds_from_json(raw: object) -> tuple[UnitKind, ...]:
+    if not isinstance(raw, list):
+        return ()
+    return tuple(UnitKind(name=k["name"], label=k["label"], plurals=tuple(k.get("plurals") or ())) for k in raw)
 
 
 def version_from_json(raw: Mapping[str, Any]) -> IndexVersion:
@@ -151,11 +200,12 @@ def version_from_json(raw: Mapping[str, Any]) -> IndexVersion:
         ),
         sparse=raw["sparse"],
         built_at=datetime.fromisoformat(raw["built_at"]),
+        unit_kinds=unit_kinds_from_json(raw.get("unit_kinds")),
     )
 
 
 def _json(value: object) -> object:
-    if isinstance(value, ValidityStatus | DocumentType):
+    if isinstance(value, ValidityStatus):
         return value.value
     if isinstance(value, date):
         return value.isoformat()

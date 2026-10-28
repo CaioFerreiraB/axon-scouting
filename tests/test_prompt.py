@@ -72,6 +72,12 @@ def test_cobertura_parcial_conceito_e_ramos(frase: str) -> None:
     assert frase in NORMALIZED
 
 
+def test_enumeracao_pela_lista_de_unidades() -> None:
+    """101 FR-029 (ADR-048): enumerar por inteiro pela lista, citando, sem descrever a unidade pelo nome."""
+    for frase in ("lista de …, n de m", "por inteiro e na ordem em que vem", "não descreva uma unidade só pelo nome"):
+        assert frase in NORMALIZED
+
+
 def test_nenhum_fato_do_corpus_no_prompt() -> None:
     """As orientações são genéricas: nenhuma formulação, lema ou regra que uma pergunta do conjunto espera."""
     for fato in ("ser livre como os lobos", "viver aventuras", "sempre alerta", "melhor possível", "regra 0", "158"):
@@ -81,6 +87,6 @@ def test_nenhum_fato_do_corpus_no_prompt() -> None:
 def test_a_resposta_nao_fala_do_mecanismo() -> None:
     """101 R37: quem pergunta não sabe o que é um trecho; o prompt proíbe as palavras do mecanismo na resposta."""
     assert "não use as palavras" in NORMALIZED
-    for palavra in ("trecho", "busca", "ferramenta"):
+    for palavra in ("trecho", "busca", "ferramenta", "ficha"):
         assert f'"{palavra}"' in NORMALIZED
     assert "não apareceu nos trechos" not in NORMALIZED

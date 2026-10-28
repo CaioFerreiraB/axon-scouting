@@ -32,8 +32,13 @@ CONTEXT_FIELDS: Final = (
     "effective_until",
     "include_superseded",
     "previous_version",
+    "catalog",
+    "bodies",
+    "scopes",
+    "suggested_bodies",
 )
-"""Os campos que `extra.context` pode declarar (data-model.md); só os declarados contam."""
+"""Os campos que `extra.context` pode declarar (data-model.md); só os declarados contam. Órgão e abrangência desde o
+ADR-049."""
 
 FACTS_KEY: Final = "facts"
 """A chave de `EvalItem.extra` com os fatos que precisam chegar à geração (FR-014)."""
@@ -187,10 +192,24 @@ def _derived(context: ScoutingContext) -> dict[str, JSONValue]:
         "effective_until": context.validity.end.isoformat(),
         "include_superseded": context.include_superseded,
         "previous_version": context.previous_version,
+        "bodies": list(context.bodies),
+        "scopes": list(context.scopes),
+        "suggested_bodies": list(context.suggested_bodies),
+        "catalog": None
+        if context.catalog is None
+        else {"kind": context.catalog.kind, "terms": list(context.catalog.terms)},
     }
 
 
 def _matches(key: str, expected: JSONValue, derived: JSONValue) -> bool:
-    if key in ("branches", "topics", "document_types", "suggested_types"):
+    if key in ("branches", "topics", "document_types", "suggested_types", "bodies", "scopes", "suggested_bodies"):
         return isinstance(expected, list | tuple) and isinstance(derived, list) and set(expected) == set(derived)
+    if key == "catalog" and isinstance(expected, Mapping) and isinstance(derived, Mapping):
+        # O `extra` chega congelado pelos contratos (listas viram tuplas); os termos contam em ordem.
+        terms = expected.get("terms", ())
+        return (
+            expected.get("kind") == derived.get("kind")
+            and isinstance(terms, list | tuple)
+            and list(terms) == derived.get("terms")
+        )
     return expected == derived

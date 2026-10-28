@@ -170,3 +170,27 @@ def test_sem_trechos_responde_sem_citar_e_marca_nao_fundamentada(montar: Any) ->
     assert "ungrounded" in payload["x_axon"]["flags"]
     assert {e["kind"] for e in payload["x_axon"]["errors"]} == {"CoverageInsufficient", "ValidatorIssue"}
     assert payload["choices"][0]["finish_reason"] == "stop", "registros `notice`, nenhuma falha"
+
+
+def test_pergunta_de_lista_traz_as_fichas_do_acervo_antes_dos_trechos(montar: Any) -> None:
+    """ADR-047: a tool `list_documents` roda ao lado da busca, e as fichas chegam à geração antes dos trechos."""
+    plataforma, geracao = montar()
+    payload = _ask(plataforma, "Quais manuais existem?")
+
+    (mensagens,) = geracao.calls
+    resultados = [m["content"] or "" for m in mensagens if m["role"] == "tool"]
+    ids = [found.group(1) for resultado in resultados for found in ID.finditer(resultado)]
+    assert ids[0].endswith("#acervo"), ids
+    # Uma ficha por manual vigente no dia do perfil `test`; a versão do Manual X depende desse dia.
+    fichas = [i for i in ids if i.endswith("#acervo")]
+    assert sorted(f.split("-")[1] for f in fichas) == ["esc", "pio", "x"], fichas
+    assert "ficha do acervo, 1 de 3" in resultados[0]
+
+    (citacao,) = payload["x_axon"]["citations"]
+    assert citacao["chunk_id"] == ids[0] and citacao["page"] is None
+    chamadas = [
+        r.attributes["tool"]
+        for r in plataforma.trace.trace(payload["x_axon"]["request_id"]).records
+        if r.type == "tool_call"
+    ]
+    assert sorted(chamadas) == ["scouting.list_documents", "scouting.list_units", "scouting.search_docs"]

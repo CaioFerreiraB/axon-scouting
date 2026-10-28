@@ -4,6 +4,11 @@ Provisório até a medição da Fase 6 (princípio X). Lê `model.onnx` e `token
 nada em runtime; `fetch` baixa a revisão fixada e confere os sha256. Configuração do modelo: truncamento em 512, *mean
 pooling* com a máscara de atenção, normalização L2 e os prefixos `passage: `/`query: ` que o e5 exige. A inferência
 roda em outra thread para não travar o laço do core.
+
+Dispositivo: CPU por padrão (a instalação e as VMs pequenas). Com `device="cuda"` — a ingestão offline, por
+`AXON_SCOUTING_EMBEDDING_DEVICE=cuda`, num ambiente com o `onnxruntime-gpu` (`scripts/gpu-venv.sh`) — o
+`CUDAExecutionProvider` vem na frente, com a CPU de reserva; sem CUDA disponível, roda na CPU e diz isso. Os textos de
+cada chamada vão em lotes ordenados pelo tamanho (menos preenchimento), e o resultado volta na ordem pedida.
 """
 
 from __future__ import annotations
@@ -11,6 +16,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import os
+import sys
 import threading
 import urllib.request
 from collections.abc import Callable, Sequence
@@ -35,7 +41,12 @@ BASE_URL: Final = f"https://huggingface.co/{NAME}/resolve/{REVISION}"
 DIMENSIONS: Final = 384
 MAX_TOKENS: Final = 512
 BATCH: Final = 8
-"""Lote de inferência: o pico de memória cresce com lote vezes tokens ao quadrado; 8 cabe folgado nos 12 GB do alvo."""
+"""Lote de inferência na CPU: o pico de memória cresce com lote vezes tokens ao quadrado; 8 cabe folgado nos 12 GB do
+alvo."""
+GPU_BATCH: Final = 64
+"""Lote na GPU (8 GB bastam para 64 trechos de 512 tokens no e5-small)."""
+DEVICES: Final = ("cpu", "cuda")
+DEVICE_VARIABLE: Final = "AXON_SCOUTING_EMBEDDING_DEVICE"
 
 
 @dataclass(frozen=True, slots=True)
@@ -54,8 +65,11 @@ FILES: Final = (
 
 
 class E5Embedder:
-    def __init__(self, model_dir: Path) -> None:
+    def __init__(self, model_dir: Path, device: str = "cpu") -> None:
+        if device not in DEVICES:
+            raise ValueError(f"dispositivo do e5 desconhecido: {device!r} (esperado um de {', '.join(DEVICES)})")
         self._dir = model_dir
+        self._device = device
         self._lock = threading.Lock()
         self._session: ort.InferenceSession | None = None
         self._tokenizer: Tokenizer | None = None
@@ -87,17 +101,52 @@ class E5Embedder:
                 self._tokenizer = tokenizer
                 options = ort.SessionOptions()
                 options.enable_cpu_mem_arena = False  # a arena reteria o pico do maior lote pelo resto do processo
+                providers = ["CPUExecutionProvider"]
+                if self._device == "cuda":
+                    # As bibliotecas de CUDA e cuDNN vêm em wheels (`onnxruntime-gpu[cuda,cudnn]`), fora do caminho do
+                    # carregador do sistema: o onnxruntime as carrega a partir desses pacotes.
+                    preload = getattr(ort, "preload_dlls", None)
+                    if preload is not None:
+                        preload()
+                    if "CUDAExecutionProvider" in ort.get_available_providers():
+                        providers.insert(0, "CUDAExecutionProvider")
+                    else:
+                        print(
+                            "aviso: e5 sem CUDA neste ambiente (instale o onnxruntime-gpu: scripts/gpu-venv.sh); "
+                            "codificando na CPU",
+                            file=sys.stderr,
+                        )
                 self._session = ort.InferenceSession(
-                    str(self._dir / "model.onnx"), sess_options=options, providers=["CPUExecutionProvider"]
+                    str(self._dir / "model.onnx"), sess_options=options, providers=providers
                 )
             return self._session, self._tokenizer
+
+    @property
+    def device(self) -> str:
+        """O dispositivo em uso: `cuda` só depois da primeira codificação, se o provedor carregou."""
+        if self._session is not None and self._session.get_providers()[0] == "CUDAExecutionProvider":
+            return "cuda"
+        return "cpu"
 
     def _encode(self, texts: list[str]) -> list[tuple[float, ...]]:
         session, tokenizer = self._load()
         names = {i.name for i in session.get_inputs()}
+        batch = GPU_BATCH if self.device == "cuda" else BATCH
+        order = sorted(range(len(texts)), key=lambda index: len(texts[index]))
+        encoded: dict[int, tuple[float, ...]] = {}
+        for start in range(0, len(order), batch):
+            indices = order[start : start + batch]
+            vectors = self._run(session, tokenizer, names, [texts[i] for i in indices])
+            encoded.update(zip(indices, vectors, strict=True))
+        return [encoded[index] for index in range(len(texts))]
+
+    @staticmethod
+    def _run(
+        session: ort.InferenceSession, tokenizer: Tokenizer, names: set[str], texts: list[str]
+    ) -> list[tuple[float, ...]]:
         vectors: list[tuple[float, ...]] = []
-        for start in range(0, len(texts), BATCH):
-            encodings = tokenizer.encode_batch(texts[start : start + BATCH])
+        if texts:
+            encodings = tokenizer.encode_batch(texts)
             ids = np.array([e.ids for e in encodings], dtype=np.int64)
             mask = np.array([e.attention_mask for e in encodings], dtype=np.int64)
             feeds = {"input_ids": ids, "attention_mask": mask}
@@ -146,3 +195,19 @@ def _sha256(path: Path) -> str:
         while chunk := stream.read(1 << 20):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+class E5TokenCounter:
+    """Implementa `TokenCounter` (ingestão) com o tokenizador do e5: os tokens de `passage: <texto>`, especiais
+    incluídos — o que o embedder lê antes de truncar em 512 (ADR-050). Só precisa do `tokenizer.json`."""
+
+    def __init__(self, model_dir: Path) -> None:
+        path = model_dir / "tokenizer.json"
+        self._tokenizer = Tokenizer.from_file(str(path))
+        self._identity = f"e5-tok:{_sha256(path)[:12]}"
+
+    def identity(self) -> str:
+        return self._identity
+
+    def count(self, text: str) -> int:
+        return len(self._tokenizer.encode(f"passage: {text}").ids)

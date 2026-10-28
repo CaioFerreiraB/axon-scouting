@@ -20,9 +20,10 @@ ROOT = Path(__file__).resolve().parents[3]
 CHUNKS = ROOT / "src" / "axon_scouting" / "data" / "index" / "chunks.jsonl"
 TOKENIZER = ROOT / ".cache" / "e5" / "tokenizer.json"
 MAX_TOKENS = 512
-MAX_TRUNCATED = 0.025
-"""Medido no corpus de 593 documentos: 2,1% — unidades normativas inteiras (FR-002) e tabelas de relatório, que o
-tokenizador parte em mais tokens por caractere (research R29)."""
+MAX_TRUNCATED = 0.0
+"""Nenhum trecho passa do que o e5 lê (ADR-050, `estrutural-v5`): o teto divide unidade normativa e janela. Antes, 2,1%
+na `estrutural-v3` e 2,57% (378 de 14.706) na `estrutural-v4` — unidades normativas inteiras e tabelas de relatório,
+que o tokenizador parte em mais tokens por caractere (research R29)."""
 
 
 def _body(chunk: dict[str, Any]) -> str:
@@ -35,7 +36,8 @@ def chunks() -> list[dict[str, Any]]:
 
 
 MAX_STUBS = 5
-"""Os que sobram não são títulos: ruído de OCR (uma ata) e campos de formulário (um guia) — curadoria (R29)."""
+"""Os que sobram não são títulos de seção: ruído de OCR (uma ata), texto numa fonte sem mapa de caracteres (um
+relatório) e um título solto — curadoria (R29); na `estrutural-v5`, 4."""
 
 
 def test_nenhum_trecho_sem_corpo(chunks: list[dict[str, Any]]) -> None:
@@ -46,6 +48,7 @@ def test_nenhum_trecho_sem_corpo(chunks: list[dict[str, Any]]) -> None:
         for chunk in chunks
         if per_document[chunk["doc_key"]] > 1
         and sum(ch.isalpha() for ch in _body(chunk)) < MIN_BODY_LETTERS
+        and sum(ch.isdigit() for ch in _body(chunk)) < MIN_BODY_LETTERS  # a tabela de números é conteúdo
         and not any(line.rstrip().endswith((".", "!", "?", ":", ";")) for line in _body(chunk).splitlines())
     ]
     assert len(stubs) <= MAX_STUBS, stubs
@@ -63,7 +66,7 @@ def test_toda_regra_do_por_tem_corpo(chunks: list[dict[str, Any]]) -> None:
     assert title_only == []
 
 
-def test_poucos_trechos_alem_do_que_o_e5_le(chunks: list[dict[str, Any]]) -> None:
+def test_nenhum_trecho_alem_do_que_o_e5_le(chunks: list[dict[str, Any]]) -> None:
     if not TOKENIZER.is_file():
         pytest.skip("sem o tokenizador do e5 em .cache/e5 (axon-scouting-corpus model fetch .cache/e5)")
     from tokenizers import Tokenizer

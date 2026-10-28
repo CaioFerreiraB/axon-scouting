@@ -18,6 +18,8 @@ from axon_scouting.rag.ingestion.adapters.cli import Composition, ConfigurationE
 from axon_scouting.rag.ingestion.adapters.memory import FixedClock, MemoryParser
 from axon_scouting.rag.ingestion.service import IngestionService
 
+from .structure_kit import STRUCTURE
+
 BASE = Path("/corpus")
 SEGREDO = "s3cr3t-qdrant-key"
 ENTRADA = {
@@ -25,7 +27,6 @@ ENTRADA = {
     "source_url": "https://www.escoteiros.org.br/manual.pdf",
     "document_id": "manual-x",
     "version": "2026",
-    "type": "manual",
     "title": "Manual X",
     "jurisdiction": "nacional",
     "effective_date": date(2026, 3, 1),
@@ -75,6 +76,7 @@ class Saida:
             load_qdrant=load_qdrant,
             load_catalog=load_catalog,
             fetch_model=fetch_model,
+            load_structure=lambda base: STRUCTURE,
             secrets=(SEGREDO,),
             out=self.out,
             err=self.err,
@@ -93,7 +95,7 @@ def test_ingest_com_sucesso() -> None:
     assert saida.run("ingest", "/corpus/corpus.yaml") == 0
     texto = saida.out.getvalue()
     assert "índice scouting — build scouting__20261007T153000Z publicado" in texto
-    assert "versão: estrutural-v2;janela=250-450 · hashing-test" in texto
+    assert "versão: estrutural-v5;janela=250-450;teto=512:estimativa · hashing-test" in texto
     assert "manual-x-2026" in texto and "codificado" in texto
     assert "duração: 0m00s" in texto
     assert saida.run("ingest", "/corpus/corpus.yaml") == 0
@@ -135,7 +137,7 @@ def test_status() -> None:
     saida.run("ingest", "/corpus/corpus.yaml")
     assert saida.run("status") == 0
     texto = saida.out.getvalue()
-    assert "manual-x" in texto and "vigente" in texto and "1 documentos, 2 chunks" in texto
+    assert "manual-x" in texto and "vigente" in texto and "1 documentos, 1 chunks" in texto
 
 
 def test_model_fetch() -> None:
@@ -163,16 +165,16 @@ def test_status_por_linhagem_e_status() -> None:
     assert saida.run("ingest", "/corpus/corpus.yaml") == 0
     assert saida.run("status") == 0
     linhas = [linha.split() for linha in saida.out.getvalue().splitlines() if linha.startswith("manual-x ")]
-    assert linhas == [["manual-x", "2023", "substituido", "1"], ["manual-x", "2026", "vigente", "2"]]
+    assert linhas == [["manual-x", "2023", "substituido", "1"], ["manual-x", "2026", "vigente", "1"]]
     assert sum(1 for linha in linhas if linha[2] == "vigente") == 1  # SC-003
 
 
 def test_original_e_reindex() -> None:
     saida = Saida({"documents": [ENTRADA]})
     saida.run("ingest", "/corpus/corpus.yaml")
-    assert saida.run("original", "manual-x-2026#4.2@p2") == 0
+    assert saida.run("original", "manual-x-2026#s1@p1") == 0
     texto = saida.out.getvalue()
-    assert "Manual X (2026) · p. 2 · manual.pdf" in texto
+    assert "Manual X (2026) · p. 1–2 · manual.pdf" in texto
     assert "https://www.escoteiros.org.br/manual.pdf" in texto
     assert "4.2 Acampamento\nMais." in texto
     assert saida.run("original", "nada#x@p1") == 1

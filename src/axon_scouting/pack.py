@@ -36,7 +36,13 @@ from axon_scouting.context.periods import reference_day
 from axon_scouting.prompts import SYSTEM_PROMPT
 
 if TYPE_CHECKING:
-    from axon_scouting.rag.index.api import ChunkIndex
+    from typing import Protocol
+
+    from axon_scouting.rag.index.api import ChunkIndex, DocumentCatalog, DocumentOutline
+
+    class _Index(ChunkIndex, DocumentCatalog, DocumentOutline, Protocol):
+        """O que o pack pede do índice: busca, catálogo e árvore de unidades (os três adapters os têm)."""
+
     from axon_scouting.rag.index.ports import Embedder
 
 VERSION: Final = "0.6.0"
@@ -258,40 +264,52 @@ class ScoutingPack(PackBase):
         return SYSTEM_PROMPT
 
     def retrievers(self, ctx: PackContext) -> Sequence[NamedRetriever]:
-        """A tool `scouting.search_docs` sobre o índice configurado (R19): o artefato em memória (ADR-043) ou o
-        Qdrant. A carga não toca a rede: Qdrant fora, chave do embedder remoto ausente ou modelo divergente aparecem
-        na busca, como erro explícito (103 FR-007). Variável `AI_SCOUTING_*` no ambiente deixa o pack em erro (R26)."""
-        import os
-
+        """As tools `scouting.search_docs`, `scouting.list_documents` (ADR-047) e `scouting.list_units` (ADR-048) sobre
+        o índice configurado (R19): o artefato em memória (ADR-043) ou o Qdrant. A carga não toca a rede: Qdrant fora,
+        chave do embedder remoto ausente ou modelo divergente aparecem na busca, como erro explícito (103 FR-007).
+        Variável `AI_SCOUTING_*` no ambiente deixa o pack em erro (R26)."""
         _refuse_legacy()
 
-        from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+        from axon_scouting.rag.retrieval.catalog import CatalogRetriever, list_documents
         from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
         from axon_scouting.rag.retrieval.retriever import ScoutingRetriever, search_docs
+        from axon_scouting.rag.retrieval.units import UnitsRetriever, list_units
 
         config = read_config(ctx.config, ctx.data_dir)
-        embedder = _embedder(config, os.environ)
-        index: ChunkIndex
-        if config.store == "memory":
-            from axon_scouting.rag.index.adapters.artifact import ArtifactIndex
-
-            index = ArtifactIndex(_artifact_root(config), embedder, Bm25Encoder())
-        else:
-            from qdrant_client import AsyncQdrantClient
-
-            from axon_scouting.rag.index.adapters.qdrant import QdrantIndex
-
-            if config.qdrant_path is not None:
-                client = AsyncQdrantClient(path=config.qdrant_path)
-            else:
-                # Sem a checagem de versão do cliente, que iria à rede na carga; a compatibilidade com o servidor é da
-                # suíte do índice (102), e o servidor fora aparece na primeira busca.
-                client = AsyncQdrantClient(
-                    url=config.qdrant_url, api_key=os.environ.get(API_KEY_VARIABLE) or None, check_compatibility=False
-                )
-            index = QdrantIndex(client, config.index, embedder, Bm25Encoder())
+        index = self._index(config)
         retrieval = RetrievalConfig(default_limit=config.default_limit, max_limit=config.max_limit)
-        return [search_docs(ScoutingRetriever(index, retrieval), collection=COLLECTION)]
+        return [
+            search_docs(ScoutingRetriever(index, retrieval), collection=COLLECTION),
+            list_documents(CatalogRetriever(index, retrieval), collection=COLLECTION),
+            list_units(UnitsRetriever(index, index, retrieval), collection=COLLECTION),
+        ]
+
+    def _index(self, config: ScoutingConfig) -> _Index:
+        """O índice da configuração, composto uma vez: as tools e a preparação de contexto (que lê os tipos de unidade
+        do build) o dividem — o artefato em memória é carregado uma vez só."""
+        indexes: dict[ScoutingConfig, _Index] = self.__dict__.setdefault("_indexes", {})  # o pack é um por processo
+        if config not in indexes:
+            indexes[config] = _compose_index(config)
+        return indexes[config]
+
+    async def _unit_kinds(self, ctx: PackContext) -> Mapping[str, tuple[str, ...]]:
+        """Os plurais de cada tipo de unidade com nome próprio do build publicado (ADR-048), lidos uma vez — artigo,
+        regra, capítulo e seção têm por título um número, e enumerá-los não responde nada; sem índice ou sem build,
+        nenhum — a enumeração sai então sem tipo."""
+        cached: dict[str, Mapping[str, tuple[str, ...]]] = self.__dict__.setdefault("_kinds", {})
+        if "kinds" not in cached:
+            from axon_scouting.context.text import normalize
+            from axon_scouting.rag.index.api import IndexUnavailable
+            from axon_scouting.rag.ingestion.domain.tree import TYPED
+
+            try:
+                kinds = await self._index(read_config(ctx.config, ctx.data_dir)).unit_kinds()
+            except (IndexUnavailable, ValueError, OSError):
+                return {}
+            cached["kinds"] = {
+                k.name: tuple(normalize(p) for p in k.plurals if normalize(p)) for k in kinds if k.name in TYPED
+            }
+        return cached["kinds"]
 
     def prepare(self, ctx: PackContext) -> None:
         """No build (ADR-041): baixa o e5 da revisão fixada, conferindo os sha256, em `embedding_dir` ou
@@ -320,7 +338,9 @@ class ScoutingPack(PackBase):
     def eval_metrics(self, ctx: PackContext) -> Sequence[EvalMetric]:
         """As métricas de domínio que o harness da 009 reporta como `scouting:<nome>` (spec 105, ADR-027). A de fatos
         (FR-014) lê o texto dos trechos entregues no artefato, e só existe com o índice em memória — o da avaliação
-        (FR-013); o artefato só é lido quando uma rodada a consulta."""
+        (FR-013); o artefato só é lido quando uma rodada a consulta. As fichas da lista de documentos (ADR-047) não
+        estão em `chunks.jsonl`: o texto delas é refeito da entrada do documento, e o das listas de unidades (ADR-048),
+        da árvore gravada."""
         from axon_scouting.eval import (
             AbsenceClaimRate,
             ContextAccuracy,
@@ -332,14 +352,56 @@ class ScoutingPack(PackBase):
         metrics: list[EvalMetric] = [ContextAccuracy(), CurrentDocumentRate(), ValidityNoticeRate(), AbsenceClaimRate()]
         config = read_config(ctx.config, ctx.data_dir, require_model=False)
         if config.store == "memory":
-            from axon_scouting.rag.index.adapters.artifact import chunk_texts
+            from axon_scouting.rag.index.adapters.artifact import catalog_entries, chunk_texts, document_outlines
+            from axon_scouting.rag.retrieval.domain.catalog import with_cards
+            from axon_scouting.rag.retrieval.domain.units import with_unit_cards
 
-            metrics.append(FactRecall(chunk_texts(_artifact_root(config))))
+            root = _artifact_root(config)
+            outline, kinds = document_outlines(root)
+            texts = with_unit_cards(
+                with_cards(chunk_texts(root), catalog_entries(root)), outline, {k.name: k for k in kinds}
+            )
+            metrics.append(FactRecall(texts))
         return tuple(metrics)
 
     async def prepare_context(self, view: TurnView, ctx: PackContext) -> Mapping[str, JSONValue]:
-        """Contexto e filtros de recuperação derivados da pergunta, sem modelo e sem relógio (FR-004, FR-005)."""
-        return to_slice(derive_context(view.question, reference_day(view.reference_time)))
+        """Contexto e filtros de recuperação derivados da pergunta, sem modelo e sem relógio (FR-004, FR-005); o léxico
+        leva os tipos de unidade do índice (ADR-048), e a derivação continua pura."""
+        import dataclasses
+        from types import MappingProxyType
+
+        from axon_scouting.context.lexicon import LEXICON
+
+        lexicon = dataclasses.replace(LEXICON, unit_kinds=MappingProxyType(dict(await self._unit_kinds(ctx))))
+        return to_slice(derive_context(view.question, reference_day(view.reference_time), lexicon))
+
+
+def _compose_index(config: ScoutingConfig) -> _Index:
+    """O artefato em memória (ADR-043) ou o Qdrant, com o embedder da configuração; a carga não toca a rede."""
+    import os
+
+    _refuse_legacy()
+
+    from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
+
+    embedder = _embedder(config, os.environ)
+    if config.store == "memory":
+        from axon_scouting.rag.index.adapters.artifact import ArtifactIndex
+
+        return ArtifactIndex(_artifact_root(config), embedder, Bm25Encoder())
+    from qdrant_client import AsyncQdrantClient
+
+    from axon_scouting.rag.index.adapters.qdrant import QdrantIndex
+
+    if config.qdrant_path is not None:
+        client = AsyncQdrantClient(path=config.qdrant_path)
+    else:
+        # Sem a checagem de versão do cliente, que iria à rede na carga; a compatibilidade com o servidor é da
+        # suíte do índice (102), e o servidor fora aparece na primeira busca.
+        client = AsyncQdrantClient(
+            url=config.qdrant_url, api_key=os.environ.get(API_KEY_VARIABLE) or None, check_compatibility=False
+        )
+    return QdrantIndex(client, config.index, embedder, Bm25Encoder())
 
 
 def corpus_cli() -> None:
@@ -365,12 +427,14 @@ def corpus_cli() -> None:
 
     from axon_scouting.rag.index.adapters.artifact import ArtifactIndex
     from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
-    from axon_scouting.rag.index.adapters.e5 import E5Embedder, fetch
+    from axon_scouting.rag.index.adapters.e5 import DEVICE_VARIABLE as E5_DEVICE_VARIABLE
+    from axon_scouting.rag.index.adapters.e5 import E5Embedder, E5TokenCounter, fetch
     from axon_scouting.rag.index.adapters.openrouter import OpenRouterEmbedder
     from axon_scouting.rag.ingestion.adapters import cli
-    from axon_scouting.rag.ingestion.adapters.catalog_yaml import load_catalog
+    from axon_scouting.rag.ingestion.adapters.catalog_yaml import load_catalog, load_structure
     from axon_scouting.rag.ingestion.adapters.clock import SystemClock
     from axon_scouting.rag.ingestion.adapters.pdfium import PdfiumParser
+    from axon_scouting.rag.ingestion.adapters.transcription import ParserBySuffix
     from axon_scouting.rag.ingestion.service import IngestionService, copy_index
 
     qdrant_key = os.environ.get(API_KEY_VARIABLE) or None
@@ -400,7 +464,8 @@ def corpus_cli() -> None:
                     f"{EMBEDDING_KEY_VARIABLE} ausente: o embedder pplx codifica pelo OpenRouter"
                 )
             return OpenRouterEmbedder(embedding_key)
-        return E5Embedder(model_dir(options.needs_model))
+        # A ingestão offline pode codificar na GPU (ADR-050, `scripts/gpu-venv.sh`); a carga do pack, nunca.
+        return E5Embedder(model_dir(options.needs_model), device=os.environ.get(E5_DEVICE_VARIABLE, "cpu"))
 
     def artifact(options: cli.ServiceOptions, embedder: Embedder) -> ArtifactIndex:
         root = options.directory.expanduser() if options.directory is not None else PACKAGED_INDEX
@@ -410,13 +475,16 @@ def corpus_cli() -> None:
     async def open_service(options: cli.ServiceOptions) -> AsyncIterator[IngestionService]:
         embedder = embedder_for(options)
         index = artifact(options, embedder)
+        # O teto do trecho é o do e5 para qualquer embedder: o artefato tem um conjunto só de trechos (ADR-050).
+        tokens = E5TokenCounter(model_dir(True)) if options.needs_model else None
         yield IngestionService(
-            parser=PdfiumParser(),
+            parser=ParserBySuffix(PdfiumParser()),
             embedder=embedder,
             sparse=Bm25Encoder(),
             writer=index,
             store=index,
             clock=SystemClock(),
+            tokens=tokens,
         )
 
     async def load_qdrant(options: cli.ServiceOptions) -> str:
@@ -441,6 +509,7 @@ def corpus_cli() -> None:
         load_qdrant=load_qdrant,
         load_catalog=load_catalog,
         fetch_model=fetch,
+        load_structure=load_structure,
         secrets=tuple(secret for secret in (qdrant_key, embedding_key) if secret),
     )
     sys.exit(cli.main(sys.argv[1:], composition))

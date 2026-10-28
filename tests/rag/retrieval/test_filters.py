@@ -7,7 +7,7 @@ from typing import Any
 
 import pytest
 
-from axon_scouting.rag.index.api import DocumentType, IndexFilters
+from axon_scouting.rag.index.api import IndexFilters
 from axon_scouting.rag.retrieval.domain.filters import InvalidFilters, index_filters
 
 CONTRATO = {  # o exemplo de specs/101-scouting-pack/contracts/retrieval-filters.md
@@ -29,7 +29,7 @@ def test_exemplo_do_contrato() -> None:
         include_superseded=True,
         previous_version=False,
         branch="pioneiro",
-        document_types=(DocumentType.MANUAL, DocumentType.PROGRAMA_EDUCATIVO),
+        document_types=("manual", "programa_educativo"),
     )
 
 
@@ -52,7 +52,7 @@ def test_temas_nao_mudam_nada() -> None:
         ({**DIA, "include_superseded": "sim"}, "include_superseded"),
         ({**DIA, "previous_version": 1}, "previous_version"),
         ({**DIA, "document_types": "manual"}, "document_types"),
-        ({**DIA, "document_types": ["lei"]}, "document_types"),
+        ({**DIA, "document_types": ["Resolução"]}, "document_types"),  # rótulo, não id da taxonomia
         ({**DIA, "branch": "pioneiros"}, "branch"),
         ({**DIA, "branch": 3}, "branch"),
         ({**DIA, "tema": "uniforme"}, "tema"),

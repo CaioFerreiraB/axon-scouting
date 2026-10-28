@@ -21,6 +21,9 @@ from axon_scouting.context.derivation import derive_context
 from axon_scouting.context.lexicon import LEXICON
 from axon_scouting.context.periods import reference_day
 from axon_scouting.eval import CONTEXT_FIELDS, expected_context, is_historical
+from axon_scouting.rag.index.api import taxonomy_id
+from axon_scouting.rag.ingestion.adapters.catalog_yaml import load_structure
+from axon_scouting.rag.ingestion.domain.corpus_structure import parse_structure
 
 ROOT = Path(__file__).resolve().parents[2]
 GOLDEN = ROOT / "eval" / "golden.yaml"
@@ -182,7 +185,13 @@ def test_semente_cobre_os_tipos_normativos_um_historico_e_um_fora_do_corpus(
     semente: Mapping[str, Any], catalog: Mapping[str, Any]
 ) -> None:
     items = semente["items"]
-    type_of = {entry["title"]: entry["type"] for entry in catalog["documents"]}
+    structure, problems = parse_structure(*(load_structure(CATALOG.parent) or (None, None)))
+    assert structure is not None, problems
+    type_of = {
+        entry["title"]: taxonomy_id(classified.semantic_type)
+        for entry in catalog["documents"]
+        if (classified := structure.classify(entry["file"])) is not None
+    }
     cited = {type_of.get(evidence["document"]) for item in items for evidence in item.get("expected_documents") or []}
     assert cited >= COBERTOS
     assert any(is_historical(item.get("extra") or {}) for item in items), "FR-002: ao menos uma consulta histórica"

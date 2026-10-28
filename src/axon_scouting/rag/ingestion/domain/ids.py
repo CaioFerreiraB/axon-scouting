@@ -38,6 +38,8 @@ def chunk_ids(key: str, sections: Sequence[tuple[str, int]]) -> list[str]:
     return ids
 
 
-def content_key(source_sha256: str, document_type: str, title: str, parser: str) -> str:
-    """Igual entre builds = chunks reaproveitáveis: mesma fonte, mesmo tipo, mesmo título (prefixo), mesmo parser."""
-    return hashlib.sha256("|".join((source_sha256, document_type, title, parser)).encode()).hexdigest()
+def content_key(source_sha256: str, document_type: str, title: str, parser: str, *, structure: str = "") -> str:
+    """Igual entre builds = chunks reaproveitáveis: mesma fonte, mesmo tipo, mesmo título (prefixo), mesmo parser e,
+    com a taxonomia, a mesma declaração de estrutura (ADR-048)."""
+    parts = (source_sha256, document_type, title, parser, *((structure,) if structure else ()))
+    return hashlib.sha256("|".join(parts).encode()).hexdigest()

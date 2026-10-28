@@ -8,8 +8,15 @@ from datetime import date
 from axon_ai_contracts import Chunk
 from axon_ai_contracts.testing import chunk as chunk_cru
 
-from axon_scouting.rag.index.api import DocumentType, IndexedChunk, IndexFilters, ValidityStatus
-from axon_scouting.rag.retrieval.domain.ordering import BRANCH_MATCH, FUSION_SCORE, TYPE_MATCH, marks, ordered
+from axon_scouting.rag.index.api import IndexedChunk, IndexFilters, ValidityStatus
+from axon_scouting.rag.retrieval.domain.ordering import (
+    BODY_MATCH,
+    BRANCH_MATCH,
+    FUSION_SCORE,
+    TYPE_MATCH,
+    marks,
+    ordered,
+)
 
 DIA = date(2026, 10, 7)
 BASE = IndexedChunk(
@@ -18,7 +25,7 @@ BASE = IndexedChunk(
     doc_key="manual-x-2026",
     document_id="manual-x",
     version="2026",
-    document_type=DocumentType.MANUAL,
+    document_type="manual",
     document_title="Manual X",
     jurisdiction="nacional",
     page_start=1,
@@ -31,14 +38,14 @@ BASE = IndexedChunk(
 def test_marcas() -> None:
     pioneiro = dataclasses.replace(BASE, branch="pioneiro")
     geral = BASE
-    pedido = IndexFilters(
-        effective_from=DIA, effective_until=DIA, branch="pioneiro", document_types=(DocumentType.MANUAL,)
-    )
+    pedido = IndexFilters(effective_from=DIA, effective_until=DIA, branch="pioneiro", document_types=("manual",))
     sem_nada = IndexFilters(effective_from=DIA, effective_until=DIA)
-    assert marks(pioneiro, pedido) == {BRANCH_MATCH: True, TYPE_MATCH: True}
-    assert marks(geral, pedido) == {BRANCH_MATCH: False, TYPE_MATCH: True}  # geral não casa com o ramo
-    assert marks(pioneiro, sem_nada) == {BRANCH_MATCH: False, TYPE_MATCH: False}
-    outro_tipo = IndexFilters(effective_from=DIA, effective_until=DIA, document_types=(DocumentType.POR,))
+    assert marks(pioneiro, pedido) == {BRANCH_MATCH: True, TYPE_MATCH: True, BODY_MATCH: False}
+    assert marks(geral, pedido) == {BRANCH_MATCH: False, TYPE_MATCH: True, BODY_MATCH: False}  # geral não casa
+    assert marks(pioneiro, sem_nada) == {BRANCH_MATCH: False, TYPE_MATCH: False, BODY_MATCH: False}
+    do_can = dataclasses.replace(BASE, bodies=("conselho_de_administracao_nacional",))
+    assert marks(do_can, sem_nada, bodies=("conselho_de_administracao_nacional",))[BODY_MATCH] is True
+    outro_tipo = IndexFilters(effective_from=DIA, effective_until=DIA, document_types=("por",))
     assert marks(pioneiro, outro_tipo)[TYPE_MATCH] is False
 
 

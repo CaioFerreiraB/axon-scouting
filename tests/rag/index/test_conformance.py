@@ -15,11 +15,13 @@ import pytest
 from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
 from axon_scouting.rag.index.adapters.memory import HashingEmbedder
 from axon_scouting.rag.index.api import (
-    DocumentType,
     IndexFilters,
     IndexMismatch,
     IndexUnavailable,
     IndexVersion,
+    UnitKind,
+    UnitNode,
+    UnitRef,
     ValidityStatus,
 )
 from axon_scouting.rag.index.ports import StoredDocument
@@ -274,7 +276,7 @@ M2026 = campos("manual-v", "2026", document_title="Manual V", effective_date=dat
 RASCUNHO = campos(
     "manual-v", "2027", document_title="Manual V", effective_date=date(2026, 3, 1), status=ValidityStatus.RASCUNHO
 )
-GERAL = campos("por-v", "1", document_title="POR V", document_type=DocumentType.POR, effective_date=date(2020, 1, 1))
+GERAL = campos("por-v", "1", document_title="POR V", document_type="por", effective_date=date(2020, 1, 1))
 ESCOTEIRO = campos("manual-esc", "1", document_title="Manual Esc", branch="escoteiro", effective_date=date(2020, 1, 1))
 PIONEIRO = campos("manual-pio", "1", document_title="Manual Pio", branch="pioneiro", effective_date=date(2020, 1, 1))
 TEXTO = "As regras do acampamento da tropa valem para todos."
@@ -316,7 +318,7 @@ def _docs(chunks: list[Any]) -> set[str]:
             IndexFilters(effective_from=HOJE, effective_until=HOJE, branch="pioneiro"),
             {"manual-v-2026", "por-v-1", "manual-pio-1"},
         ),
-        (IndexFilters(effective_from=HOJE, effective_until=HOJE, document_types=(DocumentType.POR,)), {"por-v-1"}),
+        (IndexFilters(effective_from=HOJE, effective_until=HOJE, document_types=("por",)), {"por-v-1"}),
         (
             IndexFilters(effective_from=date(2000, 1, 1), effective_until=date(2100, 1, 1), include_superseded=True),
             {"manual-v-2023", "manual-v-2026", "por-v-1", "manual-esc-1", "manual-pio-1"},
@@ -330,6 +332,44 @@ def test_vigencia(target: Target, filtros: IndexFilters, esperado: set[str]) -> 
         achados = await index.search("regras do acampamento", filters=filtros, limit=20)
         assert _docs(achados) == esperado
         assert "manual-v-2027" not in _docs(achados)  # rascunho nunca
+
+    run(target, scenario)
+
+
+@pytest.mark.parametrize(
+    ("filtros", "esperado"),
+    [
+        (
+            IndexFilters(effective_from=HOJE, effective_until=HOJE),
+            ["manual-esc-1", "manual-pio-1", "manual-v-2026", "por-v-1"],
+        ),
+        (IndexFilters(effective_from=HOJE, effective_until=HOJE, previous_version=True), ["manual-v-2023"]),
+        (
+            IndexFilters(effective_from=HOJE, effective_until=HOJE, branch="pioneiro"),
+            ["manual-pio-1", "manual-v-2026", "por-v-1"],
+        ),
+        (IndexFilters(effective_from=HOJE, effective_until=HOJE, document_types=("por",)), ["por-v-1"]),
+    ],
+)
+def test_catalogo_com_a_semantica_da_busca(target: Target, filtros: IndexFilters, esperado: list[str]) -> None:
+    """O catálogo (ADR-047) admite os mesmos documentos que a busca, em ordem de `doc_key`, com o link do original."""
+
+    async def scenario(make: Make) -> None:
+        index = padrao(make)
+        await publicar_vigencia(index)
+        entradas = await index.catalog(filters=filtros)
+        assert [e.doc_key for e in entradas] == esperado
+        assert all(e.source_url == f"https://exemplo.org/{e.doc_key}.pdf" for e in entradas)
+        pio = next((e for e in entradas if e.doc_key == "manual-pio-1"), None)
+        assert pio is None or (pio.branch == "pioneiro" and pio.document_title == "Manual Pio")
+
+    run(target, scenario)
+
+
+def test_catalogo_sem_build_publicado(target: Target) -> None:
+    async def scenario(make: Make) -> None:
+        with pytest.raises(IndexUnavailable):
+            await padrao(make).catalog(filters=DEFAULT)
 
     run(target, scenario)
 
@@ -439,5 +479,185 @@ def test_similaridade_em_cada_resultado(target: Target) -> None:
             esperado = sum(a * b for a, b in zip(pergunta, vetor, strict=True))
             assert chunk.similarity == pytest.approx(esperado, abs=1e-5)
         assert all(c.similarity is None for c in await index.get([alvo.chunk_id]))
+
+    run(target, scenario)
+
+
+# --- árvore de unidades (ADR-048) -----------------------------------------------------------------------------------
+
+GUIA = campos("guia-esp", "1", document_title="Guia de Especialidades", category="Programa Educativo")
+_EIXO = UnitRef(unit_id="guia-esp-1#u/eixo-meio-ambiente", kind="eixo", title="Meio Ambiente")
+_GRUPO = UnitRef(unit_id="guia-esp-1#u/grupo-pioneiro", kind="grupo_de_insignias", title="Ramo Pioneiro")
+GUIA_UNIDADES = (
+    UnitNode(unit_id=_EIXO.unit_id, kind="eixo", title="Meio Ambiente", page_start=1, page_end=2),
+    UnitNode(
+        unit_id=f"{_EIXO.unit_id}/especialidade-ecoturismo",
+        kind="especialidade",
+        title="Ecoturismo",
+        page_start=1,
+        page_end=1,
+        parent=_EIXO.unit_id,
+    ),
+    UnitNode(
+        unit_id=f"{_EIXO.unit_id}/especialidade-sustentabilidade",
+        kind="especialidade",
+        title="Sustentabilidade",
+        page_start=2,
+        page_end=2,
+        parent=_EIXO.unit_id,
+    ),
+    UnitNode(
+        unit_id=_GRUPO.unit_id,
+        kind="grupo_de_insignias",
+        title="Ramo Pioneiro",
+        page_start=3,
+        page_end=3,
+        branches=("pioneiro",),
+    ),
+    UnitNode(
+        unit_id=f"{_GRUPO.unit_id}/insignia-aprender",
+        kind="insignia",
+        title="Insígnia do Aprender",
+        page_start=3,
+        page_end=3,
+        parent=_GRUPO.unit_id,
+        branches=("pioneiro",),
+    ),
+)
+GUIA_TRECHOS = [
+    trecho(
+        GUIA,
+        "s1",
+        1,
+        "[Guia · Eixo: Meio Ambiente · Especialidade: Ecoturismo]\nTrilhas, roteiros e • a • b • c • d",
+        path=(_EIXO, UnitRef(unit_id=GUIA_UNIDADES[1].unit_id, kind="especialidade", title="Ecoturismo")),
+        unit_kind="especialidade",
+        shape="list",
+        branches=("senior", "pioneiro"),
+    ),
+    trecho(
+        GUIA,
+        "s2",
+        2,
+        "[Guia · Eixo: Meio Ambiente · Especialidade: Sustentabilidade]\nReciclagem e energia.",
+        branches=("senior", "pioneiro"),
+    ),
+    trecho(
+        GUIA,
+        "s3",
+        3,
+        "[Guia · Grupo: Ramo Pioneiro · Insígnia: Insígnia do Aprender]\nAprender a aprender.",
+        branches=("pioneiro",),
+    ),
+]
+KINDS = (UnitKind(name="especialidade", label="Especialidade", plurals=("especialidades",)),)
+
+
+async def publicar_guia(index: Index) -> None:
+    embedder, sparse = HashingEmbedder(), Bm25Encoder()
+    build = await index.create(versao(unit_kinds=KINDS))
+    guia = dataclasses.replace(registro(GUIA, GUIA_TRECHOS, ("p1", "p2", "p3")), units=GUIA_UNIDADES)
+    await index.write(build.name, guia, await codificar(GUIA_TRECHOS, embedder, sparse))
+    await index.write(
+        build.name, registro(MANUAL, MANUAL_TRECHOS, PAGINAS), await codificar(MANUAL_TRECHOS, embedder, sparse)
+    )
+    await index.publish(build.name)
+
+
+def test_arvore_caminho_forma_e_ramos_sobrevivem_a_gravacao(target: Target) -> None:
+    async def scenario(make: Make) -> None:
+        index = padrao(make)
+        await publicar_guia(index)
+        (lido,) = await index.get([GUIA_TRECHOS[0].chunk_id])
+        assert lido == GUIA_TRECHOS[0]
+        assert await index.unit_kinds() == KINDS
+
+    run(target, scenario)
+
+
+@pytest.mark.parametrize(
+    ("filtros", "esperado"),
+    [
+        (dataclasses.replace(DEFAULT, branch="lobinho"), {"manual-x-2026"}),  # o guia vale só para Sênior e Pioneiro
+        (dataclasses.replace(DEFAULT, branch="senior"), {"guia-esp-1#s1@p1", "guia-esp-1#s2@p2", "manual-x-2026"}),
+        (
+            dataclasses.replace(DEFAULT, branch="pioneiro"),
+            {"guia-esp-1#s1@p1", "guia-esp-1#s2@p2", "guia-esp-1#s3@p3", "manual-x-2026"},
+        ),
+        (dataclasses.replace(DEFAULT, shape="list"), {"guia-esp-1#s1@p1"}),
+    ],
+)
+def test_ramos_do_trecho_e_forma_na_busca(target: Target, filtros: IndexFilters, esperado: set[str]) -> None:
+    """O ramo é o do trecho (o grupo de insígnias do Pioneiro), senão o do documento; sem nenhum, geral."""
+
+    async def scenario(make: Make) -> None:
+        index = padrao(make)
+        await publicar_guia(index)
+        found = await index.search("especialidade ecoturismo reciclagem aprender patrulha", filters=filtros, limit=20)
+        guia = {c.chunk_id for c in found if c.doc_key == "guia-esp-1"}
+        manual = {c.doc_key for c in found if c.doc_key == "manual-x-2026"}
+        assert guia | manual == esperado
+
+    run(target, scenario)
+
+
+def test_unidades_de_um_tipo_com_caminho_e_ramos(target: Target) -> None:
+    async def scenario(make: Make) -> None:
+        index = padrao(make)
+        await publicar_guia(index)
+        especialidades = await index.units("especialidade", filters=DEFAULT)
+        assert [(u.unit.title, u.unit.page_start) for u in especialidades] == [
+            ("Ecoturismo", 1),
+            ("Sustentabilidade", 2),
+        ]
+        assert especialidades[0].path == (_EIXO,)
+        assert (
+            especialidades[0].document.doc_key == "guia-esp-1"
+            and especialidades[0].document.category == "Programa Educativo"
+        )
+        assert [
+            u.unit.title for u in await index.units("insignia", filters=dataclasses.replace(DEFAULT, branch="pioneiro"))
+        ] == ["Insígnia do Aprender"]
+        assert await index.units("insignia", filters=dataclasses.replace(DEFAULT, branch="lobinho")) == []
+        assert await index.units("cargo", filters=DEFAULT) == []
+        futuro = IndexFilters(effective_from=date(2020, 1, 1), effective_until=date(2020, 1, 1))
+        assert await index.units("especialidade", filters=futuro) == []  # a vigência é a do documento
+
+    run(target, scenario)
+
+
+def test_outline_em_preordem(target: Target) -> None:
+    async def scenario(make: Make) -> None:
+        index = padrao(make)
+        await publicar_guia(index)
+        arvore = await index.outline("guia-esp-1")
+        assert [u.unit.unit_id for u in arvore] == [u.unit_id for u in GUIA_UNIDADES]
+        assert arvore[4].path == (_GRUPO,)
+        assert await index.outline("nao-existe") == []
+
+    run(target, scenario)
+
+
+def test_o_sumario_fica_fora_da_busca_comum(target: Target) -> None:
+    """ADR-048: o trecho `outline` só entra quando pedido; sem `shape`, a busca vê `prose` e `list`."""
+    sumario = trecho(
+        GUIA, "sumario", 1, "[Guia · Sumário]\n- Eixo: Meio Ambiente (p. 1)\n  - Ecoturismo (p. 1)", shape="outline"
+    )
+
+    async def scenario(make: Make) -> None:
+        index = padrao(make)
+        embedder, sparse = HashingEmbedder(), Bm25Encoder()
+        build = await index.create(versao())
+        chunks = [*GUIA_TRECHOS, sumario]
+        await index.write(
+            build.name, registro(GUIA, chunks, ("p1", "p2", "p3")), await codificar(chunks, embedder, sparse)
+        )
+        await index.publish(build.name)
+        comum = await index.search("sumário eixo meio ambiente ecoturismo", filters=DEFAULT, limit=10)
+        assert sumario.chunk_id not in {c.chunk_id for c in comum}
+        pedido = await index.search(
+            "eixo meio ambiente", filters=dataclasses.replace(DEFAULT, shape="outline"), limit=10
+        )
+        assert [c.chunk_id for c in pedido] == [sumario.chunk_id]
 
     run(target, scenario)

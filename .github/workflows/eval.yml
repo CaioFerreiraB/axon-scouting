@@ -74,15 +74,30 @@ jobs:
         run: >-
           uv run --group platform axon eval run
           --golden eval/golden.yaml --baseline eval/baseline.json --report report.json
-      # Os fatos que precisam chegar à geração (US6, `scouting:fact_recall`).
+      # Os fatos que precisam chegar à geração (US6, `scouting:fact_recall`), com as quantidades da instalação (105 R20).
       - name: Conjunto de regressão da recuperação contra a linha de base
         env:
           AXON_PROFILE: test
           AXON_PACKS_FILE: eval/packs.yaml
           AXON_ASSISTANTS_FILE: eval/assistants.yaml
+          AXON_RAG_CANDIDATES: "20"
+          AXON_RAG_PASSAGES: "20"
+          AXON_TOOL_MAX_RESPONSE_BYTES: "65536"
         run: >-
           uv run --group platform axon eval run
           --golden eval/regression.yaml --baseline eval/regression-baseline.json --report regression-report.json
+      # As perguntas escritas lendo os PDFs, com metade de controle (research R22 da 105).
+      - name: Conjunto do acervo contra a linha de base
+        env:
+          AXON_PROFILE: test
+          AXON_PACKS_FILE: eval/packs.yaml
+          AXON_ASSISTANTS_FILE: eval/assistants.yaml
+          AXON_RAG_CANDIDATES: "20"
+          AXON_RAG_PASSAGES: "20"
+          AXON_TOOL_MAX_RESPONSE_BYTES: "65536"
+        run: >-
+          uv run --group platform axon eval run
+          --golden eval/acervo.yaml --baseline eval/acervo-baseline.json --report acervo-report.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -90,4 +105,5 @@ jobs:
           path: |
             report.json
             regression-report.json
+            acervo-report.json
           if-no-files-found: ignore

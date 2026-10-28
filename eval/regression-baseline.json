@@ -166,7 +166,7 @@
       "name": "scouting:context_accuracy",
       "value": 1.0,
       "variance": null,
-      "n": 8,
+      "n": 9,
       "deterministic": true,
       "better": "higher"
     },
@@ -196,7 +196,7 @@
     },
     {
       "name": "scouting:fact_recall",
-      "value": 0.8705357142857143,
+      "value": 0.9767857142857144,
       "variance": null,
       "n": 28,
       "deterministic": true,
@@ -522,7 +522,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.4
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -557,7 +557,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.8
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -592,7 +592,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.4
+        "scouting:fact_recall": 0.8
       },
       "citations": [],
       "flags": [
@@ -767,7 +767,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.8
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -837,7 +837,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.8
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -1082,7 +1082,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 0.75
       },
       "citations": [],
       "flags": [
@@ -1148,11 +1148,11 @@
         "generation_tokens_per_s": null,
         "controller_invalid_rate": null,
         "error_rate": 0.0,
-        "scouting:context_accuracy": null,
+        "scouting:context_accuracy": 1.0,
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.375
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -1202,7 +1202,5 @@
     }
   ],
   "invalid": [],
-  "annotations": [
-    "ADR-046: tipo sugerido ordena, só o citado filtra; tempo relativo; prompt sem 'trechos'; fatos de especialidades com redações alternativas (105 R19)"
-  ]
+  "annotations": []
 }

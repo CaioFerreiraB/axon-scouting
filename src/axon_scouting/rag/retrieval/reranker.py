@@ -11,13 +11,18 @@ from collections.abc import Sequence
 
 from axon_ai_contracts import Chunk
 
-from axon_scouting.rag.retrieval.domain.ordering import ordered
+from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
+from axon_scouting.rag.retrieval.domain.ordering import by_unit, ordered
 
 
 class MetadataReranker:
-    """Implementa `Reranker` (001). O v2 (hospedado) e o v3 (cross-encoder local) entram como adapters."""
+    """Implementa `Reranker` (001). O v2 (hospedado) e o v3 (cross-encoder local) entram como adapters. Depois do
+    corte, os irmãos de uma unidade vão juntos (ADR-048)."""
+
+    def __init__(self, config: RetrievalConfig | None = None) -> None:
+        self._config = config or RetrievalConfig()
 
     async def rerank(self, query: str, documents: Sequence[Chunk], *, top_k: int = 5) -> list[Chunk]:
         if top_k < 1:
             raise ValueError(f"top_k precisa ser ≥ 1 (veio {top_k})")
-        return ordered(documents)[:top_k]
+        return by_unit(ordered(documents)[:top_k], self._config.unit_tokens)

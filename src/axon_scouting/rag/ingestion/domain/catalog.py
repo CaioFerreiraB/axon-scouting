@@ -14,9 +14,10 @@ from datetime import date, datetime
 from pathlib import PurePath
 from typing import Final
 
-from axon_scouting.rag.index.api import BRANCHES, DocumentType, ValidityStatus
+from axon_scouting.rag.index.api import BRANCHES, ValidityStatus
 
-REQUIRED: Final = ("file", "document_id", "version", "type", "title", "jurisdiction", "effective_date")
+REQUIRED: Final = ("file", "document_id", "version", "title", "jurisdiction", "effective_date")
+REMOVED: Final = {"type": "o campo `type` saiu do catálogo (ADR-049): o tipo do documento é o da taxonomia, pela pasta"}
 OPTIONAL: Final = ("branch", "publication_date", "expiry_date", "supersedes", "status", "source_url")
 DECLARABLE_STATUS: Final = (ValidityStatus.RASCUNHO, ValidityStatus.REVOGADO)
 """Os únicos status que o curador escreve; `vigente` e `substituido` são derivados (research R4)."""
@@ -34,7 +35,6 @@ class CatalogEntry:
     path: PurePath
     document_id: str
     version: str
-    document_type: DocumentType
     title: str
     jurisdiction: str
     effective_date: date
@@ -137,7 +137,10 @@ def _validate_entry(number: int, item: object, base_dir: PurePath) -> tuple[Cata
     def problem(fields: Sequence[str], message: str) -> None:
         problems.append(CatalogProblem(entry=number, key=key, fields=tuple(fields), message=f"{prefix}: {message}"))
 
-    unknown = sorted(str(k) for k in item if k not in REQUIRED and k not in OPTIONAL)
+    for name, reason in REMOVED.items():
+        if name in item:
+            problem((name,), reason)
+    unknown = sorted(str(k) for k in item if k not in REQUIRED and k not in OPTIONAL and k not in REMOVED)
     for name in unknown:
         problem((name,), f"campo desconhecido: {name}")
     missing = [name for name in REQUIRED if item.get(name) in (None, "")]
@@ -166,7 +169,6 @@ def _validate_entry(number: int, item: object, base_dir: PurePath) -> tuple[Cata
             path=base_dir / file,
             document_id=str(values["document_id"]),
             version=str(values["version"]),
-            document_type=_as(values["type"], DocumentType),
             title=str(values["title"]),
             jurisdiction=str(values["jurisdiction"]),
             effective_date=_as(values["effective_date"], date),
@@ -214,13 +216,6 @@ def _version(value: object) -> str:
     return text
 
 
-def _type(value: object) -> DocumentType:
-    try:
-        return DocumentType(str(value))
-    except ValueError:
-        raise _Invalid(f"esperado um de {', '.join(t.value for t in DocumentType)}") from None
-
-
 def _text(value: object) -> str:
     if not isinstance(value, str) or not value.strip():
         raise _Invalid("esperado texto não vazio")
@@ -262,7 +257,6 @@ _PARSERS: Final = {
     "file": _file,
     "document_id": _document_id,
     "version": _version,
-    "type": _type,
     "title": _text,
     "jurisdiction": _text,
     "effective_date": _date,

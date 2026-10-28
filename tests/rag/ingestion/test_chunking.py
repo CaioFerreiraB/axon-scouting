@@ -27,7 +27,7 @@ def paragrafo(n_palavras: int, palavra: str = "atividade") -> str:
 
 
 def test_identidade_da_politica() -> None:
-    assert ChunkingPolicy().identity() == "estrutural-v2;janela=250-450"
+    assert ChunkingPolicy().identity() == "estrutural-v5;janela=250-450"
     assert estimate_tokens("a" * 9) == 3
 
 
@@ -40,7 +40,8 @@ def test_cabecalhos_numerados_abrem_secao_e_quebram_janela() -> None:
         "4.2.1 Acampamento",
         "O acampamento exige cardápio.",
     )
-    chunks = narrative_chunks(texto, "Manual X", ChunkingPolicy())
+    sem_juncao = ChunkingPolicy(window_min=1)  # nenhuma seção é pequena: cada título abre o seu trecho
+    chunks = narrative_chunks(texto, "Manual X", sem_juncao)
     assert [c.section_key for c in chunks] == ["4", "4.2", "4.2.1"]
     assert chunks[0].prefix == "[Manual X · 4 Programa de Atividades]"
     assert chunks[1].prefix == "[Manual X · 4 Programa de Atividades · 4.2 Atividades]"
@@ -201,7 +202,7 @@ def test_cabecalho_sempre_quebra() -> None:
 
 
 def test_politica_valida() -> None:
-    assert ChunkingPolicy(window_min=200, window_max=400).identity() == "estrutural-v2;janela=200-400"
+    assert ChunkingPolicy(window_min=200, window_max=400).identity() == "estrutural-v5;janela=200-400"
     for minimo, maximo in ((400, 400), (500, 400), (0, 400), (-1, 10)):
         with pytest.raises(ValueError):
             ChunkingPolicy(window_min=minimo, window_max=maximo)
@@ -248,3 +249,147 @@ def test_sobra_curta_no_fim_entra_no_ultimo_trecho() -> None:
     texto = linhas("1 Uniforme", "Use o lenço na atividade semanal.", "2 Fim", "Créditos")
     (chunk,) = narrative_chunks(texto, "Manual", ChunkingPolicy())
     assert chunk.body.endswith("Créditos")
+
+
+# --- hierarquia dos títulos (research R32) -----------------------------------------------------------------------
+
+
+def _especialidade(nome: str) -> list[str]:
+    return [
+        nome,
+        f"Nesta especialidade, você vai conhecer {nome.lower()}.",
+        "SUGESTÃO DE TEMAS",
+        f"Temas de {nome.lower()}: história, técnicas e cultura.",
+        "CONHECER",
+        "Escolha uma temática central e aprofunde-se.",
+    ]
+
+
+def test_subtitulo_recorrente_fica_sob_o_titulo_anterior() -> None:
+    texto = linhas(*_especialidade("GASTRONOMIA"), *_especialidade("IDIOMAS"), *_especialidade("VIAGENS"))
+    chunks = narrative_chunks(texto, "Guia", ChunkingPolicy(window_min=1))
+    prefixos = [c.prefix for c in chunks]
+    assert prefixos[:3] == [
+        "[Guia · GASTRONOMIA]",
+        "[Guia · GASTRONOMIA · SUGESTÃO DE TEMAS]",
+        "[Guia · GASTRONOMIA · CONHECER]",
+    ]
+    assert "[Guia · VIAGENS · SUGESTÃO DE TEMAS]" in prefixos
+    temas = next(c for c in chunks if c.body.startswith("Temas de idiomas"))
+    assert (temas.chapter, temas.section) == ("IDIOMAS", "SUGESTÃO DE TEMAS")
+
+
+def test_titulo_que_aparece_poucas_vezes_continua_de_nivel_um() -> None:
+    texto = linhas("APRESENTAÇÃO", "Este guia orienta.", "SUGESTÃO DE TEMAS", "Temas variados.")
+    chunks = narrative_chunks(texto, "Guia", ChunkingPolicy())
+    assert [c.prefix for c in chunks] == ["[Guia · APRESENTAÇÃO]", "[Guia · SUGESTÃO DE TEMAS]"]
+
+
+def test_requisitos_numerados_que_recomecam_nao_sao_titulos() -> None:
+    requisitos = [
+        "1. Explicar como as cavernas se formam.",
+        "2. Listar os equipamentos",
+        "e explicar os riscos.",
+        "3. Fazer uma apresentação",
+    ]
+    texto = linhas(
+        "ESPELEOTURISMO",
+        "Nesta especialidade, você vai conhecer cavernas.",
+        *requisitos,
+        "ESCALADA",
+        "Você vai escalar.",
+        *requisitos,
+        "RAPEL",
+        "Você vai descer.",
+        *requisitos,
+    )
+    chunks = narrative_chunks(texto, "Guia", ChunkingPolicy())
+    assert [c.chapter for c in chunks] == ["ESPELEOTURISMO", "ESCALADA", "RAPEL"]
+    assert "2. Listar os equipamentos e explicar os riscos." in chunks[0].body
+
+
+def test_item_seguido_da_continuacao_da_frase_nao_e_titulo() -> None:
+    texto = linhas("4 Programa", "O programa tem ciclos.", "5. Listar os equipamentos", "e explicar os riscos.")
+    chunks = narrative_chunks(texto, "Manual X", ChunkingPolicy())
+    assert [c.section_key for c in chunks] == ["4"]
+
+
+def test_ano_no_comeco_da_linha_nao_e_titulo() -> None:
+    texto = linhas("ATA DA REUNIÃO", "Os conselheiros se reuniram.", "2019. CRIS salienta a proposta orçamentária")
+    chunks = narrative_chunks(texto, "Ata", ChunkingPolicy())
+    assert len(chunks) == 1 and chunks[0].chapter == "ATA DA REUNIÃO"
+
+
+# --- linhas de unidade (ADR-048) ------------------------------------------------------------------------------------
+
+
+def _linhas(*textos: str) -> list[Line]:
+    return [Line(text=t, page=1) for t in textos]
+
+
+def test_itens_de_pauta_com_numeracao_crescente() -> None:
+    from axon_scouting.rag.ingestion.domain.chunking import AGENDA_ITEM
+
+    linhas = _linhas(
+        "01) DATA: 19 de fevereiro de 2000.",
+        "02) LOCAL: Curitiba.",
+        "03) PROJETOS OPAS/UEB: O Diretor apresenta o convênio firmado com a OPAS e os trabalhos previstos.",
+        "1) Uma lista dentro do item: recomeça e não é item.",
+    )
+    drafts = narrative_chunks(linhas, "Ata", ChunkingPolicy(), units=AGENDA_ITEM)
+    assert [d.chapter for d in drafts] == ["01) DATA", "02) LOCAL", "03) PROJETOS OPAS/UEB"]
+    assert drafts[2].body.startswith("O Diretor apresenta") and "recomeça" in drafts[2].body
+
+
+def test_linha_numerada_sozinha_nao_e_unidade() -> None:
+    from axon_scouting.rag.ingestion.domain.chunking import AGENDA_ITEM
+
+    drafts = narrative_chunks(
+        _linhas("1. Considerando: o texto segue normal."), "Ata", ChunkingPolicy(), units=AGENDA_ITEM
+    )
+    assert all(d.chapter is None for d in drafts)
+
+
+def test_pergunta_do_faq_em_duas_linhas() -> None:
+    from axon_scouting.rag.ingestion.domain.chunking import QUESTION
+
+    linhas = _linhas(
+        "1. O que é a Rede de Jovens Líderes?",
+        "É a rede dos jovens que participam da gestão.",
+        "2. Quando me torno Jovem Líder, eu deixo de",
+        "ser pioneiro?",
+        "Não: as duas coisas convivem.",
+    )
+    drafts = narrative_chunks(linhas, "FAQ", ChunkingPolicy(), units=QUESTION)
+    assert [d.chapter for d in drafts] == [
+        "1. O que é a Rede de Jovens Líderes?",
+        "2. Quando me torno Jovem Líder, eu deixo de ser pioneiro?",
+    ]
+
+
+def test_secoes_pequenas_juntam_se_a_mae_com_o_titulo_no_corpo() -> None:
+    """ADR-050: a filha pequena entra na mãe, e o título dela vira parágrafo do trecho."""
+    texto = linhas(
+        "4 Programa de Atividades",
+        "O programa é dividido em ciclos.",
+        "4.2 Atividades",
+        "As atividades são planejadas pela patrulha.",
+        "4.2.1 Acampamento",
+        "O acampamento exige cardápio.",
+    )
+    (chunk,) = narrative_chunks(texto, "Manual X", ChunkingPolicy())
+    assert chunk.prefix == "[Manual X · 4 Programa de Atividades]"
+    assert chunk.body.split("\n") == [
+        "O programa é dividido em ciclos.",
+        "4.2 Atividades",
+        "As atividades são planejadas pela patrulha.",
+        "4.2.1 Acampamento",
+        "O acampamento exige cardápio.",
+    ]
+
+
+def test_juncao_nao_engole_unidade_com_nome() -> None:
+    texto = linhas("CAPÍTULO 1", "Texto curto da abertura.", "GASTRONOMIA", "Requisitos curtos.", "IDIOMAS", "Outros.")
+    unidade = {"GASTRONOMIA", "IDIOMAS"}
+    chunks = narrative_chunks(texto, "Guia", ChunkingPolicy(), boundary=lambda caminho, i: caminho[i] in unidade)
+    assert [c.prefix for c in chunks] == ["[Guia · CAPÍTULO 1]", "[Guia · GASTRONOMIA]", "[Guia · IDIOMAS]"]

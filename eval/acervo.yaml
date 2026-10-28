@@ -1,0 +1,537 @@
+# Conjunto do acervo: perguntas escritas a partir da leitura dos PDFs (spec 105 R22).
+#
+# Cada fato de `extra.facts` foi copiado do texto do PDF (ordem de leitura do PdfiumParser, sem passar pelo índice) e
+# conferido contra o original; `scouting:fact_recall` mede se ele chega aos trechos entregues à geração. Os grupos:
+# `simples` (um fato de um documento), `lista` (uma enumeração dentro de um documento), `comparativo` (o mesmo conceito
+# em vários ramos), `multidocumento` (a resposta precisa de dois documentos ou mais) e `normativo` (Estatuto e
+# regulamentos). `extra.split` separa `desenvolvimento` — o que se lê para diagnosticar — de `controle` — o que só se
+# mede, para saber se uma correção generaliza ou só acerta o que foi olhado.
+version: 1
+name: scouting-acervo
+assistant: scouting
+items:
+  # --- simples ---------------------------------------------------------------------------------------------------
+  - id: fundacao-ueb
+    question: "Quando foi fundada a União dos Escoteiros do Brasil?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Em 4 de novembro de 1924 (Estatuto, Art. 1º)."
+    extra:
+      group: simples
+      split: desenvolvimento
+      facts:
+        - "fundada em 04 de novembro de 1924"
+
+  - id: sede-nacional
+    question: "Em que cidade fica a sede nacional dos Escoteiros do Brasil?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Em Curitiba, PR (Estatuto, Art. 10)."
+    extra:
+      group: simples
+      split: controle
+      facts:
+        - "Sede Nacional será na cidade de Curitiba"
+
+  - id: can-reunioes
+    question: "Quantas vezes por ano o Conselho de Administração Nacional se reúne?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Ordinariamente, no mínimo três vezes no ano (Regulamento Interno do CAN, Art. 13)."
+    extra:
+      group: simples
+      split: desenvolvimento
+      facts:
+        - "no mínimo, 3 (três) vezes no ano"
+
+  - id: promessa-lobinho
+    question: "Qual é o texto da Promessa do Lobinho?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      "Prometo fazer o melhor possível para: cumprir meus deveres para com Deus e minha Pátria; obedecer à Lei do
+      Lobinho; e fazer todos os dias uma boa ação." (POR, Regra 005).
+    extra:
+      group: simples
+      split: controle
+      facts:
+        - "obedecer à Lei do Lobinho; e fazer todos os dias uma boa ação"
+
+  - id: promessa-adultos
+    question: "O que muda na promessa feita pelos adultos?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Acrescenta \"e servir à União dos Escoteiros do Brasil\" (POR, Regra 006)."
+    extra:
+      group: simples
+      split: desenvolvimento
+      facts:
+        - "obedecer à Lei Escoteira; e servir à União dos Escoteiros do Brasil"
+
+  - id: matilha-tamanho
+    question: "Quantas crianças formam uma matilha e quantas matilhas pode ter uma alcateia?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "De quatro a seis crianças por matilha; no máximo quatro matilhas (POR, Regra 068)."
+    extra:
+      group: simples
+      split: controle
+      facts:
+        - "cada uma contendo de quatro a seis crianças"
+        - "no máximo, quatro Matilhas"
+
+  - id: nome-patrulha-escoteira
+    question: "Que nomes uma patrulha do Ramo Escoteiro pode adotar?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "O nome de um animal, de uma estrela, de uma constelação ou de uma árvore nativa brasileira (Regra 080)."
+    extra:
+      group: simples
+      split: desenvolvimento
+      facts:
+        - "o nome de um animal, de uma estrela, de uma constelação ou de uma árvore nativa brasileira"
+
+  - id: saida-do-cla
+    question: "Até quando um pioneiro pode ficar no clã?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Antes de completar 22 anos deve deixar o Clã, em Cerimônia de Partida (POR, Regra 122)."
+    extra:
+      group: simples
+      split: controle
+      facts:
+        - "Antes de completar 22 anos, o Pioneiro deve deixar o Clã"
+
+  - id: bebida-alcoolica
+    question: "É permitido consumir bebida alcoólica em atividades escoteiras?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Não: é política da UEB proibir bebidas alcoólicas em atividades do Programa Educativo (Regra 145)."
+    extra:
+      group: simples
+      split: desenvolvimento
+      facts:
+        - "proibir o uso de bebidas alcoólicas em atividades do Programa Educativo"
+
+  - id: natacao-resgate
+    question: "Numa atividade de natação, quantos adultos precisa ter a equipe de resgate?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Um adulto para cada dez jovens (Padrões de Atividades Escoteiras)."
+    extra:
+      group: simples
+      split: controle
+      facts:
+        - "um adulto para cada dez jovens"
+
+  - id: efetivo-secao
+    question: "Qual o efetivo mínimo de uma seção escoteira?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Seis crianças, adolescentes ou jovens nos ramos Lobinho, Escoteiro e Sênior, com pelo menos dois escotistas; no
+      Pioneiro, três jovens (Como Abrir uma Unidade Escoteira Local).
+    extra:
+      group: simples
+      split: desenvolvimento
+      facts:
+        - "efetivo mínimo de seis crianças"
+        - "No ramo Pioneiro, o efetivo mínimo é de três jovens"
+
+  - id: curso-espacos-seguros
+    question: "Todo adulto precisa fazer o curso de espaços seguros?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Sim: o registro do adulto depende de capacitação em espaços seguros, com aprovação obrigatória (Política Nacional
+      de Espaços Seguros, 8.2.11).
+    extra:
+      group: simples
+      split: controle
+      facts:
+        - "cuja aprovação é obrigatória a todo e qualquer adulto"
+
+  - id: encarregado-dados
+    question: "Com quem falo sobre os meus dados pessoais nos Escoteiros do Brasil?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Com o Encarregado de Dados (DPO), nomeado por resolução (Política de Tratamento de Dados)."
+    extra:
+      group: simples
+      split: desenvolvimento
+      facts:
+        - "Encarregado de Dados (Data Protection Officer"
+
+  - id: mensageiros-da-paz
+    question: "O que é o Mensageiros da Paz?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Uma iniciativa da Organização Mundial do Movimento Escoteiro, com distintivo no Guia de Especialidades e Insígnias
+      dos ramos Sênior e Pioneiro.
+    extra:
+      group: simples
+      split: controle
+      facts:
+        - "A iniciativa Mensageiros da Paz, da Organização Mundial do Movimento Escoteiro"
+
+  - id: niveis-especialidade-lobinho-escoteiro
+    question: "As especialidades do Lobinho e do Escoteiro têm níveis?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Sim, dois níveis progressivos, sem relação com o ramo: um lobinho pode conquistar o nível 2 (Guia de
+      Especialidades e Insígnias — Ramos Lobinho e Escoteiro).
+    extra:
+      group: simples
+      split: desenvolvimento
+      facts:
+        - "estabelecidos em dois níveis progressivos"
+
+  - id: especialidade-espeleoturismo
+    question: "O que preciso fazer para conquistar a especialidade de espeleoturismo?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Itens como explicar como as cavernas se formam, listar os equipamentos essenciais e reduzir os impactos
+      ambientais da visita (Guia de Especialidades — Ramos Lobinho e Escoteiro).
+    extra:
+      group: simples
+      split: controle
+      facts:
+        - "Explicar como as cavernas se formam"
+        - "Listar os equipamentos essenciais para o espeleoturismo"
+
+  - id: especialidade-gastronomia-temas
+    question: "Que temas posso explorar na especialidade de Gastronomia no Ramo Sênior?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Cultura e identidade alimentar, nutrição e saúde, técnicas culinárias, gastronomia sustentável, empreendedorismo
+      gastronômico, entre outros (Guia de Especialidades — Ramos Sênior e Pioneiro).
+    extra:
+      group: simples
+      split: desenvolvimento
+      facts:
+        - "Cultura e identidade alimentar"
+        - "Empreendedorismo gastronômico"
+
+  - id: escoteiro-da-patria-requisitos
+    question: "O que é preciso para receber o Reconhecimento de Escoteiro da Pátria?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Concluir todos os blocos de aprendizagem, viver o Desafio do Azimute, fazer a autoavaliação e ser avaliado
+      positivamente pela Corte de Honra (Guia do Desafio Sênior).
+    extra:
+      group: simples
+      split: controle
+      facts:
+        - "Ter vivenciado um Desafio Pessoal"
+        - "Ser avaliado positivamente pela Corte de Honra"
+
+  # --- lista -----------------------------------------------------------------------------------------------------
+  - id: orgaos-nacionais
+    question: "Quais são os órgãos nacionais da UEB?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Assembleia Nacional, Conselho de Administração Nacional, Diretoria Executiva Nacional, Conselho Consultivo,
+      Comissão Fiscal Nacional e Comissão de Ética e Disciplina Nacional (Estatuto, Art. 12).
+    extra:
+      group: lista
+      split: desenvolvimento
+      facts:
+        - "a Diretoria Executiva Nacional"
+        - "o Conselho Consultivo"
+        - "a Comissão de Ética e Disciplina Nacional"
+
+  - id: tipos-de-risco
+    question: "Que tipos de risco a Política Nacional de Gestão de Riscos considera?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Abusos, segurança física e psicossocial, gestão, financeiros/patrimoniais, jurídicos, imagem e reputação e
+      tecnológicos.
+    extra:
+      group: lista
+      split: controle
+      facts:
+        - "Riscos de abusos"
+        - "Riscos de segurança física e psicossocial"
+        - "Riscos jurídicos"
+        - "Riscos de imagem e reputação"
+        - "Riscos tecnológicos"
+
+  - id: especialidades-pioneiro
+    question: "Quais são as especialidades do Ramo Pioneiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      As mesmas do Sênior, sem níveis, nos quatro eixos: de Comunicações a Viagens (Habilidades para a Vida),
+      Agricultura Sustentável a Sustentabilidade (Meio Ambiente), Ações Humanitárias a Políticas Públicas (Paz e
+      Compreensão) e Educação Alimentar e Nutricional a Saúde Sexual e Reprodutiva (Saúde e Bem-estar).
+    extra:
+      group: lista
+      split: desenvolvimento
+      facts:
+        - "Empreendedorismo e Negócios"
+        - "Agricultura Sustentável"
+        - "Fé, Crenças e Diálogo Inter-religioso"
+        - "Saúde Sexual e Reprodutiva"
+
+  - id: orgaos-do-grupo
+    question: "Quais são os órgãos de um grupo escoteiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Assembleia de Grupo, Diretoria de Grupo, Comissão Fiscal de Grupo e as Seções (Estatuto, Art. 31)."
+    extra:
+      group: lista
+      split: controle
+      facts:
+        - "a Assembleia de Grupo"
+        - "a Diretoria de Grupo"
+        - "a Comissão Fiscal de Grupo"
+
+  - id: personagens-filhotes
+    question: "Quem são os personagens do Ramo Filhotes?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Paco, Lipe, Tixa e Nina (Manual do Escotista — Ramo Filhotes)."
+    extra:
+      group: lista
+      split: desenvolvimento
+      facts:
+        - "Paco"
+        - "Lipe"
+        - "Tixa"
+        - "Nina"
+
+  - id: papeis-cyberbullying
+    question: "Quem são os envolvidos numa situação de cyberbullying?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Autores (inclusive os profissionais), alvos ou vítimas e testemunhas ou espectadores."
+    extra:
+      group: lista
+      split: controle
+      facts:
+        - "Alvos ou Vítimas"
+        - "Testemunhas ou Espectadores"
+
+  - id: cores-das-matilhas
+    question: "Quais são as cores das matilhas?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Preta, Cinza, Branca, Vermelha, Marrom ou Amarela (POR, Regra 068)."
+    extra:
+      group: lista
+      split: desenvolvimento
+      facts:
+        - "Matilha Preta, Matilha Cinza, Matilha Branca, Matilha Vermelha"
+
+  # --- comparativo -----------------------------------------------------------------------------------------------
+  - id: idade-chefe-de-secao
+    question: "Qual a idade mínima para ser chefe de seção em cada ramo?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Filhotes, Lobinho e Escoteiro: 21 anos; Sênior: 23; Pioneiro: 28 (POR, Regra 129)."
+    extra:
+      group: comparativo
+      split: controle
+      facts:
+        - "Chefe de Seção do Ramo Filhotes, Lobinho e Escoteiro: a partir de 21 anos"
+        - "Chefe de Seção do Ramo Sênior: a partir de 23 anos"
+        - "Chefe de Seção do Ramo Pioneiro: a partir de 28 anos"
+
+  - id: reconhecimento-de-cada-ramo
+    question: "Qual o reconhecimento máximo da progressão em cada ramo, do Lobinho ao Pioneiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Lobinho: Cruzeiro do Sul; Escoteiro: Lis de Ouro; Sênior: Escoteiro da Pátria; Pioneiro: Insígnia de B-P (guias
+      de cada ramo).
+    extra:
+      group: comparativo
+      split: desenvolvimento
+      facts:
+        - "Reconhecimento de Cruzeiro do Sul"
+        - "Reconhecimento de Lis de Ouro"
+        - "Reconhecimento de Escoteiro da Pátria"
+        - "Reconhecimento de Insígnia de B-P"
+
+  - id: blocos-escoteiro-e-senior
+    question: "Quantos blocos de aprendizagem o escoteiro e o sênior precisam completar para a primeira mudança de etapa?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Escoteiro: pelo menos quatro, de Pistas para Trilha (Guia da Descoberta Escoteira); Sênior: pelo menos seis, de
+      Escalada para Conquista (Guia do Desafio Sênior).
+    extra:
+      group: comparativo
+      split: controle
+      facts:
+        - "Para passar da Etapa de Pistas para Etapa de Trilha"
+        - "Para passar da Etapa de Escalada para Etapa de Conquista"
+
+  - id: patrulhas-escoteiro-e-senior
+    question: "Como se dão os nomes das patrulhas no Ramo Escoteiro e no Ramo Sênior?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      No Escoteiro, animal, estrela, constelação ou árvore nativa (Regra 080); no Sênior, um nome característico, como
+      um acidente geográfico ou um povo (Regra 096).
+    extra:
+      group: comparativo
+      split: desenvolvimento
+      facts:
+        - "o nome de um animal, de uma estrela, de uma constelação ou de uma árvore nativa brasileira"
+        - "Cada Patrulha adota um nome característico, que pode ser o de acidente geográfico"
+
+  - id: tamanho-das-equipes
+    question: "Quantos jovens tem uma matilha, uma patrulha escoteira e uma patrulha sênior?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Matilha: 4 a 6; patrulha escoteira: 4 a 8; patrulha sênior: 4 a 8 (POR, Regras 068, 080 e 096)."
+    extra:
+      group: comparativo
+      split: controle
+      facts:
+        - "cada uma contendo de quatro a seis crianças"
+        - "cada uma contendo de 4 a 8 adolescentes"
+        - "cada uma contendo de quatro a oito jovens"
+
+  - id: idade-assistente
+    question: "A partir de que idade alguém pode ser assistente de seção no Lobinho, no Sênior e no Pioneiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Lobinho: 18 anos; Sênior: 21; Pioneiro: 25 (POR, Regra 129)."
+    extra:
+      group: comparativo
+      split: desenvolvimento
+      facts:
+        - "Assistente do Ramo Filhotes, Lobinho e Escoteiro: a partir de 18 anos"
+        - "Assistente do Ramo Sênior: a partir de 21 anos"
+        - "Assistente do Ramo Pioneiro: a partir de 25 anos"
+
+  # --- multidocumento --------------------------------------------------------------------------------------------
+  - id: patrulha-sem-adultos
+    question: "Uma patrulha pode acampar sozinha, sem adultos? O que é exigido?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Pode realizar atividades de patrulha com planejamento aprovado pela UEL, acompanhada por adultos responsáveis,
+      plano de segurança e autorização dos responsáveis (POR, Regra 142); a gestão de riscos trata a segurança física
+      e psicossocial (Política Nacional de Gestão de Riscos).
+    extra:
+      group: multidocumento
+      split: desenvolvimento
+      facts:
+        - "acompanhadas por adultos responsáveis"
+        - "A autorização dos responsáveis legais é imprescindível"
+        - "Riscos de segurança física e psicossocial"
+
+  - id: requisitos-do-escotista
+    question: "Que requisitos um adulto precisa cumprir para atuar como escotista?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Ser pessoa idônea com mais de 18 anos (POR), ter a idade mínima da função (Regra 129) e ser aprovado na
+      capacitação de espaços seguros (Política Nacional de Espaços Seguros).
+    extra:
+      group: multidocumento
+      split: controle
+      facts:
+        - "pessoas idôneas com mais de 18 anos de idade"
+        - "cuja aprovação é obrigatória a todo e qualquer adulto"
+
+  - id: abrir-grupo-escoteiro
+    question: "O que é preciso para abrir um grupo escoteiro e quem o dirige?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Ao menos vinte associados, duas seções, diretoria e comissão fiscal (Como Abrir uma UEL); a Diretoria de Grupo,
+      com mandato de dois anos e no mínimo três membros, dirige (Estatuto, Art. 35).
+    extra:
+      group: multidocumento
+      split: desenvolvimento
+      facts:
+        - "efetivo mínimo de vinte associados registrados"
+        - "A Diretoria do Grupo é o órgão executivo do Grupo Escoteiro"
+
+  - id: pioneiro-como-escotista
+    question: "Um pioneiro pode atuar como escotista? A partir de que idade?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Sim, em outra seção do grupo, sem deixar o clã (Regra 121), respeitando a idade mínima: assistente no Lobinho ou
+      Escoteiro a partir de 18 anos (Regra 129).
+    extra:
+      group: multidocumento
+      split: controle
+      facts:
+        - "Pioneiros poderão ser nomeados para atuarem como escotistas em outra Seção"
+        - "Assistente do Ramo Filhotes, Lobinho e Escoteiro: a partir de 18 anos"
+
+  - id: passagem-senior-pioneiro
+    question: "Como acontece a passagem do Ramo Sênior para o Ramo Pioneiro?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Aos 18 anos o sênior deixa a tropa, depois de um período de transição chamado "Caminho" (POR, Regra 106); no clã,
+      a progressão vai até o Reconhecimento de Insígnia de B-P (Guia do Horizonte Pioneiro).
+    extra:
+      group: multidocumento
+      split: desenvolvimento
+      facts:
+        - "Ao completar 18 anos, o Sênior e a Guia devem deixar a Tropa Sênior"
+        - "Reconhecimento de Insígnia de B-P"
+
+  - id: especialidade-senior-meio-ambiente
+    question: "Como um sênior conquista uma especialidade e quais existem no eixo Meio Ambiente?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Sem níveis, pela realização integral das etapas do projeto; no Meio Ambiente: Agricultura Sustentável,
+      Ecoturismo, Educação Ambiental, Esportes de Aventura, Habilidades Escoteiras, Natureza e Ciências Naturais e
+      Sustentabilidade (Guia de Especialidades — Ramos Sênior e Pioneiro).
+    extra:
+      group: multidocumento
+      split: controle
+      facts:
+        - "não possuem níveis e a sua conquista está relacionada com a realização integral de suas etapas"
+        - "Natureza e Ciências Naturais"
+
+  - id: progressao-lobinho-reconhecimento
+    question: "Quantos blocos o lobinho precisa para chegar ao Cruzeiro do Sul e quais são as etapas?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Os dezoito blocos, passando por Pata Tenra, Saltador, Rastreador e Caçador (Guia do Povo Livre).
+    extra:
+      group: multidocumento
+      split: desenvolvimento
+      facts:
+        - "concluir os dezoito Blocos de Aprendizagem"
+        - "Etapa de Rastreador para a Etapa de Caçador"
+
+  # --- normativo -------------------------------------------------------------------------------------------------
+  - id: assembleia-extraordinaria
+    question: "Quem pode pedir uma reunião extraordinária da Assembleia Nacional?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      O CAN, ou por solicitação da Diretoria Executiva Nacional, da Comissão Fiscal Nacional, da Comissão de Ética e
+      Disciplina Nacional, de um terço das Diretorias Regionais ou de um quinto dos associados (Estatuto).
+    extra:
+      group: normativo
+      split: controle
+      facts:
+        - "de um terço das Diretorias Regionais, ou de um quinto dos associados"
+
+  - id: reeleicao-can
+    question: "Um conselheiro nacional pode ser reeleito?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Não para mandatos consecutivos (Estatuto, Art. 16, §1º)."
+    extra:
+      group: normativo
+      split: desenvolvimento
+      facts:
+        - "Não é permitida a reeleição para mandatos consecutivos"
+
+  - id: composicao-can
+    question: "Como é composto o Conselho de Administração Nacional?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Quatorze conselheiros com mandato de quatro anos, renovando metade a cada dois anos; sem voto, dois representantes
+      da Rede Nacional de Jovens Líderes e cinco das áreas geográficas (Estatuto, Art. 16).
+    extra:
+      group: normativo
+      split: controle
+      facts:
+        - "quatorze Conselheiros Nacionais"
+        - "2 (dois) representantes indicados pela Rede Nacional de Jovens Líderes"
+
+  - id: comissao-fiscal-nacional
+    question: "Como funciona a Comissão Fiscal Nacional?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: >-
+      Três titulares com mandato de quatro anos e três suplentes; reúne-se no mínimo semestralmente para analisar os
+      balancetes (Estatuto, Art. 21).
+    extra:
+      group: normativo
+      split: desenvolvimento
+      facts:
+        - "Comissão Fiscal Nacional se reunirá, no mínimo semestralmente"
+
+  - id: diretoria-de-grupo
+    question: "Qual o mandato da diretoria de um grupo escoteiro e quantos membros ela tem?"
+    reference_time: "2026-10-27T12:00:00-03:00"
+    reference_answer: "Dois anos, com no mínimo três membros, um deles o Diretor-Presidente (Estatuto, Art. 35)."
+    extra:
+      group: normativo
+      split: controle
+      facts:
+        - "órgão executivo do Grupo Escoteiro, com mandato de dois anos"
+        - "É composta por, no mínimo, três membros"

@@ -1,9 +1,11 @@
 """Derivação de contexto da pergunta: ramo, temas, tipos de documento e vigência (spec 101 FR-004 a FR-006).
 
 Função pura de (pergunta, dia de referência, léxico) — sem modelo, sem relógio, sem I/O (princípio V, SC-002). Só o
-tipo de documento citado filtra; o sugerido pelos temas só ordena (ADR-046). Na dúvida, a derivação não filtra: ramo
-ambíguo resulta em nenhum filtro de ramo (research R8). Mais de um ramo, ou um marcador de totalidade ("cada ramo"),
-resulta em facetas — `branches` —, uma busca por ramo na 103 (ADR-045).
+tipo de documento citado filtra; o sugerido pelos temas só ordena (ADR-046). Os tipos, os órgãos e a abrangência são os
+da taxonomia do acervo (ADR-049); órgão e abrangência filtram só junto com um tipo citado ou um pedido de lista ("as
+atas da assembleia regional") — sozinhos ("como funciona o CAN?"), o órgão só desempata. Na dúvida, a derivação não
+filtra: ramo ambíguo resulta em nenhum filtro de ramo (research R8). Mais de um ramo, ou um marcador de totalidade
+("cada ramo"), resulta em facetas — `branches` —, uma busca por ramo na 103 (ADR-045).
 """
 
 from __future__ import annotations
@@ -36,6 +38,34 @@ class ScoutingContext:
     validity: Validity
     include_superseded: bool
     previous_version: bool
+    bodies: tuple[str, ...] = ()
+    """Os órgãos nomeados (ids da taxonomia), quando filtram: com um tipo citado ou um pedido de lista (ADR-049)."""
+    scopes: tuple[str, ...] = ()
+    """A abrangência nomeada (`nacional`, `regional`…), nas mesmas condições dos órgãos."""
+    suggested_bodies: tuple[str, ...] = ()
+    """Os órgãos nomeados sem tipo citado nem pedido de lista: só desempatam a ordem."""
+    catalog: CatalogRequest | None = None
+    """Pedido de lista de documentos (ADR-047); `None` quando a pergunta não pede uma."""
+    enumeration: EnumerationRequest | None = None
+    """Pedido de enumeração que não é de documentos (ADR-048); `None` quando a pergunta não pede uma."""
+
+
+@dataclass(frozen=True, slots=True, kw_only=True)
+class CatalogRequest:
+    """A lista pedida: a espécie, pela palavra do título no singular (`documento` = qualquer título), e as palavras
+    da pergunta que a qualificam, normalizadas, na ordem em que aparecem."""
+
+    kind: str
+    terms: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True, kw_only=True)
+class EnumerationRequest:
+    """A enumeração pedida: o tipo de unidade cujo plural a pergunta usa (ou `None`) e as palavras que a qualificam,
+    sem as de ligação, o plural do tipo e o ramo, na ordem em que aparecem."""
+
+    unit_kind: str | None
+    terms: tuple[str, ...]
 
 
 def derive_context(question: str, reference_day: date, lexicon: Lexicon = LEXICON) -> ScoutingContext:
@@ -44,16 +74,26 @@ def derive_context(question: str, reference_day: date, lexicon: Lexicon = LEXICO
     period = find_period(text, reference_day)
     previous = _matches(text, lexicon.previous_markers)
     branch, branches = _branches(text, lexicon)
+    catalog = _catalog(text, lexicon)
+    cited = _cited_types(text, lexicon)
+    named = tuple(body for body, terms in lexicon.bodies.items() if _matches(text, terms))
+    scoped = tuple(scope for scope, terms in lexicon.scopes.items() if _matches(text, terms))
+    filtering = bool(cited) or catalog is not None  # órgão e abrangência são fonte só quando a pergunta cita um tipo
     return ScoutingContext(
         branch=branch,
         branches=branches,
         topics=tuple(topic.id for topic in topics),
-        document_types=_cited_types(text, lexicon),
+        document_types=cited,
         suggested_types=_suggested_types(text, lexicon, topics),
         # Consulta histórica (US3): o período citado, ou o dia de referência quando a pergunta mira a versão anterior.
         validity=period or Validity.day(reference_day),
         include_superseded=period is not None or previous,
         previous_version=previous,
+        catalog=catalog,
+        enumeration=None if catalog is not None else _enumeration(text, lexicon),
+        bodies=named if filtering else (),
+        scopes=scoped if filtering else (),
+        suggested_bodies=() if filtering else named,
     )
 
 
@@ -70,6 +110,15 @@ def to_slice(context: ScoutingContext) -> dict[str, JSONValue]:
         "effective_until": context.validity.end.isoformat(),
         "include_superseded": context.include_superseded,
         "previous_version": context.previous_version,
+        "bodies": list(context.bodies),
+        "scopes": list(context.scopes),
+        "suggested_bodies": list(context.suggested_bodies),
+        "catalog": None
+        if context.catalog is None
+        else {"kind": context.catalog.kind, "terms": list(context.catalog.terms)},
+        "enumeration": None
+        if context.enumeration is None
+        else {"unit_kind": context.enumeration.unit_kind, "terms": list(context.enumeration.terms)},
     }
     filters = {key: value for key, value in full.items() if value is not None and value != []}
     return {CONTEXT_KEY: full, RETRIEVAL_FILTERS_KEY: filters}
@@ -107,3 +156,43 @@ def _suggested_types(text: str, lexicon: Lexicon, topics: tuple[Topic, ...]) -> 
     for topic in topics:
         suggested.update(topic.document_types)
     return tuple(kind for kind in lexicon.document_types if kind in suggested)
+
+
+def _catalog(text: str, lexicon: Lexicon) -> CatalogRequest | None:
+    """Um marcador de enumeração e o plural de uma espécie pedem a lista (ADR-047); a primeira espécie citada vence.
+    Sem palavra que qualifique, `documento` não pede nada — seria o acervo inteiro."""
+    if not _matches(text, lexicon.list_markers):
+        return None
+    kind = next(
+        (kind for kind, plurals in lexicon.catalog_kinds.items() if _matches(text, plurals)),
+        None,
+    )
+    if kind is None:
+        return None
+    named = {kind for kind in lexicon.catalog_kinds} | {p for ps in lexicon.catalog_kinds.values() for p in ps}
+    ignored = lexicon.catalog_stopwords | named
+    terms: list[str] = []
+    for word in text.split():
+        if word not in ignored and word not in terms and (len(word) > 2 or word.isdigit()):
+            terms.append(word)
+    if kind == "documento" and not terms:
+        return None
+    return CatalogRequest(kind=kind, terms=tuple(terms))
+
+
+def _enumeration(text: str, lexicon: Lexicon) -> EnumerationRequest | None:
+    """Um marcador de enumeração que não pede documentos (esse é o `catalog`): a lista sai da estrutura dos documentos
+    (ADR-048). O tipo de unidade é o primeiro cujo plural a pergunta usa; sem nenhum, `None` — a 103 busca então os
+    trechos com forma de lista."""
+    if not _matches(text, lexicon.list_markers):
+        return None
+    unit_kind = next((kind for kind, plurals in lexicon.unit_kinds.items() if _matches(text, plurals)), None)
+    ignored = set(lexicon.catalog_stopwords)
+    ignored.update(word for plurals in lexicon.unit_kinds.values() for plural in plurals for word in plural.split())
+    ignored.update(word for terms in lexicon.branches.values() for term in terms for word in term.split())
+    ignored.update(word for marker in lexicon.list_markers for word in marker.split())
+    terms: list[str] = []
+    for word in text.split():
+        if word not in ignored and word not in terms and (len(word) > 2 or word.isdigit()):
+            terms.append(word)
+    return EnumerationRequest(unit_kind=unit_kind, terms=tuple(terms))
