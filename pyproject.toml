@@ -1,6 +1,6 @@
 [project]
 name = "axon-scouting"
-version = "0.6.0"
+version = "0.7.0"
 description = "Pack de domínio escoteiro da plataforma Axon (specs 1xx em axon)."
 readme = "README.md"
 license = "MIT"
