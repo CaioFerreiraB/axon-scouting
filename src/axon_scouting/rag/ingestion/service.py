@@ -299,7 +299,10 @@ class IngestionService:
             for part in fit(placed.draft, self._tokens.count)
         ]
         ids = chunk_ids(fields.doc_key, [(p.draft.section_key, p.draft.page_start) for p in placed_chunks])
-        chunks = tuple(_chunk(chunk_id, placed, fields) for chunk_id, placed in zip(ids, placed_chunks, strict=True))
+        chunks = tuple(
+            _chunk(chunk_id, placed, fields, entry.source_url)
+            for chunk_id, placed in zip(ids, placed_chunks, strict=True)
+        )
         structure_key = resolution.fingerprint()
         record = DocumentRecord(
             fields=fields,
@@ -401,7 +404,7 @@ def _fields(entry: CatalogEntry, validity: Validity, resolution: Resolution) -> 
     )
 
 
-def _chunk(chunk_id: str, placed: PlacedChunk, fields: DocumentFields) -> IndexedChunk:
+def _chunk(chunk_id: str, placed: PlacedChunk, fields: DocumentFields, source_url: str | None) -> IndexedChunk:
     document = {f.name: getattr(fields, f.name) for f in dataclasses.fields(fields)}
     draft = placed.draft
     return IndexedChunk(
@@ -418,5 +421,6 @@ def _chunk(chunk_id: str, placed: PlacedChunk, fields: DocumentFields) -> Indexe
         unit_kind=placed.unit_kind,
         shape=placed.shape,
         branches=placed.branches if placed.branches != ((fields.branch,) if fields.branch else ()) else (),
+        source_url=source_url,
         **document,
     )

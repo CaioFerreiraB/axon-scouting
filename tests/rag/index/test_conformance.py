@@ -183,7 +183,9 @@ def test_copiar_preserva_vetores_e_reescreve_vigencia(target: Target) -> None:
         antes = await index.search(consulta, filters=DEFAULT, limit=3)
         destino = await index.create(versao(built_at=INSTANTE.replace(hour=16)))
         revogada = dataclasses.replace(NORMA, status=ValidityStatus.REVOGADO, expiry_date=date(2030, 12, 31))
-        await index.copy(origem, destino.name, registro(revogada, NORMA_TRECHOS, PAGINAS))
+        nova_url = "https://exemplo.org/norma-x-1-corrigida.pdf"
+        movida = dataclasses.replace(registro(revogada, NORMA_TRECHOS, PAGINAS), source_url=nova_url)
+        await index.copy(origem, destino.name, movida)
         await index.copy(origem, destino.name, registro(MANUAL, MANUAL_TRECHOS, PAGINAS))
         await index.publish(destino.name)
         depois = await index.search(consulta, filters=DEFAULT, limit=3)
@@ -194,6 +196,7 @@ def test_copiar_preserva_vetores_e_reescreve_vigencia(target: Target) -> None:
         copiados = await index.get([c.chunk_id for c in NORMA_TRECHOS])
         assert {c.status for c in copiados} == {ValidityStatus.REVOGADO}
         assert {c.expiry_date for c in copiados} == {date(2030, 12, 31)}
+        assert {c.source_url for c in copiados} == {nova_url}, "o link vem do registro, não da cópia (ADR-051)"
         assert [c.article for c in copiados] == ["Art. 41", "Art. 42", "Art. 43"]
         assert [d.doc_key for d in await index.documents(destino.name)] == ["manual-x-2026", "norma-x-1"]
         with pytest.raises(KeyError):

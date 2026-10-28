@@ -126,6 +126,8 @@ class IndexedChunk:
     """Os órgãos do documento, como ids: a categoria e a subcategoria da taxonomia (ADR-049)."""
     scope: str | None = None
     """A abrangência (um de `SCOPES`; ADR-049)."""
+    source_url: str | None = None
+    """O endereço público do original, do registro do documento (ADR-051): é o link da citação."""
     path: tuple[UnitRef, ...] = ()
     """As unidades acima do trecho, da raiz para baixo (ADR-048)."""
     unit_kind: str | None = None
@@ -186,6 +188,7 @@ class IndexedChunk:
             "expiry_date": _iso(self.expiry_date),
             "superseded_by": self.superseded_by,
             "unit_kind": self.unit_kind,
+            "source_url": self.source_url,
             UNIT_GROUP: self.unit_group,
         }
         return Chunk(

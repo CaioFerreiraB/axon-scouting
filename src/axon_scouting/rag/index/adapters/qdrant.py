@@ -231,7 +231,9 @@ class QdrantIndex:
             m.PointStruct(
                 id=p.id,
                 vector=p.vector,  # type: ignore[arg-type]
-                payload=chunk_to_payload(with_document(chunk_from_payload(_payload(p)), document.fields)),
+                payload=chunk_to_payload(
+                    with_document(chunk_from_payload(_payload(p)), document.fields, source_url=document.source_url)
+                ),
             )
             for p in points
         ]

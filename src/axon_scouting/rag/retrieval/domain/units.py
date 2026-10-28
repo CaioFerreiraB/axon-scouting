@@ -81,6 +81,7 @@ def units_card(
         "expiry_date": None if document.expiry_date is None else document.expiry_date.isoformat(),
         "superseded_by": document.superseded_by,
         "unit_kind": units[0].unit.kind if units else None,
+        "source_url": document.source_url,
         FUSION_SCORE: 1.0,
         STRUCTURE_RANK: rank,
         **marks(document, filters),

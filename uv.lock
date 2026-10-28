@@ -169,8 +169,8 @@ wheels = [
 
 [[package]]
 name = "axon-ai"
-version = "0.7.0rc4"
-source = { git = "ssh://git@github.com/CaioFerreiraB/axon.git?subdirectory=axon-ai%2Fpackages%2Fcore&tag=v0.7.0-rc4#fb7d1bd413e1af121dfb1f42c7fc66661eb8dd27" }
+version = "0.7.0rc8"
+source = { git = "ssh://git@github.com/CaioFerreiraB/axon.git?subdirectory=axon-ai%2Fpackages%2Fcore&tag=v0.7.0-rc8#b54ae24a9e06807f911e969b70ddf5cfea2f5a0f" }
 dependencies = [
     { name = "argon2-cffi" },
     { name = "axon-ai-contracts" },
@@ -191,15 +191,15 @@ dependencies = [
 
 [[package]]
 name = "axon-ai-contracts"
-version = "0.2.1"
-source = { git = "ssh://git@github.com/CaioFerreiraB/axon.git?subdirectory=axon-ai%2Fpackages%2Fcontracts&tag=v0.7.0-rc4#fb7d1bd413e1af121dfb1f42c7fc66661eb8dd27" }
+version = "0.2.3"
+source = { git = "ssh://git@github.com/CaioFerreiraB/axon.git?subdirectory=axon-ai%2Fpackages%2Fcontracts&tag=v0.7.0-rc8#b54ae24a9e06807f911e969b70ddf5cfea2f5a0f" }
 dependencies = [
     { name = "typing-extensions" },
 ]
 
 [[package]]
 name = "axon-scouting"
-version = "0.7.0"
+version = "0.8.0"
 source = { editable = "." }
 dependencies = [
     { name = "axon-ai-contracts" },
@@ -227,7 +227,7 @@ platform = [
 
 [package.metadata]
 requires-dist = [
-    { name = "axon-ai-contracts", git = "ssh://git@github.com/CaioFerreiraB/axon.git?subdirectory=axon-ai%2Fpackages%2Fcontracts&tag=v0.7.0-rc4" },
+    { name = "axon-ai-contracts", git = "ssh://git@github.com/CaioFerreiraB/axon.git?subdirectory=axon-ai%2Fpackages%2Fcontracts&tag=v0.7.0-rc8" },
     { name = "numpy" },
     { name = "onnxruntime", specifier = ">=1.24.2" },
     { name = "pypdfium2", specifier = ">=5,<6" },
@@ -246,7 +246,7 @@ dev = [
     { name = "ruff" },
     { name = "types-pyyaml" },
 ]
-platform = [{ name = "axon-ai", marker = "python_full_version >= '3.14'", git = "ssh://git@github.com/CaioFerreiraB/axon.git?subdirectory=axon-ai%2Fpackages%2Fcore&tag=v0.7.0-rc4" }]
+platform = [{ name = "axon-ai", marker = "python_full_version >= '3.14'", git = "ssh://git@github.com/CaioFerreiraB/axon.git?subdirectory=axon-ai%2Fpackages%2Fcore&tag=v0.7.0-rc8" }]
 
 [[package]]
 name = "certifi"

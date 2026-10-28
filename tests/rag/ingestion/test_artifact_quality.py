@@ -18,6 +18,7 @@ from axon_scouting.rag.ingestion.domain.chunking import MIN_BODY_LETTERS
 
 ROOT = Path(__file__).resolve().parents[3]
 CHUNKS = ROOT / "src" / "axon_scouting" / "data" / "index" / "chunks.jsonl"
+DOCUMENTS = CHUNKS.with_name("documents.jsonl")
 TOKENIZER = ROOT / ".cache" / "e5" / "tokenizer.json"
 MAX_TOKENS = 512
 MAX_TRUNCATED = 0.0
@@ -74,3 +75,14 @@ def test_nenhum_trecho_alem_do_que_o_e5_le(chunks: list[dict[str, Any]]) -> None
     tokenizer = Tokenizer.from_file(str(TOKENIZER))
     lengths = [len(e.ids) for e in tokenizer.encode_batch([f"passage: {chunk['text']}" for chunk in chunks])]
     assert sum(length > MAX_TOKENS for length in lengths) / len(lengths) <= MAX_TRUNCATED
+
+
+def test_todo_trecho_leva_o_link_do_proprio_documento(chunks: list[dict[str, Any]]) -> None:
+    """O `[n]` da resposta abre o original (ADR-051): cada trecho tem o `source_url` do registro do documento dele."""
+    urls = {}
+    for line in DOCUMENTS.read_text(encoding="utf-8").split("\n"):
+        if line:
+            document = json.loads(line)
+            urls[document["doc_key"]] = document["source_url"]
+    assert all(urls.values()), "todo documento do catálogo tem URL"
+    assert [c["chunk_id"] for c in chunks if c.get("source_url") != urls[c["doc_key"]]] == []

@@ -11,6 +11,7 @@ contexto.
 from __future__ import annotations
 
 import asyncio
+import json
 import os
 import re
 from collections.abc import AsyncIterator, Iterator, Mapping, Sequence
@@ -153,6 +154,10 @@ def test_pergunta_coberta_responde_com_uma_chamada_e_citacao_resolvivel(montar: 
     (citacao,) = payload["x_axon"]["citations"]
     assert citacao["chunk_id"] == citado.group(1)
     assert citacao["document"] and citacao["page"]
+    doc_key = citacao["chunk_id"].split("#")[0]
+    assert citacao["url"] == f"https://exemplo.org/{doc_key}.pdf#page={citacao['page']}", (
+        "o original na página (ADR-051)"
+    )
 
     tipos = [r.type for r in plataforma.trace.trace(payload["x_axon"]["request_id"]).records]
     assert tipos.count("model_call") == 1, "SC-004: uma chamada de modelo no caminho coberto"
@@ -188,9 +193,42 @@ def test_pergunta_de_lista_traz_as_fichas_do_acervo_antes_dos_trechos(montar: An
 
     (citacao,) = payload["x_axon"]["citations"]
     assert citacao["chunk_id"] == ids[0] and citacao["page"] is None
+    assert citacao["url"] == f"https://exemplo.org/{ids[0].split('#')[0]}.pdf", "a ficha leva o link do documento"
     chamadas = [
         r.attributes["tool"]
         for r in plataforma.trace.trace(payload["x_axon"]["request_id"]).records
         if r.type == "tool_call"
     ]
     assert sorted(chamadas) == ["scouting.list_documents", "scouting.list_units", "scouting.search_docs"]
+
+
+def test_no_open_webui_cada_citacao_vira_uma_fonte_que_abre_o_original(montar: Any) -> None:
+    """ADR-051 de ponta a ponta: com `x-axon-citations: sources`, em streaming, a citação sai como fonte do Open WebUI,
+    com a legenda e o link do original na página."""
+    plataforma, _ = montar()
+    with TestClient(plataforma.app) as client:
+        response = client.post(
+            "/v1/chat/completions",
+            headers={"Authorization": f"Bearer {TEST_OIDC_TOKEN}", "x-axon-citations": "sources"},
+            json={
+                "model": "scouting",
+                "stream": True,
+                "messages": [{"role": "user", "content": "O que diz a Regra 33 do POR sobre o nome do grupo?"}],
+            },
+        )
+    assert response.status_code == 200, response.text
+    chunks = [
+        json.loads(line.removeprefix("data: "))
+        for line in response.text.splitlines()
+        if line.startswith("data: ") and line != "data: [DONE]"
+    ]
+    fontes = [c["event"]["data"] for c in chunks if c.get("event", {}).get("type") == "source"]
+    (citacao,) = chunks[-1]["x_axon"]["citations"]
+    (fonte,) = fontes
+    assert fonte["source"]["id"] == citacao["chunk_id"]
+    assert fonte["source"]["url"] == citacao["url"]
+    assert "embed_url" not in fonte["source"], "o painel do Open WebUI é sandbox: o Chrome não mostra PDF nele"
+    assert fonte["metadata"][0]["page"] == citacao["page"] - 1
+    assert fonte["source"]["name"].startswith(citacao["document"]) and fonte["source"]["name"].endswith(
+        f"p. {citacao['page']}"
+    )

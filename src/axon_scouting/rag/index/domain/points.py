@@ -51,9 +51,9 @@ def build_name(index: str, built_at: datetime, existing: set[str]) -> str:
     return name
 
 
-def with_document(chunk: IndexedChunk, fields: DocumentFields) -> IndexedChunk:
-    """O chunk com os campos de documento (metadados e vigência) reescritos a partir do registro."""
-    return dataclasses.replace(chunk, doc_key=fields.doc_key, **_fields_dict(fields))
+def with_document(chunk: IndexedChunk, fields: DocumentFields, *, source_url: str | None) -> IndexedChunk:
+    """O chunk com os campos de documento (metadados, vigência e o link do original) reescritos a partir do registro."""
+    return dataclasses.replace(chunk, doc_key=fields.doc_key, source_url=source_url, **_fields_dict(fields))
 
 
 def _fields_dict(fields: DocumentFields) -> dict[str, Any]:

@@ -60,6 +60,7 @@ def test_us1_todas_validas() -> None:
                 "status": "vigente",
                 "section": "12",
                 "page": None,
+                "url": None,
             },
         ),
     )
@@ -134,5 +135,25 @@ def test_us4_citacao_traz_os_seis_campos_do_trecho() -> None:
             "status": "vigente",
             "section": "4.2.1",
             "page": 87,
+            "url": None,
         }
     ]
+
+
+@pytest.mark.parametrize(
+    ("source_url", "page", "url"),
+    [
+        ("https://escoteiros.org.br/por.pdf", 87, "https://escoteiros.org.br/por.pdf#page=87"),
+        ("https://escoteiros.org.br/por.pdf#toolbar=0", 87, "https://escoteiros.org.br/por.pdf#page=87"),
+        ("https://escoteiros.org.br/por.pdf", None, "https://escoteiros.org.br/por.pdf"),
+        ("ftp://escoteiros.org.br/por.pdf", 87, None),
+        ("javascript:alert(1)", 87, None),
+        ("https://", 87, None),
+        (None, 87, None),
+    ],
+)
+def test_us4_citacao_leva_o_link_do_original_na_pagina(source_url: Any, page: int | None, url: str | None) -> None:
+    """FR-010, ADR-051: o `source_url` dos metadados do trecho, com `#page=N`; só `http(s)`."""
+    trecho = chunk("por#r13@p87", document="POR", page=page, metadata={"source_url": source_url})
+    resultado = validar("Ver [[por#r13@p87]].", contexto=(trecho,))
+    assert (resultado.citations or ())[0]["url"] == url

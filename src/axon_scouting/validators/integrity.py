@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 from typing import Final
+from urllib.parse import urlsplit, urlunsplit
 
 from axon_ai_contracts import Chunk, Citation, TurnView, ValidationResult, ValidatorContext
 
@@ -21,6 +22,8 @@ UNGROUNDED_NOTICE: Final = (
 )
 INVALID_ISSUE: Final = "citação fora do contexto da geração: {raw}"
 UNGROUNDED_ISSUE: Final = "nenhuma citação válida"
+SOURCE_URL: Final = "source_url"
+"""A chave dos metadados do trecho com o endereço do original (102, ADR-051)."""
 
 
 class CitationIntegrityValidator:
@@ -121,7 +124,7 @@ def _check(answer: str, delivered: Mapping[str, Chunk]) -> ValidationResult:
 
 
 def _citation(item: Chunk) -> Citation:
-    """A proveniência exibível (FR-005), com o `chunk_id` canônico do trecho."""
+    """A proveniência exibível (FR-005), com o `chunk_id` canônico do trecho e o link do original (FR-010)."""
     return Citation(
         chunk_id=item.chunk_id,
         document=item.document,
@@ -129,7 +132,22 @@ def _citation(item: Chunk) -> Citation:
         status=item.status,
         section=item.section,
         page=item.page,
+        url=_link(item.metadata.get(SOURCE_URL), item.page),
     )
+
+
+def _link(source_url: object, page: int | None) -> str | None:
+    """O original na página do trecho (`#page=N`, que os leitores de PDF dos navegadores seguem); sem página, o
+    documento. Só `http` ou `https` com host: o link vai para a interface do usuário (ADR-051)."""
+    if not isinstance(source_url, str):
+        return None
+    try:
+        parts = urlsplit(source_url.strip())
+    except ValueError:
+        return None
+    if parts.scheme.lower() not in {"http", "https"} or not parts.netloc:
+        return None
+    return urlunsplit(parts._replace(fragment=f"page={page}" if page is not None else parts.fragment))
 
 
 def _append(answer: str, notice: str) -> str:

@@ -83,7 +83,9 @@ def trecho(fields: DocumentFields, section: str, page: int, text: str, **changes
         effective_date=fields.effective_date,
         status=fields.status,
     )
-    return dataclasses.replace(with_document(base, fields), **changes)
+    return dataclasses.replace(
+        with_document(base, fields, source_url=f"https://exemplo.org/{fields.doc_key}.pdf"), **changes
+    )
 
 
 def registro(fields: DocumentFields, chunks: Sequence[IndexedChunk], pages: Sequence[str]) -> DocumentRecord:

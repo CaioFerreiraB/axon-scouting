@@ -1,12 +1,12 @@
 {
   "format": 1,
   "index": "scouting",
-  "build": "scouting__20261028T165626Z",
+  "build": "scouting__20261028T212605Z",
   "chunking": "estrutural-v5;janela=250-450;teto=512:e5-tok:0b44a9d7b51c",
   "sparse": "bm25-pt-v1;k1=1.2;b=0.75;avgdl=256",
-  "built_at": "2026-10-28T16:56:26.556250+00:00",
+  "built_at": "2026-10-28T21:26:05.674182+00:00",
   "files": {
-    "chunks.jsonl": "2ef0d1d177af74c91f7f5d63ecc54312305c76c1284ad6e130e32038a467fcf2",
+    "chunks.jsonl": "5691bf03b06f0dd95d21e4fe615b50a7fab6eb1922639ba33dd1a99a2ff5d0f3",
     "documents.jsonl": "ea6f9c95328ad404dc5948a59c1146b41a0ed4c242d28d2d4cf4b276257ca732"
   },
   "models": [

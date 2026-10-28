@@ -72,7 +72,7 @@ def test_pack_carrega_pelo_entry_point(plataforma: Any) -> None:
     entry = plataforma.packs.entry("scouting")
     assert entry is not None
     assert entry.status == "enabled", entry.error
-    assert entry.version == "0.7.0"
+    assert entry.version == "0.8.0"
     assert entry.contract_version == "0.2.1"
 
 

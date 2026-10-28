@@ -218,7 +218,9 @@ class MemoryIndex:
         for encoded in origin.chunks.values():
             if encoded.chunk.doc_key == document.doc_key:
                 destination.chunks[encoded.chunk.chunk_id] = EncodedChunk(
-                    chunk=with_document(encoded.chunk, document.fields), dense=encoded.dense, sparse=encoded.sparse
+                    chunk=with_document(encoded.chunk, document.fields, source_url=document.source_url),
+                    dense=encoded.dense,
+                    sparse=encoded.sparse,
                 )
         destination.documents[document.doc_key] = document
 

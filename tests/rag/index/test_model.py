@@ -98,6 +98,7 @@ def test_to_chunk_cumpre_o_contrato_001() -> None:
         status=ValidityStatus.SUBSTITUIDO,
         branch="senior",
         score=0.5,
+        source_url="https://escoteiros.org.br/por.pdf",
     ).to_chunk()
     assert isinstance(convertido, Chunk)
     assert convertido.chunk_id == "por-2025#regra33@p9"
@@ -116,6 +117,7 @@ def test_to_chunk_cumpre_o_contrato_001() -> None:
     assert convertido.metadata["effective_date"] == "2025-01-01"
     assert convertido.metadata["expiry_date"] == "2026-02-28"
     assert convertido.metadata["superseded_by"] == "por-2026"
+    assert convertido.metadata["source_url"] == "https://escoteiros.org.br/por.pdf"
 
 
 def test_to_chunk_secao_mais_especifica_e_score_ausente() -> None:
