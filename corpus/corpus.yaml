@@ -6258,3 +6258,33 @@ documents:
     jurisdiction: nacional
     effective_date: 2026-03-01
     publication_date: 2026-03-01
+
+  # Pedido do mantenedor em 2026-11-06. Data-base: data da lei, no texto; entra em vigor na publicação.
+  - file: legislacao/utilidade-publica/local/grupo-escoteiro-professora-inah-de-mello-147-sp/Lei-10666-2023-Utilidade-Publica-GE-Professora-Inah-de-Mello.pdf
+    source_url: http://www4.cmsandre.sp.gov.br:9000/imprimir/30624/original
+    document_id: lei-utilidade-publica-gepim
+    version: "2023"
+    title: Lei Municipal de Santo André nº 10.666/2023 — Utilidade Pública do Grupo Escoteiro Professora Inah de Mello
+    jurisdiction: sao-paulo
+    publication_date: 2023-05-17
+    effective_date: 2023-05-17
+
+  # Pedido do mantenedor em 2026-11-06. A CONFIRMAR: vigora no registro em cartório, sem data no PDF (assinatura "___
+  # de 2025", edição 2026 na capa); 01/01/2026 provisório.
+  - file: gestao-institucional-e-governanca/estatutos/local/grupo-escoteiro-professora-inah-de-mello-147-sp/Estatuto-GE-Professora-Inah-de-Mello-2026.pdf
+    source_url: https://gris.gepim.com.br/files/Estatuto%20Grupo%20Escoteiro%20Professora%20Inah%20de%20Mello%20-%202026.pdf
+    document_id: estatuto-gepim
+    version: "2026"
+    title: Estatuto Social do Grupo Escoteiro Professora Inah de Mello, 147/SP
+    jurisdiction: sao-paulo
+    effective_date: 2026-01-01
+
+  # Pedido do mantenedor em 2026-11-06. A CONFIRMAR: vigora na aprovação pela Diretoria do Grupo, sem data no PDF;
+  # 06/11/2026 (entrada no acervo) provisório.
+  - file: gestao-institucional-e-governanca/politicas/local/grupo-escoteiro-professora-inah-de-mello-147-sp/Politica-Subsidio-Cursos-Voluntarios-GE-Professora-Inah-de-Mello.pdf
+    source_url: https://drive.google.com/file/d/1YoNGtfzqwjqyiO_Dt-uLyNOLtvsGQJmK/view
+    document_id: politica-subsidio-cursos-voluntarios-gepim
+    version: "1"
+    title: Política de Subsídio de Iniciativas Formativas para Voluntários do Grupo Escoteiro Professora Inah de Mello
+    jurisdiction: sao-paulo
+    effective_date: 2026-11-06

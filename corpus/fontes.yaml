@@ -9256,3 +9256,43 @@ files:
   notes:
   - 'A CONFIRMAR: dia não informado; primeiro dia do mês provisório'
   - Incluído em 2026-10-28 a pedido do mantenedor (ADR-049/ADR-050).
+- file: legislacao/utilidade-publica/local/grupo-escoteiro-professora-inah-de-mello-147-sp/Lei-10666-2023-Utilidade-Publica-GE-Professora-Inah-de-Mello.pdf
+  source_url: http://www4.cmsandre.sp.gov.br:9000/imprimir/30624/original
+  sha256: 61d40bd7789f5986658526982ed10bae91309e87ec80cbccc6f5ed4345c8f429
+  bytes: 152035
+  pages: 1
+  document_id: lei-utilidade-publica-gepim
+  catalog_file: legislacao/utilidade-publica/local/grupo-escoteiro-professora-inah-de-mello-147-sp/Lei-10666-2023-Utilidade-Publica-GE-Professora-Inah-de-Mello.pdf
+  source_label: Lei nº 10.666, de 17 de maio de 2023 (Câmara Municipal de Santo André)
+  date_basis: data da lei, no texto
+  catalog_effective_date: '2023-05-17'
+  notes:
+  - Fornecido pelo mantenedor e incluído em 2026-11-06.
+
+- file: gestao-institucional-e-governanca/estatutos/local/grupo-escoteiro-professora-inah-de-mello-147-sp/Estatuto-GE-Professora-Inah-de-Mello-2026.pdf
+  source_url: https://gris.gepim.com.br/files/Estatuto%20Grupo%20Escoteiro%20Professora%20Inah%20de%20Mello%20-%202026.pdf
+  sha256: e71c227cfc9c09a3555b64531ec9ead36f2064ad54978c78a365ebf63b758658
+  bytes: 362347
+  pages: 20
+  document_id: estatuto-gepim
+  catalog_file: gestao-institucional-e-governanca/estatutos/local/grupo-escoteiro-professora-inah-de-mello-147-sp/Estatuto-GE-Professora-Inah-de-Mello-2026.pdf
+  source_label: Estatuto Social — Grupo Escoteiro Professora Inah de Mello — 2026
+  date_basis: capa (edição 2026); vigência no registro em cartório
+  catalog_effective_date: '2026-01-01'
+  notes:
+  - 'A CONFIRMAR: data do registro em cartório; 01/01/2026 provisório'
+  - Fornecido pelo mantenedor e incluído em 2026-11-06.
+
+- file: gestao-institucional-e-governanca/politicas/local/grupo-escoteiro-professora-inah-de-mello-147-sp/Politica-Subsidio-Cursos-Voluntarios-GE-Professora-Inah-de-Mello.pdf
+  source_url: https://drive.google.com/file/d/1YoNGtfzqwjqyiO_Dt-uLyNOLtvsGQJmK/view
+  sha256: d8ebec3605ac57470e960b48e1e7611f123287da293cbe153a099f6183ed3a3f
+  bytes: 77068
+  pages: 3
+  document_id: politica-subsidio-cursos-voluntarios-gepim
+  catalog_file: gestao-institucional-e-governanca/politicas/local/grupo-escoteiro-professora-inah-de-mello-147-sp/Politica-Subsidio-Cursos-Voluntarios-GE-Professora-Inah-de-Mello.pdf
+  source_label: Política de Subsídio de Cursos para Voluntários (final)
+  date_basis: sem data no PDF; data de entrada no acervo
+  catalog_effective_date: '2026-11-06'
+  notes:
+  - 'A CONFIRMAR: data da aprovação pela Diretoria do Grupo'
+  - Fornecido pelo mantenedor e incluído em 2026-11-06.

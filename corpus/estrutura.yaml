@@ -169,6 +169,7 @@ profile_by_type:
   Edital: comunicado
   Recomendação: comunicado
   Boletim: comunicado
+  Lei: artigos
 
 # Exceções ao tipo: os documentos com forma própria. `folder` casa a pasta do arquivo (sem o `ocr/`) e `match`, o
 # document_id, ambos por padrão glob. Ordem importa.
@@ -240,3 +241,8 @@ documents:
 
   - match: ["faq-*"]
     profile: perguntas
+
+  # --- Políticas de unidade local ----------------------------------------------------------------------------------
+  - match: [politica-subsidio-cursos-voluntarios-gepim]
+    profile: artigos
+    note: Política de Grupo Escoteiro escrita em capítulos e artigos, não em seções numeradas.

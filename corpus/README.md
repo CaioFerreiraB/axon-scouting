@@ -24,6 +24,8 @@ Documento digitalizado (sem camada de texto) entra pela transcrição em `ocr/<c
 
 ## Conferências e pendências
 
+- Em 06/11/2026 entraram três documentos do Grupo Escoteiro Professora Inah de Mello, 147/SP, fornecidos pelo mantenedor: a Lei Municipal de Santo André nº 10.666/2023 (utilidade pública; pasta nova `legislacao/utilidade-publica/local`, tipo `Lei`), o Estatuto Social 2026 e a Política de Subsídio de Iniciativas Formativas para Voluntários (pasta nova `gestao-institucional-e-governanca/politicas/local`). As datas do estatuto e da política estão A CONFIRMAR. O estatuto numera os artigos das p. 5–7 como "Art. 1" a "Art. 9", repetindo a numeração; o texto foi mantido como está.
+
 - A URL de “Façamos um Plano de Grupo” na lista apontava para “Captando e Engajando Adultos”. Foi localizada a [fonte correta](https://www.escoteiros.org.br/downloads/facamos-um-plano-de-grupo/) para o PDF já fornecido. O caminho da Política Nacional de Diversidade e Inclusão foi corrigido para `/2024/12/`.
 - O arquivo publicado como [Resolução DEN 03/2015](https://www.escoteiros.org.br/wp-content/uploads/2020/07/ResDEN_003-2015.pdf) contém uma manifestação do CAN sobre o recurso da Região do Maranhão. Foi catalogado pelo conteúdo, com a divergência registrada. Esse download não fornece o texto da resolução mencionada.
 - O card “Resolução DEN 06/21” entrega a [Resolução DEN 01/2022](https://www.escoteiros.org.br/wp-content/uploads/2022/04/Resolucao-DEN-01-2022_Refitica-a-Resolucao-DEN-06-2021-medalha-e-o-pin-da-Perseveranca.pdf), que a revoga. Foi usado o número do PDF; a versão anterior não está contida nesse arquivo.
@@ -60,12 +62,15 @@ Documento digitalizado (sem camada de texto) entra pela transcrição em `ocr/<c
 | `gestao-de-adultos/manuais` | 11 |
 | `gestao-de-adultos/politicas/mundial` | 1 |
 | `gestao-de-adultos/politicas/nacional` | 1 |
+| `gestao-institucional-e-governanca/estatutos/local/<uel>` | 1 |
 | `gestao-institucional-e-governanca/estatutos/nacional` | 1 |
 | `gestao-institucional-e-governanca/manuais` | 5 |
+| `gestao-institucional-e-governanca/politicas/local/<uel>` | 1 |
 | `gestao-institucional-e-governanca/politicas/nacional` | 6 |
 | `gestao-institucional-e-governanca/por` | 1 |
 | `gestao-institucional-e-governanca/regulamentos/regional/sao-paulo` | 1 |
 | `gestao-institucional-e-governanca/relatorios/regional/sao-paulo` | 13 |
+| `legislacao/utilidade-publica/local/<uel>` | 1 |
 | `programa-educativo/guias-de-jovens` | 6 |
 | `programa-educativo/manuais` | 6 |
 | `programa-educativo/manuais-de-escotistas` | 5 |

@@ -133,6 +133,8 @@ entries:
      pasta: gestao-institucional-e-governanca/politicas/nacional,
      documento: "Código de Conduta; Políticas Nacionais de Governança Institucional, de Tratamento de Dados, de
        Envolvimento Juvenil, de Gestão de Riscos e de Compras"}
+  - {categoria: Gestão Institucional e Governança, subcategoria: Políticas, nivel: Local, tipo: Política,
+     pasta: gestao-institucional-e-governanca/politicas/local, documento: Políticas de Grupos Escoteiros, origem: inferido}
   - {categoria: Gestão Institucional e Governança, subcategoria: Planejamento, nivel: Nacional, tipo: Planejamento Estratégico,
      pasta: gestao-institucional-e-governanca/planejamento/nacional, documento: Planejamento Estratégico Nacional}
   - {categoria: Gestão Institucional e Governança, subcategoria: Planejamento, nivel: Regional, tipo: Planejamento Estratégico,
@@ -191,3 +193,9 @@ entries:
      pasta: relacoes-institucionais/politicas/nacional,
      documento: "Atuação dos Escoteiros do Brasil em Crises Humanitárias; Políticas Nacionais de Relações
        Institucionais e Governamentais e de Relações Internacionais"}
+
+  # --- Legislação ---------------------------------------------------------------------------------------------------
+  # Pedido do mantenedor em 2026-11-06: as leis que declaram de utilidade pública uma unidade escoteira local (a lei é
+  # municipal, mas a abrangência no acervo é a da UEL).
+  - {categoria: Legislação, subcategoria: Utilidade Pública, nivel: Local, tipo: Lei,
+     pasta: legislacao/utilidade-publica/local, documento: Leis de utilidade pública de Grupos Escoteiros, origem: inferido}
