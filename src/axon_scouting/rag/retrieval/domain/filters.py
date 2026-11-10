@@ -41,6 +41,7 @@ KNOWN: Final = frozenset(
         "enumeration",
         "anchor",
         "synthesis",
+        "organs",
     }
 )
 ANCHOR_MAX_CHARS: Final = 400
@@ -197,6 +198,11 @@ def synthesis_request(raw: Mapping[str, JSONValue] | None) -> SynthesisRequest |
         scopes=tuple(str(scope) for scope in scopes),
         bodies=_ids(value, "bodies"),
     )
+
+
+def organs(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:
+    """Os tipos de órgão que a pergunta pontual nomeia (ADR-063): a busca traz as seções que os disciplinam."""
+    return _ids(raw or {}, "organs")
 
 
 def suggested_types(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:

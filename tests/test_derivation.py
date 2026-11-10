@@ -104,6 +104,7 @@ def test_fatia_com_ramo() -> None:
             "catalog": None,
             "enumeration": {"unit_kind": None, "terms": ["competencias", "relacionadas", "lideranca"]},
             "anchor": None,
+            "organs": [],
             "synthesis": None,
         },
         "retrieval_filters": {
@@ -497,3 +498,34 @@ def test_sintese_na_fatia() -> None:
         "scopes": ["regional"],
         "bodies": ["conselho_consultivo"],
     }
+
+
+# --- ADR-063: os órgãos nomeados, pelo grafo das normas ---------------------------------------------------------------
+
+COM_ORGAOS = dataclasses.replace(
+    LEXICON,
+    organ_terms=MappingProxyType(
+        {
+            "diretoria_regional": ("diretoria regional",),
+            "conselho_consultivo_nacional": ("conselho consultivo",),
+            "conselho_consultivo_regional": ("conselho consultivo regional",),
+        }
+    ),
+)
+
+
+@pytest.mark.parametrize(
+    ("pergunta", "orgaos"),
+    [
+        (REELEICAO, ("diretoria_regional",)),
+        ("Qual o papel do Conselho Consultivo Regional?", ("conselho_consultivo_regional",)),
+        ("Como funciona o conselho consultivo?", ("conselho_consultivo_nacional",)),
+        ("Qual o marco simbólico do ramo lobinho?", ()),
+        # Síntese, lista e pergunta histórica não ancoram no grafo.
+        ("Quem foram os presidentes eleitos para a diretoria regional desde 2016?", ()),
+        ("Quais são as resoluções da diretoria regional?", ()),
+        ("Qual era o mandato da diretoria regional em 2010?", ()),
+    ],
+)
+def test_orgaos_pelo_grafo(pergunta: str, orgaos: tuple[str, ...]) -> None:
+    assert derive_context(pergunta, DIA, COM_ORGAOS).organs == orgaos

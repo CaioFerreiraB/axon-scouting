@@ -5,7 +5,8 @@ R13).
 desde o ADR-049. Numa busca por faceta (ADR-045), antes disso vêm a posição do trecho dentro da faceta e a ordem da
 faceta: o primeiro de cada ramo, depois o segundo. As fichas da lista de documentos (ADR-047) vêm antes de tudo, na
 ordem da lista; depois, o que a tool de unidades trouxe (ADR-048: as listas de unidades de um tipo e os trechos com
-forma de lista), na ordem dela; depois, os resumos das atas da pergunta de síntese (ADR-062), na ordem da tool.
+forma de lista), na ordem dela; depois, os resumos das atas da pergunta de síntese (ADR-062), na ordem da tool;
+depois, os trechos das seções que o grafo indicou para o órgão perguntado (ADR-063), da norma de cima para a de baixo.
 O retriever grava as marcas nos metadados do `Chunk` — é quem conhece os filtros —, e o reranker ordena a partir delas,
 sem depender da ordem de entrada. Chunk sem as marcas (de fora da 103) vai depois, na ordem em que veio.
 """
@@ -41,6 +42,9 @@ STRUCTURE_RANK: Final = "structure_rank"
 """Posição no que a tool de unidades devolveu (ADR-048); só o que ela trouxe a tem."""
 SUMMARY_RANK: Final = "summary_rank"
 """Posição no que a tool de resumos das atas devolveu (ADR-062): na pergunta de síntese, à frente dos trechos."""
+GRAPH_RANK: Final = "graph_rank"
+"""Posição entre os trechos que o grafo trouxe das seções que disciplinam o órgão perguntado (ADR-063), da norma de cima
+para a de baixo: à frente dos trechos da busca."""
 ALSO_IN: Final = "also_in"
 """Os rótulos dos trechos de texto idêntico que a busca juntou neste (103 FR-016)."""
 RELAXED: Final = "relaxed"
@@ -71,13 +75,16 @@ def _annotated(chunk: Chunk) -> bool:
     return isinstance(chunk.metadata.get(FUSION_SCORE), int | float)
 
 
-def sort_key(chunk: Chunk) -> tuple[int, int, int, int, int, int, int, int, float, bool, bool, bool, bool, str]:
+def sort_key(
+    chunk: Chunk,
+) -> tuple[int, int, int, int, int, int, int, int, int, int, float, bool, bool, bool, bool, str]:
     fusion = chunk.metadata[FUSION_SCORE]
     assert isinstance(fusion, int | float)
     rank, order = chunk.metadata.get(FACET_RANK, 0), chunk.metadata.get(FACET_ORDER, 0)
     card = chunk.metadata.get(CATALOG_RANK)
     structure = chunk.metadata.get(STRUCTURE_RANK)
     summary = chunk.metadata.get(SUMMARY_RANK)
+    graph = chunk.metadata.get(GRAPH_RANK)
     return (
         0 if isinstance(card, int) else 1,
         card if isinstance(card, int) else 0,
@@ -85,6 +92,8 @@ def sort_key(chunk: Chunk) -> tuple[int, int, int, int, int, int, int, int, floa
         structure if isinstance(structure, int) else 0,
         0 if isinstance(summary, int) else 1,
         summary if isinstance(summary, int) else 0,
+        0 if isinstance(graph, int) else 1,
+        graph if isinstance(graph, int) else 0,
         rank if isinstance(rank, int) else 0,
         order if isinstance(order, int) else 0,
         -float(fusion),

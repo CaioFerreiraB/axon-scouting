@@ -12,13 +12,12 @@ Puro: sem I/O, sem relógio.
 
 from __future__ import annotations
 
-import math
-import unicodedata
 from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Final
 
 from axon_scouting.rag.index.api import SummaryEntry
+from axon_scouting.rag.retrieval.domain.terms import bag, idf, normalize, query_terms, score, stem
 
 MAX_TIMELINES: Final = 6
 """Linhas do tempo entregues: seis anos cabem inteiros; mais que isso, as que mais casam com a pergunta."""
@@ -30,56 +29,6 @@ PER_GROUP: Final = 2
 """Partes de uma mesma linha do tempo (órgão e ano) ou de uma mesma ficha (reunião) entregues no máximo."""
 RECENCY: Final = frozenset({"ultima", "ultimo", "ultimas", "ultimos", "recente", "recentes", "atual", "atuais"})
 PLACE: Final = frozenset({"onde", "cidade", "cidades", "local", "locais", "lugar"})
-_STOP: Final = frozenset(
-    [
-        "a",
-        "o",
-        "as",
-        "os",
-        "um",
-        "uma",
-        "de",
-        "da",
-        "do",
-        "das",
-        "dos",
-        "em",
-        "na",
-        "no",
-        "nas",
-        "nos",
-        "para",
-        "por",
-        "pela",
-        "pelo",
-        "com",
-        "sem",
-        "sobre",
-        "e",
-        "ou",
-        "que",
-        "se",
-        "foi",
-        "foram",
-        "ser",
-        "sao",
-        "como",
-        "mais",
-        "quem",
-        "qual",
-        "quais",
-        "quando",
-        "onde",
-        "quantos",
-        "quantas",
-        "entre",
-        "desde",
-        "ate",
-        "apos",
-        "anos",
-        "ano",
-    ]
-)
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -102,10 +51,10 @@ def select(entries: Sequence[SummaryEntry], request: SynthesisRequest, query: st
     if not candidates:
         return []
     candidates = _of_bodies(candidates, request.bodies)
-    words = _normalize(query).split()
-    terms = [_stem(word) for word in words if len(word) >= 3 and word not in _STOP and not word.isdigit()]
+    words = normalize(query).split()
+    terms = query_terms(query)
     bags = {entry.summary_id: _bag(entry) for entry in candidates}
-    weights = _idf(list(bags.values()), terms)
+    weights = idf(list(bags.values()), terms)
     years = [entry.year for entry in candidates if entry.year is not None]
     span = (min(years), max(years)) if years and RECENCY & set(words) else None
     place = bool(PLACE & set(words))
@@ -155,56 +104,30 @@ def _window(request: SynthesisRequest) -> tuple[int | None, int | None]:
 
 def _score(
     entry: SummaryEntry,
-    bag: dict[str, int],
+    counts: dict[str, int],
     terms: list[str],
     weights: dict[str, float],
     request: SynthesisRequest,
     span: tuple[int, int] | None,
     place: bool,
 ) -> float:
-    score = sum(weights[term] * bag[term] / (bag[term] + 1.2) for term in terms if term in bag)
-    if score <= 0:
+    points = score(counts, terms, weights)
+    if points <= 0:
         return 0.0
     if request.year_from is not None and entry.year in (request.year_from, request.year_until):
-        score += 0.5
+        points += 0.5
     if span is not None and entry.year is not None and span[1] > span[0]:
-        score += 1.5 * (entry.year - span[0]) / (span[1] - span[0])
+        points += 1.5 * (entry.year - span[0]) / (span[1] - span[0])
     if entry.kind == "ficha" and (entry.summary_id.endswith("#ficha") or entry.summary_id.endswith("#ficha~1")):
-        score += 1.0 if place else 0.3
-    return score
+        points += 1.0 if place else 0.3
+    return points
 
 
-def _mentions(bag: dict[str, int], body: str) -> bool:
+def _mentions(counts: dict[str, int], body: str) -> bool:
     """O resumo fala do órgão nomeado, mesmo sendo de outro: as eleições da Diretoria Regional estão nas atas da
     Assembleia Regional."""
-    return all(_stem(word) in bag for word in body.split("_") if len(word) >= 3)
+    return all(stem(word) in counts for word in body.split("_") if len(word) >= 3)
 
 
 def _bag(entry: SummaryEntry) -> dict[str, int]:
-    bag: dict[str, int] = {}
-    for word in _normalize(f"{entry.title} {entry.text}").split():
-        stem = _stem(word)
-        bag[stem] = bag.get(stem, 0) + 1
-    return bag
-
-
-def _idf(bags: Sequence[dict[str, int]], terms: list[str]) -> dict[str, float]:
-    total = len(bags)
-    return {term: math.log(1 + (total + 1) / (1 + sum(term in bag for bag in bags))) for term in set(terms)}
-
-
-def _stem(word: str) -> str:
-    """Plural para o singular, o suficiente para "diretores"/"diretor", "eleições"/"eleição", "presidentes"."""
-    if len(word) > 5 and word.endswith("oes"):
-        return word[:-3] + "ao"
-    if len(word) > 5 and word.endswith(("res", "zes", "les")):
-        return word[:-2]
-    if len(word) > 4 and word.endswith("s"):
-        return word[:-1]
-    return word
-
-
-def _normalize(text: str) -> str:
-    decomposed = unicodedata.normalize("NFKD", text.casefold())
-    plain = "".join(char for char in decomposed if not unicodedata.combining(char))
-    return " ".join("".join(char if char.isalnum() else " " for char in plain).split())
+    return bag(f"{entry.title} {entry.text}")

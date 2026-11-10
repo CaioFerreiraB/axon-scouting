@@ -38,14 +38,14 @@ from axon_scouting.prompts import SYSTEM_PROMPT
 if TYPE_CHECKING:
     from typing import Protocol
 
-    from axon_scouting.rag.index.api import ChunkIndex, DocumentCatalog, DocumentOutline, MeetingSummaries
+    from axon_scouting.rag.index.api import ChunkIndex, DocumentCatalog, DocumentOutline, MeetingSummaries, NormGraph
 
     class _Index(ChunkIndex, DocumentCatalog, DocumentOutline, Protocol):
         """O que o pack pede do índice: busca, catálogo e árvore de unidades (os três adapters os têm)."""
 
     from axon_scouting.rag.index.ports import Embedder
 
-VERSION: Final = "0.10.0"
+VERSION: Final = "0.11.0"
 """Versão do manifest; igual à da distribuição `axon-scouting` (verificado em tests/test_pack.py)."""
 
 COLLECTION: Final = "scouting"
@@ -190,12 +190,16 @@ def _artifact_root(config: ScoutingConfig) -> Path:
     return root
 
 
+def _artifact_dir(config: ScoutingConfig) -> Path:
+    """O diretório do artefato configurado ou, sem ele (Qdrant), o do pacote — onde ficam os resumos e o grafo."""
+    return Path(config.index_dir).expanduser() if config.index_dir is not None else PACKAGED_INDEX
+
+
 def _summaries(config: ScoutingConfig) -> MeetingSummaries:
     """Os resumos das atas (ADR-062): ao lado do artefato configurado ou, sem ele (Qdrant), do que vem no pacote."""
     from axon_scouting.rag.index.adapters.summaries import ArtifactSummaries
 
-    root = Path(config.index_dir).expanduser() if config.index_dir is not None else PACKAGED_INDEX
-    return ArtifactSummaries(root)
+    return ArtifactSummaries(_artifact_dir(config))
 
 
 def _require_model(directory: str | None) -> None:
@@ -290,11 +294,21 @@ class ScoutingPack(PackBase):
         index = self._index(config)
         retrieval = RetrievalConfig(default_limit=config.default_limit, max_limit=config.max_limit)
         return [
-            search_docs(ScoutingRetriever(index, retrieval), collection=COLLECTION),
+            search_docs(ScoutingRetriever(index, retrieval, graph=self._graph(config)), collection=COLLECTION),
             list_documents(CatalogRetriever(index, retrieval), collection=COLLECTION),
             list_units(UnitsRetriever(index, index, retrieval), collection=COLLECTION),
             search_summaries(SummariesRetriever(_summaries(config)), collection=COLLECTION),
         ]
+
+    def _graph(self, config: ScoutingConfig) -> NormGraph:
+        """O grafo das normas por órgão (ADR-063), composto uma vez: o retriever e a derivação (os termos dos órgãos) o
+        dividem."""
+        from axon_scouting.rag.index.adapters.graph import ArtifactGraph
+
+        graphs: dict[ScoutingConfig, NormGraph] = self.__dict__.setdefault("_graphs", {})
+        if config not in graphs:
+            graphs[config] = ArtifactGraph(_artifact_dir(config))
+        return graphs[config]
 
     def _index(self, config: ScoutingConfig) -> _Index:
         """O índice da configuração, composto uma vez: as tools e a preparação de contexto (que lê os tipos de unidade
@@ -303,6 +317,14 @@ class ScoutingPack(PackBase):
         if config not in indexes:
             indexes[config] = _compose_index(config)
         return indexes[config]
+
+    async def _organ_terms(self, ctx: PackContext) -> Mapping[str, tuple[str, ...]]:
+        """Os nomes dos órgãos do grafo das normas (ADR-063); configuração inválida ou grafo ausente, nenhum — a
+        derivação sai então sem `organs`, e a busca é só a do índice."""
+        try:
+            return await self._graph(read_config(ctx.config, ctx.data_dir, require_model=False)).organ_terms()
+        except (ValueError, OSError):
+            return {}
 
     async def _unit_kinds(self, ctx: PackContext) -> Mapping[str, tuple[str, ...]]:
         """Os plurais de cada tipo de unidade com nome próprio do build publicado (ADR-048), lidos uma vez — artigo,
@@ -391,7 +413,11 @@ class ScoutingPack(PackBase):
 
         from axon_scouting.context.lexicon import LEXICON
 
-        lexicon = dataclasses.replace(LEXICON, unit_kinds=MappingProxyType(dict(await self._unit_kinds(ctx))))
+        lexicon = dataclasses.replace(
+            LEXICON,
+            unit_kinds=MappingProxyType(dict(await self._unit_kinds(ctx))),
+            organ_terms=MappingProxyType(dict(await self._organ_terms(ctx))),
+        )
         context = derive_context(
             view.question, reference_day(view.reference_time), lexicon, previous=earlier_questions(view)
         )

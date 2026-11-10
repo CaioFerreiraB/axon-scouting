@@ -279,3 +279,42 @@ def test_busca_vazia_com_orgao_e_refeita_sem_ele() -> None:
 
 def test_sem_orgao_a_busca_vazia_continua_vazia() -> None:
     assert buscar("acampamento", filtros(branch="lobinho", document_types=["estatuto"]), top_k=30) == []
+
+
+# --- ADR-063: o grafo traz as seções do órgão perguntado --------------------------------------------------------------
+
+
+class Grafo:
+    def __init__(self, secoes: list[object]) -> None:
+        self._secoes = secoes
+
+    async def organ_terms(self) -> dict[str, tuple[str, ...]]:
+        return {"conselho_x": ("conselho x",)}
+
+    async def sections(self, organs: object) -> list[object]:
+        return list(self._secoes) if "conselho_x" in organs else []  # type: ignore[operator]
+
+
+def test_grafo_traz_a_secao_do_orgao_a_frente() -> None:
+    """A Regra 33 (nome do grupo) não casa com "acampamento da tropa", mas é a seção do órgão: entra à frente."""
+    from axon_scouting.rag.index.api import NormSection
+    from axon_scouting.rag.retrieval.domain.ordering import GRAPH_RANK
+
+    secao = NormSection(
+        organ="conselho_x",
+        doc_key="por-2025",
+        unit_id="por#cap5",
+        title="Capítulo 5",
+        scope="nacional",
+        chunk_ids=("por-2025#regra33@p38", "por-2025#regra49@p40"),
+    )
+
+    async def go(organs: list[str]) -> list[Chunk]:
+        retriever = ScoutingRetriever(await indice(), graph=Grafo([secao]))  # type: ignore[arg-type]
+        return list(await retriever.search("acampamento da tropa", top_k=10, filters=filtros(organs=organs)))
+
+    com = asyncio.run(go(["conselho_x"]))
+    assert com[0].metadata[GRAPH_RANK] == 0 and com[0].chunk_id.startswith("por-2025#")
+    assert {c.chunk_id for c in com if GRAPH_RANK in c.metadata} == set(secao.chunk_ids)
+    sem = asyncio.run(go([]))
+    assert all(GRAPH_RANK not in c.metadata for c in sem)

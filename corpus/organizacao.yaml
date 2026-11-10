@@ -35,11 +35,13 @@ tipos_de_instituicao:
   - id: distrito
     nome: Distrito Escoteiro
     nivel: distrital
-    aliases: [distrito, distrito escoteiro]
+    aliases: [distrito, distrito escoteiro, distritos escoteiros]
     fonte: estatuto-2024#art6@p7
     citacao: "Os Distritos Escoteiros têm atribuições definidas pela Diretoria Regional"
-  - {id: grupo_escoteiro, nome: Grupo Escoteiro, nivel: local, aliases: [grupo escoteiro, ge], tipo_de: uel}
-  - {id: secao_escoteira_autonoma, nome: Seção Escoteira Autônoma, nivel: local, aliases: [secao autonoma], tipo_de: uel}
+  - {id: grupo_escoteiro, nome: Grupo Escoteiro, nivel: local, aliases: [grupo escoteiro, grupos escoteiros],
+     tipo_de: uel}
+  - {id: secao_escoteira_autonoma, nome: Seção Escoteira Autônoma, nivel: local,
+     aliases: [secao autonoma, secoes escoteiras autonomas], tipo_de: uel}
 
 tipos_de_orgao:
   # --- nacional (Estatuto, Art. 12) ---------------------------------------------------------------------------------
@@ -52,7 +54,7 @@ tipos_de_orgao:
      natureza: executivo, aliases: [den, diretoria executiva nacional], taxonomia: diretoria_executiva_nacional,
      instituido_em: estatuto-2024#art18@p14}
   - {id: conselho_consultivo_nacional, nome: Conselho Consultivo, nivel: nacional, instituicao: ueb,
-     natureza: consultivo, aliases: [conselho consultivo nacional, ccn], taxonomia: conselho_consultivo,
+     natureza: consultivo, aliases: [conselho consultivo nacional, conselho consultivo, ccn], taxonomia: conselho_consultivo,
      instituido_em: estatuto-2024#art20@p15}
   - {id: comissao_fiscal_nacional, nome: Comissão Fiscal Nacional, nivel: nacional, instituicao: ueb,
      natureza: fiscal, aliases: [comissao fiscal nacional], taxonomia: comissao_fiscal,
@@ -81,19 +83,20 @@ tipos_de_orgao:
      natureza: juvenil, aliases: [conselho jovem, conselho regional jovem], taxonomia: conselho_jovem,
      instituido_em: a verificar}
   - {id: conselho_regional_velhos_lobos, nome: Conselho Regional dos Portadores da Medalha de Velhos Lobos,
-     nivel: regional, instituicao: regiao, natureza: consultivo, aliases: [velhos lobos],
+     nivel: regional, instituicao: regiao, natureza: consultivo, aliases: [velhos lobos, velho lobo],
      taxonomia: conselho_de_velhos_lobos, instituido_em: a verificar}
   - {id: comissao_regional_pioneira, nome: Comissão Regional Pioneira, nivel: regional, instituicao: regiao,
      natureza: juvenil, aliases: [comissao regional pioneira, forum regional pioneiro],
      taxonomia: comissao_regional_pioneira, instituido_em: a verificar}
   - {id: rede_de_jovens_lideres, nome: Rede de Jovens Líderes, nivel: nacional, instituicao: ueb, natureza: juvenil,
-     aliases: [rede de jovens lideres, rnjl], taxonomia: rede_de_jovens_lideres, instituido_em: a verificar,
+     aliases: [rede de jovens lideres, rede nacional de jovens lideres, rnjl], taxonomia: rede_de_jovens_lideres, instituido_em: a verificar,
      nota: "tem núcleos e fóruns regionais (Regulamento Geral da RNJL, Título IV)"}
   # --- local (Estatuto, Art. 31) -------------------------------------------------------------------------------------
   - {id: assembleia_de_grupo, nome: Assembleia de Grupo, nivel: local, instituicao: grupo_escoteiro,
      natureza: deliberativo, aliases: [assembleia de grupo], instituido_em: estatuto-2024#art32@p22}
   - {id: diretoria_de_grupo, nome: Diretoria de Grupo, nivel: local, instituicao: grupo_escoteiro,
-     natureza: executivo, aliases: [diretoria de grupo, diretoria do grupo], instituido_em: estatuto-2024#art35@p24}
+     natureza: executivo, aliases: [diretoria de grupo, diretoria do grupo, diretoria de um grupo, diretoria do grupo escoteiro],
+     instituido_em: estatuto-2024#art35@p24}
   - {id: comissao_fiscal_de_grupo, nome: Comissão Fiscal de Grupo, nivel: local, instituicao: grupo_escoteiro,
      natureza: fiscal, aliases: [comissao fiscal de grupo], instituido_em: estatuto-2024#art37@p26}
   - {id: conselho_de_pais, nome: Conselho de Pais, nivel: local, instituicao: grupo_escoteiro, natureza: apoio,
