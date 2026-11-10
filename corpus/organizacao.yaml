@@ -1,17 +1,16 @@
-# Organização do movimento: a camada A do grafo do scouting (relatório "Diretoria Regional", 2026-11-09).
+# Organização do movimento: a parte curada do grafo de domínio do scouting (spec 106, ADR-063 e ADR-064).
 #
-# RASCUNHO para revisão do mantenedor. Ainda não é lido por nenhum código: a ingestão passa a lê-lo na Fase 2 do
-# relatório, quando o grafo for construído. O desenho está em `Organização Escoteira.revisado.json` (arrows.app).
+# Lido por `scripts/grafo.py build`: os tipos de órgão e de instituição (com nome e apelidos, que reconhecem a entidade
+# numa pergunta), os cargos e as relações de governança. Os ramos, as seções, as áreas e os conceitos vão para
+# `corpus/dominio.yaml` (106 research R5), e as instituições e os órgãos reais (Região SP, DR-SP, GE Inah…) entram aqui
+# no G3, cada um com a fonte. O desenho está em `Organização Escoteira.revisado.json` (arrows.app).
 #
-# Só tipos e relações. As instâncias (a Região SP, o GE 147/SP, a "Diretoria Regional de SP") são geradas do acervo
-# pela ingestão, a partir da taxonomia e do catálogo; nenhuma UEL do Brasil é cadastrada aqui.
-#
-# `fonte` é o `chunk_id` do trecho que prova a relação. Na Fase 2, com parágrafo e inciso na árvore, ele vira o
-# `unit_id` do parágrafo. `citacao` é o pedaço do texto que a prova, para conferência. Uma relação sem prova encontrada
-# está com `fonte: a verificar` e não entra no grafo até ser conferida.
+# `fonte` é o `chunk_id` do trecho que prova a relação, e `citacao` é o pedaço do texto, para conferência. Uma relação
+# com `fonte: a verificar` não entra no grafo até ser conferida. As relações de governança ficam no grafo e fora da
+# busca automática (decisão 4 do mantenedor; só a consulta `ligados` as devolve).
 #
 # `taxonomia` liga o tipo de órgão ao órgão da pasta (`bodies` no índice, o léxico da 101): é por ele que um documento
-# fica EMITIDO_POR um órgão.
+# fica EMITIDO_POR um órgão (G3).
 version: 1
 
 niveis:

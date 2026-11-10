@@ -43,8 +43,13 @@ STRUCTURE_RANK: Final = "structure_rank"
 SUMMARY_RANK: Final = "summary_rank"
 """Posição no que a tool de resumos das atas devolveu (ADR-062): na pergunta de síntese, à frente dos trechos."""
 GRAPH_RANK: Final = "graph_rank"
-"""Posição entre os trechos que o grafo trouxe das seções que disciplinam o órgão perguntado (ADR-063), da norma de cima
-para a de baixo: à frente dos trechos da busca."""
+"""Posição entre os trechos que o grafo de domínio trouxe pelo plano (ADR-063, ADR-064), da norma de cima para a de
+baixo: à frente dos trechos da busca."""
+GRAPH_QUERY: Final = "graph_query"
+"""A consulta do grafo que trouxe o trecho (`sobre`, `aplicavel_a`…; ADR-064)."""
+ROLE: Final = "role"
+"""O papel do documento do trecho que o grafo trouxe (norma, orientação, registro, comunicação; ADR-064), para o prompt
+falar pela natureza da fonte."""
 ALSO_IN: Final = "also_in"
 """Os rótulos dos trechos de texto idêntico que a busca juntou neste (103 FR-016)."""
 RELAXED: Final = "relaxed"

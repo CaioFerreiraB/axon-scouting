@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import re
 from collections.abc import Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date
 from typing import Final
 
@@ -26,6 +26,7 @@ from axon_ai_contracts import RETRIEVAL_FILTERS_KEY, JSONValue, TurnView
 from axon_scouting.context.lexicon import LEXICON, Lexicon, Topic
 from axon_scouting.context.periods import Validity, find_period
 from axon_scouting.context.text import contains_term, normalize
+from axon_scouting.rag.graph.api import QueryPlan, QueryStep, reconhecer
 
 CONTEXT_KEY = "context"
 """Chave da fatia com o contexto derivado inteiro — o que a 104 e a 105 leem."""
@@ -65,10 +66,12 @@ class ScoutingContext:
     """A pergunta anterior que esta, de seguimento, retoma (ADR-061); `None` quando a pergunta tem assunto próprio."""
     synthesis: SynthesisRequest | None = None
     """Pedido de síntese ao longo das atas (ADR-062); `None` na pergunta pontual."""
-    organs: tuple[str, ...] = ()
-    """Os tipos de órgão ou instituição que a pergunta pontual nomeia, pelo grafo das normas (ADR-063): a 103 traz as
-    seções que os disciplinam, da norma de cima para a de baixo. Vazio na síntese, na lista, na enumeração e na
-    pergunta histórica."""
+    entities: tuple[str, ...] = ()
+    """As entidades do grafo de domínio que a pergunta pontual nomeia, pelo termo mais longo, na ordem da menção
+    (ADR-063, ADR-064). Vazio na síntese, na lista, na enumeração e na pergunta histórica (101 R43)."""
+    plan: QueryPlan = field(default_factory=QueryPlan)
+    """O plano de consultas do grafo pela forma da pergunta (ADR-064, 101 FR-037). No G1, `sobre` das entidades nas
+    normas: a 103 traz as seções que as disciplinam, da norma de cima para a de baixo."""
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -150,9 +153,12 @@ def derive_context(
         suggested_bodies=subjects,
         anchor=anchor,
         synthesis=(synthesis := _synthesis(anchored, reference_day, lexicon, named)),
-        organs=()
-        if synthesis is not None or catalog is not None or enumeration is not None or period is not None
-        else _organs(anchored, lexicon),
+        entities=(
+            entities := ()
+            if synthesis is not None or catalog is not None or enumeration is not None or period is not None
+            else reconhecer(anchored, lexicon.entity_terms)
+        ),
+        plan=_plan(entities),
     )
 
 
@@ -188,7 +194,8 @@ def to_slice(context: ScoutingContext) -> dict[str, JSONValue]:
         if context.enumeration is None
         else {"unit_kind": context.enumeration.unit_kind, "terms": list(context.enumeration.terms)},
         "anchor": context.anchor,
-        "organs": list(context.organs),
+        "entities": list(context.entities),
+        "plan": None if context.plan.empty else context.plan.to_json(),
         "synthesis": None
         if context.synthesis is None
         else {
@@ -320,23 +327,12 @@ def _has_subject(text: str, lexicon: Lexicon) -> bool:
     )
 
 
-def _organs(text: str, lexicon: Lexicon) -> tuple[str, ...]:
-    """Os órgãos nomeados, pelo nome mais longo: "conselho consultivo regional" é o regional, e o "conselho
-    consultivo" de dentro dele não conta como o nacional. Na ordem da primeira menção."""
-    matches = sorted(
-        (
-            (term, organ, f" {text} ".find(f" {term} "))
-            for organ, terms in lexicon.organ_terms.items()
-            for term in terms
-            if contains_term(text, term)
-        ),
-        key=lambda match: -len(match[0]),
-    )
-    kept: list[tuple[str, str, int]] = []
-    for term, organ, position in matches:
-        if not any(term in longer for longer, _, _ in kept):
-            kept.append((term, organ, position))
-    return tuple(dict.fromkeys(organ for _, organ, _ in sorted(kept, key=lambda match: match[2])))
+def _plan(entities: tuple[str, ...]) -> QueryPlan:
+    """A forma da pergunta → o plano (101 FR-037). No G1, só o que o ADR-063 fazia: um `sobre` com todas as entidades
+    nomeadas, nas normas (um grupo só, da norma de cima para a de baixo)."""
+    if not entities:
+        return QueryPlan()
+    return QueryPlan(consultas=(QueryStep(q="sobre", args={"entidades": list(entities), "papeis": ["norma"]}),))
 
 
 _YEAR: Final = re.compile(r"\b(19[89]\d|20\d\d)\b")

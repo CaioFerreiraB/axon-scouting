@@ -281,46 +281,114 @@ def test_sem_orgao_a_busca_vazia_continua_vazia() -> None:
     assert buscar("acampamento", filtros(branch="lobinho", document_types=["estatuto"]), top_k=30) == []
 
 
-# --- ADR-063: o grafo traz as seções do órgão perguntado --------------------------------------------------------------
+# --- ADR-063, ADR-064: o plano traz as seções da entidade perguntada -------------------------------------------------
 
 
-class Grafo:
-    def __init__(self, secoes: list[object]) -> None:
-        self._secoes = secoes
+def _grafo(chunk_ids: tuple[str, ...]) -> object:
+    from axon_scouting.rag.graph.adapters.memory import MemoryGraphStore
+    from axon_scouting.rag.graph.service import DomainGraphService
 
-    async def organ_terms(self) -> dict[str, tuple[str, ...]]:
-        return {"conselho_x": ("conselho x",)}
+    return DomainGraphService(
+        MemoryGraphStore(
+            [
+                {"kind": "meta", "version": 2, "chunking": "x"},
+                {
+                    "kind": "entity",
+                    "id": "tipo_orgao:conselho_x",
+                    "type": "tipo_orgao",
+                    "name": "Conselho X",
+                    "terms": ["conselho x"],
+                    "source": "organizacao.yaml:tipos_de_orgao/conselho_x",
+                    "origin": "curado",
+                },
+                {
+                    "kind": "entity",
+                    "id": "tipo_orgao:assembleia_x",
+                    "type": "tipo_orgao",
+                    "name": "Assembleia X",
+                    "terms": ["assembleia x"],
+                    "source": "organizacao.yaml:tipos_de_orgao/assembleia_x",
+                    "origin": "curado",
+                },
+                {
+                    "kind": "version",
+                    "doc_key": "por-2025",
+                    "document_id": "por",
+                    "type": "por",
+                    "role": "norma",
+                    "status": "vigente",
+                    "scope": "nacional",
+                },
+                {
+                    "kind": "unit",
+                    "unit_id": "por-2025#u/cap5",
+                    "doc_key": "por-2025",
+                    "unit_kind": "capitulo",
+                    "title": "Capítulo 5",
+                    "chunk_ids": list(chunk_ids),
+                },
+                {
+                    "kind": "edge",
+                    "type": "SOBRE",
+                    "mode": "disciplina",
+                    "from": "por-2025#u/cap5",
+                    "to": "tipo_orgao:conselho_x",
+                    "source": "por-2025#u/cap5",
+                    "origin": "regra",
+                },
+                {
+                    "kind": "edge",
+                    "type": "ELEGE",
+                    "from": "tipo_orgao:assembleia_x",
+                    "to": "tipo_orgao:conselho_x",
+                    "source": "por-2025#regra5@p15",
+                    "origin": "curado",
+                },
+            ]
+        )
+    )
 
-    async def sections(self, organs: object) -> list[object]:
-        return list(self._secoes) if "conselho_x" in organs else []  # type: ignore[operator]
 
-    async def relations(self, organs: object) -> list[object]:
-        from axon_scouting.rag.index.api import NormRelation
-
-        return [NormRelation(kind="ELEGE", source="assembleia_x", target="conselho_x", chunk_id="por-2025#regra5@p15")]
+def _plano(*entidades: str) -> dict[str, object]:
+    return {"version": 1, "consultas": [{"q": "sobre", "args": {"entidades": list(entidades), "papeis": ["norma"]}}]}
 
 
 def test_grafo_traz_a_secao_do_orgao_a_frente() -> None:
     """A Regra 33 (nome do grupo) não casa com "acampamento da tropa", mas é a seção do órgão: entra à frente."""
-    from axon_scouting.rag.index.api import NormSection
+    from axon_scouting.rag.retrieval.domain.ordering import GRAPH_QUERY, GRAPH_RANK, ROLE
+
+    secao = ("por-2025#regra33@p38", "por-2025#regra49@p40")
+
+    async def go(**extra: object) -> list[Chunk]:
+        retriever = ScoutingRetriever(await indice(), graph=_grafo(secao))  # type: ignore[arg-type]
+        return list(await retriever.search("acampamento da tropa", top_k=10, filters=filtros(**extra)))
+
+    com = asyncio.run(go(entities=["tipo_orgao:conselho_x"], plan=_plano("tipo_orgao:conselho_x")))
+    assert com[0].metadata[GRAPH_RANK] == 0 and com[0].chunk_id.startswith("por-2025#")
+    assert com[0].metadata[GRAPH_QUERY] == "sobre" and com[0].metadata[ROLE] == "norma"
+    # as duas regras da seção; a relação (quem elege o conselho) não entra na busca (106 FR-007)
+    assert {c.chunk_id for c in com if GRAPH_RANK in c.metadata} == set(secao)
+    sem = asyncio.run(go())
+    assert all(GRAPH_RANK not in c.metadata for c in sem)
+
+
+def test_plano_invalido_vale_como_ausente(caplog: pytest.LogCaptureFixture) -> None:
+    """106 research R8: o plano é um otimizador; inválido, a busca segue sem o grafo, com aviso nomeando o campo."""
     from axon_scouting.rag.retrieval.domain.ordering import GRAPH_RANK
 
-    secao = NormSection(
-        organ="conselho_x",
-        doc_key="por-2025",
-        unit_id="por#cap5",
-        title="Capítulo 5",
-        scope="nacional",
-        chunk_ids=("por-2025#regra33@p38", "por-2025#regra49@p40"),
-    )
+    async def go() -> list[Chunk]:
+        retriever = ScoutingRetriever(await indice(), graph=_grafo(("por-2025#regra33@p38",)))  # type: ignore[arg-type]
+        plano = {"version": 1, "consultas": [{"q": "cypher", "args": {}}]}
+        return list(await retriever.search("acampamento da tropa", top_k=10, filters=filtros(plan=plano)))
 
-    async def go(organs: list[str]) -> list[Chunk]:
-        retriever = ScoutingRetriever(await indice(), graph=Grafo([secao]))  # type: ignore[arg-type]
-        return list(await retriever.search("acampamento da tropa", top_k=10, filters=filtros(organs=organs)))
+    with caplog.at_level("WARNING"):
+        found = asyncio.run(go())
+    assert all(GRAPH_RANK not in c.metadata for c in found)
+    assert "consultas[0].q" in caplog.text
 
-    com = asyncio.run(go(["conselho_x"]))
-    assert com[0].metadata[GRAPH_RANK] == 0 and com[0].chunk_id.startswith("por-2025#")
-    # as duas regras da seção; a relação (quem elege o conselho) não entra na busca
-    assert {c.chunk_id for c in com if GRAPH_RANK in c.metadata} == set(secao.chunk_ids)
-    sem = asyncio.run(go([]))
-    assert all(GRAPH_RANK not in c.metadata for c in sem)
+
+def test_entidade_com_id_invalido_e_erro_de_filtro() -> None:
+    from axon_scouting.rag.retrieval.domain.filters import InvalidFilters, entities
+
+    with pytest.raises(InvalidFilters):
+        entities({"entities": ["diretoria_regional"]})

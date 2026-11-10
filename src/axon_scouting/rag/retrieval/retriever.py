@@ -8,10 +8,10 @@ intercaladas: o primeiro de cada ramo, depois o segundo. Trechos de texto idênt
 insígnia) ficam um só, com os rótulos dos outros nos metadados (FR-016, ADR-048). Erros do índice (`IndexUnavailable`,
 `IndexMismatch`) passam sem tradução: são explícitos (FR-007).
 
-Desde o ADR-063, o grafo das normas: quando a pergunta nomeia um órgão (`organs`), os trechos das seções que o
-disciplinam — do Estatuto ao regulamento regional — entram à frente da busca, até 3 por documento e 3 documentos,
-escolhidos pelos termos da pergunta. É o que garante a regra de cima mesmo quando a pergunta fala de um caso e a norma
-fala em abstrato.
+Desde o ADR-063, refeito pelo ADR-064 (103 FR-022): o plano que a 101 publicou (`plan`) roda no grafo de domínio
+(106), e os trechos da evidência — do Estatuto ao regulamento regional — entram à frente da busca, até 3 por documento
+(os que mais casam com a pergunta) e 3 documentos por consulta. É o que garante a regra de cima mesmo quando a pergunta
+fala de um caso e a norma fala em abstrato. A busca híbrida roda sempre; sem plano, nada vem à frente.
 
 Desde o ADR-061: na pergunta de seguimento, uma busca com a âncora antes da pergunta e outra só com a pergunta,
 juntas pela melhor posição de cada trecho — a âncora traz o assunto, e a pergunta sozinha protege de uma âncora
@@ -28,14 +28,15 @@ from typing import Final
 
 from axon_ai_contracts import Chunk, JSONValue, NamedRetriever
 
-from axon_scouting.rag.index.api import ChunkIndex, IndexedChunk, IndexFilters, NormGraph, Shape
+from axon_scouting.rag.graph.api import DomainGraphSource, QueryPlan
+from axon_scouting.rag.index.api import ChunkIndex, IndexedChunk, IndexFilters, Shape
 from axon_scouting.rag.retrieval.domain.catalog import BRANCH_NAMES
 from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
 from axon_scouting.rag.retrieval.domain.filters import (
     anchor,
     facets,
     index_filters,
-    organs,
+    plan,
     suggested_bodies,
     suggested_types,
 )
@@ -45,15 +46,18 @@ from axon_scouting.rag.retrieval.domain.ordering import (
     FACET_ORDER,
     FACET_RANK,
     FUSION_SCORE,
+    GRAPH_QUERY,
     GRAPH_RANK,
     RELAXED,
+    ROLE,
     marks,
     ordered,
 )
 from axon_scouting.rag.retrieval.domain.terms import bag, idf, query_terms, score
 
 GRAPH_PER_DOCUMENT: Final = 3
-GRAPH_DOCUMENTS: Final = 3
+"""Trechos por documento da evidência do grafo, escolhidos pela pergunta (ADR-063; clarify da 106). Os documentos por
+consulta (3) são cortados pelo executor da 106; o teto total das frentes (8 de 20) entra no G2, medido."""
 
 TOOL_NAME: Final = "search_docs"
 TOOL_DESCRIPTION: Final = (
@@ -72,13 +76,13 @@ class ScoutingRetriever:
         config: RetrievalConfig | None = None,
         *,
         shape: Shape | None = None,
-        graph: NormGraph | None = None,
+        graph: DomainGraphSource | None = None,
     ) -> None:
         self._index = index
         self._config = config or RetrievalConfig()
         self._shape = shape
         self._graph = graph
-        """As seções que disciplinam o órgão perguntado (ADR-063); sem grafo, a busca é só a do índice."""
+        """O grafo de domínio, que roda o plano da pergunta (ADR-064); sem grafo, a busca é só a do índice."""
         """Só trechos dessa forma (a tool de unidades busca as listas, ADR-048)."""
 
     async def search(
@@ -116,36 +120,42 @@ class ScoutingRetriever:
                 if kept is None or (chunk.score or 0.0) > (kept.score or 0.0):
                     best[chunk.chunk_id] = chunk
         found = [_to_chunk(chunk, index_filters_, *preferred) for chunk in best.values()]
-        anchored = await self._by_organ(query, organs(filters), index_filters_, preferred)
+        anchored = await self._by_plan(query, plan(filters), index_filters_, preferred)
         return without_repeats(ordered([*anchored, *found]))[:limit]
 
-    async def _by_organ(
+    async def _by_plan(
         self,
         query: str,
-        named: tuple[str, ...],
+        plan_: QueryPlan | None,
         filters: IndexFilters,
         preferred: tuple[tuple[str, ...], tuple[str, ...]],
     ) -> list[Chunk]:
-        """Os trechos das seções que disciplinam os órgãos nomeados, documento a documento da norma de cima para a de
-        baixo, até `GRAPH_PER_DOCUMENT` por documento — os que mais casam com a pergunta, na ordem do documento. As
-        relações de governança do grafo (quem elege, fiscaliza… o órgão) não entram: medidas, não mudaram nada."""
-        if self._graph is None or not named or self._shape is not None:
+        """Os trechos da evidência do plano, grupo a grupo e, em cada grupo, documento a documento na ordem do executor
+        (a norma de cima primeiro), até `GRAPH_PER_DOCUMENT` por documento — os que mais casam com a pergunta, na ordem
+        do documento. A tool de unidades (`shape`) não usa o grafo."""
+        if self._graph is None or plan_ is None or self._shape is not None:
             return []
-        documents: dict[str, list[str]] = {}
-        for section in await self._graph.sections(named):
-            documents.setdefault(section.doc_key, []).extend(section.chunk_ids)
-        chosen = list(documents.items())[:GRAPH_DOCUMENTS]
-        wanted = [c for _, ids in chosen for c in ids]
+        groups = await self._graph.run(plan_)
+        chosen: list[tuple[str, str, list[str]]] = []  # (consulta, papel, trechos) por documento, na ordem
+        wanted: list[str] = []
+        for group in groups:
+            documents: dict[str, tuple[str, list[str]]] = {}
+            for evidence in group.evidence:
+                documents.setdefault(evidence.doc_key, (evidence.role, []))[1].extend(evidence.chunk_ids)
+            for role, ids in documents.values():
+                chosen.append((group.query, role, ids))
+                wanted.extend(ids)
         chunks = {chunk.chunk_id: chunk for chunk in await self._index.get(list(dict.fromkeys(wanted)))}
         terms = query_terms(query)
-        result: list[IndexedChunk] = []
-        for _, ids in chosen:
-            result.extend(_best(ids, chunks, terms, GRAPH_PER_DOCUMENT))
+        result: list[tuple[str, str, IndexedChunk]] = []
+        for query_name, role, ids in chosen:
+            result.extend((query_name, role, chunk) for chunk in _best(ids, chunks, terms, GRAPH_PER_DOCUMENT))
         return [
             dataclasses.replace(
-                marked := _to_chunk(chunk, filters, *preferred), metadata={**marked.metadata, GRAPH_RANK: rank}
+                marked := _to_chunk(chunk, filters, *preferred),
+                metadata={**marked.metadata, GRAPH_RANK: rank, GRAPH_QUERY: query_name, ROLE: role},
             )
-            for rank, chunk in enumerate(result)
+            for rank, (query_name, role, chunk) in enumerate(result)
         ]
 
     async def _unique(

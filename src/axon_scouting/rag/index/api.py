@@ -450,73 +450,9 @@ class MeetingSummaries(Protocol):
         ...
 
 
-@dataclass(frozen=True, slots=True, kw_only=True)
-class NormSection:
-    """Uma seção de norma vigente que disciplina um tipo de órgão (ADR-063): o grafo leva da pergunta, pelo órgão, aos
-    trechos dela. `scope` é o nível do documento — a norma de cima vem antes."""
-
-    organ: str
-    doc_key: str
-    unit_id: str
-    title: str
-    scope: str | None
-    chunk_ids: tuple[str, ...]
-
-    def to_json(self) -> dict[str, JSONValue]:
-        return {
-            "organ": self.organ,
-            "doc_key": self.doc_key,
-            "unit_id": self.unit_id,
-            "title": self.title,
-            "scope": self.scope,
-            "chunk_ids": list(self.chunk_ids),
-        }
-
-    @classmethod
-    def from_json(cls, raw: Mapping[str, JSONValue]) -> NormSection:
-        chunk_ids = raw.get("chunk_ids")
-        scope = raw.get("scope")
-        return cls(
-            organ=str(raw["organ"]),
-            doc_key=str(raw["doc_key"]),
-            unit_id=str(raw["unit_id"]),
-            title=str(raw["title"]),
-            scope=scope if isinstance(scope, str) else None,
-            chunk_ids=tuple(str(c) for c in chunk_ids) if isinstance(chunk_ids, list) else (),
-        )
-
-
-@dataclass(frozen=True, slots=True, kw_only=True)
-class NormRelation:
-    """Uma relação de governança entre órgãos com o trecho que a prova (ADR-063): a pergunta sobre a Diretoria Regional
-    recebe também "a Assembleia Regional elege a Diretoria Regional", que está na seção da Assembleia."""
-
-    kind: str
-    source: str
-    target: str
-    chunk_id: str
-
-
-@runtime_checkable
-class NormGraph(Protocol):
-    """O grafo das normas por órgão (seam da 102, ADR-063): a 103 o consome, e a 101 lê os termos dos órgãos."""
-
-    async def organ_terms(self) -> Mapping[str, tuple[str, ...]]:
-        """Tipo de órgão ou de instituição → os nomes normalizados que o reconhecem numa pergunta."""
-        ...
-
-    async def sections(self, organs: Sequence[str]) -> list[NormSection]:
-        """As seções que disciplinam esses órgãos, da norma de cima para a de baixo; órgão desconhecido → nenhuma."""
-        ...
-
-    async def relations(self, organs: Sequence[str]) -> list[NormRelation]:
-        """As relações de governança em que esses órgãos estão numa das pontas, na ordem do catálogo."""
-        ...
-
-
 @runtime_checkable
 class ChunkIndex(Protocol):
-    """Porta de consulta do índice (seam da 102), consumida por 103 e 106."""
+    """Porta de consulta do índice (seam da 102), consumida pela 103; a 106 lê o artefato só offline."""
 
     async def search(self, query: str, *, filters: IndexFilters, limit: int) -> list[IndexedChunk]:
         """Busca densa + esparsa com fusão no armazenamento, já filtrada; no máximo `limit`, por score decrescente e,

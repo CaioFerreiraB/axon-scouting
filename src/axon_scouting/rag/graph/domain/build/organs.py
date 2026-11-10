@@ -1,5 +1,5 @@
-"""O grafo das normas por órgão: a ligação `DISCIPLINA` entre as seções das normas e os órgãos (relatório "Diretoria
-Regional", Fase 2; ADR-063).
+"""As seções das normas que disciplinam cada órgão: a regra do ADR-063, que o grafo de domínio grava como `SOBRE`
+(modo `disciplina`) — movida de `rag/ingestion/domain/graph.py` sem mudança (spec 106, research R2).
 
 O catálogo de órgãos e instituições vem de `corpus/organizacao.yaml` (curado). A ligação sai por regra, do título das
 unidades de estrutura (título, capítulo, seção) das normas vigentes: "Seção III – Da Diretoria Regional" disciplina a

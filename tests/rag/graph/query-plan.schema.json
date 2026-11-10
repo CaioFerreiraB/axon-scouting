@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "axon-scouting/106/query-plan/v1",
+  "title": "QueryPlan — o plano de consultas do grafo de domínio (retrieval_filters.plan)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "consultas"],
+  "properties": {
+    "version": {"const": 1},
+    "forma": {"enum": ["simples", "para_cada", "intersecao"], "default": "simples"},
+    "para_cada": {"type": "array", "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/entity"}},
+    "consultas": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["q", "args"],
+        "properties": {
+          "q": {"enum": ["sobre", "aplicavel_a", "documentos", "itens", "linha_do_tempo", "ligados"]},
+          "args": {"type": "object"}
+        },
+        "allOf": [
+          {"if": {"properties": {"q": {"const": "sobre"}}}, "then": {"properties": {"args": {"$ref": "#/$defs/sobre"}}}},
+          {"if": {"properties": {"q": {"const": "aplicavel_a"}}}, "then": {"properties": {"args": {"$ref": "#/$defs/aplicavel_a"}}}},
+          {"if": {"properties": {"q": {"const": "documentos"}}}, "then": {"properties": {"args": {"$ref": "#/$defs/documentos"}}}},
+          {"if": {"properties": {"q": {"const": "itens"}}}, "then": {"properties": {"args": {"$ref": "#/$defs/itens"}}}},
+          {"if": {"properties": {"q": {"const": "linha_do_tempo"}}}, "then": {"properties": {"args": {"$ref": "#/$defs/linha_do_tempo"}}}},
+          {"if": {"properties": {"q": {"const": "ligados"}}}, "then": {"properties": {"args": {"$ref": "#/$defs/ligados"}}}}
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "entity": {
+      "type": "string",
+      "pattern": "^(\\$cada|(tipo_inst|tipo_orgao|inst|orgao|cargo|ramo|secao|area|conceito|doc):[a-z0-9_.-]+)$"
+    },
+    "papeis": {"type": "array", "uniqueItems": true, "items": {"enum": ["norma", "orientacao", "registro", "comunicacao"]}},
+    "periodo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {"de": {"type": "string", "format": "date"}, "ate": {"type": "string", "format": "date"}}
+    },
+    "sobre": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entidades"],
+      "properties": {
+        "entidades": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/entity"}},
+        "modo": {"enum": ["todas", "alguma"], "default": "alguma"},
+        "papeis": {"$ref": "#/$defs/papeis"},
+        "tipos": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9_]+$"}},
+        "ramo": {"$ref": "#/$defs/entity"},
+        "periodo": {"$ref": "#/$defs/periodo"}
+      }
+    },
+    "aplicavel_a": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["instituicao"],
+      "properties": {"instituicao": {"$ref": "#/$defs/entity"}, "papeis": {"$ref": "#/$defs/papeis"}}
+    },
+    "documentos": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tipo": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+        "emissor": {"$ref": "#/$defs/entity"},
+        "aplica_se_a": {"$ref": "#/$defs/entity"},
+        "area": {"$ref": "#/$defs/entity"},
+        "ramo": {"$ref": "#/$defs/entity"},
+        "periodo": {"$ref": "#/$defs/periodo"},
+        "vigente": {"type": "boolean", "default": true}
+      }
+    },
+    "itens": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tipo_de_unidade": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+        "de": {"$ref": "#/$defs/entity"},
+        "ramo": {"$ref": "#/$defs/entity"}
+      }
+    },
+    "linha_do_tempo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alvo"],
+      "properties": {
+        "alvo": {"$ref": "#/$defs/entity"},
+        "eventos": {"type": "array", "uniqueItems": true, "items": {"enum": ["reuniao", "deliberacao", "eleicao", "alteracao"]}},
+        "periodo": {"$ref": "#/$defs/periodo"}
+      }
+    },
+    "ligados": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alvo"],
+      "properties": {
+        "alvo": {"type": "string"},
+        "relacoes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z_]+$"}}
+      }
+    }
+  }
+}

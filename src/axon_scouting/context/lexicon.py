@@ -75,9 +75,10 @@ class Lexicon:
     synthesis_markers: tuple[str, ...] = ()
     """Pedido de síntese ao longo do acervo ("ao longo", "desde", "quem foram", "onde se reuniu"): a resposta está
     espalhada pelas atas, e a busca de resumos responde (ADR-062)."""
-    organ_terms: Mapping[str, tuple[str, ...]] = MappingProxyType({})
-    """Tipo de órgão ou de instituição do grafo das normas → os nomes que o reconhecem, normalizados. Vêm do índice
-    (`NormGraph.organ_terms`), postos aqui pela composição do pack, como `unit_kinds` (ADR-063)."""
+    entity_terms: Mapping[str, tuple[str, ...]] = MappingProxyType({})
+    """Entidade do grafo de domínio (`tipo_orgao:…`, `tipo_inst:…`) → os nomes que a reconhecem, normalizados, na ordem
+    do catálogo. Vêm do grafo (`DomainGraphSource.aliases`), postos aqui pela composição do pack, como `unit_kinds`
+    (ADR-063, ADR-064)."""
     meeting_terms: tuple[str, ...] = ()
     """Palavras de reunião ("assembleia", "reunião", "atas"): com um ano citado, a pergunta é sobre o que as atas
     registram, e também é de síntese (ADR-062)."""

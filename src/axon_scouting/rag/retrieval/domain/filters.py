@@ -8,16 +8,22 @@ sugeridos (`suggested_types`) também não: só desempatam a ordem (ADR-046). O 
 lista de documentos (ADR-047), e o de enumeração (`enumeration`), da tool de unidades (ADR-048); a busca por trechos
 ignora os dois. A âncora (`anchor`, ADR-061) é a pergunta anterior que a de seguimento retoma: o retriever busca também
 com ela. O pedido de síntese (`synthesis`, ADR-062) é da tool de resumos das atas; a busca por trechos o ignora.
+
+Desde o ADR-064 (103 FR-022): `entities` (as entidades do grafo de domínio que a pergunta nomeia) e `plan` (o plano de
+consultas da 106) no lugar de `organs`. O plano é um otimizador: inválido, vale como ausente, com aviso no log — a
+busca continua correta sem ele (106 research R8).
 """
 
 from __future__ import annotations
 
+import logging
 from collections.abc import Mapping
 from datetime import date
 from typing import Final
 
 from axon_ai_contracts import JSONValue
 
+from axon_scouting.rag.graph.api import ENTITY_ID, PlanInvalid, QueryPlan
 from axon_scouting.rag.index.api import BRANCHES, SCOPES, IndexFilters, taxonomy_id
 from axon_scouting.rag.retrieval.domain.catalog import CatalogRequest
 from axon_scouting.rag.retrieval.domain.summaries import SynthesisRequest
@@ -41,9 +47,11 @@ KNOWN: Final = frozenset(
         "enumeration",
         "anchor",
         "synthesis",
-        "organs",
+        "entities",
+        "plan",
     }
 )
+_LOG = logging.getLogger(__name__)
 ANCHOR_MAX_CHARS: Final = 400
 """O mesmo teto da 101: uma âncora maior é contrato quebrado, não texto a cortar aqui."""
 
@@ -200,9 +208,30 @@ def synthesis_request(raw: Mapping[str, JSONValue] | None) -> SynthesisRequest |
     )
 
 
-def organs(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:
-    """Os tipos de órgão que a pergunta pontual nomeia (ADR-063): a busca traz as seções que os disciplinam."""
-    return _ids(raw or {}, "organs")
+def entities(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:
+    """As entidades do grafo de domínio que a pergunta nomeia, na ordem da menção (ADR-064)."""
+    value = (raw or {}).get("entities")
+    if value is None:
+        return ()
+    if not isinstance(value, list) or any(not isinstance(i, str) or not ENTITY_ID.match(i) for i in value):
+        raise InvalidFilters("entities", f"esperada lista de ids de entidade (prefixo:slug), veio {value!r}")
+    return tuple(str(item) for item in value)
+
+
+def plan(raw: Mapping[str, JSONValue] | None) -> QueryPlan | None:
+    """O plano de consultas do grafo (ADR-064). Ausente → `None`; inválido → `None` e um aviso que nomeia o campo:
+    sem o plano, a busca segue como sem grafo (106 research R8)."""
+    value = (raw or {}).get("plan")
+    if value is None:
+        return None
+    try:
+        if not isinstance(value, Mapping):
+            raise PlanInvalid("plan", "precisa ser um objeto")
+        parsed = QueryPlan.from_json(value)
+    except PlanInvalid as error:
+        _LOG.warning("plano do grafo ignorado: %s", error)
+        return None
+    return None if parsed.empty else parsed
 
 
 def suggested_types(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:

@@ -1,6 +1,6 @@
 [project]
 name = "axon-scouting"
-version = "0.11.1"
+version = "0.12.0"
 description = "Pack de domínio escoteiro da plataforma Axon (specs 1xx em axon)."
 readme = "README.md"
 license = "MIT"
@@ -87,10 +87,13 @@ name = "só o pack.py compõe"
 type = "layers"
 # As métricas (spec 105, research R10) ficam entre o pack e o resto: leem a derivação de `context/`, e os módulos da camada
 # de baixo são independentes entre si.
+# Desde o ADR-064 (106 R14), `rag` fica abaixo: a derivação escreve o plano com o esquema da 106, e um contrato abaixo a
+# limita ao `rag.graph.api`.
 layers = [
     "axon_scouting.pack",
     "axon_scouting.eval",
-    "axon_scouting.context | axon_scouting.prompts | axon_scouting.validators | axon_scouting.rag",
+    "axon_scouting.context | axon_scouting.prompts | axon_scouting.validators",
+    "axon_scouting.rag",
 ]
 
 [[tool.importlinter.contracts]]
@@ -155,6 +158,10 @@ forbidden_modules = [
     "axon_scouting.rag.index.domain",
     "axon_scouting.rag.index.ports",
     "axon_scouting.rag.index.adapters",
+    "axon_scouting.rag.graph.domain",
+    "axon_scouting.rag.graph.ports",
+    "axon_scouting.rag.graph.service",
+    "axon_scouting.rag.graph.adapters",
 ]
 
 # Retrieval (spec 103, research R9): só o api.py do índice, nenhuma infraestrutura.
@@ -183,3 +190,57 @@ forbidden_modules = [
     "pypdfium2",
     "yaml",
 ]
+
+# Grafo de domínio (spec 106, research R14; ADR-064).
+[[tool.importlinter.contracts]]
+name = "a derivação vê do rag só o seam do grafo"
+type = "forbidden"
+source_modules = ["axon_scouting.context"]
+forbidden_modules = ["axon_scouting.rag.index", "axon_scouting.rag.retrieval", "axon_scouting.rag.ingestion"]
+
+[[tool.importlinter.contracts]]
+name = "camadas do grafo"
+type = "layers"
+layers = [
+    "axon_scouting.rag.graph.adapters",
+    "axon_scouting.rag.graph.service",
+    "axon_scouting.rag.graph.ports | axon_scouting.rag.graph.domain",
+    "axon_scouting.rag.graph.api",
+]
+
+[[tool.importlinter.contracts]]
+name = "o api.py do grafo não importa o resto do grafo"
+type = "forbidden"
+source_modules = ["axon_scouting.rag.graph.api"]
+forbidden_modules = [
+    "axon_scouting.rag.graph.domain",
+    "axon_scouting.rag.graph.ports",
+    "axon_scouting.rag.graph.service",
+    "axon_scouting.rag.graph.adapters",
+    "axon_scouting.rag.index",
+    "axon_scouting.rag.retrieval",
+    "axon_scouting.rag.ingestion",
+]
+
+[[tool.importlinter.contracts]]
+name = "infraestrutura do grafo só em adapters/"
+type = "forbidden"
+source_modules = [
+    "axon_scouting.rag.graph.api",
+    "axon_scouting.rag.graph.domain",
+    "axon_scouting.rag.graph.ports",
+    "axon_scouting.rag.graph.service",
+]
+forbidden_modules = ["yaml"]
+
+[[tool.importlinter.contracts]]
+name = "o retrieval vê do grafo só o api.py"
+type = "forbidden"
+source_modules = ["axon_scouting.rag.retrieval", "axon_scouting.rag.index", "axon_scouting.rag.ingestion"]
+forbidden_modules = [
+    "axon_scouting.rag.graph.domain",
+    "axon_scouting.rag.graph.ports",
+    "axon_scouting.rag.graph.service",
+    "axon_scouting.rag.graph.adapters",
+]
+

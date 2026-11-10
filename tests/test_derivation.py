@@ -104,7 +104,8 @@ def test_fatia_com_ramo() -> None:
             "catalog": None,
             "enumeration": {"unit_kind": None, "terms": ["competencias", "relacionadas", "lideranca"]},
             "anchor": None,
-            "organs": [],
+            "entities": [],
+            "plan": None,
             "synthesis": None,
         },
         "retrieval_filters": {
@@ -500,15 +501,15 @@ def test_sintese_na_fatia() -> None:
     }
 
 
-# --- ADR-063: os órgãos nomeados, pelo grafo das normas ---------------------------------------------------------------
+# --- ADR-063, ADR-064: as entidades nomeadas, pelo grafo de domínio, e o plano -------------------------------------
 
 COM_ORGAOS = dataclasses.replace(
     LEXICON,
-    organ_terms=MappingProxyType(
+    entity_terms=MappingProxyType(
         {
-            "diretoria_regional": ("diretoria regional",),
-            "conselho_consultivo_nacional": ("conselho consultivo",),
-            "conselho_consultivo_regional": ("conselho consultivo regional",),
+            "tipo_orgao:diretoria_regional": ("diretoria regional",),
+            "tipo_orgao:conselho_consultivo_nacional": ("conselho consultivo",),
+            "tipo_orgao:conselho_consultivo_regional": ("conselho consultivo regional",),
         }
     ),
 )
@@ -517,9 +518,9 @@ COM_ORGAOS = dataclasses.replace(
 @pytest.mark.parametrize(
     ("pergunta", "orgaos"),
     [
-        (REELEICAO, ("diretoria_regional",)),
-        ("Qual o papel do Conselho Consultivo Regional?", ("conselho_consultivo_regional",)),
-        ("Como funciona o conselho consultivo?", ("conselho_consultivo_nacional",)),
+        (REELEICAO, ("tipo_orgao:diretoria_regional",)),
+        ("Qual o papel do Conselho Consultivo Regional?", ("tipo_orgao:conselho_consultivo_regional",)),
+        ("Como funciona o conselho consultivo?", ("tipo_orgao:conselho_consultivo_nacional",)),
         ("Qual o marco simbólico do ramo lobinho?", ()),
         # Síntese, lista e pergunta histórica não ancoram no grafo.
         ("Quem foram os presidentes eleitos para a diretoria regional desde 2016?", ()),
@@ -528,4 +529,23 @@ COM_ORGAOS = dataclasses.replace(
     ],
 )
 def test_orgaos_pelo_grafo(pergunta: str, orgaos: tuple[str, ...]) -> None:
-    assert derive_context(pergunta, DIA, COM_ORGAOS).organs == orgaos
+    contexto = derive_context(pergunta, DIA, COM_ORGAOS)
+    assert contexto.entities == orgaos
+    # G1 (101 FR-037): um sobre com todas as entidades, nas normas; sem entidade, plano vazio.
+    if orgaos:
+        assert contexto.plan.to_json() == {
+            "version": 1,
+            "forma": "simples",
+            "consultas": [{"q": "sobre", "args": {"entidades": list(orgaos), "papeis": ["norma"]}}],
+        }
+    else:
+        assert contexto.plan.empty
+
+
+def test_o_plano_vai_aos_filtros_e_e_valido_pelo_esquema() -> None:
+    from axon_scouting.rag.graph.api import QueryPlan
+
+    filtros_ = to_slice(derive_context(REELEICAO, DIA, COM_ORGAOS))["retrieval_filters"]
+    assert filtros_["entities"] == ["tipo_orgao:diretoria_regional"]
+    assert QueryPlan.from_json(filtros_["plan"]).consultas[0].q == "sobre"  # type: ignore[arg-type]
+    assert "plan" not in to_slice(derive_context("Qual o lema do lobinho?", DIA, COM_ORGAOS))["retrieval_filters"]

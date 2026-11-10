@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 
-import asyncio
 from pathlib import Path
 
 import pytest
 import yaml
 
-from axon_scouting.rag.index.adapters.graph import ArtifactGraph, write_graph
-from axon_scouting.rag.index.api import NormSection
-from axon_scouting.rag.ingestion.domain.graph import (
+from axon_scouting.rag.graph.domain.build.organs import (
     ChunkPlace,
     OrganizationError,
     organ_of_title,
@@ -18,7 +15,7 @@ from axon_scouting.rag.ingestion.domain.graph import (
     sections,
 )
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[4]
 CATALOGO = {
     "tipos_de_instituicao": [{"id": "regiao", "nome": "Região Escoteira", "aliases": ["regiao"]}],
     "tipos_de_orgao": [
@@ -126,22 +123,6 @@ def test_catalogo_invalido() -> None:
         organs_from_mapping({"tipos_de_orgao": [{"id": "a", "nome": "Órgão A"}, {"id": "a", "nome": "Órgão B"}]})
 
 
-def test_artefato_ida_e_volta(tmp_path: Path) -> None:
-    secao = NormSection(
-        organ="diretoria_regional",
-        doc_key="estatuto",
-        unit_id="e#s3",
-        title="Seção III",
-        scope="nacional",
-        chunk_ids=("e#art27@p19",),
-    )
-    write_graph(tmp_path / "graph.jsonl", {"diretoria_regional": ("diretoria regional",)}, [secao])
-    grafo = ArtifactGraph(tmp_path)
-    assert asyncio.run(grafo.organ_terms()) == {"diretoria_regional": ("diretoria regional",)}
-    assert asyncio.run(grafo.sections(["diretoria_regional", "desconhecido"])) == [secao]
-    assert asyncio.run(ArtifactGraph(tmp_path / "vazio").sections(["diretoria_regional"])) == []
-
-
 def test_o_catalogo_do_corpus_carrega() -> None:
     organs = organs_from_mapping(yaml.safe_load((ROOT / "corpus" / "organizacao.yaml").read_text(encoding="utf-8")))
     ids = {organ.id for organ in organs}
@@ -149,7 +130,7 @@ def test_o_catalogo_do_corpus_carrega() -> None:
 
 
 def test_relacoes_so_com_fonte_conferida_e_presente() -> None:
-    from axon_scouting.rag.ingestion.domain.graph import cargo_terms, relations_from_mapping
+    from axon_scouting.rag.graph.domain.build.organs import cargo_terms, relations_from_mapping
 
     bruto = {
         "relacoes": [

@@ -38,14 +38,15 @@ from axon_scouting.prompts import SYSTEM_PROMPT
 if TYPE_CHECKING:
     from typing import Protocol
 
-    from axon_scouting.rag.index.api import ChunkIndex, DocumentCatalog, DocumentOutline, MeetingSummaries, NormGraph
+    from axon_scouting.rag.graph.api import DomainGraphSource
+    from axon_scouting.rag.index.api import ChunkIndex, DocumentCatalog, DocumentOutline, MeetingSummaries
 
     class _Index(ChunkIndex, DocumentCatalog, DocumentOutline, Protocol):
         """O que o pack pede do índice: busca, catálogo e árvore de unidades (os três adapters os têm)."""
 
     from axon_scouting.rag.index.ports import Embedder
 
-VERSION: Final = "0.11.1"
+VERSION: Final = "0.12.0"
 """Versão do manifest; igual à da distribuição `axon-scouting` (verificado em tests/test_pack.py)."""
 
 COLLECTION: Final = "scouting"
@@ -300,14 +301,15 @@ class ScoutingPack(PackBase):
             search_summaries(SummariesRetriever(_summaries(config)), collection=COLLECTION),
         ]
 
-    def _graph(self, config: ScoutingConfig) -> NormGraph:
-        """O grafo das normas por órgão (ADR-063), composto uma vez: o retriever e a derivação (os termos dos órgãos) o
-        dividem."""
-        from axon_scouting.rag.index.adapters.graph import ArtifactGraph
+    def _graph(self, config: ScoutingConfig) -> DomainGraphSource:
+        """O grafo de domínio (spec 106, ADR-064), composto uma vez: o retriever (o plano) e a derivação (os termos das
+        entidades) o dividem. Um grafo de outro build falha explícito na primeira carga (`GraphUnavailable`)."""
+        from axon_scouting.rag.graph.adapters.artifact import ArtifactGraphStore
+        from axon_scouting.rag.graph.service import DomainGraphService
 
-        graphs: dict[ScoutingConfig, NormGraph] = self.__dict__.setdefault("_graphs", {})
+        graphs: dict[ScoutingConfig, DomainGraphSource] = self.__dict__.setdefault("_graphs", {})
         if config not in graphs:
-            graphs[config] = ArtifactGraph(_artifact_dir(config))
+            graphs[config] = DomainGraphService(ArtifactGraphStore(_artifact_dir(config)))
         return graphs[config]
 
     def _index(self, config: ScoutingConfig) -> _Index:
@@ -318,11 +320,11 @@ class ScoutingPack(PackBase):
             indexes[config] = _compose_index(config)
         return indexes[config]
 
-    async def _organ_terms(self, ctx: PackContext) -> Mapping[str, tuple[str, ...]]:
-        """Os nomes dos órgãos do grafo das normas (ADR-063); configuração inválida ou grafo ausente, nenhum — a
-        derivação sai então sem `organs`, e a busca é só a do índice."""
+    async def _entity_terms(self, ctx: PackContext) -> Mapping[str, tuple[str, ...]]:
+        """Os termos das entidades do grafo de domínio (ADR-064); configuração inválida ou grafo ausente, nenhum — a
+        derivação sai então sem `entities` nem `plan`, e a busca é só a do índice."""
         try:
-            return await self._graph(read_config(ctx.config, ctx.data_dir, require_model=False)).organ_terms()
+            return await self._graph(read_config(ctx.config, ctx.data_dir, require_model=False)).aliases()
         except (ValueError, OSError):
             return {}
 
@@ -416,7 +418,7 @@ class ScoutingPack(PackBase):
         lexicon = dataclasses.replace(
             LEXICON,
             unit_kinds=MappingProxyType(dict(await self._unit_kinds(ctx))),
-            organ_terms=MappingProxyType(dict(await self._organ_terms(ctx))),
+            entity_terms=MappingProxyType(dict(await self._entity_terms(ctx))),
         )
         context = derive_context(
             view.question, reference_day(view.reference_time), lexicon, previous=earlier_questions(view)
