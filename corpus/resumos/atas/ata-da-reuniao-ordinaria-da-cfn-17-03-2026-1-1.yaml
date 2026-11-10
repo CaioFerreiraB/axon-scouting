@@ -1,0 +1,155 @@
+doc_key: ata-da-reuniao-ordinaria-da-cfn-17-03-2026-1-1
+reuniao:
+  tipo: ordinaria
+  data: '2026-03-17'
+  local: Escritório Nacional da União dos Escoteiros do Brasil sito na Rua Coronel Dulcídio, 2107 - Bairro Água Verde, Curitiba
+    - PR
+deliberacoes:
+- tema: Aprovação das contas e balanço anual do nível nacional da UEB
+  decisao: a Comissão Fiscal Nacional opina favoravelmente ao encaminhamento e aprovação pela Assembleia Nacional da União
+    dos Escoteiros do Brasil contas e o balanço anual do nível nacional da UEB, salientando-se o voto divergente de aprovação
+    com as três ressalvas mencionadas pelo membro titular Eduardo Manique
+  votacao: maioria
+  pagina: 14
+  conferido: true
+- tema: Indicação para presidente da Comissão Fiscal Nacional
+  decisao: foi aprovada a indicação para presidente Luiz Salgado Klaes por unanimidade
+  votacao: unanimidade
+  pagina: 14
+  conferido: true
+- tema: Encaminhamento para elaboração do relatório da Comissão Fiscal Nacional
+  decisao: Eduardo Manique se disponibilizou para a elaboração do relatório, juntamente com a equipe do EN
+  votacao: ''
+  pagina: 14
+  conferido: true
+- tema: Disponibilização de planilha detalhada para acompanhamento dos balancetes por região
+  decisao: deliberou-se pela disponibilização, em ambiente compartilhado (drive), de planilha detalhada contendo as datas
+    de recebimento e de envio dos balancetes por região, permitindo acompanhamento contínuo e maior transparência do processo
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: Elaboração de relatório detalhado dos atrasos para apresentação na Assembleia Nacional
+  decisao: foi aprovado pelos demais membros o encaminhamento da elaboração de um relatório detalhado dos atrasos para apresentação
+    na Assembleia Nacional, com o objetivo de evidenciar o problema como gargalo institucional e sensibilizar as regiões quanto
+    à necessidade de cumprimento dos prazos estabelecidos
+  votacao: aprovado
+  pagina: 7
+  conferido: true
+- tema: Realização de reunião entre a Comissão Fiscal Nacional e a Diretoria Executiva Nacional
+  decisao: Eduardo Manique propõe a realização de reunião entre a Comissão Fiscal Nacional e a Diretoria Executiva Nacional,
+    com o objetivo de aprofundar o diálogo e alinhar entendimentos, sugestão aprovada pelos demais membros
+  votacao: aprovada
+  pagina: 11
+  conferido: true
+- tema: Estabelecimento de fluxo e prazos para envio, análise e resposta de documentos financeiros
+  decisao: foi sugerido o estabelecimento de prazo padrão para envio das informações até o dia 10 do mês subsequente ao do
+    fechamento, com exceções para o início do exercício e período de planejamento orçamentário (setembro e outubro), bem como
+    prazo aproximado de 15 dias para análise pela Comissão Fiscal Nacional
+  votacao: ''
+  pagina: 11
+  conferido: true
+- tema: Criação de rede de articulação entre as Comissões Fiscais Regionais
+  decisao: foi sugerida a criação de rede de articulação entre as Comissões Fiscais Regionais, com realização de reuniões
+    periódicas para alinhamento e fortalecimento das práticas de governança
+  votacao: ''
+  pagina: 11
+  conferido: true
+- tema: Solicitação de espaço em reuniões do Conselho de Administração Nacional para apresentação do relatório
+  decisao: Luiz Klaes propõe solicitação de espaço em reuniões de instâncias estratégicas da instituição, como o Conselho
+    de Administração Nacional, com o objetivo de apresentar os principais pontos do relatório e fortalecer o alinhamento institucional
+  votacao: ''
+  pagina: 14
+  conferido: true
+eleicoes:
+- orgao: Comissão Fiscal Nacional
+  cargo: Presidente da Comissão Fiscal Nacional
+  eleito: Luiz Salgado Klaes
+  mandato: ''
+  pagina: 14
+  conferido: true
+numeros:
+- o_que: Total arrecadado no exercício de 2025
+  valor: R$6.349.080,00
+  pagina: 2
+  conferido: false
+- o_que: Orçamento previsto para arrecadação em 2025
+  valor: R$7.704.730,00
+  pagina: 2
+  conferido: false
+- o_que: Déficit gerencial aproximado do exercício de 2025
+  valor: R$770 mil
+  pagina: 2
+  conferido: true
+- o_que: Saldo do Fundo Eventos
+  valor: R$2.773.227,54
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo Risco
+  valor: R$2.429.346,07
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo Obra
+  valor: R$1.130.709,97
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo Projeto FIA
+  valor: R$621.444,83
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo REFIS
+  valor: R$614.279,43
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo de Expansão
+  valor: R$595.797,03
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo Rescisões
+  valor: R$490.015,65
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo Formação
+  valor: R$196.315,90
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo Apoio ao Associado
+  valor: R$184.530,45
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo Recursos Livres
+  valor: R$66.549,58
+  pagina: 3
+  conferido: false
+- o_que: Saldo do Fundo Doações
+  valor: R$59.851,70
+  pagina: 3
+  conferido: false
+- o_que: Resultado gerencial da Loja Escoteira em 2025
+  valor: R$ 1.055.861,76
+  pagina: 4
+  conferido: false
+- o_que: Déficit da matriz no exercício de 2025
+  valor: R$1.051.703,09
+  pagina: 9
+  conferido: false
+- o_que: Déficit estimado do evento Aventura Sênior
+  valor: cerca de R$258 mil
+  pagina: 9
+  conferido: true
+- o_que: Aumento das despesas trabalhistas e encargos sociais em relação ao exercício anterior
+  valor: 29%
+  pagina: 9
+  conferido: true
+- o_que: Percentual atual de isentos da taxa associativa
+  valor: cerca de 10%
+  pagina: 9
+  conferido: true
+- o_que: Impacto financeiro estimado das isenções de taxa associativa
+  valor: aproximadamente R$900 mil anuais
+  pagina: 9
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 2b1b8e6b078b04ac09d425f57b9330d3b8e2bcfc914b64ae0f096976eddcb341
+revisado: null

@@ -1,0 +1,115 @@
+doc_key: ata50-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2006-04-21'
+  local: Fortaleza/CE
+deliberacoes:
+- tema: Aprovação de balancetes
+  decisao: aprovados por unanimidade os balancetes relativos aos meses de julho a dezembro de 2005
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Condecorações e Recompensas
+  decisao: 'Tapir de Prata: Wilma Érica Veit Schiefferdecker. Medalha Velho Lobo: Wilma Érica Veit Schiefferdecker. Medalha
+    Tiradentes: Célio Ramos da Silva'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Presidência do CAN
+  decisao: Conselheiro Marco Aurélio Romeu Fernandes (Romeu) foi eleito por 13 votos e 1 abstenção para Presidir este Conselho
+  votacao: 13 votos e 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Vice-Presidência do CAN
+  decisao: Conselheiro César é eleito por 12 votos favoráveis tendo havido 1 abstenção
+  votacao: 12 votos favoráveis e 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Custeamento das despesas do CAN
+  decisao: 'Foi aprovada proposta de encaminhar à apreciação da Assembléia Nacional, para deliberação, o custeio, ou não,
+    de despesas de passagens para os Conselheiros Nacionais às Reuniões do CAN. Foram 9 votos favoráveis, dois votos contrários
+    e uma abstenção. Proposta 2: Manutenção da decisão de novembro condicionada a informação em julho/2006, pela DEN, da existência
+    de condições financeiras para tal: 6 votos favoráveis e 1 abstenção e o voto contrário de Farinon quanto à deliberação
+    do assunto. Aprovada a proposta 2.'
+  votacao: 9 votos favoráveis, 2 contrários e 1 abstenção; depois 6 votos favoráveis, 1 abstenção e 1 voto contrário
+  pagina: 2
+  conferido: true
+- tema: Indicações das Comissões Assessoras
+  decisao: 'a Presidência das Comissões Assessoras foi ratificada: Comissão Nacional de Programa de Jovens: Maria Terezinha
+    Koneski Weiss – Siágrio e Guilherme; Comissão Nacional de Crescimento: Renato Eugenio de Lima – César, João e Francisco;
+    Comissão Nacional de Gestão de Adultos: Ênio Hideyuki Cojho – Fred, Hélio, João, Castrianni, Klaes e Rafael Will; Comissão
+    Nacional de Relações Institucionais: Marco Aurélio Romeu Fernandes – Alessandro e Rafael (GO); Comissão Nacional de Gestão
+    Institucional: Mário Henrique Peters Farinon - Fred, Marcos e Rubem; Comissão Nacional de Relações Internacionais: Oscar
+    Victor Palmquist Arias – Castrianni e Klaes.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Proposta de Resolução 01/2006
+  decisao: aprovada por unanimidade e leva o número 01/2006
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Proposta de Resolução 002/2006
+  decisao: aprovado por unanimidade a proposta que “dispõe sobre o Certificado de Qualidade Legal e estabelece suas condições
+    de obtenção”, com a inclusão dos dois itens na resolução vigente e a edição da mesma Resolução com o número 002/2006
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Adesão da UEB ao Manifesto Fiscal Social
+  decisao: A proposta de adesão da UEB ao manifesto Fiscal Social, com a inclusão do acompanhamento pela DEN, foi aprovada
+    por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Acompanhamento da situação da UEB/RJ
+  decisao: sugere que o CAN delibere no sentido de dar à DEN a incumbência de acompanhar os fatos mantendo o CAN informado.
+    A sugestão é aprovada com uma única abstenção
+  votacao: uma abstenção
+  pagina: 2
+  conferido: true
+- tema: Encaminhamento sobre postulação para sediar IV Jamboree Nacional Escoteiro
+  decisao: César sugere seja encaminhado correspondência às Regiões disponibilizando informações quanto à possibilidade de
+    postulação a sediar a realização do IV Jamboree Nacional Escoteiro
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Agradecimento formal a Geraldino
+  decisao: Renato propõe e é aprovado um agradecimento formal a Geraldino pelo seu trabalho
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente
+  eleito: Marco Aurélio Romeu Fernandes (Romeu)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente
+  eleito: César
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: votos para Presidência do CAN
+  valor: 13 votos e 1 abstenção
+  pagina: 2
+  conferido: true
+- o_que: votos para Vice-Presidência do CAN
+  valor: 12 votos favoráveis e 1 abstenção
+  pagina: 2
+  conferido: true
+- o_que: votos favoráveis para encaminhamento à Assembleia Nacional sobre custeio de despesas
+  valor: 9 votos favoráveis, 2 contrários e 1 abstenção
+  pagina: 2
+  conferido: true
+- o_que: votos para manutenção da decisão condicionada à informação financeira
+  valor: 6 votos favoráveis, 1 abstenção e 1 voto contrário
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 6c9e08d4b5a6318522b80fc81ca7d30265436df7bae5728037db6031c6ad9f28
+revisado: null

@@ -1,0 +1,34 @@
+doc_key: ata-99a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2020-08-01'
+  local: videochamada pelo Zoom, com transmissão ao vivo em grupo pelo Facebook
+deliberacoes:
+- tema: Resoluções e aprovações virtuais
+  decisao: 'Registro dos resultados das votações dos assuntos deliberados virtualmente no período: 1) Resolução 03/2020, que
+    dispõe sobre subsídios para auxiliar a participação de jovens adultos em eventos escoteiros internacionais de tomada de
+    decisão; 2) Resolução 04/2020, que altera os valores da contribuição anual para o ano de 2020 contidos na Resolução 008/2019
+    do CAN, a sistemática de registros e dá outras providências; 3) Aprovação do Escopo do Comissão Permanente de Políticas
+    Institucionais; 4) Aprovação do Escopo do Comissão Permanente de Orçamento; 5) Aprovação do Código de Conduta; 6) Aprovação
+    da alteração da Regra 170 do POR; 7) Aprovação do Escopo do Grupo de Trabalho de Diversidade e Inclusão.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Política Nacional de Envolvimento Juvenil
+  decisao: ISABELLY coloca em regime de votação a Política, com resultado de 13 votos a favor e 0 contra, com 1 abstenções,
+    ela é aprovada pelo CAN, ficando registrada que a abstenção registrada foi em razão da ausência momentânea do MARK, por
+    questões técnicas de conectividade.
+  votacao: 13 votos a favor, 0 contra, 1 abstenção
+  pagina: 13
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Data e local da reunião
+  valor: 1 e 2 de agosto de 2020
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 0f70f25a0f93699c66356b78751b56029846c855a738c2d7b36fa8845c3a373e
+revisado: null

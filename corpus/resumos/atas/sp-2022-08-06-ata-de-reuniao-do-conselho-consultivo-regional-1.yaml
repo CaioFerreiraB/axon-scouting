@@ -1,0 +1,50 @@
+doc_key: sp-2022-08-06-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-08-06'
+  local: São Paulo
+deliberacoes:
+- tema: Aprovação do Manual do Comissário Distrital
+  decisao: Colocado o manual para votação, o mesmo foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Proposta de comunicação entre comissários via sistema
+  decisao: O comissário Higor fez uma proposta de essa comunicação ser feita via sistema, colocado em votação, teve somente
+    2 votos a favor, sendo recusada a proposta.
+  votacao: 2 votos a favor
+  pagina: 1
+  conferido: true
+- tema: Participação de UELs sem certificado de funcionamento em reuniões distritais
+  decisao: Ficou definido que elas podem participar, mas sem direito a voto.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Uso do orçamento compartilhado
+  decisao: O diretor financeiro sugeriu fazer o inventário distrital anualmente. A Diretoria financeira se comprometeu em
+    lançar a resolução até o dia 15/08 e reforçou que os cartões poderão receber depósitos, sendo que o distrito poderá colocar
+    seu “caixa” no cartão para facilitar o uso e a transparência.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Liberação do uso de marcas distritais
+  decisao: Foi colocado em votação a liberação do uso de marcas distritais e a proposta teve somente 2 votos contra, sendo
+    que a diretoria regional se comprometeu a retirar a resolução 10/2019.
+  votacao: 2 votos contra
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: valor mínimo do orçamento compartilhado no ano passado
+  valor: 520 reais
+  pagina: 2
+  conferido: true
+- o_que: valor mínimo do orçamento compartilhado atualmente
+  valor: 575 por Distrito
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 92473f0cedc5549963dd5968dbcfc7cbe94c0f594c6aa6f5b76e93f99cb436a1
+revisado: null

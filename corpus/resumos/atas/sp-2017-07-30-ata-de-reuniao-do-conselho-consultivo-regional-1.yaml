@@ -1,0 +1,48 @@
+doc_key: sp-2017-07-30-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2017-07-30'
+  local: Fundação Escola de Comércio Álvares Penteado - FECAP (Av. da Liberdade, 532, Liberdade, São Paulo/SP)
+deliberacoes:
+- tema: Certificação Distrito Escoteiro Padrão
+  decisao: Por maioria, fica decidido que será uma certificação. Fica decidido que primeira medida se dará ao final desta
+    gestão (2015-2017) dos Comissários Distritais, em novembro deste ano, referente ao ano-base de 2017, apenas como métrica
+    e não certificação. Escritório Regional será o responsável por fazer a avaliação do atendimento dos critérios da certificação,
+    mediante análise das planilhas preenchidas por parte dos Comissários Distritais.
+  votacao: maioria
+  pagina: 4
+  conferido: true
+- tema: Adormecimento do 7º Distrito Escoteiro Guarulhos e Região
+  decisao: 'Proposta aceita por unanimidade dos Diretores Presidentes das UELs de Guarulhos presentes à reunião. Dada a importância
+    estratégica e potencial da cidade de Guarulhos, 2ª cidade mais populosa do estado de São Paulo, os membros da Diretoria
+    Regional presentem fizeram uma contraproposta: propuseram que o 7º Distrito Escoteiro Guarulhos e Região fosse adormecido
+    por, no máximo, 12 (doze) meses a contar do dia 1º de julho de 2017 e que suas atuais UELs fossem incorporadas a Distritos
+    Escoteiros próximos durante este período, quando, ao seu findar, esta decisão deverá ser reavaliada pela Diretoria Regional,
+    podendo, inclusive, implicar na reativação deste Distrito Escoteiro.'
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Fluxograma abertura/reabertura UEL
+  decisao: Fica decidido incluir no fluxograma apresentado uma consulta ao Conselho Distrital antes da emissão de Autorização
+    Provisória para abertura/reabertura da UEL. Fica decidido que a implantação do novo fluxograma se dará depois da apresentação
+    dos resultados do Grupo de Trabalho, composto nesta data por Lucas, Filipe, Glauco e Vania, para criação dos formulários
+    exigidos no fluxo.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Próxima Reunião do Conselho Consultivo Regional
+  decisao: Decidido que para fixarmos quando e onde será realizada próxima Reunião do Conselho Consultivo Regional, serão
+    sugeridas três datas pela Diretoria Regional no final do 2º semestre/2017 e será escolhida a data que for maioria por
+    meio de votação online dos Comissários Distritais; para escolha do local, Distritos Escoteiros interessados em sediar
+    a reunião deverão se manifestar dentro de prazo dado pela Diretoria Regional e será escolhido o local que for maioria
+    por meio de votação online dos Comissários Distritais.
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: b9d514f3822fc1b3385220925fd1f3c19643536b0825478b559cdbf5dfe5865e
+revisado: null

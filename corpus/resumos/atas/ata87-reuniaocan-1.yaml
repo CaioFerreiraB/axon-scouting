@@ -1,0 +1,67 @@
+doc_key: ata87-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2017-04-21'
+  local: Goiânia – GO
+deliberacoes:
+- tema: Aprovação da pauta da reunião
+  decisao: A pauta foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Ratificação das decisões do CAN aprovadas eletronicamente
+  decisao: Todas as decisões foram ratificadas por unanimidade de votos.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Relatório do GT de Monitoramento do Planejamento Estratégico
+  decisao: Fica aprovado por unanimidade que o relatório do GT com planilha atualizada, contendo o parecer das discussões
+    do GT, de forma condensada, deverá ser apresentado trimestralmente com a manutenção da atualização on-line na ferramenta
+    “power-BI” para ser consultado, a qualquer tempo, pelos Conselheiros.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Criação da Insígnia do Aprender
+  decisao: A proposta de resolução (conforme item 12 desta Ata), bem como de inclusão de texto no POR, foi submetida pelo
+    Vendramini aos votos do Conselho e foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Alienação de Bens da Região do RJ
+  decisao: O Conselho de Administração Nacional aprovou por unanimidade a venda dos citados terrenos da Região Escoteira do
+    Rio de Janeiro.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: Reconhecimento da Região Escoteira do Tocantins
+  decisao: Fica aprovado por unanimidade o reconhecimento da Região de Tocantins, considerando os mesmos limites geográficos
+    de território do Estado do Tocantins, passando a integrar a Área Geográfica Centro Oeste da UEB.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Destaques da Resolução de Conflito de Interesses
+  decisao: Foi aprovada, por nove votos contra quatro, a proposta para os três destaques, que altera o texto da resolução
+    de Conflito de Interesses.
+  votacao: 9 votos contra 4
+  pagina: 8
+  conferido: true
+- tema: Criação de Grupo de Trabalho para Acompanhamento Orçamentário
+  decisao: Vendramini encaminha para votação para criação de um GT de Acompanhamento Orçamentário, sendo aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 11
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Conselheiros do Conselho de Administração Nacional presentes
+  valor: '15'
+  pagina: 1
+  conferido: false
+- o_que: Suplentes presentes
+  valor: '5'
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: a80d158fe67334b675ef24b1e94f6a41433623db2ce3bbb95964866051e2db0f
+revisado: null

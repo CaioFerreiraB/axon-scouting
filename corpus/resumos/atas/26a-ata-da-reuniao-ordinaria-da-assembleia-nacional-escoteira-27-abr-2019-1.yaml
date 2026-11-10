@@ -1,0 +1,128 @@
+doc_key: 26a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-27-abr-2019-1
+reuniao:
+  tipo: ordinaria
+  data: null
+  local: Clube do Exército (Sede Lago), sito no SCES Trecho 02 Lote 23, CEP 70200002, Brasília/DF
+deliberacoes:
+- tema: ratificação do Edital de Retificação de Convocação
+  decisao: O tema foi colocado em votação e aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: leitura da Ata da 252 Reunião Ordinária da Assembleia Nacional
+  decisao: O Presidente sendo a referida ata aclamada.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Relatório Anual de 2018 da União dos Escoteiros do Brasil
+  decisao: Apresentação do relevante trabalho e atingimento das metas do triênio com 90% das ações executadas.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Balanço Anual dos Escoteiros do Brasil 2018
+  decisao: Em regime de votação foram alcançados 109 votos aprovando o Balanço, 03 votos contrários e uma abstenção.
+  votacao: 109 votos a favor, 3 contra, 1 abstenção
+  pagina: 3
+  conferido: true
+- tema: alteração do 1o Artigo da Lei Escoteira
+  decisao: Fica então aprovada a alteração do primeiro artigo da Lei Escoteira.
+  votacao: 69 votos a favor da segunda opção, 64 votos da primeira opção
+  pagina: 3
+  conferido: true
+- tema: manutenção da candidatura do escotista Luís Raphael Gadelha
+  decisao: Foram 118 votos a favor da candidatura, 02 votos contrários e 0 abstenção.
+  votacao: 118 votos a favor, 2 contra, 0 abstenção
+  pagina: 3
+  conferido: true
+- tema: aprovação da proposta do Plano de Ação 2019 a 2021
+  decisao: A proposta é aprovada por aclamação e vibrante manifestação da plenária.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Sarah Raquel Loureiro do Amaral (AM)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Carlos Magno Torres (MG)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Mark Caldeira (SC)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Robson Alexandre de Moraes (SP)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Eduardo Evaldt Manique (RS)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Leonardo Vilar Costa (ES)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Pedro da Silva Pavão (PR)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Carlos Frederico dos Santos (RJ)
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: votos aprovando o Balanço Anual 2018
+  valor: '109'
+  pagina: 3
+  conferido: true
+- o_que: votos contrários ao Balanço Anual 2018
+  valor: '03'
+  pagina: 3
+  conferido: true
+- o_que: abstenções na votação do Balanço Anual 2018
+  valor: '1'
+  pagina: 3
+  conferido: true
+- o_que: votos da primeira proposta de alteração do 1o Artigo da Lei Escoteira
+  valor: '64'
+  pagina: 3
+  conferido: true
+- o_que: votos da segunda proposta de alteração do 1o Artigo da Lei Escoteira
+  valor: '69'
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da candidatura de Luís Raphael Gadelha
+  valor: '118'
+  pagina: 3
+  conferido: true
+- o_que: votos contrários à candidatura de Luís Raphael Gadelha
+  valor: '02'
+  pagina: 3
+  conferido: true
+- o_que: votos nulos na eleição para o CAN
+  valor: '02'
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: f1f946ac29c0077ba2314df309b54f18f252f3160dfab668b7ac2f8e8e1b9e49
+revisado: null

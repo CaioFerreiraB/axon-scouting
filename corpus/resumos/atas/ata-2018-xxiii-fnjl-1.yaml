@@ -1,0 +1,200 @@
+doc_key: ata-2018-xxiii-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2018-04-28'
+  local: Universidade Tecnológica Federal do Paraná, Av. Sete de Setembro, 3165 - Rebouças - Curitiba - PR - Brasil
+deliberacoes:
+- tema: Composição da mesa
+  decisao: 'Não havendo novos candidatos, as indicações do núcleo foram aceitas por aclamação pelos presentes. Deste modo
+    a mesa foi composta por: PRESIDENTE - Larissa dos Santos de Oliveira (RS), VICE-PRESIDENTE - Michelle Christine Ayres
+    (PR), 1º SECRETÁRIO - Ana Laura Mendonça Fonseca (MG) e 2º SECRETÁRIO - Thomaz Edson Corrêa de Oliveira (PA).'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Composição da comissão de escrutínio
+  decisao: os dois voluntários Fabrício de Barros Pereira Luiz (RJ) e Gustavo Soller (SP) foram eleitos por unanimidade.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Credenciamento de delegados da região do Pará e Mato Grosso
+  decisao: mediante apresentação das atas, os delegados poderão se credenciar e ter direito a voto.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Leitura da ata do XXII Fórum Nacional de Jovens Líderes
+  decisao: ficou decidido que não seria realizada a leitura da ata.
+  votacao: 24 votos contra, 02 a favor e 06 abstenções
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata do Fórum anterior com ressalvas
+  decisao: a ata do Fórum anterior foi aprovada com as ressalvas descritas.
+  votacao: 30 votos a favor e 02 abstenções
+  pagina: 2
+  conferido: true
+- tema: Composição dos grupos de trabalho para desenvolvimento da política
+  decisao: 'eleita a proposta “E”: Um delegado e um membro do núcleo.'
+  votacao: 16 votos
+  pagina: 3
+  conferido: true
+- tema: Realização de fórum extraordinário para votação do texto final da política
+  decisao: fica definido por aclamação que será realizado um fórum extraordinário para definir esta questão.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Eleição do comunicador com mandato de 2 anos
+  decisao: foi eleito para o cargo de COMUNICADOR - Diogo Freitas (RS) com 20 votos.
+  votacao: 20 votos a favor, 10 votos para João Augusto Corrêa (SP) e 2 abstenções
+  pagina: 4
+  conferido: true
+- tema: Eleição da coordenadora com mandato de 2 anos
+  decisao: foi eleita para COORDENADORA Melissa Wilm (PR) com 19 votos.
+  votacao: 19 votos a favor, 10 votos para Matheus Valois (MA) e 3 abstenções
+  pagina: 5
+  conferido: true
+- tema: Eleição por aclamação para mandatos de 1 ano
+  decisao: Maria Clara Marotti (PR) para coordenadora e Daniel Guarnieri (SP) para comunicador foram eleitos por aclamação.
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Eleição da cidade sede para o Encontro Nacional de Jovens Líderes do próximo ano
+  decisao: São Paulo (SP) foi eleita por aclamação.
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Deliberação sobre materiais produzidos pelos GTs
+  decisao: os materiais não serão lidos neste fórum; material do GT de transparência será levado à assembleia.
+  votacao: 28 votos a favor, nenhum contra e 03 abstenções para GT de transparência; 27 votos a favor, 03 contra e 02 abstenções
+    para GT de diversidades
+  pagina: 6
+  conferido: true
+- tema: Leitura das cartas dos GTs na assembleia
+  decisao: as cartas deverão ser lidas na íntegra na assembleia.
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Deliberação sobre encaminhamento da questão orçamentária à DEN
+  decisao: que a DEN consulte o Núcleo Nacional antes de apresentar a proposta orçamentária ao CAN.
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Deliberação sobre inserção de link para site da RNJL no site da Nacional
+  decisao: documento não será lido na assembleia, mas encaminhado ao órgão competente.
+  votacao: 24 votos a favor do encaminhamento e 08 abstenções
+  pagina: 7
+  conferido: true
+- tema: Criação de diretrizes de comunicação nacionais para a rede
+  decisao: foi aprovada a criação de uma diretriz de comunicação.
+  votacao: 19 votos a favor, 06 contra e 07 abstenções
+  pagina: 7
+  conferido: true
+- tema: Inclusão de itens referentes à participação juvenil nos quesitos para o troféu Grupo Padrão
+  decisao: proposição aprovada para acrescentar novo quesito de pontuação para grupos que realizarem Fóruns de Jovens.
+  votacao: 16 votos a favor, 1 contra e 15 abstenções
+  pagina: 7
+  conferido: true
+- tema: Criação de curso EaD sobre envolvimento juvenil
+  decisao: questão votada e aprovada para criação do curso.
+  votacao: 26 votos a favor, zero contra e 6 abstenções
+  pagina: 7
+  conferido: true
+- tema: Oficialização do GT internacional e validação dos GTs criados por jovens líderes
+  decisao: ambas as votações aprovadas por unanimidade.
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+- tema: Encaminhamento da proposta de adaptação do texto do primeiro artigo da lei escoteira
+  decisao: foi votado o encaminhamento da proposta para o órgão competente.
+  votacao: 20 votos a favor, 02 contra e 10 abstenções
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: COMUNICADOR
+  eleito: Diogo Freitas (RS)
+  mandato: 2 anos
+  pagina: 4
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: COORDENADORA
+  eleito: Melissa Wilm (PR)
+  mandato: 2 anos
+  pagina: 5
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: COORDENADORA
+  eleito: Maria Clara Marotti (PR)
+  mandato: 1 ano
+  pagina: 5
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: COMUNICADOR
+  eleito: Daniel Guarnieri (SP)
+  mandato: 1 ano
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: delegados com direito a voto inicialmente
+  valor: '25'
+  pagina: 1
+  conferido: true
+- o_que: delegados presentes para votação sobre credenciamento
+  valor: '19'
+  pagina: 1
+  conferido: true
+- o_que: delegados presentes para votação sobre leitura da ata
+  valor: 24 votos contra, 02 a favor e 06 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da aprovação da ata do fórum anterior
+  valor: 30 votos a favor e 02 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos para comunicador Diogo Freitas (RS)
+  valor: 20 votos
+  pagina: 4
+  conferido: true
+- o_que: votos para comunicador João Augusto Corrêa (SP)
+  valor: 10 votos
+  pagina: 4
+  conferido: true
+- o_que: abstenções na eleição de comunicador
+  valor: 2 abstenções
+  pagina: 4
+  conferido: true
+- o_que: votos para coordenadora Melissa Wilm (PR)
+  valor: 19 votos
+  pagina: 5
+  conferido: true
+- o_que: votos para coordenador Matheus Valois (MA)
+  valor: 10 votos
+  pagina: 5
+  conferido: true
+- o_que: abstenções na eleição de coordenador
+  valor: 3 abstenções
+  pagina: 5
+  conferido: true
+- o_que: votos a favor do encaminhamento do documento sobre link para site da RNJL
+  valor: 24 votos a favor e 08 abstenções
+  pagina: 7
+  conferido: true
+- o_que: votos para criação de diretrizes de comunicação
+  valor: 19 votos a favor, 06 contra e 07 abstenções
+  pagina: 7
+  conferido: true
+- o_que: votos para inclusão de itens de participação juvenil no troféu Grupo Padrão
+  valor: 16 votos a favor, 1 contra e 15 abstenções
+  pagina: 7
+  conferido: true
+- o_que: votos para criação de curso EaD sobre envolvimento juvenil
+  valor: 26 votos a favor, zero contra e 6 abstenções
+  pagina: 7
+  conferido: true
+- o_que: votos para encaminhamento da proposta de adaptação do texto do primeiro artigo da lei escoteira
+  valor: 20 votos a favor, 02 contra e 10 abstenções
+  pagina: 8
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 38ff9f8bd9cec523276d5b8a4e086f3b0eeaa8752be02991f5a2e980b6d99b4d
+revisado: null

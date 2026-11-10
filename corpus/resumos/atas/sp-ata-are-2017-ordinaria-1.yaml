@@ -1,0 +1,199 @@
+doc_key: sp-ata-are-2017-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2017-03-25'
+  local: Teatro Paulo Moura, Avenida Duque de Caxias, 3.900, bairro Jardim dos Seixas, São José do Rio Preto/SP
+deliberacoes:
+- tema: eleição da mesa diretora
+  decisao: o chefe Renato Breneizer do 283º GE Suçuarana foi confirmado por aclamação como presidente da mesa; Felix Vieira
+    Varejão Filho foi escolhido para 1º Vice-presidente; Ana Serafina de Souza Hidaka foi confirmada como 2º Vice-presidente;
+    Johan Albino Ribeiro foi confirmado como 1º Secretário; Harelline Belotti Perez foi confirmada como 2º Secretária
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: formação das comissões assessoradas da assembleia
+  decisao: 'as comissões ficaram assim formadas: Comissão de Credenciamento, Comissão Eleitoral, Comissão de Escrutínio, Comissão
+    de Estilo e Comissão de Assuntos Gerais; todos os voluntários foram aprovados por aclamação pela assembleia'
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: dispensa da leitura da ata da reunião anterior
+  decisao: foi dispensada a leitura do documento e declarada aprovada sem quaisquer alterações
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: aprovação das contas e balanço do exercício fiscal de 2016
+  decisao: as contas de 2016 foram aprovadas pela Assembleia Regional
+  votacao: 248 votos a favor, nenhum contra, 15 abstenções
+  pagina: 3
+  conferido: true
+- tema: aprovação da previsão orçamentária para 2017/2018
+  decisao: a previsão orçamentária foi aprovada
+  votacao: 211 votos a favor, 4 abstenções, nenhum voto contra
+  pagina: 4
+  conferido: true
+- tema: aprovação do relatório de gestão 2016
+  decisao: o relatório de gestão foi aprovado por aclamação
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: aprovação da proposta para que cartões de votação tenham identificação do respectivo delegado
+  decisao: a proposta foi aprovada para que os cartões de votação das assembleias seguintes tenham identificação do respectivo
+    delegado
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: aprovação do projeto Uniforme Solidário para encaminhamento à Direção Regional
+  decisao: o projeto Uniforme Solidário foi considerado aprovado para encaminhamento à Direção Regional para exame e implementação
+  votacao: aclamação
+  pagina: 10
+  conferido: false
+- tema: aprovação da proposta para que candidatos ausentes possam ser eleitos sem restrição
+  decisao: foi aprovada a proposta no sentido de que o candidato ausente pode ser eleito sem qualquer restrição ou complementação
+  votacao: 136 votos favoráveis, 73 contra, 15 abstenções
+  pagina: 6
+  conferido: true
+- tema: aprovação da cidade de Piracicaba como sede da XXV Reunião Ordinária da Assembleia Escoteira Regional em 2018
+  decisao: foi aprovada a cidade de Piracicaba como sede da Assembleia de 2018
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: aprovação do encaminhamento para estudo de subsídio para ida dos delegados regionais à Assembleia Nacional
+  decisao: a proposta de encaminhamento à Direção Regional foi aprovada
+  votacao: aclamação
+  pagina: 10
+  conferido: true
+- tema: aprovação do encaminhamento ao CAN da proposta de mudança da Regra 26-b do POR (Seção Escoteira Autônoma)
+  decisao: foi aprovado o encaminhamento ao CAN
+  votacao: aclamação
+  pagina: 10
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia
+  cargo: Presidente
+  eleito: Renato Wanderley Breneizer
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Vice-Presidente
+  eleito: Felix Vieira Varejão Filho
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Vice-Presidente
+  eleito: Ana Serafina de Souza Hidaka
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Secretário
+  eleito: Johan Albino Ribeiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Secretária
+  eleito: Harelline Belotti Perez
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Suplente
+  eleito: Amauri Benedito Hulmann
+  mandato: 2017-2019
+  pagina: 11
+  conferido: true
+- orgao: Conselho de Administração Nacional (CAN)
+  cargo: Membro
+  eleito: Adriano Aparecido Bezerra Chaves
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rudhner Lauterjung Queiroz
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Alexandre Banchi
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Marco Aurélio de Mello Castrianni
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Adriano Aparecido Bezerra Chaves
+  mandato: ''
+  pagina: 11
+  conferido: true
+numeros:
+- o_que: saldo final das contas de 2016
+  valor: R$ 426.962,35
+  pagina: 3
+  conferido: false
+- o_que: delegados aptos a votar nas contas
+  valor: '308'
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da aprovação das contas de 2016
+  valor: '248'
+  pagina: 3
+  conferido: true
+- o_que: abstenções na votação das contas de 2016
+  valor: '15'
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da previsão orçamentária 2017/2018
+  valor: '211'
+  pagina: 4
+  conferido: true
+- o_que: abstenções na votação da previsão orçamentária 2017/2018
+  valor: '4'
+  pagina: 4
+  conferido: true
+- o_que: votos válidos na eleição para Delegados Regionais à Assembleia Nacional
+  valor: '309'
+  pagina: 11
+  conferido: true
+- o_que: votos nulos na eleição para Delegados Regionais à Assembleia Nacional
+  valor: '5'
+  pagina: 11
+  conferido: true
+- o_que: votos brancos para suplência da Comissão de Ética e Disciplina Regional
+  valor: '17'
+  pagina: 11
+  conferido: true
+- o_que: votos nulos para suplência da Comissão de Ética e Disciplina Regional
+  valor: '5'
+  pagina: 11
+  conferido: true
+- o_que: votos para Paulo Peixoto Lins de Araújo para suplência da Comissão de Ética e Disciplina Regional
+  valor: '115'
+  pagina: 11
+  conferido: true
+- o_que: votos para Amauri Benedito Hulmann para suplência da Comissão de Ética e Disciplina Regional
+  valor: '172'
+  pagina: 11
+  conferido: true
+- o_que: votos para Adriano Aparecido Bezerra Chaves para Conselho Administrativo Nacional
+  valor: '217'
+  pagina: 11
+  conferido: true
+- o_que: votos para Marco Aurélio de Melo Castriani para Conselho Administrativo Nacional
+  valor: '90'
+  pagina: 11
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: f04471f0405cb7c490d2da420dc23bb7df98b033c7dd85d8c2894894048a8df7
+revisado: null

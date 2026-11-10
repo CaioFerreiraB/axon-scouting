@@ -1,0 +1,43 @@
+doc_key: ata-118a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-05-30'
+  local: UNINASSAU localizada na R. Jonathas de Vasconcelos, 316 - Boa Viagem - Recife/PE
+deliberacoes:
+- tema: Ata da 117ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 117ª Reunião Ordinária do Conselho de Administração Nacional, realizada no dia 24 de fevereiro
+    de 2024. Aprovada com 10 votos a favor (BRAGA, CLAUCIO, DANIEL, DANIELA, FÁBIO, ILKA, KARINA, LUIZ, SÉRIS e SIMONI) e
+    4 abstenções (ALDENISE, NETO, LUCIANO e RENATO).
+  votacao: 10 votos a favor, 4 abstenções
+  pagina: 2
+  conferido: true
+- tema: Calendário de Reuniões Ordinárias de 2024 do CAN
+  decisao: A Presidência do CAN propõe o calendário de reuniões ordinárias para o ano de 2024. Aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Resolução - 43ª Conferência Escoteira Mundial
+  decisao: Proposta de Resolução a ser apresentada na 43ª Conferência Escoteira Mundial, intitulada "Rumo a uma Conferência
+    Mundial Escoteira Verdadeiramente Inclusiva". Aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Replanejamento Orçamentário para área internacional
+  decisao: Por decisão da maioria, foi aprovado o replanejamento orçamentário para a área internacional na forma como solicitada
+    pela DEN, sendo 12 votos a favor, 1 voto contra e 1 abstenção.
+  votacao: 12 votos a favor, 1 contra, 1 abstenção
+  pagina: 3
+  conferido: true
+- tema: Atualização da Política Nacional de Relações Internacionais
+  decisao: Após considerações, discussões e propostas de modificações sobre a minuta de atualização da Política Nacional de
+    Relações Internacionais dos Escoteiros do Brasil, a proposta foi aprovada por unanimidade, dos presentes.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: e31342f8452a35d2be64b45a0f34ac87f29c1116c2a797f0cd89d186cd4fc1a7
+revisado: null

@@ -1,0 +1,151 @@
+doc_key: 14a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-28-abr-e-1o-mai-2007-1
+reuniao:
+  tipo: ordinaria
+  data: '2007-04-28'
+  local: Araguaia Convention Center, do Castro's Park Hotel, Av. República do Líbano 1520 — Setor Oeste, Goiânia/GO
+deliberacoes:
+- tema: Eleição da mesa diretora
+  decisao: 'foi eleita e empossada a Mesa, conforme segue: Presidente: Rubem Tadeu Cordeiro Perlingeiro; Vice-Presidentes:
+    Antonio César Oliveira e Raphael Tostes Salin e Souza; Secretárias: Maria Cristina Rutz Debiazio e Amélia Meireles Pagano
+    de Mello.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Eleição das Comissões Assessoras da Assembléia
+  decisao: 'As comissões assessoras restaram constituídas da seguinte forma: COMISSÃO DE CREDENCIAMENTO — Mariovani Carsten
+    Cervi, Luiz Salgado Klaes e Iracema Bezerra Oliveira, auxiliados pelo Executivo Celso Ferreira Filho; COMISSAO ELEITORAL
+    — Mário Henrique Peters Farinon, Solano Gunther e Gustavo Mendes Rezende, auxiliados pelo Executivo Celso Ferreira Filho;
+    COMISSÃO DE ESCRUTÍNIO — Altair João Mossi, Francis Souza Carrer, Marcelo Xaud e Franklin de Almeida Lima; e COMISSÃO
+    DE ASSUNTOS GERAIS — Siágrio Felipe Pinheiro, Geraldino Ferreira Moreira e Rubem Súffert.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da 13.o Reunião Ordinária
+  decisao: 'a ata foi aprovada por unanimidade, com alteração no item 11 — 6: incluindo o nome de Carolina Menezes/DF como
+    Comunicadora da Rede Nacional de Jovens Líderes, e não como Coordenadora, e incluindo o nome de Rafael de Oliveira Froes/GO
+    como Coordenador.'
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Relatório Anual de 2006 da UEB
+  decisao: Colocado para apreciação, o Relatório foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Balanço Anual da UEB
+  decisao: O Balanço Anual da UEB foi colocado em discussão, tendo sido aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Aprovação da candidatura da Região do Rio Grande do Sul para sede da 16.o Assembléia Nacional Escoteira, 15.o Congresso
+    Escoteiro Nacional e 14.o Fórum Nacional de Jovens Líderes em 2009
+  decisao: A postulação foi aprovada por aclamação. A Assembléia delega competência à DEN para indicar outra Região na impossibilidade
+    de os referidos serem realizados pela Região do Rio Grande do Sul.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Encaminhamento de assuntos gerais
+  decisao: '1) Disponibilização de documentos na Internet - Acessibilidade para portadores de necessidades especiais: encaminhado
+    à DEN; 2) Inclusão de crianças de 6 anos completos nas Alcatéias: decidido encaminhar ao CAN para estudos e apreciação
+    em sua próxima reunião; 3) Proposta de alteração no método de avaliação dos jovens: encaminhado ao CAN para subsidiar
+    as próximas discussões e deliberações sobre Programa de Jovens.'
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Aprovação da suspensão da penalidade e conversão do Processo Disciplinar em Diligência
+  decisao: O Presidente da Assembléia propõe a suspensão da penalidade imposta, a conversão do “Processo Disciplinar” em “Diligência”
+    e o encaminhamento a DEN para o saneamento do processo.
+  votacao: 47 votos favoráveis, 25 votos contrários e 2 abstenções
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembléia Nacional
+  cargo: Presidente
+  eleito: Rubem Tadeu Cordeiro Perlingeiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembléia Nacional
+  cargo: Vice-Presidentes
+  eleito: Antonio César Oliveira e Raphael Tostes Salin e Souza
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembléia Nacional
+  cargo: Secretárias
+  eleito: Maria Cristina Rutz Debiazio e Amélia Meireles Pagano de Mello
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional - CAN
+  cargo: Titulares
+  eleito: Femando Brodeschi, Sandra Valda Nogueira dos Santos, Enio Hideyuki Cojho, Marcio Andrade Cavalcanti de Albuquerque,
+    Renato Bini
+  mandato: Abril/2007 — Abril/2010
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional - CAN
+  cargo: Suplentes
+  eleito: Fabrício Gabriel da Silva, Júlio Carlos Massirer, Antonio de Souza Amaral, Marcos Magno Gomide Vieira, Asley Stecca
+    Steindorff, Rodolpho Ferreira de Figueiredo, João Batista Rodrigues
+  mandato: Abril/2007 — Abril/2008
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional — CFN
+  cargo: Titular
+  eleito: Mariovani Carsten Ceni
+  mandato: Abril/2007 — Abril/2010
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional — CFN
+  cargo: Suplente
+  eleito: Magali Correa Marques
+  mandato: Abril/2007 — Abril/2010
+  pagina: 3
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional - CEDN
+  cargo: Titular
+  eleito: Célia Alves Borges
+  mandato: Abril/2007 — Abril/2010
+  pagina: 3
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional - CEDN
+  cargo: Suplentes
+  eleito: Siágrio Felipe Pinheiro e Marcos Aurélio de Monte Vanderlei
+  mandato: Abril/2007 — Abril/2010
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: Votos para Conselho de Administração Nacional - CAN titulares
+  valor: 59, 46, 37, 36, 25
+  pagina: 3
+  conferido: true
+- o_que: Votos para Conselho de Administração Nacional - CAN suplentes
+  valor: 21, 15, 9, 8, 8, 3, 2
+  pagina: 3
+  conferido: true
+- o_que: Votos para Comissão Fiscal Nacional — CFN titular
+  valor: '54'
+  pagina: 3
+  conferido: true
+- o_que: Votos para Comissão Fiscal Nacional — CFN suplente
+  valor: '34'
+  pagina: 3
+  conferido: true
+- o_que: Votos para Comissão de Ética e Disciplina Nacional - CEDN titular
+  valor: '37'
+  pagina: 3
+  conferido: true
+- o_que: Votos para Comissão de Ética e Disciplina Nacional - CEDN suplentes
+  valor: 33, 18
+  pagina: 3
+  conferido: true
+- o_que: Votos na deliberação sobre suspensão da penalidade e conversão do Processo Disciplinar em Diligência
+  valor: 47 favoráveis, 25 contrários, 2 abstenções
+  pagina: 5
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 2dcf2562c16c7205e971e06dc69853abff537ef9a5c23aeb2ec2f8d6593aaa13
+revisado: null

@@ -1,0 +1,143 @@
+doc_key: 12a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-22-e-23-abr-2005-1
+reuniao:
+  tipo: ordinaria
+  data: '2005-04-22'
+  local: Hotel Pralatur, Av. Dom Jodo Becker 222 - Praia dos Ingleses - Florianópolis/SC
+deliberacoes:
+- tema: Composição da mesa diretora
+  decisao: 'foi eleita e empossada a Mesa, conforme segue: Presidente: Renato Bini; Vice-presidentes: Marco Aurélio Romeu
+    Fernandes e Donald Malschitzky; Secretárias: Maria Cristina Rutz Debiazio e Maria Terezinha Koneski Weiss.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Comissões assessoradas da Assembleia
+  decisao: 'As comissões assessoras restaram constituídas da seguinte forma: COMISSÃO DE CREDENCIAMENTO — Mariovani Carsten
+    Cervi, Pedro A Fabiano da Silva Souza auxiliados pelo Executivo Celso Ferreira Filho; COMISSÃO ELEITORAL - Dennys Rodrigues
+    Oliveira, Raphael Tostes e José Caetano de Brito Junior; COMISSÃO DE ESCRUTÍNIO - Siagrio Felipe Pinheiro, Francisca Souza
+    Carrer e Heodomiro Mascarenhas Rios Rodrigues auxiliados pelo Executivo Gino Bacchi; COMISSÃO DE ASSUNTOS GERAIS - Enrico
+    Nichetti, Alessandro Garcia Vieira e Miguel Cabistani; COMISSÃO DE REDAÇÃO E ESTILO: Irineu Muniz de A PR IMLARA venicio
+    Mattos Chaves, Ra Resende Neto, Ilvia Oliveira Marcos.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da 11.a Reunião Ordinária
+  decisao: A ata da 11.2 Reunião Ordinária da Assembléia Nacional da União dos Escoteiros do Brasil - UEB, constou no Documento
+    Base distribuído a todos os presentes e, após discussão e ponderações, foram apresentados à plenária os candidatos para
+    o Conselho de Administração Nacional.
+  votacao: aprovados por unanimidade
+  pagina: 2
+  conferido: true
+- tema: Relatório Anual e Balanço Anual da UEB e da Loja Escoteira Nacional
+  decisao: Os relatórios e os pareceres da Comissão Fiscal Nacional - CFN, constantes do Documento Base, foram colocados em
+    discussão, tendo sido aprovados por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Eleição dos membros do Conselho de Administração Nacional
+  decisao: 'Foram eleitos: Titulares (Abril/2005 - Abril/2008): Raphael Will Suarez Quadra, Antônio César Oliveira, Marco
+    Aurélio Romeu Fernandes, Luiz Salgado Klaes e João Roberto A. Cunha. Mandato de um ano: Guilherme Augusto Klingelfuss.
+    Suplentes (Abril/2005 - Abril/2006): Alessandro Vieira, Hélio Borba Moratelli e Christian A. D. Oliveira.'
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Escolha da Região-Sede e Região-Sede Alternativa para eventos de 2007
+  decisao: Por aclamação ficou definida a Região Escoteira de Goiás como Região-Sede do evento em questão e a Região Escoteira
+    do Espírito Santo como Região-Sede Alternativa.
+  votacao: por aclamação
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Presidente
+  eleito: Renato Bini
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Vice-presidente
+  eleito: Marco Aurélio Romeu Fernandes
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Vice-presidente
+  eleito: Donald Malschitzky
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretária
+  eleito: Maria Cristina Rutz Debiazio
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretária
+  eleito: Maria Terezinha Koneski Weiss
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Titular
+  eleito: Raphael Will Suarez Quadra
+  mandato: Abril/2005 - Abril/2008
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Titular
+  eleito: Antônio César Oliveira
+  mandato: Abril/2005 - Abril/2008
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Titular
+  eleito: Marco Aurélio Romeu Fernandes
+  mandato: Abril/2005 - Abril/2008
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Titular
+  eleito: Luiz Salgado Klaes
+  mandato: Abril/2005 - Abril/2008
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Titular
+  eleito: João Roberto A. Cunha
+  mandato: Abril/2005 - Abril/2008
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Titular
+  eleito: Guilherme Augusto Klingelfuss
+  mandato: Abril/2005 - Abril/2006
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Suplente
+  eleito: Alessandro Vieira
+  mandato: Abril/2005 - Abril/2006
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Suplente
+  eleito: Hélio Borba Moratelli
+  mandato: Abril/2005 - Abril/2006
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Suplente
+  eleito: Christian A. D. Oliveira
+  mandato: Abril/2005 - Abril/2006
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: Valor disponível na conta corrente da Ordem da Flor de Lis
+  valor: R$ 89.000,00
+  pagina: 4
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 16ebbe7b18d7b34e3b4f6c92b7893d0ad080416da66b92029df983cc505f70bf
+revisado: null

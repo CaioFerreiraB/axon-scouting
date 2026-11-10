@@ -1,0 +1,112 @@
+doc_key: ata82-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-11-28'
+  local: Pousada Betânia, em Curitiba – PR
+deliberacoes:
+- tema: alteração do prazo de substituição do traje escoteiro
+  decisao: Aprovação da alteração do prazo de substituição do traje escoteiro previsto na Resolução CAN nº 3/2013 para 3 anos
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: local da 82ª reunião do CAN
+  decisao: Definição de Curitiba - PR como local da 82ª reunião do CAN
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata da 81ª reunião do CAN
+  decisao: Aprovação da ata de 81ª reunião do CAN
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: alteração da competência para aprovar Comenda Tapir de Prata
+  decisao: Aprovação da alteração do § 2º, art. 15, Resolução CAN nº 3/2014 delegando à Comissão Nacional de Reconhecimento
+    e Condecorações a competência por aprovar a Comenda Tapir de Prata
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: obrigatoriedade do curso de proteção infantojuvenil para pioneiros
+  decisao: Aprovação da alteração da regra 39 (III) do POR, estabelecendo a obrigatoriedade do curso de proteção infantojuvenil
+    para pioneiros (as)
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: divulgação da reunião do CAN via twitter
+  decisao: divulgação da reunião do CAN via twitter, apresentado por Fábio e Vendramini – aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: valores institucionais do Planejamento Estratégico 2016-2021
+  decisao: o texto referente aos Valores Institucionais será enviado para a equipe de métodos educativos para melhoria
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: reunião extraordinária do CAN para planejamento estratégico
+  decisao: Reunião Extraordinária do CAN para 27 e 28/02/2016 no hotel Tulip Inn, com envio do texto integral do planejamento
+    estratégico até 16/02/2016
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: mudança na sistemática de repasses da Loja Escoteira para as Regiões
+  decisao: CAN concorda com a proposta da DEN para que a Loja Escoteira Nacional efetue repasse equivalente a 25% da sua Margem
+    Líquida Operacional às Regiões
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: mudança do formato do canal de distribuição dos produtos comercializados pela LEN
+  decisao: Aprovada por unanimidade a proposta para negociação com as Regiões sobre atuação como rede própria, distribuidor
+    autorizado ou canal de franquia
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: organização da Assembleia Regional Ordinária em Pernambuco
+  decisao: DEN deverá organizar reunião da Assembleia Regional Ordinária no primeiro trimestre de 2016 para eleição de nova
+    diretoria regional
+  votacao: 8 votos a favor, 3 contra
+  pagina: 4
+  conferido: true
+- tema: autorização para avanço na melhoria do vestuário escoteiro
+  decisao: Autorização para continuar avançando na melhoria do vestuário, especialmente no oferecimento de duas novas peças
+    para a grade de opções, mesmo que necessite de adequações no POR
+  votacao: 10 votos favoráveis e 1 abstenção
+  pagina: 5
+  conferido: true
+- tema: reajuste da taxa de registro anual para 2016
+  decisao: Aprovada a proposta da DEN de aplicação do reajuste de 8,22% na taxa de registro anual para 2016
+  votacao: 9 votos favoráveis, 3 contrários
+  pagina: 7
+  conferido: true
+- tema: descontos para novas UELs
+  decisao: Aplicação de desconto de 100% até 180 dias após a data de fundação e de 50% entre 181 e 360 dias da data da fundação
+    para novas UELs
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: concessão de Diplomas Nacionais aos voluntários da tragédia do Rio Doce
+  decisao: Decidido que Paulo Henrique deverá encaminhar os pedidos por via eletrônica para aprovação
+  votacao: ''
+  pagina: 8
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: dias da reunião
+  valor: 28 e 29 de novembro de 2015
+  pagina: 1
+  conferido: true
+- o_que: percentual de reajuste da taxa de registro anual para 2016
+  valor: 8,22%
+  pagina: 7
+  conferido: false
+- o_que: percentual de repasse da Margem Líquida Operacional da Loja Escoteira para as Regiões
+  valor: 25%
+  pagina: 3
+  conferido: true
+- o_que: valor arrecadado para Escoteiros Pela Ucrânia até o momento
+  valor: R$ 53.843,78
+  pagina: 6
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: cd152a2e1be7bd05dd90285529982c98406938c0a1d36b88cffcd5d04bad7697
+revisado: null

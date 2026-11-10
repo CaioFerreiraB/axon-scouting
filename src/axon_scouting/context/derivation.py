@@ -15,6 +15,7 @@ tipo citado, o período e a abrangência continuam sendo os da pergunta atual.
 
 from __future__ import annotations
 
+import re
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import date
@@ -62,6 +63,19 @@ class ScoutingContext:
     """Pedido de enumeração que não é de documentos (ADR-048); `None` quando a pergunta não pede uma."""
     anchor: str | None = None
     """A pergunta anterior que esta, de seguimento, retoma (ADR-061); `None` quando a pergunta tem assunto próprio."""
+    synthesis: SynthesisRequest | None = None
+    """Pedido de síntese ao longo das atas (ADR-062); `None` na pergunta pontual."""
+
+
+@dataclass(frozen=True, slots=True, kw_only=True)
+class SynthesisRequest:
+    """A síntese pedida: os anos citados (um intervalo, ou nenhum), a abrangência e os órgãos nomeados — inclusive os
+    que são assunto, e o nome do órgão vale como abrangência ("conselho consultivo **regional**")."""
+
+    year_from: int | None
+    year_until: int | None
+    scopes: tuple[str, ...]
+    bodies: tuple[str, ...]
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -131,6 +145,7 @@ def derive_context(
         scopes=scoped if filtering else (),
         suggested_bodies=subjects,
         anchor=anchor,
+        synthesis=_synthesis(anchored, reference_day, lexicon, named),
     )
 
 
@@ -166,6 +181,14 @@ def to_slice(context: ScoutingContext) -> dict[str, JSONValue]:
         if context.enumeration is None
         else {"unit_kind": context.enumeration.unit_kind, "terms": list(context.enumeration.terms)},
         "anchor": context.anchor,
+        "synthesis": None
+        if context.synthesis is None
+        else {
+            "year_from": context.synthesis.year_from,
+            "year_until": context.synthesis.year_until,
+            "scopes": list(context.synthesis.scopes),
+            "bodies": list(context.synthesis.bodies),
+        },
     }
     filters = {key: value for key, value in full.items() if value is not None and value != []}
     return {CONTEXT_KEY: full, RETRIEVAL_FILTERS_KEY: filters}
@@ -286,6 +309,33 @@ def _has_subject(text: str, lexicon: Lexicon) -> bool:
         or any(_matches(text, terms) for terms in lexicon.bodies.values())
         or any(_matches(text, plurals) for plurals in lexicon.catalog_kinds.values())
         or any(_matches(text, plurals) for plurals in lexicon.unit_kinds.values())
+    )
+
+
+_YEAR: Final = re.compile(r"\b(19[89]\d|20\d\d)\b")
+_DECADE: Final = re.compile(r"\banos (2000|2010|2020|80|90)\b")
+
+
+def _synthesis(text: str, reference_day: date, lexicon: Lexicon, bodies: tuple[str, ...]) -> SynthesisRequest | None:
+    """Síntese: um marcador ("ao longo", "quem foram", "onde se reuniu") ou uma palavra de reunião com ano citado
+    ("a assembleia de 2016"). Os anos: o menor e o maior citados; "desde 2016" vai até o ano de referência; "nos anos
+    2000", a década."""
+    years = [int(year) for year in _YEAR.findall(text)]
+    for decade in _DECADE.findall(text):
+        start = {"80": 1980, "90": 1990}.get(decade, int(decade))
+        years += [start, start + 9]
+    marked = _matches(text, lexicon.synthesis_markers)
+    if not marked and not (years and _matches(text, lexicon.meeting_terms)):
+        return None
+    year_from = min(years) if years else None
+    year_until = max(years) if years else None
+    if year_from is not None and contains_term(text, f"desde {year_from}"):
+        year_until = max(year_until or year_from, reference_day.year)
+    return SynthesisRequest(
+        year_from=year_from,
+        year_until=year_until,
+        scopes=tuple(scope for scope, terms in lexicon.scopes.items() if _matches(text, terms)),
+        bodies=bodies,
     )
 
 

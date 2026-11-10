@@ -1,0 +1,204 @@
+doc_key: sp-2022-ata-do-xx-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-03-19'
+  local: online através da plataforma ZOOM
+deliberacoes:
+- tema: Eleição e Posse da Mesa Diretora dos trabalhos
+  decisao: 'foi eleita e empossada a mesa diretora do XX Fórum Regional de Jovens Líderes, composta por: Presidente: Aleksander
+    Dimitrius Rugeroni (GE Marechal Rondon 194SP); Vice-presidente: Lukas Palermo Lopes (GE Dom Bosco 122%SP); Secretário:
+    Fernando Rosa Ramos (GE do Mar Albatroz 175SP).'
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Ata do XIX Fórum Regional de Jovens Líderes
+  decisao: foi aprovada a ata do XIX Fórum Regional de Jovens Líderes
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Relatório da Gestão 2021, Grupos de Trabalho e Prestação de Contas
+  decisao: foi apresentado o relatório de gestão e prestação de contas, com orçamento previsto de R$ 9.340,00, que não foi
+    utilizado
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Proposta de elaboração de Mobilizador Distrital da RNJL
+  decisao: foi entregue o documento regulamentador para o NRJL para que dessem andamento à proposta
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Apresentação do Calendário Jovem 2022
+  decisao: foi apresentado o Calendário Jovem do ano de 2022, que será atualizado regularmente
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Eleição dos Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  decisao: foram aprovados os três candidatos para delegados titulares e eleitos três suplentes para o FNJL de 2022
+  votacao: titulares aprovados sem manifestações; suplentes eleitos com 11 votos para Mariana Scocca Orosco Brandi, 5 votos
+    para Julia Loschi Vittoretti Conceição, 2 votos para Aleksander Dimitrius Rugeroni
+  pagina: 5
+  conferido: true
+- tema: Indicação da cidade-sede do Encontro Regional de Jovens Líderes 2022
+  decisao: foi indicada a cidade de Taubaté para o 9o ERIL
+  votacao: ''
+  pagina: 6
+  conferido: true
+- tema: Eleição da cidade-sede do Encontro Regional de Jovens Líderes 2023
+  decisao: foi eleita a cidade de São José dos Campos como cidade-sede do 10o ERIL em 2023, mantendo Jundiaí como segundo
+    plano
+  votacao: 10 votos para São José dos Campos (62,5%), 6 votos para Jundiaí (37,5%)
+  pagina: 6
+  conferido: true
+- tema: Eleição dos novos membros do Núcleo Regional de Jovens Líderes
+  decisao: João Pedro Ferreira de Castro Maia eleito Coordenador 2022-2024 com 17 votos; Marianna Scocca Orosco Brandi eleita
+    Coordenadora 2022-2023 por aclamação
+  votacao: João Pedro Ferreira de Castro Maia 17 votos (73,9%), Marianna Scocca Orosco Brandi 5 votos (21,7%)
+  pagina: 7
+  conferido: true
+- tema: Aprovação de encaminhamento sobre Carta de Compromisso para as chapas candidatas à Diretoria Regional
+  decisao: foi aprovado por aclamação o encaminhamento para a Assembleia Regional do Compromisso da Diretoria futura com a
+    continuidade dos trabalhos da Diretoria Jovem e exclusividade da coordenação de seu processo seletivo por jovens líderes
+  votacao: aclamação
+  pagina: 10
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora do XX Fórum Regional de Jovens Líderes
+  cargo: Presidente
+  eleito: Aleksander Dimitrius Rugeroni (GE Marechal Rondon 194SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora do XX Fórum Regional de Jovens Líderes
+  cargo: Vice-presidente
+  eleito: Lukas Palermo Lopes (GE Dom Bosco 122%SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora do XX Fórum Regional de Jovens Líderes
+  cargo: Secretário
+  eleito: Fernando Rosa Ramos (GE do Mar Albatroz 175SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado Titular
+  eleito: Fernando Rosa Ramos (GE do Mar Albatroz 1759SP)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado Titular
+  eleito: Cecília Midori Hosoda Henriques (GE Craós 195SP)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado Titular
+  eleito: Yasmim de Farias Soave Ferreira (GE Craós 195SP)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado Suplente
+  eleito: Mariana Scocca Orosco Brandi (GE Dom Bosco 122SP)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado Suplente
+  eleito: Julia Loschi Vittoretti Conceição (GE Kimball O'Hara 310SP)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado Suplente
+  eleito: Aleksander Dimitrius Rugeroni (GE Marechal Rondon 194SP)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes
+  cargo: Coordenador 2022-2024
+  eleito: João Pedro Ferreira de Castro Maia (GE Guayporé 186SP)
+  mandato: 2022-2024
+  pagina: 7
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes
+  cargo: Coordenadora 2022-2023
+  eleito: Marianna Scocca Orosco Brandi (GE Dom Bosco 122SP)
+  mandato: 2022-2023
+  pagina: 7
+  conferido: true
+numeros:
+- o_que: Total de inscritos no Encontrinho 2021
+  valor: '87'
+  pagina: 4
+  conferido: true
+- o_que: Percentual de participação no Encontrinho 2021
+  valor: 63%
+  pagina: 4
+  conferido: true
+- o_que: Número de delegados titulares eleitos para o Fórum Nacional de Jovens Líderes
+  valor: '3'
+  pagina: 5
+  conferido: true
+- o_que: Número de delegados suplentes eleitos para o Fórum Nacional de Jovens Líderes
+  valor: '3'
+  pagina: 5
+  conferido: true
+- o_que: Votos para Mariana Scocca Orosco Brandi como suplente
+  valor: '11'
+  pagina: 5
+  conferido: true
+- o_que: Votos para Julia Loschi Vittoretti Conceição como suplente
+  valor: '5'
+  pagina: 5
+  conferido: true
+- o_que: Votos para Aleksander Dimitrius Rugeroni como suplente
+  valor: '2'
+  pagina: 5
+  conferido: true
+- o_que: Votos válidos na eleição dos suplentes
+  valor: '18'
+  pagina: 5
+  conferido: true
+- o_que: Abstenções na eleição dos suplentes
+  valor: '16'
+  pagina: 5
+  conferido: true
+- o_que: Votos para São José dos Campos como cidade-sede do 10o ERIL 2023
+  valor: '10'
+  pagina: 6
+  conferido: true
+- o_que: Votos para Jundiaí como cidade-sede do 10o ERIL 2023
+  valor: '6'
+  pagina: 6
+  conferido: true
+- o_que: Votos válidos na eleição da cidade-sede do 10o ERIL 2023
+  valor: '16'
+  pagina: 6
+  conferido: true
+- o_que: Abstenções na eleição da cidade-sede do 10o ERIL 2023
+  valor: '18'
+  pagina: 6
+  conferido: true
+- o_que: Votos para João Pedro Ferreira de Castro Maia na eleição do Núcleo Regional
+  valor: '17'
+  pagina: 7
+  conferido: true
+- o_que: Votos para Marianna Scocca Orosco Brandi na eleição do Núcleo Regional
+  valor: '5'
+  pagina: 7
+  conferido: true
+- o_que: Votos válidos na eleição do Núcleo Regional
+  valor: '22'
+  pagina: 7
+  conferido: true
+- o_que: Abstenções na eleição do Núcleo Regional
+  valor: '12'
+  pagina: 7
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: df73ff1b1c84ac102ed459537832e31bb4ee36038d5e09d19e4a2051a5cf772d
+revisado: null

@@ -1,0 +1,64 @@
+doc_key: ata-113a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-04-29'
+  local: Faculdades Integradas Campos Salles sito na Rua Nossa Senhora da Lapa, 270 - Lapa - São Paulo
+deliberacoes:
+- tema: Escopo GT Política de Relações Institucionais e Governamentais (GTRIG)
+  decisao: Aprovada com 12 votos a favor (ALDENISE, NETO, MAGU, CLAUCIO, DANIELA, DAVID, DAYANNA, ILKA, LINDOMAR, RAFAEL,
+    RENATO e SARAH) e 2 abstenções por falta de pronunciamento (LAURA e ROBSON).
+  votacao: 12 votos a favor e 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Ata da 112ª Reunião Ordinária do CAN
+  decisao: Aprovada com 12 votos a favor (ALDENISE, NETO, MAGU, CLAUCIO, DANIELA, DAVID, DAYANNA, ILKA, LINDOMAR, RAFAEL,
+    RENATO e SARAH) e 2 abstenções por falta de pronunciamento (LAURA e ROBSON).
+  votacao: 12 votos a favor e 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Proposta de Resolução sobre Reabertura de UELs em 2023
+  decisao: Aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Agenda definitiva da 113ª Reunião Ordinária do CAN
+  decisao: Às 08h56min a agenda definitiva é aprovada por aclamação.
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Discussão sobre Faixas Etárias e Ramos dos Escoteiros do Brasil - Atualização do Programa Educativo
+  decisao: SARAH salienta que esse é um trabalho contínuo e vem sendo discutido pelo CAN. SARAH sugere a pedido do conselheiro
+    RENATO que a discussão sobre o tema seja realizada em sessão fechada, bem como sua deliberação. Todos concordam com a
+    sugestão.
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: Renato Wanderley Breneizer
+  mandato: 1 de maio de 2021 a 30 de abril de 2025
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: votos a favor da aprovação do escopo do GT Política de Relações Institucionais e Governamentais (GTRIG)
+  valor: '12'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na aprovação do escopo do GT Política de Relações Institucionais e Governamentais (GTRIG)
+  valor: '2'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da aprovação da Ata da 112ª Reunião Ordinária do CAN
+  valor: '12'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na aprovação da Ata da 112ª Reunião Ordinária do CAN
+  valor: '2'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 524c97670131d4e7a61a3e88825a4a02d2eb0705bdbe68d1daa08ab722fdffd0
+revisado: null

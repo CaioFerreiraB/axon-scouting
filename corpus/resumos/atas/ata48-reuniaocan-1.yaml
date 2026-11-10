@@ -1,0 +1,118 @@
+doc_key: ata48-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2005-08-20'
+  local: Curitiba/PR
+deliberacoes:
+- tema: Alteração do P.O.R.
+  decisao: Colocada em discussão a sugestão de alteração do P.O.R. com as modificações e adequações apresentadas foi aprovada.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Implantação do Desafio Escoteiro
+  decisao: O CAN decide pela implantação do Desafio Escoteiro com início no segundo semestre do presente ano.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Uso do site da UEB para Mutirão de Ação Comunitária
+  decisao: Ficou decidido que o site a ser utilizado será o da própria UEB.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Inclusão de Carla Neves na Rede de Jovens Líderes
+  decisao: A proposta de adicionar o nome da Carla Neves ao de Ricardo Stuber na Rede de Jovens Líderes é aprovada.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Tabela de valores para Taxa de Registro 2006
+  decisao: A tabela com a correção foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Tema para 2006
+  decisao: Apresentada e aceita a proposta de utilizar o tema “Escotismo Rumo aos 100 anos”.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação dos balancetes do primeiro semestre de 2005
+  decisao: O CAN aprova por unanimidade os balancetes enviados.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Delegação para decisão sobre apoio para Jamboree Mundial de 2011
+  decisao: O CAN delega à Delegação a tomada de decisão quanto a quem apoiar para realização do Jamboree Mundial de 2011.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação de Moção de Louvor relativa à Conferência e Jamboree Mundial de 2007
+  decisao: O CAN aprova Moção de Louvor à Oscar Palmquist, Fernando Brodeschi, Donald Malschitzky, Marie Louise Maia, Luiz
+    César de Simas Horn e Luiz Carlos Debiazio relativa aos trabalhos realizados com relação a Conferência e ao Jamboree Mundial
+    de 2007.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do calendário para 2006
+  decisao: Aprovado o calendário para 2006.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Posição da UEB no plebiscito sobre desarmamento
+  decisao: O CAN aprova todas as proposições.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Alteração das capas dos manuais para divulgar somente a UEB
+  decisao: É solicitado, por Geraldino, a alteração das capas dos mesmos com vistas a divulgar somente a UEB e que referências
+    a colaboradores e eventuais propagandas sejam colocadas na contra-capa.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Simplificação da linha de Dirigente de Formação
+  decisao: Alessandro sugere seja simplificada a linha de Dirigente de Formação de forma a permitir que seja facilitada a
+    atualização para os que já tenham formação Escoteira.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Concessão de Condecorações Tapir de Prata, Velho Lobo e Medalha Tiradentes
+  decisao: Todas foram aprovadas por unanimidade.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Aprovação da sugestão para elaboração de Planejamento Estratégico plurianual
+  decisao: 'Encaminha e é aprovada a seguinte sugestão: 1) A DEN providenciará a obtenção da tradução do material de Planejamento
+    Estratégico da WOSM e OSI. Distribuição imediata aos Conselheiros e Comissões; 2) Elaboração de material para dar início
+    ao processo de construção do Planejamento estratégico, com ampla discussão aos diversos órgãos e níveis da UEB; 3) Discussão
+    do tema durante a reunião do CAN em novembro/05; 4) Realização de Seminário durante o Congresso em Fortaleza; 5) Definição
+    de um coordenador de todo processo.'
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional – DEN
+  cargo: Diretor Presidente
+  eleito: Paulo Salamuni
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Diretoria Executiva Nacional – DEN
+  cargo: 1.º Vice Presidente
+  eleito: Marcos Venício Mattos Chaves
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Diretoria Executiva Nacional – DEN
+  cargo: 2.º Vice Presidente
+  eleito: Adir Barusso
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: valor da Taxa de Registro para Jan/Fev de 2006
+  valor: R$24,00
+  pagina: 2
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 4fcfb53c9352b5513f4b70b3441bd15c2582b59d2eaf54456c5c49ff559668ce
+revisado: null

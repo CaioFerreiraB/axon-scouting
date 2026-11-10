@@ -1,0 +1,33 @@
+doc_key: 25a-ata-da-reuniao-extraordinaria-da-assembleia-nacional-escoteira-29-abr-2018-1-1
+reuniao:
+  tipo: extraordinaria
+  data: '2018-04-29'
+  local: Universidade Tecnológica Federal do Paraná - UTFPR, Av. Sete de Setembro, no 3165, Rebouças, Curitiba/PR
+deliberacoes:
+- tema: alteração do artigo 2o, inciso III do Estatuto Social
+  decisao: 'Proposta de alteração do artigo 2o, inciso Ill do Estatuto Social. Redação atual: Art. 2o - São fins da UEB: [...]
+    III - propiciar a educação não-formal, valorizando o equilíbrio ambiental e o desenvolvimento do propósito do Escotismo,
+    junto às crianças e jovens do Brasil, na forma estabelecida pelo P.O.R.- Princípios, Organização e Regras e pelo “Projeto
+    Educativo” da UEB. Redação proposta: Art. 2o - São fins da UEB: [...] Ill - propiciar a educação não-formal, valorizando
+    o equilíbrio ambiental e o desenvolvimento do propósito do Escotismo, junto às crianças, adolescentes e jovens do Brasil,
+    na forma estabelecida pelo P.O.R. - Princípios, Organização e Regras e pelo “Projeto Educativo” da UEB.'
+  votacao: 95 votos a favor, nenhum voto contrário e nada de abstenções
+  pagina: 1
+  conferido: true
+- tema: inclusão do artigo 51B no Estatuto Social
+  decisao: Inclusão do artigo 51b Artigo 51B - A UEB manterá escrituração contábil de acordo com os princípios fundamentais
+    de contabilidade e com as Normas Brasileiras de Contabilidade.
+  votacao: aprovada por unanimidade
+  pagina: 1
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos favoráveis à alteração do artigo 2o, inciso III do Estatuto Social
+  valor: '95'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 575c90e114b3eccb3cbdd56549d1c6b828a75eeafdf60d4774990c49b0320dde
+revisado: null

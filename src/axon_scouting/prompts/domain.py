@@ -8,7 +8,9 @@ a vigência. Desde a revisão do RAG de 2026-10-27, mais três: a cobertura parc
 que não existe nos documentos), o conceito perguntado (sem trocar por um vizinho) e a resposta por ramo; e a lista de
 documentos pelas fichas do acervo (ADR-047); e a enumeração pela lista de unidades de um documento (ADR-048, FR-029).
 Desde o ADR-061, a hierarquia das normas: numa pergunta sobre um órgão ou sobre o que estatutos e regulamentos dizem, a
-resposta junta os níveis, do nacional ao local, e o nível de baixo completa o de cima sem contrariá-lo.
+resposta junta os níveis, do nacional ao local, e o nível de baixo completa o de cima sem contrariá-lo. Desde o
+ADR-062, a síntese pelos resumos das atas: a linha do tempo em ordem, a ata e a página de cada fato, e o resumo nunca
+como regra.
 O exemplo de citação é sintético — nunca um id do corpus. A resposta fala de documentos consultados, nunca de
 "trechos" (R37). O texto não manda chamar ferramenta: no `agentic`, o prompt de pack só chega à geração.
 """
@@ -55,6 +57,12 @@ regulamentos dizem, junte o que chegou de cada nível — do nacional ao regiona
 cima, depois o que o nível de baixo acrescenta. O regulamento de um nível completa o estatuto e as normas acima dele e
 não pode contrariá-los. Se chegou o documento de um nível só, responda com ele e diga que a norma do outro nível pode
 trazer regra complementar.
+
+Quando a pergunta é sobre o que aconteceu ao longo do tempo (eleições, decisões, reuniões de um órgão), a conversa pode
+trazer resumos das atas: a linha do tempo de um órgão num ano e a ficha de cada reunião, com a referência "linha do
+tempo" ou "ficha da reunião". Responda em ordem de data, diga de qual ata e página vem cada fato, como o resumo indica,
+e cite o resumo. Ele resume o que as atas registram: não o apresente como regra, e para o que a norma diz use os
+documentos normativos. Se o período pedido não aparece inteiro nos resumos, diga quais anos você encontrou.
 
 Quando a pergunta é sobre vários ramos, organize a resposta por ramo, na ordem das idades (Filhotes, Lobinho, Escoteiro,
 Sênior, Pioneiro), e marque os ramos para os quais você não encontrou a informação.

@@ -1,0 +1,131 @@
+doc_key: sp-ata-are-2018-extraordinaria-1
+reuniao:
+  tipo: extraordinaria
+  data: '2018-03-17'
+  local: Teatro Erotides de Campos, Engenho Central, Avenida Mariluce Allain, 454, Parque do Engenho Central, Piracicaba/SP
+deliberacoes:
+- tema: eleição da Mesa Diretora dos trabalhos
+  decisao: o chefe Renato Breneizer do 283º Grupo Escoteiro (GE) Suçuarana foi confirmado por aclamação como presidente da
+    mesa
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição da Mesa Diretora dos trabalhos
+  decisao: Ana Serafina de Souza Hidaka do 249º GE Locomotiva foi confirmada para o cargo de 1a Vice-presidente por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição da Mesa Diretora dos trabalhos
+  decisao: Juliano Ferreira Arcuri do 181º GE Rio das Cobras foi aclamado pela assembleia para 2º Vice-presidente
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição da Mesa Diretora dos trabalhos
+  decisao: Marcelo José Fassina do 304º GE Curumins da Mantiqueira foi aclamado para 1º Secretário
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição da Mesa Diretora dos trabalhos
+  decisao: Rodnei Erik de Souza Bueno do 249º GE Locomotiva foi indicado e aprovado por aclamação para 2º Secretário
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição dos membros da Comissão de Credenciamento
+  decisao: Aline Milan Falcade, Fernando Del Antonini, William Capuci Rodrigues, Vilma Pietropoli Morais, Priscila Oriani
+    de Carvalho, Cátia Cristina Freitas Antonini e Eliana Márcia Sotello Cabrera foram aprovados por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: deliberação sobre alterações do Estatuto e Regulamento Regional
+  decisao: não é possível dar seguimento aos demais itens da pauta por não ter sido alcançado o quórum necessário de mais
+    de um terço dos membros da Assembleia Escoteira Regional
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Presidente
+  eleito: Renato Breneizer
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: 1a Vice-presidente
+  eleito: Ana Serafina de Souza Hidaka
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: 2º Vice-presidente
+  eleito: Juliano Ferreira Arcuri
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: 1º Secretário
+  eleito: Marcelo José Fassina
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: 2º Secretário
+  eleito: Rodnei Erik de Souza Bueno
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: membro
+  eleito: Aline Milan Falcade
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: membro
+  eleito: Fernando Del Antonini
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: membro
+  eleito: William Capuci Rodrigues
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: membro
+  eleito: Vilma Pietropoli Morais
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: membro
+  eleito: Priscila Oriani de Carvalho
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: membro
+  eleito: Cátia Cristina Freitas Antonini
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: membro
+  eleito: Eliana Márcia Sotello Cabrera
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '288'
+  pagina: 2
+  conferido: true
+- o_que: quórum necessário para alterações no Estatuto e Regulamento Regional
+  valor: '351'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: ec295b38259fb28db7edf0cacad6229a389661b53af08f4597d3b033caf8e7e9
+revisado: null

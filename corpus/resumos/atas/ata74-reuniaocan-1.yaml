@@ -1,0 +1,94 @@
+doc_key: ata74-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2013-08-24'
+  local: Curitiba (PR)
+deliberacoes:
+- tema: agenda da reunião
+  decisao: aprovada a agenda da reunião apresentada pela presidência. Da mesma forma, é incluído na agenda os temas deliberados
+    por meio eletrônico.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: aprovação da venda do terreno do Grupo Escoteiro Tupanciguara e Resolução 3/2013
+  decisao: é ratificada a aprovação da venda do terreno do Grupo Escoteiro Tupanciguara (RS) e a Resolução 3/2013 que instituiu
+    o vestuário escoteiro.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: proposta do Troféu Longevidade
+  decisao: A proposta apresentada foi aprovada por unanimidade. Por outro lado, a proposta de inclusão das Regiões Escoteiras
+    como possíveis agraciadas pelo Troféu Longevidade recebeu 5 votos a favor, 5 contra e 3 abstenções. Com o voto de minerva
+    do Presidente, não haverá inclusão da Região Escoteira na proposta.
+  votacao: unanimidade para aprovação da proposta principal; 5 a favor, 5 contra e 3 abstenções para inclusão das Regiões
+  pagina: 2
+  conferido: true
+- tema: prorrogação do mandato da Diretoria Executiva Nacional
+  decisao: foi aprovada a prorrogação do mandato da atual Diretoria Executiva Nacional até o final do mês de abril de 2016.
+  votacao: aprovada com apenas uma abstenção
+  pagina: 4
+  conferido: true
+- tema: Distintivo de Promessa
+  decisao: o CAN delibera pela formação de um grupo de trabalho para realizar uma ampla consulta com os associados sobre a
+    mudança do distintivo de promessa. A proposta contendo diretrizes e prazo será apresentada ao Conselho por este grupo
+    de trabalho.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Lenço Regional
+  decisao: O CAN determina que a DEN apresente, para análise e reflexão, na próxima reunião do Conselho Consultivo, a discussão
+    sobre a padronização de utilização do Lenço Nacional por todas as Regiões Escoteiras.
+  votacao: preferencialmente Lenço Nacional (8 votos), manutenção do texto como está (1 voto), Lenço Nacional (5 votos)
+  pagina: 5
+  conferido: true
+- tema: Mudança do Lenço Nacional
+  decisao: adoção do lenço utilizado pela delegação brasileira em eventos internacionais como o Lenço Oficial da UEB.
+  votacao: aprovado por unanimidade
+  pagina: 5
+  conferido: true
+- tema: Distintivo “Escoteiros do Brasil”
+  decisao: aprovada atualização do desenho mantendo a palavra Escoteiros do Brasil com a bandeira do Brasil.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Listel do Ramo Pioneiro
+  decisao: este listel foi extinto por decisão unânime do Conselho.
+  votacao: unânime
+  pagina: 5
+  conferido: true
+- tema: contagem do tempo de Escotismo
+  decisao: o CAN aprova que o tempo de Escotismo do associado será computado a partir da data da Promessa Escoteira
+  votacao: 7 votos a favor; 2 votos contra; 4 abstenções
+  pagina: 5
+  conferido: true
+- tema: Distintivo de idiomas
+  decisao: a Loja Escoteira Nacional disponibilizará os distintivos de idiomas oficiais da WOSM e um distintivo em branco
+    para idiomas não oficiais da WOSM, para venda. Aprovação de permanência dos distintivos.
+  votacao: 5 votos à favor, 2 votos de exclusão e 3 votos de abstenção
+  pagina: 5
+  conferido: true
+- tema: Vestuário Escoteiro Alternativo
+  decisao: aprovada a proposta de que deva ser permitida, em caráter especial e provisório, mediante expressa solicitação
+    da diretoria da UEL e autorização da respectiva diretoria regional, a possibilidade de que seus integrantes utilizem o
+    vestuário escoteiro alternativo, nos termos definidos no POR.
+  votacao: ''
+  pagina: 6
+  conferido: true
+- tema: próxima reunião do CAN
+  decisao: será realizada em Brasília - no Campo Escola da Região do Distrito Federal nos dias 23 e 24 de novembro.
+  votacao: ''
+  pagina: 6
+  conferido: true
+- tema: Carta de Natal/RN – Rede Nacional de Jovens Líderes
+  decisao: O CAN encaminha o assunto para ser tratado pelo Grupo de Trabalho de Posicionamento, que irá propor uma nota institucional
+    acerca do tema homofobia.
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 02fa650956139b52aa2c44e0ce74cbc77467dd52629d5d7656403c05c01106c5
+revisado: null

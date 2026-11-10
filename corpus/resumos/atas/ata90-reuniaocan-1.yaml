@@ -1,0 +1,115 @@
+doc_key: ata90-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2017-11-11'
+  local: Escritório Nacional da União dos Escoteiros do Brasil, Curitiba/PR
+deliberacoes:
+- tema: Inclusão de tema disciplinar na pauta
+  decisao: A solicitação de inclusão foi aprovada por unanimidade e será tratada logo no início da reunião, em Sessão Secreta.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Ratificação de decisões eletrônicas do CAN
+  decisao: Todas as decisões foram ratificadas por unanimidade de votos.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Proposta orçamentária 2018
+  decisao: A proposta foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Ajuste de repasse da Política Comercial para 35% em 2017
+  decisao: O encaminhamento do Conselho é de autorizar o ajuste imediato de repasse para 35% no ano de 2017, com a necessidade
+    de o Comitê continuar discutindo e calculando valores mais adequados para atender as partes interessadas. Submetido a
+    votação, foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Rejeição da resolução sobre correção automática do Registro Anual pelo IGPM
+  decisao: A proposta de resolução foi votada, resultando em 12 votos pela rejeição e 1 de aprovação, restando rejeitada então
+    pelo Conselho.
+  votacao: 12 votos a favor da rejeição, 1 contra
+  pagina: 7
+  conferido: true
+- tema: Reajuste da taxa de registro anual para 2018
+  decisao: A proposta apresentada para o reajuste da taxa de registro anual foi aprovada de maneira unânime e será a resolução
+    05/2017.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: Alteração no texto da resolução que regulamenta a prática do Escotismo no Brasil
+  decisao: Tal alteração foi aprovada e consta na resolução 04/2017, artigo 2º, parágrafo 3º.
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Posicionamento institucional sobre participação na Parada Gay 2018
+  decisao: Fica estabelecido o encaminhamento apresentado pela conselheira ISABELLY, de não necessidade de um posicionamento
+    institucional para a Região Escoteira participar do evento.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: Cancelamento do Jamboree Nacional Escoteiro em 2021
+  decisao: A proposta de encaminhamento foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 12
+  conferido: true
+- tema: Uso do fundo de emergência para pagamento de indenização
+  decisao: A proposta foi votada pelos conselheiros e aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 12
+  conferido: true
+- tema: Elaboração da minuta da resolução de Gestão de Riscos
+  decisao: Fica aprovado por unanimidade que os conselheiros RENATO, INÁCIO, e PEDRO PAVÃO farão a minuta da resolução de
+    Gestão de Riscos, que será acompanhada e apoiada pelo diretor IVAN.
+  votacao: unanimidade
+  pagina: 12
+  conferido: true
+- tema: Proposta de resolução que cria o conceito das atividades estratégicas
+  decisao: A proposta foi colocada em votação e aprovada por unanimidade, dando origem à resolução 06/2017.
+  votacao: unanimidade
+  pagina: 12
+  conferido: true
+- tema: Referendo à contratação da Gerente Sênior de Relações Institucionais, PAULA MARTINS
+  decisao: Submetido à votação, foi aprovado por unanimidade dos conselheiros titulares presentes.
+  votacao: unanimidade
+  pagina: 12
+  conferido: true
+- tema: Alteração da redação da Resolução 05/2012 sobre Áreas Geográficas
+  decisao: A partir desta data a Região Escoteira do Tocantins passa a compor a Área Geográfica Norte, aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 14
+  conferido: true
+- tema: Retomada das ações da Comissão Estatuinte
+  decisao: A proposta que define atualização dos valores para realização da consultoria e retomada das ações foi aprovada
+    de maneira unânime.
+  votacao: unanimidade
+  pagina: 14
+  conferido: true
+- tema: Cronograma para regularização das Regiões Escoteiras com CNPJ Filial da Matriz UEB
+  decisao: O CAN, DEN e Diretoria da Região Escoteira de São Paulo iniciem conversas a respeito deste assunto, considerando
+    o cronograma e as informações levantadas pela assessoria externa, aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 15
+  conferido: true
+- tema: Recomendação para ação da DEN sobre o projeto Porto Futuro
+  decisao: O CAN recomenda unanimemente que seja realizada uma ação da DEN para melhor compreensão do campo de atuação dos
+    Escoteiros do Brasil no projeto.
+  votacao: unanimidade
+  pagina: 16
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos pela rejeição da resolução sobre correção automática do Registro Anual pelo IGPM
+  valor: '12'
+  pagina: 7
+  conferido: true
+- o_que: votos pela aprovação da resolução sobre correção automática do Registro Anual pelo IGPM
+  valor: '1'
+  pagina: 7
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 12e1da41170410431a1e06e0c7497c198eb6f6095b6e228f5ab6e9f5ceae1d5a
+revisado: null

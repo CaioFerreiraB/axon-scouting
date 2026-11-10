@@ -1,0 +1,170 @@
+doc_key: ata-2015-xx-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-04-18'
+  local: Centro de Formação de Profissionais da Educação Ruth Cardoso (Cenforpe), em São Bernardo do Campo (SP), localizado
+    na Av. Dom Jaime de Barros Câmara, 201, Planalto, CEP 09895-400
+deliberacoes:
+- tema: Comissão de escrutínio
+  decisao: Yule Oliveira/AM, Davi Moraes de Carvalho/RJ e João/PR foram aprovados por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Comissão de assuntos gerais
+  decisao: Comissão de assuntos gerais composta por Mariana Bastos/RJ e Betina Bruel/PR foi formada.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Mesa do Fórum
+  decisao: 'Sugeriu a seguinte mesa para o Fórum: Leandro Lunelli/NN – Presidente, Ricado Kraus/SP – Vice-Presidente, Vinicius
+    Sousa/MA – 1º Secretário e Gabriel Rodrigues/RS – 2º secretário. A sugestão de mesa dada pelo NN teve 12 votos a favor
+    e 10 votos contra, sendo então eleita.'
+  votacao: 12 votos a favor e 10 votos contra
+  pagina: 1
+  conferido: true
+- tema: Inclusão de 3º secretário na mesa
+  decisao: Carolina Barroso/RJ foi aprovada para compor a mesa como 3º secretária.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Agenda do Fórum Nacional
+  decisao: Proposta número 3 com divisão em 3 blocos foi aprovada com 12 votos a favor e 6 contra.
+  votacao: 12 votos a favor e 6 contra
+  pagina: 2
+  conferido: true
+- tema: Não leitura da ata do fórum de 2014
+  decisao: Proposta aprovada por 21 votos a favor da não leitura e 0 contra.
+  votacao: 21 votos a favor e 0 contra
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata do fórum de 2014
+  decisao: Ata aprovada por 21 votos a favor e 0 contra.
+  votacao: 21 votos a favor e 0 contra
+  pagina: 2
+  conferido: true
+- tema: Discussão e aprovação de artigos do Novo Estatuto Nacional referentes à Rede de Jovens Líderes
+  decisao: Artigos referentes à Rede de Jovens Líderes foram aprovados, incluindo a inclusão da rede como órgão da estrutura
+    dos Escoteiros do Brasil e alterações no Conselho Nacional e Conselho de Presidentes.
+  votacao: 'Por aclamação e votações específicas (ex: 21 votos a favor e 2 contra para supressão de termo)'
+  pagina: 3
+  conferido: true
+- tema: Eleição da coordenadora do Núcleo Nacional
+  decisao: Mariana Massaro foi eleita com 24 votos para coordenadora do Núcleo Nacional 2015/2017.
+  votacao: 24 votos
+  pagina: 3
+  conferido: true
+- tema: Eleição do comunicador do Núcleo Nacional mandato 2 anos
+  decisao: Vinicius Abreu/MA foi eleito com 13 votos e Wildson Caldeira/MG ficou como suplente com 9 votos, havendo 2 abstenções.
+  votacao: 13 votos a favor, 9 votos suplente, 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: Eleição do comunicador do Núcleo Nacional mandato 1 ano
+  decisao: Gabriel Maça/PR foi eleito após desempate pelo Núcleo Nacional contra Laura Galdeano, com 6 regiões a favor de
+    cada, decidindo o Núcleo a favor de Gabriel Maça.
+  votacao: Empate 12 a 12 votos, desempate por região 6 a 6, decisão do Núcleo
+  pagina: 3
+  conferido: true
+- tema: Aprovação do Novo Estatuto Nacional dos Escoteiros do Brasil referente à Rede de Jovens Líderes
+  decisao: Proposta para o novo estatuto foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Votação das cidades sede para Encontro Nacional da Rede de Jovens
+  decisao: Para 2015 foi escolhida Salvador com 13 votos, Curitiba com 10 votos. Para 2016 foi escolhida Manaus com 17 votos,
+    Belo Horizonte com 4 votos e 2 abstenções.
+  votacao: 13 votos Salvador, 10 Curitiba; 17 votos Manaus, 4 Belo Horizonte, 2 abstenções
+  pagina: 9
+  conferido: true
+- tema: Aprovação do artigo 26 do Estatuto referente à Rede de Jovens Líderes
+  decisao: Por aclamação o artigo 26 foi aceito, assim como os parágrafos 1 e 2.
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Encaminhamento para recomendação ao CAN
+  decisao: Encaminhar uma recomendação ao CAN para que caso se abrisse um novo estatuinte que levasse em consideração a rede
+    como órgão e que um membro da rede fizesse parte do GT também, e por aclamação foi aceita a escrita da recomendação pelo
+    NN.
+  votacao: aclamação
+  pagina: 11
+  conferido: true
+eleicoes:
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Coordenadora
+  eleito: Mariana Massaro
+  mandato: 2015/2017
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Comunicador
+  eleito: Vinicius Abreu/MA
+  mandato: 2015/2017
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Comunicador
+  eleito: Gabriel Maça/PR
+  mandato: 2015/2016
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: votos para aprovação da mesa sugerida pelo NN
+  valor: 12 votos a favor e 10 votos contra
+  pagina: 1
+  conferido: true
+- o_que: votos para opção de votação por chapa ou cargo
+  valor: 13 votos a favor, contra 8 votos
+  pagina: 1
+  conferido: true
+- o_que: votos para aprovação da proposta número 1 da agenda
+  valor: 0 votos a favor e 18 contra
+  pagina: 2
+  conferido: true
+- o_que: votos para aprovação da proposta número 2 da agenda
+  valor: 6 votos a favor e 12 contra
+  pagina: 2
+  conferido: true
+- o_que: votos para aprovação da proposta número 3 da agenda
+  valor: 12 votos a favor e 6 contra
+  pagina: 2
+  conferido: true
+- o_que: votos para não leitura da ata do fórum de 2014
+  valor: 21 votos a favor e 0 contra
+  pagina: 2
+  conferido: true
+- o_que: votos para aprovação da ata do fórum de 2014
+  valor: 21 votos a favor e 0 contra
+  pagina: 2
+  conferido: true
+- o_que: votos para supressão do termo 'indicados pelo Fórum Nacional de jovens líderes' no artigo 16
+  valor: 21 votos a favor e 2 contra
+  pagina: 4
+  conferido: true
+- o_que: votos para a rede ter 2 representantes no conselho no artigo 20
+  valor: 22 votos a favor
+  pagina: 4
+  conferido: true
+- o_que: votos para eleição da coordenadora do Núcleo Nacional
+  valor: 24 votos
+  pagina: 3
+  conferido: true
+- o_que: votos para eleição do comunicador mandato 2 anos
+  valor: 13 votos a favor, 9 votos suplente, 2 abstenções
+  pagina: 3
+  conferido: true
+- o_que: votos para eleição do comunicador mandato 1 ano
+  valor: 12 votos a favor (empate), desempate por região 6 a 6, decisão do Núcleo
+  pagina: 3
+  conferido: true
+- o_que: votos para escolha da cidade sede do Encontro Nacional 2015
+  valor: 13 votos Salvador, 10 Curitiba
+  pagina: 9
+  conferido: true
+- o_que: votos para escolha da cidade sede do Encontro Nacional 2016
+  valor: 17 votos Manaus, 4 Belo Horizonte, 2 abstenções
+  pagina: 9
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3f3b668ff817e62ed7ff9e757e21ad8a524493b5624ec3e4047781e8c43e0dc6
+revisado: null

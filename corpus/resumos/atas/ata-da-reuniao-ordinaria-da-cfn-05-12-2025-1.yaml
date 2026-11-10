@@ -1,0 +1,136 @@
+doc_key: ata-da-reuniao-ordinaria-da-cfn-05-12-2025-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-12-05'
+  local: Escritório Nacional da União dos Escoteiros do Brasil sito na Rua Coronel Dulcídio, 2107 - Bairro Água Verde, Curitiba
+    - PR
+deliberacoes:
+- tema: Encaminhamentos e recomendações da Comissão Fiscal Nacional
+  decisao: Os encaminhamentos e recomendações foram aprovados pela CFN.
+  votacao: unanimidade dos presentes
+  pagina: 7
+  conferido: true
+- tema: Composição da presidência da Comissão Fiscal Nacional
+  decisao: Decidido por unanimidade dos presentes a permanência do Luiz Klaes na presidência, uma vez que a composição plena
+    da CFN não estava presente para eventual alteração.
+  votacao: unanimidade dos presentes
+  pagina: 7
+  conferido: true
+- tema: Pré-agendamento da próxima reunião da CFN
+  decisao: Foi deûnido o pré-agendamento da próxima reunião da CFN no dia 13/03/2026, que é consentida pelos demais presentes.
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Encaminhamento do relatório e ata ao Conselho de Administração Nacional e à Diretoria Executiva Nacional
+  decisao: Foi deûnido o encaminhamento do relatório e desta ata ao Conselho de Administração Nacional e à Diretoria Executiva
+    Nacional, conforme previsão estatutária, bem como sua publicação no site institucional.
+  votacao: ''
+  pagina: 7
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Receita acumulada de janeiro a setembro
+  valor: R$5.300.000
+  pagina: 1
+  conferido: false
+- o_que: Superávit operacional em setembro
+  valor: R$112 mil
+  pagina: 2
+  conferido: true
+- o_que: Recursos em caixa distribuídos entre diversos fundos
+  valor: cerca de R$7 milhões
+  pagina: 2
+  conferido: true
+- o_que: Fundo de Risco
+  valor: R$2.344.000
+  pagina: 2
+  conferido: false
+- o_que: Fundo de Obra
+  valor: R$1.088.000
+  pagina: 2
+  conferido: false
+- o_que: Fundos de Eventos
+  valor: R$837.000
+  pagina: 2
+  conferido: false
+- o_que: Fundo Flor de Lis
+  valor: R$745.000
+  pagina: 2
+  conferido: false
+- o_que: Fundo Reûs
+  valor: R$600.000
+  pagina: 2
+  conferido: false
+- o_que: Fundo Expansão
+  valor: R$592.000
+  pagina: 2
+  conferido: false
+- o_que: Fundo Formação e Apoio associado
+  valor: R$367.000
+  pagina: 2
+  conferido: false
+- o_que: Fundo Rescisão
+  valor: R$475.000
+  pagina: 2
+  conferido: false
+- o_que: Recursos Livres
+  valor: R$154.000
+  pagina: 2
+  conferido: false
+- o_que: Balancetes fechados e enviados dentro do prazo em 2024
+  valor: 85%
+  pagina: 2
+  conferido: true
+- o_que: Balancetes fechados e enviados dentro do prazo em 2025
+  valor: 100%
+  pagina: 2
+  conferido: true
+- o_que: Número de CNPJs da instituição em 2025
+  valor: '35'
+  pagina: 3
+  conferido: true
+- o_que: Percentual de documentos contábeis recebidos até outubro 2025
+  valor: 69%
+  pagina: 3
+  conferido: true
+- o_que: Número de registros vigentes
+  valor: '94.675'
+  pagina: 5
+  conferido: false
+- o_que: Crescimento dos registros em relação ao ano anterior
+  valor: 2,3%
+  pagina: 5
+  conferido: false
+- o_que: Taxa de isenção estável
+  valor: 9% a 10%
+  pagina: 5
+  conferido: true
+- o_que: Queda global de vendas na loja e PDVs
+  valor: redução aproximada de 37% no Distrito Federal e crescimento de cerca de 11% em São Paulo
+  pagina: 4
+  conferido: true
+- o_que: Tíquete médio do e-commerce
+  valor: de R$350 em 2024 para R$260 em 2025
+  pagina: 4
+  conferido: true
+- o_que: Queda da margem de rentabilidade da loja
+  valor: de 30% para 9%
+  pagina: 5
+  conferido: true
+- o_que: Despesas da loja até setembro/2025
+  valor: 13% abaixo do previsto
+  pagina: 5
+  conferido: true
+- o_que: Saldo em caixa da loja em setembro/2025
+  valor: 429 mil
+  pagina: 5
+  conferido: true
+- o_que: Saldo em caixa da loja em setembro/2024
+  valor: 931 mil
+  pagina: 5
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 918d59761bc922ccd0cc8b5b014f6c2d2091c14a2d9f43860942dcc29e59bb09
+revisado: null

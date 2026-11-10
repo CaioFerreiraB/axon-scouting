@@ -1,0 +1,212 @@
+doc_key: 18a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-30-abr-2011-1-1
+reuniao:
+  tipo: ordinaria
+  data: '2011-04-30'
+  local: Associação Médica de Brasília, SCES Trecho 3 Conjunto 6, Brasília-DF
+deliberacoes:
+- tema: Composição da Mesa Diretora
+  decisao: 'foi eleita e empossada a Mesa, conforme segue: Presidente: Alessandro Garcia Vieira (DF) e Vice-Presidentes: Felipe
+    de Paulo (RJ) e Carlos Delmar Lyrio (DF) e para Secretaria: Alan Assunção de Paula (PA) e Cleide Pires de Jesus (GO)'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Composição das Comissões Assessoras
+  decisao: 'As comissões assessoras foram constituídas da seguinte forma: COMISSÃO DE CREDENCIAMENTO – Mariovani Carsten Cervi
+    (PR), Ronilde Roda Cervi (PR) e auxiliados por Joelson Miranda (EN); COMISSÃO DE ESCRUTÍNIO – David Izecksohn Neto (RJ),
+    Diego Luiz (MG) Regis Moreira e Thiago carvalho (SC); COMISSÃO ELEITORAL: Luiz Carlos Vasconcelos (MG), Roberto Basso
+    (SC), Antonino Pio de Carvalho (MA) e ASSUNTOS GERAIS: Renato Silva (SP), Patrícia Diniz (SP) e Antonio Boulanger Uchoa
+    Ribeiro (RJ)'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Ata da 17ª Reunião Ordinária da Assembleia Nacional
+  decisao: a ata, disponibilizada no Documento Base, foi colocada para apreciação e aprovada por maioria tendo havido duas
+    abstenções
+  votacao: maioria
+  pagina: 2
+  conferido: true
+- tema: Ata da Reunião Extraordinária da Assembleia Nacional realizada em abril/2010
+  decisao: a ata, disponibilizada no Documento Base, foi colocada para apreciação e aprovada por maioria tendo havido duas
+    abstenções
+  votacao: maioria
+  pagina: 2
+  conferido: true
+- tema: Relatório Anual de 2010 da União dos Escoteiros do Brasil
+  decisao: O Relatório Anual de 2010 da União dos Escoteiros do Brasil foi posto para votação pelo vice-presidente e aprovado
+    por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Balanço Anual de 2010 da UEB
+  decisao: O Balanço Anual foi posto para votação pelo segundo vice-presidente e foi aprovado com somente uma abstenção
+  votacao: maioria
+  pagina: 2
+  conferido: true
+- tema: Escolha da Região-Sede e Região-Sede Alternativa para 2013
+  decisao: a Assembleia escolheu Pernambuco para Região Sede (47 votos) e Minas Gerais (45 votos) para Região Sede-Alternativa
+  votacao: 47 votos a 45
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Presidente
+  eleito: Alessandro Garcia Vieira (DF)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Vice-Presidente
+  eleito: Felipe de Paulo (RJ)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Vice-Presidente
+  eleito: Carlos Delmar Lyrio (DF)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretário
+  eleito: Alan Assunção de Paula (PA)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretária
+  eleito: Cleide Pires de Jesus (GO)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional – CAN
+  cargo: membro titular
+  eleito: Altamiro Vianna e Vilhena de Carvalho
+  mandato: quatro anos
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional – CAN
+  cargo: membro titular
+  eleito: Márcio Andrade Cavalcanti de Albuquerque
+  mandato: quatro anos
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional – CAN
+  cargo: membro titular
+  eleito: Bráulio André Dantas da Silva
+  mandato: quatro anos
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional – CAN
+  cargo: membro titular
+  eleito: Rogério de Lima Assunção
+  mandato: quatro anos
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional – CAN
+  cargo: membro titular
+  eleito: Aleksandro Lincoln Cardoso Lessa
+  mandato: quatro anos
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional – CAN
+  cargo: membro titular
+  eleito: Sonia Maria Gonçalves Jorge
+  mandato: quatro anos
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional – CAN
+  cargo: membro titular
+  eleito: Cristine Bohrer Ritt
+  mandato: quatro anos
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional – CAN
+  cargo: membro suplente
+  eleito: Marcelo Margraf de Oliveira
+  mandato: dois anos
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional – CAN
+  cargo: membro suplente
+  eleito: André Carreira
+  mandato: dois anos
+  pagina: 4
+  conferido: true
+- orgao: Comissão Fiscal Nacional – CFN
+  cargo: membro titular
+  eleito: Mariovani Carsten Cervi
+  mandato: quatro anos
+  pagina: 4
+  conferido: true
+- orgao: Comissão Fiscal Nacional – CFN
+  cargo: membro suplente
+  eleito: Antonio Luis Malafaia Santos
+  mandato: dois anos
+  pagina: 4
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: membro titular
+  eleito: Raphael Tostes Salin e Souza
+  mandato: quatro anos
+  pagina: 4
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: membro suplente
+  eleito: Marcos Magno Gomide Vieira
+  mandato: dois anos
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: votos para Região Sede Pernambuco
+  valor: '47'
+  pagina: 4
+  conferido: true
+- o_que: votos para Região Sede-Alternativa Minas Gerais
+  valor: '45'
+  pagina: 4
+  conferido: true
+- o_que: votos para membros titulares do Conselho de Administração Nacional – CAN
+  valor: 60, 42, 34, 34, 31, 32, 30
+  pagina: 4
+  conferido: true
+- o_que: votos para suplentes do Conselho de Administração Nacional – CAN
+  valor: 27, 18
+  pagina: 4
+  conferido: true
+- o_que: votos para membro titular da Comissão Fiscal Nacional – CFN
+  valor: '71'
+  pagina: 4
+  conferido: true
+- o_que: votos para suplente da Comissão Fiscal Nacional – CFN
+  valor: '35'
+  pagina: 4
+  conferido: true
+- o_que: votos para membro titular da Comissão de Ética e Disciplina Nacional
+  valor: '62'
+  pagina: 4
+  conferido: true
+- o_que: votos para suplente da Comissão de Ética e Disciplina Nacional
+  valor: '42'
+  pagina: 4
+  conferido: true
+- o_que: votos brancos para Conselho de Administração Nacional – CAN
+  valor: '13'
+  pagina: 4
+  conferido: true
+- o_que: votos brancos para Comissão Fiscal Nacional – CFN
+  valor: '1'
+  pagina: 4
+  conferido: false
+- o_que: votos brancos para Comissão de Ética e Disciplina Nacional
+  valor: '2'
+  pagina: 4
+  conferido: false
+- o_que: votos nulos para Comissão de Ética e Disciplina Nacional
+  valor: '1'
+  pagina: 4
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 1de7318cad1ba559ace33131ea91559addc3a24b244848920d90b8c385ba1dc7
+revisado: null

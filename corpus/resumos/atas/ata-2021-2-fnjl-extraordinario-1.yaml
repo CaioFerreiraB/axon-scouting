@@ -1,0 +1,154 @@
+doc_key: ata-2021-2-fnjl-extraordinario-1
+reuniao:
+  tipo: extraordinaria
+  data: '2021-06-27'
+  local: remota, através da plataforma Zoom
+deliberacoes:
+- tema: eleição do Presidente da Mesa do FNJL Extraordinário
+  decisao: Matheus Valois (MA) foi aclamado como Presidente do FNJL Extraordinário
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição da Mesa do FNJL Extraordinário
+  decisao: Matheus Valois (MA) declarou empossados os candidatos aos respectivos cargos da Mesa do FNJL Extraordinário
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: dispensa da leitura da ata do XXVI FNJL
+  decisao: a leitura da ata do XXVI FNJL, realizado no dia 23/05/2021, foi dispensada
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: direitos de voto das delegações do Distrito Federal e do Rio de Janeiro
+  decisao: às delegações do Distrito Federal e do Rio de Janeiro tiveram seu direito a voto aceito por aclamação
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: deliberação da ata do XXVI FNJL
+  decisao: a ata do XXVI FNJL foi aclamada sem alterações
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: moção de aplauso aos membros do NNJL na Gestão 2020-2021
+  decisao: moção de aplauso foi aprovada pelo FNJL Extraordinário
+  votacao: aclamação
+  pagina: 34
+  conferido: true
+- tema: posicionamento da RNJL sobre a alteração dos Princípios dos Escoteiros do Brasil
+  decisao: matéria aclamada pelo FNJL Extraordinário
+  votacao: aclamação
+  pagina: 34
+  conferido: true
+- tema: votação sobre encaminhamento ao CAN e à Comissão Temática para alteração do intervalo de idade na PNEJ de 25 para
+    26 anos incompletos
+  decisao: encaminhamento rejeitado por maioria simples com 8 votos a favor, 21 contra e 8 abstenções
+  votacao: 8 votos a favor, 21 votos contra, 8 abstenções
+  pagina: 38
+  conferido: true
+eleicoes:
+- orgao: FNJL Extraordinário
+  cargo: Presidente da Mesa do FNJL Extraordinário
+  eleito: Matheus Valois (MA)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: FNJL Extraordinário
+  cargo: Primeiro Vice-Presidente do FNJL Extraordinário
+  eleito: Rafael Werneburg (DF)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: FNJL Extraordinário
+  cargo: Segundo Vice-Presidente do FNJL Extraordinário
+  eleito: Gabriel Picinatto (RS)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: FNJL Extraordinário
+  cargo: Primeiro Secretário do FNJL Extraordinário
+  eleito: Victor Schote (RJ)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: FNJL Extraordinário
+  cargo: Segundo Secretário do FNJL Extraordinário
+  eleito: Adrian Cordeiro (SE)
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: NNJL
+  cargo: coordenador(a)
+  eleito: Bárbara Neves (DF)
+  mandato: 2021-2022
+  pagina: 11
+  conferido: true
+- orgao: RNJL no CAN
+  cargo: representante
+  eleito: Felipe Bertoglio (RS)
+  mandato: 2021-2022
+  pagina: 11
+  conferido: true
+- orgao: RNJL no CAN
+  cargo: representante
+  eleito: Lorena Aguiar (MG)
+  mandato: 2021-2022
+  pagina: 11
+  conferido: true
+numeros:
+- o_que: Núcleos Regionais de Jovens Líderes (NRJLs) ativos na Gestão 2020-2021
+  valor: '16'
+  pagina: 7
+  conferido: true
+- o_que: NRJLs no Nordeste
+  valor: '7'
+  pagina: 7
+  conferido: true
+- o_que: NRJLs no Sudeste
+  valor: '4'
+  pagina: 7
+  conferido: true
+- o_que: NRJLs no Centro-Oeste
+  valor: '2'
+  pagina: 7
+  conferido: false
+- o_que: NRJLs no Sul
+  valor: '3'
+  pagina: 7
+  conferido: true
+- o_que: votos a favor da chapa única na eleição do NNJL e representantes da RNJL no CAN
+  valor: '16'
+  pagina: 18
+  conferido: true
+- o_que: abstenções na eleição da chapa única do NNJL e representantes da RNJL no CAN
+  valor: '25'
+  pagina: 18
+  conferido: true
+- o_que: votos a favor da manutenção da eleição da chapa única
+  valor: '28'
+  pagina: 28
+  conferido: false
+- o_que: votos contra a manutenção da eleição da chapa única
+  valor: '7'
+  pagina: 28
+  conferido: false
+- o_que: abstenções na votação da manutenção da eleição da chapa única
+  valor: '5'
+  pagina: 28
+  conferido: false
+- o_que: votos a favor do encaminhamento ao CAN para alteração do intervalo de idade na PNEJ
+  valor: '8'
+  pagina: 38
+  conferido: true
+- o_que: votos contra o encaminhamento ao CAN para alteração do intervalo de idade na PNEJ
+  valor: '21'
+  pagina: 38
+  conferido: true
+- o_que: abstenções na votação do encaminhamento ao CAN para alteração do intervalo de idade na PNEJ
+  valor: '8'
+  pagina: 38
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: e7afda8174065dd2cc0af61fe2fb8b9bdaaa7067c70fde49f9dfd99c981c17a3
+revisado: null

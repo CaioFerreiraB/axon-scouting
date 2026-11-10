@@ -104,6 +104,7 @@ def test_fatia_com_ramo() -> None:
             "catalog": None,
             "enumeration": {"unit_kind": None, "terms": ["competencias", "relacionadas", "lideranca"]},
             "anchor": None,
+            "synthesis": None,
         },
         "retrieval_filters": {
             "branch": "pioneiro",
@@ -447,3 +448,52 @@ def test_prepare_context_publica_a_ancora() -> None:
     filtros = fatia["retrieval_filters"]
     assert isinstance(filtros, dict) and filtros["anchor"] == REELEICAO
     assert filtros["document_types"] == ["estatuto"]
+
+
+# --- ADR-062: o pedido de síntese ------------------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("pergunta", "anos"),
+    [
+        (
+            "Quem foram os diretores-presidentes eleitos para a Diretoria Regional de São Paulo desde 2016?",
+            (2016, 2026),
+        ),
+        ("Onde se reuniu o Conselho Consultivo Regional entre 2017 e 2019?", (2017, 2019)),
+        ("Que chapas disputaram a Diretoria Regional na assembleia de 2016?", (2016, 2016)),
+        ("Em que assembleia foi aprovado um novo Regulamento Regional nos anos 2000?", (2000, 2009)),
+        ("O que a Assembleia Regional decidiu sobre o quórum?", (None, None)),
+    ],
+)
+def test_pedido_de_sintese(pergunta: str, anos: tuple[int | None, int | None]) -> None:
+    sintese = derive_context(pergunta, date(2026, 11, 9)).synthesis
+    assert sintese is not None and (sintese.year_from, sintese.year_until) == anos
+    assert "regional" in sintese.scopes or "regional" not in pergunta.lower()
+
+
+@pytest.mark.parametrize(
+    "pergunta",
+    [
+        "Qual o mandato da diretoria regional?",
+        "Quem pode ser eleito para a diretoria regional?",
+        "Um conselheiro nacional pode ser reeleito?",
+        "Em que cidade fica a sede nacional dos Escoteiros do Brasil?",
+        "O que diz a resolução 08/2021?",
+        REELEICAO,
+    ],
+)
+def test_pergunta_pontual_nao_pede_sintese(pergunta: str) -> None:
+    assert derive_context(pergunta, date(2026, 11, 9)).synthesis is None
+
+
+def test_sintese_na_fatia() -> None:
+    fatia = to_slice(derive_context("Onde se reuniu o Conselho Consultivo Regional entre 2017 e 2019?", DIA))
+    filtros = fatia["retrieval_filters"]
+    assert isinstance(filtros, dict)
+    assert filtros["synthesis"] == {
+        "year_from": 2017,
+        "year_until": 2019,
+        "scopes": ["regional"],
+        "bodies": ["conselho_consultivo"],
+    }

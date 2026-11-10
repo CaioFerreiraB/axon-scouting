@@ -1,0 +1,95 @@
+doc_key: ata-2022-2-fnjl-extraordinario-1
+reuniao:
+  tipo: extraordinaria
+  data: '2022-09-25'
+  local: online através da plataforma ZOOM
+deliberacoes:
+- tema: credenciamento dos delegados da Região Escoteira do Sergipe
+  decisao: a plenária do Fórum Nacional de Jovens Líderes deliberou por aclamação pela aprovação do credenciamento dos delegados
+    de SE
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: eleição e posse da Mesa Diretora do Fórum Nacional de Jovens Líderes
+  decisao: 'foi eleita e empossada a mesa diretora da sessão extraordinária do Fórum Nacional de Jovens Líderes, composta
+    por: Presidente: Gabrielle Ramos de Oliveira Cuellar (GEMar Bons Ventos 200/RN) ; Vice-presidente: Carlos Eduardo Silva
+    Almeida (GE Raul Furtado Barcelar 028/PI); 2o Vice-presidente: Lukas Palermo Lopes (GE Dom Bosco 122/SP); 1o Secretário:
+    Pedro Henrique Pereira (GE Ludovico Pavoni 71/MG); 2o Secretário: Ivete Romão Pereira da Silva (GE Regimento Guararapes
+    014/PE)'
+  votacao: unanimidade e aclamação
+  pagina: 3
+  conferido: true
+- tema: aprovação da ata do XXVII Fórum Nacional de Jovens Líderes
+  decisao: a ata do XXVII Fórum Nacional de Jovens Líderes foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: realização do Encontro Nacional de Jovens Líderes 2022
+  decisao: decidiu-se por transferir a cidade do evento para Juiz de Fora (MG) considerando questões como logística e localização
+    do Escritório Regional de Minas Gerais para apoio estratégico; o evento ocorrerá nos dias 03 e 04 de dezembro
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: indicação do candidato brasileiro a Assessor Juvenil do Comitê Escoteiro Interamericano
+  decisao: por maioria se tornou o indicado do FNJL à candidato brasileiro à função de Assessor Juvenil do Comitê Escoteiro
+    Interamericano Matheus Valois Serra
+  votacao: 26 votos a favor e 03 votos contra
+  pagina: 6
+  conferido: true
+- tema: apresentação dos Jovens Líderes da Delegação Brasileira à 28ª Conferência Escoteira Interamericana
+  decisao: Matheus Valois (MA) passa a compor a delegação; Amanda Martins foi indicada para completar a delegação; Adrian
+    Cordeiro também estará presente como delegado
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: aprovação da criação da Comissão Temática para acompanhamento do Regulamento Geral da Rede Nacional de Jovens Líderes
+  decisao: a criação e o cronograma foram aprovados por aclamação, e a atual gestão do NNJL iniciará as tratativas até o próximo
+    fórum ordinário
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: Presidente
+  eleito: Gabrielle Ramos de Oliveira Cuellar (GEMar Bons Ventos 200/RN)
+  mandato: 2022/2024
+  pagina: 3
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: 1o Vice-presidente
+  eleito: Carlos Eduardo Silva Almeida (GE Raul Furtado Barcelar 028/PI)
+  mandato: 2022/2024
+  pagina: 3
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: 2o Vice-presidente
+  eleito: Lukas Palermo Lopes (GE Dom Bosco 122/SP)
+  mandato: 2022/2024
+  pagina: 3
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: 1o Secretário
+  eleito: Pedro Henrique Pereira (GE Ludovico Pavoni 71/MG)
+  mandato: 2022/2024
+  pagina: 3
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: 2o Secretário
+  eleito: Ivete Romão Pereira da Silva (GE Regimento Guararapes 014/PE)
+  mandato: 2022/2024
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: votos a favor da candidatura de Matheus Valois Serra
+  valor: '26'
+  pagina: 6
+  conferido: true
+- o_que: votos contra da candidatura de Matheus Valois Serra
+  valor: '03'
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: f4135ed92c30fa7074983d0704d8a11ed7a90f63d5919cd1019c619541361a6b
+revisado: null

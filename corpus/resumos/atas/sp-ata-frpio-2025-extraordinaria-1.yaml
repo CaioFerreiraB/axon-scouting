@@ -1,0 +1,85 @@
+doc_key: sp-ata-frpio-2025-extraordinaria-1
+reuniao:
+  tipo: extraordinaria
+  data: '2025-02-16'
+  local: Escola Estadual Miguel Vicente Cury - Rua São Cirilo, Nº 354 - Conjunto Habitacional Padre Anchieta 3 Campinas/SP
+deliberacoes:
+- tema: Eleição da Comissão de Escrutínio
+  decisao: não havendo oposição, elegeram-se por aclamação Lucca Schroelder Scovini, Maria Luisa Morganti Lessi e Nicole Terumi
+    Tabata Yama
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Eleição da Mesa Diretora
+  decisao: foi eleito o pioneiro Marcelo Bertoldo Judice como Presidente da Mesa Diretora por aclamação; Raissa Melis Rogero
+    eleita Vice-Presidente; Ana Luisa Costa Pinheiro eleita Primeiro Secretário; João Pedro Cardoso Fachini Giraldo eleito
+    Segundo Secretário, todos por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Aprovação do novo Regulamento do Fórum Regional Pioneiro
+  decisao: Regulamento foi aprovado por 19 (dezenove) votos favoráveis, 03 (três) votos nulos e 0 (zero) votos contrários
+  votacao: 19 votos a favor, 3 nulos, 0 contrários
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora do Fórum Regional Pioneiro
+  cargo: Presidente
+  eleito: Marcelo Bertoldo Judice
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do Fórum Regional Pioneiro
+  cargo: Vice-Presidente
+  eleito: Raissa Melis Rogero
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do Fórum Regional Pioneiro
+  cargo: Primeiro Secretário
+  eleito: Ana Luisa Costa Pinheiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do Fórum Regional Pioneiro
+  cargo: Segundo Secretário
+  eleito: João Pedro Cardoso Fachini Giraldo
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio do Fórum Regional Pioneiro
+  cargo: Membro
+  eleito: Lucca Schroelder Scovini
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio do Fórum Regional Pioneiro
+  cargo: Membro
+  eleito: Maria Luisa Morganti Lessi
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio do Fórum Regional Pioneiro
+  cargo: Membro
+  eleito: Nicole Terumi Tabata Yama
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: votos favoráveis para aprovação do Regulamento do Fórum Regional Pioneiro
+  valor: '19'
+  pagina: 2
+  conferido: true
+- o_que: votos nulos para aprovação do Regulamento do Fórum Regional Pioneiro
+  valor: '3'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários para aprovação do Regulamento do Fórum Regional Pioneiro
+  valor: '0'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: f89818c06e3e345882697b8809f0513b0d7fc3c36c36c3a10149c0b7facff738
+revisado: null

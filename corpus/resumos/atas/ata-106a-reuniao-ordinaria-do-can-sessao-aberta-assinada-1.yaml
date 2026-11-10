@@ -1,0 +1,78 @@
+doc_key: ata-106a-reuniao-ordinaria-do-can-sessao-aberta-assinada-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-04-02'
+  local: por meio de videochamada pelo Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: eleição da Presidência do CAN
+  decisao: SARAH é eleita Presidente e DANIELA é eleita Vice-Presidente do CAN para completarem o mandato 2021-2023
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 2
+  conferido: true
+- tema: indicação da mesa diretora e comissões assessoras da Reunião Extraordinária Estatuinte da Assembleia Nacional
+  decisao: Por unanimidade dos conselheiros titulares e membros do Conselho Consultivo Nacional presentes, a nominata é aprovada
+  votacao: unanimidade dos conselheiros titulares e membros do Conselho Consultivo Nacional presentes
+  pagina: 3
+  conferido: true
+- tema: indicação da mesa diretora e comissões assessoras da 28ª Reunião Ordinária da Assembleia Nacional
+  decisao: Por unanimidade dos conselheiros titulares e membros do Conselho Consultivo Nacional presentes, a nominata é aprovada
+  votacao: unanimidade dos conselheiros titulares e membros do Conselho Consultivo Nacional presentes
+  pagina: 3
+  conferido: true
+- tema: criação da medalha “Escotismo – Educação para a Vida”
+  decisao: Por unanimidade dos conselheiros titulares presentes, resta aprovada a criação da medalha “Escotismo – Educação
+    para a Vida”, conforme o proposto na resolução
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 6
+  conferido: true
+- tema: criação das medalhas de bons serviços de 25, 35 e 45 anos
+  decisao: Por unanimidade dos conselheiros titulares presentes, resta aprovada a criação das medalhas de bons serviços de
+    25 (vinte e cinco) anos, 35 (trinta e cinco) anos e 45 (quarenta e cinco) anos, conforme o proposto na resolução
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 6
+  conferido: true
+- tema: criação do Troféu Longevidade “Baobá” para a Unidade Escoteira Local que completar 15 anos de ininterruptas atividades
+  decisao: Por unanimidade dos conselheiros titulares presentes, resta aprovada a criação do Troféu Longevidade “Baobá” para
+    a Unidade Escoteira Local (UEL) que completar 15 (quinze) anos de ininterruptas atividades, conforme o proposto na resolução
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 6
+  conferido: true
+- tema: criação da medalha Cruz de Valor “Maria Pérola Sodré”
+  decisao: Por unanimidade dos conselheiros titulares presentes, resta aprovada a criação da medalha Cruz de Valor “Maria
+    Pérola Sodré”, conforme o proposto na resolução
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 7
+  conferido: true
+- tema: aprovação do texto integral da resolução proposta de atualização da Resolução CAN 05/2015
+  decisao: SARAH submete à votação o texto integral da resolução proposta e discutido nesta reunião, frisando que os destaques
+    feitos serão discutidos e deliberados virtualmente, o que é aprovado por unanimidade dos conselheiros titulares presentes
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente
+  eleito: SARAH
+  mandato: 2021-2023
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente
+  eleito: DANIELA
+  mandato: 2021-2023
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: votos a favor da ata da 105ª Reunião Ordinária do CAN
+  valor: 13 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenção na votação da ata da 105ª Reunião Ordinária do CAN
+  valor: 1 abstenção
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 9f3192760b86df6410e53fff9375e81b23d96675fd6974b4cef18c401afbbb19
+revisado: null

@@ -1,0 +1,67 @@
+doc_key: ata-105a-reuniao-ordinaria-do-can-sessao-aberta-assinada-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-02-05'
+  local: videochamada pelo Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: ratificação das novas coordenações da CPPI e GTAPRI
+  decisao: MANIQUE submete à votação a ratificação das novas coordenações da CPPI (RAFAEL) e GTAPRI (FELIPE), o que é aprovado
+    por unanimidade dos conselheiros titulares presentes.
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+- tema: criação de Grupo de Trabalho para estudos sobre a alteração da Regra 181 do P.O.R.
+  decisao: MANIQUE encaminha para que seja realizada chamada aberta, via grupo de e-mails do CAN, para a composição de um
+    Grupo de Trabalho para estudos sobre o tema, conforme sugerido pelo ROBSON, o que é aprovado por unanimidade dos conselheiros
+    titulares presentes.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos a favor da proposta de resolução sobre o Certificado de Qualidade Legal (nov/21)
+  valor: 8 votos a favor (ALDENISE, MAGU, DANIELA, MANIQUE, LAURA, MÁRCIO, RENATO E SARAH)
+  pagina: 2
+  conferido: true
+- o_que: votos contra da proposta de resolução sobre o Certificado de Qualidade Legal (nov/21)
+  valor: 1 voto contra (RAFAEL)
+  pagina: 2
+  conferido: true
+- o_que: abstenções da proposta de resolução sobre o Certificado de Qualidade Legal (nov/21)
+  valor: 5 abstenções por falta de pronunciamento (NETO, CLAUCIO, DAYANNA, ILKA E ROBSON)
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da ata da 104ª Reunião Ordinária do CAN (nov/2021)
+  valor: 10 votos a favor (ALDENISE, NETO, CLAUCIO, DANIELA, MANIQUE, LAURA, MÁRCIO, RENATO, ROBSON E SARAH)
+  pagina: 2
+  conferido: true
+- o_que: abstenções da ata da 104ª Reunião Ordinária do CAN (nov/2021)
+  valor: 4 abstenções por falta de pronunciamento (MAGU, DAYANNA, ILKA E RAFAEL)
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da proposta de resolução sobre a continuidade do processo Estatuinte (dez/21)
+  valor: 10 votos a favor (CLAUCIO, DANIELA, MANIQUE, ILKA, LAURA, MÁRCIO, RAFAEL, RENATO, ROBSON E SARAH)
+  pagina: 2
+  conferido: true
+- o_que: votos contra da proposta de resolução sobre a continuidade do processo Estatuinte (dez/21)
+  valor: 1 voto contra (MAGU)
+  pagina: 2
+  conferido: true
+- o_que: abstenções da proposta de resolução sobre a continuidade do processo Estatuinte (dez/21)
+  valor: 3 abstenções por falta de pronunciamento (ALDENISE, NETO E DAYANNA)
+  pagina: 2
+  conferido: true
+- o_que: votos a favor das Condecorações aos ex-conselheiros do CAN 2019/2021 (fev/22)
+  valor: 13 votos a favor (ALDENISE, NETO, CLAUCIO, MAGU, DANIELA, DAYANNA, MANIQUE, ILKA, LAURA, MÁRCIO, RAFAEL, ROBSON E
+    SARAH)
+  pagina: 2
+  conferido: true
+- o_que: abstenções das Condecorações aos ex-conselheiros do CAN 2019/2021 (fev/22)
+  valor: 1 abstenção (RENATO)
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 6dd599edf1d7af92f8cc0ece8334c170d7bc66bd0e5843f83390111476787e73
+revisado: null

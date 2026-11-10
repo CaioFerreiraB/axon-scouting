@@ -1,0 +1,188 @@
+doc_key: sp-2017-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2017-03-25'
+  local: São José do Rio Preto
+deliberacoes:
+- tema: Posse da mesa diretora dos trabalhos
+  decisao: David Beraha (G.E. Avanhandava), eleito por aclamação; vice-presidente Nathália Lourenço eleita com 31 votos; Isabella
+    França e Carolina Ikuta eleitas secretárias por aclamação.
+  votacao: aclamação e votação nominal
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Ata do XIV Fórum Regional de Jovens Líderes
+  decisao: Aprovação da ata com 27 votos a favor, 16 abstenções e 12 contra
+  votacao: 27 votos a favor, 16 abstenções, 12 contra
+  pagina: 2
+  conferido: true
+- tema: Alteração do cronograma do Fórum
+  decisao: Alteração do cronograma para acabar 45 minutos mais cedo, com restituição na sessão noturna
+  votacao: 51 votos a favor, 1 contra, 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Prestação de contas da gestão 2016-2017 do Núcleo Regional
+  decisao: Apresentação detalhada do orçamento e despesas, incluindo subsídios e eventos realizados
+  votacao: ''
+  pagina: 3
+  conferido: false
+- tema: Projetos apresentados pelo Núcleo Regional de Jovens Líderes
+  decisao: 'Apresentação dos projetos: Jovens líderes nos distritos, Rede volante, Inserção nas pastas jovens, Conversa temática,
+    Livre para ser eu mesmo'
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Aprovação da dispensa da leitura da Ata do XIV Fórum
+  decisao: Dispensa da leitura da ata aprovada pelo plenário
+  votacao: aprovado
+  pagina: 2
+  conferido: true
+- tema: Aprovação do documento 'Cadernos de Encargos'
+  decisao: Documento aprovado por aclamação
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+- tema: Aprovação do documento 'Operação GAME OVER'
+  decisao: Documento aprovado com 48 votos a favor, 3 contra e 8 abstenções
+  votacao: 48 votos a favor, 3 contra, 8 abstenções
+  pagina: 9
+  conferido: true
+- tema: Aprovação do documento 'Rede Padrão 2.0'
+  decisao: Documento aprovado por aclamação
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+- tema: Recomendação para quadro comparativo dos documentos aprovados
+  decisao: Recomendação aprovada por aclamação
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+- tema: Aprovação do projeto 'Uniforme e Vestuários Solidários'
+  decisao: Projeto aprovado com 59 votos a favor, 4 abstenções e nenhum contra
+  votacao: 59 votos a favor, 4 abstenções, 0 contra
+  pagina: 10
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora dos trabalhos do XV Fórum Regional de Jovens Líderes
+  cargo: Presidente da mesa
+  eleito: David Beraha (G.E. Avanhandava)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos do XV Fórum Regional de Jovens Líderes
+  cargo: Vice-presidente
+  eleito: Nathália Lourenço (G.E. Jean Philippe Cousteau)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos do XV Fórum Regional de Jovens Líderes
+  cargo: 1º Secretária
+  eleito: Isabella França (G.E. Santo Amaro)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos do XV Fórum Regional de Jovens Líderes
+  cargo: 2º Secretária
+  eleito: Carolina Ikuta (G.E. Falcão Peregrino)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado titular
+  eleito: Raphael de Taranto
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado titular
+  eleito: Michael Oliveira
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado titular
+  eleito: Carolina Ikuta
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado titular
+  eleito: David Beraha
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado titular
+  eleito: Raíssa Ribeiro
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado suplente
+  eleito: Daniel Guarnieri
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado suplente
+  eleito: Ivan Valente
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes
+  cargo: Comunicadora
+  eleito: Raíssa Ribeiro
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes
+  cargo: Coordenador
+  eleito: Rafael Roda
+  mandato: ''
+  pagina: 11
+  conferido: true
+numeros:
+- o_que: Votos para vice-presidente da mesa
+  valor: 31 votos para Nathália Lourenço, 7 para Carlos Nunes
+  pagina: 2
+  conferido: true
+- o_que: Votos para aprovação da Ata do XIV Fórum
+  valor: 27 votos a favor, 16 abstenções, 12 contra
+  pagina: 2
+  conferido: true
+- o_que: Votos para alteração do cronograma
+  valor: 51 votos a favor, 1 contra, 1 abstenção
+  pagina: 2
+  conferido: true
+- o_que: Orçamento da pasta jovem
+  valor: R$ 9.100,00
+  pagina: 3
+  conferido: false
+- o_que: Subsídio para Encontrão de Manaus
+  valor: R$ 2.916,40
+  pagina: 3
+  conferido: false
+- o_que: Lucro do 3º Encontrinho da rede
+  valor: R$ 474,50
+  pagina: 3
+  conferido: false
+- o_que: Votos para aprovação do documento 'Operação GAME OVER'
+  valor: 48 votos a favor, 3 contra, 8 abstenções
+  pagina: 9
+  conferido: true
+- o_que: Votos para aprovação do documento 'Parâmetros 4.0'
+  valor: 36 a favor, 1 contra, 30 abstenções
+  pagina: 9
+  conferido: true
+- o_que: Votos para aprovação do projeto 'Uniforme e Vestuários Solidários'
+  valor: 59 votos a favor, 4 abstenções, 0 contra
+  pagina: 10
+  conferido: false
+- o_que: Votos para local do Encontrinho 2017
+  valor: Marília 22 votos, Sumaré 20 votos, Leme 9 votos, 4 abstenções
+  pagina: 9
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: ee4f822c4073ecadd7e0a3081306999861da3b56777bbee9bab296262c74ceeb
+revisado: null

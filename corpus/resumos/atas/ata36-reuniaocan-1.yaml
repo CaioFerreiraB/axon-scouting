@@ -1,0 +1,91 @@
+doc_key: ata36-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2002-08-17'
+  local: Hotel Lizon – Curitiba / PR
+deliberacoes:
+- tema: Seminário sobre mudanças do Código Civil
+  decisao: O CAN decide agendar um seminário para o Congresso Nacional sobre este assunto, para que a Assembléia estude a
+    possibilidade ou necessidade de mudança do Estatuto para adequação a nova Lei.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Proposta de Resolução 008/02 – Política Comercial
+  decisao: Proposta de Resolução que contempla as conclusões do seminário de Política Comercial havido no mês de maio p.p.
+    e aprovada conforme publicado.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Proposta de Resolução 009/02 – Condecorações
+  decisao: Proposta de Resolução sobre a concessão de condecorações da UEB. Esta Resolução estará substituindo a Resolução
+    005/97 e é aprovada conforme publicado.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Regularização da situação da UEB perante o INSS
+  decisao: O CAN define que deverão ser empregues esforços para regularização da situação, como a entrega das GFIPS e busca
+    das Certidões de Utilidade Pública das Regiões e Grupos Escoteiros.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Autorização para Região do Espírito Santo adquirir CNPJ
+  decisao: O CAN decide por unanimidade conceder a autorização à Região.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Convocação da Assembléia Nacional em Juiz de Fora
+  decisao: O CAN aprova o documento conforme publicado.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Agenda do Congresso Nacional e Tema para 2003
+  decisao: 'O CAN aprova a proposta de agenda conforme publicado. O CAN aprova também que seja incluída no calendário anual
+    a data de aniversário de 90 anos do GE George Black, o mais antigo GE em atividade no Brasil. O tema fica definido como
+    ESCOTISMO: DIREITO DOS JOVENS.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Revisão do Manual do Escotista do Ramo Lobinho
+  decisao: O CAN decide aprovar as propostas de alterações de ortografia, inclusão da função do “segundo” na Matilha e a inclusão
+    dos cinco pontos do Método.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Pesquisa de Avaliação do Programa de Jovens – Ramo Lobinho
+  decisao: A pesquisa foi analisada e aprovada pela CNPJ e deverá ser enviada ao nível local da UEB, às regiões e ser disponibilizada
+    no site oficial.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Proposta de Medalha Cruz de Valor para Jefferson Martins Marques Filho
+  decisao: O CAN manifesta-se favorável à questão e aprova por unanimidade a concessão.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Proposta de inclusão da palavra “Brasil” no lenço do Jamboree Tailândia
+  decisao: O CAN aprova a sugestão do lenço para o evento e não em caráter definitivo.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Resolução 010/2002 – Projeto Grupo Padrão 2003
+  decisao: O CAN aprova a resolução que leva o número de Res. 010/2002, conforme documento publicado.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Criação e complementação do banco de endereços eletrônicos das Unidades Locais
+  decisao: O CAN define que o Escritório Nacional faça os contatos necessários para complementação deste Banco de Endereços
+    com os contatos oficiais das Diretorias de GEs até novembro de 2002.
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Data da reunião
+  valor: 17 e 18 de agosto de 2002
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: e5e006a058cdd7395e2fb0c04e503f7c6262289d8e86b5cffa14545ab7bd2b43
+revisado: null

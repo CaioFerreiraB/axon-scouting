@@ -1,0 +1,105 @@
+doc_key: ata79-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-04-18'
+  local: CEMFORPE, São Bernardo do Campo – SP
+deliberacoes:
+- tema: Alienação de imóvel em Carazinho - RS
+  decisao: houve, nesta reunião, por unanimidade, a aprovação da venda do imóvel
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Resolução do Uniforme de Desembarque
+  decisao: A resolução, já discutida pelos Conselheiros, foi aprovada
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Abertura de Comissão para avaliação de alienação de imóvel da Região do Espírito Santo
+  decisao: O Conselho aprova por unanimidade a abertura da Comissão e a indicação dos nomes
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Intervenção na Região Escoteira de Pernambuco
+  decisao: por unanimidade foi aprovada a primeira proposta. Fica, portanto, decretada a intervenção, cassadas autonomia e
+    competências da Região Escoteira de Pernambuco, bem como que devam ser instaurados os procedimentos disciplinares que
+    a DEN entender pertinentes
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Intervenção na Região Escoteira do Amapá
+  decisao: chegou-se à decisão unânime em favor da intervenção, com nomeação de interventor pela DEN
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Criação de Região Escoteira no Tocantins
+  decisao: Será feito um processo de pelo menos um ano, com uma autorização provisória e um conjunto de ações a ser estabelecido
+    pela DEN para que seja efetivamente formalizada a Região
+  votacao: maioria, com uma abstenção
+  pagina: 7
+  conferido: true
+- tema: Aprovação do texto final da pesquisa de opinião sobre homoafetividade
+  decisao: foi aprovado por unanimidade pelos membros do CAN
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: Aprovação de condecorações e recompensas
+  decisao: 'Foram aprovadas as seguintes condecorações: Raimundo Osmar Pinheiro - UEB/PA Medalha Velho Lobo; Ricardo Kontz
+    - UEB/RS Comenda Tiradentes; Julio Carlos Massier -UEB/RS Medalha Velho Lobo; Wuppschlander Ataliba Lage - UEB/MG Medalha
+    Velho Lobo; Osvail Pereira da Silva - UEB/SP Medalha Velho Lobo; Igor Kipman - UEB/DF Comenda Tapir de Prata; Roseana
+    T Aben-Athar Kipman - UEB/DF Comenda Tiradentes; Frederico Augusto Siqueira Neves - UEB/MG Comenda Tapir de Prata; André
+    Luiz Correa Gomes - UEB/MG Comenda Tapir de Prata; José Roberto Tagliati -UEB/MG Comenda Tapir de Prata; Walter Dohme
+    - UEB/SP Comenda Tiradentes; Antonio Livio Abraços Jorge - UEB/SP Comenda Tapir de Prata; Mari Nakano –WOSM Medalha Fraternidade
+    Mundial'
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Aprovação do parecer da Comissão sobre alienação de imóvel da Região do Espírito Santo
+  decisao: Esse Conselho aprova por unanimidade o parecer da Comissão
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+- tema: Abertura do Grupo de Trabalho para política comercial da UEB
+  decisao: pede ao EN que mantenha o GT sempre informado, pedindo inclusive para participar mais ativamente da construção
+    dessa nova política comercial
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Atualização das Resoluções 003/2008 e 002/2009 sobre processos disciplinares
+  decisao: Solicita ao EN que viabilize essa consulta entre os dias 22 de abril até 22 de maio e que envie e-mail para diretorias
+    regionais, CEDRs e CEDN com o mesmo objetivo de obter sugestões
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Abertura do Grupo de Trabalho para eventos nacionais
+  decisao: O CAN encaminha a abertura de um Grupo de Trabalho para pesquisar, analisar propostas debaixo custo para os eventos
+    nacionais
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Participação no Jamboree Nacional Escoteiro
+  valor: mais de 4 mil Escoteiros, inclusive com a participação de 68 estrangeiros
+  pagina: 3
+  conferido: true
+- o_que: Resultado financeiro do Jamboree Nacional Escoteiro
+  valor: R$ 313.524,22
+  pagina: 3
+  conferido: false
+- o_que: Contingente total para o Jamboree Mundial do Japão
+  valor: 720 pessoas
+  pagina: 3
+  conferido: true
+- o_que: Captação de recursos no primeiro trimestre de 2015
+  valor: R$ 105 mil
+  pagina: 3
+  conferido: true
+- o_que: Captação total desde 2012
+  valor: R$ 726.797,00
+  pagina: 3
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 439df8501acaea7794715054fd21da84195946ac406b6a71e6552e8db8b1b3f9
+revisado: null

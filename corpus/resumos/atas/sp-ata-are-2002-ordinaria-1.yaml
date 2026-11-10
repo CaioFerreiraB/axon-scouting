@@ -1,0 +1,205 @@
+doc_key: sp-ata-are-2002-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2002-09-21'
+  local: 7º Andar do Mendes Plaza Hotel situado na Avenida Marechal Floriano Peixoto, nº 42, no Gonzaga, no Município de Santos-SP
+deliberacoes:
+- tema: culto religioso
+  decisao: foi aprovado por unanimidade dos presentes e assim realizado
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: eleição da mesa da Assembléia
+  decisao: Antonio Carlos Ribeiro para Presidente e Marcos Venício Mattos Chaves para Vice-Presidente, foram eleitos por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: comissões de suporte à Assembléia
+  decisao: Aprovadas as comissões c os nomes dos secretários da reunião por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: ordem da pauta
+  decisao: 'foi aprovada a seguinte ordem: 1. Eleição dos delegados à Assembléia Nacional e do Candidato ao Conselho de Administração
+    Nacional; 2. Prestação de contas do exercício de 2001 e apresentação Proposta Orçamentária para 2003; 3. Proclamação dos
+    Resultados das eleições; 4. À tarde: Apresentação dos seguintes relatórios: Programa de Jovens; Gestão de Adultos; Marketing,
+    Comunicação e Crescimento e SPDE; 5. Às 15,30h: Assuntos Gerais, com previsão de encerramento da sessão às 16:30h'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: candidato ao Conselho de Administração Nacional
+  decisao: foi aprovada por aclamação a candidatura do Sr. Geraldino Ferreira Moreira
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: composição da Comissão de Escrutínio
+  decisao: foi aprovada por aclamação a manutenção da Comissão com a indicação de 4 fiscais e dispensada a comissão de fiscalização
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: aprovação da ata da assembléia anterior
+  decisao: a ata foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: contas do exercício de 2001
+  decisao: as Contas do Exercício de 2001, foram aprovadas com 235 votos a favor e 3 abstenções, sem nenhum voto contra
+  votacao: 235 votos a favor, 3 abstenções, 0 contra
+  pagina: 3
+  conferido: true
+- tema: candidatura de Santo André para sediar a próxima assembléia
+  decisao: Sendo a única candidata, foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: orçamento de 2003
+  decisao: 'foi aprovada com aplausos com a seguinte votação: 208 votos a favor, 4 votos contra e 2 abstenções'
+  votacao: 208 votos a favor, 4 contra, 2 abstenções
+  pagina: 4
+  conferido: true
+- tema: resultados da eleição dos delegados à Assembléia Nacional
+  decisao: foram eleitos 19 delegados e suplentes conforme lista apresentada
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: moção para alteração da data da próxima Assembléia Regional
+  decisao: foi aprovado por aclamação que a assembléia seja realizada uma semana antes ou depois da data atual para não coincidir
+    com o 80º aniversário do Grupo São Paulo
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Assembléia Regional
+  cargo: Presidente da Assembléia Regional
+  eleito: Antonio Carlos Ribeiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Assembléia Regional
+  cargo: Vice-Presidente da Assembléia Regional
+  eleito: Marcos Venício Mattos Chaves
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro
+  eleito: Geraldino Ferreira Moreira
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Rui Penteado Candido Gomes
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Helio Tavares Perez
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Ênio Cojho
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Alexandre Banchi
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Francisca de Souza Carrer
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Renato Araújo da Silva
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Maria Toshiko Yamawaki
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Luis Roberto de Morais
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Fernando Braga Monte Serrat
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Paulo Roberto Vilas Boas
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Jahui Ocroche
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: José Luis Pereira
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Marco Aurélio do Monte Vanderlei
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Elmer de Souza Pessoa
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Jorge Laucevicius
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: Isabel Cristina Burian Grigio
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembléia Nacional
+  cargo: delegado
+  eleito: José Líber de Oliveira
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: delegados credenciados nesta Assembléia Regional
+  valor: '295'
+  pagina: 4
+  conferido: true
+- o_que: delegados que votaram
+  valor: '292'
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: de9f6ed65bc6451ae82e9d5962c079f8996e88df09ce3c23844b2b42363d2944
+revisado: null

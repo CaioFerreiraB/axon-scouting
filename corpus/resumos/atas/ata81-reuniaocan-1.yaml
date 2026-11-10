@@ -1,0 +1,112 @@
+doc_key: ata81-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-08-29'
+  local: Pousada Bethania, em Curitiba - PR
+deliberacoes:
+- tema: Aprovação do Edital de Seleção da DEN 2016 -2019
+  decisao: Aprovação do Edital de Seleção da DEN 2016 -2019 – Aprovado.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da 80ª Reunião do CAN
+  decisao: Aprovação da ata de 80ª Reunião do CAN (20 e 21/04/15) – Ata aprovada.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Comenda Tapir de Prata para Paulo Palma (UEB-RS)
+  decisao: Aprovação da Comenda Tapir de Prata para Paulo Palma (UEB-RS) – Aprovada.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Definição do local da 81ª Reunião do CAN
+  decisao: Definição de Curitiba como local da 81ª Reunião do CAN (29 e 30/8/15) – Aprovado.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Alienação/Venda de jazigos da UEB-ES
+  decisao: Alienação/Venda de jazigos da UEB-ES – Aprovado.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Recebimento do recurso do Maranhão pelo CAN
+  decisao: A questão de ordem proposta por Bini foi colocada em votação, sendo que 11 (onze) Conselheiros foram favoráveis
+    a receber o recurso do Maranhão e 2 (dois) conselheiros foram contrários.
+  votacao: 11 a favor, 2 contra
+  pagina: 6
+  conferido: false
+- tema: Aprovação da eleição do 1º Vice-Presidente da DEN no final do dia
+  decisao: A eleição do 1º Vice-Presidente da DEN no final do dia de hoje foi aprovada por 9 (nove) votos favoráveis, 3 (três)
+    votos contrários e 1 (uma) abstenção.
+  votacao: 9 a favor, 3 contra, 1 abstenção
+  pagina: 5
+  conferido: false
+- tema: Manutenção da eleição da DEN na reunião do CAN
+  decisao: Colocado em votação se a eleição da DEN deve ser retirada da pauta desta reunião, 8 (oito) votos foram contrários
+    e 5 (cinco) favoráveis, sendo, com isso, mantida a eleição nesta reunião do CAN.
+  votacao: 8 contra, 5 a favor
+  pagina: 5
+  conferido: false
+- tema: Aprovação da carta para Assembleia Nacional sobre Assembleia do Maranhão
+  decisao: Colocada em votação a carta redigida para encaminhamento à Assembleia Nacional acerca da Assembleia Extraordinária
+    da Região Escoteira do Maranhão, sujeitando-a a aprovação do Conselho, a qual foi debatida. Em regime de votação a mesma
+    foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 9
+  conferido: false
+- tema: Criação de Grupo de Trabalho para elaboração de políticas institucionais
+  decisao: Fica aprovada a criação do GT por unanimidade com estes 5 (cinco) componentes.
+  votacao: unanimidade
+  pagina: 20
+  conferido: true
+- tema: Encaminhamento da discussão sobre promessa para escoteiros não cristãos ao GT de Posicionamento Institucional
+  decisao: O CAN acatou o encaminhamento do sugerido pela Equipe Nacional de Espiritualidade e deliberou por unanimidade pelo
+    encaminhamento do assunto ao GT de Posicionamento Institucional.
+  votacao: unanimidade
+  pagina: 20
+  conferido: true
+- tema: Voto de louvor a Oscar e Jonathan pelo trabalho na coordenação do contingente brasileiro no Jamboree Mundial
+  decisao: Solicitando que o Conselho aprove um voto de louvor a Oscar e a Jonathan pelo trabalho realizado, o que é aprovado
+    por unanimidade pelo CAN.
+  votacao: unanimidade
+  pagina: 18
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional
+  cargo: Presidente
+  eleito: Alessandro Vieira
+  mandato: abril de 2016 a abril de 2019
+  pagina: 16
+  conferido: true
+- orgao: Diretoria Executiva Nacional
+  cargo: 1º Vice-Presidente
+  eleito: Oscar Victor Palmquist Arias
+  mandato: até abril de 2016
+  pagina: 20
+  conferido: false
+numeros:
+- o_que: Número de votos na eleição do 1º Vice-Presidente da DEN
+  valor: 12 votos e uma abstenção
+  pagina: 20
+  conferido: true
+- o_que: Número de inscritos no Congresso Brasileiro de Educação Escoteira
+  valor: 152 inscritos
+  pagina: 21
+  conferido: true
+- o_que: Número de inscritos na 14ª Aventura Nacional Sênior
+  valor: 456 inscritos
+  pagina: 21
+  conferido: true
+- o_que: Número de inscritos no Ajuri Nacional Escoteiro
+  valor: 188 inscritos
+  pagina: 21
+  conferido: true
+- o_que: Número de inscritos no Mutirão Nacional Pioneiro
+  valor: 590 inscritos
+  pagina: 21
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 7a88e89eab1214d27671dcfb5970e8d5cd224143bc8bbd3039f85abda54907f0
+revisado: null

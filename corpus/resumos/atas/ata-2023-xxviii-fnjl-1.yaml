@@ -1,0 +1,169 @@
+doc_key: ata-2023-xxviii-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-04-29'
+  local: Faculdades Integradas Campos Salles, Rua Nossa Senhora da Lapa - No 270 - Bairro da Lapa, São Paulo/SP
+deliberacoes:
+- tema: Credenciamento de delegados
+  decisao: Às 16h55min foi informado que haviam 24 delegados credenciados.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Eleição da Comissão de Escrutínio
+  decisao: Por se tratarem de quatro candidaturas para três vagas, foi realizada votação na plenária para eleger a Comissão
+    de Escrutínio, sendo eleitos Pedro, Rafaela e Paulo.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Eleição da Mesa Diretora dos trabalhos
+  decisao: Considerando que todos os cargos tiveram somente uma candidatura, sugeriu-se a aprovação por aclamação. Sem questionamentos,
+    foi eleita e empossada a Mesa Diretora supracitada.
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Eleição da candidata da Rede Interamericana de Jovens
+  decisao: Aprovação em primeira instância, por unanimidade, da candidatura de Larissa Oliveira (GE Arno Friedrich 43º/RS).
+    Sua candidatura foi levada ao Conselho de Administração Nacional (CAN) e, posteriormente, foi informado que a candidatura
+    foi aprovada em segunda instância, levando a candidatura adiante.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Eleição da Comissão de Assuntos Gerais
+  decisao: Por não exceder a quantidade de vagas, foi sugerido pela Mesa Diretora aprovação por aclamação, elegendo por unanimidade
+    a Comissão de Assuntos Gerais do Fórum.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Aprovação da Ata do Fórum Nacional de Jovens Líderes - Reunião Extraordinária de 25/09/2022
+  decisao: Por sugestão da Mesa Diretora, seguiu-se aprovação da ata por aclamação, sendo a mesma aprovada por unanimidade
+    da Plenária.
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Eleição da Cidade-sede do Encontro Nacional de Jovens Líderes 2024
+  decisao: Mesa Diretora sugeriu que Florianópolis fosse aprovada por aclamação, sendo eleita por unanimidade como Cidade-sede
+    do Encontro Nacional de Jovens Líderes de 2024.
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Aprovação do documento do Grupo de Trabalho de Relações Internacionais para encaminhamento ao CAN
+  decisao: Deliberação na Plenária sobre documento elaborado pelo Grupo de Trabalho para encaminhamento e aprovação integral
+    do mesmo ao CAN, que passou por aclamação.
+  votacao: aclamação
+  pagina: 10
+  conferido: true
+- tema: Criação de grupo de trabalho para tratar sobre reforma no Ensino Médio
+  decisao: Sugestão entrou em votação na Plenária e foi aprovada, seguindo seu encaminhamento à Assembleia Nacional da UEB.
+  votacao: ''
+  pagina: 10
+  conferido: false
+- tema: Sugestão para realização de processo seletivo com cadastro de reserva para a Rede Nacional
+  decisao: Sugestão foi posta para aprovação por aclamação e foi aprovada por unanimidade da Plenária.
+  votacao: aclamação
+  pagina: 10
+  conferido: true
+- tema: Recomendação para transmissão online dos fóruns e assembleias nacionais
+  decisao: Aprovação por aclamação unânime da sugestão para possibilitar a realização da Assembleia Nacional da UEB em formato
+    híbrido, com transmissão simultânea para participação online.
+  votacao: aclamação
+  pagina: 10
+  conferido: true
+- tema: Encaminhamento para estudo de sediar evento mundial no Brasil
+  decisao: Item, por sugestão da Mesa Diretora, foi aprovado por aclamação e encaminhado ao CAN e à DEN, sugerindo um estudo
+    para sediar um Moot Mundial.
+  votacao: aclamação
+  pagina: 10
+  conferido: true
+- tema: Aprovação da revisão da idade permitida para candidatura a cargos internacionais
+  decisao: Encaminhamento votado e aprovado pela Plenária, sendo levado à Comissão de Revisão.
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: Criação de grupo de trabalho para revisão da faixa etária para ser Jovem Líder
+  decisao: Encaminhamento aprovado por aclamação unânime da Plenária.
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+eleicoes:
+- orgao: Comissão de Escrutínio do Fórum
+  cargo: membro
+  eleito: Pedro de Queiroz (GE Nove de Julho 25º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio do Fórum
+  cargo: membro
+  eleito: Rafaela Solaroli (GE Grifo Caçador 395º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio do Fórum
+  cargo: membro
+  eleito: Paulo Praes (GE José Amauri de Sousa 225º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Presidente
+  eleito: Rafael Melis Rogéro (GE São Carlos 251º/SP)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Primeira Vice-presidente
+  eleito: Nathália Castilhos Neves De Oliveira (GE Universitário 31º/RN)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Segundo Vice-presidente
+  eleito: Matheus Valois Serra (GE Cataratas 79º/PR)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Primeiro Secretário
+  eleito: Robert Gabriel de Sousa Santos (GE Monte Serrat 432º/SP)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Segundo Secretário
+  eleito: Danilo Inácio Martins (GE Marechal Rondon 4º/DF)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Rede Interamericana de Jovens
+  cargo: Coordenadora
+  eleito: Larissa Oliveira (GE Arno Friedrich 43º/RS)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Comissão de Assuntos Gerais do Fórum
+  cargo: membro
+  eleito: Milena Gonçalves Leite (GE Terra da Uva 514º/SP)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Comissão de Assuntos Gerais do Fórum
+  cargo: membro
+  eleito: George Scheister (GE Flor de Lis 13º/RJ)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Comissão de Assuntos Gerais do Fórum
+  cargo: membro
+  eleito: Letícia Rocha (GE Guaianazes 68º/SP)
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '24'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: f32a785dbea85e95e704834d559a1a92839ce57b2ad760518f4c0c97627f5ab7
+revisado: null

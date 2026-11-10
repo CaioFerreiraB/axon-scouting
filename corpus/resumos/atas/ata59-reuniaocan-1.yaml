@@ -1,0 +1,67 @@
+doc_key: ata59-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2009-04-20'
+  local: Bento Gonçalves/RS
+deliberacoes:
+- tema: Diretrizes Nacionais de Gestão de Adultos (CNGA)
+  decisao: Posta para votação a proposta de César recebeu 13 votos favoráveis e 1 voto contrário e 1 abstenção.
+  votacao: 13 votos favoráveis, 1 voto contrário e 1 abstenção
+  pagina: 1
+  conferido: true
+- tema: Política Nacional de Gestão de Adultos (CNGA) - Regra 129
+  decisao: O texto da Regra 129 foi posto para apreciação e recebeu 10 votos favoráveis, 3 votos contrários e 2 abstenções.
+  votacao: 10 votos favoráveis, 3 votos contrários e 2 abstenções
+  pagina: 1
+  conferido: true
+- tema: Política Nacional de Gestão de Adultos (CNGA) - Regra 133
+  decisao: Excluída da proposta a Regra 133, que será analisada separadamente, a mesma foi posta para apreciação e recebeu
+    12 votos favoráveis, 1 voto contrário e 2 abstenções.
+  votacao: 12 votos favoráveis, 1 voto contrário e 2 abstenções
+  pagina: 1
+  conferido: true
+- tema: Resolução sobre a transição da Regra 133
+  decisao: Submetida ao CAN a proposta de Resolução sobre a transição, então constante da Regra 133, foi aprovada por unanimidade
+    e passa a constar como anexo desta Ata.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Venda de duas salas em São Paulo
+  decisao: Posta para apreciação o pedido recebeu 9 votos favoráveis e 3 abstenções.
+  votacao: 9 votos favoráveis e 3 abstenções
+  pagina: 3
+  conferido: true
+- tema: Proposta única de Progressão Pessoal para Programa de Jovens
+  decisao: Proposto e aprovado que o assunto seja delegado à DEN para trabalhar com os dois grupos a fim de obter uma proposta
+    única visando a definir e a iniciar a implantação no prazo de 45 (quarenta e cinco) dias. Não sendo alcançado o consenso
+    entre os dois grupos, o CAN delega à DEN a decisão se haverá uma ou duas linhas de progressão no ramo escoteiro.
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente do CAN
+  eleito: Marco Aurélio de Mello Castrianni
+  mandato: abril/2009 a abril/2010
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente do CAN
+  eleito: Márcio Andrade Cavalcanti de Albuquerque
+  mandato: abril/2009 a abril/2010
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: número de participantes do IV Jamboree Nacional Escoteiro
+  valor: 4694 participantes
+  pagina: 2
+  conferido: true
+- o_que: resultado financeiro do IV Jamboree Nacional Escoteiro
+  valor: R$299.000,00
+  pagina: 2
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 100d8c91e32a490b38e97379669e37c21b5f899214e8bd0386537082c3594d70
+revisado: null

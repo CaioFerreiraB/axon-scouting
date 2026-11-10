@@ -1,0 +1,129 @@
+doc_key: ata89-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2017-08-26'
+  local: Brasília/DF
+deliberacoes:
+- tema: aprovação da pauta da reunião
+  decisao: Os presentes votaram a aprovação da pauta, com a inclusão da deliberação orçamentária, que foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: ratificação das aprovações por pauta eletrônica
+  decisao: Os conselheiros presentes votaram a ratificação da aprovação dos assuntos deliberados eletronicamente para inclusão
+    nesta ata, que submetido à votação por PAULO foi aprovado por unanimidade pelos conselheiros presentes
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: planejamento financeiro do 7º Jamboree Nacional – Barretos (SP) 2018
+  decisao: Quando estes itens foram submetidos para apreciação do CAN, houve manifestação favorável de forma unânime pelos
+    conselheiros presentes. PAULO destaca que é definição do CAN que, sendo economicamente viável, na composição dos itens
+    do evento disponibilizados aos inscritos seja disponibilizado o kit de materiais de cozinha e alimentos, e que para tanto
+    a UEB-SP e a DEN devem achar um encaminhamento ou negociação para que isto seja viabilizado, dentro do prazo de 30 dias,
+    ADRIANO e PAULO esclarecem e encaminham a definição, em concordância dos conselheiros presentes, que se não houver entendimento
+    entre o Comitê Gestor, que o CAN irá realizar esta deliberação.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: deliberação do ajuste orçamentário do segundo semestre de 2017
+  decisao: PAULO encaminha a aprovação pelos conselheiros e há aprovação por unanimidade dos presentes.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: revisão do artigo 131, inciso I, itens “d” e “e” – Critérios para participação nos Cursos de Formadores
+  decisao: PAULO realiza a votação da sugestão apresentada pelo RENATO, acrescentado a necessidade de consulta ao Conselho
+    Consultivo e um espaço de encontro dos Diretores de Gestão de Adultos em um próximo evento oportuno, e por unanimidade
+    o encaminhamento é aprovado.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: regramento sobre expedição do Certificado de Funcionamento anual para Grupos Escoteiros com patrocínio
+  decisao: PAULO consulta se os conselheiros concordam com a sugestão do ROMEU, que por unanimidade é aprovada.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: divulgação da necessidade do procedimento de dupla checagem dos associados isentos
+  decisao: Submetido para votação o encaminhamento é confirmado por unanimidade dos conselheiros.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: manutenção da regra 032 do POR – Numeral do Grupos Escoteiro e Seção Escoteira Autônoma
+  decisao: PAULO submete a votação dos presentes, que por unanimidade definiram pela manutenção da regra.
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+- tema: manifestação sobre saldo de recurso proveniente da venda de terreno da UEB-RS
+  decisao: PAULO submete a votação, que por unanimidade o conselho determinou que não possui mais competência sobre o assunto,
+    que deverá retornar e ser definido pela própria Região Escoteira junto a UEL beneficiária.
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+- tema: criação de canal exclusivo para discussões do Conselho
+  decisao: PAULO encaminha a proposta de criação de um canal exclusivo para discussões do Conselho, que submetido a votação
+    dos conselheiros não houve ninguém contra, duas abstenções, sendo aprovado então pela maioria.
+  votacao: maioria
+  pagina: 9
+  conferido: true
+- tema: não disponibilização de copos descartáveis nas reuniões do CAN
+  decisao: PAULO submete a sugestão do ROMEU para deliberação do Conselho, que por unanimidade aprova o encaminhamento.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: deliberação sobre custeio de passagem para representante da UEB-SP convidado para colaborar no Jamboree
+  decisao: 'PAULO submete a votação dos Conselheiros sobre o caso específico desta solicitação da UEB-SP, para custeio completo
+    de passagem de somente um representante da Região (limitado ao valor de referência do deslocamento de Conselheiro da Região
+    para a reunião), a proporção de votos para apoiar o custeio de apenas um representante foi de: 9 votos a favor, 4 contra
+    e 0 abstenções; ficando confirmado o custeio de um convidado da UEB-SP. PAULO submete à votação dos Conselheiros o regramento
+    de custeio pelo orçamento do CAN, apenas quando o convite for realizado pelo Conselho e houver necessidade de manifestação
+    do/s convidado/s para reflexões e/ou deliberações do CAN, o que foi votado e confirmado por unanimidade dos Conselheiros
+    presentes.'
+  votacao: 9 a favor, 4 contra; e depois unanimidade
+  pagina: 11
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: assinaturas de petição pública recebida
+  valor: aproximadamente 1.300
+  pagina: 3
+  conferido: false
+- o_que: investimento do Nível Nacional com Associados Isentos em 2016
+  valor: R$ 78,1 mil
+  pagina: 5
+  conferido: false
+- o_que: valor deixado de arrecadar com isentos em 2016
+  valor: R$ 459,41 mil
+  pagina: 5
+  conferido: false
+- o_que: número de isentos até julho de 2017
+  valor: '9.235'
+  pagina: 5
+  conferido: true
+- o_que: percentual de isentos do efetivo total até julho de 2017
+  valor: 10,6%
+  pagina: 5
+  conferido: false
+- o_que: participantes no MutEco
+  valor: '38.433'
+  pagina: 6
+  conferido: false
+- o_que: participantes no Projeto EducAÇÃO Escoteira
+  valor: '10.364'
+  pagina: 6
+  conferido: false
+- o_que: inscritos no 7º Jamboree Nacional até o momento
+  valor: '1.033'
+  pagina: 6
+  conferido: false
+- o_que: inscritos no III Moot Scout Interamericano
+  valor: '291'
+  pagina: 6
+  conferido: true
+- o_que: inscritos no 24º Jamboree Mundial nos EUA
+  valor: '160'
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 39a3b5fae616695ecda48c383fc9ea1a5d33ab95a692f86f2f3d680196a94f2b
+revisado: null

@@ -1,0 +1,130 @@
+doc_key: sp-2010-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2010-01-30'
+  local: Campo Escola Jaraguá, São Paulo (SP)
+deliberacoes:
+- tema: eleição da mesa
+  decisao: foram eleitos Allan Leite (253º), Leandro Martins (112º), Sabrina Thies (112º) e Tamara Greicius (35º) nos respectivos
+    cargos, Presidente, Vice-Presidente, primeira secretária e segunda secretaria
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: alterações nos Parâmetros Regionais
+  decisao: Capítulo de Apresentação (aprovado); no Capítulo I modificou-se o art. 4º para 15 dias com 6 votos para a proposta
+    de 30 dias e 8 votos para 15 dias e 1 abstenção; Capítulo I (aprovado); Capítulo II modificou-se o art. 8º, 3º parágrafo
+    para 2 suplentes com 10 votos para 2 suplentes e 4 votos para 1 suplente; Capítulo II (aprovado); no Capítulo III Modificou-se
+    o Parágrafo Único do art. 17 onde foi decidido, por unanimidade, a troca para um mês, ao invés de 2 semanas, o art. 25
+    também passou por revisão de texto que foi aprovado unanimemente; Capitulo III (aprovado); Capítulo IV (aprovado); Capítulo
+    V (aprovado); Capítulo VI (aprovado); Capítulo VII (aprovado); O Documento inteiro foi aprovado.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: aprovação do calendário da Rede 2010/2011
+  decisao: foi decidida por unanimidade a proposta apresentada com um calendário fixo, sendo que sempre no último final de
+    semana de janeiro será realizado o Fórum Regional no Campo Escola Jaraguá, no último final de semana de julho acontecerá
+    as Oficinas de Novas Ideias e em setembro durante a Assembléia Regional ocorrerá o Encontro de Troca de Ideias e um calendário
+    para 2010 da sendo que neste consta os eventos citados anteriormente, além da Conferência Mundial de 2011 no Brasil e
+    outros eventos que poderão surgir no decorrer do ano.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: eleição dos Coordenadores dos Grupos de Trabalho
+  decisao: para o Grupo de Trabalho da Oficina de Novas Ideias (ONI) elegeu-se a jovem líder Jill Santos (254º), o jovem líder
+    Murillo Ferreira (254º) para o Grupo de Trabalho do próximo Fórum Regional (FRJL) e o jovem líder Rodrigo Moreira (83º)
+    para o Encontro de Troca de Ideias (ETI)
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: eleição do Coordenador do Núcleo
+  decisao: foi eleita por unanimidade e aclamação a jovem líder Sabrina Thies do centésimo doze Grupo Escoteiro “Tocantins”
+  votacao: unanimidade e aclamação
+  pagina: 3
+  conferido: true
+- tema: eleição do Comunicador do Núcleo
+  decisao: foi eleito Allen Harrison do centésimo quarto Grupo Escoteiro “Mopyatã”
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: eleição dos delegados para o Fórum Nacional de Rede de Jovens Líderes
+  decisao: foram eleitos Rodrigo Moreira do octogésimo quarto Grupo Escoteiro “Maxacali”, Alexandre Moreira do sexagésimo
+    sexto Grupo Escoteiro “Amizade”, Allan Leite do ducentésimo qüinquagésimo terceiro Grupo Escoteiro “Kaingang”
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: sugestão para suplentes dos delegados ao Fórum Nacional
+  decisao: todos concordam e aclamam a sugestão de que todos os jovens presentes no Fórum sejam suplentes dos delegados eleitos
+    para o Fórum Nacional
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: aprovação da proposta de levar o tema “Esportes” para atividades nacionais
+  decisao: A proposta de levar o tema “Esportes” para ser utilizado em atividades nacionais foi aprovada
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Presidente
+  eleito: Allan Leite (253º)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Vice-Presidente
+  eleito: Leandro Martins (112º)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: 1ª Secretária
+  eleito: Sabrina Thies (112º)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: 2ª Secretaria
+  eleito: Tamara Greicius (35º)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Coordenadora
+  eleito: Sabrina Thies do centésimo doze Grupo Escoteiro “Tocantins”
+  mandato: 2010-2012
+  pagina: 4
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Comunicador
+  eleito: Allen Harrison do centésimo quarto Grupo Escoteiro “Mopyatã”
+  mandato: 2010-2012
+  pagina: 4
+  conferido: true
+- orgao: Rede Paulista no Fórum Nacional de Rede de Jovens Líderes
+  cargo: Delegado
+  eleito: Rodrigo Moreira do octogésimo quarto Grupo Escoteiro “Maxacali”
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Rede Paulista no Fórum Nacional de Rede de Jovens Líderes
+  cargo: Delegado
+  eleito: Alexandre Moreira do sexagésimo sexto Grupo Escoteiro “Amizade”
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Rede Paulista no Fórum Nacional de Rede de Jovens Líderes
+  cargo: Delegado
+  eleito: Allan Leite do ducentésimo qüinquagésimo terceiro Grupo Escoteiro “Kaingang”
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: participantes do VIII Fórum Regional de Jovens Líderes
+  valor: '16'
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 17c0d7ae84349082dff943261f663556302fff0e2bc0f96c607d68ea57d93d20
+revisado: null

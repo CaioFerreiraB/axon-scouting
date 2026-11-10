@@ -1,0 +1,71 @@
+doc_key: ata77-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2014-08-30'
+  local: sede da Região Escoteira do Distrito Federal, em Brasília - DF
+deliberacoes:
+- tema: alterações nas Diretrizes Nacionais de Gestão de Adulto
+  decisao: Aprovação das alterações nas Diretrizes Nacionais de Gestão de Adulto
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: posicionamento da UEB diante das propostas de deliberação na Conferência Mundial
+  decisao: Posicionamento da UEB diante das propostas de deliberação a ser votadas na Conferência Mundial
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: proposta de gestão do CCME
+  decisao: Marcio submete ao CAN a proposta apresentada, que foi aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: proposta de alteração do uniforme da modalidade do Mar
+  decisao: alterar o uniforme do Mar para a parte superior em branco e inferior azul marinho (uniforme de desembarque da modalidade),
+    utilizando todas as opções de modelagem e corte que hoje existem para o vestuário
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: competência para concessão de medalhas Gratidão, Bons Serviços e Cruz de São Jorge
+  decisao: propondo que essas concessões sejam de competência regional. ... proposta aprovada por 9 votos a favor, 3 contra
+    e 1 abstenção
+  votacao: 9 votos a favor, 3 contra e 1 abstenção
+  pagina: 3
+  conferido: true
+- tema: votação da resolução sobre abertura de novos Grupos Escoteiros
+  decisao: Marcio encaminha para que a votação seja feita por meio virtual, aguardando o texto final que será encaminhado
+    pelo Daniel (EN). Proposta com concordância de todos
+  votacao: concordância de todos
+  pagina: 3
+  conferido: true
+- tema: próxima reunião do CAN
+  decisao: O CAN decidiu que a reunião do mês de novembro será realizada em Brasília, no mesmo modelo de horários desta reunião
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: inscritos no VI Jamboree Nacional Escoteiro
+  valor: '4.110'
+  pagina: 2
+  conferido: false
+- o_que: inscritos no 23º Jamboree Mundial do Japão, em 2015
+  valor: '605'
+  pagina: 2
+  conferido: true
+- o_que: inscritos no EDEN – Encontro de Dirigentes e Escotistas da Área Norte
+  valor: '63'
+  pagina: 4
+  conferido: true
+- o_que: participantes do Fórum Nacional de Jovens Líderes
+  valor: '62'
+  pagina: 3
+  conferido: true
+- o_que: Regiões representadas no Fórum Nacional de Jovens Líderes
+  valor: '14'
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 28a265c0166fbd372c9112f523076ebf846819024633046fd66b6d9df26e7529
+revisado: null

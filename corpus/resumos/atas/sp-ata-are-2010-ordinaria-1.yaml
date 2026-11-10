@@ -1,0 +1,96 @@
+doc_key: sp-ata-are-2010-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2010-09-25'
+  local: Teatro Municipal Lulu Benencase, Americana - SP
+deliberacoes:
+- tema: aprovação da ata da Assembleia Regional Ordinária anterior
+  decisao: foi aprovado por grande maioria, com uma (1) abstenção
+  votacao: maioria
+  pagina: 4
+  conferido: true
+- tema: aprovação da ata da Assembleia Regional Extraordinária anterior
+  decisao: foi aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: apresentação e deliberação sobre as contas do exercício de 2009
+  decisao: aprovada por grande maioria, sujeito ao envio de documentos de esclarecimento detalhados sobre as despesas aos
+    Grupos Escoteiros no prazo de 30 dias
+  votacao: maioria
+  pagina: 4
+  conferido: true
+- tema: apresentação do Balancete do 1º semestre de 2010
+  decisao: apresentação realizada, sem votação explícita
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: apresentação e deliberação do Orçamento para 2011
+  decisao: ficou aprovada pela maioria a Segunda Proposta, que aprova a previsão orçamentária apresentada, mas rejeita a taxa
+    adicional que seria revertida ao Campo Escola
+  votacao: 74 votos, 154 votos, 8 votos, total 236 votos
+  pagina: 7
+  conferido: true
+- tema: apresentação e deliberação do relatório do 2º semestre de 2009 e 1º semestre de 2010
+  decisao: relatório aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: proposição de formação de Comissão para mobilização de recursos financeiros para reforma do Campo Escola Jaraguá
+  decisao: foi aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+- tema: indicação da candidatura do Distrito de Santos para sede da Assembleia de 2011
+  decisao: indicação aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: candidato a candidato
+  eleito: Sonia Maria Gonçalves Jorge
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: presidente
+  eleito: Ronaldo Engracia
+  mandato: 2010 a 2013
+  pagina: 11
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 2 titulares
+  eleito: Amauri Benedito Hullman, Eduardo Gutierrez
+  mandato: 2010 a 2013
+  pagina: 11
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 3 suplentes
+  eleito: Davi Marcel de Souza Pereira Fontes, Manuel Pedro Gomes de Ávila, Marcos Antonio de Carvalho
+  mandato: 2010 a 2013
+  pagina: 11
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegados
+  eleito: Adelson Assis Batista Alves, Antonio Lívio Abraços Jorge, Euclides Santos Pallamin, Francisca Souza Carreg, Jacir
+    Martins da Silva, João Carlos Moreno da Silva, João Floriano Ribeiro, José Inácio de Oliveira, Marcos Roberto Martini
+    Dau, Patrícia Ramalho Diniz, Rosemary Peres Motta de Oliveira, Sonia Maria Gonçalves Jorge, Vicente Porto Vasconcellos
+    Filho, Marcos Aurélio do Monte Vanderlei, Silvana Pereira Luna, Benedito Sérgio Leme de Faria, Frederico Leal Costa
+  mandato: ''
+  pagina: 11
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '329'
+  pagina: 5
+  conferido: true
+- o_que: votos na votação do orçamento para 2011
+  valor: 74 votos, 154 votos, 8 votos, total 236 votos
+  pagina: 7
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: c6019024026d104ff6535fa2c00a2dd259d1363a51a30f1d899d92a350ebbd7e
+revisado: null

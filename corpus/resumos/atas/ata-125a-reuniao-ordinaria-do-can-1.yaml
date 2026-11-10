@@ -1,0 +1,125 @@
+doc_key: ata-125a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-11-29'
+  local: Escritório Nacional da União dos Escoteiros do Brasil sito na Rua Coronel Dulcídio, 2107 - Bairro Água Verde, Curitiba
+    - PR
+deliberacoes:
+- tema: Prorrogação do prazo para elaboração do Planejamento Estratégico 2026-2035
+  decisao: o Conselho de Administração Nacional aprovou a extensão do prazo para 15 de março de 2026, mantendo a realização
+    da reunião presencial em fevereiro. Conferir Resolução CAN 12/2025 - Prorroga o prazo para entrega do novo Planejamento
+    Estratégico da União dos Escoteiros do Brasil e mantém em vigor o atual Planejamento até a publicação do novo.
+  votacao: 13 votos a favor e 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Criação do Grupo de Trabalho - Finanças, Orçamento e Prestação de Contas (GTFOP)
+  decisao: A proposta do Conselheiro Nacional, Davidson, trata da criação de um Grupo de Trabalho de Finanças, Orçamento e
+    Prestação de Contas, com o objetivo de elaborar uma política institucional que consolide normas e procedimentos sobre
+    gestão financeira. O GT deverá revisar resoluções existentes, identificar lacunas e propor diretrizes para orçamentos
+    e prestações de contas, assegurando transparência e sustentabilidade. Prevê-se composição de até 15 membros, prazo de
+    90 dias e entrega de minuta de política institucional para apreciação do Conselho.
+  votacao: 11 votos a favor e 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: Criação do Grupo de Trabalho da Loja Escoteira Nacional (GTLEN)
+  decisao: A proposta do Conselheiro Nacional, Davidson, apresenta a criação de um Grupo de Trabalho da Loja Escoteira Nacional,
+    com a finalidade de analisar o modelo de gestão e operação comercial da loja, suas relações com as Regiões Escoteiras
+    e sua sustentabilidade financeira. O grupo deverá revisar normativos existentes, avaliar políticas de preços e propor
+    melhorias estratégicas para o fortalecimento institucional da marca. Prevê-se composição de até 15 membros, prazo de 90
+    dias e elaboração de relatório final com recomendações e propostas normativas.
+  votacao: 13 votos a favor e 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: Melhoria na redação da Regra 178 do POR 2025
+  decisao: 'A modificação propõe incluir a expressão “após a saída do ramo”, evitando interpretações equivocadas e o uso simultâneo
+    do distintivo e da barreta. A redação aprovada foi a seguinte: "O distintivo deve ser colocado na manga direita da camisa
+    e pode ser usado pelo jovem até sua saída da Tropa Sênior. A barreta poderá ser utilizada no uniforme ou vestuário escoteiro
+    após a saída do ramo, de forma central, acima do bolso esquerdo, acima das Estrelas de Atividade, durante toda a sua vida
+    escoteira."'
+  votacao: 11 votos a favor e 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: Ata da 124ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 124ª Reunião Ordinária do Conselho de Administração Nacional, realizada no dia 04 de outubro
+    de 2025. Aprovada.
+  votacao: 4 votos a favor e 10 abstenções
+  pagina: 3
+  conferido: true
+- tema: Ata sessão fechada | reunião extraordinária do CAN 16/08/2025 | Regulamento Interno do CAN
+  decisao: Ata da sessão aberta da 124ª Reunião Ordinária do Conselho de Administração Nacional, realizada no dia 04 de outubro
+    de 2025. Aprovada.
+  votacao: 10 votos a favor e 4 abstenções
+  pagina: 3
+  conferido: true
+- tema: Proposta de Resolução Contribuição Associativa 2026
+  decisao: Proposta de Resolução CAN 14/2025, que determina os procedimentos para o registro institucional e os valores da
+    contribuição associativa anual para o ano-base de 2026, sendo a matéria aprovada por unanimidade, com encaminhamento para
+    revisão de forma/linguagem e leitura final pela DEN antes da publicação.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: membros eleitos do CAN
+  eleito: ADRIANO, CLEUZA, DAVIDSON, DIVA, HILTON KAYAN, IVAN e LÍDIA
+  mandato: 03 de maio de 2025 a 02 de maio de 2029
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: participantes do 31º ELO Nacional
+  valor: '6.900'
+  pagina: 7
+  conferido: false
+- o_que: participantes da Caçada Nacional
+  valor: '6.500'
+  pagina: 7
+  conferido: false
+- o_que: participantes do Jota/Joti
+  valor: '28.351'
+  pagina: 7
+  conferido: false
+- o_que: distintivos de 2025 enviados entre janeiro e novembro
+  valor: '205.000'
+  pagina: 7
+  conferido: false
+- o_que: associados da UEB até 03/11/2025
+  valor: '93.912'
+  pagina: 7
+  conferido: false
+- o_que: inclusões no ano (jovens e adultos)
+  valor: '28.165'
+  pagina: 7
+  conferido: false
+- o_que: arrecadação realizada até setembro de 2025
+  valor: R$5.323.000
+  pagina: 8
+  conferido: false
+- o_que: orçamento previsto até setembro de 2025
+  valor: R$6.507.000
+  pagina: 8
+  conferido: false
+- o_que: fundos financeiros da UEB
+  valor: R$7 milhões
+  pagina: 8
+  conferido: true
+- o_que: transações realizadas pela Loja Escoteira em 2025
+  valor: 49 mil
+  pagina: 8
+  conferido: true
+- o_que: vendas no e-commerce da Loja Escoteira
+  valor: 11 mil
+  pagina: 8
+  conferido: true
+- o_que: inscritos para JamCam e Jamboree Mundial
+  valor: '2.178'
+  pagina: 10
+  conferido: false
+- o_que: vagas inicialmente solicitadas para JamCam e Jamboree Mundial
+  valor: '2.050'
+  pagina: 10
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 90e291746f0f25caea623f16f206a8d3c98f86fd1450a00e1ed0c31bed937bc3
+revisado: null

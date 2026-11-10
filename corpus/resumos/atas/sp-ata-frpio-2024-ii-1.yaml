@@ -1,0 +1,115 @@
+doc_key: sp-ata-frpio-2024-ii-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-03-09'
+  local: Espaço Expressa, situado na Av. União dos Ferroviários, 1760 - Pte. de Campinas, Jundiaí - SP
+deliberacoes:
+- tema: Eleição da Mesa Diretora
+  decisao: 'Os candidatos foram eleitos por aclamação. Foi eleita como vice-presidente do fórum a pioneira Milena Gonçalves
+    Leite (G.E Terra Da Uva 514º/SP). Foram eleitos 1º e 2º secretário do fórum os pioneiros Rafael e Sofia, respectivamente.
+    Portanto, foi executada a posse dos membros da mesa, composta por: Presidente: Rafael Melis Rogero (G.E São Carlos 251º/SP);
+    Vice-presidente: Milena Gonçalves Leite (G.E Terra Da Uva 514º/SP); 1º Secretário: Rafael de Almeida Ribeiro (G.E GEAR
+    426º/SP); 2º Secretário: Sofia Costa de Oliveira (G.E Franca do imperador 29°/SP).'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata do I Fórum Regional Pioneiro
+  decisao: Foi aprovada a ata do I Fórum Regional de Pioneiro sem mais contestações.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Eleição da Comissão Regional Pioneira
+  decisao: 'Sem questionamentos, foi eleita a Comissão Regional Pioneira de São Paulo, composta por: Maria Eduarda Serras
+    de Jesus (G.E Boiaçu 498°/SP); Isis Honorato de Oliveira (G.E Prof Inah de Mello 147/SP); Giovanna Silva Ricci (G.E Piratininga
+    Amicitiae 127°/SP); Lorenzo Padilha Franco Bueno (G.E Quarupe 241°/SP); Karen Louise (G.E Minuano 71°/SP); Milena Gonçalves
+    Leite (G.E Terra Da Uva 514º/SP); Claudinei Teófilo da Silva Junior (G.E Franca do Imperador 29°/SP).'
+  votacao: votação secreta via notebooks
+  pagina: 2
+  conferido: true
+- tema: Aprovação da candidatura da cidade de Taubaté/SP para cidade-sede ao Fórum Regional Pioneiro 2025
+  decisao: Como houve apenas uma candidatura, ela foi aprovada por aclamação pela plenária.
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: 'Deliberação sobre assuntos gerais: Fórum Regional Pioneiro ser híbrido e definição das atividades de organização
+    de eventos'
+  decisao: O presidente colocou o segundo e quarto assunto em votação. O resultado foi 34 votos a favor e 0 votos contra para
+    o 2º assunto e 30 votos a favor e 0 votos contra para o 4º assunto. Sendo assim, ambos os requerimentos deliberados foram
+    aprovados por unanimidade e devem ser encaminhados à Comissão Regional Pioneira e a Coordenação Regional do Ramo Pioneiro,
+    ambas da Região Escoteira se São Paulo.
+  votacao: 34 votos a favor e 0 contra; 30 votos a favor e 0 contra
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Presidente
+  eleito: Rafael Melis Rogéro (G.E São Carlos 251º/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Vice-presidente
+  eleito: Milena Gonçalves Leite (G.E Terra Da Uva 514º/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: 1º Secretário
+  eleito: Rafael de Almeida Ribeiro (G.E GEAR 426º/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: 2º Secretário
+  eleito: Sofia Costa de Oliveira (G.E Franca do imperador 29°/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Maria Eduarda Serras de Jesus (G.E Boiaçu 498°/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Isis Honorato de Oliveira (G.E Prof Inah de Mello 147/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Giovanna Silva Ricci (G.E Piratininga Amicitiae 127°/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Lorenzo Padilha Franco Bueno (G.E Quarupe 241°/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Karen Louise (G.E Minuano 71°/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Milena Gonçalves Leite (G.E Terra Da Uva 514º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Claudinei Teófilo da Silva Junior (G.E Franca do Imperador 29°/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 885ad4ae9d7a802ecfeb189c17237a05848cb583091592e417f52b803c4745b1
+revisado: null

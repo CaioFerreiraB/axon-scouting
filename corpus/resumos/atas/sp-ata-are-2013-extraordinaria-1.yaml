@@ -1,0 +1,52 @@
+doc_key: sp-ata-are-2013-extraordinaria-1
+reuniao:
+  tipo: extraordinaria
+  data: '2013-03-17'
+  local: Salão Nobre da Câmara Municipal de São Paulo, no Viaduto Jacareí, nº 100, bairro Bela Vista, São Paulo - SP
+deliberacoes:
+- tema: alterações do Estatuto da União dos Escoteiros do Brasil — Região de São Paulo
+  decisao: Discussão e aprovação das alterações do Estatuto da União dos Escoteiros do Brasil — Região de São Paulo.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: alterações nas comissões de Eleições e Escrutínio
+  decisao: Solicitando novas indicações às chapas concorrentes, as alterações são informadas então pelo chefe Moral. Os novos
+    integrantes são José Eduardo Biffe, Ana Paula Amaral dos Santos, Tiago Augusto Pereira e João Carlos Valezim V. Jr., substituindo
+    os chefes Francisca Carrer, Lúcia Varejão, Flávio Fahl e Fernando Donatti. Apresentadas e homologadas as comissões, tais
+    como propostas, aprovadas por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: inserção no Artigo 2º das disposições introdutórias do Estatuto Regional
+  decisao: 'incluir no Artigo 2º das disposições introdutórias do Estatuto Regional, o item quarto com a seguinte redação:
+    “garantir, aos jovens do Estado de São Paulo, o direito à prática do Escotismo, a defesa de direitos socioambientais,
+    a promoção da cidadania e o enfrentamento das desigualdades sociais sem prejuízo daquelas atividades de seu propósito”,
+    em atendimento à resolução 27 de 19/09/2011, do Conselho Nacional de Assistência Social.'
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: alteração do artigo 13 parágrafo 7º relativo à reeleição de membros da diretoria
+  decisao: incluir o texto “ou para qualquer outra função neste órgão” ao final do texto proposto, de maneira a garantir a
+    renovação da mesma.
+  votacao: 135 votos favoráveis, 227 votos contra, 8 abstenções
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos favoráveis à alteração do artigo 13 parágrafo 7º
+  valor: '135'
+  pagina: 4
+  conferido: true
+- o_que: votos contra a alteração do artigo 13 parágrafo 7º
+  valor: '227'
+  pagina: 4
+  conferido: true
+- o_que: abstenções na votação da alteração do artigo 13 parágrafo 7º
+  valor: '8'
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3f6aa3efd3aa8afdcca0009e1440a2bd5ad6ab96a3bb6b1b5f7975c580a8ead1
+revisado: null

@@ -1,0 +1,100 @@
+doc_key: ata-reuniao-ordinaria-ccn-19-jun-2021-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-06-19'
+  local: por meio de videochamada pelo Microsoft Teams
+deliberacoes:
+- tema: eleição da presidência da reunião
+  decisao: São aclamados GOMIDE como Presidente e THIAGO como Secretário desta reunião.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata da reunião anterior
+  decisao: A ata é aprovada por unanimidade dos presentes.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: atualização da Resolução Nacional sobre Apadrinhamento de UEL
+  decisao: Estipula até o próximo dia 26 de junho para contribuições sobre a resolução proposta, tendo em vista a previsão
+    de publicação oficial da resolução até o dia 28 de junho de 2021.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: publicação da resolução sobre inclusão de nome social
+  decisao: A resolução deverá ser lançada no próximo dia 28 de junho, dia do Orgulho LGBTQ+, atendendo à necessidade de se
+    dar um tratamento adequado às pessoas transgêneras e transexuais na nossa instituição.
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: normatização do uso da segunda ou terceira função em outra UEL/Região Escoteira pelo SIGUE-PAXTU
+  decisao: A DEN deliberou nesta semana que irá provocar o CAN para regrar o referido dispositivo, e que antes disso, vamos
+    colher as sugestões das Regiões Escoteiras sobre o assunto.
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: regulamentação da realização de cursos em EAD inter-regiões
+  decisao: O Escritório Nacional já anotou a sugestão dada e irão trabalhar nela para apresentar uma proposta de regulamentação
+    do tema. Informam também que irão colocar à disposição uma ferramenta de consulta para colher sugestões das Regiões para
+    regulação do assunto.
+  votacao: ''
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Conselho Consultivo Nacional
+  cargo: Presidente da reunião
+  eleito: GOMIDE
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho Consultivo Nacional
+  cargo: Secretário da reunião
+  eleito: THIAGO
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente
+  eleito: Eduardo Evaldt MANIQUE
+  mandato: mandato para os próximos dois anos
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-presidente
+  eleito: SARAH Raquel Loureiro do Amaral
+  mandato: mandato para os próximos dois anos
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: cursantes do CNGA 2
+  valor: '120'
+  pagina: 3
+  conferido: true
+- o_que: emails respondidos pelo Canal de Conduta
+  valor: '451'
+  pagina: 5
+  conferido: true
+- o_que: sindicâncias abertas pelo Canal de Conduta
+  valor: '41'
+  pagina: 5
+  conferido: true
+- o_que: sindicâncias resolvidas
+  valor: '38'
+  pagina: 5
+  conferido: true
+- o_que: PADs abertos atualmente
+  valor: '58'
+  pagina: 5
+  conferido: true
+- o_que: PADs originados do Canal de Conduta
+  valor: '3'
+  pagina: 5
+  conferido: true
+- o_que: PADs que tratam de abusos de menores de idade
+  valor: '2'
+  pagina: 5
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8400ad22f404cfd4676de0504b6346c4aa582f546bd3e6a52188f0f6e3b1fec3
+revisado: null

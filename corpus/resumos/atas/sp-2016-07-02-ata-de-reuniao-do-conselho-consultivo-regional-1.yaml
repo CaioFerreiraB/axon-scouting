@@ -1,0 +1,39 @@
+doc_key: sp-2016-07-02-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2016-07-02'
+  local: Centro Escoteiro Ipanema (Floresta Nacional de Ipanema, Floresta Nacional de Ipanema, Avenida Sinimbú,1, Vila de
+    São João de Ipanema, Iperó/SP)
+deliberacoes:
+- tema: alocação do primeiro Secretário Distrital
+  decisao: ficou decidido que o primeiro Secretário Distrital a ser contratado no primeiro semestre de 2017 deverá ser alocado
+    na jurisdição do 26º Distrito Escoteiro, nas imediações de Rio Claro/SP, devido ao grau de potencialidade, embasado nas
+    reflexões trazidas pelo Plano Regional de Crescimento e Expansão, de abertura e reabertura de novas Unidades Escoteiras
+    Locais nesta localidade, com apoio da Comissão Distrital do referido Distrito Escoteiro.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: limites geográficos dos Distritos Escoteiros
+  decisao: é definida versão preliminar do mapa de limites geográficos dos Distritos Escoteiros da Região Escoteira de São
+    Paulo, os quais ainda deverão ser apreciados para últimas considerações dos Comissários Distritais via lista de e-mails
+    do Conselho Consultivo Regional em até 15 dias após esta Reunião para elaboração da versão definitiva do referido mapa,
+    a ser apresentado oficialmente pelos Comissários Distritais aos responsáveis pelas UELs em reunião do Conselho Distrital
+    respectivo. As Unidades Escoteiras Locais que tiverem de ser remanejadas de Distrito Escoteiro, por conta de nova definição
+    dos limites geográficos dos Distritos Escoteiros, deverão ser migradas conforme o fluxo previsto para isto no Manual do
+    Comissário Distrital.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: revisão do Manual do Comissário Distrital
+  decisao: fica decidido que as revisões necessárias para a publicação de uma segunda edição do Manual do Comissário Distrital
+    deverão ser objeto de discussão da próxima Reunião do Conselho Consultivo Regional, com data e local ainda a definir.
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 253f2947968d4e19108e30ef5a0201c2cb07e987e26216d8692f4f9422912d51
+revisado: null

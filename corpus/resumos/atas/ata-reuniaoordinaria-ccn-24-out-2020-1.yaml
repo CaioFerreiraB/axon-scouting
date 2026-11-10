@@ -1,0 +1,64 @@
+doc_key: ata-reuniaoordinaria-ccn-24-out-2020-1
+reuniao:
+  tipo: ordinaria
+  data: '2020-10-24'
+  local: por meio de videochamada pelo Microsoft Teams
+deliberacoes:
+- tema: Eleição da mesa da reunião
+  decisao: São aclamados MURARO como Presidente, PETRONILIO como Vice-Presidente e THIAGO BUENO como Secretário desta reunião.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: A ata é aprovada por unanimidade dos presentes.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Retomada das atividades escoteiras presenciais
+  decisao: A proposta do CAN e da DEN é delegar às Regiões Escoteiras a decisão sobre a retomada das atividades escoteiras
+    presenciais, desde que observem os parâmetros estabelecidos no parecer técnico do Comitê Nacional de Crise da COVID-19.
+    A DEN expedirá um ofício com as orientações para a retomada das atividades escoteiras presenciais, com a decisão do momento
+    ficando a cargo de cada Região, e que cada Região deverá enviar à DEN o plano regional de retomada que, por sua vez, consultará
+    rapidamente o Comitê Nacional sobre o plano apresentado para autorizar a retomada.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Programa de Integridade para o nível Regional
+  decisao: Foi apresentada a sugestão de Resolução para implantação do Programa de Integridade em nível Regional, com debate
+    sobre a necessidade de colaboração das diretorias regionais, alocação de recursos, compartilhamento entre Regiões pequenas,
+    e retirada da previsão de graus do Selo de Integridade, mantendo apenas a previsão de se receber o Selo ou não, com tempo
+    de carência para implantação. Ficou decidido que o debate mais profundo sobre a proposta do Programa de Integridade em
+    nível Regional se dará no curso nacional de Governança e Integridade.
+  votacao: unanimidade para retirar previsão de graus do Selo de Integridade
+  pagina: 8
+  conferido: true
+- tema: Composição do Comitê de Governança e Transparência da Loja Escoteira
+  decisao: São aclamadas pelo CCN, a Região MA como representante das dez Regiões com menor faturamento, e a Região de PE
+    como outra representante escolhida pelo CCN para o Comitê de Governança e Transparência da Loja Escoteira para o período
+    de outubro de 2020 a outubro de 2021.
+  votacao: aclamação
+  pagina: 11
+  conferido: true
+eleicoes:
+- orgao: Comitê de Governança e Transparência da Loja Escoteira
+  cargo: representante das dez Regiões com menor faturamento
+  eleito: Região MA
+  mandato: outubro de 2020 a outubro de 2021
+  pagina: 11
+  conferido: true
+- orgao: Comitê de Governança e Transparência da Loja Escoteira
+  cargo: representante escolhido pelo CCN
+  eleito: Região PE
+  mandato: outubro de 2020 a outubro de 2021
+  pagina: 11
+  conferido: true
+numeros:
+- o_que: data da reunião anterior do Conselho Consultivo Nacional
+  valor: 17 e 18 de agosto de 2019
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 74cb00c87a9eeb5e288622fa27805b081c946cf741bf798e18566ff11c89f07a
+revisado: null

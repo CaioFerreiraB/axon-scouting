@@ -1,0 +1,79 @@
+doc_key: sp-2012-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2012-03-24'
+  local: Guarulhos, Estado de São Paulo
+deliberacoes:
+- tema: Eleição do comunicador do Núcleo Paulista de Jovens Líderes
+  decisao: A jovem líder Mariana foi eleita com 14 votos, e o jovem líder Rodolfo, com dois votos, foi eleito suplente.
+  votacao: 14 votos a favor
+  pagina: 1
+  conferido: true
+- tema: Eleição do coordenador do Núcleo Paulista de Jovens Líderes
+  decisao: Com candidatura única, e aclamada pelo fórum, foi eleito o jovem líder Henrique de A. Messias, do 158/SP.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Eleição dos delegados do Núcleo Paulista de Jovens Líderes ao Fórum Nacional de Jovens Líderes
+  decisao: Os jovens líderes, Thiago Bueno 016/SP, Rodrigo Moreira 83SP e Julia Reali C. Melo 68/SP, foram eleitos por aclamação.
+    Sendo os demais presentes eleitos todos suplentes.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Criação do Grupo de Trabalho sobre Escotismo e Comunidade
+  decisao: Proposta aceita por unanimidade para que o jovem líder Rodolfo da Silva se tornasse coordenador do Grupo de Trabalho
+    sobre Escotismo e Comunidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Comunicador
+  eleito: Mariana De Marchi Oliveira
+  mandato: biênio 2012/2013
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Suplente de Comunicador
+  eleito: Rodolfo Silva de Oliveira
+  mandato: biênio 2012/2013
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Coordenador
+  eleito: Henrique de A. Messias
+  mandato: biênio 2012/2013
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Delegado ao Fórum Nacional de Jovens Líderes
+  eleito: Thiago Bueno
+  mandato: '2012'
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Delegado ao Fórum Nacional de Jovens Líderes
+  eleito: Rodrigo Moreira
+  mandato: '2012'
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Delegada ao Fórum Nacional de Jovens Líderes
+  eleito: Julia Reali C. Melo
+  mandato: '2012'
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: votos para comunicador
+  valor: '14'
+  pagina: 1
+  conferido: true
+- o_que: votos para suplente de comunicador
+  valor: '2'
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 1b0c0b7e21795ae5ae4fca731da0f429186a45e9eae374ece9632e8e0f6117ce
+revisado: null

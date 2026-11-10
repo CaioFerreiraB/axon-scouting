@@ -1,0 +1,137 @@
+doc_key: 24a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-22-abr-2017-1
+reuniao:
+  tipo: ordinaria
+  data: '2017-04-22'
+  local: k Hotel, sito a Avenida Republica do Líbano, n.o 1520, Setor Oeste, na cidade de
+deliberacoes:
+- tema: Eleição e posse da mesa
+  decisao: A assembleia aprovou os nomes por aclamação, tendo sido os mesmos empossados e assumidos
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Escolha das Comissões Assessoras
+  decisao: Foram requeridos voluntários para as comissões assesoras, tendo-se apresentado os seguintes Dirigentes... À de
+    todos, foram mt or aclamação geral, sendo em seguida empossados em-Suas furições.
+  votacao: aclamação geral
+  pagina: 2
+  conferido: true
+- tema: Deliberação sobre a ata da Assembleia Geral Ordinária de 2016
+  decisao: O Presidente pensa da leitura da ata, pois a mesma é parte integrante do documento base entregue todos/0s pariicipantee
+    delegados, [o que e 1 O rota por acalmação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Relatório Nacional de 2016
+  decisao: O Presidente da Assembleia coloca em regime de votação o Relatório Nacional de 2016, que restou aprovado por aclamação.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Aprovação do Balanço Anual
+  decisao: O Presidente da mesa desta Assembleia coloca o Balanço Anual em regime de votação, sendo que restou aprovado por
+    ata rnção
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: mesa da Assembleia
+  cargo: Presidente
+  eleito: não especificado
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa da Assembleia
+  cargo: primeiro vice-presidente
+  eleito: não especificado
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa da Assembleia
+  cargo: segundo vice-presidente
+  eleito: não especificado
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa da Assembleia
+  cargo: primeira secretária
+  eleito: não especificado
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa da Assembleia
+  cargo: segunda secretária
+  eleito: Clêide Pires de Jesus (GO)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: titular
+  eleito: Marcos Magno Gomide Vieira (MG)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: titular
+  eleito: Mario Henrique Peters Farinon (RS)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: titular
+  eleito: Arcângelo dos Santos Safaneli (SC)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: titular
+  eleito: André Torricelli F. da Rosa (RJ)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Marco Aurélio Romeu Fernandes (RS)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Nadir (SC)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Isabelly Castro da S. e Santos (GO)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Leonardo Vilar da Costa (ES)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Antônio Boulanger U. Ribeiro (RJ)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Luiz Carlos da Cruz V. e Silva (MG)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Alan Assunção de Paula
+  mandato: ''
+  pagina: 6
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: e513b6b794fd91f01071fd0e390a6bc63b5250a1772efb153d17ff1a56261615
+revisado: null

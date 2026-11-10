@@ -1,0 +1,151 @@
+doc_key: ata-120a-reuniao-ordinaria-do-can-assinado-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-11-02'
+  local: Planetário - Rua Vice-Governador Rúbens Berardo, n. 100, Gávea, Rio de Janeiro/RJ
+deliberacoes:
+- tema: Aprovação da agenda da reunião
+  decisao: Sem objeções, às 08h45min, a agenda foi aprovada como definitiva.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Ata da 118ª Reunião Ordinária do CAN
+  decisao: Aprovada com 11 votos a favor (BRAGA, ALDENISE, NETO, CLAUCIO, DANIEL, DANIELA, FÁBIO, ILKA, LUIZ, RENATO e SÉRIS)
+    e 3 abstenções (KARINA, LUCIANO e SIMONI).
+  votacao: 11 votos a favor, 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: Destinação de recursos sobre o resultado gerencial 2023
+  decisao: 'Autorização para destinação dos recursos sobre o resultado gerencial de 2023 no valor de R$ 336.086,55: Destinar
+    ao Fundo de Risco R$ 216.086,55; Destinar Fundo de Rescisão R$ 50.000,00; Destinar Fundo Apoio ao Associado R$ 25.000,00;
+    Destinar Fundo de Iniciativas de Formação R$ 25.000,00 e Projeto Arquitetura ampliação da Sede Nacional R$ 20.000,00.
+    Aprovada com 11 votos a favor e 3 abstenções.'
+  votacao: 11 votos a favor, 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: Ata sessão fechada - reunião extraordinária do CAN 30/06/2024 SIGILOSO
+  decisao: Aprovada com 11 votos a favor e 3 abstenções.
+  votacao: 11 votos a favor, 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: Ata sessão fechada - reunião extraordinária do CAN 30/06/2024 internacional
+  decisao: Aprovada com 11 votos a favor e 3 abstenções.
+  votacao: 11 votos a favor, 3 abstenções
+  pagina: 3
+  conferido: true
+- tema: Criação de Grupo de Trabalho sobre o Museu dos Escoteiros do Brasil
+  decisao: Criação de um Grupo de Trabalho (GT) com o objetivo de planejar e desenvolver um Museu Institucional dos Escoteiros
+    do Brasil. Aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Ata sessão fechada - reunião extraordinária do CAN 07/07/2024 SIGILOSO
+  decisao: Aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Resolução CAN 02/2024 - Renovação dos Registros dos Associados afetados pelas enchentes
+  decisao: Proposta de resolução para que a DEN possa atender pedidos de isenção ou postergação de pagamento do registro ou
+    de inscrições em atividades nacionais. Aprovada com 13 votos a favor e 1 abstenção.
+  votacao: 13 votos a favor, 1 abstenção
+  pagina: 3
+  conferido: true
+- tema: Ata sessão fechada - reunião extraordinária do CAN 22/08/2024 - Ramo Filhotes
+  decisao: Aprovada com 9 votos a favor e 5 abstenções.
+  votacao: 9 votos a favor, 5 abstenções
+  pagina: 3
+  conferido: true
+- tema: Resolução CAN 04/2024 - Procedimento de nomeação da nova Diretoria Executiva Nacional (DEN) para 2025/2028
+  decisao: Aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Ratificação das coordenações de ALICE e DANIEL
+  decisao: A coordenação de ALICE na Comissão Permanente de Envolvimento Juvenil e de DANIEL no Grupo de Trabalho sobre a
+    Preservação da Memória e do Museu Escoteiro são ratificadas, ambas por unanimidade.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Ajustes e aprovação da Resolução CAN 05/2023 - Registro Institucional e contribuição associativa 2025
+  decisao: A Resolução CAN 05/2023, que define os procedimentos para o registro institucional e os valores da contribuição
+    associativa anual para o ano-base de 2025, é aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Aprovação da Proposta Orçamentária para 2025
+  decisao: Proposta Orçamentária para 2025 aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Aprovação da Política Nacional de Diversidade e Inclusão
+  decisao: Às 16h05min, a Política Nacional de Diversidade e Inclusão é aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: resultado gerencial 2023
+  valor: R$ 336.086,55
+  pagina: 2
+  conferido: false
+- o_que: votos a favor da Ata da 118ª Reunião Ordinária do CAN
+  valor: 11 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções na Ata da 118ª Reunião Ordinária do CAN
+  valor: 3 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da destinação de recursos 2023
+  valor: 11 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções na destinação de recursos 2023
+  valor: 3 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da Ata sessão fechada 30/06/2024 SIGILOSO
+  valor: 11 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções na Ata sessão fechada 30/06/2024 SIGILOSO
+  valor: 3 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da Ata sessão fechada 30/06/2024 internacional
+  valor: 11 votos a favor
+  pagina: 3
+  conferido: true
+- o_que: abstenções na Ata sessão fechada 30/06/2024 internacional
+  valor: 3 abstenções
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da Resolução CAN 02/2024
+  valor: 13 votos a favor
+  pagina: 3
+  conferido: true
+- o_que: abstenções na Resolução CAN 02/2024
+  valor: 1 abstenção
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da Ata sessão fechada 22/08/2024 - Ramo Filhotes
+  valor: 9 votos a favor
+  pagina: 3
+  conferido: true
+- o_que: abstenções na Ata sessão fechada 22/08/2024 - Ramo Filhotes
+  valor: 5 abstenções
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da Resolução CAN 04/2024
+  valor: unanimidade
+  pagina: 4
+  conferido: true
+- o_que: votos na votação sobre o Registro de Visitante (11 a favor, 2 contra, 1 abstenção)
+  valor: 11 votos a favor, 2 votos contrários, 1 abstenção
+  pagina: 5
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: eb427da5a1a189c7bc1914cbe5697d2e185b129381af49f1b367cf3d64adecaa
+revisado: null

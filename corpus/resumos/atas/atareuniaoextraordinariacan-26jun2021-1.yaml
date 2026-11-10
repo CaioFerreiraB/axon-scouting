@@ -1,0 +1,84 @@
+doc_key: atareuniaoextraordinariacan-26jun2021-1
+reuniao:
+  tipo: extraordinaria
+  data: '2021-06-26'
+  local: por meio de videochamada pelo Zoom
+deliberacoes:
+- tema: Prorrogação da vigência da Resolução CAN 02/2020
+  decisao: prorrogação da vigência da Resolução CAN 02/2020 até 31/12/2021, com possibilidade de prorrogação, se necessário
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 2
+  conferido: true
+- tema: Ratificação das coordenações dos GTs e CPs
+  decisao: ratificados por unanimidade dos conselheiros titulares presentes os nomes indicados para coordenação das CPs e
+    GTs do CAN
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 2
+  conferido: true
+- tema: Referendo do Regulamento Geral da RNJL
+  decisao: por maioria de votos (11 a 3), fica referendado o Regulamento Geral da RNJL apresentado, atendendo ao disposto
+    no item 5.5.1.b da PNEJ
+  votacao: 11 a 3
+  pagina: 4
+  conferido: true
+- tema: Abertura de Unidades Escoteiras Locais (UELs) da UEB em outros países
+  decisao: aprovado por unanimidade dos conselheiros titulares presentes que a presidência do CAN e ALDENISE e VALOIS se reúnam
+    com o Comissariado Internacional para trabalhar na proposta, como relatores, para posterior submissão ao CAN
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 6
+  conferido: false
+- tema: Criação da Comissão Permanente de Avaliação (CPA) do CAN
+  decisao: aprovado por unanimidade dos conselheiros titulares presentes que seja aberto na lista de e-mails do CAN uma chamada
+    para quem quiser compor a CPA, para iniciar seus trabalhos e definir seu escopo
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 9
+  conferido: true
+- tema: Alteração das Regras 130, 131 e 132 do P.O.R.
+  decisao: aprovada por unanimidade dos conselheiros titulares presentes a Resolução tal como proposta, acrescendo o proposto
+    pelo RENATO
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 9
+  conferido: true
+- tema: Aprovação da delegação ao 14º Fórum Mundial Escoteiro de Jovens e à 42ª Conferência Mundial Escoteira
+  decisao: aprovada por unanimidade dos conselheiros titulares presentes a delegação ao 14º Fórum Mundial Escoteiro de Jovens
+    e à 42ª Conferência Mundial Escoteira
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 10
+  conferido: true
+- tema: Realização de Assembleia Nacional Extraordinária para atualização dos princípios do Escotismo brasileiro
+  decisao: aprovada por unanimidade dos conselheiros titulares presentes a realização da Assembleia Extraordinária para discutir
+    a atualização dos princípios do Escotismo brasileiro em 12/09/2021
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 10
+  conferido: true
+- tema: Realização de Assembleia Nacional Extraordinária para apreciação da proposta de novo estatuto da UEB
+  decisao: aprovada por unanimidade dos conselheiros titulares presentes a reativação do processo estatuinte e a realização
+    da Assembleia Nacional Extraordinária no dia 09/10/2021 para deliberação sobre a nova proposta de Estatuto da UEB
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 12
+  conferido: true
+- tema: Realização de Assembleia Nacional Extraordinária virtual para inclusão no estatuto da possibilidade de assembleias
+    virtuais
+  decisao: aprovada por maioria de votos (10 a 4) a realização da Assembleia Nacional Extraordinária virtual para inclusão
+    no estatuto da UEB da possibilidade de assembleias virtuais, no mesmo dia da Assembleia Extraordinária que discutirá a
+    atualização dos princípios do Escotismo brasileiro
+  votacao: 10 a 4
+  pagina: 12
+  conferido: true
+- tema: Calendário de reuniões ordinárias do CAN para 2021
+  decisao: 'aprovado por unanimidade dos conselheiros titulares presentes o calendário de reuniões ordinárias do CAN para
+    2021: 102ª nos dias 14 e 15 de agosto, 103ª em 02 de outubro e 104ª nos dias 06 e 07 de novembro'
+  votacao: unanimidade dos conselheiros titulares presentes
+  pagina: 12
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos para delegação ao 14º Fórum Mundial Escoteiro de Jovens e à 42ª Conferência Mundial Escoteira
+  valor: 9 inscritos para 5 vagas na seleção geral, 2 vagas para RNJL com 1 inscrito
+  pagina: 10
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 89faed2567506f9f838a91bdbc43b258812d7bb9b6db25b06f658eb307fb08ee
+revisado: null

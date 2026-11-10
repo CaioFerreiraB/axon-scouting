@@ -1,0 +1,89 @@
+doc_key: ata47-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2005-04-21'
+  local: Florianópolis/SC
+deliberacoes:
+- tema: Alteração da Resolução 001/2004 sobre Medalha Tapir de Prata
+  decisao: A proposta foi aprovada por unanimidade e definida como Resolução 001/2005.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Concessão de Condecorações
+  decisao: 'Tapir de Prata: concedida à Maurício Moutinho da Silva e à José Ferreira Machado foi aprovada por unanimidade;
+    Medalha Tiradentes: concedida ao Grupo Escoteiro Mal. Rondon – 41/SP. Velho Lobo: concedida a Rubem Süffert.'
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Recurso na Ação Disciplinar contra João Alves dos Santos
+  decisao: decidido que deverá ser formalizado à Região Escoteira do Pará a manutenção da decisão anterior e o não acatamento
+    do recurso interposto.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução sobre atividades nacionais
+  decisao: A proposta foi aprovada por unanimidade e definida como Resolução 002/2005.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Eleição da Diretoria Executiva Nacional
+  decisao: 'O CAN ratifica a seguinte composição da Diretoria Executiva Nacional: Diretor Presidente: Paulo Salamuni, 1.º
+    Vice-Presidente: Carlos Frederico dos Santos e 2.º Vice-Presidente: Adir Barusso.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Rateio de despesas das reuniões do CAN
+  decisao: por consenso fica definido que as despesas serão sempre rateadas entre os 15 (quinze) membros titulares, ou seja,
+    os 15 (quinze) conselheiros sempre participarão do rateio correspondente às despesas de deslocamento, independentemente
+    de estarem, ou não, presentes e haverem, ou não, justificado a ausência.
+  votacao: consenso
+  pagina: 2
+  conferido: true
+- tema: Continuidade da Presidência e Vice-Presidência do CAN
+  decisao: Renato propõe a continuidade de Geraldino na Presidência. A sugestão é aceita e Geraldino, de imediato, indica
+    o nome de Marco Romeu para continuar na Vice-Presidência, que também é aceito.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Indicação dos Presidentes e composição das Comissões Estratégicas
+  decisao: 'Geraldino apresenta a seguinte proposta de composição: Comissão Nacional de Gestão Institucional – CNGI, Presidente:
+    Mário Henrique Peters Farinon e membros: Antônio César de Oliveira e Alessandro Vieira; Comissão Nacional de Gestão de
+    Adultos – CNGA, Presidente: Ênio Hideyuki Cojho e membros: Geraldino Ferreira Moreira e Hélio Borba Moratelli; Comissão
+    Nacional de Programa de Jovens – CNPJ, Presidente: Maria Terezinha Koneski Weiss e membros: Siágrio Felipe Pinheiro, Sérgio
+    Luís Franzner, Guilherme Augusto Klingelfuss, Christian André Dávalos e Fábio Rodrigo Conde; Comissão Nacional de Relações
+    Institucionais – CNRInst, Presidente: Marco Aurélio Romeu Fernandes e membro: Alessandro Vieira; Comissão Nacional de
+    Relações Internacionais – CNRI, Presidente: Oscar Victor Palmquist Arias e membros: Marco Aurelio de Mello Castrianni
+    e Luiz Salgado Klaes; Comissão Nacional de Crescimento – CNC, Presidente: Renato Eugênio de Lima e membros: Antônio César
+    de Oliveira, João Roberto A. Cunha, Luiz Salgado Klaes, Sérgio Luís Franzner e Marco Aurélio Romeu Fernandes; Rede Interamericana
+    de Recursos Humanos – Ênio Hideyuki Cojho, Geraldino Ferreira Moreira e Dennys Rodrigues Oliveira; Guias e Cartilhas -
+    Luiz César de Simas Horn, Maria Terezinha Koneski Weiss, Marcos Carvalho e Carmem Barreira; REME - Guilherme Augusto Klingelfuss,
+    Fernando Montserrat e Siágrio Felipe Pinheiro; Rede de Desenvolvimento Institucional - Marco Aurélio Romeu Fernandes,
+    Rubem Tadeu Cordeiro Perlingeiro. Rede de Jovens Líderes – Ricardo Stuber.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional
+  cargo: Diretor Presidente
+  eleito: Paulo Salamuni
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Executiva Nacional
+  cargo: 1.º Vice-Presidente
+  eleito: Carlos Frederico dos Santos
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Executiva Nacional
+  cargo: 2.º Vice-Presidente
+  eleito: Adir Barusso
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: c4e01cba784429cff5afe9ed1f95fdc28a1734c889a4e35b8c9461871eaafdd2
+revisado: null

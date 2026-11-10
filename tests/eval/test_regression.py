@@ -22,9 +22,11 @@ from axon_scouting.eval import FACTS_KEY
 ROOT = Path(__file__).resolve().parents[2]
 REGRESSION = ROOT / "eval" / "regression.yaml"
 ACERVO = ROOT / "eval" / "acervo.yaml"
+SINTESE = ROOT / "eval" / "sintese.yaml"
 CHUNKS = ROOT / "src" / "axon_scouting" / "data" / "index" / "chunks.jsonl"
 GROUPS = frozenset({"individual", "agregado", "comparativo", "normativo", "lista", "pessoa"})
 ACERVO_GROUPS = frozenset({"simples", "lista", "comparativo", "multidocumento", "normativo"})
+SINTESE_GROUPS = frozenset({"eleicoes", "numeros", "pauta", "locais"})
 SPLITS = frozenset({"desenvolvimento", "controle"})
 
 
@@ -123,4 +125,16 @@ def test_acervo_tem_controle_em_cada_grupo() -> None:
     items = yaml.safe_load(ACERVO.read_text(encoding="utf-8"))["items"]
     assert {item["extra"]["split"] for item in items} == SPLITS
     for group in ACERVO_GROUPS:
+        assert {item["extra"]["split"] for item in items if item["extra"]["group"] == group} == SPLITS, group
+
+
+def test_sintese_sem_problemas(texts: list[str]) -> None:
+    """Fase G (relatório "Diretoria Regional"): as perguntas de síntese, com os fatos das atas presentes no artefato."""
+    sintese = yaml.safe_load(SINTESE.read_text(encoding="utf-8"))
+    assert _problems(sintese, texts, SINTESE_GROUPS) == []
+
+
+def test_sintese_tem_controle_em_cada_grupo() -> None:
+    items = yaml.safe_load(SINTESE.read_text(encoding="utf-8"))["items"]
+    for group in SINTESE_GROUPS:
         assert {item["extra"]["split"] for item in items if item["extra"]["group"] == group} == SPLITS, group

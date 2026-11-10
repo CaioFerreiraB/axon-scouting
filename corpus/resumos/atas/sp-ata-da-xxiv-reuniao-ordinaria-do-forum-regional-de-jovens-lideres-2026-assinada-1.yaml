@@ -1,0 +1,187 @@
+doc_key: sp-ata-da-xxiv-reuniao-ordinaria-do-forum-regional-de-jovens-lideres-2026-assinada-1
+reuniao:
+  tipo: ordinaria
+  data: '2026-01-24'
+  local: Grande Oriente de São Paulo, situado à Rua São Joaquim, 457 - Bairro da Liberdade, São Paulo
+deliberacoes:
+- tema: Eleição da Mesa Diretora e Comissões Assessoras
+  decisao: 'foram eleitos por aclamação: para Presidente da Mesa, o jovem líder Leonardo Gobira de Macedo (GEAr Anhanguera
+    246º/SP); para Vice-Presidente, o jovem líder Vítor Alves Chuquer Zanetti Passagem (GEMar Carmo 11º/SP); para Secretário,
+    o jovem líder Rodrigo Monteiro (GE Kairós 513º/SP); para a Comissão de Escrutínio, o jovem líder Lucca Schroelder Scovini
+    (GEAr Jundiá 82º/SP); e para a Comissão de Assuntos Gerais, os jovens líderes: Ezequiel Camargo Martins (GE Empyreo 410º/SP),
+    Rafael Melis Rogéro (GE Ribeirão Preto 356º/SP) e Robert Gabriel de Sousa Santos (GE Baltazar Fernandes 171º/SP). Foram
+    eleitos Iris Trautvein Oliveira e Pedro de Queiróz Jorge para Comissão de Escrutínio após votação.'
+  votacao: aclamação e votação para Comissão de Escrutínio
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata do XXIII Fórum Regional de Jovens Líderes - SP
+  decisao: a Ata da XXIII Reunião Ordinária do Fórum Regional de Jovens Líderes - SP foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Relatório de Gestão do Núcleo Regional de Jovens Líderes 2025
+  decisao: NRJL-SP realizou mais de 15 ações ao longo do período. Despesa total de R$ 6.295,33, saldo final de R$ 5.204,67,
+    valor será usado para atividades até março de 2026
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Relatório de Gestão da Diretoria Jovem 2025
+  decisao: Destacou-se a participação da Diretoria Jovem em eventos e instâncias regionais e nacionais, atividades da Comissão
+    Mista - Representação Juvenil, Grupo de Trabalho do Curso de Novas Lideranças, alterações no Regulamento Regional e preparativos
+    para retomada das reuniões
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Eleição das sedes dos Encontros Regionais de Jovens Líderes 2026 e 2027
+  decisao: Cidade de Ubatuba aprovada por aclamação como sede do Encontro Regional de Jovens Líderes de 2026. Cidade de Ribeirão
+    Preto aprovada por aclamação como sede do Encontro Regional de Jovens Líderes de 2027
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Eleição de 03 delegados e 03 suplentes ao Fórum Nacional de Jovens Líderes
+  decisao: 'Delegados Titulares: Raissa Melis Rogéro, Maria Luiza Carvalho e Souza, Milena Gonçalves Leite. Delegados Suplentes:
+    Vítor Alves Chuquer Zanetti Passagem, Marcelo Bertoldo Judici, Rafael Melis Rogéro. Critério de desempate: prioridade
+    ao candidato mais novo'
+  votacao: votação via Google Forms
+  pagina: 6
+  conferido: true
+- tema: Eleição do Coordenador do Núcleo Regional de Jovens Líderes biênio 2026-2028
+  decisao: Raissa Melis Rogéro eleita Coordenadora do NRJL-SP com 26 votos, Jorge Pinheiro Kioroglo recebeu 1 voto, 11 abstenções
+  votacao: 26 votos a 1 com 11 abstenções
+  pagina: 7
+  conferido: true
+- tema: Deliberação sobre encaminhamentos à Assembleia Regional Escoteira e outras instâncias
+  decisao: Aprovada por aclamação a proposta de elaboração de Carta de Recomendação com comissão formada por Ezequiel Camargo
+    Martins, Giovanna Victoria de Souza Luz, Leonardo Gobira de Macedo, Marcelo Bertoldo Judici, Maria Luiza Carvalho e Souza,
+    Milena Gonçalves Leite, Rafael Melis Rogéro, Raissa Melis Rogéro e Pedro de Queiróz Jorge
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora
+  cargo: Presidente
+  eleito: Leonardo Gobira de Macedo (GEAr Anhanguera 246º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora
+  cargo: Vice-Presidente
+  eleito: Vítor Alves Chuquer Zanetti Passagem (GEMar Carmo 11º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora
+  cargo: Secretário
+  eleito: Rodrigo Monteiro (GE Kairós 513º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Lucca Schroelder Scovini (GEAr Jundiá 82º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Iris Trautvein Oliveira (GE Jaguares 532º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Pedro de Queiróz Jorge (GE Nove de Julho 25º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Assuntos Gerais
+  cargo: Membro
+  eleito: Ezequiel Camargo Martins (GE Empyreo 410º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Assuntos Gerais
+  cargo: Membro
+  eleito: Rafael Melis Rogéro (GE Ribeirão Preto 356º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Assuntos Gerais
+  cargo: Membro
+  eleito: Robert Gabriel de Sousa Santos (GE Baltazar Fernandes 171º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: Delegado Titular
+  eleito: Raissa Melis Rogéro (GE Ribeirão Preto 356º/SP)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: Delegado Titular
+  eleito: Maria Luiza Carvalho e Souza (GEAr Senta Pua 335º/SP)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: Delegado Titular
+  eleito: Milena Gonçalves Leite (GE Terra da Uva 514º/SP)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: Delegado Suplente 1º
+  eleito: Vítor Alves Chuquer Zanetti Passagem (GEMar Carmo 11º/SP)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: Delegado Suplente 2º
+  eleito: Marcelo Bertoldo Judici (GE Santo Antonio 203º/SP)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes
+  cargo: Delegado Suplente 3º
+  eleito: Rafael Melis Rogéro (GE Ribeirão Preto 356º/SP)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes
+  cargo: Coordenador
+  eleito: Raissa Melis Rogéro (GE Ribeirão Preto 356º/SP)
+  mandato: biênio 2026-2028
+  pagina: 7
+  conferido: true
+numeros:
+- o_que: Despesa do NRJL-SP em 2025
+  valor: R$ 6.295,33
+  pagina: 3
+  conferido: false
+- o_que: Saldo final do NRJL-SP para uso até março de 2026
+  valor: R$ 5.204,67
+  pagina: 4
+  conferido: false
+- o_que: Votos de Iris Trautvein Oliveira para Comissão de Escrutínio
+  valor: '11'
+  pagina: 2
+  conferido: true
+- o_que: Votos de Pedro de Queiróz Jorge para Comissão de Escrutínio
+  valor: '16'
+  pagina: 2
+  conferido: true
+- o_que: Votos para eleição de Coordenador do NRJL
+  valor: Raissa Melis Rogéro 26, Jorge Pinheiro Kioroglo 1, abstenções 11
+  pagina: 7
+  conferido: true
+- o_que: Votos para delegados ao FNJL
+  valor: Raissa Melis Rogéro 8, Maria Luiza Carvalho e Souza 5, Milena Gonçalves Leite 5, Vítor Alves Chuquer Zanetti Passagem
+    4, Rafael Melis Rogéro 2, Marcelo Bertoldo Judici 2
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 09d7c9d8062d6e2af07094f2cfff8f3a2d1880dbf3116d04941589fa3131d453
+revisado: null

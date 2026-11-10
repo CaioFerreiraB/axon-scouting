@@ -1,0 +1,100 @@
+doc_key: ata72-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2013-04-26'
+  local: Recife/Pernambuco
+deliberacoes:
+- tema: aprovação da agenda da reunião
+  decisao: aprovada a agenda da reunião apresentada pelo Ivan
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata anterior
+  decisao: Aprovação da ata anterior
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: aprovação do tema “Água – O mundo que queremos”
+  decisao: Aprovação do tema “Água – O mundo que queremos”
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: aprovação da resolução N.º 001/2013
+  decisao: Aprovação da resolução N.º 001/2013 que regulamenta os cursos técnicos da Modalidade do Mar, os distintivos de
+    adultos da Modalidade do Mar, as coordenações regionais de Escoteiros do Mar e dá sugestões para a padronização dos Grupos
+    Escoteiros da Modalidade do Mar
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: resolução da Política de Relações Internacionais
+  decisao: A resolução 02/2013 foi aprovada com a incorporação de algumas contribuições dos conselheiros
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: entrega de medalhas
+  decisao: foi realizada a entrega da medalha Cruz de São Jorge para Vitor Augusto Gay (RE/PR), Medalha Gratidão Ouro para
+    Felipe de Paulo (RE/RJ)
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: propostas do Grupo de Trabalho da Gestão Integrada
+  decisao: As propostas foram encaminhadas para o Conselho para análise
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: proposta de resolução sobre criação de troféu para Grupos Escoteiros
+  decisao: A proposta será analisada pelos conselheiros
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: vinculação do GT Escotismo e Comunidade Acadêmica à DEN
+  decisao: A proposta foi aceita pelo CAN e o GT concluiu seu trabalho
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: prestação de contas do V Jamboree Nacional
+  decisao: David apresenta aos conselheiros a prestação de contas do evento realizado em julho de 2012, na cidade do Rio de
+    Janeiro/RJ
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: local do VI Jamboree Nacional
+  decisao: A DEN optou em realizar o próximo Jamboree Nacional em Natal/RN
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: proposta de venda dos atuais trajes escoteiros
+  decisao: A DEN apresenta a proposta de venda dos atuais trajes escoteiros até encerrar o estoque e de utilização pelos Grupos
+    Escoteiros até julho/2015
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: apoio à candidatura de Ricardo Stuber ao Comitê Interamericano
+  decisao: O CAN aprova e referenda o nome do Ricardo Stuber como candidato representando a União dos Escoteiros do Brasil
+    nas próximas eleições do Comitê Interamericano
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: registro de voto de louvor para Grupo Escoteiro Georg Black
+  decisao: registrar em ata um “Voto de louvor” para o Grupo Escoteiro Georg Black, da Região Escoteira do Rio Grande do Sul,
+    pelos trabalhos desenvolvidos em parceria entre a Faculdade de Educação Física da SOGIPA
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Representante da Área Geográfica Sul
+  eleito: Sérgio Marangoni
+  mandato: ''
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: número da reunião ordinária do Conselho de Administração Nacional
+  valor: '72'
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: c663615afba3084b3f345c2775fd48b1162def3522a6a3fa1c2f8c1f9146779b
+revisado: null

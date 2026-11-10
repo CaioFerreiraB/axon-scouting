@@ -1,0 +1,74 @@
+doc_key: ata37-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2002-11-14'
+  local: Juiz de Fora / MG, Ritz Plaza Hotel
+deliberacoes:
+- tema: Núcleo Nacional de Jovens Líderes
+  decisao: Decidi-se que a proposta seja encaminhada por escrito para decisão final em fevereiro.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Núcleo Nacional de Jovens Líderes
+  decisao: Decide-se que o NNJL deva encaminhar convite a cada membro do CAN e eles decidem se querem ou não fazer parte.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Propostas de condecorações
+  decisao: A concessão foi aprovada.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Retificação do Relatório Anual da UEB 2000-2001
+  decisao: O CAN decide encaminhar o assunto à Assembléia na apresentação do Relatório Anual deste ano para esclarecimentos.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Acompanhamento orçamentário da UEB/LEN
+  decisao: O CAN determina que o EN solicite às Regiões que se encaminhem o mesmo para os GEs de sua circunscrição, evitando
+    assim esta despesa, transferindo-a, em menor escala, para as Regiões que fazem reuniões constantes com seus GEs.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Proposta orçamentária para 2003
+  decisao: A proposta orçamentária para 2003 foi aprovada com as sugestões dos membros do CAN.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: ABEI
+  decisao: O CAN decide que a UEB deverá verificar a possibilidade de ingressar com uma queixa-crime, ou abertura de inquérito
+    policial para levantar a situação.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Calendário de distribuição do Informativo Sempre Alerta
+  decisao: O Calendário é aprovado pelo CAN.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Eleição do presidente e vice do CAN
+  decisao: Assim, por aclamação, invertem-se as posições da presidência, sendo eleito como Presidente do Conselho de Administração
+    Nacional o Conselheiro Marcos Venício Mattos Chaves e para Vice-presidência o Conselheiro Rubem Tadeu Cordeiro Perlingeiro,
+    para o mandato de 01 de janeiro de 2003 a 31 de dezembro de 2003.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente
+  eleito: Marcos Venício Mattos Chaves
+  mandato: 01 de janeiro de 2003 a 31 de dezembro de 2003
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-presidente
+  eleito: Rubem Tadeu Cordeiro Perlingeiro
+  mandato: 01 de janeiro de 2003 a 31 de dezembro de 2003
+  pagina: 2
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 240d8731d2d4a3c48f08c2387ed6830cf6fc028d33a151a1a508d50cbd30d2d0
+revisado: null

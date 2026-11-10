@@ -1,0 +1,51 @@
+doc_key: sp-2018-08-19-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2018-08-19'
+  local: Universidade Federal de São Carlos – Campus São Carlos (Rodovia Washington Luís, km 235, SP-310, São Carlos/SP)
+deliberacoes:
+- tema: alteração de jurisdição de municípios entre Distritos Escoteiros
+  decisao: Gimirson 23DE propõe, em comum acordo com Carlos 19DE, que o município de Elias Fausto/SP passe da atual jurisdição
+    do 23º Distrito Escoteiro Abaeté para a do 19º Distrito Escoteiro Campinas, devido maior facilidade de deslocamento para
+    Campinas do que para Piracicaba e representantes do 19DE já estarem apoiando a abertura de nova UEL em Elias Fausto. Alteração
+    proposta referendada pelo CCR.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: alteração de jurisdição de municípios entre Distritos Escoteiros
+  decisao: Glauco 20DE informa, que devido a migração do Grupo Escoteiro Salto do Peixe 295/SP do 22º Distrito Escoteiro Sudoeste
+    Paulista para o 20º Distrito Escoteiro Sorocaba, conforme aprovado pela Diretoria Regional em junho/2018, Salto de Pirapora
+    passou da jurisdição do 22DE para o 20DE. Alteração referendada pelo CCR.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: alteração de jurisdição de municípios entre Distritos Escoteiros
+  decisao: Arnoldo 38DE propõe, em comum acordo com Fabricio 35DE, que os municípios de Cunha, Silvieiras, Areias, São José
+    do Barreiro, Arapeí e Bananal, passem da atual jurisdição do 35º Distrito Escoteiro Monteiro para a do 38º Distrito Escoteiro
+    Rio Paraíba do Sul. Alteração referendada pelo CCR.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: modelo de relatório de visita a UEL pela Comissão Distrital
+  decisao: Aprovada pela maioria a proposta do Rodrigo, com isso, definido o modelo de relatório de visita a UEL (anexo IV).
+    Aprovado também a proposta de avaliação de relatório de visita via formulário eletrônico, cujo link constará no final
+    do modelo do relatório de visita.
+  votacao: maioria
+  pagina: 5
+  conferido: true
+- tema: realização do Encontro/Diálogo itinerante de Programa Educativo de 25 de novembro de 2018
+  decisao: fica aprovado que o Encontro/Diálogo itinerante de Programa Educativo de 25 de novembro próximo irá atender apenas
+    os Distritos do ABC e da Baixada Santista. E serão articuladas pela Diretoria Regional de Programa Educativo, junto com
+    os Comissários dos Distritos da capital e Grande SP, duas datas no ínicio de 2019 para a realização de Encontros/Diálogos
+    itinerantes de Programa Educativo, de modo que atendam esses Distritos e possa ser concluído o diágnostico antes da Assembleia
+    Regional Escoteira 2019.
+  votacao: ''
+  pagina: 7
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d1eacfa0a6f92c7efee654f79aec82dc9847a1991ab5c2fea81097827e1c8e1a
+revisado: null

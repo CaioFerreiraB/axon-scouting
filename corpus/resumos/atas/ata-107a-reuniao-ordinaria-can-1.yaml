@@ -1,0 +1,74 @@
+doc_key: ata-107a-reuniao-ordinaria-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-04-21'
+  local: Universidade Técnica Federal do Paraná, na cidade de Curitiba
+deliberacoes:
+- tema: Remanejamento do saldo do Fundo de Projetos para o Fundo de Riscos
+  decisao: Remanejamento do saldo do Fundo de Projetos no final do exercício de 2021 para o Fundo de Riscos. Aprovado por
+    unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Remanejamento do superávit do orçamento 2021 para orçamento 2022
+  decisao: Remanejamento do superávit do orçamento do exercício de 2021 para ser utilizado como fluxo de caixa para o orçamento
+    de 2022. Aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Proposta de Resolução sobre comprovação de vacinação contra COVID-19
+  decisao: Proposta de Resolução sobre comprovação de vacinação contra COVID-19 para participação em atividades. Não aprovada,
+    sendo 6 votos favoráveis e 8 votos contrários.
+  votacao: 6 votos favoráveis e 8 votos contrários
+  pagina: 2
+  conferido: true
+- tema: Ata da 106ª Reunião Ordinária do CAN
+  decisao: 'Ata da sessão aberta da 106ª Reunião Ordinária do CAN realizada dia 02/04/2022: 13 votos a favor, 1 abstenção.'
+  votacao: 13 votos a favor, 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Alteração do Regulamento Interno do CAN - artigo 18
+  decisao: Aprovação da nova redação do artigo 18 do regulamento interno do CAN, com alteração do caput para 'deste' Conselho
+    e troca de 'o' por 'será'.
+  votacao: 9 votos a favor, 3 votos contra
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos favoráveis na votação da proposta de comprovação de vacinação contra COVID-19
+  valor: '6'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários na votação da proposta de comprovação de vacinação contra COVID-19
+  valor: '8'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da ata da 106ª Reunião Ordinária do CAN
+  valor: '13'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da ata da 106ª Reunião Ordinária do CAN
+  valor: '1'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da supressão do parágrafo 5º do artigo 18 do regulamento
+  valor: '3'
+  pagina: 4
+  conferido: false
+- o_que: votos contra a supressão do parágrafo 5º do artigo 18 do regulamento
+  valor: '9'
+  pagina: 4
+  conferido: false
+- o_que: votos a favor da alteração do artigo 18 do regulamento
+  valor: '9'
+  pagina: 4
+  conferido: false
+- o_que: votos contra a alteração do artigo 18 do regulamento
+  valor: '3'
+  pagina: 4
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: b403d4e8c95a3061a5cc4a644dfb0db79d09bafe92e9ba817dcdbd8fc42803bb
+revisado: null

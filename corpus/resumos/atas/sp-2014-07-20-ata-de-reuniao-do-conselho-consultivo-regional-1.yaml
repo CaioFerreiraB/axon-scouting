@@ -1,0 +1,77 @@
+doc_key: sp-2014-07-20-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2014-07-20'
+  local: sede do GE Tiradentes, Bauru/SP
+deliberacoes:
+- tema: alteração dos lenços dos comissários distritais
+  decisao: procedeu a alteração dos novos lenços dos comissários distritais, que serão o mesmo da diretoria regional
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: destinação dos distintivos e certificados
+  decisao: os Distintivos especiais e fechamentos de Nível Básico irão direto para as Unidades Locais, e os certificados de
+    Nível Avançado irão para os Comissários Distritais
+  votacao: consultado o conselho decidiu
+  pagina: 1
+  conferido: true
+- tema: orçamento compartilhado e repasse para distritos
+  decisao: proposta do orçamento compartilhado (repasse de valores para os distritos escoteiros, proporcional ao tamanho dos
+    distritos), estabelecendo regras sobre a recepção e prestação das contas dos distritos, com padronização de regras e documentos...
+    proposta sendo aprovada por unanimidade pelo Conselho... repasse dos valores fosse efetuado para a figura do Comissário
+    Distrital sendo aprovado
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: criação de equipe de formação em cada distrito
+  decisao: importância de criar uma equipe de formação em cada distrito, para aliviar a carga da equipe regional de formação
+    com a possibilidade de a Região Escoteira ajudar nesta criação nos distritos (financeiramente) proporcionando a estrutura
+    necessária
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: atualização dos dados cadastrais e calendário regional
+  decisao: diretoria regional pediu para ser enviado os calendários distritais para atualização do calendário único distrital.
+    Ficou decidido que os comissários repassarão calendários 3 vezes por ano
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: criação de subgrupos para elaboração de documentos sobre distritos
+  decisao: colocado em votação foi aprovado a criação de subgrupos que escrevem cada capitulo, sendo 6 de orientação e 9 regulatórios,
+    sendo que os comissários e adjuntos destes grupos serão responsáveis pela apresentação do material... Ficou decidido que
+    a compilação dos itens regulatórios serão realizados por uma única equipe
+  votacao: aprovado
+  pagina: 2
+  conferido: true
+- tema: composição das comissões de trabalho
+  decisao: 'Decidiu-se que as comissões seriam assim compostas: - Coordenação Geral: Kleber / Anderson - Regulatório: Simões
+    / Lucas Oya / Mitsuo - Visitando GE / Fomentar formação: Evandro / Vania / Erenita / Rose - Fomentar UELs na comunidade
+    / relações institucionais: Paulo Ferreira / João'
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: atualização estatutária nacional a ser discutida regionalmente
+  decisao: assunto (atualização estatutária) da Nacional que não foi discutido pelo CAN e que devem ser discutido no conselho
+    regional para ser regulamentado
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: compartilhamento de ideias e assuntos interessantes dos distritos
+  decisao: ideias e assuntos interessantes já praticados nos distritos deveriam ser enviados para a lista do conselho e assim
+    compartilhados
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: respaldo dos comissários para loja virtual da região
+  decisao: loja virtual da região de são Paulo, pedindo respaldo dos comissários (apenas comissários) sobre o site com criticas
+    positivas
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: c6fd357370a546820f4d8a56f42b932e03a6c30de228fbbc395e6e386b543b5e
+revisado: null

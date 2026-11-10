@@ -1,0 +1,97 @@
+doc_key: ata-2013-xvii-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2013-04-25'
+  local: Mar Hotel, Rua Barão de Souza Leão, 451 Boa Viagem, Recife - Pernambuco
+deliberacoes:
+- tema: aprovação da ata do XVII Fórum Nacional de Jovens Líderes
+  decisao: Com vinte e um votos a favor e duas abstenções, a ata foi aprovada.
+  votacao: 21 votos a favor, 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: alteração na estrutura e data do Encontro Nacional de Jovens Líderes (ENJL) 2013
+  decisao: Com dezenove votos a favor, três contra e duas abstenções, a alteração é aprovada.
+  votacao: 19 votos a favor, 3 contra, 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: escolha da cidade sede do ENJL 2013
+  decisao: Lucas Machado (NN) encaminha para aclamação a escolha da cidade de Florianópolis como sede do ENJL 2013, mediante
+    condições aprovadas pelo Fórum.
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: aprovação do documento Missão, Visão e Valores
+  decisao: O documento foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: aprovação das alterações da Carta de Natal/RN por capítulos
+  decisao: Com vinte e seis votos a favor e uma abstenção, as alterações são aprovadas.
+  votacao: 26 votos a favor, 1 abstenção
+  pagina: 5
+  conferido: true
+- tema: implantação da palavra “principalmente” no quinto item da recomendação da Carta de Natal/RN
+  decisao: Com vinte votos a favor, dois contra e cinco abstenções, a implantação foi aprovada.
+  votacao: 20 votos a favor, 2 contra, 5 abstenções
+  pagina: 5
+  conferido: true
+- tema: aprovação das alterações do GT da Carta de Natal/RN
+  decisao: Com vinte e três votos a favor, um contra e três abstenções, a alteração foi aprovada.
+  votacao: 23 votos a favor, 1 contra, 3 abstenções
+  pagina: 5
+  conferido: true
+- tema: aprovação das alterações do GT da Carta de Natal/RN sobre Estrutura e Gestão da UEB
+  decisao: A alteração é aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: aprovação da Carta de Natal/RN como recomendação à Assembleia Nacional
+  decisao: Sendo está aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+eleicoes:
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: comunicadora
+  eleito: Betina Bruel (PR)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: comunicador suplente
+  eleito: Eric Amaro (PE)
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: coordenadora
+  eleito: Mariana Bastos (RJ)
+  mandato: ''
+  pagina: 6
+  conferido: true
+numeros:
+- o_que: participantes do XVIII Fórum Nacional de Jovens Líderes
+  valor: 56 jovens e 2 observadores
+  pagina: 1
+  conferido: true
+- o_que: delegados registrados na primeira sessão
+  valor: 23 delegados
+  pagina: 3
+  conferido: true
+- o_que: delegados registrados após cadastro adicional
+  valor: 24 delegados
+  pagina: 3
+  conferido: true
+- o_que: delegados registrados após novo cadastro
+  valor: 25 delegados
+  pagina: 3
+  conferido: true
+- o_que: delegados registrados após mais cadastros
+  valor: 27 delegados
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 69dc0a94fdb8d567467ee260a3075177b757d4b32afa86eecfe25fde0c43a860
+revisado: null

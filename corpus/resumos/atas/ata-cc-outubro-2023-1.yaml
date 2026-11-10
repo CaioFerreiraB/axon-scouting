@@ -1,0 +1,57 @@
+doc_key: ata-cc-outubro-2023-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-10-21'
+  local: Escoteiros do DF em Brasília – DF
+deliberacoes:
+- tema: Eleição do Presidente da Mesa
+  decisao: RODRIGO RODRIGUES é eleito unanimemente como o novo Presidente da Mesa.
+  votacao: unanimemente
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: A ata é então aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Criação do Grupo de Trabalho de Associações Paralelas
+  decisao: É aprovada por unanimidade a criação do Grupo de Trabalho de Associações Paralelas, e os membros do grupo são definidos,
+    compreendendo a DEN, ALEX (Coordenação), RODRIGUINHO, NARCIZO, HILTON, JOSÉ CAETANO, PAULO JURACY, ROSANO, MARCELO, AMBRÓSIO
+    e ANDRÉ LEONARDO.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Revisão da Resolução CAN 04/2016
+  decisao: Sugestão aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Atualização da Resolução CAN 01/21 sobre Castorismo
+  decisao: Sugestão de agradecimento formal aos envolvidos no Grupo de Trabalho Estudos sobre Castorismo e comunicação de
+    futuros fóruns e estudos sobre o tema, com participação dos envolvidos, conforme proposição do Presidente da DEN.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Criação do Comitê do Paxtu para melhorias no sistema
+  decisao: Será elaborado um Comitê do Paxtu para trabalhar em melhorias no sistema, e a partir desta reunião é estabelecido
+    o prazo de 10 dias para as Regiões Escoteiras indicarem voluntários para o comitê.
+  votacao: aprovada por todos
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Mesa do Conselho Consultivo
+  cargo: Presidente da Mesa
+  eleito: RODRIGO RODRIGUES
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: Inscritos no Jamboree do Centenário
+  valor: '1.533'
+  pagina: 4
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8379d9ce47d019118d3ddfd6b610e6e8e3b63168adbfb0071bf977ff8c8a5dcc
+revisado: null

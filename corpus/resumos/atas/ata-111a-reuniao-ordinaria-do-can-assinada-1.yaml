@@ -1,0 +1,74 @@
+doc_key: ata-111a-reuniao-ordinaria-do-can-assinada-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-11-05'
+  local: Palácio dos Bandeirantes, São Paulo – SP
+deliberacoes:
+- tema: Ata da 110ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 110ª Reunião Ordinária do Conselho de Administração Nacional, realizada no dia 08 de outubro
+    de 2022. Aprovada com 10 votos a favor (ALDENISE, CLAUCIO, DANIELA, DAVID, ILKA, LINDOMAR, RAFAEL, RENATO, ROBSON E SARAH),
+    3 abstenções (NETO, DAYANNA E LAURA), 1 abstenção por falta de pronunciamento (MAGU).
+  votacao: 10 votos a favor, 3 abstenções, 1 abstenção por falta de pronunciamento
+  pagina: 2
+  conferido: true
+- tema: Agenda provisória da 111ª Reunião Ordinária do CAN
+  decisao: SARAH coloca em deliberação a agenda provisória com adição dos dois assuntos e por unanimidade às 08h29min é aprovada
+    como agenda definitiva da 111ª Reunião Ordinária do CAN.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Proposta Orçamentária 2023 do Escritório Nacional
+  decisao: SARAH coloca em deliberação a Proposta Orçamentária 2023 do Escritório Nacional com essa modificação, R$5.000,00
+    para a Rede Nacional de Jovens Líderes e se mantém R$2.000,00 na área Internacional e a DEN fará o estudo da questão da
+    emissão do passaporte. Dessa forma, aprovado por unanimidade o orçamento do EM 2023.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: Proposta Orçamentária 2023 da Loja Escoteira Nacional
+  decisao: SARAH coloca em deliberação a Proposta Orçamentária 2023 da Loja Escoteira Nacional na qual é aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: Resolução sobre a Contribuição Associativa para 2023
+  decisao: SARAH coloca em deliberação a alteração do texto na Resolução e por unanimidade a alteração é reprovada. Dessa
+    maneira coloca em deliberação a Resolução com encaminhamento ao GTCA para reflexão e por unanimidade às 11h24min a Resolução
+    07/2022 sobre a Contribuição Associativa para 2023 é aprovada.
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+- tema: Atualização da Resolução do Regime Disciplinar da UEB
+  decisao: Às 15h24min SARAH coloca em deliberação a atualização da Resolução 03/2008, por unanimidade a Resolução 08/2022
+    na qual “Altera o Regime Disciplinar da União dos Escoteiros do Brasil e revoga as disposições anteriores” é aprovada
+    por unanimidade.
+  votacao: unanimidade
+  pagina: 13
+  conferido: true
+- tema: Alteração do artigo 3º da Resolução CAN 09/2021 sobre Sistema de Participação Associativa
+  decisao: Às 15h53min, SARAH coloca em deliberação a Resolução 09/2022 na qual Altera o artigo 3º da Resolução CAN 09/2021
+    que institui o Sistema de Participação Associativa do Conselho de Administração Nacional, por unanimidade é aprovada.
+  votacao: unanimidade
+  pagina: 14
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: associados ativos na instituição
+  valor: '83.028'
+  pagina: 16
+  conferido: false
+- o_que: previsão de receitas para 2023
+  valor: R$5.779.006,00
+  pagina: 3
+  conferido: false
+- o_que: previsão do resultado comercial da Loja Escoteira Nacional para 2023
+  valor: R$2.032.93,00
+  pagina: 4
+  conferido: false
+- o_que: previsão de associados pagantes para 2023
+  valor: 85,5 mil
+  pagina: 3
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d9cf696adf1e6a0251bf70e06f3f9d446f408e9ee04a022163bd5a47624465c2
+revisado: null

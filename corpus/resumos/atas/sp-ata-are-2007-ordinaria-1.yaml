@@ -1,0 +1,210 @@
+doc_key: sp-ata-are-2007-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2007-09-22'
+  local: Faculdade de Ciências Médicas — UNICAMP, Avenida Albert S itária “Zeferino Vaz”, Distrito de Barão Geraldo, Campinas
+    - São Paulo
+deliberacoes:
+- tema: eleição da mesa diretora da assembleia
+  decisao: Por aclamação, a chefe Carol foi eleita para presidir a Assembléia; Erick Fernando Alves — 112 votos; Carlos Eugenio
+    Bacos — 103 votos. Para a eleição do segundo Vice-Presidente, o chefe Bacos retirou sua candidatura em favor do chefe
+    José Roberto Goldschmitt. Por aclamação o chefe Goldschmitt foi eleito.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata da assembleia anterior
+  decisao: O documento em questão foi aprovado por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: prestação de contas do exercício de 2006
+  decisao: A prestação de contas do exercício 2006 foi então aprovada por 125 votos a favor, 38 votos contra e 18 abstenções.
+  votacao: 125 votos a favor, 38 votos contra e 18 abstenções
+  pagina: 2
+  conferido: true
+- tema: aumento da taxa de registro para 2008
+  decisao: O aumento de valores foi aprovado com 190 votos à favor, 38 votos contra e 7 abstenções.
+  votacao: 190 votos à favor, 38 votos contra e 7 abstenções
+  pagina: 3
+  conferido: true
+- tema: valor da taxa de registro para 2008
+  decisao: Aprovado pela Assembléia, o valor da taxa de registro ficou estipulado em R$ 16,00 até 31 de março, sendo majorado
+    em 1 real por mês até o mês de julho.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: número referência de registros para orçamento 2008
+  decisao: Colocado em votação, o número referência de 16.700 registros foi aprovado com 166 votos a favor, 25 votos contra
+    e 23 abstenções.
+  votacao: 166 votos a favor, 25 votos contra e 23 abstenções
+  pagina: 4
+  conferido: true
+- tema: reabertura da mesa de credenciamento por mais 15 minutos
+  decisao: A reabertura da mesa de credenciamento foi aprovada pela Assembléia por 131 votos a favor; 82 votos contra e 3
+    abstenções.
+  votacao: 131 votos a favor; 82 votos contra e 3 abstenções
+  pagina: 5
+  conferido: true
+- tema: revalidação da aprovação da venda do terreno da UEB-SP
+  decisao: Com um total de 108 votos a favor e 1 abstenção, a aprovação da venda do terreno acima descrito foi revalidada
+    pela Assembléia por maioria absoluta.
+  votacao: 108 votos a favor e 1 abstenção
+  pagina: 6
+  conferido: true
+- tema: isencao de taxa em eventos para sócios-carentes
+  decisao: Com 84 votos a favor a isenção de taxa em eventos vai ser recomendação, contra 61 votos para que seja uma regra
+    e 7 abstenções.
+  votacao: 84 votos a favor, 61 contra e 7 abstenções
+  pagina: 7
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia
+  cargo: Presidente
+  eleito: Maria Carolina Delbin
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Primeiro Vice-Presidente
+  eleito: Erick Fernando Alves
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Segundo Vice-Presidente
+  eleito: José Roberto Goldschmidt
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Primeiro Secretário
+  eleito: Adalberto Fabiano Gobato
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Segunda Secretária
+  eleito: Nancy de Araujo Teixeira
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Membro Titular
+  eleito: Leandro Luchiari Verrone
+  mandato: 2008 a 2010
+  pagina: 8
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Membro Suplente
+  eleito: Antenor Aparecido Stabile
+  mandato: 2008 a 2010
+  pagina: 8
+  conferido: true
+- orgao: Candidato ao Conselho de Administração Nacional
+  cargo: Candidato eleito
+  eleito: Geraldino Ferreira Moreira
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegada
+  eleito: Carla Barbosa de Oliveira Neves
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegada
+  eleito: Francisca de Souza Carrer
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Marco Aurélio do Monte Vanderley
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Alexandre Banchi
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegada
+  eleito: Ana Rita M. Cunha
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Amauri Benedito Hullman
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Toshio Kawakami
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegada
+  eleito: Eva Alice Gonçalves
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegada
+  eleito: Ilda Okamura Pallamin
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegada
+  eleito: Rosemary Peres Moita
+  mandato: ''
+  pagina: 7
+  conferido: true
+numeros:
+- o_que: participantes inscritos na assembleia
+  valor: '434'
+  pagina: 6
+  conferido: true
+- o_que: delegados presentes
+  valor: '303'
+  pagina: 6
+  conferido: true
+- o_que: delegados credenciados
+  valor: '303'
+  pagina: 6
+  conferido: true
+- o_que: votos para vice-presidente da mesa
+  valor: Erick Fernando Alves — 112 votos; Carlos Eugenio Bacos — 103 votos
+  pagina: 1
+  conferido: true
+- o_que: votos para aumento da taxa de registro para 2008
+  valor: 190 votos à favor, 38 votos contra e 7 abstenções
+  pagina: 3
+  conferido: true
+- o_que: votos para número referência de registros para orçamento 2008
+  valor: 166 votos a favor, 25 votos contra e 23 abstenções
+  pagina: 4
+  conferido: true
+- o_que: votos para reabertura da mesa de credenciamento
+  valor: 131 votos a favor; 82 votos contra e 3 abstenções
+  pagina: 5
+  conferido: true
+- o_que: votos para revalidação da venda do terreno da UEB-SP
+  valor: 108 votos a favor e 1 abstenção
+  pagina: 6
+  conferido: true
+- o_que: votos sobre isenção de taxa em eventos para sócios-carentes
+  valor: 84 votos a favor, 61 contra e 7 abstenções
+  pagina: 7
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: c39cd2a6e01e14562c80ccb17accde745cef2e25d7217fb8aa47f09c8c6f52c0
+revisado: null

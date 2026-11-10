@@ -1,0 +1,220 @@
+doc_key: sp-ata-are-2015-extraordinaria-1
+reuniao:
+  tipo: extraordinaria
+  data: '2015-03-14'
+  local: Instituto Tecnológico de Aeronáutica (ITA), Praça Marechal Eduardo Gomes, nº. 50, Vila das Acácias, São José dos
+    Campos, SP
+deliberacoes:
+- tema: Eleição da Mesa Diretora da Assembleia
+  decisao: o chefe Carlos Eugênio Bakos assumiu o comando dos trabalhos após aclamação pelo plenário; chefe Marco Aurélio
+    de Mello Castrianni eleito 1º Vice-presidente com 157 votos; chefe Rafael Teixeira Nunes eleito 2º Vice-presidente por
+    aclamação; Fábio Sola Aro eleito 1º Secretário com 171 votos; chefe João Carlos Valentim Veiga Junior eleito 2º Secretário
+    por aclamação
+  votacao: aclamação e votos nominais
+  pagina: 2
+  conferido: true
+- tema: Eleição das Comissões Assessoras da Assembleia
+  decisao: Comissão de Escrutínio composta por Eduardo Luiz Fonseca, Raphael Tadeu Raiza, Frederico Leal Costa, Félix Vieira
+    Varejão Filho, Carlos Nunes e João Roberto da Fonseca eleita por aclamação; Comissão de Credenciamento composta por Vilma
+    Pietropoli Morais, Ana Paula Araujo e Marylane Sevo Timoszczuk eleita por aclamação; Comissão Eleitoral composta por Marcos
+    Antonio de Camargo, José Eduardo Biffe, Renata Helena Manzke, Leandro Martins dos Santos e Juliano Ferreira Arcuri eleita
+    por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Votação das alterações do Estatuto da UEB-SP
+  decisao: Extinção do cargo de Embaixadores Regionais aprovada por unanimidade; alteração do inciso X do §1º do artigo 13
+    aprovada por 312 votos a favor e 1 contra; alteração do artigo 12 para convocação por publicação no site e envio por meios
+    eletrônicos aprovada por 299 votos a favor, 4 contra e 2 abstenções; supressão da expressão “dos Campos Escolas Regionais”
+    aprovada por unanimidade; substituição da função de Diretor Comercial pela de Diretor de Relações Institucionais aprovada
+    por maioria com 2 abstenções; alteração do artigo 19 para que Comissário Distrital seja registrado em uma UEL do mesmo
+    Distrito aprovada por maioria com 12 abstenções; alteração do §2º do artigo 19 aprovada por unanimidade
+  votacao: votos nominais e maioria
+  pagina: 3
+  conferido: true
+- tema: Votação das alterações do Regulamento da UEB-SP
+  decisao: Alterações aprovadas em bloco por maioria com 2 abstenções; alteração do artigo 41 rejeitada com 217 votos contrários,
+    16 favoráveis e 5 abstenções; inclusão do cargo de Coordenador Distrital de Crescimento e Expansão aprovada por 287 votos
+    a favor e 100 contra; redação do artigo 52 sobre Coordenador Distrital de Comunicação aprovada por 264 votos a favor,
+    5 contra e 16 abstenções
+  votacao: votos nominais e maioria
+  pagina: 5
+  conferido: true
+- tema: Proposta de que o Distrito que sediar a Assembleia assuma ônus e bônus
+  decisao: Proposta aprovada por unanimidade para ser levada ao Conselho Consultivo Regional para análise futura
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia
+  cargo: Presidente da Assembleia
+  eleito: Carlos Eugênio Bakos
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Vice-presidente
+  eleito: Marco Aurélio de Mello Castrianni
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Vice-presidente
+  eleito: Rafael Teixeira Nunes
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Secretário
+  eleito: Fábio Sola Aro
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Secretário
+  eleito: João Carlos Valentim Veiga Junior
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio da Assembleia
+  cargo: Membro
+  eleito: Eduardo Luiz Fonseca
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio da Assembleia
+  cargo: Membro
+  eleito: Raphael Tadeu Raiza
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio da Assembleia
+  cargo: Membro
+  eleito: Frederico Leal Costa
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio da Assembleia
+  cargo: Membro
+  eleito: Félix Vieira Varejão Filho
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio da Assembleia
+  cargo: Membro
+  eleito: Carlos Nunes
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio da Assembleia
+  cargo: Membro
+  eleito: João Roberto da Fonseca
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento da Assembleia
+  cargo: Membro
+  eleito: Vilma Pietropoli Morais
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento da Assembleia
+  cargo: Membro
+  eleito: Ana Paula Araujo
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento da Assembleia
+  cargo: Membro
+  eleito: Marylane Sevo Timoszczuk
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão Eleitoral da Assembleia
+  cargo: Membro
+  eleito: Marcos Antonio de Camargo
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Eleitoral da Assembleia
+  cargo: Membro
+  eleito: José Eduardo Biffe
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Eleitoral da Assembleia
+  cargo: Membro
+  eleito: Renata Helena Manzke
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Eleitoral da Assembleia
+  cargo: Membro
+  eleito: Leandro Martins dos Santos
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Eleitoral da Assembleia
+  cargo: Membro
+  eleito: Juliano Ferreira Arcuri
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: Votos para 1º Vice-presidente
+  valor: 157 votos para chefe Marco Aurélio de Mello Castrianni
+  pagina: 2
+  conferido: true
+- o_que: Votos para 1º Vice-presidente
+  valor: 79 votos para chefe Rafael Nunes
+  pagina: 2
+  conferido: true
+- o_que: Votos para 1º Vice-presidente
+  valor: 62 votos para chefe Marcos Richetto
+  pagina: 2
+  conferido: true
+- o_que: Votos para 1º Secretário
+  valor: 124 votos para Ewerton
+  pagina: 2
+  conferido: true
+- o_que: Votos para 1º Secretário
+  valor: 171 votos para Fábio Sola Aro
+  pagina: 2
+  conferido: true
+- o_que: Votos para alteração do inciso X do §1º do artigo 13
+  valor: 312 votos a favor, 1 contra
+  pagina: 3
+  conferido: true
+- o_que: Votos para alteração do artigo 12
+  valor: 299 votos a favor, 4 contra, 2 abstenções
+  pagina: 3
+  conferido: true
+- o_que: Votos para alteração do §5º do artigo 13
+  valor: maioria com 2 abstenções
+  pagina: 3
+  conferido: true
+- o_que: Votos para alteração do artigo 19 (termo vinculado para registrado)
+  valor: maioria com 12 abstenções
+  pagina: 4
+  conferido: true
+- o_que: Votos para aprovação das alterações do Regulamento em bloco
+  valor: maioria com 2 abstenções
+  pagina: 5
+  conferido: true
+- o_que: Votos para rejeição da alteração do artigo 41
+  valor: 217 votos contrários, 16 favoráveis, 5 abstenções
+  pagina: 6
+  conferido: true
+- o_que: Votos para inclusão do cargo de Coordenador Distrital de Crescimento e Expansão
+  valor: 287 votos a favor, 100 contra
+  pagina: 7
+  conferido: true
+- o_que: Votos para redação do artigo 52 sobre Coordenador Distrital de Comunicação
+  valor: 264 votos a favor, 5 contra, 16 abstenções
+  pagina: 9
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 1ceb4220366f43b47bc3ef6424421649e426ef1e323d3d4552ca6396a487f0dd
+revisado: null

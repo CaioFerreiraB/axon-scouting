@@ -1,0 +1,56 @@
+doc_key: sp-2015-03-01-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-03-01'
+  local: sede do 7º BCPI, Sorocaba/SP
+deliberacoes:
+- tema: publicação dos documentos da Região
+  decisao: Colocado em votação pelo chefe Jabs foi aprovado a publicação via internet dos documentos.
+  votacao: aprovado
+  pagina: 2
+  conferido: true
+- tema: alterações do Estatuto Regional
+  decisao: Sem mais alterações observadas é colocado em votação, sendo aprovadas as propostas.
+  votacao: aprovadas
+  pagina: 2
+  conferido: true
+- tema: data da próxima reunião do Conselho Consultivo
+  decisao: Efetuado uma votação foi escolhida a data 02 de agosto pela maioria do Conselho.
+  votacao: maioria
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: presença dos Diretores Regionais
+  valor: Antônio Lívio, Jabs Costa e Roberlei Beneduzzi
+  pagina: 1
+  conferido: true
+- o_que: presença do Secretário Regional
+  valor: Thiago Sampaio
+  pagina: 1
+  conferido: true
+- o_que: presença do Diretor Adjunto de Comunicação e Marketing
+  valor: Michael Oliveira
+  pagina: 1
+  conferido: true
+- o_que: presença do Consultor Jurídico
+  valor: Ronaldo Engracia
+  pagina: 1
+  conferido: true
+- o_que: presença dos Comissários Distritais
+  valor: Bruna Duarte do 18º Distrito Bragança Paulista; Rosemary Peres Motta de Oliveira do 19º Distrito Campinas; Vicente
+    Vasconcelos do 7º Distrito Guarulhos; Maria Toshiko Yamawaki do 8º Distrito Butantã; Mariluce Maia do 1º Distrito São
+    Paulo Centro; João Roberto da Fonseca do 20º Distrito Sorocaba; Antonio Carlos Barijan do 22º Distrito Itapetininga; Antonio
+    Caetano Simões do 25º Distrito Bauru; Joaquim Tadeu de Oliveira do 17º Distrito Santo Amaro; Sergio Ferreira Teijeira
+    do 13º Distrito Costa da Mata Atlântica; Tais Cardoso do Amaral do 33º Distrito Litoral Norte; Lucas Oya do 35º Distrito
+    Monteiro Lobato; Rodrigo Moreira do 5º Distrito Zona Norte da Capital; Evandro Oliveira do 6º Distrito Parque do Carmo;
+    Silvio Augusto Gaspar e seu adjunto Alcides Antonio do 29º Distrito Ribeirão Preto; Ana Maria Alves do 4º Distrito Aricanduva;
+    Kleber Svidzinski do 27º Distrito Impisa; Jaquilene de Lima Luz do 12º Distrito Santo André; Anderson Condrasisen do 11º
+    Distrito São Caetano do Sul; Filipe Pereira Bassetto do 3º Distrito São Paulo de Piratininga
+  pagina: 1
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 6280a766915944a8b4b22e2a176f88d401d94b8b11440f9ea1c850579947db57
+revisado: null

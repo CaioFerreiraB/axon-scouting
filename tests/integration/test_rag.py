@@ -199,7 +199,12 @@ def test_pergunta_de_lista_traz_as_fichas_do_acervo_antes_dos_trechos(montar: An
         for r in plataforma.trace.trace(payload["x_axon"]["request_id"]).records
         if r.type == "tool_call"
     ]
-    assert sorted(chamadas) == ["scouting.list_documents", "scouting.list_units", "scouting.search_docs"]
+    assert sorted(chamadas) == [
+        "scouting.list_documents",
+        "scouting.list_units",
+        "scouting.search_docs",
+        "scouting.search_summaries",
+    ]
 
 
 def test_no_open_webui_cada_citacao_vira_uma_fonte_que_abre_o_original(montar: Any) -> None:

@@ -1,0 +1,432 @@
+doc_key: sp-ata-are-2003-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2003-09-27'
+  local: Rua Bernardino de Campos, 254, no Centro, em Santo André-SP
+deliberacoes:
+- tema: Composição da mesa diretora e comissões
+  decisao: Os mesmos foram eleitos por aclamação. Marco Aurelio de Mello Castrianni assumiu a presidência da Assembléia Regional
+    e convidou as seguintes pessoas para a composição da mesa diretora dos trabalhos... As comissões e o nome da secretária
+    da reunião foram aprovados por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da Assembléia Regional anterior
+  decisao: Nada havendo a considerar, a ata foi aprovada por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação das contas do exercício de 2002
+  decisao: O Presidente da Assembléia colocou em discussão as contas do exercício 2002. Não havendo manifestação, procedeu-se
+    à votação e foram aprovadas por aclamação.
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Aprovação do orçamento para 2004
+  decisao: O Presidente da Assembléia colocou em discussão o Orçamento para 2004, Não havendo manifestação, procedeu-se à
+    votação, tendo sido aprovado por aclamação.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Eleição da Diretoria Regional
+  decisao: O Chefe Ribeiro colocou em votação a chapa única apresentada para a diretoria, que foi eleita por aclamação.
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Inclusão de mais dois delegados no credenciamento
+  decisao: A inclusão de mais dois delegados foi aprovada pelo plenário.
+  votacao: ''
+  pagina: 6
+  conferido: true
+- tema: Manutenção da regra de inscrição de delegados até 3 horas antes da votação
+  decisao: 'O Presidente da Assembléia colocou o caso em votação e a Comissão de Escrutínio contabilizou os seguintes votos:
+    manter a decisão da mesa de cumprir a regra, que as inscrições sejam feitas até 3 (três) horas antes do início da sessão
+    de votação: 272 votos; contra a decisão da mesa: 17 votos; e abstenção: 9 votos.'
+  votacao: 272 votos a favor, 17 contra, 9 abstenções
+  pagina: 6
+  conferido: true
+- tema: Encaminhamento de assuntos gerais para órgãos competentes
+  decisao: Foram encaminhados aos órgãos competentes para apreciação diversos assuntos listados, como regulamentação da Estrela
+    de Atividade, padronização do modelo da saia padrão, royalties para comercialização de distintivos, entre outros.
+  votacao: ''
+  pagina: 8
+  conferido: true
+- tema: Escolha da cidade sede da próxima Assembléia Regional (2004)
+  decisao: 'Após votação, a Comissão de Escrutínio apurou os seguinte votos: Águas de São Pedro com 139 votos; Vale do Paraíba
+    com 39 votos, Espírito Santo do Pinhal e Guarulhos com 12 votos.'
+  votacao: 139 votos a favor de Águas de São Pedro
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Assembléia Regional
+  cargo: Presidente da Assembléia Regional
+  eleito: Marco Aurelio de Mello Castrianni
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Assembléia Regional
+  cargo: Vice-Presidente da Assembléia Regional
+  eleito: Antonio Carlos Ribeiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Presidente
+  eleito: Toshio Kawakami
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Vice-Presidente
+  eleito: Antonio Lívio Abraços Jorge
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Administrativo
+  eleito: Silvio Yoshiro Miyazaki
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Administrativo Adjunto
+  eleito: Carlos Alberto Guimarães Battisti
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Financeiro
+  eleito: João Floriano
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Comercial
+  eleito: Julio César Cruz
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor de Gestão Adultos
+  eleito: Ênio Hideyuki Cohjo
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Adjunto de Gestão de Adultos
+  eleito: Mario César Guimarães Battisti
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor de Programa de Jovens
+  eleito: Gabriel de Souza Domingues
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Adjunto de Programa de Jovens
+  eleito: Fernando Braga MonteSerrat
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor de Relações Internas
+  eleito: Marcos Venício Mattos Chaves
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretores Adjuntos
+  eleito: Amauri Benedito Hulmann e Geraldino Ferreira Moreira
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor de Crescimento
+  eleito: Marco Aurelio de Mello Castrianni
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor de Informática
+  eleito: Eduardo Fornaro
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor de Comunicação e Marketing
+  eleito: Rodrigo Castilho de Biasi
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Luiz Henrique Guimarães
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Ênio Hideyuki Cohjo
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Adilson Xavier Lima
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Amauri Bendito Hulmann
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Marco Aurélio do Monte Vanderlei
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Clóvis Benedito M. Bonadio
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Jonathan Hugh Govier
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Izabel Cristina B. Grigio
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Adelson Assis Batista Alves
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Marcos Antonio de Carvalho
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Antonio Caetano P. Simões
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: José Luiz Pereira
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Ricardo B, Duarte Stuber
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Luiz Antonio Nunez
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Kleber Eloir Svidzinski
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Euclides Santos Pallamin
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Francisca Souza Carrer
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Leandro Lucchiari Verrone
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Jahui Alberto dos Santos Ocroche
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado
+  eleito: Caryl C J Trevisan
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Luiz Roberto de Moraes
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Jorge Laucevícius
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Eduardo Fornaro
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Mario Toyoii Tabata
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Renato Araújo Silva
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Flavio Henrique Fahl
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Paulo João Raschka
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Fernando Braga Monte Serrat
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Heleny Farias dos Reis
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: André Sunao Koguti
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Ricardo Boide
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Daniel Delbin
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados à Assembléia Nacional
+  cargo: Delegado suplente
+  eleito: Rubens Barboza
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Titular
+  eleito: Almir Ferreira da Cruz
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Titular
+  eleito: Dennis Marques de Souza
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Titular
+  eleito: Jahui Julio dos Santos Ocroche
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Suplente
+  eleito: Pedro Julio Volpe de Assis
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Suplente
+  eleito: Elisabete Ferreira Lopes Alves
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Suplente
+  eleito: Judas Tadeu Alves
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Candidato eleito
+  eleito: Ênio Hideyuki Cohjo
+  mandato: ''
+  pagina: 7
+  conferido: true
+numeros:
+- o_que: delegados credenciados nesta Assembléia Regional
+  valor: '297'
+  pagina: 7
+  conferido: true
+- o_que: votantes na eleição dos delegados à Assembléia Nacional
+  valor: '297'
+  pagina: 7
+  conferido: true
+- o_que: votos nulos na eleição dos delegados à Assembléia Nacional
+  valor: '1'
+  pagina: 7
+  conferido: true
+- o_que: votantes na eleição da Comissão Fiscal Regional
+  valor: '297'
+  pagina: 7
+  conferido: true
+- o_que: votos nulos na eleição da Comissão Fiscal Regional
+  valor: '5'
+  pagina: 7
+  conferido: true
+- o_que: votantes na eleição do Conselho de Administração Nacional
+  valor: '297'
+  pagina: 7
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 4f2b3b17eb0ef3581ce0d93afb7ee1c5a1b3c0d53a9db57794737f084873423b
+revisado: null

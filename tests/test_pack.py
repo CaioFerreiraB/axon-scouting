@@ -57,7 +57,7 @@ def test_identity_is_readable_on_the_class() -> None:
 def test_manifest_da_fase_5() -> None:
     assert ScoutingPack().manifest() == PackManifest(
         name="scouting",
-        version="0.9.0",
+        version="0.10.0",
         preferred_flow="rag_first",
         requires_collections=("scouting",),
         config_schema=SCOUTING_CONFIG_SCHEMA,
@@ -79,11 +79,12 @@ def test_capacidades_publicadas(tmp_path: Path) -> None:
     pack = ScoutingPack()
     ctx = pack_context("scouting", config(tmp_path))
     assert tuple(pack.tools(ctx)) == ()
-    retriever, lista, unidades = pack.retrievers(ctx)
+    retriever, lista, unidades, resumos = pack.retrievers(ctx)
     assert isinstance(retriever, NamedRetriever) and isinstance(lista, NamedRetriever)
     assert retriever.name == "search_docs" and retriever.collections == frozenset({"scouting"})
     assert lista.name == "list_documents" and lista.collections == frozenset({"scouting"})
     assert unidades.name == "list_units" and unidades.collections == frozenset({"scouting"})
+    assert resumos.name == "search_summaries" and resumos.collections == frozenset({"scouting"})
     assert isinstance(pack.reranker(ctx), MetadataReranker)
     assert [validator.name for validator in pack.validators(ctx)] == ["citation_integrity", "validity_notice"]
     metrics = pack.eval_metrics(ctx)

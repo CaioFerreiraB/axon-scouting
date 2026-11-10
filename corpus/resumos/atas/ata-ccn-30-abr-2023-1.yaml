@@ -1,0 +1,29 @@
+doc_key: ata-ccn-30-abr-2023-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-04-30'
+  local: Faculdade Campos Salles, localizada na rua Nossa Senhora da Lapa, 270 - Lapa - São Paulo/SP
+deliberacoes:
+- tema: Aprovação das atas anteriores
+  decisao: As atas são aprovadas por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Criação de portal de transparência nacional unificado
+  decisao: EVERTON propõe, com o consentimento de todos os presentes, que a Diretoria Executiva Nacional inicie o trabalho
+    de apoio às regiões nesse sentido.
+  votacao: consentimento de todos os presentes
+  pagina: 3
+  conferido: true
+- tema: Suspensão e retomada da reunião do Conselho Consultivo
+  decisao: EVERTON colocou a sugestão de IRINEU em deliberação, e ela foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d9eeeb74c3fa2f6ef1c2ef7d99196a74b647835400b0e06f5ff6ea0dcd4d169d
+revisado: null

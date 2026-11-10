@@ -1,0 +1,77 @@
+doc_key: ata58-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2008-11-08'
+  local: São Paulo / SP
+deliberacoes:
+- tema: Agenda de trabalho
+  decisao: a Agenda sofreu algumas alterações e foi aprovada.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Pedido de revisão apresentado por André Santa Rita
+  decisao: Colocado para apreciação, o CAN decidiu por 8 votos pela admissão do pedido de Revisão, tendo ocorrido 3 votos
+    contrários e 3 abstenções. O pedido de Revisão será encaminhado de imediato ao denunciante, para apresentação de contra-razões
+    no prazo de 30 (trinta) dias. Recebidas as contra-razões o processo será encaminhado a um perito contábil que deverá emitir
+    sua conclusão também no período de 30 (trinta) dias. Recebidas tais conclusões o processo será encaminhado a Comissão
+    de Ética e Disciplina Nacional para que emita parecer ao CAN no prazo de 30 (trinta) dias.
+  votacao: 8 votos a favor, 3 contra, 3 abstenções
+  pagina: 2
+  conferido: false
+- tema: Proposta de Progressão e Guias do Ramo Escoteiro
+  decisao: Após a apresentação, David fez algumas sugestões e apresentou dúvidas quanto a pontos específicos do material;
+    Raphael também fez comentários; Klaes comentou a respeito da necessidade de nossa literatura ser registrada e sobre a
+    importância de se fazer uma correção ortográfica das mesmas; Castrianni comentou que o assunto voltará a ser discutido
+    na sequência e enfatizou a necessidade de se manter o Método Escoteiro.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Discussão sobre o Programa de Jovens
+  decisao: Após diversos debates, o CAN concorda que a proposta final da UEB deve ser ou a da CNPJ, ou a apresentada pela
+    Região de São Paulo, ou, ainda, uma combinação entre as duas. Rubem propõe que a CNPJ se reúna com a equipe de São Paulo
+    com vistas a se chegar a uma proposta de consenso a ser apresentada na reunião de fevereiro, o que é aprovado por unanimidade
+    pelos Conselheiros.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Entrega de Diploma e Barra de Ouro
+  decisao: entregue à Escotista e Dirigente Maria Izabel Tongu o Diploma de Mérito Nacional e a Barra de Ouro por 40 Anos
+    de boas atividades escoteiras.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Diretrizes Nacionais de Gestão de Adultos
+  decisao: Colocada para apreciação pelo CAN, a proposta conforme originalmente apresentada recebeu 10 votos favoráveis e
+    1 voto contrario de Farinon porque reconhecia que a proposta era boa mas poderia avançar/ousar mais.
+  votacao: 10 votos favoráveis e 1 contrário
+  pagina: 3
+  conferido: true
+- tema: Orçamento 2009 e Balancete acumulado relativo ao período janeiro a agosto de 2008
+  decisao: aprovado o balancete relativo ao período janeiro a agosto de 2008 com base em relatório da Comissão Fiscal Nacional
+    – CFN. O orçamento foi aprovado pelo CAN.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Concessão de medalhas
+  decisao: 'Por proposta de Raphael Tostes foi aprovada a concessão de Medalha de Gratidão aos organizadores do JOTI: Mauro
+    Lages/RS, Altamiro Vianna e Vilhena de Carvalho/RO, Rafael Froes/GO, Iracema Bezerra Oliveira/GO, Carla Barbosa de Oliveira
+    Neves/SP e Priscila Araújo/RN e Diploma de Mérito Nacional para os demais colaboradores. Aprovadas ainda a concessão das
+    seguintes medalhas: Tiradentes: Elson Pereira Magalhães/PR – aprovada por unanimidade, Jose Garcia Fernandes/MG – aprovada
+    por unanimidade, aos Grupos Escoteiros 04/SP – Avanhandava, 81/SP – Umuarama e 100/SP – Cristo Rei por já terem mais de
+    50 anos – aprovadas por unanimidade, Velho Lobo: Jose Augusto Pereira/SP – aprovada por unanimidade e para Luiz Carlos
+    Gabriel/SP – aprovada por unanimidade. Tapir de Prata: Kaol Sugimoto (post-morten) – aprovada por unanimidade.'
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Projeto de Interiorização do Escotismo
+  decisao: o CAN decide aprovar o projeto e encaminhar à DEN para, até abril, implantá-lo junto às Regiões interessadas.
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: afd30e7ba8dde9f096c45c1486bab6deeb648fe0cfc9d9beb416b72e8d3a29d3
+revisado: null

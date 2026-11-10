@@ -1,0 +1,148 @@
+doc_key: sp-ata-are-2019-extraordinaria-1
+reuniao:
+  tipo: extraordinaria
+  data: '2019-03-16'
+  local: Escola Municipal de Ensino Fundamental (EMEF) Leandro Klein, Rua Prestes Maia, nº. 100 — Bairro Nova Gerti — São
+    Caetano do Sul, Estado de São Paulo
+deliberacoes:
+- tema: Regularização do CNPJ filial da UEB - Região Escoteira de São Paulo
+  decisao: 1) revogação da deliberação da Assembleia Geral Extraordinária datada de 29/08/2009 acerca da baixa do CNPJ/MF
+    nº 33.788.431/0028-33, mantendo-se suas atividades; 2) ratificação dos atos praticados pela Diretoria durante o período
+    de 2009 até a presente data; e, 3) a eleição dos componentes da nova Diretoria Executiva e respectivas Comissões do CNPJ/MF
+    nº 33.788.431/0028-33.
+  votacao: 324 votos a favor, 5 votos desfavoráveis e 2 abstenções
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Diretoria Regional
+  cargo: Diretor-Presidente
+  eleito: Alexandre Banchi
+  mandato: 30 de março de 2019 a 30 de março de 2022
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretora-vice-presidente
+  eleito: Anna Beatriz Reali Costa Melo
+  mandato: 30 de março de 2019 a 30 de março de 2022
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Administrativo
+  eleito: Euclides Hisatugo
+  mandato: 30 de março de 2019 a 30 de março de 2022
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Financeiro
+  eleito: Sergio Correa dos Reis
+  mandato: 30 de março de 2019 a 30 de março de 2022
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor de Relações Institucionais
+  eleito: Artur Berberian Filho
+  mandato: 30 de março de 2019 a 30 de março de 2022
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: 1º Titular
+  eleito: Silvio Yoshiro Mizuguchi Miyazaki
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: 2º Titular
+  eleito: Luís Antônio Freitas Pereira
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: 3º Titular
+  eleito: Afonso Robles Petry
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: 1º Suplente
+  eleito: Antenor Aparecido Stabile
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 1º Titular
+  eleito: Ronaldo Engracia
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 2º Titular
+  eleito: Eduardo Gutierrez
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 3º Titular
+  eleito: Marcos Venicio Mattos Chaves
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 1º Suplente
+  eleito: Paulo Peixoto Lins de Araújo
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 2º Suplente
+  eleito: Elidio Aparecido Silva Parreira
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 3º Suplente
+  eleito: Fabiano Rioli Kunert
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '549'
+  pagina: 1
+  conferido: true
+- o_que: votos a favor da aprovação dos encaminhamentos
+  valor: '324'
+  pagina: 2
+  conferido: true
+- o_que: votos desfavoráveis à aprovação dos encaminhamentos
+  valor: '5'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação dos encaminhamentos
+  valor: '2'
+  pagina: 2
+  conferido: true
+- o_que: votos válidos na eleição da Comissão Fiscal Regional
+  valor: '546'
+  pagina: 2
+  conferido: true
+- o_que: votos válidos na eleição da Comissão de Ética e Disciplina Regional
+  valor: '540'
+  pagina: 2
+  conferido: true
+- o_que: votos válidos na eleição da Diretoria Regional
+  valor: '549'
+  pagina: 3
+  conferido: true
+- o_que: votos da chapa “Caminhando Juntos”
+  valor: '323'
+  pagina: 3
+  conferido: true
+- o_que: votos da chapa “Espírite Escoteiro”
+  valor: '226'
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 266330855a9c7028b333784a012d9c67abd013e876b26fc0f1076c390bfb83a9
+revisado: null

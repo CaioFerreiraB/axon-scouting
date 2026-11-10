@@ -1,0 +1,31 @@
+doc_key: 22a-ata-da-reuniao-extraordinaria-da-assembleia-nacional-escoteira-20-abr-2015-1
+reuniao:
+  tipo: extraordinaria
+  data: '2015-04-20'
+  local: São Bernardo do Campo/SP
+deliberacoes:
+- tema: cumprimento do edital e discussão do Estatuto
+  decisao: O Presidente da mesa colocou em votação a proposta de cumprimento do edital e discussão do Estatuto, havendo 57
+    votos contra, 55 votos a favor e 4 abstenções, restando prejudicada a discussão e votação das propostas de mudança estatutária.
+  votacao: 57 votos contra, 55 votos a favor e 4 abstenções
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos contra a proposta de cumprimento do edital e discussão do Estatuto
+  valor: '57'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da proposta de cumprimento do edital e discussão do Estatuto
+  valor: '55'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da proposta de cumprimento do edital e discussão do Estatuto
+  valor: '4'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8dd952ef509dbd6a3b8e173b15f38c22a139ab9ab4c7437a4c5c21ca556c7bcf
+revisado: null

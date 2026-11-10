@@ -1,0 +1,206 @@
+doc_key: 27a-ata-da-reuniao-extraordinaria-da-assembleia-nacional-escoteira-26-set-2021-1
+reuniao:
+  tipo: extraordinaria
+  data: '2020-09-26'
+  local: por meio eletrônico (telepresencial)
+deliberacoes:
+- tema: Composição da mesa e comissões da Assembleia
+  decisao: Conduziu a eleição da presidência da mesa da Assembleia Nacional sendo composta por aclamação do Presidente, escotista
+    Márcio Sequeira da Silva (RS), dos escotistas vice-presidentes Audrey Moura Mota Gerônimo (AL) e Hilton Kayan Costa Barbosa
+    (PA) e para a secretaria desta Assembleia Nacional são aclamadas as escotistas Nathália Castilhos Neves de Oliveira (RN)
+    e Rebeca Pizzi Rodrigues (RS). Das Comissões Assessoras da Assembleia, Credenciamento Carmen Barreira (DE), Abimael Souza
+    (GO) e Rudner Lauterjung (SP). Comissão de Escrutínio Daniel San Gil (RJ), Ilvia Oliveira (GO) e Felipe Bertoglio (RS).
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Comissão de Credenciamento
+  decisao: Aprovação da Comissão de Credenciamento com 127 (cento e vinte e sete) votaram a favor, 03 (três) votaram contrários
+    e não foi registrada nenhuma abstenção
+  votacao: 127 votos a favor, 3 votos contrários, 0 abstenções
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Comissão de Escrutínio
+  decisao: Aprovação da Comissão de Escrutínio com 122 (cento e vinte e dois) votos a favor, 06 (seis) votos contrários e
+    02 (duas) abstenções
+  votacao: 122 votos a favor, 6 votos contrários, 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Composição da Mesa
+  decisao: Aprovação do Composição da Mesa com 126 (cento e vinte e seis) votos a favor, 01 (um) voto contrário e 03 (três)
+    abstenções
+  votacao: 126 votos a favor, 1 voto contrário, 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: Credenciamento de delegados com erro formal no e-mail
+  decisao: Autorizar os delegados que fizeram o credenciamento na data, sem o email institucional cadastrado. Desde que já
+    tenham este e-mail devidamente habilitado
+  votacao: 87 votos a favor, 35 votos contrários, 7 abstenções
+  pagina: 4
+  conferido: true
+- tema: Dispensa da leitura das atas anteriores
+  decisao: Solicitando autorização da Assembleia para dispensar a leitura das duas atas, uma vez que os delegados receberam
+    a documentação previamente, sendo a sugestão aclamada pela plenária
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Aprovação da ata da 262ª Reunião Ordinária da Assembleia Nacional da UEB
+  decisao: Aprovação da ata da 262ª Reunião Ordinária da Assembleia Nacional da UEB, com as solicitações de alterações feitas
+    no dia de hoje, sendo a correção do estado de Lindomar Sobrinho Chaves para "PA" e da participação da delegada Karina
+    Freire Báez de Andrade (RJ) na redação do texto de alteração do artigo da Lei Escoteira
+  votacao: 135 votos a favor, 1 voto contrário, 7 abstenções
+  pagina: 9
+  conferido: true
+- tema: Aprovação da ata da última Reunião Extraordinária da Assembleia Nacional da UEB
+  decisao: Aprovação da ata última Reunião Extraordinária da Assembleia Nacional da UEB, com as solicitações de alterações
+    feitas no dia de hoje, sendo a correção do estado de Theodomiro Mascarenhas Rios Rodrigues para "RJ" e constar que foram
+    feitas 12 manifestações, sendo que uma delas foi realizada Alex da Silva Rocha (PE)
+  votacao: 130 votos a favor, 4 votos contrários, 5 abstenções
+  pagina: 9
+  conferido: true
+- tema: Aprovação do Relatório Anual 2019 da União dos Escoteiros do Brasil
+  decisao: Relatório Anual 2019. APROVADA
+  votacao: 130 votos a favor, 5 votos contrários, 6 abstenções
+  pagina: 9
+  conferido: true
+- tema: Aprovação das contas e balanços patrimoniais de 2019
+  decisao: Aprovação das contas e balanços patrimoniais de 2019. APROVADA
+  votacao: 136 votos a favor, 2 votos contrários, 3 abstenções
+  pagina: 10
+  conferido: true
+eleicoes:
+- orgao: mesa da Assembleia Nacional
+  cargo: Presidente
+  eleito: Márcio Sequeira da Silva (RS)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: mesa da Assembleia Nacional
+  cargo: Vice-presidente
+  eleito: Audrey Moura Mota Gerônimo (AL)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: mesa da Assembleia Nacional
+  cargo: Vice-presidente
+  eleito: Hilton Kayan Costa Barbosa (PA)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: mesa da Assembleia Nacional
+  cargo: Secretária
+  eleito: Nathália Castilhos Neves de Oliveira (RN)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: mesa da Assembleia Nacional
+  cargo: Secretária
+  eleito: Rebeca Pizzi Rodrigues (RS)
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: percentual de votantes no total dos delegados
+  valor: 87,25%
+  pagina: 2
+  conferido: false
+- o_que: votos a favor da Comissão de Credenciamento
+  valor: '127'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários da Comissão de Credenciamento
+  valor: '3'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da Comissão de Escrutínio
+  valor: '122'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários da Comissão de Escrutínio
+  valor: '6'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da Comissão de Escrutínio
+  valor: '2'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da Composição da Mesa
+  valor: '126'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários da Composição da Mesa
+  valor: '1'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da Composição da Mesa
+  valor: '3'
+  pagina: 2
+  conferido: true
+- o_que: delegados aptos a votar
+  valor: '155'
+  pagina: 10
+  conferido: true
+- o_que: votos a favor na votação do credenciamento com erro formal no e-mail
+  valor: '87'
+  pagina: 4
+  conferido: true
+- o_que: votos contrários na votação do credenciamento com erro formal no e-mail
+  valor: '35'
+  pagina: 4
+  conferido: true
+- o_que: abstenções na votação do credenciamento com erro formal no e-mail
+  valor: '7'
+  pagina: 4
+  conferido: true
+- o_que: votos a favor na aprovação da ata da 262ª Reunião Ordinária
+  valor: '135'
+  pagina: 9
+  conferido: true
+- o_que: votos contrários na aprovação da ata da 262ª Reunião Ordinária
+  valor: '1'
+  pagina: 9
+  conferido: true
+- o_que: abstenções na aprovação da ata da 262ª Reunião Ordinária
+  valor: '7'
+  pagina: 9
+  conferido: true
+- o_que: votos a favor na aprovação da ata da última Reunião Extraordinária
+  valor: '130'
+  pagina: 9
+  conferido: true
+- o_que: votos contrários na aprovação da ata da última Reunião Extraordinária
+  valor: '4'
+  pagina: 9
+  conferido: true
+- o_que: abstenções na aprovação da ata da última Reunião Extraordinária
+  valor: '5'
+  pagina: 9
+  conferido: true
+- o_que: votos a favor na aprovação do Relatório Anual 2019
+  valor: '130'
+  pagina: 9
+  conferido: true
+- o_que: votos contrários na aprovação do Relatório Anual 2019
+  valor: '5'
+  pagina: 9
+  conferido: true
+- o_que: abstenções na aprovação do Relatório Anual 2019
+  valor: '6'
+  pagina: 9
+  conferido: true
+- o_que: votos a favor na aprovação das contas e balanços patrimoniais de 2019
+  valor: '136'
+  pagina: 10
+  conferido: false
+- o_que: votos contrários na aprovação das contas e balanços patrimoniais de 2019
+  valor: '2'
+  pagina: 10
+  conferido: true
+- o_que: abstenções na aprovação das contas e balanços patrimoniais de 2019
+  valor: '3'
+  pagina: 10
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3be8c17061415c57b674f15558d30604ba84415e8a628f6dab248eff099b9636
+revisado: null

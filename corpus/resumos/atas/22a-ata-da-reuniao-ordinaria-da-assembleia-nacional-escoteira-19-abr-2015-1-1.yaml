@@ -1,0 +1,79 @@
+doc_key: 22a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-19-abr-2015-1-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-04-19'
+  local: São Bernardo do Campo/SP
+deliberacoes:
+- tema: relatório da DEN
+  decisao: Colocado em regime de votação, o relatório foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: proposta sobre taxa nacional
+  decisao: Colocado em regime de votação, a proposta foi aprovada por 59 votos.
+  votacao: 59 votos a favor
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: membro
+  eleito: Tadeu Siqueira (DF)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro
+  eleito: Andre Torricelli F da Rosa (RJ)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro
+  eleito: Cleudson Oliveira e Silva (AM)
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro
+  eleito: Wendell de Barros Dantas (RN)
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: votantes
+  valor: '119'
+  pagina: 2
+  conferido: true
+- o_que: estados e Distrito Federal representados
+  valor: '21'
+  pagina: 2
+  conferido: true
+- o_que: delegados presentes após coffee-break
+  valor: '98'
+  pagina: 2
+  conferido: true
+- o_que: votos para Tostes Salin e Souza (PR)
+  valor: '61'
+  pagina: 4
+  conferido: true
+- o_que: votos para Tadeu Siqueira (DF)
+  valor: '19'
+  pagina: 4
+  conferido: true
+- o_que: votos para Cleudson Oliveira e Silva (AM)
+  valor: '7'
+  pagina: 4
+  conferido: true
+- o_que: votos para Wendell de Barros Dantas (RN)
+  valor: '7'
+  pagina: 4
+  conferido: true
+- o_que: votos para aprovação da proposta sobre taxa nacional
+  valor: '59'
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 01a1da4f1760548c91b8b77e116569c36935fa68d483d30474935f389a9e0ddb
+revisado: null

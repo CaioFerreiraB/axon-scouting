@@ -1,0 +1,169 @@
+doc_key: ata-da-reuniao-extraordinaria-da-assembleia-nacional-escoteira-12-set-2021-1-1
+reuniao:
+  tipo: extraordinaria
+  data: '2021-09-12'
+  local: por meio eletrônico (telepresencial)
+deliberacoes:
+- tema: eleição da mesa diretora da Assembleia
+  decisao: 'Passou-se à votação de composição da mesa diretora, pelo prazo de 07 (sete) minutos, permanecendo aberta a votação
+    das 9h30min às 9h37min. Resultado: 99 votos a favor, 3 contrários e 17 abstenções.'
+  votacao: 99 votos a favor, 3 contrários, 17 abstenções
+  pagina: 3
+  conferido: true
+- tema: credenciamento do delegado da região escoteira do Piauí
+  decisao: 'Passou-se a votação da aceitação da substituição do delegado para participação no presente ato, na forma como
+    requerida pela região escoteira do Piauí. Resultado: 71 votos a favor, 35 contrários e 13 abstenções.'
+  votacao: 71 votos a favor, 35 contrários, 13 abstenções
+  pagina: 5
+  conferido: true
+- tema: composição das comissões assessoras da assembleia
+  decisao: 'Foi aclamada pela Assembleia Nacional a indicação da composição das comissões: Comissão de Credenciamento, Comissão
+    de Escrutínio, Comissão Eleitoral e Comissão de Redação e Estilo, conforme nominata apresentada.'
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: aprovação da ata da 27ª Reunião Ordinária da Assembleia Nacional da UEB de 30 de maio de 2021
+  decisao: Aprovação da ata com inclusão das ressalvas apresentadas nesta assembleia, que corrigem informações equivocadas
+    sobre a convocação da assembleia geral extraordinária para tratar dos princípios.
+  votacao: 48 votos pela aprovação sem ressalvas, 54 votos pela aprovação com ressalvas, 0 contra, 18 abstenções
+  pagina: 7
+  conferido: true
+- tema: proposta de alteração dos princípios do Movimento Escoteiro (texto do CAN)
+  decisao: Rejeitada a proposta de alteração dos princípios do Movimento Escoteiro conforme texto apresentado pelo Conselho
+    de Administração Nacional (CAN).
+  votacao: 68 votos contra, 41 a favor, 11 abstenções
+  pagina: 21
+  conferido: true
+- tema: votação sobre a análise da proposta da delegação de São Paulo nesta assembleia
+  decisao: 'Decidiu-se votar a proposta da delegação de São Paulo nesta assembleia. Resultado: 61 votos sim, 44 votos não,
+    15 abstenções.'
+  votacao: 61 votos sim, 44 votos não, 15 abstenções
+  pagina: 21
+  conferido: true
+- tema: aprovação da proposta da delegação da região escoteira de São Paulo para os princípios do Movimento Escoteiro
+  decisao: Aprovada a proposta da delegação da região escoteira de São Paulo para modificação do texto dos princípios do Movimento
+    Escoteiro.
+  votacao: 73 votos a favor, 35 contra, 12 abstenções
+  pagina: 22
+  conferido: true
+eleicoes:
+- orgao: Assembleia Nacional
+  cargo: Presidente da Mesa Diretora
+  eleito: Daniela de Oliveira Rodrigues Gomes (SC)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: 1º Vice-Presidente da Mesa Diretora
+  eleito: Rudner Lauterjung Queiroz (SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: 2º Vice-Presidente da Mesa Diretora
+  eleito: Paulo Juracy Carvalho Neto (MA)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: 1º Secretário da Mesa Diretora
+  eleito: Adriano Henrique Rocha Sarmento Filho (SE)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: 2ª Secretária da Mesa Diretora
+  eleito: Isabella Poletto Medeiros (RS)
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '107'
+  pagina: 2
+  conferido: true
+- o_que: conselheiros nacionais credenciados
+  valor: '13'
+  pagina: 2
+  conferido: true
+- o_que: participantes credenciados aptos a votação na eleição da mesa diretora
+  valor: '119'
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da composição da mesa diretora
+  valor: '99'
+  pagina: 3
+  conferido: true
+- o_que: votos contrários à composição da mesa diretora
+  valor: '3'
+  pagina: 3
+  conferido: true
+- o_que: abstenções na votação da composição da mesa diretora
+  valor: '17'
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da aceitação da substituição do delegado do Piauí
+  valor: '71'
+  pagina: 5
+  conferido: true
+- o_que: votos contrários à aceitação da substituição do delegado do Piauí
+  valor: '35'
+  pagina: 5
+  conferido: true
+- o_que: abstenções na votação da substituição do delegado do Piauí
+  valor: '13'
+  pagina: 5
+  conferido: true
+- o_que: votos pela aprovação da ata anterior sem ressalvas
+  valor: '48'
+  pagina: 7
+  conferido: true
+- o_que: votos pela aprovação da ata anterior com ressalvas
+  valor: '54'
+  pagina: 7
+  conferido: true
+- o_que: abstenções na votação da ata anterior
+  valor: '18'
+  pagina: 7
+  conferido: true
+- o_que: votos contra a proposta de alteração dos princípios do Movimento Escoteiro (CAN)
+  valor: '68'
+  pagina: 21
+  conferido: false
+- o_que: votos a favor da proposta de alteração dos princípios do Movimento Escoteiro (CAN)
+  valor: '41'
+  pagina: 21
+  conferido: true
+- o_que: abstenções na votação da proposta do CAN
+  valor: '11'
+  pagina: 21
+  conferido: true
+- o_que: votos a favor da votação da proposta da delegação de São Paulo nesta assembleia
+  valor: '61'
+  pagina: 21
+  conferido: false
+- o_que: votos contra a votação da proposta da delegação de São Paulo nesta assembleia
+  valor: '44'
+  pagina: 21
+  conferido: true
+- o_que: abstenções na votação sobre análise da proposta da delegação de São Paulo
+  valor: '15'
+  pagina: 21
+  conferido: true
+- o_que: votos a favor da aprovação da proposta da delegação de São Paulo
+  valor: '73'
+  pagina: 22
+  conferido: true
+- o_que: votos contra a aprovação da proposta da delegação de São Paulo
+  valor: '35'
+  pagina: 22
+  conferido: true
+- o_que: abstenções na votação da proposta da delegação de São Paulo
+  valor: '12'
+  pagina: 22
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 43b6075fa47b488c75fec1e09d5af498386ec767aba765d307152dc26ee43798
+revisado: null

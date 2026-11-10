@@ -1,0 +1,127 @@
+doc_key: 8a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-15-e-18-nov-2001-1
+reuniao:
+  tipo: ordinaria
+  data: '2001-11-15'
+  local: Hotel Parque da Costeira, sito na Avenida Via Costeira, km 7 — Parque das Dunas, Ponta Negra, Natal, RN
+deliberacoes:
+- tema: eleição da mesa diretora
+  decisao: 'foi eleita a Mesa, conforme segue: Presidente: Paulo Salamuni (PR); Vice-presidentes: Carlos Frederico dos Santos
+    (RJ) e Bráulio André Dantas da Silva (RN); Secretárias: Diva Irene da Paz Vieira (PR) e Dárcio Hélio Longhi (PR)'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: comissões assessoradas da Assembleia
+  decisao: 'COMISSÃO ELEITORAL: Anderson Barreto (MG); David Crusius (RS) e Guilherme Reichwald (RJ); COMISSÃO ESCRUTINADORA:
+    Carmen Barreira (DF), Félix Vieira Varejão Filho (SP), Fernando de Oliveira Volkner (RS), Luiz Salgado Klaes (SC) e Mariovani
+    Carsten Ceni (PR); COMISSÃO DE ASSUNTOS GERAIS: Alessandro Garcia Vieira (DF), Elmer de Souza Pessoa (SP) e João Batista
+    Fiorini Thomé (SC)'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: aprovação da ata da 7ª Reunião Ordinária
+  decisao: a ata, constante do Relatório Anual distribuído a todos os presentes, foi colocada em discussão e aprovada
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: credenciamento do delegado Helmgton José de Souza Brito (BA)
+  decisao: a Assembléia ratificou o direito de voto do delegado
+  votacao: setenta votos favoráveis, sete contra e onze abstenções
+  pagina: 2
+  conferido: true
+- tema: aprovação do Relatório Anual e Demonstrações Financeiras da UEB
+  decisao: foram aprovados o Relatório Anual e Demonstrações Financeiras da UEB, acompanhadas do parecer da Comissão Fiscal
+    Nacional e da Auditoria Externa
+  votacao: cinquenta e oito votos favoráveis e duas abstenções
+  pagina: 2
+  conferido: true
+- tema: constituição da Comissão Consultiva
+  decisao: aprovada a constituição da Comissão Consultiva para prestar assessoramento à Direção Nacional no estabelecimento
+    de um sistema de controle interno
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: aprovação do Relatório Anual e Demonstrações Financeiras da Loja Escoteira Nacional
+  decisao: foram aprovados o Relatório Anual e as Demonstrações Financeiras da Loja Escoteira Nacional, acompanhadas do parecer
+    da Comissão Fiscal Nacional e dos Auditores Independentes
+  votacao: cinquenta e oito votos favoráveis e duas abstenções
+  pagina: 4
+  conferido: true
+- tema: eleição dos membros do Conselho de Administração Nacional
+  decisao: 'eleitos para mandatos até 31/12/2004: Alexandre Machado Silva (CE), Frederico Augusto de Siqueira Neves (MG),
+    Marco Aurélio de Mello Castrianni (SP), Marco Aurélio Romeu Fernández (RS) e Rubem Siffert (DF). Suplentes: Paulo Ney
+    Ferreira da Silva, Fábio Rodrigo Conde e Guilherme Augusto Klingelfuss'
+  votacao: votaram cento e um delegados
+  pagina: 4
+  conferido: true
+- tema: aprovação do Regulamento da Assembleia Nacional
+  decisao: aprovado, após discussões e votação, o regulamento da Assembleia Nacional
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: aprovação do relatório e recomendações do 6º Fórum Nacional de Jovens Líderes
+  decisao: relatório e recomendações aprovadas por unanimidade
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: escolha da Região-sede para a 10ª Reunião Ordinária da Assembleia Nacional e eventos correlatos
+  decisao: foi aprovada a candidatura da Região de São Paulo para sediar os eventos
+  votacao: quarenta e dois votos a favor, vinte e nove contra e treze abstenções
+  pagina: 9
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: membro com mandato até 31/12/2004
+  eleito: Alexandre Machado Silva (CE)
+  mandato: 1.o/01/2002 a 31/12/2004
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro com mandato até 31/12/2004
+  eleito: Frederico Augusto de Siqueira Neves (MG)
+  mandato: 1.o/01/2002 a 31/12/2004
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro com mandato até 31/12/2004
+  eleito: Marco Aurélio de Mello Castrianni (SP)
+  mandato: 1.o/01/2002 a 31/12/2004
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro com mandato até 31/12/2004
+  eleito: Marco Aurélio Romeu Fernández (RS)
+  mandato: 1.o/01/2002 a 31/12/2004
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro com mandato até 31/12/2004
+  eleito: Rubem Siffert (DF)
+  mandato: 1.o/01/2002 a 31/12/2004
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: votos na eleição para o Conselho de Administração Nacional
+  valor: '101'
+  pagina: 4
+  conferido: false
+- o_que: votos para ratificação do direito de voto do delegado Helmgton José de Souza Brito (BA)
+  valor: 70 votos favoráveis, 7 contra e 11 abstenções
+  pagina: 2
+  conferido: false
+- o_que: votos para aprovação do Relatório Anual e Demonstrações Financeiras da UEB
+  valor: 58 votos favoráveis e 2 abstenções
+  pagina: 2
+  conferido: false
+- o_que: votos para aprovação do Relatório Anual e Demonstrações Financeiras da Loja Escoteira Nacional
+  valor: 58 votos favoráveis e 2 abstenções
+  pagina: 4
+  conferido: false
+- o_que: votos para aprovação da candidatura da Região de São Paulo para sediar eventos
+  valor: 42 votos a favor, 29 contra e 13 abstenções
+  pagina: 9
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 77e447e544ea3c41156a33890881d40ef8795c7ba11924991fdbf2631cc7e55a
+revisado: null

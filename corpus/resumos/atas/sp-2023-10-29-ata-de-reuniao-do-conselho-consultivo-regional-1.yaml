@@ -1,0 +1,76 @@
+doc_key: sp-2023-10-29-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-10-29'
+  local: Clube Mogiano, Avenida Prof. Adib Chaib, 801, Centro, Mogi Mirim/SP
+deliberacoes:
+- tema: Nomeação de Comissários
+  decisao: 'nomeação de Rodrigo Ferreira Nascimento como Comissário do 39º Distrito Escoteiro Serra da Cantareira; além disso,
+    foram entregues os certificados de Nomeação dos Comissários que assumiram o cargo em 2023: Maurícia Caldeira de Oliveira,
+    40º DE; Eduardo Fernando da Silva, 04º DE; Marcelo Moliterno Fernandes, 35º DE; e Randal Juliano Fernandes, 20º DE'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Entrega da Comenda Tiradentes
+  decisao: foi entregue a Ednelson Assis dos Santos, a Comenda Tiradentes, uma das condecorações mais importantes dos Escoteiros
+    do Brasil
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Proposta do Distrito Padrão
+  decisao: O cronograma proposto é que o projeto seja publicado em novembro deste ano; as atividades avaliadas entre janeiro
+    e dezembro de 2024; e a entrega de troféu e certificado na Assembleia Regional de 2025
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Solicitação de briefing das Olimpíadas Escoteiras
+  decisao: os Comissários solicitaram que o briefing das Olimpíadas Escoteiras seja enviado até o fim de novembro para que
+    possa incluir o evento no calendário do Distrito
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Atualização do processo de abertura de UEL
+  decisao: atualização do processo de abertura de UEL – agora será um documento único a ser preenchido, otimizando o processo;
+    e reforçou a importância de ter um Coordenador Distrital de Crescimento e Expansão para acompanhar a abertura e o crescimentos
+    das nova UELs
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Apresentação do passo a passo de abertura de UEL no Bitrix
+  decisao: Rodrigo Ramos mostrou no Bitrix (sistema de gerenciamento da Região) o passo a passo de abertura de UEL, também
+    facilitando e agilizando todo processo
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Apresentação do documento Nacional sobre solicitação de Conclusão de Nível de Formação
+  decisao: apresentou o documento Nacional sobre solicitação de Conclusão de Nível de Formação; mostrou a diferença entre
+    o processo antigo e o atual e enfatizou a importância de comprovar as competências adquiridas pelo associado que está
+    fechando o nível
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Discussão sobre tamanho ideal de um Distrito Escoteiro
+  decisao: Rodrigo Ramos propôs uma discussão sobre o tamanho ideal de um Distrito Escoteiro, levando em consideração o número
+    de grupos/associados e o espaço territorial; sugeriu-se fazer uma avaliação interna para detectar e sanar eventuais problemas
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Envio de formulário para candidatura a sediar eventos de 2024
+  decisao: Rodrigo Ramos informou que será enviado a todos os Comissários um formulário para que se candidatem a sediar alguns
+    eventos de 2024
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Criação de grupo com Coordenadores Distritais do Jamboree Nacional
+  decisao: foi pedido que seja criado um grupo com todos os Coordenadores Distritais do Jamboree Nacional, que acontecerá
+    no ano que vem
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 1ba08af04f7ce1a0fd21b761345c75c2ce54f79397e80f3703ca7d1187f23a03
+revisado: null

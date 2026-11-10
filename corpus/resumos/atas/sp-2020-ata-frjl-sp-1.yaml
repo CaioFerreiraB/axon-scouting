@@ -1,0 +1,122 @@
+doc_key: sp-2020-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2020-03-14'
+  local: Auditório da Prefeitura Municipal de Indaiatuba, localizado na Av. Eng. Fábio Roberto Barnabé, 2800, Jardim Esplanada,
+    Indaiatuba/SP
+deliberacoes:
+- tema: Eleição e Posse da Mesa Diretora dos trabalhos
+  decisao: eleita por aclamação Pietá Rivas (GE Tocantins 112/SP) como presidente da mesa; Giuliano Tovo Di Raimo (GE Carajuru
+    53) como vice-presidente; Pedro Hernandez (GE Marechal Rondon 194/SP) e Victoria Ennser (GE São Paulo 1/SP) como primeiros
+    e segundos secretários; Matheus Manzano (GE Kaingang 253/SP) e Otávio (GE Professora Inah de Mello 147/SP) como Comissão
+    de Escrutínio
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Votação por formulário on-line para eleições
+  decisao: proposta do NRJL de se realizarem as votações por formulário on-line, reduzindo-se assim o uso de papel
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Eleição dos Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  decisao: eleitos como delegados titulares Pietá (28 votos), Gustavo (18 votos) e Giovanna (15 votos); delegados suplentes
+    seriam jovens líderes presentes no Fórum Nacional, escolhidos prioritariamente pela preferência de votos
+  votacao: votação por formulário on-line
+  pagina: 2
+  conferido: true
+- tema: Eleição dos novos membros do Núcleo Regional de Jovens Líderes
+  decisao: Lukas Palermo eleito como comunicador do NRJL para o mandato de 2020-2021 com 26 votos a favor, 1 contrário e 4
+    abstenções
+  votacao: 26 votos a favor, 1 contrário e 4 abstenções
+  pagina: 3
+  conferido: true
+- tema: Eleição da cidade-sede do Encontro Regional de Jovens Líderes 2020
+  decisao: cidade de Santo André eleita por aclamação como sede do Encontrinho 2020
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Preferência de local para Encontro Regional de Jovens Líderes 2020
+  decisao: votação pela preferência de local, sendo preferido o Parque Escola, mas preferência não seria determinante
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Leitura e aprovação da Ata do XVII Fórum Regional de Jovens Líderes
+  decisao: não leitura da Ata aprovada por aclamação; sem dúvidas, ata considerada aprovada
+  votacao: aclamação
+  pagina: 7
+  conferido: false
+eleicoes:
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Presidente da mesa
+  eleito: Pietá Rivas (GE Tocantins 112/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Vice-presidente da mesa
+  eleito: Giuliano Tovo Di Raimo (GE Carajuru 53)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Primeiro secretário
+  eleito: Pedro Hernandez (GE Marechal Rondon 194/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Segundo secretário
+  eleito: Victoria Ennser (GE São Paulo 1/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Matheus Manzano (GE Kaingang 253/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Otávio (GE Professora Inah de Mello 147/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado titular
+  eleito: Pietá
+  mandato: '2020'
+  pagina: 2
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado titular
+  eleito: Gustavo
+  mandato: '2020'
+  pagina: 2
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado titular
+  eleito: Giovanna
+  mandato: '2020'
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes
+  cargo: Comunicador
+  eleito: Lukas Palermo
+  mandato: 2020-2021
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: votos para delegados titulares ao Fórum Nacional de Jovens Líderes
+  valor: Pietá (28 votos), Gustavo (18 votos), Giovanna (15 votos), Heloísa (9 votos), Julia (7 votos), Matheus (7 votos)
+  pagina: 2
+  conferido: true
+- o_que: votos para comunicador do NRJL
+  valor: 26 votos a favor, 1 contrário e 4 abstenções
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3f1775937e114020d95e842e4b4f7a1b3531c2752a03455fe74ccd413a1ae814
+revisado: null

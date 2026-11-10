@@ -1,0 +1,193 @@
+doc_key: 31a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-03-mai-2025-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-05-03'
+  local: Brasília/DF
+deliberacoes: []
+eleicoes: []
+numeros:
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Acre
+  valor: 123 associados
+  pagina: 19
+  conferido: true
+- o_que: Delegados da Região Escoteira do Acre
+  valor: '1'
+  pagina: 19
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira de Alagoas
+  valor: 139 associados
+  pagina: 20
+  conferido: true
+- o_que: Efetivo em 31/12/2023 da Região Escoteira do Amazonas
+  valor: 667 associados
+  pagina: 21
+  conferido: true
+- o_que: Delegados da Região Escoteira do Amazonas
+  valor: '1'
+  pagina: 21
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira da Bahia
+  valor: 1217 associados
+  pagina: 22
+  conferido: true
+- o_que: Delegados da Região Escoteira da Bahia
+  valor: '2'
+  pagina: 22
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Ceará
+  valor: 924 associados
+  pagina: 23
+  conferido: true
+- o_que: Delegados da Região Escoteira do Ceará
+  valor: '1'
+  pagina: 23
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Distrito Federal
+  valor: 3528 associados
+  pagina: 24
+  conferido: true
+- o_que: Delegados da Região Escoteira do Distrito Federal
+  valor: '4'
+  pagina: 24
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Espírito Santo
+  valor: 1010 associados
+  pagina: 25
+  conferido: true
+- o_que: Delegados da Região Escoteira do Espírito Santo
+  valor: '2'
+  pagina: 25
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira de Goiás
+  valor: 1223 associados
+  pagina: 26
+  conferido: true
+- o_que: Delegados da Região Escoteira de Goiás
+  valor: '2'
+  pagina: 26
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Maranhão
+  valor: 318 associados
+  pagina: 27
+  conferido: true
+- o_que: Delegados da Região Escoteira do Maranhão
+  valor: '1'
+  pagina: 27
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Mato Grosso
+  valor: 1190 associados
+  pagina: 28
+  conferido: true
+- o_que: Delegados da Região Escoteira do Mato Grosso
+  valor: '2'
+  pagina: 28
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Mato Grosso do Sul
+  valor: 1267 associados
+  pagina: 29
+  conferido: true
+- o_que: Delegados da Região Escoteira do Mato Grosso do Sul
+  valor: '2'
+  pagina: 29
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira de Minas Gerais
+  valor: 9029 associados
+  pagina: 30
+  conferido: true
+- o_que: Delegados da Região Escoteira de Minas Gerais
+  valor: '10'
+  pagina: 30
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Pará
+  valor: 1565 associados
+  pagina: 32
+  conferido: true
+- o_que: Delegados da Região Escoteira do Pará
+  valor: '2'
+  pagina: 32
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira da Paraíba
+  valor: 1048 associados
+  pagina: 33
+  conferido: true
+- o_que: Delegados da Região Escoteira da Paraíba
+  valor: '2'
+  pagina: 33
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Paraná
+  valor: 9738 associados
+  pagina: 34
+  conferido: true
+- o_que: Delegados da Região Escoteira do Paraná
+  valor: '10'
+  pagina: 34
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira de Pernambuco
+  valor: 674 associados
+  pagina: 36
+  conferido: true
+- o_que: Delegados da Região Escoteira de Pernambuco
+  valor: '1'
+  pagina: 36
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Piauí
+  valor: 1122 associados
+  pagina: 37
+  conferido: true
+- o_que: Delegados da Região Escoteira do Piauí
+  valor: '2'
+  pagina: 37
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Rio de Janeiro
+  valor: 6646 associados
+  pagina: 38
+  conferido: true
+- o_que: Delegados da Região Escoteira do Rio de Janeiro
+  valor: '7'
+  pagina: 38
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Rio Grande do Norte
+  valor: 3312 associados
+  pagina: 39
+  conferido: true
+- o_que: Delegados da Região Escoteira do Rio Grande do Norte
+  valor: '4'
+  pagina: 39
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira do Rio Grande do Sul
+  valor: 12212 associados
+  pagina: 40
+  conferido: true
+- o_que: Delegados da Região Escoteira do Rio Grande do Sul
+  valor: '13'
+  pagina: 40
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira de Rondônia
+  valor: 151 associados
+  pagina: 42
+  conferido: true
+- o_que: Delegados da Região Escoteira de Rondônia
+  valor: '1'
+  pagina: 42
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira de Santa Catarina
+  valor: 1021 associados
+  pagina: 43
+  conferido: true
+- o_que: Delegados da Região Escoteira de Santa Catarina
+  valor: '12'
+  pagina: 43
+  conferido: true
+- o_que: Efetivo em 31/12/2024 da Região Escoteira de Sergipe
+  valor: 233 associados
+  pagina: 48
+  conferido: true
+- o_que: Delegados da Região Escoteira de Sergipe
+  valor: '1'
+  pagina: 48
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 4333c8a7e1aa68b6cb1ff17ac4e42b97fe40f0ce914d5eaaff071cced9154c3a
+revisado: null

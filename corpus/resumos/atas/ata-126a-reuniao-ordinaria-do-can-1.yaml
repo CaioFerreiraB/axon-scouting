@@ -1,0 +1,109 @@
+doc_key: ata-126a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2026-04-18'
+  local: UNISALES - Centro Universitário Salesiano - Avenida Vitória, 950 - Forte São João - Vitória/Espírito Santo
+deliberacoes:
+- tema: ratificação de deliberações eletrônicas
+  decisao: Aprovada a ata de Reunião Extraordinária do CAN realizada em regime de sessão fechada nos dias 29 e 30 de novembro
+    de 2025, com aprovação da alteração da Regra 057 do POR, ajustes na Resolução CAN 07/2025, encaminhamento para análise
+    técnica do ajuste dos repasses da Loja Escoteira Nacional e consolidação das contribuições para o Planejamento Estratégico
+    2026–2035.
+  votacao: 10 votos a favor e 4 abstenções
+  pagina: 2
+  conferido: true
+- tema: ratificação de deliberações eletrônicas
+  decisao: Aprovada a ata de Reunião Extraordinária do CAN - Previsão Orçamentária 2026, com aprovação do orçamento e retorno
+    do repasse de 35% às Regiões Escoteiras condicionado ao Fundo de Risco atingir R$282.000,00.
+  votacao: 8 votos a favor, 1 abstenção e 5 abstenções por falta de pronunciamento
+  pagina: 2
+  conferido: true
+- tema: alteração normativa Regra 030 (Novas Seções)
+  decisao: Aprovada a alteração da Regra 030 para alinhamento à Regra 057, estabelecendo que o Grupo Escoteiro deverá possuir
+    ao menos três das demais seções dos ramos para implantação da nova seção do Ramo Filhotes.
+  votacao: 11 votos a favor e 3 abstenções por falta de pronunciamento
+  pagina: 2
+  conferido: true
+- tema: aprovação da ata da 125ª Reunião Ordinária do CAN
+  decisao: Aprovada a ata da sessão aberta da 125ª Reunião Ordinária do Conselho de Administração Nacional, realizada no dia
+    29 de novembro de 2025.
+  votacao: 11 votos a favor e 3 abstenções por falta de pronunciamento
+  pagina: 2
+  conferido: true
+- tema: proposta de calendário de reuniões do CAN 2026
+  decisao: Aprovada a supressão da reunião online dos dias 17 e 18 de outubro e a realização de reunião presencial nos dias
+    14 e 15 de novembro, em Curitiba.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: criação de grupos de trabalho
+  decisao: 'Aprovadas por unanimidade as propostas de criação dos grupos de trabalho: (i) Grupo de Trabalho para a Atualização
+    da Política Nacional de Envolvimento Juvenil (GTAPNEJ); (ii) Grupo de Trabalho para a Elaboração da Política Nacional
+    do Serviço Escoteiro Profissional (GTEPNSEP); e (iii) Grupo de Trabalho para a Elaboração da Política Nacional de Eventos
+    (GTEPNE).'
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Rede Nacional de Jovens Líderes
+  cargo: Representantes no CAN
+  eleito: Danilo Inácio Martins (DF)
+  mandato: ''
+  pagina: 12
+  conferido: true
+- orgao: Rede Nacional de Jovens Líderes
+  cargo: Representantes no CAN
+  eleito: Pedro Augusto Silva de Jesus (RS)
+  mandato: ''
+  pagina: 12
+  conferido: true
+numeros:
+- o_que: total de associados
+  valor: '93.674'
+  pagina: 6
+  conferido: false
+- o_que: jovens associados
+  valor: '67.256'
+  pagina: 6
+  conferido: false
+- o_que: adultos associados
+  valor: '26.418'
+  pagina: 6
+  conferido: false
+- o_que: unidades escoteiras abertas em 2025
+  valor: '71'
+  pagina: 6
+  conferido: true
+- o_que: manuais do Programa Educativo comercializados
+  valor: '13.000'
+  pagina: 6
+  conferido: false
+- o_que: condecorações emitidas no primeiro trimestre de 2026
+  valor: '2.387'
+  pagina: 7
+  conferido: false
+- o_que: atendimentos realizados no primeiro trimestre de 2026
+  valor: '2.254'
+  pagina: 7
+  conferido: false
+- o_que: saldo de caixa ao final de 2025
+  valor: R$10 milhões
+  pagina: 7
+  conferido: true
+- o_que: superávit da Loja Escoteira em 2025
+  valor: R$178 mil
+  pagina: 8
+  conferido: true
+- o_que: déficit financeiro da matriz em 2025
+  valor: aproximadamente R$1 milhão
+  pagina: 11
+  conferido: true
+- o_que: déficit da atividade nacional Aventura Sênior
+  valor: aproximadamente R$258 mil
+  pagina: 11
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 312d0c48010a3fcf859609d68c83a8761be0bc350d0e99010108317d4bc083b4
+revisado: null

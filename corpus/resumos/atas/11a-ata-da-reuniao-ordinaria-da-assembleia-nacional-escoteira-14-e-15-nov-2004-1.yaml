@@ -1,0 +1,113 @@
+doc_key: 11a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-14-e-15-nov-2004-1
+reuniao:
+  tipo: ordinaria
+  data: '2004-11-13'
+  local: Fiesta Bahia Hotel, av. Antonio Carlos Magalhães, 711 - Pituba, Salvador, Bahia
+deliberacoes:
+- tema: Composição da mesa
+  decisao: 'foi eleita e empossada a Mesa, conforme segue: Presidente: Baldur Oscar Schubert; Vice-presidentes: Rubem Tadeu
+    Cordeiro Perlingeiro e Djalma Ribeiro; Secretários: Carolina Meneses de Souza Silva e Ursula Mello Pessoa.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Homologação das comissões assessoradas
+  decisao: 'As comissões assessoras ficaram constituídas da seguinte forma: COMISSÃO DE CREDENCIAMENTO - Luiz Salgado Klaes;
+    Mariova Carsten Cervi e Dennys Rodrigues de Oliveira e o Executivo Celso Fovroi; COMISSÃO DE ESCRUTÍNIO - Francisca Carrer,
+    Raphael Salim Tostes, Dilma seng Executivo Gino Bacchi; COMISSÃO DE ASSUNTOS GERAIS - Irineu Muniz de Resende Ilvia Oliveira
+    e Theodomiro Rios Rodrigues e o Executivo Luiz Cezar de Simas Horn; COMISSÃO DE ESTILO E REDAÇÃO - Rubem Súffert, Carlos
+    Frederico dos Santos e Mario H. Peters Farinon e o Executivo Luiz Carlos Debiazio.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata da 102 Reunião Ordinária
+  decisao: A ata da 102 Reunião Ordinária da Assembléia Nacional da União dos Escoteiros do Brasil - UEB referente a 2004,
+    constou no Relatório Anual distribuído a todos Os presentes. Foi proposta pelo presidente da mesa a dispensa de sua leitura
+    em decorrência da distribuição antecipada do Relatório Anual e por estar de posse dos presentes. Foram propostas alterações
+    e após discussão foi aprovada por unanimidade, com as alterações descritas.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Relatório Anual e Balanço Anual da UEB e da Loja Escoteira Nacional
+  decisao: Foi apresentado o relatório resumido e o balanço anual da União dos Escoteiros do Brasil e da Loja Escoteira Nacional,
+    com parecer da Comissão Fiscal. Após discussão e ponderações, o relatório foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Disponibilização dos relatórios e demonstrativos
+  decisao: Foi colocada em votação a recomendação de que os relatórios e demonstrativos da União dos Escoteiros do Brasil
+    estejam disponíveis, inclusive na internet, com no mínimo 30 (trinta) dias anteriores à Assembléia, ou no prazo mais aceitável
+    possível, o que foi aceito por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Recomendações dos Seminários
+  decisao: As recomendações dos seminários foram apresentadas e aprovadas, incluindo envio dos manuais até o fim do ano, solicitação
+    de material do Ramo Sênior, criação de comissão para introdução de regras na publicação Princípio, Organização e Regras
+    (POR), ajustes no Guia de Especialidades e revisão do período de inscrição dos participantes da UEB para 2006.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Processo disciplinar contra ex-Secretário Geral
+  decisao: Foi colocada em votação para análise, a conveniência e a oportunidade do processo disciplinar contra o ex-Secretário
+    Geral da UEB, Sr. Ewerson Steigleder, tendo sido a proposta aprovada com quarenta e cinco votos a favor, nenhum contra
+    e quatro abstenções.
+  votacao: 45 votos a favor, 0 contra, 4 abstenções
+  pagina: 4
+  conferido: true
+- tema: Escolha da Região-Sede e Região-Sede Alternativa para eventos de 2006
+  decisao: 'A Região Escoteira do Ceará foi eleita Região-Sede dos referidos eventos com o seguinte resultado: quarenta e
+    nove votos em favor da Região Escoteira do Ceará; onze votos em favor da Região Escoteira do Rio Grande do Sul e três
+    abstenções. O 2o colocado será automaticamente nomeado Região-Sede alternativa.'
+  votacao: 49 votos a favor, 11 votos, 3 abstenções
+  pagina: 5
+  conferido: true
+- tema: Moção de apoio aos escotistas baianos
+  decisao: Moção de apoio aos escotistas baianos que organizaram o Congresso, tendo sido aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Mesa da Assembleia Nacional
+  cargo: Presidente
+  eleito: Baldur Oscar Schubert
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa da Assembleia Nacional
+  cargo: Vice-Presidente
+  eleito: Rubem Tadeu Cordeiro Perlingeiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa da Assembleia Nacional
+  cargo: Vice-Presidente
+  eleito: Djalma Ribeiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa da Assembleia Nacional
+  cargo: Secretária
+  eleito: Carolina Meneses de Souza Silva
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa da Assembleia Nacional
+  cargo: Secretária
+  eleito: Ursula Mello Pessoa
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: votos para aprovação do processo disciplinar contra ex-Secretário Geral
+  valor: 45 votos a favor, 0 contra, 4 abstenções
+  pagina: 4
+  conferido: false
+- o_que: votos para escolha da Região-Sede para eventos de 2006
+  valor: 49 votos em favor da Região Escoteira do Ceará; 11 votos em favor da Região Escoteira do Rio Grande do Sul; 3 abstenções
+  pagina: 5
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 66d0175eb4a12b411a863486fc532e0326afcd8ec450b63ae023b59b771f65a7
+revisado: null

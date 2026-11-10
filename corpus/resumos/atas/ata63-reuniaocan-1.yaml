@@ -1,0 +1,92 @@
+doc_key: ata63-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: null
+  local: Rua Coronel Dulcídio, 2107, Água Verde, Curitiba, Paraná
+deliberacoes:
+- tema: Planejamento Estratégico
+  decisao: aprovar o PE considerando as sugestões de correção ortográficas apresentadas
+  votacao: 09 votos pela
+  pagina: 2
+  conferido: true
+- tema: Comissão para alterações no POR
+  decisao: Criada Comissão composta por Xaud, Paulo Henrique, Felipe e DEN para avaliar as modificações necessárias no POR
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Concessão de medalhas Velho Lobo
+  decisao: Aprovação da concessão das medalhas Velho Lobo para diversas pessoas listadas na ata
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Decisões administrativas diversas
+  decisao: Aprovada ata da reunião de Abril, não realização da reunião do CAN em Setembro, decisão de convocar a Assembleia
+    Extraordinária, Editais de convocação das Assembleias Ordinária e Extraordinária, Valores e taxa de registro 2011, Anulação
+    da Assembleia Regional do Pará (primeiro pedido) e a não aprovação da Condecoração Especial para Conferência Mundial
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Alteração do Regulamento do CAN
+  decisao: Proposta de alteração apresentada por Felipe foi apreciada e aprovada considerando as adequações e destaques
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Pedido de providências Região de Minas Gerais
+  decisao: Por deliberação unânime, o CAN passou a se secretar e permitiu a permanência do novo Coordenador do Núcleo Nacional
+    de Jovens Líderes, Winder Garcia, do Diretor Presidente da UEB/MG Eduardo Rodrigues de Souza, e do Membro da Comissão
+    de Ética e Disciplina Regional de Minas Gerais Marcos Gomide; a Diretoria Executiva Nacional assume o compromisso de informar
+    todos os atos e deliberações acerca do procedimento disciplinar
+  votacao: unânime
+  pagina: 4
+  conferido: true
+- tema: Mandato da DEN
+  decisao: Proposta aprovada para que a atual DEN permaneça por mais um ano à frente da Instituição e que no mês de novembro
+    se discuta a indicação de uma nova DEN
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Interpretação de regra de concessão de condecoração
+  decisao: CAN entendeu, por 11 votos favoráveis e 1 contrário, que a medalha de Bons Serviços pode ser entregue para membro
+    juvenil
+  votacao: 11 votos favoráveis e 1 contrário
+  pagina: 5
+  conferido: true
+- tema: Pedido de medalhas
+  decisao: Aprovada a concessão da Medalha Tiradentes para José Lourenço dos Santos; Aprovada a concessão da Medalha Tapir
+    de Prata para o PE. Domingos Tonini (Post Mortem); proposta para Luiz Carlos Neves Monteiro será analisada em próxima
+    reunião
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Entrega de medalha de Gratidão Grau Ouro
+  decisao: Entregue medalha de Gratidão Grau Ouro a Rafael Rocha de Macedo como reconhecimento pelo trabalho que vem realizando
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Delegação Brasileira na Conferência Mundial
+  valor: 37 membros
+  pagina: 1
+  conferido: true
+- o_que: Receitas da Conferência e Fórum Mundiais
+  valor: 1,737 milhões
+  pagina: 4
+  conferido: false
+- o_que: Despesas da Conferência e Fórum Mundiais
+  valor: 1,9 milhões
+  pagina: 4
+  conferido: false
+- o_que: Déficit financeiro da Conferência e Fórum Mundiais
+  valor: 163 mil reais
+  pagina: 4
+  conferido: true
+- o_que: Superávit da UEB em 2010
+  valor: 430.000,00 reais
+  pagina: 4
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 188e26693b7a808a254f37e252aceb025dbef7caa3b55fd7ee7720303e2136ad
+revisado: null

@@ -1,0 +1,89 @@
+doc_key: ata-102a-reuniao-ordinaria-can-14e15ago2021-sessao-aberta-assinada-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-08-14'
+  local: videochamada pelo Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: convocação da Reunião Extraordinária da Assembleia Nacional Escoteira
+  decisao: Por 12 votos a 1, fica mantida a Reunião Extraordinária da Assembleia Nacional Escoteira convocada para o próximo
+    dia 12 de setembro, na qual será discutida a atualização dos princípios do Escotismo brasileiro.
+  votacao: 12 votos a favor, 1 contra
+  pagina: 7
+  conferido: true
+- tema: indicação da mesa diretora e comissões assessoras das Reuniões Extraordinárias da Assembleia Nacional
+  decisao: A nominata resta aprovada por unanimidade dos conselheiros titulares e diretores-presidentes regionais presentes,
+    com as inclusões ora solicitadas.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: referendo do Parecer Jurídico sobre o voto aos 16 anos nas Assembleias de Grupo Escoteiro
+  decisao: Referendo do Parecer Jurídico sobre o voto aos 16 anos nas Assembleias de Grupo Escoteiro, que é aprovado por unanimidade
+    dos conselheiros titulares presentes.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: ratificação da Medalha e Pin da Perseverança
+  decisao: Encaminha a votação pela ratificação da proposta, incluindo o artigo que prevê o reconhecimento post-mortem conforme
+    sugerido, o que é aprovado por unanimidade dos conselheiros titulares presentes.
+  votacao: unanimidade
+  pagina: 11
+  conferido: true
+- tema: resolução sobre o novo Planejamento Estratégico
+  decisao: Encaminha a proposta de resolução para votação com a inclusão das emendas ora feitas, o que é aprovado por unanimidade
+    dos conselheiros titulares presentes.
+  votacao: unanimidade
+  pagina: 12
+  conferido: true
+- tema: participação de SARAH como delegada e Nathália como observadora na Conferência Escoteira Mundial
+  decisao: Aprovado por unanimidade dos conselheiros titulares presentes que SARAH se torne delegada e Nathália se torne observadora
+    da Conferência Escoteira Mundial.
+  votacao: unanimidade
+  pagina: 14
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos a favor da ata da 101ª Reunião Ordinária do CAN
+  valor: 12 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da ata da 101ª Reunião Ordinária do CAN
+  valor: 1 abstenção
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da ata da Reunião Extraordinária do CAN de 30/05/2021
+  valor: unanimidade
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da ata da Reunião Extraordinária do CAN de 26/06/2021
+  valor: 9 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da ata da Reunião Extraordinária do CAN de 26/06/2021
+  valor: 5 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos contra participação de membros externos nas Comissões Permanentes do Conselho
+  valor: 10 votos contra
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da proposta que altera a Regra 178 do P.O.R.
+  valor: 12 votos a favor
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da liberação de suplementação orçamentária de R$55.000,00 para contratação de escritório de advocacia
+  valor: 12 votos a favor
+  pagina: 3
+  conferido: true
+- o_que: votos a favor do escopo da Comissão Permanente de Governança Institucional
+  valor: 13 votos a favor
+  pagina: 3
+  conferido: true
+- o_que: votos a favor do escopo da Comissão Permanente de Reconhecimento e Condecorações
+  valor: 12 votos a favor
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 6ae9d7f82d66b0361816e4c4a17ee6dbe4c39193a29eceea59df497857998ff7
+revisado: null

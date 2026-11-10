@@ -1,0 +1,72 @@
+doc_key: ata98-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2020-05-02'
+  local: através de vídeo chamada pelo Zoom, com transmissão ao vivo pelo Facebook
+deliberacoes:
+- tema: aprovação de assuntos deliberados virtualmente no período
+  decisao: 1) Aprovação do Escopo do projeto GT PNEJ; 2) Não validação da candidatura do associado Oscar Palmquist ao Comitê
+    Mundial; 3) Continuidade do Processo Seletivo e consequentemente enviar o nome do jovem selecionado para participar do
+    9º Encontro Escoteiro Internacional de Sharjah; 4) Validação da candidatura da associada Melissa Wilm Senna Pinto a Assessora
+    Juvenil no Comitê Mundial com 8 votos a favor (Mark Caldeira, Marco Aurélio Romeu, Isabelly Castro, Dayanna Cristine,
+    Leonardo Vilar, Magu, Antonio Mussio e Adriano Chaves), 5 votos contra (Eduardo Manique, Sarah Amaral, Robson Moraes,
+    Carlos Frederico e Christian Ubiratan) e 1 abstenção por falta de manifestação de voto (Renato Eugênio); 5) Alteração
+    do texto da resolução 11/2019; 6) Aprovação da Política de Governança Institucional; 7) Aprovação de manter os valores
+    de royalties dos últimos três meses na própria Loja Escoteira Nacional; 8) Aprovação para transferir, integralmente, o
+    Fundo de Reserva Orçamentária para projetos futuros para o Fundo de Rescisão criado em 2019; 9) Aprovação da Resolução
+    01/2020; 10) Aprovação da Resolução 02/2020; 10) Aprovação do escopo da Comissão Permanente de Posicionamento Institucional;
+    11) Convalidação do Ofício 53/2020; 12) Aprovação dos termos do acordo de rescisão trabalhista do funcionário Luiz Cesar,
+    apresentado pela DEN, com 9 votos a favor (Isabelly, Carlos Frederico, Mark, Marco Aurélio Romeu, Adriano, Leonardo, Dayanna,
+    Magu e Nadir), 1 contra (Eduardo) e 4 abstenções por interpretar que não seja competência do CAN tratar sobre o assunto
+    (Sarah, Christian, Renato, Robson); 13) Pedido de Licença Temporária do Conselheiro Leonardo.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: aprovação da pauta da reunião
+  decisao: foi aprovada com a inclusão de dois pedidos de temas adicionais para a pauta, sobre os “Impactos da Pandemia do
+    COVID-19" e “Negociações de Parceria com a Microsoft”
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: formato da ata
+  decisao: Houve definição ainda sobre o formato de Ata, seguindo a previsão de Regulamento do CAN, conforme consta em seu
+    Art. 16, para que seja feita na íntegra e com o registro de todas as manifestações, mantendo-se a objetividade possível
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: estudo sobre realização da Assembleia Nacional
+  decisao: solicitar que o Escritório Nacional faça um estudo dos impactos e possibilidades de realizar o evento em formatos
+    distintos
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: estudo sobre realização da Assembleia Nacional em formato virtual e híbrido
+  decisao: solicitar que a DEN e o EN apresentem um estudo a cerca da realização da assembleia hibrida e a melhor data
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: prorrogação da validade do Certificado de Funcionamento das Unidades Escoteiras Locais
+  decisao: solicitar à DEN que seja normatizado por Resolução a prorrogação da validade do Certificado de Funcionamento das
+    Unidades Escoteiras Locais até 31 de maio
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: postergamento dos Certificados de Funcionamento
+  decisao: os Certificados de Funcionamento serão postergados em resolução, para deixar essa posição de forma mais clara e
+    acessível para todos os interessados
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: votação sobre participação de associados em eventos que não permitem a participação de mulheres
+  decisao: a UEB não promover a participação de associados em eventos que não permitam a participação de mulheres
+  votacao: 'a favor MANIQUE, RENATO, FRED, SARAH, ROBSON, ADRIANO; contra: MAGU, DAYANNA, ROMEU, CHRINTIAN, ISABELLY, MUSSIO,
+    MARK; sem abstenções'
+  pagina: 17
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 487dcae0db911fb3a43ce6aa7670c2a536f5d8d849fdf21129a18718dc160515
+revisado: null

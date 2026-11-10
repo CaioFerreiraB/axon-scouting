@@ -1,0 +1,130 @@
+doc_key: ata-2020-xxv-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2020-05-31'
+  local: online, através do aplicativo Zoom
+deliberacoes:
+- tema: votação da composição da mesa diretora do Fórum Nacional
+  decisao: Aprovada a mesa com 38 votos a favor, três votos contrários e uma abstenção.
+  votacao: 38 votos a favor, 3 contra, 1 abstenção
+  pagina: 5
+  conferido: true
+- tema: votação sobre possibilidade de substituição por suplentes durante o Fórum Nacional
+  decisao: 'Aberta votação para confirmar a possibilidade de substituição por suplentes durante o Fórum Nacional. Resultado:
+    32 votos a favor e oito votos contra a troca de delegados durante o Fórum Nacional. Não houve abstenções.'
+  votacao: 32 votos a favor, 8 contra
+  pagina: 12
+  conferido: true
+- tema: votação para alteração da ordem do dia
+  decisao: 'Ordem do dia alterada, resultado: 22 votos a favor da mudança e 20 contra a mudança.'
+  votacao: 22 votos a favor, 20 contra
+  pagina: 13
+  conferido: true
+- tema: eleição do Coordenador do Núcleo Nacional de Jovens Líderes
+  decisao: Nathalia Castilhos foi eleita como Coordenadora do Núcleo Nacional para o mandato de 2020 – 2022.
+  votacao: 24 votos a favor, 10 contra, 8 abstenções
+  pagina: 13
+  conferido: true
+- tema: eleição do Comunicador do Núcleo Nacional de Jovens Líderes
+  decisao: Maria Luiza Giller foi eleita como Comunicadora do Núcleo Nacional para o mandato de 2020-2022.
+  votacao: 29 votos a favor, 7 contra, 5 abstenções, 1 não votante
+  pagina: 13
+  conferido: true
+- tema: eleição dos suplentes do Núcleo Nacional
+  decisao: Por aclamação, João Pedro Drumond e Mauri Machado foram eleitos para os respectivos cargos de suplentes.
+  votacao: aclamação
+  pagina: 14
+  conferido: true
+- tema: votação para sede do Encontro Nacional de Jovens Líderes 2021
+  decisao: Natal foi eleita como cidade sede para 2021 com 22 votos a favor contra 20 votos para Vila Velha.
+  votacao: 22 votos a favor Natal, 20 votos Vila Velha
+  pagina: 16
+  conferido: false
+- tema: votação para Minas Gerais continuar como região sede em 2021 caso não tenham atividades presenciais no segundo semestre
+    de 2020
+  decisao: Minas Gerais será a região sede em 2021 com 42 votos a favor, nenhum voto contra e nenhuma abstenção.
+  votacao: 42 votos a favor, 0 contra, 0 abstenções
+  pagina: 18
+  conferido: true
+- tema: aprovação da sugestão do Núcleo Nacional para apresentação dos relatórios de eventos e gestão em outro momento
+  decisao: Sugestão do Núcleo Nacional aprovada por aclamação para apresentação dos relatórios em outro momento por meios
+    digitais.
+  votacao: aclamação
+  pagina: 19
+  conferido: true
+- tema: aprovação da ata do XXIV Fórum Nacional de Jovens Líderes
+  decisao: Ata do XXIV Fórum Nacional de Jovens Líderes aprovada com 34 votos a favor, nenhum voto contra e oito abstenções.
+  votacao: 34 votos a favor, 0 contra, 8 abstenções
+  pagina: 11
+  conferido: true
+eleicoes:
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Coordenadora do Núcleo Nacional
+  eleito: Nathalia Castilhos
+  mandato: 2020 – 2022
+  pagina: 13
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Comunicadora do Núcleo Nacional
+  eleito: Maria Luiza Giller
+  mandato: 2020-2022
+  pagina: 13
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Suplente de Coordenador
+  eleito: João Pedro Drumond
+  mandato: ''
+  pagina: 14
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Suplente de Comunicador
+  eleito: Mauri Machado
+  mandato: ''
+  pagina: 14
+  conferido: true
+numeros:
+- o_que: delegados presentes na chamada
+  valor: '42'
+  pagina: 2
+  conferido: true
+- o_que: participantes na chamada
+  valor: '59'
+  pagina: 5
+  conferido: true
+- o_que: votos na votação sobre plataforma de votação
+  valor: 23 contrários, 13 a favor, 0 abstenções
+  pagina: 5
+  conferido: true
+- o_que: votos na votação da composição da mesa diretora do Fórum
+  valor: 38 a favor, 4 contra, 0 abstenções, 16 não votantes
+  pagina: 6
+  conferido: true
+- o_que: votos na votação para substituição por suplentes durante o Fórum
+  valor: 32 a favor, 8 contra, 0 abstenções
+  pagina: 12
+  conferido: false
+- o_que: votos na aprovação da ata do XXIV Fórum Nacional de Jovens Líderes
+  valor: 34 a favor, 0 contra, 8 abstenções
+  pagina: 11
+  conferido: false
+- o_que: votos na eleição do Coordenador do Núcleo Nacional
+  valor: 24 a favor, 10 contra, 8 abstenções
+  pagina: 13
+  conferido: false
+- o_que: votos na eleição do Comunicador do Núcleo Nacional
+  valor: 29 a favor, 7 contra, 5 abstenções, 1 não votante
+  pagina: 13
+  conferido: false
+- o_que: votos na votação para Minas Gerais continuar como região sede em 2021
+  valor: 42 a favor, 0 contra, 0 abstenções
+  pagina: 18
+  conferido: false
+- o_que: votos na votação para sede do Encontro Nacional de Jovens Líderes 2021
+  valor: 22 votos a favor Natal, 20 votos Vila Velha
+  pagina: 16
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d8e03daa21e2644ff84bae2f8c6bff524ccb483058978f42037be303dfb6e789
+revisado: null

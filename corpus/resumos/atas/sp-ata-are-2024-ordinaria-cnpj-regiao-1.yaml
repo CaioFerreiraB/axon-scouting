@@ -1,0 +1,189 @@
+doc_key: sp-ata-are-2024-ordinaria-cnpj-regiao-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-03-23'
+  local: Teatro TUPEC, Avenida dos Trabalhadores, 2555, Mogi Guaçu, São Paulo
+deliberacoes:
+- tema: 'Comissão Assessora da Assembleia: Escrutínio'
+  decisao: Patrick Alves da Silva Quiterio 66/SP e Hitoshi Nakayama 20/SP, aprovados por aclamação pela plenária e ficaram
+    encarregados de monitorar o sistema de votação da empresa EasyVote Soluções Interativas
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: 'Mesa Diretora: Presidente'
+  decisao: Rafael Melis Rogéro foi eleito Presidente da Trigésima Primeira Reunião Ordinária da Assembleia Escoteira Regional
+    de São Paulo por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: 'Mesa Diretora: Vice-Presidentes'
+  decisao: Renato Wanderley Breneizer 283ºSP e Fernando Nastri Palmieri 193ºSP, em comum acordo, propuseram ser o primeiro
+    e segundo Vice-Presidente respectivamente, aprovado por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: 'Mesa Diretora: Secretários'
+  decisao: Rosemary Peres Motta 468/SP e Larissa Lemes Avari Lauterjung 147/SP, em comum acordo, propuseram ser a primeira
+    e segunda secretárias respectivamente, aprovado por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Comissão de Credenciamento
+  decisao: Acolhimento na íntegra de todos os voluntários como membros da Comissão de Credenciamento, aprovado por aclamação
+    pela plenária
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Comissão Eleitoral
+  decisao: Acolhimento na íntegra de todos os voluntários como membros da Comissão Eleitoral, aprovado por aclamação pela
+    plenária
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Comissão de Assuntos Gerais
+  decisao: Acolhimento na íntegra de todos os voluntários como membros da Comissão de Assuntos Gerais, aprovado por aclamação
+    pela plenária
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata da reunião anterior com correções
+  decisao: A ata da reunião anterior foi aprovada por aclamação após leitura das correções propostas
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+- tema: Relatório da Diretoria Regional na Gestão do ano de 2023
+  decisao: Relatório aprovado por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Contas e balanço do exercício fiscal anterior
+  decisao: Contas aprovadas por 192 votos a favor, 74 contra e 35 abstenções
+  votacao: 192 votos a favor, 74 contra e 35 abstenções
+  pagina: 4
+  conferido: true
+- tema: Previsão Orçamentária para o próximo exercício fiscal
+  decisao: Previsão orçamentária aprovada por 158 votos a favor, 60 contra e 83 abstenções
+  votacao: 158 votos a favor, 60 contra e 83 abstenções
+  pagina: 4
+  conferido: true
+- tema: Proposta de alteração estatutária para realização de assembleias híbridas
+  decisao: Aprovação por aclamação de submeter aos assuntos gerais a proposta de alteração estatutária para possibilitar a
+    realização de assembleias em formato híbrido
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Proposta do chefe Renato para comissão mista sobre representação juvenil
+  decisao: Proposta do chefe Renato aprovada por 153 votos a favor, 87 votos contra a proposta do Núcleo de Jovens Líderes
+    e 51 contra as duas propostas
+  votacao: 153 votos a favor, 87 votos contra e 51 contra as duas propostas
+  pagina: 7
+  conferido: true
+- tema: Estabilidade das instâncias juvenis na estrutura regional
+  decisao: Proposta aprovada por aclamação para inclusão das instâncias juvenis no regulamento regional garantindo sua estabilidade
+    e atuação
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: Escolha da cidade sede para a 32ª Assembleia Regional e 23º Fórum Regional de Jovens Líderes em 2025
+  decisao: A Assembleia será responsabilidade da Região Escoteira de São Paulo, realizada na Grande São Paulo, aprovado por
+    aclamação
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+- tema: Eleição dos delegados regionais para a Assembleia Nacional Escoteira
+  decisao: Foram eleitos 24 delegados e dois suplentes por aclamação, dispensada votação
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+- tema: Encaminhamento de propostas de assuntos gerais para Diretoria Regional
+  decisao: Propostas de criação de política de valores para associados isentos em eventos regionais e transparência financeira
+    em eventos regionais encaminhadas para criação de comissão pela Diretoria Regional, aprovado para constar em ata
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: Presidente
+  eleito: Rafael Melis Rogéro
+  mandato: Trigésima Primeira Reunião Ordinária da Assembleia Escoteira Regional de São Paulo
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 1º Vice-Presidente
+  eleito: Renato Wanderley Breneizer 283ºSP
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 2º Vice-Presidente
+  eleito: Fernando Nastri Palmieri 193ºSP
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 1ª Secretária
+  eleito: Rosemary Peres Motta 468/SP
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 2ª Secretária
+  eleito: Larissa Lemes Avari Lauterjung 147/SP
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão Assessora da Assembleia
+  cargo: Membros da Comissão de Credenciamento
+  eleito: Stephanie de Barros Ferreira 201/SP, Linna Mara Cavutto 497/SP, Marli Aparecida dos Santos Custódio 178/SP, Vilma
+    Pietropoli Morais, Renato Yoshimura Saito 478/SP, Ana Paula Araújo Amaral Santos 44/SP, Elizabeth de Siqueira Dainese
+    301/SP, Isadora Gualda Macedo 197/SP, Nanci Borges Rodrigues 255/SP, Carlos Eduardo Biazoto 497/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Assessora da Assembleia
+  cargo: Membros da Comissão Eleitoral
+  eleito: Neide Osawa Watanabe 343/SP, Tiago Vinícius Carneiro Marques 310/SP, Claudinei Teófilo da Silva Junior 29/SP, Manuella
+    Fernandes Ferreira da Rocha 108/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Assessora da Assembleia
+  cargo: Membros da Comissão de Assuntos Gerais
+  eleito: Iuri Henrique Aguilar 147/SP, Ingrid Janaina da Silva 147/SP, Milena Gonçalves Leite 514/SP, Fabrício Toledo Marcondes
+    66/SP, Luciana Maria Sevo Timoszczuk Ribeiro 89/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegados e suplentes
+  eleito: Adriana De Lima Pinto, Alessandra Aya Kodama Iwamoto, Carlos Eugenio Bakos, Claudinei Teófilo Da Silva Júnior, Douglas
+    Gonçalves, Edison Vieira Carnaúba, Eliana De Arruda Ferreira, Elias Alberto Cardoso Marques, Elisa Maria Gonçalves, Elizabete
+    De Andrade Gonçalves, Higor De Souza Ribeiro, Lidia Sadaco Minamizaki Ikuta, Luciana Maria Sevo Timoszczuk Ribeiro, Luiz
+    Carlos Ferreira, Lukas Palermo Lopes, Maria De Lourdes Santos Teijeira, Matheus Luis Cardoso França, Michael Pereira De
+    Oliveira (1º suplente), Rafael Melis Rogero, Rosemary Peres Motta, Rosemary Silva Miranda, Sergio Ferreira Teijeira, Sofia
+    Costa De Oliveira, Thiago Carvalho, Tiago Vinicius Carneiro Marques, Vânia Ferrari, Elias Marques (2º suplente)
+  mandato: ''
+  pagina: 8
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '301'
+  pagina: 1
+  conferido: true
+- o_que: delegados credenciados
+  valor: '280'
+  pagina: 6
+  conferido: true
+- o_que: delegados credenciados
+  valor: '215'
+  pagina: 7
+  conferido: true
+- o_que: delegados credenciados
+  valor: '301'
+  pagina: 7
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: adcad1aa6edc26b204f7ec53e23dec534ab128f6c193f7f0ee659715ed459670
+revisado: null

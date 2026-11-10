@@ -1,0 +1,147 @@
+doc_key: ata40-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2003-08-16'
+  local: Curitiba/PR
+deliberacoes:
+- tema: Renúncia e substituição de Conselheiro
+  decisao: Foi definido que o companheiro Thomé continuará participando da Comissão de Adultos e como representante do Brasil
+    na REME. Em decorrência da renúncia, a vaga de Conselheiro será ocupada pelo suplente Baldur O. Schubert.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: Foi aprovada a ata sem alterações.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Proposta de alteração dos distintivos de especialidades
+  decisao: Proposta quanto a alteração dos distintivos de especialidades, que foi aprovada. Ficou ainda decidido que a resolução
+    só entrará em vigor após os distintivos estarem prontos, considerando que depende de orçamentos e confecção.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Criação da Subcomissão de Condecorações e Recompensas
+  decisao: Foi aprovada a criação da sub-comissão que deverá analisar os pedidos apresentados, inclusive para esta reunião.
+    A subcomissão ficou composta por Geraldino, Thomé, Marco Romeu e Frederico (MG).
+  votacao: consenso
+  pagina: 1
+  conferido: true
+- tema: Rateio das despesas para a reunião do CAN
+  decisao: O rateio passará a ser feito a partir de fevereiro de 2004 conforme os critérios definidos.
+  votacao: consenso
+  pagina: 1
+  conferido: true
+- tema: Autorização para CNPJ próprio para a Região Escoteira de Santa Catarina
+  decisao: Decidiu-se por conceder autorização após a regularização da dívida que possa comprometer o CNPJ nacional.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Deliberação do uso de CNPJ
+  decisao: Decidido pelo CAN que a DEN passará a adotar medidas mais enérgicas com as Regiões e/ou Grupos Escoteiros causadores
+    de problemas.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Edital de Convocação 10.ª Assembléia Nacional
+  decisao: 'Foi aprovado com alterações. O CAN aprovou ainda a convocação de uma reunião Extraordinária da Assembléia Nacional
+    com a seguinte ordem do dia: Análise e votação de alteração de Estatuto da UEB, em especial, para adequação ao Código
+    Civil.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Programação da Assembléia Nacional e Congresso Escoteiro
+  decisao: Foi discutida e aprovada a programação da Assembléia Nacional.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Documento de credenciamento das Regiões na 10.ª Assembléia Nacional
+  decisao: Aprovou-se sem ressalvas.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Proposta de ajuste no regulamento do CAN
+  decisao: Foi aprovada com alterações.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação de traduções de documentos escoteiros
+  decisao: Foram aprovadas as traduções dos documentos “Compreendendo a Lei e Promessa Escoteira”, “Compreendendo o Sistema
+    de Patrulhas” e “Como Gerenciar o Ciclo de Programa”.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Manual do Assessor Pessoal de Formação
+  decisao: Foi aprovado. O manual será complementado com material relativo a perfil e formulários de controle de acompanhamento
+    de Assessor Pessoal.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Tema para 2004
+  decisao: Foi aprovado o tema “Construindo a Paz”.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Plano Nacional de Captação de Recursos
+  decisao: Deliberar sobre o Plano na próxima reunião do CAN e complementá-lo com as conclusões do seminário de Captação de
+    Recursos que acontecerá no Congresso Escoteiro.
+  votacao: consenso
+  pagina: 2
+  conferido: true
+- tema: Grupo Padrão 2004
+  decisao: A resolução foi aprovada com modificações.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Uso de imagem pela UEB
+  decisao: Proposta de incluir observação na Ficha Modelo 100 (Ficha de Inscrição no Grupo Escoteiro) foi aprovada por consenso.
+  votacao: consenso
+  pagina: 2
+  conferido: true
+- tema: Eleição para Presidência da Comissão Nacional de Programa de Jovens (CNPJ)
+  decisao: Carmem Barreira foi eleita para a Presidência da Comissão Nacional de Programa de Jovens.
+  votacao: consenso
+  pagina: 2
+  conferido: true
+- tema: Resolução sobre o Registro 2004
+  decisao: A resolução foi aprovada, com alterações.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Autorização para venda de imóvel Região de Santa Catarina
+  decisao: Proposta de autorização de venda foi aprovada por unanimidade, condicionada à aprovação da Assembléia Regional.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Propostas de Concessão de Medalhas
+  decisao: Decisões da sub comissão foram aprovadas por consenso.
+  votacao: consenso
+  pagina: 4
+  conferido: true
+- tema: Avaliação dos Executivos
+  decisao: Proposta de avaliação dos executivos frente a metas semestrais foi aprovada por consenso.
+  votacao: consenso
+  pagina: 4
+  conferido: true
+- tema: Leitura e aprovação da ata desta reunião
+  decisao: A presente ata foi lida e aprovada pelos membros do CAN.
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Comissão Nacional de Programa de Jovens
+  cargo: Presidente
+  eleito: Carmem Barreira
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: Data da reunião
+  valor: 16 e 17 de agosto de 2003
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: bb1bd8052993fcf6855383a859972040092b39aaf906b3727a317b4b377bbee3
+revisado: null

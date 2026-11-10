@@ -1,0 +1,104 @@
+doc_key: sp-2012-anexo-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2012-03-24'
+  local: Guarulhos
+deliberacoes:
+- tema: nomeação do Salão Nobre
+  decisao: Que ao Salão Nobre da Casa do Escoteiro Paulista seja dado o nome Chefe Escoteiro Carlos Alberto Guimarães Batisti
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: criação da Comissão Regional de Imagem e Comunicação
+  decisao: Que em vez da atual Diretoria de Comunicação existente seja criada uma Comissão Regional de Imagem e Comunicação
+    (CRIC) a exemplo do que ocorre a nível nacional e em outras Regiões como as de Goiás e do Rio Grande do Sul, sendo sua
+    composição definida pela Diretoria Regional tendo preferência os membros com conhecimento profissional da área
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: comunicação das decisões
+  decisao: Que repassem a todos os membros, de maneira acessível e com linguagem simplificada, suas decisões
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: incentivo e divulgação de trabalhos acadêmicos
+  decisao: Que incentive e divulgue trabalhos acadêmicos e pesquisas científicas sobre o Movimento
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: realização de pesquisas para avaliação do Movimento
+  decisao: Que realize um maior número de pesquisas para avaliação da situação do Movimento no Estado
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: incentivo à participação do Jovem em temas relevantes
+  decisao: Que incentive a participação do Jovem a cerca de temas relevantes ao Movimento
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: maior participação de Jovens do Ramo Pioneiro
+  decisao: Que incentive as unidades locais a promoverem uma maior participação de Jovens do Ramo Pioneiro nas tomadas de
+    decisão em nível Regional e Local
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: inclusão do Fórum Paulista de Jovens Líderes no Calendário Oficial
+  decisao: Que inclua o Fórum Paulista de Jovens Líderes em seu Calendário Oficial
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: espaço formalizado para o Núcleo Regional de Jovens Líderes nas Assembleias
+  decisao: Que o Núcleo Regional de Jovens Líderes tenha um espaço formalizado e oficializado nas Assembléias Regionais para
+    apresentação de seu relatório anual estando presente no Edital de Convocação da mesma
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: viabilidade de transmissão online da Assembleia
+  decisao: Que incentive e estude a viabilidade de transmissão online ao vivo da Assembléia
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: assento do Núcleo Regional nas reuniões da Diretoria Regional
+  decisao: Que o Núcleo Regional tenha nas reuniões da Diretoria Regional, assento com direito a voz e que possa dar posterior
+    feed-back aos Jovens do Estado do conteúdo passível de divulgação a exemplo do o que ocorre no Conselho de Administração
+    Nacional
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Comunicadora
+  eleito: Mariana De Marchi do Grupo Escoteiro Curuqui, 142/SP
+  mandato: gestão 2012/2013
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Paulista de Jovens Líderes
+  cargo: Coordenador
+  eleito: Henrique de Andrade Messias do Grupo Escoteiro Caoquira, 158/SP
+  mandato: gestão 2012/2013
+  pagina: 1
+  conferido: true
+- orgao: Região Escoteira de São Paulo
+  cargo: delegado ao Fórum Nacional de Jovens Líderes 2012
+  eleito: Thiago Martins Barbosa Bueno
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Região Escoteira de São Paulo
+  cargo: delegado ao Fórum Nacional de Jovens Líderes 2012
+  eleito: Rodrigo Moreira
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Região Escoteira de São Paulo
+  cargo: delegado ao Fórum Nacional de Jovens Líderes 2012
+  eleito: Julia Reali
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 27187c5c5ce2b24bf58e5adda7c288bf715277e2c21246e7efc8a6f707f1e961
+revisado: null

@@ -1,0 +1,53 @@
+doc_key: sp-2019-02-17-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2019-02-17'
+  local: CECAPE – Centro de Capacitação dos Profissionais da Educação (Rua Tapajós, 300, São Caetano do Sul/SP)
+deliberacoes:
+- tema: Administração Financeira dos Distritos
+  decisao: Encaminhamento aprovado por unanimidade para manter os estudos sobre o tema até a próxima Reunião do Conselho Consultivo
+    Regional, com soluções de cartão pré-pago ou conta bancária por representação, descartando a solução de CNPJ filial.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Cursos de Formadores para Região de São Paulo
+  decisao: Encaminhamento aprovado por unanimidade para se fazer um levantamento de demanda dos Distritos em relação a Seminário
+    Preparatório de Formadores, CF-1 e CF-2 para quantificar a nossa necessidade à DEN.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Identidade Visual dos Distritos
+  decisao: Encaminhamento aprovado por todos, exceto por um voto contra, para que todos os membros da Comissão Distrital passem
+    a usar o lenço nacional, ficando a expensas próprias a aquisição do lenço nacional. Proposta aprovada por unanimidade
+    para que a Diretoria Regional de Comunicação elabore uma proposta de padronização da identidade visual dos Distritos a
+    ser discutida na próxima Reunião do CCR.
+  votacao: todos exceto um voto contra; unanimidade
+  pagina: 6
+  conferido: true
+- tema: Regularização do CNPJ filial da Região Escoteira de São Paulo
+  decisao: Discussão e esclarecimentos sobre a necessidade de regularizar o CNPJ filial para evitar bloqueio de repasses do
+    nível Nacional, mantendo autonomia financeira e administrativa das Regiões. Proposta de que a eleição da Diretoria Regional
+    e das Comissões Regionais para o CNPJ próprio também valha para a regularização do CNPJ filial, por ad-referendum.
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Revisão do fluxograma de abertura e reabertura de UELs
+  decisao: Resta deliberado que Antenor 16DE, Vania 31DE, Arnoldo 38DE, Mauricio (Secretário Distrital 26DE), Raphael (Agente
+    de Desenvolvimento Regional) e um representante da Coordenação Regional de Crescimento e Expansão deverão compor um GT
+    para apresentar proposta de revisão do fluxograma para apreciação do CCR.
+  votacao: ''
+  pagina: 8
+  conferido: true
+- tema: Diminuição progressiva do valor do registro escoteiro
+  decisao: Proposta de diminuição progressiva do valor do registro escoteiro na razão de 1/12 avos, válida por 12 meses, com
+    registro proporcional, em tramitação no CAN.
+  votacao: ''
+  pagina: 9
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: f25c8f069c83ae6db6a0c0b81ddb3110d2c3c692e675e53d7fec6ae65fda3121
+revisado: null

@@ -1,0 +1,179 @@
+doc_key: 2a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-02-e-05-nov-1995-1
+reuniao:
+  tipo: ordinaria
+  data: '1995-11-02'
+  local: auditórios do Colégio Bom Jesus e do Banco do Brasil, Joinville, SC
+deliberacoes:
+- tema: Relatório Anual 1994/1995
+  decisao: o Relatório Anual 1994/1995 da Diretoria Nacional e da Comissão Fiscal Nacional foi submetido à votação e aprovado
+    por unanimidade
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Base para cálculo do número de Delegados regionais
+  decisao: o plenário se manifesta pela adoção da quantidade de sócios que pagaram sua Contribuição Anual como base para esse
+    cálculo
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Mandato dos Conselheiros Nacionais
+  decisao: o plenário se manifesta pela extinção desses mandatos após o encerramento da presente reunião ordinária da Assembléia
+    Nacional, destacando que o mesmo procedimento deverá ser observado em 1996
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Criação da Ordem da Flor de Lis
+  decisao: Diretor Presidente da Diretoria Nacional anuncia a decisão tomada pela Diretoria Nacional de criar a Ordem da Flor
+    de Lis, explicando ao plenário sua regulamentação e anunciando o lançamento da Ordem
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Escolha do local para o III Congresso Escoteiro Nacional
+  decisao: o plenário decide, por 43 votos, realizar em Brasília, em 1997, o III Congresso Escoteiro Nacional
+  votacao: 43 votos a favor
+  pagina: 2
+  conferido: true
+- tema: Alteração do Estatuto da UEB sobre número máximo de Diretores Nacionais por Região
+  decisao: o plenário aprova, preliminarmente, remeter a matéria à apreciação da Assembléia Nacional, em reunião extraordinária
+    a ser realizada por ocasião do II Congresso Escoteiro Nacional, a ser realizado em Canelas, RS, em 1996
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Data da III Reunião Ordinária da Assembléia Nacional e II Congresso Escoteiro Nacional
+  decisao: por 66 votos contra 17, o plenário decide manter a data anteriormente definida (01 a 04 de novembro de 1996)
+  votacao: 66 votos contra 17
+  pagina: 3
+  conferido: true
+- tema: Prorrogação do prazo para apresentação dos projetos do Concurso Identidade Visual da UEB
+  decisao: a Assembléia, por unanimidade, decide prorrogar o prazo para apresentação dos projetos, delegando à Diretoria Nacional
+    competência para julgar os trabalhos e divulgar o resultado
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Votos de louvor e agradecimentos
+  decisao: registrar em ata votos de louvor às Comissões Assessoras, à Região Escoteira de Santa Catarina, às Regiões Escoteiras
+    do Paraná e de São Paulo, e agradecimentos pelo êxito do evento e iniciativas apresentadas
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Diretoria Nacional
+  cargo: Diretor Presidente
+  eleito: Mário Henrique Peters Farinon
+  mandato: 1o de janeiro a 31 de dezembro de 1997
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: 1o Diretor Vice-Presidente
+  eleito: João Alberto Bordignon
+  mandato: 1o de janeiro a 31 de dezembro de 1997
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: 2o Diretor Vice-Presidente
+  eleito: Eduardo Szazi
+  mandato: 1o de janeiro a 31 de dezembro de 1997
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Davi Crusius
+  mandato: mandato até a realização da V Reunião Ordinária da Assembléia Nacional, em 1998
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Helmgton José Brito de Souza
+  mandato: mandato até a realização da V Reunião Ordinária da Assembléia Nacional, em 1998
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: João Alberto Bordignon
+  mandato: mandato até a realização da V Reunião Ordinária da Assembléia Nacional, em 1998
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Renato Bini
+  mandato: mandato até a realização da V Reunião Ordinária da Assembléia Nacional, em 1998
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Wiaderlei Astolphi Galera
+  mandato: mandato até a realização da V Reunião Ordinária da Assembléia Nacional, em 1998
+  pagina: 2
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro titular
+  eleito: Idalides dos Santos Monteiro
+  mandato: mandato até a realização da IV Reunião Ordinária da Assembléia Nacional, em 1997
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: votantes na eleição para Diretores Nacionais
+  valor: '100'
+  pagina: 2
+  conferido: true
+- o_que: ausência na votação para Diretores Nacionais
+  valor: '1'
+  pagina: 2
+  conferido: true
+- o_que: votos de Davi Crusius
+  valor: '15'
+  pagina: 3
+  conferido: true
+- o_que: votos de Helmgton José Brito de Souza
+  valor: '16'
+  pagina: 3
+  conferido: true
+- o_que: votos de Ivan Barreto
+  valor: '11'
+  pagina: 3
+  conferido: true
+- o_que: votos de João Alberto Bordignon
+  valor: '14'
+  pagina: 3
+  conferido: true
+- o_que: votos de Luiz Cesar Souto de Moura
+  valor: '8'
+  pagina: 3
+  conferido: true
+- o_que: votos de Renato Bini
+  valor: '14'
+  pagina: 3
+  conferido: true
+- o_que: votos de Wiaderlei Astolphi Galera
+  valor: '21'
+  pagina: 3
+  conferido: true
+- o_que: votos de Lúcio Miranda Lima
+  valor: '0'
+  pagina: 3
+  conferido: true
+- o_que: votos de Rubens Vergílio de Paula
+  valor: '0'
+  pagina: 3
+  conferido: true
+- o_que: votos para realização do III Congresso Escoteiro Nacional em Brasília
+  valor: '43'
+  pagina: 2
+  conferido: true
+- o_que: votos para realização do III Congresso Escoteiro Nacional em Alagoas
+  valor: '42'
+  pagina: 2
+  conferido: true
+- o_que: votos para manter data da III Reunião Ordinária da Assembléia Nacional
+  valor: '66'
+  pagina: 3
+  conferido: true
+- o_que: votos contra manter data da III Reunião Ordinária da Assembléia Nacional
+  valor: '17'
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 57d38be23ba5b2987e12f284874e4383cc0cf539039419b8ef8047254f66581d
+revisado: null

@@ -1,0 +1,73 @@
+doc_key: ata92-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2018-08-25'
+  local: Escritório Nacional dos Escoteiros do Brasil, Curitiba/PR
+deliberacoes:
+- tema: Alteração do 1º Artigo da Lei Escoteira
+  decisao: O presidente KONTZ submete à votação do Conselho, resultando em 12 votos a favor e duas abstenções (incluindo a
+    do presidente), gerando então o atendimento da determinação da Assembleia Nacional. Assim, o CAN autoriza que seja feita
+    a submissão da sugestão de adequação de texto aos associados e que o resultado seja submetido à Assembleia Escoteira Nacional
+    para deliberação final. Autoriza, igualmente, que o texto apresentado seja, desde já, utilizado pelas Unidades Escoteiras
+    Locais que desejarem.
+  votacao: 12 votos a favor e duas abstenções
+  pagina: 2
+  conferido: true
+- tema: JAMCAM
+  decisao: O presidente KONTZ submete à votação do Conselho a respeito de que o CAN aprecie o material e, alinhando seu conteúdo
+    com a DEN, ratifique seu encaminhamento e assine o documento, resultando em 13 votos a favor e uma abstenção (a do presidente),
+    sendo que ficou definido que o Comitê Gestor deverá ser integrado por representantes da DEN eleita e por profissionais
+    do EN.
+  votacao: 13 votos a favor e uma abstenção
+  pagina: 3
+  conferido: true
+- tema: Loja Escoteira do Nordeste
+  decisao: Foi encaminhado que a DEN deva apresentar um estudo de viabilidade e o CAN irá analisar e atuar a partir do recebimento
+    desse resultado.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Manifestação de congratulações à DEN pelo Jamboree Nacional Escoteiro 2018
+  decisao: KONTZ submete à votação do Conselho, sendo aprovado por unanimidade a manifestação de congratulações à DEN pela
+    execução do Jamboree.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Ratificação da Presidência e Definição da Vice-Presidência do CAN
+  decisao: O presidente submete à votação a nova composição de presidência e vice-presidência, resultando em 12 votos a favor
+    e duas abstenções (incluindo a do presidente). Da mesma forma, é ratificado o nome de KONTZ para continuar na presidência
+    do Conselho até o final de seu mandato.
+  votacao: 12 votos a favor e duas abstenções
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional
+  cargo: Presidente
+  eleito: Rafael Macedo
+  mandato: 2019/2022
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente
+  eleito: Antônio Luiz Malafaia Santos (MALAFAIA)
+  mandato: ''
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: votos na votação da alteração do 1º Artigo da Lei Escoteira
+  valor: 12 votos a favor e duas abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos na votação do encaminhamento do ofício do JAMCAM
+  valor: 13 votos a favor e uma abstenção
+  pagina: 3
+  conferido: true
+- o_que: votos na ratificação da presidência e vice-presidência do CAN
+  valor: 12 votos a favor e duas abstenções
+  pagina: 5
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 9bf241ae8640f3b6ea1489a3e0ac2d24f86eacdcb86db367bfbdb72efce12529
+revisado: null

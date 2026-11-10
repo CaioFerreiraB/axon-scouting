@@ -1,0 +1,75 @@
+doc_key: sp-2021-12-04-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-12-04'
+  local: São Paulo
+deliberacoes:
+- tema: Entrega da Certificação Distrito Padrão 2020
+  decisao: foram entregues e apresentados os certificados aos Distritos Escoteiros que alcançaram o "Distrito Padrão" de 2020,
+    foram eles o 10º- Oeste, 17º- Santo Amaro, 26º, 27º- Impisa
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Situação Sítio Vale das Flores
+  decisao: a União dos Escoteiros do Brasil, Região de São Paulo, possui 55% da propriedade e mais 14,54% estão em fase final
+    de regulamentação de doação, chegando, então, em cerca de um mês, a possuir 69,54% da propriedade
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Manutenção do EAD
+  decisao: manter o EAD, mas ofertas presenciais também, equilíbrio entre presencial e virtual, que os APFs atuem e orientem
+    melhor seus assessorados, descentralizar o uso dos recursos de EAD aos Distritos Escoteiros, que os cursantes devem ter
+    conhecimentos prévios sobre os recursos digitais, buscar melhor preparação dos formadores para a utilização dos recursos
+    digitais, a importância de se considerar as habilidades dos cursantes na aplicação das ferramentas, o EAD facilitou que
+    alguns cursantes “finjam” que estão realizando o curso, possuirmos um módulo de aperfeiçoamento para melhor apresentação
+    e introdução ao Escotismo, tanto para jovens como para voluntários
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Reestruturação das Comissões Distritais
+  decisao: favorecer os Distritos menores, o acompanhamento de cada pessoa, diminuir a dupla função nas UELs, dar flexibilidade
+    para as demandas variáveis, facilitar a Gestão de Projetos, favorecer a comunicação da equipe distrital entre si e à diretoria
+    regional
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Planejamento Estratégico - Atualizações e Orientações
+  decisao: investir na formação de Escotistas e Dirigentes das UELs, investir na formação dos Comissários, Dedicação à retomada
+    no Crescimento e captação de jovens e adultos, criação de formas de incentivo para a captação com destaque para a questão
+    financeira, realizar previsão orçamentária mais flexível (forecast), alcance dos objetivos ao nível Local de forma clara
+    e simples para a implementação das estratégias, idealização das formas de gestão mais simples, melhorar os processo de
+    divulgação de estratégias nacionais, inserir avaliações periódicas para as adequações das estratégias, esclarecer os papéis
+    institucionais dentro da estratégia nacional e o que compete a cada nível, definir duração dos planos sem vincular aos
+    períodos das gestões nacionais e regionais alinhar as ferramentas de avaliação ao Programa Educativo (Grupo Padrão e Distrito
+    Escoteiro Padrão), adequar às diversas realidades regionais e locais, buscar estratégias com mais ênfase ao crescimento,
+    criar grupo com os dirigentes de UELs para facilitar a comunicação
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Reserva Laços Fortes
+  decisao: manutenção desta estratégia para os próximos períodos, com sugestões para que os distritos passem a abrir mão de
+    apenas parte do repasse distrital estabelecido por um percentual, para continuar a reserva, mas para manter o devido repasse
+    aos distritos que tanto precisam, buscar uma alternativa de recurso sem mexer no repasse do orçamento compartilhado, como
+    ideia pode ser uma parte de taxas de eventos regionais ser destinado a esta reserva, e que o gerenciamento desse valor
+    deve ficar a cargo da equipe distrital
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Convenção Regional em janeiro de 2022
+  decisao: no dia vinte e três de janeiro, haverá o primeiro encontro entre voluntários e funcionários do Serviço Profissional
+    Escoteiro, para unir à todos para trocas de informações, parte presencial e parte virtual, de forma simultânea, por redução
+    de custos operacionais e de protocolos sanitários, compreendendo tudo o que foi feito na gestão desta diretoria regional,
+    de maneira a consolidar e dar ciência sobre estas ações, e o alinhamento e levantamento sobre o que ainda é necessário
+    realizar antes do término do mandato, e que a parte de reconhecimento ao Adulto (condecorações e reconhecimentos) seja
+    desconectada da Assembleia Regional Escoteira, para melhorar a entrega e desvincular de eventuais percepções políticas
+    sobre tais atos
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 0e383f6c99fd34ad2f4d592e83a8bf121b23e5ccb3a98b2d46fb7da1ff4daf42
+revisado: null

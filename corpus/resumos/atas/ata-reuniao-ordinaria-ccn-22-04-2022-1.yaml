@@ -1,0 +1,48 @@
+doc_key: ata-reuniao-ordinaria-ccn-22-04-2022-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-04-22'
+  local: UTFPR – Universidade Tecnológica Federal do Paraná – Campus Curitiba – Sede Centro – Av. 7 de Setembro, 3165 – Rebouças,
+    Curitiba – Pr
+deliberacoes:
+- tema: Eleição da mesa da reunião
+  decisao: foram aclamados Narcizo Safério Giraldi como Presidente e Sueli Cristina Franco dos Santos como Secretária desta
+    reunião
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Dispensa da leitura das atas anteriores
+  decisao: o presidente da mesa, Narcizo, solicitou a dispensa da leitura das atas da Reunião Ordinária do CCN de 23 de outubro
+    de 2021, por terem sido disponibilizadas eletronicamente, anteriormente, para leitura, o que foi aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: foi submetido à votação para aprovação da referida ata, a qual foi aprovada por unanimidade dos presentes
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Inclusão do assunto referente ao Estatuto Nacional na pauta
+  decisao: foi solicitada a inclusão do assunto referente ao Estatuto Nacional, que será submetido para aprovação da Assembleia
+    Extraordinária Nacional, o que foi aprovado pelos presentes
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Retirada do assunto do calendário Nacional 2022 da pauta
+  decisao: Retirado da pauta o assunto que trata do calendário Nacional 2022, o que foi aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Indicação para não aprovação do Estatuto Nacional
+  decisao: em consenso do Conselho, por unanimidade, estabeleceu-se que cada conselheiro fará indicação aos seus delegados
+    pela não aprovação do estatuto
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: e3f6761b7e95ec2ccf69af3d93392da4593a0167caf9d49d50f74be686b11d40
+revisado: null

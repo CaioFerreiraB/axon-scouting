@@ -1,0 +1,35 @@
+doc_key: ata-117a-reuniao-ordinaria-do-can-assinada-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-02-24'
+  local: Escritório Nacional da União dos Escoteiros do Brasil sito na Rua Coronel Dulcídio, 2107 - Bairro Água Verde, Curitiba
+    - PR
+deliberacoes:
+- tema: Ata da 116ª Reunião Ordinária do CAN
+  decisao: Ata da 116ª Reunião Ordinária do CAN realizada nos dias 18 e 19 de novembro de 2023. Aprovada com 11 votos a favor
+    (BRAGA, ALDENISE, NETO, CLAUCIO, DANIEL, DANIELA, FÁBIO, KARINA, LUCIANO, LUIZ e SÉRIS) e 3 abstenções (ILKA, RENATO e
+    SIMONI).
+  votacao: 11 votos a favor, 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: Destinação de valores do superávit da taxa do Jamboree Mundial (Coreia do Sul 2023)
+  decisao: 'Destinação de valores do superávit da taxa do Jamboree Mundial, conforme segue: Devolver ao Fundo de Risco o valor
+    utilizado para pagamento do processo judicial - R$ 170.500,00; Transferir para Fundo de Apoio ao Associado (Objetivo 2.2
+    - Ação: 2.2.1) - R$ 50.000,00; Transferir para Fundo de iniciativas de formação (Objetivo 2.2 - Ação: 2.2.2) - R$ 50.000,00
+    e Desenvolvimento Novo Paxtu - R$ 105.890,00. Aprovada por unanimidade.'
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Agenda definitiva da 117ª Reunião Ordinária do CAN
+  decisao: A agenda definitiva é aprovada por aclamação, com retirada do assunto "Informes da Rede Nacional de Jovens Líderes"
+    a pedido destes.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d824f0bc9552a439de22b39d5ea9f19324eed6099aca260c46472aeea8361774
+revisado: null

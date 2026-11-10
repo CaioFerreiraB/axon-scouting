@@ -1,0 +1,44 @@
+doc_key: atareuniaoextraordinaria-30-mai-21-1
+reuniao:
+  tipo: extraordinaria
+  data: '2021-05-30'
+  local: videochamada pelo Zoom
+deliberacoes:
+- tema: eleição da presidência do CAN
+  decisao: Por maioria de votos (11 a favor e 2 contra e 1 abstenção), fica eleito Eduardo MANIQUE como presidente do CAN
+    para os próximos dois anos.
+  votacao: 11 a favor, 2 contra, 1 abstenção
+  pagina: 7
+  conferido: true
+- tema: eleição do vice-presidente do CAN
+  decisao: SARAH é eleita por aclamação, por ser a única candidata para esse cargo.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente
+  eleito: Eduardo MANIQUE
+  mandato: próximos dois anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente
+  eleito: SARAH
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: votos a favor de MANIQUE para presidente do CAN
+  valor: '7'
+  pagina: 3
+  conferido: false
+- o_que: votos a favor de DAYANNA para presidente do CAN
+  valor: '7'
+  pagina: 3
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 9daed5e43370b467822b81573ab840325e2e5b88ee8bf75f482e24d4f5f7a388
+revisado: null

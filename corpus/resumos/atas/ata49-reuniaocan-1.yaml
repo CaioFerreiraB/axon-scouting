@@ -1,0 +1,61 @@
+doc_key: ata49-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2005-11-14'
+  local: Curitiba/PR
+deliberacoes:
+- tema: Aumento de percentual de comissão para Regiões Escoteiras
+  decisao: a DEN aprovou aumentar de 10% para 15% o percentual de comissões às Regiões Escoteiras relativas a vendas efetuadas
+    aos Grupos
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação de balancetes
+  decisao: os balancetes dos meses de Julho, Agosto e Setembro foram aprovados por unanimidade
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Inclusão no orçamento de verba para custear despesas de passagens aéreas para reuniões do CAN em 2006
+  decisao: inclusão no orçamento verba para custear as despesas de passagens aéreas para as reuniões de julho e novembro/2006
+  votacao: 8 votos favoráveis e 3 contrários
+  pagina: 2
+  conferido: true
+- tema: Condecorações e Recompensas
+  decisao: 'Medalha Velho Lobo: José dos Santos Marques. Medalha Tiradentes: Grupo Escoteiro 9 de Julho - 25/SP, Marco Aurélio
+    de Melo Castrianni, Ênio H. Cojho e Everaldo Faria Palumbo; Tapir de Prata: Vander Veloso Pires. Moção de agradecimento
+    ao companheiro João Alberto Bordignon pela colaboração na realização do Planejamento Estratégico da Instituição'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Planejamento Estratégico
+  decisao: Suas conclusões são aprovadas pelo CAN
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Edital de convocação da Assembleia Ordinária Nacional
+  decisao: aprovado conforme modelo que se encontra anexo
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do uso do Distintivo do Centenário
+  decisao: Aprovada a utilização do distintivo em questão com a determinação de que seu uso não seja obrigatório e que sua
+    localização na camisa seja estudada pela CNPJ
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Cancelamento da Reunião de Fevereiro
+  decisao: a Reunião do CAN que aconteceria em fevereiro foi cancelada, devendo haver a correção do Calendário Anual de 2006
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos para inclusão no orçamento de passagens aéreas
+  valor: 8 votos favoráveis e 3 contrários
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 55aac29985dd5a72926be9968c064ddf8f416053e1f8ca7187859f4d1db376b6
+revisado: null

@@ -1,0 +1,102 @@
+doc_key: ata-121a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-02-22'
+  local: Escritório Nacional da União dos Escoteiros do Brasil sito na Rua Coronel Dulcídio, 2107 - Bairro Água Verde, Curitiba
+    - PR
+deliberacoes:
+- tema: aprovação da pauta provisória
+  decisao: Após deliberação, a pauta foi aprovada por unanimidade, tornando-se definitiva.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Calendário de Reuniões Ordinárias do CAN para 2025
+  decisao: DANIELA apresentou a proposta de Calendário de Reuniões Ordinárias do CAN para o ano de 2025, que também recebeu
+    aprovação unânime.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Ata da 119ª Reunião Ordinária do CAN
+  decisao: Aprovada com 11 votos a favor (BRAGA, ALDENISE, CLÁUCIO, DANIEL, DANIELA, FÁBIO, ILKA, LUIZ, RENATO, SÉRIS e SIMONI)
+    e 3 abstenções por falta de pronunciamento (NETO, KARINA e LUCIANO).
+  votacao: 11 votos a favor, 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: Ata da 120ª Reunião Ordinária do CAN
+  decisao: Aprovada com 12 votos a favor (BRAGA, ALDENISE, NETO, CLÁUCIO, DANIELA, FÁBIO, ILKA, LUCIANO, LUIZ, RENATO, SÉRIS
+    e SIMONI) e 2 abstenções por falta de pronunciamento (DANIEL e KARINA).
+  votacao: 12 votos a favor, 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Redação do item 4 - Diversidades Étnico-raciais da Política Nacional de Diversidade e Inclusão
+  decisao: Aprovada a redação proposta para o “item 4 - Diversidades Étnico-raciais” da Política Nacional de Diversidade e
+    Inclusão.
+  votacao: 12 votos a favor, 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Ata da Reunião Extraordinária do CAN - Eleição DEN Triênio 2025-2028
+  decisao: A ata registra a reunião extraordinária do Conselho de Administração Nacional dos Escoteiros do Brasil, realizada
+    em 15 de dezembro de 2024, na qual foi aprovada por unanimidade a chapa "UNIDOS PELO ESCOTISMO", liderada por Irineu Muniz
+    de Rezende Neto, para a Diretoria Executiva Nacional no triênio 2025-2028.
+  votacao: 12 votos a favor, 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Ata sessão fechada - reunião extraordinária do CAN 21/10/2024 - GPS
+  decisao: Aprovada com 11 votos a favor (BRAGA, ALDENISE, CLÁUCIO, DANIEL, DANIELA, ILKA, KARINA, LUCIANO, LUIZ, RENATO e
+    SÉRIS) e 3 abstenções por falta de pronunciamento (NETO, FÁBIO e SIMONI).
+  votacao: 11 votos a favor, 3 abstenções
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional
+  cargo: Presidente
+  eleito: Irineu Muniz de Rezende Neto
+  mandato: triênio 2025-2028
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: votos a favor da Ata da 119ª Reunião Ordinária do CAN
+  valor: '11'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na Ata da 119ª Reunião Ordinária do CAN
+  valor: '3'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da Ata da 120ª Reunião Ordinária do CAN
+  valor: '12'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na Ata da 120ª Reunião Ordinária do CAN
+  valor: '2'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da redação do item 4 - Diversidades Étnico-raciais
+  valor: '12'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação do item 4 - Diversidades Étnico-raciais
+  valor: '2'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da aprovação da chapa "UNIDOS PELO ESCOTISMO" para DEN 2025-2028
+  valor: '12'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na aprovação da chapa "UNIDOS PELO ESCOTISMO" para DEN 2025-2028
+  valor: '2'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da Ata sessão fechada - reunião extraordinária do CAN 21/10/2024 - GPS
+  valor: '11'
+  pagina: 3
+  conferido: true
+- o_que: abstenções na Ata sessão fechada - reunião extraordinária do CAN 21/10/2024 - GPS
+  valor: '3'
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: f1016ec40782e871b404e1ae6e8ec96a20c020f23c03cf3659b05f0f6607e654
+revisado: null

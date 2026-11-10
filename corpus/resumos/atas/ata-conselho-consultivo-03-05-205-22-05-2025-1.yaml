@@ -1,0 +1,65 @@
+doc_key: ata-conselho-consultivo-03-05-205-22-05-2025-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-05-03'
+  local: EAPE - Unidade - Escola de Formação Continuada dos Profissionais da Educação, situada na SGAS 907, Conjunto A, Brasília/DF
+deliberacoes:
+- tema: Eleição da Coordenação do Conselho Consultivo
+  decisao: MÔNICA se voluntariou para exercer a função de Coordenadora, sendo sua indicação aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: a ata da reunião anterior, ocorrida em 2 de novembro de 2024, no Rio de Janeiro, foi aprovada por aclamação, sem
+    necessidade de leitura
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Composição do Comitê de Governança e Transparência da Loja Escoteira
+  decisao: 'ficou definida a nova composição do Comitê de Governança e Transparência da Loja Escoteira, conforme previsto
+    na Resolução CAN 2/2016, com representantes das seguintes Regiões Escoteiras e da Diretoria Executiva Nacional: São Paulo,
+    Rio Grande do Sul, Paraná, Rondônia, Rio Grande do Norte'
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Conselho Consultivo
+  cargo: Coordenadora
+  eleito: MÔNICA Saraiva da Silva de Albuquerque
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: Número de atendimentos do Suporte Regional em 2024
+  valor: '1.675'
+  pagina: 3
+  conferido: false
+- o_que: Unidades Escoteiras Locais classificadas no programa Grupo Padrão
+  valor: '1.069'
+  pagina: 4
+  conferido: false
+- o_que: Inscritos na 15ª Aventura Nacional Sênior
+  valor: '1.228'
+  pagina: 4
+  conferido: false
+- o_que: Royalties repassados à Região Escoteira do Rio Grande do Sul em 2019
+  valor: R$145.000,00
+  pagina: 5
+  conferido: false
+- o_que: Faturamento da Região Escoteira do Rio Grande do Sul em 2019
+  valor: R$1.825.000,00
+  pagina: 5
+  conferido: false
+- o_que: Royalties repassados à Região Escoteira do Rio Grande do Sul em 2024
+  valor: R$35.000,00
+  pagina: 5
+  conferido: false
+- o_que: Faturamento da Região Escoteira do Rio Grande do Sul em 2024
+  valor: R$1.659.000,00
+  pagina: 5
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: a3b499733ddb5a67dd3cb686555b57731ede344fada64977da163a240c50e13c
+revisado: null

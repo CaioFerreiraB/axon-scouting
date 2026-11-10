@@ -1,0 +1,260 @@
+doc_key: sp-ata-are-2005-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2005-09-24'
+  local: Avenida Hélio Vergueiro Leite, s/nº - Jardim Universitário — Municipio de Espirito Santo do Pinhal, São Paulo
+deliberacoes:
+- tema: Aprovação da ata da Assembleia Regional anterior
+  decisao: O Presidente da Assembléia coloca em votação a ata da Assembléia Regional de 2004, sendo a mesma aprovada pela
+    maioria absoluta.
+  votacao: maioria absoluta
+  pagina: 2
+  conferido: true
+- tema: Deliberação das contas do exercício de 2004
+  decisao: Após toda a discussão o Presidente da Assembléia colocou em votação as contas do exercicio de 2004, sendo aprovada
+    por 89 votos, contra 60 votos e abstenções.
+  votacao: 89 votos a favor, 60 contra
+  pagina: 2
+  conferido: true
+- tema: Deliberação do orçamento para 2006
+  decisao: O Presidente da Assembléia coloca em votação a proposta para o Orçamento da Região para o ano de 2006 em 17.334
+    registros, o que foi aprovado por maioria absoluta.
+  votacao: maioria absoluta
+  pagina: 3
+  conferido: true
+- tema: Permissão para novas inscrições de candidatos a delegados à Assembleia Nacional
+  decisao: A Assembleia permitiu a novas inscrições de candidatos a delegados à Assembleia Nacional, o que foi aprovado por
+    aclamação.
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Proposta para sediar a Assembleia de 2006
+  decisao: Proposta para sediar a Assembleia de 2006, do Pólo Grande Norte, na Cidade de Guarulhos, foi aprovada por aclamação.
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: Marco Aurélio de Mello Castrianni
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Priscila do Nascimento Costa
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Francisca Souza Carrer
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Sonia Maria Gonçalves Jorge
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Caryl Chessman ce Jesus Trevisan
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Marcos Aurélio de Melo Castrianni
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Mara de Fátima Macedo Silva
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Vicente Porto de Vasconcellos Filho
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Alamir Romão Dias Junior
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Marilia Bárbara F. G Mosckovich
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Alexandre Amado Maripensa
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Carla Barbosa de Oliveira Neves
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Rafael Teixeira Nunes
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Fernando Braga Monte Serrat
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: João Floriano Ribeiro
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Afonso Rodrigues de Aquino
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Christian de Mello Sznick
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Silvio Y. M Miyazaki
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Nacional
+  cargo: Delegado Titular
+  eleito: Everaldo Faria Palumbo
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: inscrições na assembleia
+  valor: '372'
+  pagina: 2
+  conferido: true
+- o_que: delegados
+  valor: '270'
+  pagina: 2
+  conferido: true
+- o_que: candidatos a delegado à Assembleia Nacional
+  valor: '21'
+  pagina: 2
+  conferido: true
+- o_que: candidatos ao Conselho de Administração Nacional
+  valor: '2'
+  pagina: 2
+  conferido: true
+- o_que: votos para candidato ao Conselho de Administração Nacional Marco Aurélio de Mello Castrianni
+  valor: '184'
+  pagina: 4
+  conferido: true
+- o_que: votos para candidata ao Conselho de Administração Nacional Carla Barbosa de Oliveira Neves
+  valor: '95'
+  pagina: 4
+  conferido: true
+- o_que: votos em branco para Conselho de Administração Nacional
+  valor: '2'
+  pagina: 4
+  conferido: true
+- o_que: votos nulos para Conselho de Administração Nacional
+  valor: '2'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegada Priscila do Nascimento Costa
+  valor: '24'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegada Francisca Souza Carrer
+  valor: '18'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegada Sonia Maria Gonçalves Jorge
+  valor: '18'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegada Caryl Chessman ce Jesus Trevisan
+  valor: '17'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Marcos Aurélio de Melo Castrianni
+  valor: '16'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegada Mara de Fátima Macedo Silva
+  valor: '16'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Vicente Porto de Vasconcellos Filho
+  valor: '16'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Alamir Romão Dias Junior
+  valor: '14'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegada Marilia Bárbara F. G Mosckovich
+  valor: '12'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Alexandre Amado Maripensa
+  valor: '11'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegada Carla Barbosa de Oliveira Neves
+  valor: '11'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Rafael Teixeira Nunes
+  valor: '11'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Fernando Braga Monte Serrat
+  valor: '10'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado João Floriano Ribeiro
+  valor: '10'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Afonso Rodrigues de Aquino
+  valor: '9'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Christian de Mello Sznick
+  valor: '9'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Silvio Y. M Miyazaki
+  valor: '9'
+  pagina: 4
+  conferido: true
+- o_que: votos para delegado Everaldo Faria Palumbo
+  valor: '8'
+  pagina: 4
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: e0c9948089c031c381d802fa959b8eee2a70dee4ce4834fc392322b6336f78ac
+revisado: null

@@ -1,0 +1,95 @@
+doc_key: ata80-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-04-20'
+  local: CENFORPE, São Bernardo do Campo – SP
+deliberacoes:
+- tema: Eleição de presidente e vice-presidente do Conselho
+  decisao: Para presidente, apenas o Conselheiro Vendramini se candidata, tendo sido eleito por aclamação. Para vice-presidente,
+    igualmente apenas um candidato se apresenta, sendo também eleito por aclamação o Conselheiro Jonathan Hugh Govier.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Composição do Grupo de Trabalho Eventos Nacionais
+  decisao: Marco Romeu sugere que esse último GT, que já consta com a participação de um membro da DEN, tenha na sua composição
+    um membro da Rede Nacional de Jovens Líderes, que não sejam necessariamente os seus representantes no CAN, proposta que
+    foi aceita por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Pesquisa de custos para reuniões presenciais do CAN
+  decisao: Vendramini solicitou que o Escritório Nacional atualize, até o final do mês de maio, a pesquisa de custos de deslocamentos
+    dos Conselheiros, a fim de subsidiar a decisão para a escolha do local das próximas reuniões.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Relatório sobre vestuário escoteiro pela DEN
+  decisao: Vendramini pede à DEN que apresente na próxima reunião do CAN um relatório sobre o vestuário escoteiro, incluindo
+    custos e dados de vendas, problemas de projetos, alterações encaminhadas e lições aprendidas.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação das modificações na Loja Escoteira Nacional
+  decisao: Todas as adequações propostas foram aprovadas e serão aplicadas pela Loja Escoteira Nacional.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Definição da data da eleição da nova DEN
+  decisao: Com 9 votos, decidiu-se pela eleição em agosto, ao passo que 3 conselheiros votaram pela eleição em novembro. Por
+    unanimidade também se decidiu pela criação de um GT Eleitoral, para estipular as regras do pleito para a DEN.
+  votacao: 9 votos a favor da eleição em agosto, 3 votos para novembro, unanimidade para criação do GT Eleitoral
+  pagina: 3
+  conferido: true
+- tema: Criação do Grupo de Trabalho Eleitoral para eleição da DEN
+  decisao: Forma-se o Grupo de Trabalho Eleitoral com os Conselheiros Pracílio, Paulo Henrique, Ricardo Kontz, Antonino Pio,
+    José Inácio, Torricelli, e Mariana Massaro, sendo que o coordenador será eleito pelo próprio GT, ainda hoje.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Apresentação da chapa completa para eleição da DEN
+  decisao: Por unanimidade se decidiu que deverá ser apresentada a chapa completa, bem como que não haverá outras discussões
+    até a apresentação do edital.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Inclusão da Rede Nacional de Jovens Líderes como órgão da UEB
+  decisao: Caso se abra uma nova estatuinte, que se inclua a Rede como órgão da UEB e que o CAN conte não apenas com os representantes
+    da Rede no Conselho, mas também com toda a Rede para auxílio nos trabalhos.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Composição da nova Comissão Estatuinte
+  decisao: Recomenda ao CAN que caso venha a propor uma nova Comissão Estatuinte, que essa seja composta por um representante
+    de cada Região Escoteira, que assim o desejar e os Conselheiros Nacionais designados, recomendando ainda que esta ação
+    seja tomada após a conclusão dos trabalhos do Grupo de Trabalho do Planejamento Estratégico Nacional.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Envio de carta de agradecimento aos membros da comissão estatuinte
+  decisao: Deliberou-se pelo envio de uma carta de agradecimento aos membros da comissão estatuinte.
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente
+  eleito: Luiz Fernando Vendramini
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-presidente
+  eleito: Jonathan Hugh Govier
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: votos para data da eleição da nova DEN
+  valor: 9 votos a favor da eleição em agosto, 3 votos para novembro
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3a50eee68549162f9332503593a01b2a596db4229364d337cfc41a6e2f5ddd1d
+revisado: null

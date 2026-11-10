@@ -1,0 +1,90 @@
+doc_key: ata38-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2003-02-22'
+  local: São Paulo/SP
+deliberacoes:
+- tema: Proposta orçamentária 2003
+  decisao: A proposta orçamentária foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Encaminhamento pedido Medalha Cruz de Valor
+  decisao: A proposta de encaminhamento para melhor instrução foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Demissão do Secretário Geral Ewerson Steigleder
+  decisao: O Presidente do CAN encaminha proposta no sentido de que seja efetivada a demissão do Secretário Geral a qual é
+    aprovada.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Criação do cargo de Executivo de Operações
+  decisao: O Presidente do CAN coloca em votação a criação do cargo de executivo de operações. Foram 11 votos a favor.
+  votacao: 11 votos a favor
+  pagina: 3
+  conferido: true
+- tema: Contratação do executivo de operações até dezembro de 2003
+  decisao: A proposta foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Comissão para critérios de avaliação dos funcionários
+  decisao: Formou-se comissão que deverá apresentar, na reunião de maio, a proposta de critérios de avaliação dos funcionários.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Solicitação de cópia da ata da Assembleia Regional do Amapá
+  decisao: Decidiu-se solicitar a cópia da ata da Assembléia Regional para verificar se a Comissão de Ética e Disciplina foi
+    regularmente constituída.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Resolução sobre Cursos de Arrais Amador e de Veleiro
+  decisao: Fica aprovada com alteração do art. 1º, para constar que Curso de Arrais Amador é para maiores de 18 anos e que
+    o de Veleiro é para maiores de 15 anos.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Cadastro próprio CNPJ Região Bahia
+  decisao: Fica aprovado desde que encaminhe cópia da proposta de Estatuto a DEN que o analisará assim como os Estatutos das
+    Regiões que já tem CNPJ próprio para verificá-los seguindo critérios que serão apresentados por Rubem Tadeu.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Resolução sobre uniformização de termos utilizados no POR
+  decisao: Proposta que depois de colocada em votação é aprovada.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Diretrizes Nacionais para Gestão de Adultos
+  decisao: Incluindo esta alteração, a resolução foi aprovada.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Local da próxima reunião do Conselho de Administração
+  decisao: Colocando-se em votação, foram 12 votos para São Paulo; 02 votos para Salvador.
+  votacao: 12 votos para São Paulo; 02 votos para Salvador
+  pagina: 3
+  conferido: true
+- tema: Divulgação da nota sobre idades no ramo pioneiro
+  decisao: Aprovou-se, com alterações, a divulgação do texto.
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Participantes do II Jamboree Nacional
+  valor: 1500 participantes
+  pagina: 2
+  conferido: true
+- o_que: Votos para local da próxima reunião do Conselho de Administração
+  valor: 12 votos para São Paulo; 02 votos para Salvador
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 2daac18dfef75d5c7c2842505c227efcdc489cfaba148032cf29b1d936041be8
+revisado: null

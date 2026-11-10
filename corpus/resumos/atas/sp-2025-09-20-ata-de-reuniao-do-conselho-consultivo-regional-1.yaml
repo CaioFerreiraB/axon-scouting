@@ -1,0 +1,80 @@
+doc_key: sp-2025-09-20-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-09-20'
+  local: Grupo Escoteiro Ibiraci, Rua Dr. Coutinho, 1160, Itapetininga
+deliberacoes:
+- tema: Atualização do Manual do Comissário
+  decisao: Os Comissário dos Distritos 03, 04, 05, 06, 09, 12, 13, 15, 16, 17, 27 e 32 se voluntariaram para contribuir com
+    a atualização do Manual do Comissário; Daniella Avino dará andamento na criação do Grupo. Rodrigo destaca que o Manual
+    vigente existe há 4 anos, e que algumas disposições faziam sentido, mas hoje estão gerando dificuldades. Além disso, esclareceu
+    que o intuito é aprová-lo antes do próximo Conselho Consultivo, que acontece em fevereiro de 2026, e incluir no GT o Coordenador
+    de Suporte às UELs, Renato Saito. Thiago Chagas, Comissário do 11º Distrito, sugeriu que seja definido um prazo de 3 meses
+    para conclusão, o que foi aceito por Rodrigo, que também informou que abrirá o formulário de sugestões.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Revisão da Instrução Normativa 01.2022
+  decisao: Rodrigo diz que via Conselho Consultivo podemos encaminhar uma recomendação para a Nacional acerca do descritivo.
+    Rosemary Motta, representante da Área Sudeste no CAN, diz que recentemente ocorreu uma discussão no CAN acerca da idade
+    para atuar em cargos. Rodrigo acrescenta que é preciso incluir uma sugestão de perfil de Comissário, de Coordenador do
+    Ramo Filhotes e ajustar alguns textos na Normativa. Rodrigo ressaltou a importância da iniciativa, destacando que a criação
+    de coordenadores para o ramo filhotes é fundamental para estabelecer um ponto de referência. Por ser um tema de responsabilidade
+    da Diretoria Regional, Rodrigo informou que fará as mudanças necessárias e enviará ao Conselho.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Calendário Regional 2026
+  decisao: Rodrigo apresentou o Calendário Regional de 2026 que será lançado no dia 30 de setembro. Informou que o Jangalcamp,
+    que acontecerá no feriado de Corpus Christi, está sendo estudado para manter o valor; no entanto, não será lançado com
+    esse nome no calendário. O Desafio Sênior acontecerá no 2º semestre e estão trabalhando para também manter o valor próximo
+    da última edição. O Gestão na Estrada voltará a acontecer e seguirá a mesma ordem do calendário da gestão passada. E a
+    atualização do programa educativo também fará parte da programação do evento. Além disso, estão trabalhando com a Nacional
+    para que as capacitações estratégias aconteçam em São Paulo. Rodrigo orienta os distritos para que, a partir da publicação
+    do Calendário Regional, os Distritos façam os Calendários Distritais e, assim, os Grupos poderão fazer os calendários
+    de grupo.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Normativa 02/2025 sobre uso do Cartão Corporativo Flash
+  decisao: Rodrigo apresentou a normativa 02/2025 sobre uso do Cartão Corporativo Flash para gestão de valores do Distrito.
+    Rodrigo esclareceu que o cartão é vedado apenas para a compra de bebidas alcoólicas e tabaco, ressaltando, contudo, que
+    a criação de conta conjunta não está em conformidade com as normas da instituição. Paula Freschi respondeu que acredita
+    ser possível usar o cartão para compras online, mas irá verificar e retornar posteriormente. Rodrigo explicou que o cartão
+    não é uma conta bancária e sim um aplicativo de gestão de valores – portanto, não gera rendimentos. Jorge Carvalho perguntou
+    se o uso do cartão pode ser uma opção e Rodrigo respondeu que a Instrução Normativa não exige o uso, mas que a mesma veio
+    para proteger a transparência e a gestão dos próprios comissários. Rodrigo explicou que as doações devem ser depositadas
+    na conta da região e, posteriormente, transferidas para o cartão Flash do distrito. Paula confirmou que doações podem
+    ser realizadas via pagamento de boleto. Rodrigo explicou que, sempre que um comissário precisar efetuar o pagamento de
+    algum curso ou evento regional, deverá enviar um e-mail solicitando o valor necessário para a inscrição.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Composição da Diretoria de Eventos e apoio dos Distritos
+  decisao: Leonardo Pereira apresentou a composição da Diretoria de Eventos e solicitou o apoio dos Distritos tanto para o
+    atendimento das demandas da área de saúde nos eventos quanto para a indicação de locais adequados para sua realização.
+    Jorge Carvalho sugeriu que o escopo do evento seja disponibilizado para melhor compreensão das necessidades. Pedro Hernandez
+    apontou que a diretoria de eventos precisa melhorar a comunicação com os comissários. Júlio Osório perguntou se os voluntários
+    terão facilidade no pagamento da inscrição de eventos, e Rodrigo respondeu que sim. Júlio Osório ofereceu a possibilidade
+    de capacitar pessoas em atendimento de primeiros socorros para atuarem nos eventos.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Atualização do Mapa dos Distritos no Site Regional
+  decisao: Rodrigo apresentou o Mapa dos Distritos no Site Regional que foi atualizado conforme as mudanças do último ano.
+    Neide Watanabe comentou que não é obrigatório ter Coordenador Distrital de Mundo Melhor, mas que a Diretoria está fazendo
+    um trabalho de capacitação destes Coordenadores para que as informações importantes cheguem até às UELs.
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Comissários Distritais presentes
+  valor: '25'
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: de6f6767a2dc402e8d7ce30f5728813d2cbd6af7a27705e3d3c4d5e301ed57e9
+revisado: null

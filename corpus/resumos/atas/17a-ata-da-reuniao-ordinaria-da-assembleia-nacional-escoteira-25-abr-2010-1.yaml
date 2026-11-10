@@ -1,0 +1,127 @@
+doc_key: 17a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-25-abr-2010-1
+reuniao:
+  tipo: ordinaria
+  data: '2010-04-25'
+  local: Sheraton Rio Hotel e Resort, Avenida Niemeyer,121 - Leblon - Rio de Janeiro/RJ
+deliberacoes:
+- tema: Composição da Mesa Diretora
+  decisao: 'foi eleita e empossada a Mesa, conforme segue: Presidente: Paulo Salamuni (PR) e Vice-Presidentes: Paulo Henrique
+    Maciel Barbosa (MG) e Carlos Frederico dos Santos (RJ) e Secretárias: Lídia Cordeiro de Mello (RJ) e Cleide Pires de Jesus
+    (GO)'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Composição das Comissões Assessoras
+  decisao: 'As comissões assessoras restaram constituídas da seguinte forma: COMISSÃO DE CREDENCIAMENTO – Mariovani Carsten
+    Cervi (PR), Luiz Salgado Klaes (SC) e auxiliados pelo Gerente Sênior Celso Ferreira Filho; COMISSÃO DE ESCRUTÍNIO – Francis
+    Souza Carrer (SP), David Izecksohn Neto (RJ), Narciso Saffério Giraldi (SC), Miguel Ney Carvalho (PA) e Pedro Fabiano
+    da Silva Souza (RS) e COMISSÃO DE ASSUNTOS GERAIS: Alex Amorim Faia (RJ), Geraldo Tiaraju Barbosa (RS) e Vitor Augusto
+    Gay (PR)'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Deliberação sobre o Relatório Anual de 2009
+  decisao: O Relatório Anual de 2009 da União dos Escoteiros do Brasil foi aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Deliberação sobre o Balanço Anual de 2009
+  decisao: o Balanço Anual e a Apuração de Resultados/2009 foram aprovados por ampla maioria tendo sido registrado somente
+    1 voto contrário
+  votacao: ampla maioria
+  pagina: 2
+  conferido: true
+- tema: Deliberação sobre a Ata da 16ª Reunião Ordinária
+  decisao: A Ata foi aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Escolha da Região-Sede para eventos de 2012
+  decisao: por falta de manifestação de interesse a Assembleia delegou a DEN, por unanimidade, a escolha e indicação da Região
+    Sede e Região Sede alternativa
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Escolha da Região-Sede para eventos de 2012 (reconsideração)
+  decisao: por unanimidade foi escolhida a Região do Maranhão para Região Sede e deixada para a DEN a escolha de uma eventual
+    Sede-Alternativa
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Presidente
+  eleito: Paulo Salamuni (PR)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Vice-Presidente
+  eleito: Paulo Henrique Maciel Barbosa (MG)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Vice-Presidente
+  eleito: Carlos Frederico dos Santos (RJ)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretária
+  eleito: Lídia Cordeiro de Mello (RJ)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretária
+  eleito: Cleide Pires de Jesus (GO)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Nacional do 15.º Fórum Nacional de Jovens Líderes
+  cargo: Comunicadora
+  eleito: Fernanda Vogt (RJ)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Nacional do 15.º Fórum Nacional de Jovens Líderes
+  cargo: Coordenadora
+  eleito: Cristine Ritt (RS)
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: número de associados da UEB
+  valor: mais de 60.000
+  pagina: 2
+  conferido: false
+- o_que: valor da venda da sede antiga
+  valor: R$ 350.000,00
+  pagina: 2
+  conferido: false
+- o_que: valor da compra do novo patrimônio
+  valor: R$360.000,00
+  pagina: 2
+  conferido: false
+- o_que: gastos na reforma, adequação e ampliação da nova sede
+  valor: aproximadamente R$960.000,00
+  pagina: 2
+  conferido: false
+- o_que: patrimônio total estimado da UEB
+  valor: aproximadamente dois milhões de reais
+  pagina: 2
+  conferido: true
+- o_que: participantes do 15.º Fórum Nacional de Jovens Líderes
+  valor: '56'
+  pagina: 2
+  conferido: true
+- o_que: Regiões Escoteiras presentes no 15.º Fórum Nacional de Jovens Líderes
+  valor: '11'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 2a6a57a13472271a8dc86cb828ae7c437baa9504727a7265c5dce4ba54af2395
+revisado: null

@@ -1,0 +1,127 @@
+doc_key: 30a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-31-mai-2024-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-05-31'
+  local: UNINASSAU, rua Jonathas de Vasconcelos, 316 - bairro Boa Viagem, Recife/PE
+deliberacoes:
+- tema: Composição da Mesa Diretora da Assembleia
+  decisao: Aprovada a composição proposta, por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Composição das Comissões Assessoras da Assembleia
+  decisao: 'foi do mesmo modo aprovada a composição das Comissões Assessoras da Assembleia: Comissão de Assuntos Gerais, Comissão
+    de Credenciamento e Comissão de Escrutínio, conforme segue...'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Ata da 29ª Reunião Ordinária da Assembleia Nacional Escoteira
+  decisao: fica o documento aprovado por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Relatórios anuais de 2023 do CAN, DEN, Comissão Fiscal e Comissão de Ética e Disciplina
+  decisao: Relatório da Comissão Fiscal aprovado; Relatório do CAN aprovado; Relatório da DEN aprovado; Relatório da CEDN
+    aprovado.
+  votacao: 'Relatório da Comissão Fiscal: 107 votos a favor, 0 contra, 1 abstenção; Relatório do CAN: 109 votos a favor, 0
+    contra; Relatório da DEN: 108 votos a favor, 0 contra; Relatório da CEDN: 80 votos a favor, 14 contra, 12 abstenções'
+  pagina: 2
+  conferido: true
+- tema: Moção do Fórum Nacional de Jovens Líderes
+  decisao: Recebida a moção e informada que será levada ao CAN na próxima reunião para deliberação.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Ação solidária para escoteiros do RS
+  decisao: Solicitada a criação de uma ação solidária em benefício dos escoteiros do RS, com foco especial na doação de uniformes
+    e utensílios escoteiros.
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Presidente
+  eleito: Everton Luiz Barragan (RS)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 1ª Vice-Presidente
+  eleito: Adriano Henrique Rocha Sarmento Filho (SE)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 2º Vice-Presidente
+  eleito: Paulo Henrique Maciel Barbosa (MG)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 1º Secretário
+  eleito: Hilton Kayan Costa Barbosa (PA)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 2ª Secretária
+  eleito: Ilka Denise Rossetto Gallego Campos (PR)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Assuntos Gerais da Assembleia Nacional
+  cargo: Membro
+  eleito: Frederico Coelho Pinto Junior (SC)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento da Assembleia Nacional
+  cargo: Membro
+  eleito: Abimael da Silva Souza (GO)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento da Assembleia Nacional
+  cargo: Membro
+  eleito: Luiz Salgado Klaes (SC)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio da Assembleia Nacional
+  cargo: Membro
+  eleito: Siágrio Felipe Pinheiro (RS)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio da Assembleia Nacional
+  cargo: Membro
+  eleito: Claucio da Silva Mendes (MG)
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: delegados com direito a voto nesta Assembleia
+  valor: '118'
+  pagina: 1
+  conferido: true
+- o_que: votos na aprovação das contas e balanço anual de 2023
+  valor: 107 a favor, 0 contra, 1 abstenção, 11 ausentes
+  pagina: 2
+  conferido: true
+- o_que: votos na aprovação do Relatório do CAN
+  valor: 109 a favor, 0 contra, 0 abstenções, 10 ausentes
+  pagina: 3
+  conferido: true
+- o_que: votos na aprovação do Relatório da DEN
+  valor: 108 a favor, 0 contra, 0 abstenções, 11 ausentes
+  pagina: 3
+  conferido: true
+- o_que: votos na aprovação do Relatório da CEDN
+  valor: 80 a favor, 14 contra, 12 abstenções, 13 ausentes
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 0efb23232e61e29b4e5e3f2b154ad1f220467764d952e537b127c4178520f438
+revisado: null

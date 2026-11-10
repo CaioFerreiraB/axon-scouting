@@ -1,0 +1,30 @@
+doc_key: ata-cc-junho-2024-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-06-01'
+  local: UNINASSAU, localizada na rua Jonathas de Vasconcelos, 316 - bairro Boa Viagem, na cidade de Recife/PE
+deliberacoes:
+- tema: eleição do presidente dos trabalhos
+  decisao: KAYAN se voluntaria para o cargo e é aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata da reunião anterior
+  decisao: Sem sugestões ou alterações, a ata é aprovada por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação da nova redação do estatuto
+  decisao: 'A nova redação do estatuto é: "§1º - São beneficiários: crianças, adolescentes e jovens de 5 (cinco) a 22 (vinte
+    e dois) anos de idade, divididos em ramos, conforme previsto no P.O.R (Princípios, Organização e Regras) da União dos
+    Escoteiros do Brasil."'
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 4701a76e5b77389d4c08e3f4ca031857f264988119fe5e2923915ed0c673476d
+revisado: null

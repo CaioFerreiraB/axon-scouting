@@ -1,0 +1,315 @@
+doc_key: sp-ata-are-2013-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2013-03-16'
+  local: Câmara Municipal de São Paulo, Viaduto Jacareí, nº 100, bairro Bela Vista, São Paulo - SP
+deliberacoes:
+- tema: Aprovação da Ata da Assembleia Regional anterior
+  decisao: A ata foi aprovada por unanimidade, com as ressalvas apresentadas.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Aprovação do Relatório de 2012
+  decisao: O relatório foi aprovado por unanimidade, com agradecimentos do presidente da assembleia para todos os colaboradores
+    que fizeram um belíssimo trabalho.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Aprovação das contas e balanço do exercício de 2012
+  decisao: Foi aprovado por grande maioria, com apenas oito (8) abstenções.
+  votacao: maioria
+  pagina: 7
+  conferido: true
+- tema: Proposta de sediar a XXI Assembleia Regional 2014 na cidade de Louveira
+  decisao: Como foi a única candidata, o presidente Bakos solicita a aprovação por aclamação, sendo atendido pelo plenário.
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+- tema: Proposição sobre isenção parcial de taxas para associados carentes em eventos regionais ou distritais
+  decisao: Ficou aprovada a segunda proposta, com cobrança de 25% das taxas para os associados carentes.
+  votacao: 62 votos para isenção total, 160 votos para cobrança de 25%, 56 votos pela rejeição dos descontos, 17 abstenções
+  pagina: 12
+  conferido: true
+- tema: Proposição sobre custeio na participação dos conselheiros paulistas das reuniões do CAN
+  decisao: Aprovado o encaminhamento como recomendação à nova diretoria por grande maioria.
+  votacao: maioria
+  pagina: 13
+  conferido: true
+- tema: Proposição sobre revisão dos valores praticados para contribuição regional
+  decisao: Encaminhamento aprovado pela plenária à próxima gestão da Direção Regional para análise, com apenas uma (1) abstenção.
+  votacao: maioria
+  pagina: 13
+  conferido: true
+- tema: Proposição sobre equipe médica obrigatória para eventos regionais
+  decisao: Encaminhamento aprovado pela plenária à próxima gestão da Direção Regional para análise, com apenas uma (1) abstenção.
+  votacao: maioria
+  pagina: 13
+  conferido: true
+- tema: Proposição sobre repasse de verba para o Mutirão Regional
+  decisao: Proposta de repasse foi aprovada com 214 votos, 27 votos contrários e 16 abstenções.
+  votacao: 214 votos a favor, 27 contra, 16 abstenções
+  pagina: 13
+  conferido: true
+eleicoes:
+- orgao: Diretoria Regional
+  cargo: Diretor Presidente
+  eleito: ANTÔNIO LÍVIO ABRAÇOS JORGE
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 18
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Vice-Presidente
+  eleito: JABS AMILTON DUTRA COSTA
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 18
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Financeiro
+  eleito: ROBERLEI VOLPE BENEDUZI
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 18
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Administrativo
+  eleito: JOÃO ROBERTO ANDRIANI DA CUNHA
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 18
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Comercial
+  eleito: RICARDO AURÉLIO ROVERSO ABRÃO
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 18
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Presidente
+  eleito: SILVIO YOSHIRO MIZUGUCHI MIYAZAKI
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 19
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: 1º Titular
+  eleito: TEODOZI TIMOSZCZUK
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 19
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: 2º Titular
+  eleito: PAULO SILVA NHEMETZ
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 19
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: 1º Suplente
+  eleito: PAULO HIROSHI KISHI
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 19
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: 2º Suplente
+  eleito: EDER TADEU GOZZO
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 19
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Titular
+  eleito: RONALDO ENGRÁCIA
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 20
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Titular
+  eleito: CARLOS EDUARDO LOPES MARIANO
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 20
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Titular
+  eleito: MARCOS VENÍCIO MATTOS CHAVES
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 20
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 1º Suplente
+  eleito: EDUARDO GUTIERREZ
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 20
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 2º Suplente
+  eleito: CÁTIA REGINA DA SILVA LOPES ALONSO
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 20
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: 3º Suplente
+  eleito: MARCO ROGÉRIO DA SILVA RICHETTO
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 20
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Alexandre Banchi
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Antônio Lívio Abraços Jorge
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Cristina Mary Kuabara Sototuka
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Felipo Sototuka
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Fernando Luís Marcondes Donatti
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Flávio Henrique Fahl
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Francisca Souza Carrer
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Ivan Valente da Costa
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Jabs Amilton Dutra Costa
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Jonathan Hugh Govier
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Jorge Kuma Sototuka
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Leandro Martins dos Santos
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Lúcia Helena Barros Vieira Varejão
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Maria de Lourdes Santos Teijeira
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Patrícia Ramalho Diniz
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Ronaldo Engracia
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Silvânia Bhering
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Thaís Motta Foresti
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: false
+- orgao: Delegados à Assembleia Nacional
+  cargo: Titular
+  eleito: Thiago Martins Barbosa Bueno
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: false
+- orgao: Delegados à Assembleia Nacional
+  cargo: 1º Suplente
+  eleito: George Hideyuki Hirata
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: false
+- orgao: Delegados à Assembleia Nacional
+  cargo: 2º Suplente
+  eleito: Carla Barbosa de Oliveira Neves
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: false
+- orgao: Delegados à Assembleia Nacional
+  cargo: 3º Suplente
+  eleito: Ricardo Aurélio Roverso Abrão
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: false
+- orgao: Delegados à Assembleia Nacional
+  cargo: 4º Suplente
+  eleito: Slivio Yoshiro Mizuguchi Miyazaki
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: false
+- orgao: Delegados à Assembleia Nacional
+  cargo: 5º Suplente
+  eleito: Marcos Vinício Mattos Chaves
+  mandato: 2013-03-18 a 2016-03-19
+  pagina: 21
+  conferido: true
+numeros:
+- o_que: delegados cadastrados até 15h00min
+  valor: '315'
+  pagina: 4
+  conferido: true
+- o_que: delegados registrados às 16h50min
+  valor: '328'
+  pagina: 7
+  conferido: true
+- o_que: delegados aptos a votar na eleição
+  valor: '415'
+  pagina: 9
+  conferido: true
+- o_que: delegados registrados atualizados
+  valor: '420'
+  pagina: 10
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 12e6d3d938e03a92aa31ae9cc564d29f7c5ab4939ec22e288ca751368b4a3055
+revisado: null

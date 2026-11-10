@@ -1,0 +1,160 @@
+doc_key: sp-ata-are-2014-extraordinaria-1
+reuniao:
+  tipo: extraordinaria
+  data: '2014-03-15'
+  local: Câmara Municipal de Louveira, situada à Rua Wagner Luiz Bevilacqua, nº 35, Bairro de Guembéê, em Louveira/SP
+deliberacoes:
+- tema: Eleição da Mesa Diretora da Assembleia
+  decisao: 'Passa-se então à eleição do Presidente da Assembleia, com cento e dezessete (117) votos para o chefe Rafael e
+    cinquenta e um (51) para o chefe Vicente. Assume então a presidência e a direção dos trabalhos o chefe Rafael. Depois
+    de comum acordo entre os inscritos, são apresentados os demais membros da Mesa Diretora: Primeira Vice-Presidente: Mariana
+    De Marchi Oliveira; Segundo Vice-Presidente: Vicente Porto Vasconcelos Filho, Primeiro Secretário: Marcelo José Fassina;
+    e Segundo Secretário: Edison Luiz Benato. Aprovados por aclamação, é eleita e empossada a mesa de trabalhos conforme Regulamento.'
+  votacao: 117 votos a favor de Rafael, 51 votos a favor de Vicente, demais membros aprovados por aclamação
+  pagina: 1
+  conferido: true
+- tema: Eleição das Comissões Assessoras da Assembleia
+  decisao: Apresentadas e homologadas as comissões, tais como propostas, aprovadas por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Alterações do Estatuto da União dos Escoteiros do Brasil - Região de São Paulo
+  decisao: Colocada então em votação a proposta de alteração do Estatuto constante da minuta foram cento e cinquenta e um
+    (151) votos a favor, sete (7) contra e trinta e uma (31) abstenções. Após nova votação, foram duzentos e trinta e quatro
+    (234) votos a favor, cinco (5) contra e quatorze (14) abstenções, sendo então aprovada a nova redação do Estatuto Regional.
+  votacao: 151 votos a favor, 7 contra, 31 abstenções; depois 234 votos a favor, 5 contra, 14 abstenções
+  pagina: 2
+  conferido: true
+- tema: Alterações do Regulamento da União dos Escoteiros do Brasil - Região de São Paulo
+  decisao: Foi dispensada a leitura da minuta. Após discussões e votação sobre destaque referente ao número mínimo de grupos
+    por distrito, a Assembleia decidiu por alterar o texto e posteriormente, com a retirada do parágrafo que estipulava um
+    limite mínimo de grupos por distrito, foi aprovada a nova redação do Regulamento Regional. Foram duzentos e vinte e nove
+    (229) votos a favor, sete (7) contra e oito (8) abstenções.
+  votacao: 229 votos a favor, 7 contra, 8 abstenções
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia
+  cargo: Presidente da Assembleia
+  eleito: Rafael Teixeira Nunes
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Primeira Vice-Presidente
+  eleito: Mariana De Marchi Oliveira
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Segundo Vice-Presidente
+  eleito: Vicente Porto Vasconcelos Filho
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Primeiro Secretário
+  eleito: Marcelo José Fassina
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Segundo Secretário
+  eleito: Edison Luiz Benato
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: delegados cadastrados até 15h09min
+  valor: '290'
+  pagina: 2
+  conferido: true
+- o_que: delegados cadastrados até 15h33min
+  valor: '294'
+  pagina: 3
+  conferido: true
+- o_que: votos para Presidente da Assembleia - Rafael Teixeira Nunes
+  valor: '117'
+  pagina: 1
+  conferido: true
+- o_que: votos para Presidente da Assembleia - Vicente Porto Vasconcelos Filho
+  valor: '51'
+  pagina: 1
+  conferido: true
+- o_que: votos na primeira votação do Estatuto Regional a favor
+  valor: '151'
+  pagina: 2
+  conferido: true
+- o_que: votos na primeira votação do Estatuto Regional contra
+  valor: '7'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na primeira votação do Estatuto Regional
+  valor: '31'
+  pagina: 2
+  conferido: true
+- o_que: votos na segunda votação do Estatuto Regional a favor
+  valor: '234'
+  pagina: 3
+  conferido: true
+- o_que: votos na segunda votação do Estatuto Regional contra
+  valor: '5'
+  pagina: 3
+  conferido: true
+- o_que: abstenções na segunda votação do Estatuto Regional
+  valor: '14'
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da proposta do chefe Castrianni para votar em destaque a questão do número mínimo de grupos por distrito
+  valor: '181'
+  pagina: 5
+  conferido: true
+- o_que: votos contra a proposta do chefe Castrianni para votar em destaque
+  valor: '26'
+  pagina: 5
+  conferido: true
+- o_que: abstenções na votação da proposta do chefe Castrianni para votar em destaque
+  valor: '17'
+  pagina: 5
+  conferido: true
+- o_que: votos a favor da aprovação do texto do destaque conforme proposto pela Diretoria Regional
+  valor: '106'
+  pagina: 6
+  conferido: true
+- o_que: votos contra a aprovação do texto do destaque conforme proposto pela Diretoria Regional
+  valor: '151'
+  pagina: 6
+  conferido: true
+- o_que: abstenções na votação do texto do destaque conforme proposto pela Diretoria Regional
+  valor: '6'
+  pagina: 6
+  conferido: true
+- o_que: votos a favor da primeira proposta para o texto do destaque (remoção do parágrafo)
+  valor: '74'
+  pagina: 7
+  conferido: true
+- o_que: votos a favor da segunda proposta para o texto do destaque (inclusão do termo 'preferencialmente')
+  valor: '164'
+  pagina: 7
+  conferido: true
+- o_que: abstenções na votação das propostas para o texto do destaque
+  valor: '11'
+  pagina: 7
+  conferido: true
+- o_que: votos a favor da aprovação da nova redação do Regulamento Regional
+  valor: '229'
+  pagina: 8
+  conferido: true
+- o_que: votos contra a aprovação da nova redação do Regulamento Regional
+  valor: '7'
+  pagina: 8
+  conferido: true
+- o_que: abstenções na aprovação da nova redação do Regulamento Regional
+  valor: '8'
+  pagina: 8
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3bce70a979586a267342f6954bfb7644b7b18e3ff3e627d9753db4ebb228e1b3
+revisado: null

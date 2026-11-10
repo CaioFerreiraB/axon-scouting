@@ -1,0 +1,66 @@
+doc_key: ata96-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2019-08-24'
+  local: escritório Nacional dos Escoteiros do Brasil – PR, em Curitiba/PR
+deliberacoes:
+- tema: aprovação da agenda da reunião
+  decisao: 'Os representantes de Áreas Geográficas não participarão em momentos de reunião fechada. Resultado: Aprovado. Adoção
+    de novo formato de ata – Tópicos sumários – para que conste apenas a deliberação final de cada tema. Registrar apenas
+    o que foi decidido e seu desdobramento em ação. Assim sendo, sempre que possível deve ser estabelecida a ação, o responsável
+    e o prazo. Resultado: Aprovado por unanimidade, devendo a deliberação ser aplicada de imediato.'
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: cidade para realização da 96ª reunião do CAN
+  decisao: 'Resultado: Curitiba.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: resolução que determina atualização do texto do artigo 1º da Lei Escoteira
+  decisao: 'Resultado: Aprovada.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: ata da 95ª reunião do CAN
+  decisao: 'Resultado: Aprovada.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: parecer e liberação dos gastos extraordinários encaminhados pela DEN
+  decisao: 'Resultado: Aprovado.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: resolução que institui o registro provisório
+  decisao: 'Resultado: Aprovada.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: apresentação sobre o texto da proposta estatutária enviado no dia 20/07
+  decisao: 'Resultado: A favor.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: data da Assembleia Extraordinária para discussão da reforma estatutária
+  decisao: A Assembleia Extraordinária acontecerá em maio do próximo ano, no mesmo final de semana do Congresso nacional.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: comissão estatuinte
+  decisao: 'Deliberação: Aprovada por unanimidade.'
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: regulamento da Ordem da Flor de Lis (OFL)
+  decisao: O texto com as alterações registradas foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 9f3fb66fec7465749e3ec8e920b16739979d1e566924e9989898e151bad2d7a7
+revisado: null

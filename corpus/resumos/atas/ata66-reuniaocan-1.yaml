@@ -1,0 +1,37 @@
+doc_key: ata66-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2011-08-27'
+  local: Curitiba/PR
+deliberacoes:
+- tema: Reajuste da contribuição anual para 2012
+  decisao: A proposta de reajuste foi aprovada por unanimidade com um aumento de 5,5% sobre os valores praticados em 2011,
+    com arredondamento, conforme valores descritos na resolução.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Venda de imóvel da UEB-SC
+  decisao: O CAN aprovou por unanimidade a venda do imóvel em nome da União dos Escoteiros do Brasil – Região de Santa Catarina,
+    localizado na Rua Xavantes, 218, no Bairro Atiradores, Cidade de Joinville – Santa Catarina.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: efetivo registrado em 2011
+  valor: crescimento sobre o efetivo do ano passado
+  pagina: 4
+  conferido: true
+- o_que: inscritos no Jamboree Nacional
+  valor: em torno de mil e cem
+  pagina: 4
+  conferido: true
+- o_que: inscrições para equilíbrio orçamentário do Jamboree Nacional
+  valor: dois mil e quinhentas
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 85f7229b785ccf586cf5bcc6905af53e796c1103f3a3ac07ade2f1d542f095bf
+revisado: null

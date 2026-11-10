@@ -1,0 +1,220 @@
+doc_key: 3a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-24-ago-1996-1
+reuniao:
+  tipo: ordinaria
+  data: '1996-10-31'
+  local: Centro de Convenções do Hotel Laje de Pedra, em Canela, RS
+deliberacoes:
+- tema: eleição da mesa diretora dos trabalhos
+  decisao: 'Acatada a proposta da Diretoria Nacional, foram eleitos, por aclamação, os seguintes Companheiros: Presidente
+    da III Assembléia Nacional - Paulo Salamuni; 1o Vice-Presidente - José Ferreira Machado; 2o Vice-Presidente - Flávio André
+    Teixeira; Primeiro Secretário - Alessandro Garcia Vieira; e Segundo Secretário - Carmen Barreira.'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição das comissões de trabalho
+  decisao: 'Acatada a proposta da Diretoria Nacional, foram eleitos, por aclamação, os seguintes Companheiros: Comissão de
+    Escrutínio - Gilberto (SP), Ângela (ES) e Ortiz (RN); Comissão Eleitoral - Mirna (PR), Alvacir (CE) e Romero (MG); Comissão
+    de Credenciamento - Marcel (SC), Marcos (PA) e Francisco.'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata da reunião anterior
+  decisao: Com as referidas ressalvas, foi aprovada, por unanimidade, a ata da II Reunião Ordinária da Assembléia Nacional.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: aprovação do Relatório Anual e prestação de contas da Diretoria Nacional
+  decisao: Procedida a votação, os relatórios alcançaram a aprovação unânime.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: eleição dos Diretores Nacionais e membro suplente da Comissão Fiscal Nacional
+  decisao: 'Para a Diretoria Nacional, foram eleitos os seguintes Companheiros, para as 05 vagas existentes: Edson Caetano
+    dos Santos (18 votos); Ivan Barreto Rodrigues (14 votos); Marcos Carvalho (12 votos); Mario Henrique Peters Farinon (17
+    votos); e Oscar Victor Palmquist Arias (26 votos). Para membro suplente da Comissão Fiscal Nacional, foi eleito o Companheiro
+    Mauro G. Cardoso (63 votos).'
+  votacao: votação nominal, total de 91 votantes
+  pagina: 2
+  conferido: true
+- tema: propostas de reforma do Estatuto da UEB
+  decisao: Foi aprovada pela unanimidade dos presentes (87 votantes) a alteração do Estatuto da UEB, incluindo um artigo determinando
+    que os recursos da entidade sejam aplicados no Brasil. Foi rejeitada, com 54 votos contra e 36 a favor, a proposta de
+    alteração do § 1o do artigo 15 do Estatuto, que reduziria de 03 para 02 o número máximo de Diretores Nacionais residentes
+    em uma mesma Região.
+  votacao: unanimidade para aprovação; 54 contra e 36 a favor para rejeição
+  pagina: 2
+  conferido: true
+- tema: eleição da Região Escoteira para sediar a V Reunião Ordinária da Assembléia Nacional / 4o Congresso Escoteiro Nacional
+  decisao: Procedida a votação, foi eleita a Região do Ceará, com 33 votos, contra 26 votos para a Região da Bahia.
+  votacao: 33 votos Ceará, 26 votos Bahia
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da III Assembléia Nacional
+  cargo: Presidente da III Assembléia Nacional
+  eleito: Paulo Salamuni
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da III Assembléia Nacional
+  cargo: 1o Vice-Presidente
+  eleito: José Ferreira Machado
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da III Assembléia Nacional
+  cargo: 2o Vice-Presidente
+  eleito: Flávio André Teixeira
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da III Assembléia Nacional
+  cargo: Primeiro Secretário
+  eleito: Alessandro Garcia Vieira
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da III Assembléia Nacional
+  cargo: Segundo Secretário
+  eleito: Carmen Barreira
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Gilberto (SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Ângela (ES)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Ortiz (RN)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão Eleitoral
+  cargo: Membro
+  eleito: Mirna (PR)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão Eleitoral
+  cargo: Membro
+  eleito: Alvacir (CE)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão Eleitoral
+  cargo: Membro
+  eleito: Romero (MG)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: Membro
+  eleito: Marcel (SC)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: Membro
+  eleito: Marcos (PA)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: Membro
+  eleito: Francisco
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Edson Caetano dos Santos
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Ivan Barreto Rodrigues
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Marcos Carvalho
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Mario Henrique Peters Farinon
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Oscar Victor Palmquist Arias
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro Suplente
+  eleito: Mauro G. Cardoso
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Escritório Nacional
+  cargo: Diretor Presidente da UEB
+  eleito: RENATO BINI
+  mandato: a partir de 1o de janeiro de 1997
+  pagina: 4
+  conferido: true
+- orgao: Escritório Nacional
+  cargo: 1o Vice-Presidente
+  eleito: EDUARDO SZAZI
+  mandato: a partir de 1o de janeiro de 1997
+  pagina: 4
+  conferido: true
+- orgao: Escritório Nacional
+  cargo: 2o Vice-Presidente
+  eleito: MAURÍCIO MOUTINHO DA SILVA
+  mandato: a partir de 1o de janeiro de 1997
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: total de votantes na eleição da Diretoria Nacional e membro suplente da Comissão Fiscal Nacional
+  valor: '91'
+  pagina: 2
+  conferido: true
+- o_que: votos para alteração do Estatuto da UEB (unanimidade)
+  valor: '87'
+  pagina: 2
+  conferido: true
+- o_que: votos contra a alteração do § 1o do artigo 15 do Estatuto
+  valor: '54'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da alteração do § 1o do artigo 15 do Estatuto
+  valor: '36'
+  pagina: 2
+  conferido: true
+- o_que: votos para Região do Ceará sediar a V Reunião Ordinária da Assembléia Nacional
+  valor: '33'
+  pagina: 4
+  conferido: true
+- o_que: votos para Região da Bahia sediar a V Reunião Ordinária da Assembléia Nacional
+  valor: '26'
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8f15da7651fb1345ccd83362c3decdacc9d1679d07a611fb1fa474856de185e6
+revisado: null

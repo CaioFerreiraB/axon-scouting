@@ -1,0 +1,681 @@
+{
+  "version": 1,
+  "golden_set": "scouting-sintese",
+  "assistant": "scouting",
+  "judge": null,
+  "started_at": "2026-01-01T12:00:00+00:00",
+  "core_version": "0.7.0rc8",
+  "k": [
+    5,
+    20
+  ],
+  "metrics": [
+    {
+      "name": "recall@5",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "recall@20",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "mrr",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "delivered_recall",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "rerank_gain",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "citation_resolvable_rate",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "citation_invented_rate",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "expected_citation_recall",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "faithfulness",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "coverage",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "latency_ms_p50",
+      "value": 0.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "latency_ms_p95",
+      "value": 250.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "ttft_ms_p50",
+      "value": 0.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "ttft_ms_p95",
+      "value": 250.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "tokens_per_answer",
+      "value": 9.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "model_calls_per_answer",
+      "value": 1.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "generation_tokens_per_s",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "controller_invalid_rate",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "error_rate",
+      "value": 0.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "scouting:context_accuracy",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "scouting:current_document_rate",
+      "value": 1.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "scouting:validity_notice_rate",
+      "value": null,
+      "variance": null,
+      "n": 0,
+      "deterministic": false,
+      "better": "higher"
+    },
+    {
+      "name": "scouting:absence_claim_rate",
+      "value": 0.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": "lower"
+    },
+    {
+      "name": "scouting:fact_recall",
+      "value": 0.8461538461538461,
+      "variance": null,
+      "n": 13,
+      "deterministic": true,
+      "better": "higher"
+    },
+    {
+      "name": "flag_rate:ungrounded",
+      "value": 1.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": null
+    },
+    {
+      "name": "gate_route:generate",
+      "value": 1.0,
+      "variance": null,
+      "n": 13,
+      "deterministic": false,
+      "better": null
+    }
+  ],
+  "items": [
+    {
+      "id": "presidentes-regionais-desde-2016",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 250.0,
+        "ttft_ms": 250.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "mandatos-da-diretoria-regional",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.3333333333333333
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "chapas-de-2016",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "presidente-reeleito",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "delegados-credenciados-2019-2025",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "delegados-a-assembleia-nacional",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.3333333333333333
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "alteracoes-do-regulamento-regional",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.3333333333333333
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "plano-das-chapas-2019",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "novo-regulamento-2001",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "quorum-reforma-regulamento",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "conselho-consultivo-2017-2019",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "conselho-consultivo-2014-2015",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "conselho-consultivo-2023-2024",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    }
+  ],
+  "invalid": [],
+  "annotations": []
+}

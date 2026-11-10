@@ -1,0 +1,140 @@
+doc_key: ata-109a-reuniao-ordinaria-do-can-aprovada-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-08-20'
+  local: videochamada pelo Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: Ata da 108ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 108ª Reunião Ordinária do Conselho de Administração Nacional, realizada em 25 de junho
+    de 2022. Aprovada com 10 votos a favor, 3 abstenções e 1 abstenção por falta de pronunciamento.
+  votacao: 10 votos a favor, 3 abstenções, 1 abstenção por falta de pronunciamento
+  pagina: 2
+  conferido: true
+- tema: Validação de Candidatura à reeleição ao Comitê Escoteiro Interamericano
+  decisao: A DEN aprovou a candidatura que, agora, é apresentada perante o CAN para validação para que o interessado possa
+    apresentar postulação perante a 28ª Conferência Escoteira Interamericana. Aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Calendário de Reuniões Ordinárias do CAN 2023
+  decisao: Proposta de calendário de reuniões ordinárias para o ano de 2023 para discussão e aprovação a tempo de ser divulgado
+    no calendário anual no prazo estatutário. Aprovada com 12 votos a favor e 1 abstenção por falta de pronunciamento.
+  votacao: 12 votos a favor, 1 abstenção por falta de pronunciamento
+  pagina: 2
+  conferido: true
+- tema: Contratação de Auditoria Independente 2022
+  decisao: Compete ao Conselho de Administração Nacional selecionar e aprovar a contratação de auditoria independente para
+    o ano, observada a recomendação da DEN. Aprovada com 12 votos a favor e 1 abstenção por falta de pronunciamento.
+  votacao: 12 votos a favor, 1 abstenção por falta de pronunciamento
+  pagina: 3
+  conferido: true
+- tema: Deliberação da agenda provisória da 109ª Reunião Ordinária do CAN
+  decisao: Aprovada por unanimidade dos conselheiros e conselheiras titulares presentes como agenda definitiva da 109ª Reunião
+    Ordinária do CAN.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Ratificação do coordenador da Comissão Permanente de Envolvimento Juvenil (CPEJ)
+  decisao: Adrian Cordeiro do Nascimento foi aprovado como novo coordenador da CPEJ por unanimidade dos conselheiros e conselheiras
+    titulares presentes.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Replanejamento Orçamentário 2º semestre 2022
+  decisao: O Replanejamento Orçamentário 2º semestre 2022 é aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: Planejamento Estratégico 2022-2025 - Objetivo 1 Crescimento e Expansão
+  decisao: Aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: Planejamento Estratégico 2022-2025 - Objetivo 2 Inclusão, Diversidade e Acessibilidade
+  decisao: Aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+- tema: Planejamento Estratégico 2022-2025 - Objetivo 3 Comunicação Externa
+  decisao: Aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+- tema: Planejamento Estratégico 2022-2025 - Objetivo 4 Gestão
+  decisao: Aprovado por unanimidade, com alteração do termo auditoria para avaliação.
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+eleicoes:
+- orgao: Comissão Permanente de Envolvimento Juvenil (CPEJ)
+  cargo: coordenador
+  eleito: Adrian Cordeiro do Nascimento
+  mandato: ''
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: associados pagantes previstos no orçamento
+  valor: 70 mil
+  pagina: 6
+  conferido: true
+- o_que: associados pagantes previstos no orçamento inicial
+  valor: 63 mil
+  pagina: 6
+  conferido: true
+- o_que: previsão de repasse comercial
+  valor: R$411 mil
+  pagina: 6
+  conferido: true
+- o_que: previsão de receitas em Métodos Educativos
+  valor: 260 mil
+  pagina: 6
+  conferido: true
+- o_que: previsão total de captação do patrocínio WOSM Reenergização
+  valor: R$25 mil dólares
+  pagina: 6
+  conferido: true
+- o_que: aumento percentual nas disponibilidades de recursos para 2022
+  valor: 13%
+  pagina: 6
+  conferido: true
+- o_que: aumento percentual nas despesas da área de Governança
+  valor: 110% (R$70 mil)
+  pagina: 6
+  conferido: true
+- o_que: aumento percentual nas despesas da área de Atividade Fim
+  valor: 244%
+  pagina: 6
+  conferido: true
+- o_que: aumento percentual nas despesas da área de Desenvolvimento Institucional
+  valor: 69%
+  pagina: 6
+  conferido: true
+- o_que: aumento percentual nas despesas da área de Suporte
+  valor: 4%
+  pagina: 6
+  conferido: true
+- o_que: aumento percentual nas despesas operacionais
+  valor: 4%
+  pagina: 6
+  conferido: true
+- o_que: crescimento projetado da Loja Escoteira Nacional 2022
+  valor: 45,83%
+  pagina: 7
+  conferido: false
+- o_que: orçamento inicial da Loja Escoteira Nacional 2022
+  valor: R$4.8 milhões
+  pagina: 7
+  conferido: false
+- o_que: novo orçamento projetado da Loja Escoteira Nacional 2022
+  valor: R$7 milhões
+  pagina: 7
+  conferido: true
+- o_que: registros ativos em 19 de agosto de 2022
+  valor: '76.117'
+  pagina: 14
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 2ae293bfc43463a92b8019070e3142f96cf04de04e0586e4dcdc765632526e6b
+revisado: null

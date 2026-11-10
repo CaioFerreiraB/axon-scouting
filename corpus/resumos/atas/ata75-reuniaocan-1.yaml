@@ -1,0 +1,122 @@
+doc_key: ata75-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2013-11-23'
+  local: Brasília (DF)
+deliberacoes:
+- tema: Posicionamento institucional sobre mudança do Escritório Mundial do Movimento Escoteiro
+  decisao: Ratifica a aprovação da proposta de posicionamento institucional em relação à mudança do Escritório Mundial do
+    Movimento Escoteiro.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Inclusão de membro adulto no Movimento Escoteiro
+  decisao: O CAN determina que deva ser elaborada uma resolução contendo regras para a inclusão de um membro adulto no Movimento
+    Escoteiro para ser adotada pelos Grupos Escoteiros. Deverá ser elaborado um material educativo pelo Escritório Nacional
+    contemplando estas informações. Júlio, Vendramini e Antonino elaborarão a proposta da minuta da resolução.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Manutenção do CATAR Jovem
+  decisao: O CAN delibera que o CATAR Jovem será mantido com 10 votos a favor, 1 voto contra e 1 abstenção.
+  votacao: 10 votos a favor, 1 contra, 1 abstenção
+  pagina: 7
+  conferido: true
+- tema: Inscrição da UEB no Portal da Transparência
+  decisao: Por sugestão do Pracilio e aprovado pelo CAN, UEB deverá se inscrever no Portal da Transparência para a instituição
+    possuir o selo de idoneidade.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Política Comercial
+  decisao: O CAN entende que o relatório do SEBRAE é muito vago e não atende a necessidade da instituição. O CAN solicita
+    que a DEN faça a contratação de uma nova empresa. David comenta que o investimento para a contratação ficará em torno
+    de 50 a 70 mil reais. Macedo pontua que o modelo de negócio idealizado pela UEB só será possível de se colocar em prática
+    a partir do momento em que o desejo das Regiões Escoteiras que possuem lojas seja convergente com a criação desta política.
+    Márcio diz que é um investimento necessário e que a Loja Nacional é um ponto importante do Planejamento Estratégico e
+    solicita que o Escritório Nacional, junto com a DEN, selecione 3 empresas com um bom portfólio para ser apreciado pelo
+    CAN no primeiro semestre de 2014 e estudar a viabilidade de execução para 2015.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Reajuste da taxa de registro escoteiro para 2014
+  decisao: O Conselho aprova por unanimidade a resolução que define os valores de registros praticados em 2014, que terão
+    início em 1º de dezembro de 2013 e encaminha a responsabilidade da validação dos isentos ao Escritório Nacional.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Orçamento para 2014
+  decisao: Aprovado por unanimidade o orçamento 2014 apresentado.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Alteração da resolução de atividades nacionais
+  decisao: A proposta de alteração na resolução foi aprovada unanimemente pelos conselheiros. O CAN encaminha que Altamiro
+    irá coordenar o Grupo de Trabalho para elaboração de um estudo da resolução que estabelecerá critérios para taxas de eventos
+    nacionais para ser apresentado na próxima reunião do CAN.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Obrigatoriedade do curso de Proteção Infantojuvenil para registro escoteiro
+  decisao: O CAN determina que seja obrigatório para todos os associados maiores de 18 anos, exceto o contribuinte benemérito.
+    Aprovada a resolução por unanimidade.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Alteração da resolução que disciplina a prática do Escotismo para 2014
+  decisao: O CAN delibera para que o Escritório Nacional realize um estudo sobre o processo de transição para as faixas do
+    público isento para o registro escoteiro de 2015. Aprovada a resolução por unanimidade.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: Resolução que regulamenta requisito para ingresso e permanência do adulto no Movimento Escoteiro
+  decisao: No momento da votação houve 10 votos a favor, nenhum voto contra, um voto de abstenção. Ausência de dois conselheiros
+    no momento da votação. O CAN solicita que o Escritório Nacional elabore uma cartilha informativa sobre o adulto que queremos,
+    incluindo as determinações desta resolução.
+  votacao: 10 votos a favor, 0 contra, 1 abstenção
+  pagina: 7
+  conferido: true
+- tema: Alterações na resolução sobre condecorações e recompensas
+  decisao: O CAN aprova as alterações propostas pela comissão e autoriza que faça as adequações necessárias nos documentos
+    para seja aprovada por meio eletrônico. O CAN solicita ao Escritório Nacional que no momento em que seja concedida medalha
+    “post mortem” seja inserida a informação no Meu Sigue do ex-associado.
+  votacao: ''
+  pagina: 8
+  conferido: true
+- tema: Aprovação do projeto gráfico do documento POR
+  decisao: O CAN aprova o projeto gráfico com a sugestão de alteração da capa do documento.
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: Resolução que regulamenta o período de transição diante da mudança de distintivos
+  decisao: Resolução aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: efetivo nacional em 21/11/2012
+  valor: '74.533'
+  pagina: 2
+  conferido: false
+- o_que: efetivo nacional ao final de 2012
+  valor: '76.958'
+  pagina: 2
+  conferido: false
+- o_que: efetivo nacional em 21/11/2013
+  valor: '82.753'
+  pagina: 2
+  conferido: false
+- o_que: inscritos no VI Jamboree Nacional/RN – 2015
+  valor: '1.549'
+  pagina: 3
+  conferido: false
+- o_que: participantes do Encontro Nacional de Jovens confirmado
+  valor: '53'
+  pagina: 8
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3e1e36b4b2b5618b8886e860420ffb214f8bfbb44efaab2ecc26c90c24bbdf63
+revisado: null

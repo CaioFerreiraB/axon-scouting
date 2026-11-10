@@ -1,0 +1,50 @@
+doc_key: ata-112a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-02-11'
+  local: videochamada pelo Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: Ata da 111ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 111ª Reunião Ordinária do Conselho de Administração Nacional, realizada nos dias 05 e 06
+    de novembro de 2022, de maneira presencial, na cidade de São Paulo. Aprovada com 12 votos a favor (ALDENISE, NETO, MAGU,
+    CLAUCIO, DANIELA, ILKA, LINDOMAR, LAURA, RAFAEL, RENATO, ROBSON e SARAH) e abstenções por falta de pronunciamento (DAVID
+    e DAYANNA).
+  votacao: 12 votos a favor
+  pagina: 2
+  conferido: true
+- tema: Resolução que altera o conceito das atividades estratégicas
+  decisao: Por solicitação da DEN, o CAN discute e delibera proposta de Resolução que altera o conceito e define quais são
+    as atividades estratégicas dos Escoteiros do Brasil que, sendo aprovada, revoga a Resolução CAN 09/2019. Aprovada com
+    12 votos a favor (ALDENISE, NETO, CLAUCIO, DANIELA, DAYANNA, ILKA, LINDOMAR, LAURA, RAFAEL, RENATO, ROBSON e SARAH) e
+    2 abstenções por falta de pronunciamento (MAGU e DAVID).
+  votacao: 12 votos a favor
+  pagina: 2
+  conferido: true
+- tema: Agenda provisória da reunião
+  decisao: SARAH coloca em deliberação a agenda provisória na qual é aprovada por unanimidade tornando-se agenda definitiva
+    da 112ª Reunião Ordinária do CAN.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Ratificação de Deomar Rosado como coordenador do GTRIG
+  decisao: SARAH faz ratificação de Deomar Rosado como coordenador do Grupo de Trabalho para a elaboração de Política de Relações
+    Institucionais e Governamentais (GTRIG) no qual é aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Proposta de Alteração da Resolução - Contribuição Associativa
+  decisao: Proposta da Alteração da Resolução será deliberada virtualmente.
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos a favor da Ata da 111ª Reunião Ordinária do CAN
+  valor: 12 votos a favor
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 12bbd4e7c037d7b532c4902f0f9b9dbe91bb2afeff45ff503996fb2112262823
+revisado: null

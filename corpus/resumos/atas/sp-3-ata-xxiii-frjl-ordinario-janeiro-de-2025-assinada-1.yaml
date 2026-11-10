@@ -1,0 +1,160 @@
+doc_key: sp-3-ata-xxiii-frjl-ordinario-janeiro-de-2025-assinada-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-01-19'
+  local: online via plataforma Zoom
+deliberacoes:
+- tema: eleição da mesa diretora dos trabalhos e Comissão de Escrutínio
+  decisao: Rafael foi eleito por aclamação e tomou posse como Presidente. Lukas foi eleito por aclamação como vice-presidente.
+    Sendo a única candidata Beatriz Chrispim, foi eleita por aclamação como secretária. A comissão de escrutínio tomou posse
+    com Leonardo Gobira de Macedo, Maria Livia Lopes da Silva e Victor Gabriel Fogarolli.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação da Ata do último Fórum Regional Extraordinário de Jovens Líderes
+  decisao: Encerrada a votação, houveram 15 votos a favor, 11 abstenções e 0 contrários. Ficando, portanto, aprovada a ata
+    do Fórum Regional Extraordinário de Jovens Líderes.
+  votacao: 15 votos a favor, 11 abstenções, 0 contrários
+  pagina: 2
+  conferido: true
+- tema: eleição de 03 delegados e suplentes ao Fórum Nacional de Jovens Líderes
+  decisao: 'Foram eleitos delegados e suplentes: Beatriz Chrispim, Victor Gabriel Fogarolli Marcondes, Rafael Melis Rogéro,
+    Raissa Melis Rogero, Vitor Alves Chuquer Zanetti Passagem e Luiz Fernando Paiva Vella Junior.'
+  votacao: votação nominal com resultados detalhados
+  pagina: 4
+  conferido: true
+- tema: proposta para que todo jovem líder da região de São Paulo presente no Fórum Nacional esteja na ordem de suplência
+  decisao: Proposta aprovada sem manifestações contrárias.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: eleição de 02 Coordenadores do Núcleo Regional de Jovens Líderes
+  decisao: Foram eleitas para o cargo de Coordenadoras do Núcleo Regional de Jovens Líderes de São Paulo Milena Gonçalves
+    Leite e Beatriz Chrispim. Mandatos iniciam em 01 de julho de 2025 e encerram em 01 de julho de 2027.
+  votacao: votação nominal com resultados detalhados
+  pagina: 6
+  conferido: true
+- tema: proposta para abertura de candidatura para cidade sede do Encontrinho de 2026 e votação online
+  decisao: Proposta de encaminhamento ao Núcleo aprovada por aclamação.
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+- tema: proposta para prioridade na suplência de Americana e autonomia do Núcleo Regional para escolha de cidade
+  decisao: Encaminhamento aprovado por aclamação.
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+- tema: proposta para aproveitamento do sábado de manhã da ARE como espaço para Diagnóstico da Rede e Roda de Conversa
+  decisao: Proposta de encaminhamento ao Núcleo aprovada por aclamação.
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+- tema: moções de apoio para candidatura de Rafael Melis Rogero à presidência da mesa da Assembleia Regional da Região Escoteira
+    de São Paulo e Fórum Nacional de Jovens Líderes
+  decisao: Moções de apoio aprovadas por aclamação.
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+eleicoes:
+- orgao: mesa diretora dos trabalhos do XXIII Fórum Regional de Jovens Líderes de São Paulo
+  cargo: Presidente
+  eleito: Rafael Melis Rogéro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa diretora dos trabalhos do XXIII Fórum Regional de Jovens Líderes de São Paulo
+  cargo: Vice-presidente
+  eleito: Lukas Palermo Lopes
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa diretora dos trabalhos do XXIII Fórum Regional de Jovens Líderes de São Paulo
+  cargo: Secretária
+  eleito: Beatriz Chrispim
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio do XXIII Fórum Regional de Jovens Líderes de São Paulo
+  cargo: Membro
+  eleito: Leonardo Gobira de Macedo
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio do XXIII Fórum Regional de Jovens Líderes de São Paulo
+  cargo: Membro
+  eleito: Maria Livia Lopes da Silva
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio do XXIII Fórum Regional de Jovens Líderes de São Paulo
+  cargo: Membro
+  eleito: Victor Gabriel Fogarolli Marcondes
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado
+  eleito: Beatriz Chrispim
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado
+  eleito: Victor Gabriel Fogarolli Marcondes
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado
+  eleito: Rafael Melis Rogéro
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Suplente
+  eleito: Raissa Melis Rogero
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Suplente
+  eleito: Vitor Alves Chuquer Zanetti Passagem
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens Líderes
+  cargo: Suplente
+  eleito: Luiz Fernando Paiva Vella Junior
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes de São Paulo
+  cargo: Coordenadora
+  eleito: Milena Gonçalves Leite
+  mandato: 2025-07-01 a 2027-07-01
+  pagina: 6
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes de São Paulo
+  cargo: Coordenadora
+  eleito: Beatriz Chrispim
+  mandato: 2025-07-01 a 2027-07-01
+  pagina: 6
+  conferido: true
+numeros:
+- o_que: votos a favor da aprovação da ata do Fórum Regional Extraordinário de Jovens Líderes
+  valor: '15'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da ata do Fórum Regional Extraordinário de Jovens Líderes
+  valor: '11'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários na votação da ata do Fórum Regional Extraordinário de Jovens Líderes
+  valor: '0'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3d88ed6df68fd7994b887caaa4ef50913243b6f2e446723a8e306ee35e1f8b97
+revisado: null

@@ -1,0 +1,59 @@
+doc_key: ata-115a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-08-19'
+  local: por meio de videochamada pelo Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: Alteração da Regra 191 do P.O.R. - Distintivo de Recrutador
+  decisao: Proposta de Resolução CAN 03/2023 que altera a Regra 191 do P.O.R. (Princípios, Organização e Regras) - Distintivo
+    de Recrutador. Aprovada com 13 votos a favor (ALEXANDRE, ALDENISE, NETO, CLAUCO, DANIEL, DANIELA, FÁBIO, ILKA, LUCIANO,
+    LUIZ, RENATO, SÉRIS e SIMONI) e uma abstenção por falta de pronunciamento (KARINA).
+  votacao: 13 votos a favor e uma abstenção
+  pagina: 2
+  conferido: true
+- tema: Ata da 114ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 114ª Reunião Ordinária do Conselho de Administração Nacional, realizada no dia 24 de junho
+    de 2023. Aprovada com 13 votos a favor (ALEXANDRE, ALDENISE, NETO, CLAUCIO, DANIEL, DANIELA, FÁBIO, ILKA, LUCIANO, LUIZ,
+    RENATO, SÉRIS e SIMONI) e uma abstenção por falta de pronunciamento (KARINA).
+  votacao: 13 votos a favor e uma abstenção
+  pagina: 2
+  conferido: true
+- tema: Aprovação da agenda provisória da 115ª Reunião Ordinária do CAN
+  decisao: Aprovação da agenda provisória da 115ª Reunião Ordinária do CAN, sendo esta aprovada por unanimidade, e assim,
+    definindo-a como a agenda definitiva.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Replanejamento Orçamentário - 2º semestre 2023
+  decisao: Proposta de Replanejamento Orçamentário do 2º semestre de 2023, a qual é aprovada de forma unânime pelos presentes.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Aprovação da ata da 115ª Reunião Ordinária do CAN
+  decisao: Ata aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos a favor da Proposta de Resolução CAN 03/2023
+  valor: 13 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da Proposta de Resolução CAN 03/2023
+  valor: uma abstenção
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da aprovação da Ata da 114ª Reunião Ordinária do CAN
+  valor: 13 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções na aprovação da Ata da 114ª Reunião Ordinária do CAN
+  valor: uma abstenção
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 87bfb88df5c42fa5ba5794c95711503fd7ae7628ba2331e39fbc96a06d456afe
+revisado: null

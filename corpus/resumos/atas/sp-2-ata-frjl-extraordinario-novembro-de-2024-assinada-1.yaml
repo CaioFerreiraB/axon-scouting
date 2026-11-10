@@ -1,0 +1,149 @@
+doc_key: sp-2-ata-frjl-extraordinario-novembro-de-2024-assinada-1
+reuniao:
+  tipo: extraordinaria
+  data: '2024-11-09'
+  local: ''
+deliberacoes:
+- tema: Aprovação da Ata do XXII Fórum Regional de Jovens Líderes
+  decisao: a Ata do XXII Fórum Regional de Jovens Líderes foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Anulação da 6º Pauta - Eleição de Coordenadores do Núcleo Regional de Jovens Líderes
+  decisao: o presidente anulou a 6º Pauta “Eleição por votação unitária, de 02 (dois) Coordenadores do Núcleo Regional de
+    Jovens Líderes, para o mandato de dois anos (2025-2027)” do edital de convocação deste Fórum
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Deliberação sobre novo plano do Fórum Regional de Jovens Líderes – São Paulo
+  decisao: a partir da próxima sessão, as sessões ordinárias do FRJL -SP sejam realizadas no final do ano, possibilitando
+    tempo hábil para que os encaminhamentos sejam colocados na pauta de convocação da ARE
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Eleição de 03 delegados e 03 suplentes ao Fórum Nacional de Jovens Líderes 2025
+  decisao: Sendo os três primeiros eleitos como titulares e os três últimos suplentes, na ordem acima, já que, em caso de
+    empate, a preferência é dada ao candidato com menor idade
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Encaminhamento para alteração do regulamento da Rede
+  decisao: Encaminhamento para o FNJL para pautar a alteração do regulamento em vista do parecer jurídico emitido pela DEN,
+    fazendo com que os FRJLs aconteçam no 2º semestre e o FNJL no 1º semestre, permitindo que os encaminhamentos à ANE aconteçam
+    com, ao menos, 80 dias de antecedência
+  votacao: aprovado por aclamação
+  pagina: 6
+  conferido: true
+- tema: Encaminhamento para convocação de CNR para deliberação sobre alteração do Regulamento
+  decisao: Encaminhamento para convocação de CNR onde haja a deliberação sobre procedimentos de alteração do Regulamento respectivo
+    ao parecer da DEN, permitindo que o FNJL aconteça com, ao menos, 80 dias de antecedência da ANE
+  votacao: aprovado por aclamação
+  pagina: 6
+  conferido: true
+- tema: Composição de GT para debates/sabatinas com candidatos à DR e ao CAN
+  decisao: proposta foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Solicitação para NRJL-SP promover eventos ligados à diversidade e inclusão
+  decisao: foi aprovado o encaminhamento da proposta por maioria
+  votacao: 12 votos a favor, 1 contrário e 14 abstenções
+  pagina: 7
+  conferido: true
+- tema: Criação de comissão para elaboração da Carta Compromisso de Envolvimento Juvenil
+  decisao: foi proposta a criação de uma comissão onde o documento já escrito será tido como base e outros membros da Rede
+    poderão construí-la de forma conjunta
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Pedido de postagem da composição juvenil da Comissão Mista
+  decisao: foi feito um pedido ao Núcleo para que a composição juvenil seja divulgada através de postagem no Instagram, ao
+    que foi respondido que isso já está previsto
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Anulação da eleição de delegados ao FNJL
+  decisao: foi aprovado por aclamação a anulação da votação aos delegados, que deverá ser realizada no XXIII FRJL-SP, ficando
+    expressamente recomendado ao Núcleo que ocorra em janeiro
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora e Comissão de Escrutínio do Fórum Regional Extraordinário de Jovens Líderes
+  cargo: Presidente
+  eleito: Rafael Melis Rogéro (GE São Carlos 251º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora e Comissão de Escrutínio do Fórum Regional Extraordinário de Jovens Líderes
+  cargo: Vice-presidente
+  eleito: Lukas Palermo Lopes (GE Dom Bosco 122º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora e Comissão de Escrutínio do Fórum Regional Extraordinário de Jovens Líderes
+  cargo: Secretária
+  eleito: Beatriz Chrispim (GE Terra da Uva 514º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora e Comissão de Escrutínio do Fórum Regional Extraordinário de Jovens Líderes
+  cargo: Membro da Comissão de Escrutínio
+  eleito: Raissa Melis Rogéro (GE São Carlos 251º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora e Comissão de Escrutínio do Fórum Regional Extraordinário de Jovens Líderes
+  cargo: Membro da Comissão de Escrutínio
+  eleito: Isadora Gualda Macedo (GE Encanto das Matas 197º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora e Comissão de Escrutínio do Fórum Regional Extraordinário de Jovens Líderes
+  cargo: Membro da Comissão de Escrutínio
+  eleito: Milena Gonçalves Leite (GE Terra da Uva 514º/SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2025
+  cargo: Delegado
+  eleito: Milena Gonçalves Leite
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2025
+  cargo: Delegado
+  eleito: Lukas Palermo Lopes
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2025
+  cargo: Delegado
+  eleito: Luiz Fernando Paiva Vella Junior
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2025
+  cargo: Suplente
+  eleito: Vitor Passagem
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2025
+  cargo: Suplente
+  eleito: Rafael Melis Rogéro
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2025
+  cargo: Suplente
+  eleito: Isadora Macedo
+  mandato: ''
+  pagina: 5
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 7fb3dfa877c8f7461106e4cfea7e1e5450cd2b72b91c7e458d6e73995b1ec76d
+revisado: null

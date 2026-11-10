@@ -1,0 +1,83 @@
+doc_key: ata39-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2003-05-17'
+  local: São Paulo/SP
+deliberacoes:
+- tema: Ata da 38ª reunião do CAN
+  decisao: aprovada a ata sem alterações
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Término do contrato de auditoria externa da Loja Escoteira e da UEB
+  decisao: aprovou-se por unanimidade o término do contrato de auditoria externa da Loja Escoteira e da União dos Escoteiros
+    do Brasil, devendo a DEN observar o prazo contratual. Mediante solicitação da Comissão fiscal, da DEN ou do CAN a auditoria
+    poderá, se necessário, ser reiniciada
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Projeto Operação Expansão 2003
+  decisao: aprovada
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Avaliação do corpo funcional
+  decisao: deve a DEN encaminhar ao coordenador da Comissão em até 30 dias as atribuições de todos os executivos
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Concessão da Medalha de Tiradentes – Jorge Laucevicius
+  decisao: Foi aprovada, por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Resolução CATAR
+  decisao: proposta de resolução do CATAR, sendo aprovada
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Voto de louvor a Julio Cruz e Celso Mizumoto pela Comissão do Jamboree Mundial
+  decisao: foi aprovada
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Resolução “Descontos e Gratuidades nos Registros Institucionais”
+  decisao: foi aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Solicitação do Cadastro Próprio CNPJ – Região do Rio Grande do Sul
+  decisao: Fica aprovada desde que encaminhe cópia da proposta de Estatuto à DEN que o analisará, seguindo os mesmos critérios
+    das aprovações anteriores
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Implantação dos novos distintivos de especialidades
+  decisao: O CAN aprova a implantação dos novos distintivos de especialidades pela DEN, com um razão inicial de validade dos
+    atuais distintivos de especialidades até dezembro de 2004
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Publicação do balanço da UEB
+  decisao: O balanço de 31 de dezembro de 2002 foi publicado em jornal de grande circulação por exigência do INSS
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Estudo comparativo para definir local da próxima reunião do CAN
+  decisao: A proposta foi aprovada, ficando o Presidente do CAN responsável em fazer o estudo comparativo
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Requerimento de Franck Renñan Gomes de Souza
+  decisao: Ficou deliberado que o Presidente do CAN entrará em contato com o mesmo solicitando que envie provas quanto ao
+    protocolo tempestivo do recurso que será analisado o seu processamento
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 36066376c7bbd2f3d7e6e9cc201f122478a34b22893d64cbf063ed5db0770fb7
+revisado: null

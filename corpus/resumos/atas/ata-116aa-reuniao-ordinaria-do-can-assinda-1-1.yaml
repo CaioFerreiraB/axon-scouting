@@ -1,0 +1,149 @@
+doc_key: ata-116aa-reuniao-ordinaria-do-can-assinda-1-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-11-18'
+  local: Escritório Nacional da União dos Escoteiros do Brasil sito na Rua Coronel Dulcídio, 2107 - Bairro Água Verde, Curitiba
+    - PR
+deliberacoes:
+- tema: Ata da 115ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 115ª Reunião Ordinária do Conselho de Administração Nacional, realizada no dia 19 de agosto
+    de 2023. Aprovada com 13 votos a favor e 2 abstenções
+  votacao: 13 votos a favor e 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Proposta Instalação Energia Solar
+  decisao: Aprovação da contratação e instalação do sistema de energia solar fotovoltaica na forma do parecer da CPO - Empresa
+    Shams Energia Solar
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Contratação Auditoria Externa 2023
+  decisao: Aprovação da contratação da empresa TATICCA Auditores e Consultores Ltda para auditoria externa dos Escoteiros
+    do Brasil no exercício de 2023
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Atualização Espaços Seguros
+  decisao: Aprovação do Escopo do GT de Espaços Seguros do CAN e ratificação da Conselheira Ilka Denise Rossetto Gallego Campos
+    na coordenação do GT
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Resolução Política de Relações Institucionais e Governamentais
+  decisao: Aprovação da Resolução que Instituiu a Política de Relações Institucionais e Governamentais
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Inclusão e retirada de temas na agenda provisória
+  decisao: A adição do tema 'Ratificação das novas Coordenações das Comissões Permanentes e dos Grupos de Trabalho do CAN'
+    e a retirada da pauta do assunto 'Proposta de Resolução que Institui a Política de Relações Internacionais' foram aprovadas
+    por unanimidade
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Ratificação das Novas Coordenações das Comissões Permanentes e Grupos de Trabalho do CAN
+  decisao: Todas as indicações apresentadas foram ratificadas e aprovadas por unanimidade
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Validação da Candidatura ao Comitê Mundial
+  decisao: A candidatura de Celso Menezes ao Comitê Escoteiro Mundial foi aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Resolução CAN 05/2023 - Contribuição associativa anual para 2024
+  decisao: Aprovação da Resolução CAN 05/2023 que determina os procedimentos para o registro institucional e os valores da
+    contribuição associativa anual para o ano-base de 2024
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Proposta de Planejamento Orçamentário 2024
+  decisao: Proposta de Planejamento Orçamentário 2024 aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+- tema: Resolução CAN 06/2023 - Alteração da Resolução CAN 03/2022 e Instituição da Medalha Impeesa
+  decisao: Aprovação da Resolução CAN 06/2023 que altera a Resolução CAN 03/2022 e institui a Medalha Impeesa, com aprovação
+    do modelo 1 da medalha
+  votacao: unanimidade para a resolução; 9 votos para modelo 1 e 2 votos para modelo 2
+  pagina: 9
+  conferido: true
+- tema: Resolução CAN 07/2023 - Disciplina da prática do escotismo na UEB
+  decisao: Aprovação por unanimidade da Proposta de Resolução CAN 07/2023 que disciplina requisitos para o reconhecimento
+    e prática do escotismo no âmbito da UEB
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: Proposta de Resolução que institui a Política Nacional de Espaços Seguros
+  decisao: Aprovação por unanimidade da Proposta de Resolução que institui a Política Nacional de Espaços Seguros no âmbito
+    dos Escoteiros do Brasil
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: Proposta de Resolução que institui a Política Nacional de Gestão de Risco
+  decisao: Aprovação por unanimidade da Resolução que institui a Política Nacional de Gestão de Risco no âmbito dos Escoteiros
+    do Brasil
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro(a) Nacional
+  eleito: BRAGA
+  mandato: 30 de abril de 2023 a 30 de abril de 2027
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro(a) Nacional
+  eleito: DANIEL
+  mandato: 30 de abril de 2023 a 30 de abril de 2027
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro(a) Nacional
+  eleito: FÁBIO
+  mandato: 30 de abril de 2023 a 30 de abril de 2027
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro(a) Nacional
+  eleito: KARINA
+  mandato: 30 de abril de 2023 a 30 de abril de 2027
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro(a) Nacional
+  eleito: LUCIANO
+  mandato: 30 de abril de 2023 a 30 de abril de 2027
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro(a) Nacional
+  eleito: LUIZ
+  mandato: 30 de abril de 2023 a 30 de abril de 2027
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro(a) Nacional
+  eleito: SÉRIS
+  mandato: 30 de abril de 2023 a 30 de abril de 2027
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: votos a favor da Ata da 115ª Reunião Ordinária do CAN
+  valor: '13'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da Ata da 115ª Reunião Ordinária do CAN
+  valor: '2'
+  pagina: 2
+  conferido: true
+- o_que: manifestacões no Sistema de Participação Associativa no CAN nesta reunião
+  valor: mais de 350
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 188f8e00d513a3da5a3d488f588beef582fc93ff075cf5f90178d6544cff6b1c
+revisado: null

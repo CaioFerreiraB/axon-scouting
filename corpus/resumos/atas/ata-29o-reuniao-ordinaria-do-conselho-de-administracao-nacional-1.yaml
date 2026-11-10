@@ -1,0 +1,50 @@
+doc_key: ata-29o-reuniao-ordinaria-do-conselho-de-administracao-nacional-1
+reuniao:
+  tipo: ordinaria
+  data: '2000-10-12'
+  local: GuarapariES
+deliberacoes:
+- tema: Composição da Diretoria Executiva para 2001
+  decisao: 'Composição da Diretoria Executiva para o período de 01 de janeiro de 2001 a 31 de dezembro de 2001: Cordeiro Perlingeiro,
+    portador do CPF no 612.446. e Registro de Identidade no 73460 — OAB/RJ, residente e domiciliado na cidade do Rio de Janeiro/RJ,
+    como Diretor Presidente da Diretoria Executiva Nacional da União dos Escoteiros do Brasil; Marcel Hugo, portador do CPF
+    no 719.011.249-91 e Registro de Identidade no 1.723.388-7, residente e domiciliado na cidade de Blumenau/SC, como Diretor
+    1o Vice-presidente e Marcos Venício Mattos Chaves, portador do CPF no 572.620.128-00 e registro de Identidade no 78770
+    — OAB/SP, residente e domiciliado na cidade de Santo André/SP, como Diretor 2o Vice-presidente.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Assinaturas de cheques e documentos onerosos
+  decisao: O Diretor Presidente e os Diretores Vice-Presidentes eleitos para o exercício de 2001 foram designados pelo Conselho
+    de Administração Nacional para, nos termos do artigo 51 do Estatuto da UEB, assinar cheques e documentos onerosos à UEB,
+    podendo fazê-lo diretamente ou por meio de instrumento particular de procuração outorgada à procuradores por eles designados.
+    Quer o façam pessoalmente, quer o façam por meio de procuradores, os cheques e documentos onerosos deverão contar sempre
+    com duas assinaturas.
+  votacao: ''
+  pagina: 1
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional da União dos Escoteiros do Brasil
+  cargo: Diretor Presidente
+  eleito: Cordeiro Perlingeiro
+  mandato: 01 de janeiro de 2001 a 31 de dezembro de 2001
+  pagina: 1
+  conferido: true
+- orgao: Diretoria Executiva Nacional da União dos Escoteiros do Brasil
+  cargo: Diretor 1o Vice-presidente
+  eleito: Marcel Hugo
+  mandato: 01 de janeiro de 2001 a 31 de dezembro de 2001
+  pagina: 1
+  conferido: true
+- orgao: Diretoria Executiva Nacional da União dos Escoteiros do Brasil
+  cargo: Diretor 2o Vice-presidente
+  eleito: Marcos Venício Mattos Chaves
+  mandato: 01 de janeiro de 2001 a 31 de dezembro de 2001
+  pagina: 1
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 31422c3e4a316bece96ef0e85ed1fa89da66e27b10a4aa6ab78a02f534ecbc85
+revisado: null

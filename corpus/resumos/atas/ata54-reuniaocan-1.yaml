@@ -1,0 +1,150 @@
+doc_key: ata54-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2007-09-01'
+  local: Curitiba/PR
+deliberacoes:
+- tema: Agenda de trabalho
+  decisao: 'A agenda de trabalho foi aprovada com as seguintes alterações: inclusão de solicitação para venda de imóvel pela
+    Região de São Paulo, que será analisado junto com pedido semelhante da Região do Paraná.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Ata da 53ª reunião do CAN
+  decisao: a ata, colocada em votação, foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Subordinação das Comissões Assessoras Nacionais
+  decisao: O CAN resolve, então, revogar as Resoluções 020/2001 e 006/2002, bem como toda a legislação que trata do assunto
+    e que possa contrariar a presente deliberação, atribuindo à DEN a competência para constituir eventuais grupos de trabalho
+    nas áreas estratégicas para apoio às suas ações, restando desconstituídas, neste momento, todas as Comissões Nacionais.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Formação dos Formadores
+  decisao: foi aprovado que a partir das novas Diretrizes de Gestão de Adultos a formação dos Formadores será de responsabilidade
+    do Nível Nacional.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Indicação de candidato brasileiro para o Comitê Interamericano
+  decisao: Mário indica Fernando como candidato da UEB ao Comitê Interamericano, sendo secundado por Alessandro e aprovado
+    pelo CAN.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Contato com Grupos Escoteiros não registrados
+  decisao: O CAN delibera que o Escritório Nacional deve contactar os Grupos Escoteiros não registrados, a fim de buscar apoiá-los
+    em eventuais dificuldades, com o envolvimento direto e colaborador das Regiões Escoteiras. Quinzenalmente o Escritório
+    Nacional deve remeter às Regiões Escoteiras a relação de Grupos Escoteiros que não efetuaram o registro de 2007 e dos
+    que ainda não atingiram o número de 20 (vinte) inscritos.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Publicação dos Guias e Manuais e análise do conteúdo do programa
+  decisao: O CAN aprovou a proposta de Luiz César com as recomendações feitas, ou seja, deverá ser priorizada a publicação
+    dos Guias e Manuais, bem como deve se iniciar processo de análise do conteúdo do programa, bem como adequação da formação
+    para valorizar a aplicação do Método.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Resolução sobre ingresso e nomeação de adultos na UEB
+  decisao: foi aprovada, por maioria, permitir uma flexibilização que respeite o definido no POR. Também se deliberou que
+    a nomeação de Assistentes ficará sob competência do Grupo, comunicando à Diretoria Regional.
+  votacao: maioria
+  pagina: 4
+  conferido: true
+- tema: Alienação de imóvel da Região de São Paulo
+  decisao: Colocada em votação a proposta, autorizando a alienação dos imóveis referidos, foi aprovada.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Desconto para membros da mesma família a partir do terceiro membro
+  decisao: O desconto será de 30% (trinta porcento) do valor da contribuição a partir do terceiro integrante da família.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Estudo para cobrança de registro socializado
+  decisao: A DEN, contando com a colaboração do Alessandro, irá apresentar uma proposta até abril/2008.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Manutenção de 20 registros mínimos para obtenção do Certificado de Funcionamento
+  decisao: foi aprovada a manutenção de 20 registros mínimos para a obtenção do Certificado de Funcionamento.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Aplicação do valor do salário mínimo para critério de renda familiar para 'carente'
+  decisao: foi aprovado por todos os presentes.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Desconto para membros da mesma família a partir do terceiro membro
+  decisao: foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Indicação de Fernando Brodeschi como Comissário Internacional e Ricardo Stuber como Adjunto
+  decisao: os mesmos ficam efetivamente nomeados.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Concessão da Medalha Tapir de Prata a Oscar Arias
+  decisao: foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Composição da delegação para Conferência Escoteira Interamericana
+  decisao: foi deliberado que a indicação dos delegados caberá conjuntamente a DEN e a presidência do CAN.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Aprovação para venda dos terrenos da Região Escoteira do Paraná
+  decisao: houve a aprovação para a venda dos terrenos.
+  votacao: 9 votos a favor, 3 votos contrários e 2 abstenções
+  pagina: 7
+  conferido: true
+eleicoes:
+- orgao: DEN
+  cargo: Comissário Internacional
+  eleito: Fernando Brodeschi
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: DEN
+  cargo: Comissário Internacional Adjunto
+  eleito: Ricardo Stuber
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: Valor da proposta comercial para alienação do imóvel da UEB
+  valor: R$ 350.000,00
+  pagina: 4
+  conferido: false
+- o_que: Valor da nova sede adquirida
+  valor: R$ 360.000,00
+  pagina: 4
+  conferido: false
+- o_que: Valor médio dos orçamentos para reforma da nova sede
+  valor: R$ 450.000,00
+  pagina: 4
+  conferido: false
+- o_que: Desconto para membros da mesma família a partir do terceiro membro
+  valor: 30%
+  pagina: 5
+  conferido: true
+- o_que: Mínimo exigido para obtenção do Certificado de Funcionamento
+  valor: 20 registros mínimos
+  pagina: 5
+  conferido: true
+- o_que: Data da reunião
+  valor: 1º e 2 de setembro de 2007
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 5e0d393cddf05cddcaa1b4ab560945b63e3e12ad7d2ff4a78b155601d19df683
+revisado: null

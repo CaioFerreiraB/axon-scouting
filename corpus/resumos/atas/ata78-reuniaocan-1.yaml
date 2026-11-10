@@ -1,0 +1,94 @@
+doc_key: ata78-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2014-11-08'
+  local: sede da Região Escoteira do Distrito Federal, em Brasília - DF
+deliberacoes:
+- tema: ampliação da sede nacional
+  decisao: aprovado por unanimidade o uso de até R$ 1.200.000,00 (Hum milhão e duzentos mil reais) para ampliação da sede
+    nacional
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: formação de GT para análise da proposta de resolução sobre Região Escoteira
+  decisao: foi aprovada por unanimidade a formação de um GT que analise melhor o assunto, indicando Vendramini como seu coordenador
+    e composição com mais 5 pessoas
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: reajuste da taxa de registro 2015
+  decisao: foi aprovada a proposta da DEN para reajuste da taxa de registro de 2015 por 9%
+  votacao: 9 votos a favor e 3 contra
+  pagina: 3
+  conferido: true
+- tema: valor para regularização de registro atrasado
+  decisao: foi aprovada a proposta de Marco Romeu que fixa o valor para regularização em R$ 80,00
+  votacao: decidida pelo voto do presidente do CAN, 6 votos a favor e 6 contra
+  pagina: 3
+  conferido: true
+- tema: ampliação do prazo para primeiros registros e descontos para novos Grupos
+  decisao: foi aprovado por 10 votos a favor e 1 contra a resolução que trata do registro anual com ampliação do prazo para
+    primeiros registros e descontos
+  votacao: 10 votos a favor e 1 contra
+  pagina: 3
+  conferido: true
+- tema: transferência da competência sobre prática de escotismo para a DEN
+  decisao: O CAN transfere para a DEN a competência de tratar do assunto da prática de escotismo
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: aprovação do orçamento 2015
+  decisao: o orçamento 2015 foi aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: aprovação da Resolução sobre a prática de escotismo
+  decisao: a resolução foi submetida a votação e aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: pedido de autorização para alienação de imóveis da Região Escoteira de São Paulo
+  decisao: proposta à votação, sendo aprovada por maioria
+  votacao: maioria
+  pagina: 3
+  conferido: true
+- tema: aprovação das recomendações do GT de Posicionamento Institucional sobre homoafetividade
+  decisao: as duas recomendações foram aprovadas pelo CAN
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: autorização ao GT para elaborar o Posicionamento Institucional para os Escoteiros do Brasil
+  decisao: proposta de que o tema seja tratado por meio digital na análise do texto do posicionamento, recebendo aprovação
+    por unanimidade
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: aprovação da proposta de trabalho da Resolução sobre Abertura de Novos Grupos Escoteiros via virtual
+  decisao: proposta que o texto seja trabalhado via virtual, incorporando as propostas que foram feitas na reunião, aceita
+    por todos
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: inscritos no Jamboree Nacional
+  valor: '4.120'
+  pagina: 1
+  conferido: false
+- o_que: inscritos no Jamboree Mundial
+  valor: '600'
+  pagina: 1
+  conferido: true
+- o_que: inscritos em eventos Mutcom, Muteco, Jota/Joti e Grande Jogo Naval
+  valor: não especificado
+  pagina: 1
+  conferido: false
+- o_que: inscritos no Encontro Nacional de Jovens Líderes
+  valor: 64 jovens de 16 Regiões Escoteiras
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 243c7780b1729159f5334d8abe484522d43375001ad2c60445c3b5f0cdb4e80e
+revisado: null

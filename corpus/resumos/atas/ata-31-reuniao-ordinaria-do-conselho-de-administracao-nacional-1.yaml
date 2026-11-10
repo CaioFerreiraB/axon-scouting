@@ -1,0 +1,118 @@
+doc_key: ata-31-reuniao-ordinaria-do-conselho-de-administracao-nacional-1
+reuniao:
+  tipo: ordinaria
+  data: '2001-05-19'
+  local: Hotel San Juan, Curitiba/PR
+deliberacoes:
+- tema: Aprovação da agenda
+  decisao: aprovada com alterações
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da XXX Reunião do CAN
+  decisao: Aprovada com alteração proposta pela Carmen quanto ao item 22 onde deveria constar a modificação de que os Fóruns
+    de Ramos foram suprimidos do Plano 2001
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução sobre as Modalidades
+  decisao: o CAN acolhe as palavras mas mantém a Resolução aprovada como foi
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Plano Estratégico
+  decisao: O CAN decide manter o documento em aberto até a reunião com as Diretorias Regionais do Nordeste para possíveis
+    contribuições
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução 009/2001
+  decisao: É aprovada a proposta por unanimidade, com a inserção de um parágrafo no artigo 3o.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Intervenção na Região de PE
+  decisao: o CAN decide por unanimidade determinar a Intervenção imediata na Região. O presidente determina ao Escritório
+    Nacional que tome as medidas necessárias à Intervenção o mais rapidamente possível, nomeando como Interventores o Cap.
+    Carlos Alberto Lino da Silva e o Sgto. Zalmon Careiro de Almeida
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Projeto Educativo
+  decisao: Marcel informa que o documento que está sendo apresentado é o documento discutido na Comissão Nacional de Programa
+    de Jovens com a participação da própria Carmen. Marcos sugere que as propostas da Carmen sejam encaminhadas via correio
+    eletrônico para todo o CAN e CNPJ e que se promovam discussões virtuais sobre o tema, para fechá-lo definitivamente no
+    evento Programa de Qualificação em Áreas Estratégicas em Junho em Curitiba/PR
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Proposta de que o orçamento da UEB seja aprovado pela Assembléia Nacional
+  decisao: os membros do CAN que decidem por unanimidade continuar a cumprir o que estabelece o Estatuto da UEB neste sentido,
+    mantendo esta aprovação no âmbito do Conselho
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Propostas de concessão de Medalhas Tiradentes
+  decisao: o CAN decide por unanimidade aprovar as duas concessões com base na vida escoteira de ambos os agraciados
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Solicitação de informativo detalhado da situação financeira da UEB e da LEN
+  decisao: o CAN solicita à DEN que passe a apresentar um informativo detalhado da situação financeira da UEB e da LEN, detalhando
+    principalmente as linhas com disparidades à menor
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Recebimento dos Balancetes mensais
+  decisao: Fica estabelecido que os Conselheiros que tiverem interesse em receber os Balancetes mensais informem ao Escritório
+    para evitar que aqueles que não tenham interesse em receber estes documentos, façam multiplicar os mesmos sem necessidade
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Custeio da passagem para a Assembléia Nacional em Natal
+  decisao: o custeio da 4a. passagem (Natal) dependerá da localização de orçamento que a preveja. na sua falta, a passagem
+    não será custeada pela UEB
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Tema para o Congresso Escoteiro e para o ano de 2002
+  decisao: Fica definido como tema do Congresso Escoteiro em Natal e como tema para o ano de 2002 — “ESCOTISMO PARA TODOS”
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Proposta de Resolução 010/2001 (calça comprida no uniforme)
+  decisao: a Resolução restou aprovada com 08 votos favoráveis, 06 contra e 01 abstenção do Presidente
+  votacao: 8 votos favoráveis, 6 contra, 1 abstenção
+  pagina: 3
+  conferido: true
+- tema: Proposta de Resolução 011/2001 (Seções Externas)
+  decisao: o CAN decide encaminhar a proposta para Comissão de Crescimento para uma análise mais profunda e formulação de
+    texto mais claro e cuidadoso e desde já aprova a idéia
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Jamboree Mundial 2011
+  decisao: o CAN definiu que os companheiros Chaves e Galera ficam indicados como representantes do Conselho nas próximas
+    reuniões da Comissão e para montagem do documento final para apresentação ao CAN e o Executivo Eduardo Bello dará apoio
+    aos trabalhos representando o Escritório Nacional como profissional da área. Este documento deverá ser enviado do CAN
+    até 08 de agosto para que seja discutido durante a reunião ordinária do Conselho naquele mês
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Plano Nacional de Crescimento
+  decisao: O CAN por fim, aprova a criação do cargo de Executivo Nacional de Marketing sugerido no Projeto. Aprova ainda o
+    Plano por unanimidade com a revisão dos prazos e adequação dos profissionais contemplados no projeto
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: membros da UEB registrados
+  valor: '40.000'
+  pagina: 2
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8c7f2d015d0537a4e911da76096326a3468c588ca492b880243ca7e93a5a4235
+revisado: null

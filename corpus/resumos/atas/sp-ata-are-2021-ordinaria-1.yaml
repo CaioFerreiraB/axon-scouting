@@ -1,0 +1,310 @@
+doc_key: sp-ata-are-2021-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-03-27'
+  local: São Paulo/SP
+deliberacoes:
+- tema: Eleição da Mesa Diretora dos trabalhos
+  decisao: elegendo assim com 252 votos favoráveis Rodrigo de Freitas, contra 127 votos favoráveis para Pietá Rivas, 112 votos
+    favoráveis para Robson Lancaster e 10 abstenções. Para 1º Vice-Presidente foi eleita Marianna Reali com 213 votos favoráveis,
+    constando-se 143 votos para Ana Hidaka, 1220 votos para Bruno Fonseca e 15 abstenções. Para 2º Vice-Presidente foi eleito
+    Erik Bueno com 253 votos favoráveis, constando-se 220 votos para Giuliano Di Raimo e 21 abstenções. Para 1º Secretário
+    foi eleito Fernando Ramos com 464 votos favoráveis, constando-se 25 abstenções. Para 2º Secretário foi eleita Carolina
+    Ikuta com 477 votos favoráveis, constando-se 21 abstenções
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Eleição das Comissões Assessoras da Assembleia
+  decisao: com 449 votos favoráveis, 4 votos contrários e 6 abstenções, foi eleita a Comissão de Credenciamento e mantida
+    nos serviços e, com 465 votos favoráveis, 6 votos contrários e 7 abstenções, a Comissão de Escrutínio também foi eleita.
+    Larissa Avari foi eleita por aclamação para a Comissão de Estilo. Adriano da Luz foi eleito por aclamação para a Comissão
+    de Avisos Gerais.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata anterior
+  decisao: proposto pelo Presidente da mesa a sua aprovação pela Plenária, sendo aprovada sem contestações e sem emendas
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Deliberação sobre presença de não-delegados na plataforma de videoconferência
+  decisao: por maioria dos votos, 395 favoráveis, a Plenária se manteria como estava
+  votacao: maioria
+  pagina: 5
+  conferido: true
+- tema: Aprovação da Prestação de Contas e Balanço do Exercício Fiscal anterior
+  decisao: foi demonstrado a aprovação da Prestação de Contas e do Balanço do Exercício Fiscal anterior com 416 votos favoráveis,
+    20 votos contrários e 24 abstenções
+  votacao: 416 votos favoráveis, 20 votos contrários e 24 abstenções
+  pagina: 7
+  conferido: true
+- tema: Aprovação da Previsão Orçamentária para o próximo exercício
+  decisao: foi demonstrado o resultado da votação do ITEM 6, notando-se 401 votos favoráveis à previsão orçamentária, 34 votos
+    contrários e 22 abstenções, sendo assim aprovada, por maioria dos votos, a Previsão Orçamentária para o Exercício 2021-2022
+  votacao: maioria
+  pagina: 8
+  conferido: true
+- tema: Aprovação do Relatório Regional de Atividades de 2020
+  decisao: encaminhou para deliberação da aprovação por aclamação, a qual não houveram objeções via Plenária online ou transmissões,
+    sendo assim aprovado o Relatório Regional de Atividades de 2020
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+- tema: Moção de apoio à alteração da idade de Jovem Líder na PNEJ
+  decisao: solicitação foi aprovada sem opiniões contrárias
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+- tema: Eleição do candidato paulista ao Conselho de Administração Nacional - CAN
+  decisao: elegendo por maioria dos votos como candidato paulista ao CAN o Renato Wanderley Breneizer com 237 votos favoráveis
+    contra 153 votos favoráveis para o Jabs Costa, 85 votos favoráveis para o Rudner Queiroz e 6 abstenções
+  votacao: maioria
+  pagina: 12
+  conferido: true
+- tema: Eleição dos Delegados Regionais à Assembleia Escoteira Nacional
+  decisao: foram eleitos os 23 mais votados, com desempate pelo critério do membro mais novo, lista completa publicada no
+    site Regional
+  votacao: ''
+  pagina: 13
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora dos trabalhos
+  cargo: Presidente da Assembleia
+  eleito: Rodrigo Ramos de Freitas
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: 1º Vice-Presidente
+  eleito: Marianna Reali da Costa Medeiros
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: 2º Vice-Presidente
+  eleito: Rodnei Erik de Souza Bueno
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: 1º Secretário
+  eleito: Fernando Rosa Ramos
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos trabalhos
+  cargo: 2º Secretária
+  eleito: Carolina Mayumi Ikuta
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Estilo
+  cargo: Membro
+  eleito: Larissa Avari
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Avisos Gerais
+  cargo: Membro
+  eleito: Adriano da Luz
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Candidato paulista
+  eleito: Renato Wanderley Breneizer
+  mandato: ''
+  pagina: 12
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Giuliano Tovo Di Raimo
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Leandro Rodrigues de Campos
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Rodrigo Ramos de Freitas
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Maria de Lourdes dos Santos Teijeira
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Rosemary Peres Motta
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Jaquilene de Lima Luz
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Alexandro José Pimenta
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Vânia Ferrari
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Lucas Jun Sakajiri
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Michael Pereira de Oliveira
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Carlos Eugênio Bakos
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Lídia Sadaco Minamizaki Ikuta
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Pedro Antônio Hernandez Costa
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Roberlei Volpe Beneduzi
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Tatiana Alves Rosa Zanetti Passagem
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Rudner Lauterjung Queiroz
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Vivian da Silva Lopes
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Paula Cristina Acíron Loureiro
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Marco Aurélio Trapero Moraes Fabrega
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Sônia Maria Gonçalves Jorge
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Regional
+  eleito: Fabrícia Paula da Silva
+  mandato: ''
+  pagina: 13
+  conferido: true
+numeros:
+- o_que: associados presentes na plataforma
+  valor: '481'
+  pagina: 1
+  conferido: true
+- o_que: votos para Presidente da Assembleia
+  valor: 252 votos favoráveis para Rodrigo de Freitas, 127 para Pietá Rivas, 112 para Robson Lancaster, 10 abstenções
+  pagina: 1
+  conferido: true
+- o_que: votos para 1º Vice-Presidente
+  valor: 213 votos favoráveis para Marianna Reali, 143 para Ana Hidaka, 1220 para Bruno Fonseca, 15 abstenções
+  pagina: 1
+  conferido: true
+- o_que: votos para 2º Vice-Presidente
+  valor: 253 votos favoráveis para Erik Bueno, 220 para Giuliano Di Raimo, 21 abstenções
+  pagina: 1
+  conferido: true
+- o_que: votos para 1º Secretário
+  valor: 464 votos favoráveis, 25 abstenções
+  pagina: 1
+  conferido: true
+- o_que: votos para 2º Secretário
+  valor: 477 votos favoráveis, 21 abstenções
+  pagina: 1
+  conferido: true
+- o_que: votos para Comissão de Credenciamento
+  valor: 449 votos favoráveis, 4 contrários, 6 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos para Comissão de Escrutínio
+  valor: 465 votos favoráveis, 6 contrários, 7 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos para manter a Plenária como estava
+  valor: 395 votos favoráveis
+  pagina: 5
+  conferido: true
+- o_que: delegados credenciados
+  valor: '556'
+  pagina: 7
+  conferido: true
+- o_que: votos para aprovação da Prestação de Contas e Balanço
+  valor: 416 votos favoráveis, 20 contrários, 24 abstenções
+  pagina: 7
+  conferido: true
+- o_que: votos para aprovação da Previsão Orçamentária
+  valor: 401 votos favoráveis, 34 contrários, 22 abstenções
+  pagina: 8
+  conferido: true
+- o_que: vagas para Delegados Regionais à Assembleia Nacional
+  valor: '23'
+  pagina: 9
+  conferido: true
+- o_que: candidatos para Delegados Regionais à Assembleia Nacional
+  valor: '50'
+  pagina: 9
+  conferido: true
+- o_que: votos para candidato paulista ao CAN
+  valor: 237 votos para Renato Breneizer, 153 para Jabs Costa, 85 para Rudner Queiroz, 6 abstenções
+  pagina: 12
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8d1a7bcaadbeb9ac840a73cc3ab916f3badec612dea537c9da5d351716f49204
+revisado: null

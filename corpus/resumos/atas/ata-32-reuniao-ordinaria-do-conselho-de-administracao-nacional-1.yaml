@@ -1,0 +1,125 @@
+doc_key: ata-32-reuniao-ordinaria-do-conselho-de-administracao-nacional-1
+reuniao:
+  tipo: ordinaria
+  data: '2001-08-25'
+  local: Hotel San Juan, Curitiba/PR
+deliberacoes:
+- tema: aprovação da agenda
+  decisao: aprovada com alterações
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata da XXXI Reunião do CAN
+  decisao: Feitas alterações, foi aprovada
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: proposta de Medalha Tiradentes
+  decisao: Aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: proposta de Resolução sobre Campanhas Financeiras
+  decisao: aprovada, com ajustes, nos termos do texto em anexo
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: proposta de Resolução sobre os valores da contribuição anual para 2002
+  decisao: aprovada, com ajustes, nos termos do texto em anexo
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: proposta de Resolução sobre o código de ética dos profissionais da UEB
+  decisao: aprovada por unanimidade, de acordo com o texto em anexo
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: manutenção da intervenção na Região BA
+  decisao: Decide-se manter a intervenção e formar-se uma comissão composta pelos conselheiros Renato Bini, Marcos Chaves
+    e Frederico dos Santos que deverá ir a Salvador e, posteriormente, formular um parecer e informar ao CAN, para decisão
+    sobre a finalização, ou não, do processo de intervenção na próxima reunião do CAN, em Natal-RN
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: aprovação do calendário para o ano de 2002
+  decisao: foi aprovado o calendário com alterações propostas pelos Conselheiros, como por exemplo a retirada do calendário
+    dos diversos feriados e datas comemorativas, mantendo apenas as datas alusivas ao Movimento Escoteiro
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: empréstimo para Região do RS
+  decisao: Decide-se encaminhar a proposta para a DEN analisar
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: aprovação do Documento de Credenciamento e regras para a Assembleia Nacional
+  decisao: Fica aprovado pelo CAN, tanto o Documento de Credenciamento, como as regras para tal, com as alterações propostas
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: delegação da aprovação da convocação à Assembleia Nacional à DEN
+  decisao: 'Colocada em votação a delegação desta aprovação à DEN, restou aprovada com a seguinte votação: 7 votos a favor,
+    3 contra e 3 abstenções'
+  votacao: 7 votos a favor, 3 contra e 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: aprovação da proposta para acompanhamento do Jamboree Mundial 2011
+  decisao: 'CAN aprova proposta que: a) Os Executivos de Eventos e Marketing façam o acompanhamento juntamente com a Comissão
+    sobre os trabalhos para o Jamboree Mundial, b) A Comissão já formada para o Jamboree 2011 trabalhará para a apresentação
+    da Candidatura da UEB para a Conferência Interamericana de 2007; c) na reunião do CAN, de maio de 2002, seja apresentado
+    um projeto detalhado de viabilidade de realização do Jamboree, contemplando as observações feitas durante esta reunião;
+    d) Que se inclua no orçamento da UEB para 2002, recursos para o desenvolvimento destes trabalhos'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: aprovação da Resolução que regulamenta as Intervenções
+  decisao: Com modificações foi aprovada a resolução, segundo o texto em anexo, que passa a ser a Resolução 013/2001
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: encerramento do processo de intervenção na Região de PE e abertura de processos disciplinares
+  decisao: Recomendação acatada pelo CAN para encaminhar a Comissão de Ética para abertura de processos disciplinares contra
+    Walter Maia, Maria José Feitosa, Jair Lira e Eduardo Sávio e encerrar o processo de intervenção
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: aprovação das regras para envio e duração dos assuntos nas reuniões
+  decisao: A proposta é aceita por unanimidade para que os assuntos sejam enviados com 15 dias de antecedência e conste o
+    tempo de duração de cada exposição, e para extinguir a propositura de Assuntos Gerais nas reuniões
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: definição dos representantes da UEB no seminário sobre Protagonismo Juvenil
+  decisao: O CAN definiu que os representantes da UEB neste seminário serão Geraldino, pela CNRA; Chaves, pela CNGI e Carmen,
+    pela CNPJ
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: decisão sobre confecção do distintivo da Insígnia do Voluntário
+  decisao: Decide-se que o desenho deverá ser confeccionado pelo EN que encaminhará às Regiões para que o produzam independentemente
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: empréstimo solicitado pela Região do RS
+  valor: R$ 50.000,00
+  pagina: 2
+  conferido: false
+- o_que: saldo a pagar à OSL referente ao JamPan
+  valor: US$ 15.000,00
+  pagina: 2
+  conferido: false
+- o_que: saldo a pagar pelo Paraguai à UEB referente ao JamPan
+  valor: US$ 22.000,00
+  pagina: 2
+  conferido: false
+- o_que: votação sobre delegação da aprovação da convocação à Assembleia Nacional à DEN
+  valor: 7 votos a favor, 3 contra e 3 abstenções
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d243c4abff7fb9c4f4353bd52b4544d063ca8647b5f8f623b2abe3ba22248030
+revisado: null

@@ -1,0 +1,154 @@
+doc_key: ata-2022-xxvii-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-04-22'
+  local: Universidade Federal Tecnológica do Paraná (UTFPR), Avenida Sete de Setembro, nº 3.165, Bairro Rebouças, Curitiba/PR
+deliberacoes:
+- tema: Eleição da Mesa Diretora do FNJL
+  decisao: 'Felipe Bertoglio é eleito, por aclamação, Presidente. Foram eleitos para a Mesa Diretora do FNJL: 1º Vice-Presidente,
+    Fernando Ramos; 2º Vice-Presidente, Bruno Destri Coelho; 1ª Secretária, Cléo Alves dos Santos; 2º Secretário, Adrian Cordeiro.'
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Inclusão de delegadas da Região Escoteira de Santa Catarina
+  decisao: Foi decidido que, conforme o Regulamento Geral e o Edital de Convocação, não seria possível o credenciamento das
+    delegadas da Região Escoteira de Santa Catarina para votação, mas sua participação ativa no Fórum foi encorajada.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Alteração da ordem do dia para adiantar discussão de emendas ao estatuto
+  decisao: A alteração da ordem do dia para adiantar a discussão das emendas ao estatuto foi aprovada por aclamação.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Aprovação da proposta de alteração estatutária sobre diversidade de gênero para representantes no CAN
+  decisao: A proposta da região de São Paulo para alteração do artigo 29, parágrafo 5º, incluindo diversidade de gêneros entre
+    os representantes no CAN, foi aprovada por aclamação.
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: Criação de comissão para acompanhamento do novo estatuto
+  decisao: Foi aprovada por aclamação a criação de uma comissão para acompanhar o andamento do novo estatuto.
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: Aprovação da não leitura e aprovação da Ata do XXVI Fórum Nacional de Jovens Líderes
+  decisao: Foi aprovada por aclamação a não leitura da Ata do XXVI FNJL e sua aprovação.
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: Alteração da ordem do dia para apresentação do Relatório de Gestão após Assuntos Gerais
+  decisao: Foi aprovada a alteração da ordem do dia para que a apresentação do Relatório de Gestão do Núcleo Nacional de Jovens
+    Líderes fosse feita após os Assuntos Gerais.
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Encaminhamento sobre realização do Encontro Nacional de Jovens Líderes (ENJL)
+  decisao: Foi deliberado que o ENJL será realizado no segundo semestre de 2022, no estado de Minas Gerais, organizado por
+    uma comissão mista formada pelo Núcleo atual e o que será eleito.
+  votacao: 22 votos para alteração da data para segundo semestre, 4 contra; 23 votos para manter Minas Gerais como local,
+    3 para novo local
+  pagina: 9
+  conferido: true
+- tema: Eleição da nova chapa do Núcleo Nacional de Jovens Líderes para mandato de dois anos
+  decisao: Foi aclamada a chapa única composta por Amanda Martins (PR) e Adrian Cordeiro (SE) como representantes no CAN;
+    Lukas Palermo Lopes (SP), Filipe Malizia (BA) e Santiago Alcides (DF) como coordenadores, que iniciará seus trabalhos
+    a partir de 1º de julho de 2022.
+  votacao: aclamação
+  pagina: 10
+  conferido: true
+- tema: Deliberação conjunta das propostas do Rio de Janeiro sobre alistamento eleitoral e manifestação artística
+  decisao: Foi aclamada a proposta conjunta do Rio de Janeiro para incentivar a participação dos jovens no alistamento eleitoral
+    e estimular a manifestação artística no meio escoteiro, com adendo para evitar favoritismo político.
+  votacao: aclamação
+  pagina: 11
+  conferido: true
+- tema: Proposta de trabalho sobre acolhimento e adaptação de Jovens Líderes que atuam como adultos voluntários
+  decisao: Foi apresentado o levantamento para trabalhar a questão de acolhimento e adaptação de Jovens Líderes na transição
+    para adultos voluntários, visando melhorar o ambiente e retenção.
+  votacao: ''
+  pagina: 11
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora do FNJL
+  cargo: Presidente
+  eleito: Felipe Bertoglio
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora do FNJL
+  cargo: 1º Vice-Presidente
+  eleito: Fernando Ramos
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora do FNJL
+  cargo: 2º Vice-Presidente
+  eleito: Bruno Destri Coelho
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora do FNJL
+  cargo: 1ª Secretária
+  eleito: Cléo Alves dos Santos
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora do FNJL
+  cargo: 2º Secretário
+  eleito: Adrian Cordeiro
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Coordenador
+  eleito: Lukas Palermo Lopes
+  mandato: 2022-2024
+  pagina: 10
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Coordenador
+  eleito: Filipe Malizia
+  mandato: 2022-2024
+  pagina: 10
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Coordenador
+  eleito: Santiago Alcides
+  mandato: 2022-2024
+  pagina: 10
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Representante da RNJL no CAN
+  eleito: Amanda Martins
+  mandato: 2022-2024
+  pagina: 10
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Representante da RNJL no CAN
+  eleito: Adrian Cordeiro
+  mandato: 2022-2024
+  pagina: 10
+  conferido: true
+numeros:
+- o_que: votos para manter data do ENJL no primeiro semestre
+  valor: '22'
+  pagina: 9
+  conferido: true
+- o_que: votos para alterar data do ENJL para segundo semestre
+  valor: '4'
+  pagina: 9
+  conferido: false
+- o_que: votos para manter Minas Gerais como local do ENJL
+  valor: '23'
+  pagina: 9
+  conferido: true
+- o_que: votos para escolher novo local para ENJL
+  valor: '3'
+  pagina: 9
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 161dd94e195d277db06a6429e91d2814d4fd5b7a52851d3f182ef7933e7fb2ff
+revisado: null

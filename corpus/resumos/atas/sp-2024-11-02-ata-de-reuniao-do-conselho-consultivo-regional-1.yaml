@@ -1,0 +1,69 @@
+doc_key: sp-2024-11-02-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-11-02'
+  local: Centro Escoteiro Jaraguá, Rua Adriano Reys, 1, São Paulo
+deliberacoes:
+- tema: Venda do terreno em Jales
+  decisao: precisam da ajuda do Conselho Consultivo para que, na Assembleia Escoteira, seus delegados possam autorizar a venda
+    do terreno
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Apresentação do Calendário Regional 2025
+  decisao: Calendário Regional 2025 apresentado com eventos como Encontrão Escoteiro em 5 de abril de 2025 no Thermas Water
+    Park, São Pedro, e ARP de 19 a 22 de junho de 2025 em Leme
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Prestação de contas dos Distritos
+  decisao: prestação de contas cobrada por e-mail, com prazo até 14 de novembro para entrega; repasse do Orçamento Compartilhado
+    será suspenso enquanto não for apresentada a prestação de contas
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Curso Técnico de Comissário Distrital
+  decisao: curso terá módulos sugeridos como 'Abertura e Fechamento de UEL', 'Jurídico, Denúncias e Comissão de Ética', entre
+    outros; requisito preliminar e indicação de um comissário para o curso
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: presença de Comissários Distritais
+  valor: '27'
+  pagina: 1
+  conferido: true
+- o_que: representantes do Conselho Regional de Portadores da Medalha Velho Lobo
+  valor: '1'
+  pagina: 1
+  conferido: true
+- o_que: Diretores Regionais presentes
+  valor: '4'
+  pagina: 1
+  conferido: false
+- o_que: funcionários do Escritório Regional presentes
+  valor: '3'
+  pagina: 1
+  conferido: false
+- o_que: gastos com IPTU, advogado e viagem para Jales
+  valor: R$11.320,68
+  pagina: 1
+  conferido: false
+- o_que: valor aproximado do terreno em Jales na gestão anterior
+  valor: R$120.000,00
+  pagina: 1
+  conferido: false
+- o_que: valor promocional do Encontrão + ARP
+  valor: R$435,00
+  pagina: 2
+  conferido: false
+- o_que: valor do repasse por associado
+  valor: R$ 1,73
+  pagina: 2
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 832ef6d78185e9a691eff1090f851522f145b1c97d663f0655920cdeeb9ed8bf
+revisado: null

@@ -1,0 +1,87 @@
+doc_key: ata85-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2016-08-27'
+  local: Brasília/DF
+deliberacoes:
+- tema: Aprovação da pauta da reunião
+  decisao: Aprovação da pauta encaminhada previamente para a realização da 85.ª Reunião Ordinária do Conselho de Administração
+    Nacional da União dos Escoteiros do Brasil.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação eletrônica de decisões do CAN
+  decisao: 'Registro em ata das decisões do CAN aprovadas eletronicamente: Concessão do Diploma de Mérito Nacional e Elogio
+    para os ex-conselheiros 2011 - 2015; Nomeação de Nelson Zepka Senna e Eduardo Rodrigues de Souza como membros convidados
+    da Comissão Nacional de Reconhecimento e Condecorações; Definição do local da reunião do CAN de 27 e 28/08/2016 em Brasília
+    - DF e da reunião de 19 e 20/11/2016 em Curitiba – PR; Contratação de Gerente Sênior de Relações Institucionais; Aprovação
+    da ata da 84ª reunião do CAN ocorrida no dia 21/04/2016 em Campo Grande – MS; Permanência do conselheiro Antonio Leitão
+    Nunes no CAN durante todo o seu mandato e com todos os direitos (voz e voto) e elaboração de um comunicado do CAN a todos
+    os associados da UEB sobre o comportamento dos Conselheiros na Assembleia Nacional 2016 e da decisão do CAN sobre este
+    caso.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Prazo para finalização de comunicado aos associados
+  decisao: Foi acordado um prazo de 1 (um) mês para que as pessoas designadas (Winder, Pracílio e Mariana Massaro) finalizem
+    o texto.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Reforma da decisão de processo disciplinar
+  decisao: Após votação dos conselheiros presentes, por unanimidade, está aprovada a reforma da decisão conforme proposta.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Alterações no Uniforme Escoteiro da Modalidade do Mar e das Fichas Técnicas sobre Uniformes e Vestimentas
+  decisao: O Conselho decidiu apenas pela alteração das Regras 45 e 47, aprovando proposta de remeter os detalhamentos/especificações
+    dos uniformes e vestuário escoteiro para as Fichas Técnicas, inclusive os modelos que os grupos recebem a título de doações,
+    que serão de responsabilidade da DEN. A proposta foi aprovada por maioria de votos e com uma abstenção. Foi aprovada a
+    comercialização pela Loja Nacional de modelo de Uniforme da Modalidade do Ar, assim como está sendo feito para o Uniforme
+    de Desembarque da modalidade do Mar e este foi aprovado por unanimidade. Ademais, aprovou-se a possibilidade de trocar,
+    no boné do Ramo Lobinho, a aplicação de distintivo, para aplicação direta de símbolo, proposta que foi aprovada por unanimidade
+    pelo Conselho.
+  votacao: maioria com uma abstenção e unanimidade em outros pontos
+  pagina: 6
+  conferido: true
+- tema: Alterações em Distintivos - regras 174, 180, 187 e 189 do POR
+  decisao: Sendo cada uma colocada em votação, todas foram aprovadas por unanimidade.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Resolução sobre Lojas Escoteiras
+  decisao: Sugeriu-se a aprovação da Resolução que regrará a Política de Administração das Lojas Escoteiras, que se incorpora
+    a esta Ata, fixando-se prazo até o dia 5 de setembro para análise pelo CAN e Conselho Consultivo e apresentação de eventuais
+    sugestões adicionais para a composição do texto. As contribuições nesse prazo que demandem deliberação serão apreciadas
+    virtualmente pelo Conselho. A norma foi colocada para votação, tendo sido aprovada por maioria, com apenas uma abstenção.
+  votacao: maioria com uma abstenção
+  pagina: 7
+  conferido: true
+- tema: Revisão do orçamento de 2016 para o último quadrimestre
+  decisao: A proposta foi aceita por unanimidade para deliberação virtual após análise dos documentos pelos Conselheiros.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: Encerramento da intervenção na Região Escoteira de Pernambuco
+  decisao: A consulta sobre o encerramento da intervenção na Região Escoteira foi colocada em votação, sendo aprovada por
+    unanimidade.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+- tema: Confirmação da candidatura da UEB para sediar o JamCam 2020
+  decisao: O Conselho realizou votação e por unanimidade confirmou a candidatura da UEB para sediar o evento, o qual coincidirá
+    com o Jamboree Nacional e deverá ser realizado na cidade de Foz do Iguaçu - PR.
+  votacao: unanimidade
+  pagina: 7
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Data da reunião
+  valor: 27 e 28 de agosto de 2016
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 6e5e3ec9a29209681ae6bf7312dfb3c19386c35ceb709521d3309c2a3325fb71
+revisado: null

@@ -1,0 +1,165 @@
+doc_key: sp-ata-frpio-2025-iii-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-02-16'
+  local: Escola Estadual Miguel Vicente Cury - Rua São Cirilo, Nº 354 - Conjunto Habitacional Padre Anchieta 3 Campinas/SP
+deliberacoes:
+- tema: Eleição da Comissão de Escrutínio
+  decisao: não havendo oposição, elegeram-se por aclamação Lucca Schroelder Scovini, Maria Luisa Morganti Lessi e Nicole Terumi
+    Tabata Yama para a Comissão de Escrutínio
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Eleição da Mesa Diretora
+  decisao: foi eleito o pioneiro Leonardo Gobira de Macedo como Presidente da Mesa Diretora por aclamação; Milena Gonçalves
+    Leite eleita Vice-Presidente; Marcelo Bertoldo Judice eleito Primeiro Secretário; Patrick Alves da Silva Quitério eleito
+    Segundo Secretário
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Votação da ata do Fórum anterior
+  decisao: a ata do fórum de 2024 foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação da candidatura da cidade de Campinas para InterClãs 2026
+  decisao: foi aprovado a candidatura da cidade de Campinas para sediar o InterClãs 2026
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Proposta de unificação do InterClãs com Mutirão Regional Pioneiro a partir de 2027
+  decisao: a proposta foi aprovada por maioria, havendo 10 votos a favor e 9 votos contra; posteriormente a proposta foi levada
+    para a Diretoria Regional e revogada a votação anterior por aclamação
+  votacao: 10 votos a favor e 9 votos contra; revogada por aclamação
+  pagina: 8
+  conferido: true
+- tema: Proposta para realização do Mutirão Regional Pioneiro em 2025 pelo Clã Pioneiro Ibirapitanga
+  decisao: foi aprovado pela maioria, com 21 votos a favor e 6 abstenções
+  votacao: 21 votos a favor e 6 abstenções
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora
+  cargo: Presidente
+  eleito: Leonardo Gobira de Macedo
+  mandato: gestão 2024 e 2025
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora
+  cargo: Vice-Presidente
+  eleito: Milena Gonçalves Leite
+  mandato: gestão 2024 e 2025
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora
+  cargo: Primeiro Secretário
+  eleito: Marcelo Bertoldo Judice
+  mandato: gestão 2024 e 2025
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora
+  cargo: Segundo Secretário
+  eleito: Patrick Alves da Silva Quitério
+  mandato: gestão 2024 e 2025
+  pagina: 2
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Raissa Melis Rogéro
+  mandato: gestão 2025 e 2026
+  pagina: 9
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Thiago Carvalho de Souza
+  mandato: gestão 2025 e 2026
+  pagina: 9
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Marcelo Bertoldo Judice
+  mandato: gestão 2025 e 2026
+  pagina: 9
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Rebeca de Abreu Fogado
+  mandato: gestão 2025 e 2026
+  pagina: 9
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Melissa Augusto Gonçalves Gomes
+  mandato: gestão 2025 e 2026
+  pagina: 9
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Raphael Picoli dos Santos
+  mandato: gestão 2025 e 2026
+  pagina: 9
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: João Victor Cintra Souza
+  mandato: gestão 2025 e 2026
+  pagina: 9
+  conferido: true
+numeros:
+- o_que: Custo individual do Fórum Regional Pioneiro 2024
+  valor: 40 reais
+  pagina: 3
+  conferido: true
+- o_que: Arrecadação do InterClãs 2024
+  valor: R$ 66.795,00
+  pagina: 3
+  conferido: false
+- o_que: Número de inscritos no InterClãs 2024
+  valor: 233 inscritos
+  pagina: 3
+  conferido: true
+- o_que: Devolução por desistências e cancelamentos no InterClãs 2024
+  valor: R$ 2.777,50
+  pagina: 3
+  conferido: false
+- o_que: Saldo positivo final do InterClãs 2024
+  valor: R$ 10.011,38
+  pagina: 3
+  conferido: false
+- o_que: Votos de Raissa Melis Rogéro para Comissão Regional Pioneira 2025-2026
+  valor: 19 votos
+  pagina: 9
+  conferido: true
+- o_que: Votos de Thiago Carvalho de Souza para Comissão Regional Pioneira 2025-2026
+  valor: 19 votos
+  pagina: 9
+  conferido: true
+- o_que: Votos de Marcelo Bertoldo Judice para Comissão Regional Pioneira 2025-2026
+  valor: 17 votos
+  pagina: 9
+  conferido: true
+- o_que: Votos de Rebeca de Abreu Fogado para Comissão Regional Pioneira 2025-2026
+  valor: 16 votos
+  pagina: 9
+  conferido: true
+- o_que: Votos de Melissa Augusto Gonçalves Gomes para Comissão Regional Pioneira 2025-2026
+  valor: 15 votos
+  pagina: 9
+  conferido: true
+- o_que: Votos de Raphael Picoli dos Santos para Comissão Regional Pioneira 2025-2026
+  valor: 14 votos
+  pagina: 9
+  conferido: true
+- o_que: Votos de João Victor Cintra Souza para Comissão Regional Pioneira 2025-2026
+  valor: 12 votos
+  pagina: 9
+  conferido: true
+- o_que: Votos de Andréia Bel Simo para Comissão Regional Pioneira 2025-2026
+  valor: 8 votos
+  pagina: 9
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 9c012369aad9b98f8193e4bc3ded6104634c8273839a68c4f2553879a4e1fa01
+revisado: null

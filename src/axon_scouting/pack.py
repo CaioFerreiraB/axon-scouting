@@ -38,14 +38,14 @@ from axon_scouting.prompts import SYSTEM_PROMPT
 if TYPE_CHECKING:
     from typing import Protocol
 
-    from axon_scouting.rag.index.api import ChunkIndex, DocumentCatalog, DocumentOutline
+    from axon_scouting.rag.index.api import ChunkIndex, DocumentCatalog, DocumentOutline, MeetingSummaries
 
     class _Index(ChunkIndex, DocumentCatalog, DocumentOutline, Protocol):
         """O que o pack pede do índice: busca, catálogo e árvore de unidades (os três adapters os têm)."""
 
     from axon_scouting.rag.index.ports import Embedder
 
-VERSION: Final = "0.9.0"
+VERSION: Final = "0.10.0"
 """Versão do manifest; igual à da distribuição `axon-scouting` (verificado em tests/test_pack.py)."""
 
 COLLECTION: Final = "scouting"
@@ -190,6 +190,14 @@ def _artifact_root(config: ScoutingConfig) -> Path:
     return root
 
 
+def _summaries(config: ScoutingConfig) -> MeetingSummaries:
+    """Os resumos das atas (ADR-062): ao lado do artefato configurado ou, sem ele (Qdrant), do que vem no pacote."""
+    from axon_scouting.rag.index.adapters.summaries import ArtifactSummaries
+
+    root = Path(config.index_dir).expanduser() if config.index_dir is not None else PACKAGED_INDEX
+    return ArtifactSummaries(root)
+
+
 def _require_model(directory: str | None) -> None:
     if directory is None:
         raise ValueError(
@@ -264,15 +272,18 @@ class ScoutingPack(PackBase):
         return SYSTEM_PROMPT
 
     def retrievers(self, ctx: PackContext) -> Sequence[NamedRetriever]:
-        """As tools `scouting.search_docs`, `scouting.list_documents` (ADR-047) e `scouting.list_units` (ADR-048) sobre
-        o índice configurado (R19): o artefato em memória (ADR-043) ou o Qdrant. A carga não toca a rede: Qdrant fora,
-        chave do embedder remoto ausente ou modelo divergente aparecem na busca, como erro explícito (103 FR-007).
+        """As tools `scouting.search_docs`, `scouting.list_documents` (ADR-047), `scouting.list_units` (ADR-048) e
+        `scouting.search_summaries` (ADR-062) sobre o índice configurado (R19): o artefato em memória (ADR-043) ou o
+        Qdrant; os resumos das atas vêm sempre do artefato do pacote, onde a ingestão os grava. A carga não toca a rede:
+        Qdrant fora, chave do embedder remoto ausente ou modelo divergente aparecem na busca, como erro explícito (103
+        FR-007).
         Variável `AI_SCOUTING_*` no ambiente deixa o pack em erro (R26)."""
         _refuse_legacy()
 
         from axon_scouting.rag.retrieval.catalog import CatalogRetriever, list_documents
         from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
         from axon_scouting.rag.retrieval.retriever import ScoutingRetriever, search_docs
+        from axon_scouting.rag.retrieval.summaries import SummariesRetriever, search_summaries
         from axon_scouting.rag.retrieval.units import UnitsRetriever, list_units
 
         config = read_config(ctx.config, ctx.data_dir)
@@ -282,6 +293,7 @@ class ScoutingPack(PackBase):
             search_docs(ScoutingRetriever(index, retrieval), collection=COLLECTION),
             list_documents(CatalogRetriever(index, retrieval), collection=COLLECTION),
             list_units(UnitsRetriever(index, index, retrieval), collection=COLLECTION),
+            search_summaries(SummariesRetriever(_summaries(config)), collection=COLLECTION),
         ]
 
     def _index(self, config: ScoutingConfig) -> _Index:
@@ -353,6 +365,7 @@ class ScoutingPack(PackBase):
         config = read_config(ctx.config, ctx.data_dir, require_model=False)
         if config.store == "memory":
             from axon_scouting.rag.index.adapters.artifact import catalog_entries, chunk_texts, document_outlines
+            from axon_scouting.rag.index.adapters.summaries import summary_texts
             from axon_scouting.rag.retrieval.domain.catalog import with_cards
             from axon_scouting.rag.retrieval.domain.units import with_unit_cards
 
@@ -361,7 +374,12 @@ class ScoutingPack(PackBase):
             texts = with_unit_cards(
                 with_cards(chunk_texts(root), catalog_entries(root)), outline, {k.name: k for k in kinds}
             )
-            metrics.append(FactRecall(texts))
+            summaries = summary_texts(root)  # os resumos das atas (ADR-062) também são lidos pelo id
+
+            def text_of(chunk_id: str) -> str | None:
+                return summaries.get(chunk_id) or texts(chunk_id)
+
+            metrics.append(FactRecall(text_of))
         return tuple(metrics)
 
     async def prepare_context(self, view: TurnView, ctx: PackContext) -> Mapping[str, JSONValue]:

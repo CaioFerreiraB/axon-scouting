@@ -1,0 +1,265 @@
+doc_key: sp-ata-are-2001-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2001-09-15'
+  local: Indaiatuba Clube, Indaiatuba
+deliberacoes:
+- tema: eleição da mesa da Assembleia
+  decisao: foi eleito para presidir a 8º Assembléia Ordinária da União dos Escoteiros do Brasil - Região de São Paulo, o Sr.
+    Marcos Venício Mattos Chaves, em seguida foi eleito, para a Vice-Presidência, o Sr. Antonio Carlos Ribeiro
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação das Comissões Especiais
+  decisao: Comissões Especiais e suas respectivas composições [...] sendo todas aprovadas por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: dispensa da leitura da ata anterior
+  decisao: foi dispensada a leitura da ata da reunião anterior, uma vez que todos os Grupos Escoteiros a receberam previamente,
+    tal proposta foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: alteração do horário das votações
+  decisao: foi encaminhada à mesa a proposta de que a sessão inicie-se às 8:00h, sendo esta aprovada por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: credenciamento de delegados candidatos
+  decisao: foi aprovado por 125 (cento e vinte e cinco) votos a favor o credenciamento de delegados candidatos até às 18:00
+    h do sábado, havendo 35 (trinta e cinco) votos contrários e 16 (dezesseis) abstenções, totalizando 176 (cento e setenta
+    e seis) votos válidos
+  votacao: 125 votos a favor, 35 contra, 16 abstenções
+  pagina: 2
+  conferido: true
+- tema: aprovação do balancete do exercício anterior
+  decisao: foi aprovado por aclamação
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: aprovação da proposta orçamentária
+  decisao: a proposta orçamentária foi submetida ao plenário que a aprovou por aclamação
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: inclusão de suplentes após delegados eleitos para Assembleia Nacional
+  decisao: tal proposta obteve 150 (cento e cinquenta) votos a favor, 46 (quarenta e seis) votos contrários e 7 abstenções,
+    perfazendo um total de 203 votos válidos, sendo a proposta aprovada
+  votacao: 150 votos a favor, 46 contra, 7 abstenções
+  pagina: 4
+  conferido: true
+- tema: eleição do candidato ao Conselho de Administração Nacional
+  decisao: Marco Aurelio de Mello Castrianni, com 148 (cento e quarenta e oito) votos, tendo sido eleito O candidato pela
+    Região de São Paulo
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: eleição dos delegados à Assembleia Nacional
+  decisao: 'foram eleitos na seguinte ordem e com a seguinte votação: Félix Vieira Varejão Filho (19), Luis Carlos Torquato
+    (15), Elmer Souza Pessoa (14), Marco Aurelio de Mello Castrianni (14), Alexandre Banchi (13), Everaldo Palombo (13), Mônica
+    Cabral de Vasconcelos (13), André L. C. da Cunha (12), Eluizio Bueno Rodrigues (12), Enio H. Cojho (11), Francisca S.
+    Carrer (11), Hilda Okamura Pallamim (11), Jorge Laucevicius (11), Andiara Machado R. Silva (10), José Liber de Oliveira
+    (10), Luiz Roberto de Moraes (10), José Inácio de Oliveira (09), Luis H. Guimarães (06), Jonathan H. Govier (05), Roberlei
+    Volpe Bebeduzi (03), Alvaro Tavares G. de Souza (02), Maria T. Yamawaki (02), Severino J. do Nacimento (01)'
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: indicação de suplentes para delegados eleitos
+  decisao: 'o plenário resolveu ainda indicar como suplentes aos Delegados eleitos os escotistas e os dirigentes a seguir
+    relacionados e nesta ordem: Adriano Zanetti, Murillo dos Santos, Leandro Verroni, Gilberto Branco, Thiago da Silva, Euclides
+    Pallamin, Elaine Martins, Angela Rodrigues, Juliana Tomazo, Daniel Delbin, Julio Cruz e Ricardo Pereira'
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: aprovação do novo Regulamento Regional
+  decisao: 'encaminha o processo de votação em bloco, sendo a votação: 166 (cento e sessenta e seis) votos a favor, 2 (dois)
+    contrários e 2 (duas) abstenções, tendo sido, com esse resultado, aprovado o novo Regulamento Regional'
+  votacao: 166 votos a favor, 2 contra, 2 abstenções
+  pagina: 4
+  conferido: true
+- tema: aprovação da proposta para organizar a próxima Assembleia Regional
+  decisao: O Sr. Jauí, Diretor do Pólo Quebra Mar, é o único a manifestar interesse em organizar a Assembléia vindoura e apresenta
+    sua proposta. Tal proposta foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Assembleia Regional
+  cargo: Presidente da Assembleia
+  eleito: Marcos Venício Mattos Chaves
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Vice-Presidente da Assembleia
+  eleito: Antonio Carlos Ribeiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Candidato ao Conselho de Administração Nacional
+  eleito: Marco Aurelio de Mello Castrianni
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Félix Vieira Varejão Filho
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Luis Carlos Torquato
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Elmer Souza Pessoa
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Marco Aurelio de Mello Castrianni
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Alexandre Banchi
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Everaldo Palombo
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Mônica Cabral de Vasconcelos
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: André L. C. da Cunha
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Eluizio Bueno Rodrigues
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Enio H. Cojho
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Francisca S. Carrer
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Hilda Okamura Pallamim
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Jorge Laucevicius
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Andiara Machado R. Silva
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: José Liber de Oliveira
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Luiz Roberto de Moraes
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: José Inácio de Oliveira
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Luis H. Guimarães
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Jonathan H. Govier
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Roberlei Volpe Bebeduzi
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Alvaro Tavares G. de Souza
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Maria T. Yamawaki
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Delegado à Assembleia Nacional
+  eleito: Severino J. do Nacimento
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: delegados presentes
+  valor: '215'
+  pagina: 2
+  conferido: true
+- o_que: votos para credenciamento de delegados candidatos até às 18:00 h do sábado
+  valor: 125 votos a favor, 35 contra, 16 abstenções, totalizando 176 votos válidos
+  pagina: 2
+  conferido: true
+- o_que: votos para inclusão de suplentes após delegados eleitos
+  valor: 150 votos a favor, 46 contra, 7 abstenções, totalizando 203 votos válidos
+  pagina: 4
+  conferido: true
+- o_que: votos para aprovação do novo Regulamento Regional
+  valor: 166 votos a favor, 2 contra, 2 abstenções
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 98ed8328a17e2458c02e4898233446a625997ff271ee803a5361bde37f7f2533
+revisado: null

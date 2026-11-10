@@ -1,0 +1,110 @@
+doc_key: ata97-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2019-11-09'
+  local: sede da União dos Escoteiros do Brasil – PR, em Curitiba/PR
+deliberacoes:
+- tema: Regulamento do CAN
+  decisao: 'Regulamento do CAN. Resultado: Aprovado.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Revisão Orçamentária
+  decisao: 'Revisão Orçamentária. Resultado: Aprovada.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Alterações Resolução 03/2008
+  decisao: 'Alterações Resolução 03/2008. Resultado: Aprovada.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Local da 96ª Reunião do Conselho de Administração Nacional
+  decisao: 'Local da 96ª Reunião do Conselho de Administração Nacional. Resultado: Curitiba.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução 05/2019
+  decisao: 'Resolução 05/2019. Resultado: Aprovada.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Alteração Regra 173 P.O.R.
+  decisao: 'Alteração Regra 173 P.O.R. Resultado: Aprovada.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução CAN-DEN 01/2019
+  decisao: 'Resolução CAN-DEN 01/2019. Resultado: Aprovada.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Pauta da reunião
+  decisao: proposta de pauta, sendo aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Orçamento Anual 2020
+  decisao: foi registrada 1 abstenção e 13 votos à favor da aprovação do Orçamento Anual de 2020
+  votacao: 13 votos a favor, 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Transferência dos valores do resultado do Jamboree Mundial EUA 2019 para integrar o Fluxo de Caixa da Loja Escoteira
+    Nacional
+  decisao: foi aprovado portanto por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Contrapartida ao patrocínio da UEB ao CCME
+  decisao: aprovação foi unânime
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Criação de distintivos de atividades estratégicas
+  decisao: Resolução foi aprovada por 13 votos a favor, nenhum contra e nenhuma abstenção
+  votacao: 13 votos a favor, nenhum contra, nenhuma abstenção
+  pagina: 3
+  conferido: true
+- tema: Alteração das regras 130, 131 e 132 do P.O.R.
+  decisao: Todas as demandas foram aprovadas por unanimidade
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Pedido de subsídio financeiro para participação de jovens em eventos internacionais
+  decisao: CAN recomenda a DEN facilitar financeiramente a participação de jovens lideranças em eventos de tomada de decisão,
+    inclusive com apoio financeiro de recursos próprios ou obtidos de terceiros, considerada a capacidade financeira institucional;
+    e solicita à Conselheira SARAH, a RNJL e a DEN a apresentação de proposta de política sobre o tema
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Alteração da Resolução Medalha Cruz de Valor
+  decisao: foi aprovado por unanimidade pelo CAN
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Inclusão de reconhecimento de longevidade de grupo
+  decisao: foi aprovado que a DEN garanta o envio para as UELs de um reconhecimento a cada 5 anos e em demais datas relevantes;
+    a criação de troféu para 15 anos foi aprovada com 9 votos a favor e 5 contra; criação de troféu para aniversários de cinco
+    em cinco anos foi rejeitada
+  votacao: 9 votos a favor, 5 contra para troféu 15 anos; rejeitada para troféu a cada 5 anos
+  pagina: 3
+  conferido: true
+- tema: Representante para reunião da Estatuinte durante JamCam 2020
+  decisao: a Região Escoteira poderá DESIGNAR um representante para o comparecimento na reunião da Estatuinte, durante o Jamcam
+    2020, caso não seja possível que o Diretor compareça, devendo informar formalmente com antecedência à presidência do CAN
+    a nomeação dessa pessoa
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Resolução de Registro Anual 2020
+  decisao: a Resolução é aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 86b966d8057564da981f6a4984a131cffd30b205a09d1fd32c813900eafb6c61
+revisado: null

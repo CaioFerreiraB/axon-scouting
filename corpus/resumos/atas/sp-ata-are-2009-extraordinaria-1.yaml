@@ -1,0 +1,51 @@
+doc_key: sp-ata-are-2009-extraordinaria-1
+reuniao:
+  tipo: extraordinaria
+  data: '2009-08-29'
+  local: CENFORPE - Centro de Formação dos Profissionais da Educação, Avenida Dom Jaime de Barros Câmara, nº 201, Bairro Planalto,
+    São Bernardo do Campo — SP
+deliberacoes:
+- tema: Estatuto da União dos Escoteiros do Brasil - Região de São Paulo
+  decisao: É votada e aprovada a proposta de votação em bloco, por 264 (duzentos e sessenta e quatro) votos a favor, 4 (quatro)
+    votos contrários e 2 (duas) abstenções.
+  votacao: 264 votos a favor, 4 contrários, 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Estatuto da União dos Escoteiros do Brasil - Região de São Paulo
+  decisao: 'Segue-se então a votação em bloco, para aprovação das alterações do Estatuto da União dos Escoteiros do Brasil
+    - Região de São Paulo, sendo aprovada por: 262 (duzentos e sessenta e dois) votos favoráveis, 07 (sete) votos contrários
+    e 01 (uma) abstenção.'
+  votacao: 262 votos favoráveis, 7 contrários, 1 abstenção
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos a favor da proposta de votação em bloco
+  valor: '264'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários à proposta de votação em bloco
+  valor: '4'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na proposta de votação em bloco
+  valor: '2'
+  pagina: 2
+  conferido: true
+- o_que: votos favoráveis à aprovação das alterações do Estatuto
+  valor: '262'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários à aprovação das alterações do Estatuto
+  valor: '7'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na aprovação das alterações do Estatuto
+  valor: '1'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8825278e3126bee0f6c7b6b8f17c1c2a7bab9f2ca10fd76f81099b0d0bbcaca5
+revisado: null

@@ -1,0 +1,122 @@
+doc_key: ata-da-reuniao-extraordinaria-da-assembleia-nacional-escoteira-31-mai-2024-1
+reuniao:
+  tipo: extraordinaria
+  data: '2024-05-31'
+  local: UNINASSAU, localizada na Rua Jonathas de Vasconcelos, 316, bairro Boa Viagem, Recife/PE
+deliberacoes:
+- tema: Composição da Mesa Diretora da Assembleia
+  decisao: A composição foi aprovada por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Composição das Comissões Assessoras da Assembleia
+  decisao: A composição foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Alteração do 5o do art. 42 do Estatuto da UEB para inclusão da faixa etária de 5 a 22 anos
+  decisao: Após debates, o tema foi submetido à votação e aprovado com 7116 votos favoráveis e 5 contrários.
+  votacao: 7116 votos favoráveis e 5 contrários
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia
+  cargo: Presidente
+  eleito: Paulo Salamuni (PR)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1o Vice-Presidente
+  eleito: Pedro Henrique dos Santos Alves (RN)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2o Vice-Presidente
+  eleito: Rafael Melis Rogéro (SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1o Secretária
+  eleito: Daniela de Oliveira Rodrigues Gomes (SC)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2o Secretário
+  eleito: Adriano Henrique Rocha Sarmento Filho (SE)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: Membro
+  eleito: Abimael da Silva Souza (GO)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: Membro
+  eleito: Luiz Salgado Klaes (SC)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Siágrio Felipe Pinheiro (RS)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Cláucio da Silva Mendes (MG)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Redação e Estilo
+  cargo: Membro
+  eleito: Diva Irene da Paz Vieira (PR)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes (NNJIL)
+  cargo: Membro
+  eleito: Alice Rezende Ferreira (ES)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes (NNJIL)
+  cargo: Membro
+  eleito: Gabriel Henrique da Costa Goudet (PA)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes (NNJIL)
+  cargo: Membro
+  eleito: George Xastre Rosário (RJ)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes (NNJIL)
+  cargo: Membro
+  eleito: Letícia do Nascimento Sousa (RN)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes (NNJIL)
+  cargo: Membro
+  eleito: Luis Eduardo Hoepfner Sebben (PR)
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '121'
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: c63b3aecb982071f93ce0555e0975b076eb612c34456325392d38b6139e91bb6
+revisado: null

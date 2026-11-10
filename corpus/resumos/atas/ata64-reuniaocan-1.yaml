@@ -1,0 +1,59 @@
+doc_key: ata64-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2011-05-01'
+  local: Brasília/DF
+deliberacoes:
+- tema: Eleição do Presidente e Vice-Presidente do CAN
+  decisao: O nome do Ivan recebeu 7 votos e o de Rafael Macedo recebeu 6 votos, ficando eleito Ivan para a Presidente do CAN
+    e Rafael para Vice-Presidente.
+  votacao: 7 votos a 6
+  pagina: 1
+  conferido: true
+- tema: Comissão de acompanhamento ao Planejamento Estratégico
+  decisao: Adir sugeriu que a Comissão seja composta por todos os membros eleitos do CAN e Ivan, um dos principais responsáveis
+    pelo Planejamento Estratégico, concordou com a sugestão.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Medalha para Argus Rosenhaim
+  decisao: Adir propôs medalha para Argus Rosenhaim pelo trabalho dele na Conferência e em diversos outros momentos... A proposta
+    foi secundada por outros Conselheiros e deve ser encaminhada a DEN que deverá verificar a medalha a que o mesmo tem direito.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Local da próxima reunião
+  decisao: Informado que as reuniões acontecem de forma alternada entre Curitiba e outras cidades tendo ficado acertado que
+    a escolha do local para a próxima reunião será feita por votação virtual.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Novo representante da Região Sudeste
+  decisao: Fred informou que o novo representante da Região Sudeste é Ricardo Coelho dos Santos (ES).
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Homenagem a Marco Aurelio de Mello Castrianni
+  decisao: Castrianni foi homenageado com uma “Palma Escoteira” pelo seu trabalho na Presidência do CAN.
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente do CAN
+  eleito: Ivan Alves do Nascimento (lvan)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente do CAN
+  eleito: Rafael Rocha de Macedo (Rafael)
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: ad319f6adb68b6539060be945d3ec400c2a8410aeb2293f47c7251d4c797a1b2
+revisado: null

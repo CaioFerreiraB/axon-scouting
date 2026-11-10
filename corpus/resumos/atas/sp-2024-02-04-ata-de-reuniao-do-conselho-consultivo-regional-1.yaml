@@ -1,0 +1,59 @@
+doc_key: sp-2024-02-04-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-02-04'
+  local: SESI Campinas, sito à Avenida das Amoreiras, 450, Campinas/SP
+deliberacoes:
+- tema: certificação de Distrito Padrão
+  decisao: Foram sugeridas algumas modificações no documento (como nos eventos para o Ramo Pioneiro considerar apenas o número
+    de Clãs dos Distritos – e não o número de UELs) e também a criação de categorias de certificação – Ouro, Prata e Bronze.
+    O documento vai ser revisto e encaminhado aos Comissários.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: CNPJ próprio
+  decisao: Finalizando este assunto, o encaminhamento foi o de propor novas discussões durante o ano e levar para a assembleia
+    para definir.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Grupo de Trabalho para gestão dos Distritos Escoteiros
+  decisao: A proposta é montar um Grupo de Trabalho para discutir a melhor forma de gerenciar as Unidades Escoteiras Locais
+    – se o melhor é considerar a distância geográfica, número de UELs ou efetivo. Os Comissários Maria de Lourdes Ramos, do
+    09 DE, Marcelo Moliterno Fernandes, do 35 DE, e Lais Fernandes Nunes, do 38 DE, se prontificaram a fazer parte do GT.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Jamboree Nacional 2024
+  decisao: Definiu-se que os coordenadores deverão enviar aos Comissários uma lista com a quantidade de inscritos no Jamboree
+    em cada Distrito para que, assim, possam incentivar a inscrição nos grupos que ainda não o fizeram.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: acampamento para Lobinhos JangalCamp 2024
+  decisao: Os comissários se comprometeram a reforçar a divulgação do evento nos Distritos.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Mapeamento das Sedes
+  decisao: Será enviado a todas as UELs da Região um formulário para que indiquem o tipo do espaço onde está localizado –
+    se é um espaço próprio, privado, escola públicas ou privadas, organização militar ou outro tipo de espaço.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: orçamento compartilhado - uso do cartão de crédito
+  decisao: Para resolver esta questão será agendada uma reunião online e específica para tratar deste tema.
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: presença de Comissários
+  valor: '31'
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 6b844a53074904f4bc3f9260b128afd485e0f41f3e24e93eb96b01b894fc6690
+revisado: null

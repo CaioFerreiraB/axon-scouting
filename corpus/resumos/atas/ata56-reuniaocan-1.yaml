@@ -1,0 +1,121 @@
+doc_key: ata56-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2008-04-19'
+  local: Aracruz, Espírito Santo/ES
+deliberacoes:
+- tema: Agenda de trabalho
+  decisao: A agenda de trabalho com as modificações foi aprovada.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Ata da 55ª reunião Extraordinária do CAN
+  decisao: a ata, colocada em votação, foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Ordem da Flor de Lis – proposta de revitalização
+  decisao: O CAN decidiu pela criação de um Conselho Curador Provisório para reestruturação da Ordem da Flor de Lis composto
+    por Fernando Brodeschi, Rubem Tadeu Cordeiro Perlingeiro e Luiz Salgado Klaes e que apresentarão ao CAN um estudo para
+    implementação de alterações.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Encaminhamentos sobre comodato do terreno UEB/PB
+  decisao: O CAN sugere seja contratado um escritório de advocacia e seja dada total atenção ao assunto. Ambas as orientações
+    foram aprovadas pelo CAN.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Concessão de medalhas
+  decisao: 'aprovadas a concessão das seguintes medalhas: Tapir de Prata: Antônio César Oliveira; Tiradentes: Severino José
+    dos Santos, Haroldo Garcia de Moraes, Luiz Carlos Figueredo Barbosa e Marco Aurélio Romeu Fernandes; Velho Lobo: Monsenhor
+    João Penha Filho; Cruz de São Jorge: João Roberto Andriani Cunha e Rafael Will Suarez Cuadra e Gratidão Ouro: Luiz Salgado
+    Klaes.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Proposta de criação de Medalha
+  decisao: o CAN decidiu por não aprovar a criação da medalha proposta.
+  votacao: 9 votos favoráveis e 5 abstenções
+  pagina: 2
+  conferido: true
+- tema: Solicitação de Concessão de Cruz de Valor
+  decisao: o CAN decidiu por rejeitar o pedido e encaminhar à DEN para que estude a viabilidade de conceder outra Condecoração.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Renovação do mandato da DEN
+  decisao: será coletada assinatura em documento específico para prorrogação do mandato da DEN tendo em vista necessidades
+    legais junto à bancos e outras instituições.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Eleição do Presidente e Vice-Presidente do CAN
+  decisao: Para Presidência do CAN foi escolhido o Conselheiro Rubem Tadeu Cordeiro Perlingeiro. Para Vice-Presidente foram
+    indicados os Conselheiros Márcio e Bini. Bini declinou da indicação. Márcio foi eleito por aclamação para Vice-presidência
+    do CAN.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Indicação de Conselheiros para áreas do Planejamento Estratégico
+  decisao: 'O CAN decide indicar para as áreas: Estrutura: Rubem Tadeu, Klaes e Bini; Programa: Júlio, Raphael Tostes e Adolfo;
+    Gestão de Adultos: Geraldino e Ênio; Imagem: Márcio; Comunidade: Rafael e Sandra.'
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente do CAN
+  eleito: Rubem Tadeu Cordeiro Perlingeiro
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente do CAN
+  eleito: Márcio
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: Participação no Projeto Grupo Padrão
+  valor: 198 Grupos Escoteiros
+  pagina: 2
+  conferido: true
+- o_que: Percentual de Grupos Escoteiros inscritos no Projeto Grupo Padrão
+  valor: mais de 20%
+  pagina: 2
+  conferido: true
+- o_que: Percentual de votos para tema do Mutirão Nacional de Ação Comunitária
+  valor: mais de 27%
+  pagina: 2
+  conferido: true
+- o_que: Inscritos para o 1.o Moot Pan-americano
+  valor: 2 jovens
+  pagina: 2
+  conferido: true
+- o_que: Número de jovens necessários para abrir vaga para Equipe Internacional de Serviço
+  valor: 9 jovens
+  pagina: 2
+  conferido: true
+- o_que: Número de candidatos para Equipe Internacional de Serviço
+  valor: mais de 15 candidatos
+  pagina: 2
+  conferido: true
+- o_que: Aumento do efetivo em 2008 comparado a 2007
+  valor: mais de 4.000 registros
+  pagina: 2
+  conferido: false
+- o_que: Renúncia de valores aproximada devido à política de redução para famílias
+  valor: R$ 8.000,00
+  pagina: 2
+  conferido: false
+- o_que: Valor aproximado de ressarcimento exigido pela Sociedade Hípica para cancelamento do comodato
+  valor: R$ 800.000,00
+  pagina: 2
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 748c3a413b1595465a53c9ea5dce0a69e50c66e00e7b297ed531a8d499a44e9b
+revisado: null

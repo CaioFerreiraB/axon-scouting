@@ -1,0 +1,83 @@
+doc_key: 28a-ata-da-reuniao-extraordinaria-da-assembleia-nacional-escoteira-23-abr-2022-1
+reuniao:
+  tipo: extraordinaria
+  data: '2022-04-23'
+  local: Universidade Tecnológica Federal do Paraná (UTFPR), Avenida Sete de Setembro, no 3.165, Bairro Rebouças, Curitiba/PR
+deliberacoes:
+- tema: Composição da mesa da Assembleia
+  decisao: Aprovação por aclamação da mesa com Presidente Renato Wanderley Breneizer, 1º Vice-Presidente Sarah Raquel Loureiro
+    do Amaral, 2º Secretário Abimael da Silva Souza, substituídos respectivamente por Isabelly Castro da Silva e Santos e
+    Sueli Cristina Franco para 1º Secretário e 2º Vice-Presidente
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Composição das Comissões Assessoras da Assembleia
+  decisao: 'Aprovação por aclamação das Comissões: Credenciamento — Carmen Virgínia Carvalho Barreira, Katerine Keller Correa
+    e Luiz Salgado Kiaes; Escrutínio — Claucio da Silva Mendes, Ilvia Oliveira, José David de Ferreira Bandeira, Kieber Broch;
+    Eleitoral — Julio Cesar Osorio, Marcos Magno Gomide Vieira; Redação e Estilo — Raphael Tostes Salin e Souza'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Credenciamento das regiões que não realizaram pré-credenciamento
+  decisao: Aprovação por aclamação do credenciamento das regiões Ceará, Espírito Santo, Rio Grande do Norte e Rondônia que
+    não realizaram tempestivamente o pré-credenciamento
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Encerramento do credenciamento
+  decisao: Encerramento do credenciamento às 09h10min com o número de 100 delegados aptos à votação
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Votação sobre a aprovação do novo Estatuto Social da UEB
+  decisao: Foram registrados 07 votos a favor, 83 votos contrários, 10 abstenções, encerrando o processo estatuinte sem aprovação
+    do novo texto
+  votacao: 7 votos a favor, 83 votos contrários, 10 abstenções
+  pagina: 2
+  conferido: true
+- tema: Encerramento da Assembleia
+  decisao: Encerramento da Assembleia às 09h23min pelo presidente Renato Wanderley Breneizer, com saudação à bandeira nacional
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia
+  cargo: Presidente
+  eleito: Renato Wanderley Breneizer
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Vice-Presidente
+  eleito: Sarah Raquel Loureiro do Amaral
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Secretário
+  eleito: Isabelly Castro da Silva e Santos
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Secretário
+  eleito: Abimael da Silva Souza
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Vice-Presidente
+  eleito: Sueli Cristina Franco
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: delegados aptos à votação
+  valor: '100'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8d42a641442696a01702b413274e4bf8951bd0038bbd3951f0ec7d47f9e5be20
+revisado: null

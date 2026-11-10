@@ -1,0 +1,140 @@
+doc_key: sp-ata-are-2012-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2012-03-24'
+  local: Teatro Municipal Adamastor, Estrada do Caminho Velho, nº 333, Bairro dos Pimentas, Guarulhos - SP
+deliberacoes:
+- tema: Aprovação da ata da Assembleia Regional Ordinária do ano anterior
+  decisao: A ata foi aprovada por maioria absoluta, com apenas 06 (seis) abstenções.
+  votacao: maioria
+  pagina: 7
+  conferido: true
+- tema: Apresentação e deliberação sobre as contas do exercício de 2011
+  decisao: Aprovação das contas de 2011, sendo aprovado com 139 (cento e oitenta e nove) votos; houve 22 (vinte e dois) votos
+    contra & 06 (seis) abstenções.
+  votacao: 139 votos a favor, 22 contra, 6 abstenções
+  pagina: 9
+  conferido: true
+- tema: Aplicação do INPC para reajuste das anuidades e do orçamento para 2013
+  decisao: Aplicação do INPC para o reajuste das anuidades e do orçamento para 2013 foi aprovado com 179 (cento e setenta
+    e nove) votos; houve 27 (vinte e sete) votos contra € nenhuma abstenção.
+  votacao: 179 votos a favor, 27 contra
+  pagina: 10
+  conferido: true
+- tema: Denominação da Sede Regional como “Carlos Alberto Guimarães Battisti”
+  decisao: A assembleia aprova por aclamação a denominação da Sede Regional como “Carlos Alberto Guimarães Battisti”.
+  votacao: aclamação
+  pagina: 18
+  conferido: true
+eleicoes:
+- orgao: Assembleia Regional Escoteira de São Paulo
+  cargo: Delegados Regionais à Assembleia Nacional
+  eleito: Vera Lúcia Santos da Silva, Felix Vieira Varejão Filho, Lúcia Helena Barros Varejão, Antônio Lívio Abraços Jorge,
+    Nayte Vitiello, Horus Antony Brasil, Thiago Martins Barbosa Bueno, Ricardo Aurélio Roverso Abrão, Felipe Sototuka, Alexandre
+    Banchi, Rosemary P. Motta de Oliveira, José Inácio de Oliveira, Francisca Souza Carrer, Sonia Maria Gonçalves Jorge, Jabs
+    Amilton Dutra Cosia, Adriano Silva da Luz, William Sacco Mascarenhas Worth, Fernando Luís Marcondes Donati
+  mandato: ''
+  pagina: 16
+  conferido: false
+- orgao: Diretoria Regional da União dos Escoteiros do Brasil — Região de São Paulo
+  cargo: Diretor Presidente
+  eleito: Álvaro Tavares Gomes de Sousa
+  mandato: completar o mandato da atual Diretoria Regional
+  pagina: 16
+  conferido: false
+- orgao: Diretoria Regional da União dos Escoteiros do Brasil — Região de São Paulo
+  cargo: Vice-Presidente
+  eleito: Lívio
+  mandato: completar o mandato da atual Diretoria Regional
+  pagina: 16
+  conferido: true
+- orgao: Comissão Fiscal Regional da União dos Escoteiros do Brasil — Região de São Paulo
+  cargo: Membro Titular
+  eleito: Sérgio Ferreira Teijeira
+  mandato: completar o mandato da atual Comissão Fiscal Regional
+  pagina: 16
+  conferido: true
+- orgao: Comissão Fiscal Regional da União dos Escoteiros do Brasil — Região de São Paulo
+  cargo: Membro Suplente
+  eleito: André Luís Claudino da Cunha
+  mandato: completar o mandato da atual Comissão Fiscal Regional
+  pagina: 16
+  conferido: true
+- orgao: Comissão Fiscal Regional da União dos Escoteiros do Brasil — Região de São Paulo
+  cargo: Membro Suplente
+  eleito: Jacir Martins da Silva
+  mandato: completar o mandato da atual Comissão Fiscal Regional
+  pagina: 16
+  conferido: true
+- orgao: Comissão Fiscal Regional da União dos Escoteiros do Brasil — Região de São Paulo
+  cargo: Membro Suplente
+  eleito: Júlio Antonio Setani
+  mandato: completar o mandato da atual Comissão Fiscal Regional
+  pagina: 16
+  conferido: true
+numeros:
+- o_que: delegados registrados na Assembleia
+  valor: '331'
+  pagina: 13
+  conferido: true
+- o_que: delegados registrados na Assembleia (preliminar)
+  valor: '276'
+  pagina: 9
+  conferido: true
+- o_que: votos válidos para Diretor Presidente
+  valor: '308'
+  pagina: 16
+  conferido: true
+- o_que: votos nulos para Diretor Presidente
+  valor: '2'
+  pagina: 16
+  conferido: false
+- o_que: votos em branco para Diretor Presidente
+  valor: '1'
+  pagina: 16
+  conferido: false
+- o_que: votos para Álvaro Tavares Gomes de Sousa
+  valor: '162'
+  pagina: 16
+  conferido: true
+- o_que: votos para Vicente
+  valor: '143'
+  pagina: 16
+  conferido: true
+- o_que: votos válidos para Comissão Fiscal
+  valor: '300'
+  pagina: 16
+  conferido: true
+- o_que: votos nulos para Comissão Fiscal
+  valor: '4'
+  pagina: 16
+  conferido: false
+- o_que: votos em branco para Comissão Fiscal
+  valor: '4'
+  pagina: 16
+  conferido: false
+- o_que: votos para Sérgio Ferreira Teijeira
+  valor: '111'
+  pagina: 16
+  conferido: true
+- o_que: votos para André Luís Claudino da Cunha
+  valor: '101'
+  pagina: 16
+  conferido: true
+- o_que: votos para Jacir Martins da Silva
+  valor: '66'
+  pagina: 16
+  conferido: true
+- o_que: votos para Júlio Antonio Setani
+  valor: '22'
+  pagina: 16
+  conferido: true
+- o_que: total arrecadado para as obras do CE Jaraguá
+  valor: R$ 1.927,00
+  pagina: 21
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: bc86f215be21b0bd90897aeccf247c276d38f90dc62a48fd7f1607c9e54639bb
+revisado: null

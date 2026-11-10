@@ -1,0 +1,71 @@
+doc_key: ata41-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2003-11-14'
+  local: São Paulo/SP
+deliberacoes:
+- tema: Alteração Regra 46 – Capítulo 6 do P.O.R.
+  decisao: Decidido que deverá ser apresentada proposta de Resolução na próxima reunião do CAN.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução de Medidas Disciplinares
+  decisao: proposta de Resolução que é lida, discutida e aprovada por unanimidade (anexa).
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Orçamento 2004 – UEB e LEN
+  decisao: Orçamentos para o próximo ano que foram aprovados por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Contratação do executivo Luiz Carlos Debiazio
+  decisao: Colocada em votação, a contratação em definitivo foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Autorização para obtenção de CNPJ próprio pela Região de Mato Grosso do Sul
+  decisao: o CAN concede à Região de Mato Grosso do Sul a autorização de obtenção de CNPJ próprio, condicionada a aprovação
+    prévia, pela DEN, de seu Estatuto Regional.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Resolução sobre quantidade mínima de membros em Unidades Locais
+  decisao: Aprovada a resolução anexa.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Concessão de medalhas Tiradentes
+  decisao: deferida as medalhas para Sérgio Pedro Bambini, Ely Pereira Fraga e David Crusius.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Eleição de Presidente e Vice-Presidente do CAN para a gestão 2004
+  decisao: Aprovação por unanimidade da sugestão de Geraldino Ferreira Moreira para Presidir o CAN e de Marco Aurélio Romeu
+    Fernandes para Vice-Presidente.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente
+  eleito: Geraldino Ferreira Moreira
+  mandato: gestão 2004
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente
+  eleito: Marco Aurélio Romeu Fernandes
+  mandato: gestão 2004
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: tiragem do Jornal Sempre Alerta
+  valor: 61.000 exemplares
+  pagina: 1
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 13ee67d5db608fd4fc1bd536f3ea73c0a1a186be37846296e2c1c41d086bb129
+revisado: null

@@ -1,0 +1,104 @@
+doc_key: sp-2014-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2014-03-15'
+  local: Louveira
+deliberacoes:
+- tema: pauta do Fórum
+  decisao: uma pauta, que foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição de coordenador(a) do Núcleo Regional de Jovens
+  decisao: Mariana De Marchi ... é eleita por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição de comunicador(a) do Núcleo Regional de Jovens
+  decisao: Nathalia Lourenço é eleita para o cargo de comunicadora
+  votacao: 31 votos para Nathalia, 9 votos para o Marcelo e 4 abstenções
+  pagina: 1
+  conferido: true
+- tema: eleição de coordenador pelo período de 2 anos
+  decisao: Ricardo Krauser é eleito por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição de 3 jovens para delegados no Fórum Nacional de Jovens
+  decisao: 'Delegado 1: Daniel Guarnieri. Delegado 2: Carlos Nunes. Delegado 3: Yara Lopes ... Suplente 1: Erik Bueno. Suplente
+    2: Rodrigo Gama.'
+  votacao: votos conforme detalhado na ata
+  pagina: 3
+  conferido: true
+- tema: aprovação de Ivan Valente para candidatura a coordenador do Núcleo Nacional
+  decisao: Ivan é aprovado por aclamação
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Núcleo Regional de Jovens – SP
+  cargo: coordenador(a) do Núcleo
+  eleito: Mariana De Marchi (GE Curuqui – 142/SP)
+  mandato: 1 ano
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Regional de Jovens – SP
+  cargo: comunicador(a)
+  eleito: Nathalia Lourenço
+  mandato: 2 anos
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Regional de Jovens – SP
+  cargo: coordenador
+  eleito: Ricardo Krauser (GE Guia Lopes – 39/SP)
+  mandato: 2 anos
+  pagina: 1
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens
+  cargo: delegado
+  eleito: Daniel Guarnieri (GE Encanto das Matas – 197/SP)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens
+  cargo: delegado
+  eleito: Carlos Nunes (GE Santo Amaro – 56/SP)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens
+  cargo: delegado
+  eleito: Yara Lopes (GE Bacury – 185/SP)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens
+  cargo: suplente
+  eleito: Erik Bueno (GE Locomotiva – 249/SP)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: delegados ao Fórum Nacional de Jovens
+  cargo: suplente
+  eleito: Rodrigo Gama (GE Raposo Tavares – 254/SP)
+  mandato: ''
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: Total de jovens presentes no início do Fórum
+  valor: 44 votos
+  pagina: 1
+  conferido: true
+- o_que: votos na eleição para comunicador(a)
+  valor: 31 votos para Nathalia, 9 votos para o Marcelo e 4 abstenções
+  pagina: 1
+  conferido: true
+- o_que: votos na eleição para delegados ao Fórum Nacional de Jovens
+  valor: 'Carlos Nunes: 9 votos; Daniel Guarnieri: 14 votos; Erik Bueno: 7 votos; Yara Lopes: 7 votos; Rodrigo Gama: 1 voto'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 4fe701ff686fc6eb4040bb3c41397d69c766d1d7684c2edb014b31fb8565f584
+revisado: null

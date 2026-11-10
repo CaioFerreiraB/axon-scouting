@@ -1,0 +1,85 @@
+doc_key: ata45-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2004-11-13'
+  local: Salvador / BA
+deliberacoes:
+- tema: Mudança de grade do Congresso Nacional
+  decisao: Geraldino justifica a alteração da grade em função da conveniência para redução de custos haja vista possibilidade
+    de locação de salas em somente um dia.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Juntada de documentos de Processo Disciplinar
+  decisao: Dentro de 20 (vinte) dias serão juntados os documentos faltantes que deverão ser encaminhados à Comissão de Ética
+    e Disciplina Nacional.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Arquivamento do processo contra Diretoria Regional da Bahia
+  decisao: aprovado por unanimidade o arquivamento do processo.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Orçamento 2005 – UEB
+  decisao: analisada a proposta orçamentária a mesma foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Orçamento 2005 – LEN
+  decisao: analisada a proposta orçamentária a mesma foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Venda de imóvel – UEB/RJ
+  decisao: O CAN decide por unanimidade autorizar a venda, condicionando que o resultado da mesma seja integralmente utilizado
+    em imóvel da própria instituição e que seja relatado todo procedimento e entregue a devida documentação na próxima reunião
+    do CAN.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Concessões de condecorações
+  decisao: 'foram discutidas e aprovadas as concessões das seguintes condecorações: Medalha Tiradentes – Emilton Moreira Rosa;
+    Velho Lobo – Laércio Pancini dos Santos e Gratidão grau Ouro – Carlos Frederico dos Santos.'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação de Documentos
+  decisao: 'os seguintes documentos foram aprovados por unanimidade: Catálogo de cargos, funções, perfis e competências em
+    um Grupo Escoteiro, Guia de formação do Escotista e Caderno do Chefe de tropa Escoteira.'
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Prorrogação do mandato do Comissário Internacional
+  decisao: prorrogado o mandato do Comissário Internacional Oscar Victor Palmquist Arias até a realização da próxima Assembléia
+    Nacional quando então será avaliada a manutenção da Resolução que disciplina a duração de tal mandato.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do documento para seleção de representantes jovens ao Fórum Mundial de Jovens
+  decisao: Colocado em votação o documento foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Decisão sobre local do III Jamboree Nacional
+  decisao: Geraldino, colocando a decisão da DEN em apreciação obtém aprovação por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Proposta de alteração estatutária
+  decisao: Foram aprovadas as alterações apresentadas com o subtítulo “outras propostas aprovadas” e as propostas anteriores
+    conforme detalhadas na ata.
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Participantes do Contingente Brasileiro no XII Jamboree Pan-Americano
+  valor: aproximadamente 720
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8b3d953225856ce64477fa8838417114cb516092097bcd967e58f82c2a0cafd6
+revisado: null

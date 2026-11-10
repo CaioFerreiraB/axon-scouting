@@ -1,0 +1,94 @@
+doc_key: 23a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-23-abr-2016-1
+reuniao:
+  tipo: ordinaria
+  data: '2016-04-23'
+  local: Campo Grande/MS
+deliberacoes:
+- tema: Relatório Anual de 2015
+  decisao: Posto em votação, o relatório foi aprovado por unanimidade pela assembleia.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Balanço da UEB de 2015
+  decisao: Posto em votação, o balanço de 2015 foi aprovado por unanimidade por esta Assembleia.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Inversão da pauta
+  decisao: A proposta de inversão da pauta é aprovada pela Assembleia.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Eleição para completar membros da Comissão Fiscal Nacional
+  decisao: Assim o companheiro Mariovani ocupa a vaga de titular e os demais como suplentes na ordem de votação.
+  votacao: Mariovani Cervi 38 votos, Paulo Sergio Pereira de Lima 32 votos, Nelson Zépka Senna 32 votos, Ricardo Machado 14
+    votos
+  pagina: 3
+  conferido: true
+- tema: Questão de ordem sobre devolução ao CAN
+  decisao: Em regime de votação se o caso deva ser devolvido ao CAN é obtido o resultado da Questão de ordem com 45 votos
+    para o sim e 50 votos para não, ou seja, a continua a ser deliberada por esta Assembleia.
+  votacao: 45 votos para o sim e 50 votos para não
+  pagina: 3
+  conferido: true
+- tema: Ratificação da candidatura do conselheiro Nunes
+  decisao: Solicita à Assembleia Nacional, conforme encaminhado pela Assembleia, ratifique a candidatura do conselheiro Nunes.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Manutenção da candidatura de Rafael
+  decisao: Manter a candidatura de Rafael.
+  votacao: ''
+  pagina: 7
+  conferido: true
+eleicoes:
+- orgao: Comissão Fiscal Nacional
+  cargo: titular
+  eleito: Mariovani Cervi
+  mandato: um ano em função de vacância por falecimento do Companheiro Adir Barhysso
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Paulo Sergio Pereira de Lima
+  mandato: um ano em função de vacância por falecimento do Companheiro Adir Barhysso
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Nelson Zépka Senna
+  mandato: um ano em função de vacância por falecimento do Companheiro Adir Barhysso
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: suplente
+  eleito: Ricardo Machado
+  mandato: um ano em função de vacância por falecimento do Companheiro Adir Barhysso
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: votos para Mariovani Cervi
+  valor: '38'
+  pagina: 3
+  conferido: true
+- o_que: votos para Paulo Sergio Pereira de Lima
+  valor: '32'
+  pagina: 3
+  conferido: true
+- o_que: votos para Nelson Zépka Senna
+  valor: '32'
+  pagina: 3
+  conferido: true
+- o_que: votos para Ricardo Machado
+  valor: '14'
+  pagina: 3
+  conferido: true
+- o_que: resultado da questão de ordem sobre devolução ao CAN
+  valor: 45 votos para o sim e 50 votos para não
+  pagina: 3
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: fb75963a41c3480f78a6a9cc91269b009130497cb95b950c15fd8371f06471ce
+revisado: null

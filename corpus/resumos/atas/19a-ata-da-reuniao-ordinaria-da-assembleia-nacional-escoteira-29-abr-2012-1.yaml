@@ -1,0 +1,131 @@
+doc_key: 19a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-29-abr-2012-1
+reuniao:
+  tipo: ordinaria
+  data: '2012-04-29'
+  local: HOTEL RIO POTY SÃO LUÍS, Av. dos Holandeses, s/n – Lote 2/5 Quadra 32 – Ponta D’Areia – São Luís/MA
+deliberacoes:
+- tema: Composição da Mesa Diretora
+  decisao: 'foi eleita e empossada a Mesa, conforme segue: Presidente: Marco Aurelio de Mello Castrianni (SP) e Vice-Presidentes:
+    Sido Gessner Junior (SC) e Antônio João Leitão Nunes (MA) e para Secretárias Cleide Pires de Jesus (GO) e Vera Lucia Santos
+    da Silva (SP)'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Composição das Comissões Assessoras
+  decisao: 'As comissões assessoras foram constituídas da seguinte forma: COMISSÃO DE CREDENCIAMENTO – Mariovani Carsten Cervi
+    (PR), Ronilde Roda Cervi (PR), Luiz Salgado Klaes (SC) e auxiliados por Celso Ferreira Filho (EN); COMISSÃO DE ESCRUTÍNIO
+    – David Bandeira (PR), Fábio Rodrigo Conde (RJ), Edson Gonçalves de Melo Rodrigues (CE) e Floriano Fagundes Ribeiro (MA);
+    e COMISSÃO DE ASSUNTOS GERAIS: Lineu de Andrade Miranda (PE), André Torricelli Fernandes da Rosa (RJ) e Patrícia Diniz
+    (SP)'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Ata da 18ª Reunião Ordinária
+  decisao: a ata, disponibilizada no Documento Base, foi colocada para apreciação e aprovada por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Ata da Reunião Extraordinária de abril/2011
+  decisao: a ata, disponibilizada no Documento Base, foi colocada para apreciação e aprovada por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Relatório Anual de 2011 da UEB
+  decisao: o relatório foi aprovado por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Balanço Anual de 2011 da UEB (Matriz)
+  decisao: Posto para votação o Balanço foi aprovado com somente 1 voto contrário
+  votacao: maioria
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Balanço Anual de 2011 da UEB (Consolidado)
+  decisao: Colocado para apreciação o Balanço foi aprovado por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Deliberação sobre recomendações do XVII Fórum Nacional de Jovens Líderes
+  decisao: o Fórum deliberou favoravelmente à supressão da palavra Líderes para fins de comunicação visual, passando a se
+    chamar, informalmente, Rede Nacional de Jovens (RNJ)
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Eleição do Núcleo Nacional da Rede Nacional de Jovens
+  decisao: Foram eleitos Lucas Machado, de Minas Gerais, para o cargo de Coordenador, e Tiago Carvalho, de Santa Catarina,
+    para a função de Comunicador
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Deliberação sobre criação do Troféu Rede Padrão
+  decisao: o Fórum deliberou a criação do Troféu Rede Padrão nos níveis bronze, prata e ouro
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Escolha da Região-Sede e Região-Sede Alternativa para 2014
+  decisao: a Assembleia escolheu Minas Gerais para Região Sede (71 votos) e Pará (24 votos) para Região Sede-Alternativa,
+    sem nenhuma abstenção
+  votacao: 71 votos a favor Minas Gerais, 24 votos a favor Pará
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Presidente
+  eleito: Marco Aurelio de Mello Castrianni (SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Vice-Presidente
+  eleito: Sido Gessner Junior (SC)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Vice-Presidente
+  eleito: Antônio João Leitão Nunes (MA)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretária
+  eleito: Cleide Pires de Jesus (GO)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretária
+  eleito: Vera Lucia Santos da Silva (SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Nacional da Rede Nacional de Jovens
+  cargo: Coordenador
+  eleito: Lucas Machado, de Minas Gerais
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Nacional da Rede Nacional de Jovens
+  cargo: Comunicador
+  eleito: Tiago Carvalho, de Santa Catarina
+  mandato: ''
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: votos para Região Sede Minas Gerais
+  valor: '71'
+  pagina: 4
+  conferido: true
+- o_que: votos para Região Sede-Alternativa Pará
+  valor: '24'
+  pagina: 4
+  conferido: true
+- o_que: participantes do XVII Fórum Nacional de Jovens Líderes
+  valor: '58'
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 757a6ab482776d6f4c1ec5a3335cf1d7b52558b2a30b294ee2b8eeb6f16dae73
+revisado: null

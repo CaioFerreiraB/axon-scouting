@@ -1,0 +1,121 @@
+doc_key: 25a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-29-abr-2018-1
+reuniao:
+  tipo: ordinaria
+  data: '2018-04-29'
+  local: Curitiba/PR
+deliberacoes:
+- tema: Mesa de trabalhos
+  decisao: constituição da mesa de trabalhos com presidente e dois primeiros vice-presidentes, primeira secretária e segundo
+    secretário
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação da Ata da Assembleia Nacional de 2017
+  decisao: Ata da Assembleia Nacional de 2017 aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Balanço Anual de 2017
+  decisao: Balanço aprovado por esta Assembleia
+  votacao: 125 votos favoráveis, 2 contrários e 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: Alteração do horário do almoço
+  decisao: redução do horário do almoço em 30 minutos, com retorno às 14 horas
+  votacao: 99 votos favoráveis, 14 contrários e 1 abstenção
+  pagina: 3
+  conferido: true
+- tema: Delegação da competência ao CAN para resolver questão estatutária
+  decisao: Assembleia delega ao CAN a competência para resolver até a primeira reunião presencial em agosto do corrente ano
+  votacao: 118 votos favoráveis, 9 contra e 4 abstenções
+  pagina: 4
+  conferido: true
+- tema: Constituição de comissão para analisar ata da XXI Assembleia Nacional de Campo Grande em 2016
+  decisao: constituição de comissão para analisar a ata e verificar decisão sobre mandato de Conselheiro Nacional Antônio
+    João Leitão Nunes, com resultado para a próxima Assembleia Nacional de 2019
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: presidente
+  eleito: Paulo Henrique Maciel Barbosa (MG)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa de trabalhos da Assembleia Nacional
+  cargo: primeiro vice-presidente
+  eleito: Ronaldo Engracia SP
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa de trabalhos da Assembleia Nacional
+  cargo: segundo vice-presidente
+  eleito: Irineu Muniz de Resende Neto PR
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa de trabalhos da Assembleia Nacional
+  cargo: primeira secretária
+  eleito: Marize Ribeiro Pisoni RS
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa de trabalhos da Assembleia Nacional
+  cargo: segundo secretário
+  eleito: José Caetano de Brito GO
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa de trabalhos da Assembleia Nacional
+  cargo: 2º vice-presidente
+  eleito: Mariana de Marchi Oliveira SP
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Nacional da Rede de Jovens Líderes
+  cargo: coordenadora
+  eleito: Maria Clara Marotti PR
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Nacional da Rede de Jovens Líderes
+  cargo: coordenadora
+  eleito: Melissa Wilm Sena Pinto PR
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Nacional da Rede de Jovens Líderes
+  cargo: comunicador
+  eleito: Daniel Veloso SP
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Nacional da Rede de Jovens Líderes
+  cargo: comunicador
+  eleito: Diogo Freitas RS
+  mandato: ''
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: votos na eleição para Comissão de Assuntos Gerais
+  valor: 144 votos
+  pagina: 2
+  conferido: true
+- o_que: votos na aprovação do Balanço Anual de 2017
+  valor: 125 votos favoráveis, 2 contrários e 2 abstenções
+  pagina: 3
+  conferido: true
+- o_que: votos na alteração do horário do almoço
+  valor: 99 votos favoráveis, 14 contrários e 1 abstenção
+  pagina: 3
+  conferido: false
+- o_que: votos na delegação da competência ao CAN para resolver questão estatutária
+  valor: 118 votos favoráveis, 9 contra e 4 abstenções
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 6e1f41b509258384abbc6daabc8b8156f8d897069ce9185eee84458d64efdbfb
+revisado: null

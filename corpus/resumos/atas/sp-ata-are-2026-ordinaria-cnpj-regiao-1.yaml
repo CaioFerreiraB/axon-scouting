@@ -1,0 +1,312 @@
+doc_key: sp-ata-are-2026-ordinaria-cnpj-regiao-1
+reuniao:
+  tipo: ordinaria
+  data: '2026-03-21'
+  local: Centro Universitário Estácio, Rua Abrahão Issa Halack, 980, Ribeirânia, Ribeirão Preto/SP
+deliberacoes:
+- tema: eleição e posse da Mesa Diretora
+  decisao: 'submeteram a candidatura a esse cargo: Leandro Rodrigues de Campos 402/SP e Marcos Antônio de Carvalho 495/SP,
+    sendo todos eleitos por aclamação'
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: eleição e posse das Comissões Assessoras da Assembleia
+  decisao: composição foi aprovada pelo plenário por aclamação
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: aprovação da ata da reunião anterior
+  decisao: não havendo qualquer manifestação em contrário, a ata foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: aprovação do Relatório da Diretoria Regional na Gestão do ano de 2025
+  decisao: não havendo manifestações contrárias à aprovação, o relatório foi aprovado por aclamação
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: aprovação das contas e balanço do exercício fiscal anterior (2025)
+  decisao: aprovação das contas de 2025 foi votada e aprovada por 174 votos a favor, 53 votos contra e 47 abstenções
+  votacao: 174 votos a favor, 53 votos contra e 47 abstenções
+  pagina: 4
+  conferido: true
+- tema: aprovação da Previsão Orçamentária para o próximo exercício fiscal (2026)
+  decisao: foi dada início à votação da Previsão Orçamentária, sendo aprovada com 163 votos a favor, 56 contra e 42 abstenções
+  votacao: 163 votos a favor, 56 contra e 42 abstenções
+  pagina: 5
+  conferido: true
+- tema: alteração de decisão da Assembleia Regional de 2014 sobre uso dos valores da venda do terreno em Jales
+  decisao: aprovação da destinação dos recursos da venda do terreno de Jales para a Modernização do Escritório Regional
+  votacao: 192 votos a favor, 43 votos contra e 13 abstenções
+  pagina: 5
+  conferido: true
+- tema: eleição do suplente da Comissão de Ética e Disciplina para mandato complementar 2026-2028
+  decisao: Elaine Cristina Luqueta Pinto obteve 183 votos, Anderson Davis da Rosa obteve 50 votos com 34 abstenções, sendo
+    eleita a Elaine Cristina Luqueta Pinto
+  votacao: 183 votos a favor, 50 votos contra, 34 abstenções
+  pagina: 6
+  conferido: true
+- tema: escolha da cidade sede para a 34ª Assembleia Regional Escoteira de São Paulo
+  decisao: cidade de Itu foi eleita como sede da 34ª Assembleia Regional Escoteira de São Paulo, a realizar-se em 2027
+  votacao: 174 votos para Itu, 78 votos para São João da Boa Vista, 16 abstenções
+  pagina: 6
+  conferido: true
+- tema: eleição dos Delegados Regionais à Assembleia Escoteira Nacional
+  decisao: resultado divulgado posteriormente, com os eleitos e suplentes conforme votação
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: posse dos eleitos
+  decisao: foi realizada a posse dos eleitos nesta Assembleia com a renovação da Promessa Escoteira
+  votacao: ''
+  pagina: 7
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora
+  cargo: Presidente
+  eleito: Leandro Rodrigues de Campos 402/SP
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Mesa Diretora
+  cargo: Vice-Presidentes
+  eleito: Marcos Antônio de Carvalho 495/SP
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Suplente
+  eleito: Elaine Cristina Luqueta Pinto 123/SP
+  mandato: até 31 de março de 2028
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Jorge Kuma Sototuka 20/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rosemary Peres Motta 600/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Milena Gonçalves Leite 514/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Robson Alexandre de Moraes 241/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Luiz Carlos Ferreira 415/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Antonio Fischer Neto 144/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Fernando Farias de Oliveira 161/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Vania Ferrari 206/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Matheus Luis Cardoso França 56/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Neide Osawa Watanabe
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Eva Alice Gonçalves 26/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Denise Ribeiro Cardoso Terra 161/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rosemary Silva Miranda 59/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ana Rita Moura Cunha 243/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Eliana de Arruda Ferreira 415/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Michael Pereira de Oliveira 537/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ana Claudia Arnoni Poncio 144/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Renato Wanderley Breneizer 283/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ronaldo Engracia 10/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Fabiano Rioli Kunert 550/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Johan Albino Ribeiro 150/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Glaucia Garcia Ribeiro 550/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Marien Elisa Dib Cerqueira 53/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rafael Melis Rogero 356/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Raissa Melis Rogero 356/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Marco Aurélio de Melo Castrianni
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Ailton Carlos Santos 17/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Douglas Gonçalves 331/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Marco Antonio Florençano de Castro 66/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Carlos Eugenio Bakos 180/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Elias Alberto Cardoso Marques 206/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Maria Luiza Carvalho e Souza 335/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Renato David Ribeiro Junior 550/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Alexsandra da Rocha Tressoldi 180/SP
+  mandato: ''
+  pagina: 7
+  conferido: true
+numeros:
+- o_que: votos na aprovação das contas de 2025
+  valor: 174 votos a favor, 53 votos contra e 47 abstenções
+  pagina: 4
+  conferido: true
+- o_que: votos na aprovação da Previsão Orçamentária para 2026
+  valor: 163 votos a favor, 56 contra e 42 abstenções
+  pagina: 5
+  conferido: true
+- o_que: votos na aprovação da destinação dos recursos da venda do terreno de Jales
+  valor: 192 votos a favor, 43 votos contra e 13 abstenções
+  pagina: 5
+  conferido: true
+- o_que: votos na eleição do suplente da Comissão de Ética e Disciplina
+  valor: 183 votos a favor, 50 votos contra, 34 abstenções
+  pagina: 6
+  conferido: true
+- o_que: votos na escolha da cidade sede para a 34ª Assembleia Regional Escoteira
+  valor: 174 votos para Itu, 78 votos para São João da Boa Vista, 16 abstenções
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 49eb04fd3a1c1072106b27301074d35ee9b0b6dea0bd689e074146d65f591575
+revisado: null

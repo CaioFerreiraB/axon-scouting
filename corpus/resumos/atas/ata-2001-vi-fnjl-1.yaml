@@ -1,0 +1,130 @@
+doc_key: ata-2001-vi-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2001-11-15'
+  local: Hotel Parque da Costeira - auditório A3, Natal - RN
+deliberacoes:
+- tema: eleição da mesa diretora
+  decisao: Para vice-presidente foi eleito André Neves (RJ), com a maioria de onze votos, sendo que Adriano Zanetti (SP),
+    também candidato, obteve sete votos. Para secretaria foram eleitos por aclamação, respectivamente nesta ordem, Mateus
+    Fernandes (DF) e João Marcelo (CE).
+  votacao: maioria
+  pagina: 3
+  conferido: true
+- tema: substituição do termo 'líder' por 'coordenador'
+  decisao: A proposta foi aceita por aclamação, com quinze votos favoráveis ao total.
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: proposta de criação do Núcleo Nacional de Jovens Líderes e Plano Bienal de Trabalho
+  decisao: Esta proposta foi aceita por aclamação, sem votos contrários, nem abstenções.
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: proposta do Distrito Federal sobre o Núcleo Nacional e representação dos jovens líderes
+  decisao: Defini-se, portanto, a este conjunto de propostas, a aceitação dos termos “A”, “B” e “E”.
+  votacao: 'votos variados (A: 15 favoráveis 1 contrário; B: 11 favoráveis 2 contrários 3 abstenções; C e D recusados; E:
+    10 favoráveis 6 abstenções)'
+  pagina: 7
+  conferido: true
+- tema: alteração do dia do Fórum Nacional de Jovens Líderes e indicação para Fórum Mundial
+  decisao: O termo “A” foi aprovado com nove votos favoráveis, um contrário e seis abstenções; o termo “B” foi aprovado por
+    aclamação, sem votos contrários ou abstenções.
+  votacao: votos variados e aclamação
+  pagina: 7
+  conferido: true
+- tema: eleição do Núcleo Nacional de Jovens Líderes
+  decisao: 'Por aclamação, sem qualquer manifesto contrário, foram eleitos os seguintes: Luiz Gustavo (SP) e Rafael Macedo
+    (GO) - coordenadores; e Mateus Fernandes (DF) e Murillo Martins (SP) - comunicadores.'
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+eleicoes:
+- orgao: mesa diretora dos trabalhos
+  cargo: vice-presidente
+  eleito: André Neves (RJ)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: mesa diretora dos trabalhos
+  cargo: secretário
+  eleito: Mateus Fernandes (DF)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: mesa diretora dos trabalhos
+  cargo: secretário
+  eleito: João Marcelo (CE)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: coordenador
+  eleito: Luiz Gustavo (SP)
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: coordenador
+  eleito: Rafael Macedo (GO)
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: comunicador
+  eleito: Mateus Fernandes (DF)
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: comunicador
+  eleito: Murillo Martins (SP)
+  mandato: ''
+  pagina: 7
+  conferido: true
+numeros:
+- o_que: participantes do VI Fórum Nacional de Jovens Líderes
+  valor: '31'
+  pagina: 2
+  conferido: true
+- o_que: delegados no VI Fórum Nacional de Jovens Líderes
+  valor: '20'
+  pagina: 2
+  conferido: true
+- o_que: observadores no VI Fórum Nacional de Jovens Líderes
+  valor: '10'
+  pagina: 2
+  conferido: true
+- o_que: votos para vice-presidente da mesa diretora
+  valor: 11 votos a André Neves, 7 votos a Adriano Zanetti
+  pagina: 3
+  conferido: false
+- o_que: votos para aprovação do termo A da proposta do Distrito Federal
+  valor: 15 votos favoráveis, 1 contrário
+  pagina: 7
+  conferido: false
+- o_que: votos para aprovação do termo B da proposta do Distrito Federal
+  valor: 11 votos favoráveis, 2 contrários, 3 abstenções
+  pagina: 7
+  conferido: false
+- o_que: votos para aprovação do termo C da proposta do Distrito Federal
+  valor: 1 voto favorável, 14 contrários, 1 abstenção
+  pagina: 7
+  conferido: false
+- o_que: votos para aprovação do termo D da proposta do Distrito Federal
+  valor: 1 voto favorável, 15 contrários
+  pagina: 7
+  conferido: false
+- o_que: votos para aprovação do termo E da proposta do Distrito Federal
+  valor: 10 votos favoráveis, 6 abstenções
+  pagina: 7
+  conferido: false
+- o_que: votos para aprovação do termo A da proposta do Rio de Janeiro
+  valor: 9 votos favoráveis, 1 contrário, 6 abstenções
+  pagina: 7
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: fff1a5318d8305ac79aa14c9aa1f32128e964e8d36193ebdf19fde549e2adebf
+revisado: null

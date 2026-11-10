@@ -1,0 +1,372 @@
+doc_key: sp-ata-are-2006-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2006-09-23'
+  local: Centro Municipal de Educação Adamastor, Avenida Monteiro Lobato nº 734 — Guarulhos/SP
+deliberacoes:
+- tema: Ata da Assembleia Regional anterior
+  decisao: O documento em questão foi aprovado pela maioria, com 6 votos contrários.
+  votacao: maioria
+  pagina: 2
+  conferido: true
+- tema: Contas do exercício de 2005
+  decisao: A prestação de contas de 2005 foi aprovada com 144 votos a favor, 52 contra € 15 abstenções.
+  votacao: 144 votos a favor, 52 contra e 15 abstenções
+  pagina: 4
+  conferido: true
+- tema: Orçamento 2007
+  decisao: A previsão orçamentária com aumento de valores foi aprovada com 447 votos a favor, 41 votos contra e 3 abstenções.
+    A contribuição regional no valor de R$18,00 recebeu 77 votos; a de R$15,00 recebeu 118 votos e, neste processo eleitoral,
+    tiveram 11 abstenções, sendo aprovada a taxa de contribuição de R$15,00.
+  votacao: 447 votos a favor, 41 contra e 3 abstenções para orçamento; 118 votos para taxa de R$15,00
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia
+  cargo: Presidente
+  eleito: Maria Carolina Leme M. Delbin
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Primeiro Vice-Presidente
+  eleito: Alceu Albregard Junior
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Segundo Vice-Presidente
+  eleito: Ricardo Birkholz D. Stuber
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Primeira Secretária
+  eleito: Priscila do Nascimento Costa
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Segunda Secretária
+  eleito: Irene Pereira
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: Terceira Secretária
+  eleito: Carla Barbosa de Oliveira Neves
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Presidente
+  eleito: Marco Aurélio de Mello Castrianni
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Vice-Presidente
+  eleito: Álvaro Tavares G. de Sousa
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Financeiro
+  eleito: Toshio Kawakami
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretora Administrativa
+  eleito: Marlene Gomes Aguilera
+  mandato: 2007-2009
+  pagina: 10
+  conferido: false
+- orgao: Diretoria Regional
+  cargo: Diretora Comercial
+  eleito: Ilda Okamura Pallamin
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Membro
+  eleito: Antonio Lívio Abraços Jorge
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Membro
+  eleito: Luiz Carlos Gabriel
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Membro
+  eleito: Amauri Benedito Hulmann
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Membro
+  eleito: Guilherme Martins
+  mandato: 2007-2009
+  pagina: 10
+  conferido: false
+- orgao: Comissão Fiscal Regional
+  cargo: Membro
+  eleito: Leandro Luchiari Verrone
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Membro
+  eleito: Rogaciano Amaro de Assis
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Membro
+  eleito: Jahuí Alberto Santos Ocroche
+  mandato: 2007-2009
+  pagina: 10
+  conferido: true
+- orgao: Candidato ao Conselho de Administração Nacional
+  cargo: Candidato
+  eleito: Enio Hideyuki Cojho
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Candidato ao Conselho de Administração Nacional
+  cargo: Candidato
+  eleito: Sonia Maria Gonçalves Jorge
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Caryl Chesmann
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Marco Aurelio do Monde Vanderley
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Silvio Miyazaki
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Sonia Maria Gonçalves Jorge
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Ana Rita Moura Cunha
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Carla Barbosa de Oliveira Neves
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Jader Marques
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Priscila do Nascimento Costa
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Afonso Domingues de Aquino
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Cristian de Melo Sznick
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Rafael Teixeira Nunes
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Francisca de Souza Carrer
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Heleny Faria dos Reis
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Julio César Augusto C. Cruz
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Geraldino Ferreira Moreira
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Antonio Livio Abraços Jorge
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Ilda Okamura Pallamin
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Toshio Kawakami
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Suplente
+  eleito: Ricardo Birkholz D. Stuber
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Suplente
+  eleito: Erick Fernando Alves
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Suplente
+  eleito: Gerald Hall Codling
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Suplente
+  eleito: Jacir Martins da Silva
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Suplente
+  eleito: Jonathan Hugh Govier
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Suplente
+  eleito: Leandro Luchiari Verrone
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Suplente
+  eleito: Jahuí Alberto dos Santos Ocroche
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Suplente
+  eleito: João Floriano Ribeiro
+  mandato: ''
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Suplente
+  eleito: Sueli Alves Ocroche
+  mandato: ''
+  pagina: 10
+  conferido: true
+numeros:
+- o_que: participantes inscritos para a assembleia
+  valor: '411'
+  pagina: 9
+  conferido: true
+- o_que: participantes presentes
+  valor: '378'
+  pagina: 9
+  conferido: true
+- o_que: delegados(as) presentes
+  valor: '333'
+  pagina: 9
+  conferido: true
+- o_que: candidatos(as) a delegados(as) à Assembleia Nacional
+  valor: '28'
+  pagina: 9
+  conferido: true
+- o_que: candidatos ao CAN
+  valor: '2'
+  pagina: 9
+  conferido: true
+- o_que: candidatos à Comissão Fiscal Regional
+  valor: '7'
+  pagina: 9
+  conferido: true
+- o_que: votos a favor da prestação de contas de 2005
+  valor: '144'
+  pagina: 4
+  conferido: true
+- o_que: votos contra da prestação de contas de 2005
+  valor: '52'
+  pagina: 4
+  conferido: true
+- o_que: abstenções na prestação de contas de 2005
+  valor: '15'
+  pagina: 4
+  conferido: true
+- o_que: votos a favor da previsão orçamentária 2007
+  valor: '447'
+  pagina: 5
+  conferido: true
+- o_que: votos contra da previsão orçamentária 2007
+  valor: '41'
+  pagina: 5
+  conferido: true
+- o_que: abstenções na previsão orçamentária 2007
+  valor: '3'
+  pagina: 5
+  conferido: true
+- o_que: votos para taxa de contribuição R$18,00
+  valor: '77'
+  pagina: 5
+  conferido: true
+- o_que: votos para taxa de contribuição R$15,00
+  valor: '118'
+  pagina: 5
+  conferido: true
+- o_que: abstenções na votação da taxa de contribuição
+  valor: '11'
+  pagina: 5
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: ec42d044b2f5be386b8828bcf961c5b195d4a79107dc38a53aaefb554cd27112
+revisado: null

@@ -1,0 +1,190 @@
+doc_key: sp-2015-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-03-14'
+  local: São José dos Campos
+deliberacoes:
+- tema: Revisão da Ata do Congresso Regional Escoteiro 2014
+  decisao: Aceito por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aceitação da candidata Paula Cardoso para Comunicadora da Rede de Jovens
+  decisao: Sendo assim, como única candidata, por aclamação foi aceita.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Aceitação do candidato Daniel Guarnieri para Coordenador da Rede de Jovens
+  decisao: Sendo assim, como único candidato, por aclamação foi aceita.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Aprovação da candidatura de Laura Galdeano para Núcleo Nacional
+  decisao: Sendo assim, a candidata está aprovada para se candidatar.
+  votacao: 31 a favor, 3 contra, 11 abstenções
+  pagina: 4
+  conferido: true
+- tema: Eleição dos delegados da Rede de Jovens – SP para o Fórum Nacional
+  decisao: Fica assim os 3 representantes são Mariana De Marchi, Daniel Veloso, e Henrique. E em seguida suplentes João, Ricardo
+    e Ivan.
+  votacao: 'votos: Mariana De Marchi 19, Daniel Veloso 13, Henrique 9, João Toledo 5, abstenção 8'
+  pagina: 5
+  conferido: true
+- tema: Alteração dos parâmetros da Rede de Jovens Líderes para inclusão de GT’s Distritais
+  decisao: Sendo assim, artigo regulamentado.
+  votacao: 24 a favor, 1 contra, 7 abstenções
+  pagina: 7
+  conferido: true
+- tema: Manutenção do nome GT’s Distritais para os grupos focais distritais
+  decisao: Sendo assim permanecerá Gt’s Distritais.
+  votacao: 17 votos GT’S Distritais, 7 votos Grupos Focais, 7 abstenções
+  pagina: 7
+  conferido: true
+- tema: Recomendação para levar à Assembleia Regional e Fórum Nacional a questão das taxas e participação dos jovens
+  decisao: Votação para levar a recomendação para Assembleia Regional 35 votos a favor, 1 voto contra, 3 abstenções. Votação
+    para levar a recomendação para Fórum Nacional 32 votos a favor, 1 abstenção.
+  votacao: votos conforme descrito
+  pagina: 7
+  conferido: true
+- tema: Aprovação da carta para Assembleia Regional com alterações sugeridas
+  decisao: Aclamação da aprovação da carta.
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Rede de Jovens
+  cargo: Comunicadora
+  eleito: Paula Cardoso
+  mandato: 2015/2016
+  pagina: 4
+  conferido: true
+- orgao: Rede de Jovens
+  cargo: Coordenador da Rede de Jovens
+  eleito: Daniel Guarnieri
+  mandato: 2015/2016
+  pagina: 4
+  conferido: true
+- orgao: Núcleo Nacional
+  cargo: Candidata
+  eleito: Laura Galdeano
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Rede de Jovens
+  cargo: Delegado ao Fórum Nacional
+  eleito: Mariana De Marchi
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Rede de Jovens
+  cargo: Delegado ao Fórum Nacional
+  eleito: Daniel Veloso
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Rede de Jovens
+  cargo: Delegado ao Fórum Nacional
+  eleito: Henrique
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Rede de Jovens
+  cargo: Suplente Delegado ao Fórum Nacional
+  eleito: João Toledo
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Rede de Jovens
+  cargo: Suplente Delegado ao Fórum Nacional
+  eleito: Ricardo Krause
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Rede de Jovens
+  cargo: Suplente Delegado ao Fórum Nacional
+  eleito: Ivan
+  mandato: ''
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: votos para Mariana De Marchi
+  valor: '19'
+  pagina: 5
+  conferido: true
+- o_que: votos para Daniel Veloso
+  valor: '13'
+  pagina: 5
+  conferido: true
+- o_que: votos para Henrique
+  valor: '9'
+  pagina: 5
+  conferido: true
+- o_que: votos para João Toledo
+  valor: '5'
+  pagina: 5
+  conferido: true
+- o_que: abstenções na eleição dos delegados
+  valor: '8'
+  pagina: 5
+  conferido: true
+- o_que: votos a favor da aprovação da candidatura de Laura Galdeano
+  valor: '31'
+  pagina: 4
+  conferido: true
+- o_que: votos contra a aprovação da candidatura de Laura Galdeano
+  valor: '3'
+  pagina: 4
+  conferido: true
+- o_que: abstenções na aprovação da candidatura de Laura Galdeano
+  valor: '11'
+  pagina: 4
+  conferido: true
+- o_que: votos a favor da inclusão do parágrafo sobre GT Distrital
+  valor: '24'
+  pagina: 7
+  conferido: true
+- o_que: votos contra a inclusão do parágrafo sobre GT Distrital
+  valor: '1'
+  pagina: 7
+  conferido: true
+- o_que: abstenções na inclusão do parágrafo sobre GT Distrital
+  valor: '7'
+  pagina: 7
+  conferido: true
+- o_que: votos para manter nome GT’s Distritais
+  valor: '17'
+  pagina: 7
+  conferido: true
+- o_que: votos para nome Grupos Focais
+  valor: '7'
+  pagina: 7
+  conferido: true
+- o_que: abstenções na votação do nome dos grupos focais
+  valor: '7'
+  pagina: 7
+  conferido: true
+- o_que: votos a favor da recomendação para Assembleia Regional
+  valor: '35'
+  pagina: 7
+  conferido: true
+- o_que: votos contra a recomendação para Assembleia Regional
+  valor: '1'
+  pagina: 7
+  conferido: true
+- o_que: abstenções na recomendação para Assembleia Regional
+  valor: '3'
+  pagina: 7
+  conferido: true
+- o_que: votos a favor da recomendação para Fórum Nacional
+  valor: '32'
+  pagina: 7
+  conferido: true
+- o_que: abstenção na recomendação para Fórum Nacional
+  valor: '1'
+  pagina: 7
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: a936449aa7a5777b5bfcf96e99a974437d6272e0bb9909aa9afbacdab1f05b44
+revisado: null

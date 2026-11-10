@@ -1,0 +1,152 @@
+doc_key: ata60-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2009-09-12'
+  local: Curitiba/PR
+deliberacoes:
+- tema: tipo da reunião
+  decisao: o CAN decidiu por maioria manter a reunião como “Ordinária”
+  votacao: maioria
+  pagina: 1
+  conferido: true
+- tema: votações virtuais
+  decisao: 'foram confirmadas as aprovações das votações dos seguintes assuntos: a) Realização da presente reunião na cidade
+    de Curitiba; b) Pedido de autorização para obtenção de personalidade jurídica própria – UEB/SP e c) Concessão das condecorações'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: comissão para avaliação de pedidos de condecorações
+  decisao: composta comissão com os companheiros Rubem Suffert, Ivan e Paulo Henrique
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: aprovação das linhas gerais do Programa do Ramo Escoteiro, Guias Escoteiros e Ramos Sênior e Pioneiro
+  decisao: O CAN aprovou as linhas gerais do Programa, tal como proposto, devendo apreciar as modificações de POR decorrentes,
+    conforme sejam posteriormente submetidas
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: projeto piloto de Programa do Ramo Escoteiro na Região UEB/SP
+  decisao: Tal proposta não foi secundada por nenhum Conselheiro [...] sendo, portanto, rejeitada
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: rateio de despesas
+  decisao: 'Existe o Consenso que o rateio deve ser feito entre todos os convocados: Conselheiros, Representantes de Áreas
+    Geográficas e da Rede Nacional de Jovens Líderes'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: pedido de autorização para venda de imóveis em Brasília
+  decisao: Posto em votação o pedido foi aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: inserção no artigo 15 da resolução sobre registros 2010 para sócios carentes
+  decisao: foi aprovada pelo CAN a inserção no artigo 15 (quinze) da resolução sobre registros que, o associado cuja família
+    receba algum benefício social oriundo de programas do Governo Federal, apresentando uma cópia recente do comprovante de
+    recebimento, automaticamente será considerado como “carente”
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: direito de voto nas Assembleias Regionais dos representantes da RNJL e Áreas Geográficas
+  decisao: O CAN fixa que tais participantes não têm direito a voto
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: transferência da reunião de novembro/2009 para fevereiro/2010 e antecipação da reunião de abril
+  decisao: O CAN decide por transferir a reunião de novembro/2009 para fevereiro/2010 (dias 27 e 28 em São Paulo) e antecipar
+    a reunião de abril para o dia 23
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: criação do cargo de Executivo de Programa
+  decisao: o CAN aprova a contratação por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: acolhimento da proposta para criação de reconhecimento para cônjuge de Escotistas e Dirigentes
+  decisao: o CAN aprovou o acolhimento da proposta e delegou a Rubem Suffert a preparação da redação final da alteração da
+    Resolução de Condecorações e Recompensas
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: proposta de Resolução sobre Mediação de Conflitos
+  decisao: decidiram que Rubem fará o ajuste do texto e encaminhará para a Presidência do CAN que disponibilizará para votação
+    virtual
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: alteração no Regulamento do CAN sobre número de reuniões ordinárias
+  decisao: o CAN aceitou alterar o Art.1.º que disciplina o número de reuniões ordinárias para “pelo menos duas vezes ao ano”
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: empréstimo de recursos da Ordem da Flor de Lis para a DEN
+  decisao: o CAN autorizou por unanimidade que a DEN empreste recursos da Ordem da Flor de Lis enquanto não se concretiza
+    a venda dos imóveis em Brasília
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: encaminhamento das dúvidas sobre Diretrizes Nacionais de Gestão de Adultos
+  decisao: O CAN decidiu que as dúvidas existentes deverão ser encaminhadas para a Comissão de Formação de forma a serem rapidamente
+    solucionadas
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: aprovação da proposta de nova redação à Resolução 08/99
+  decisao: A proposta de Resolução recebeu algumas contribuições e foi aprovada
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: aprovação dos balancetes financeiros até julho/2009
+  decisao: O CAN aprovou os balancetes por unanimidade
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: esclarecimento sobre inauguração da sede nacional
+  decisao: O CAN, por unanimidade, esclarece que não há impedimento para a realização da inauguração da sede
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: pedido de registro e reconhecimento do trabalho do Dr. Milton de Souza Corrêa Filho
+  decisao: 'Voto de Louvor: Salamuni pediu seja registrado e reconhecido todo trabalho profissional que tem sido feito de
+    forma voluntária e gratuita para a UEB pelo companheiro Dr. Milton de Souza Corrêa Filho'
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Congressistas na Assembleia e Congresso/2009
+  valor: '190'
+  pagina: 1
+  conferido: true
+- o_que: Jovens Líderes na Assembleia e Congresso/2009
+  valor: '18'
+  pagina: 1
+  conferido: true
+- o_que: Acompanhantes na Assembleia e Congresso/2009
+  valor: '51'
+  pagina: 1
+  conferido: true
+- o_que: pessoal de apoio na Assembleia e Congresso/2009
+  valor: '24'
+  pagina: 1
+  conferido: true
+- o_que: participantes só na Assembleia
+  valor: '14'
+  pagina: 1
+  conferido: true
+- o_que: resultado líquido da Assembleia Nacional de 2009
+  valor: R$10.841,70
+  pagina: 1
+  conferido: false
+- o_que: resultado financeiro positivo até julho/2009
+  valor: aproximadamente R$ 830.000,00
+  pagina: 5
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 26394f18cc5ee364c52676a25d34e607f1fc5124ceb08ba2b3cce71053cf0c1f
+revisado: null

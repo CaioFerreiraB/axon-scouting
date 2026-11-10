@@ -1,0 +1,60 @@
+doc_key: ata71-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2012-11-10'
+  local: São José dos Pinhais/PR
+deliberacoes:
+- tema: Aprovação da ata da reunião anterior
+  decisao: aprovada a ata da reunião anterior
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Ratificação das Resoluções do CAN
+  decisao: 'ratificadas as aprovações das Resoluções do CAN: 01/2012 - Estabelece as sanções para as Regiões Escoteiras com
+    CNPJ filial da UEB que não cumprirem com as ações de consolidação dos balanços e; 02/2012 - Estabelece as condições para
+    obtenção do Certificado de Qualidade Legal'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Planejamento Estratégico
+  decisao: Aprovada a realização de oficinas de Planejamento Estratégico nos Congressos e Assembleias Regionais, com a coordenação
+    de Conselheiros Nacionais. Foi aprovada a elaboração de um documento de comprometimento dos níveis regionais com o PE
+    dos Escoteiros do Brasil
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Planejamento Estratégico
+  decisao: Decidido também que o documento será revisto e juntamente com outras informações será encaminhado para as Regiões
+    envolverem as Unidades Escoteiras Locais - UELs mediante a realização de oficina específica
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Criação de lista de voluntários para apoio às oficinas de Planejamento Estratégico
+  decisao: Uma lista de voluntários para apoiar a realização das oficinas será disponibilizada para as Regiões
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do orçamento 2013
+  decisao: O CAN aceita a proposta e aprova o orçamento por unanimidade, decidindo, também, que deverá destinar mais atenção
+    ao acompanhamento do orçamento
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Aprovação da tabela da Taxa de Registro Institucional para 2013
+  decisao: Após análises do CAN a tabela proposta foi aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Criação de Grupo de Trabalho para sugestão de transmissão das reuniões do CAN
+  decisao: Foi aprovado a criação de um Grupo de Trabalho (GT) coordenado por Altamiro e composto por Rogério, Winder e Lucas
+    que trarão sugestões para um piloto na próxima reunião do CAN
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: a9a26884fc4d727e4592fc62cf4c7283224787a5783952e415637bbba4bdeb40
+revisado: null

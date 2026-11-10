@@ -1,0 +1,27 @@
+doc_key: sp-ata-are-2020-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2020-03-14'
+  local: Indaiatuba
+deliberacoes:
+- tema: Posse dos membros eleitos
+  decisao: Foi prestado o compromisso institucional na forma do Estatuto e do POR, com a renovação a Promessa Escoteira, sendo
+    declarado pelo Presidente da Assembleia devidamente empossados todos os eleitos por esta Assembleia, os quais foram aclamados
+    com a Palma Escoteira.
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Encerramento da Assembleia
+  decisao: Nada mais a ser tratado, o Presidente deu por encerrada a XXVII Assembleia Regional da União dos Escoteiros do
+    Brasil - Região de São Paulo, agradecendo a presença de todos e o empenho para o proficuo desenvolvimento dos trabalhos,
+    encerrados as 18h10.
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 60925238fb0955b7d5435e4c8989c9aaafaebdc54e89e5ff8f9efd25024b59b5
+revisado: null

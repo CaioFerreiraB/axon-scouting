@@ -1,0 +1,152 @@
+doc_key: 4a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-14-nov-1997-1
+reuniao:
+  tipo: ordinaria
+  data: '1997-11-14'
+  local: Auditório Minas Gerais, do Hotel Kubitschek Plaza, em Brasília, DF
+deliberacoes:
+- tema: aprovação da ata da 3o Reunião Ordinária
+  decisao: a Assembléia aprovou, por aclamação, a ata da 3o Reunião Ordinária da Assembléia Nacional, tal como se encontra
+    publicada no Relatório Anual 1996 - 1997
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação do parecer da Comissão Fiscal Nacional e balanço de 1996
+  decisao: foram aprovados por unanimidade tanto o parecer da Comissão Fiscal Nacional como o Balanço Patrimonial e a Demonstração
+    de Resultados de 1996
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: eleição dos membros efetivos da Comissão Fiscal Nacional
+  decisao: foram eleitos como membros efetivos da Comissão Fiscal Nacional, os interinos Tadeu Ottoni e Celso Perotto, que
+    passaram à condição de aptos a votar na 4o Reunião da Assembléia Nacional da UEB
+  votacao: 40 votos a favor, 15 contra, 12 abstenções
+  pagina: 3
+  conferido: true
+- tema: eleição dos Diretores Nacionais e membros da Comissão Fiscal Nacional
+  decisao: foram eleitos os 5 (cinco) mais votados para Diretores Nacionais e os 3 (três) primeiros para membros titulares
+    e os 3 (três) seguintes para suplentes da Comissão Fiscal Nacional
+  votacao: 74 votos
+  pagina: 3
+  conferido: true
+- tema: composição da Diretoria Nacional para 1998
+  decisao: a Diretoria Nacional estará composta, durante o ano de 1998, pelos Diretores Nacionais eleitos nas reuniões anteriores
+    e na 4o Reunião Ordinária da Assembléia Nacional
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: aprovação da recomendação sobre debate dos Fundamentos do Escotismo
+  decisao: a Assembléia aprovou a recomendação, por aclamação, para que a Direção Nacional e as Direções Regionais organizem
+    debate amplo para apresentar proposta de alteração dos Fundamentos do Escotismo Brasileiro na próxima reunião ordinária
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: escolha da Região-Sede para o 5o Congresso Escoteiro Nacional
+  decisao: foi aprovada por aclamação a candidatura única da Região do Paraná para sediar o Congresso Escoteiro Nacional e
+    a Reunião da Assembléia Nacional da UEB, em 1999
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: compromisso de correção do POR
+  decisao: o Diretor Presidente eleito declarou que houve um erro na edição do POR e se comprometeu a promover a devida correção
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes:
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Marcos Venicio Mattos Chaves (SP)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Marcel Hugo (SC)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Baldur Oscar Schubert (DF)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Modesto Carro Loureiro (RS)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Nacional
+  eleito: Rubem Tadeu C. Perlingeiro (RJ)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro titular
+  eleito: Mauro Gomes Cardoso (SP)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro titular
+  eleito: Nelson Zepka Senna (RS)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro titular
+  eleito: Ignácio Vilomar Castafion Mattos (MG)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro suplente
+  eleito: Luís Salgado Klaes (SC)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro suplente
+  eleito: Mariovani Carsten Cervi (PR)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro suplente
+  eleito: Carmen Barreira (DF)
+  mandato: '1998'
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Diretor Presidente da UEB
+  eleito: MÁRIO HENRIQUE PETERS FARINON
+  mandato: '1998'
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: 1o Vice-Presidente
+  eleito: MARCOS DE CARVALHO
+  mandato: '1998'
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: 2o Vice-Presidente
+  eleito: OSCAR VICTOR PALMQUIST ARIAS
+  mandato: '1998'
+  pagina: 6
+  conferido: true
+numeros:
+- o_que: delegados aptos para votar
+  valor: '74'
+  pagina: 2
+  conferido: true
+- o_que: votos para eleição da Diretoria Nacional
+  valor: '74'
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8f72cbeefa4ce3fae834c9de043a5a2d70072ffa358d0e9142e90555a08c7399
+revisado: null

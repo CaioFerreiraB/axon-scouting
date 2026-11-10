@@ -1,0 +1,174 @@
+doc_key: ata-do-29o-forum-nacional-de-jovens-lideres-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-05-30'
+  local: UNINASSAU, rua Jonathas de Vasconcelos, 316 - bairro Boa Viagem, Recife/PE
+deliberacoes:
+- tema: credenciamento de delegados
+  decisao: foi informado que haviam 28 credenciados na modalidade online, 20 na modalidade presencial com a inscrição no prazo
+    e ocorreu a homologação de 3 delegados que foram inscritos fora do prazo com o total de 51 delegados
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: eleição da Comissão de Escrutínio
+  decisao: 'foram eleitos: Laura Cristina (21 votos), Cristhian Villanova (13 votos) e Luísa Andrade (9 votos)'
+  votacao: 21 votos, 13 votos, 9 votos
+  pagina: 3
+  conferido: true
+- tema: eleição da Comissão de Assuntos Gerais
+  decisao: foi sugerido pela Mesa Diretora aprovação por aclamação, elegendo por unanimidade a Comissão de Assuntos Gerais
+    do Fórum
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: eleição da Mesa Diretora dos Trabalhos
+  decisao: 'eleitos por aclamação: Presidente: João Gabriel Tadeu dos Santos; Primeira Vice-presidente: Mariana Moreira Santos;
+    Segundo Vice-presidente: Adrian Cordeiro do Nascimento; Primeiro Secretário: Darte Emily Lorranne Pereira da Silva; Segundo
+    Secretário: Carlos Eduardo Silva Almeida'
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: aprovação da Ata do Fórum Nacional de Jovens Líderes – Reunião Ordinária de 29/04/2023
+  decisao: aprovação da ata por aclamação, sendo a mesma aprovada por unanimidade da Plenária
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: eleição da Cidade-Sede do Encontro Nacional de Jovens Líderes 2025
+  decisao: Brasília-DF eleita a cidade-sede e Salvador-BA como suplente do ENJL de 2025
+  votacao: Brasília-DF (23 votos), Salvador-BA (18 votos), João Pessoa-PB (5 votos), Rio de Janeiro-RJ (5 votos)
+  pagina: 5
+  conferido: true
+- tema: eleição do Núcleo Nacional Gestão 2024-2026
+  decisao: sendo eleita a Chapa Teia para a nova Gestão do Núcleo Nacional (2024-2026)
+  votacao: Chapa Teia (28 votos), Chapa Brasilidade (23 votos)
+  pagina: 6
+  conferido: true
+- tema: deliberação das propostas da Comissão de Revisão e Acompanhamento do Regulamento Geral da Rede Nacional (CRARG)
+  decisao: foi aprovado a permanência das deliberações da CRARG neste Fórum; aprovadas por aclamação as propostas em bloco;
+    rejeitada por aclamação a inclusão INC0010 e encaminhada para nova proposta pela CRARG; aprovadas por aclamação a extensão
+    do mandato da CRARG por mais 1 ano e a tradução do Regulamento para espanhol
+  votacao: 'votação para permanência: Manter (29 votos), Adiar (19 votos), Abstenção (1); aprovação por aclamação das propostas
+    em bloco e extensão do mandato e tradução; rejeição por aclamação da INC0010'
+  pagina: 7
+  conferido: true
+- tema: deliberação sobre encaminhamentos dos Fóruns Regionais de Jovens Líderes
+  decisao: não foi apresentado nenhum encaminhamento prévio, pauta passada para a próxima
+  votacao: ''
+  pagina: 10
+  conferido: true
+- tema: deliberação sobre assuntos gerais
+  decisao: aprovação do encaminhamento para Assembleia Escoteira Nacional do item sobre assembleias institucionais em formato
+    híbrido; criação de duas comissões, uma para elaboração de carta compromisso a ser apresentada na AEN e outra para apoio
+    à juventude pelos órgãos nacionais; rejeição da moção para direito a voto dos Representantes da Rede no CAN (33 contra,
+    6 a favor, 12 ausências); aprovação da criação de comissão para elaboração de carta para política humanitária; encaminhamento
+    dos demais itens ao Núcleo Nacional para encerramento do fórum; aprovação da moção de desagravo com 32 votos a favor,
+    6 contra, 12 ausências e 1 abstenção
+  votacao: várias votações descritas no texto
+  pagina: 11
+  conferido: true
+- tema: encerramento do 29º Fórum Nacional de Jovens Líderes
+  decisao: às 20:53 o presidente declara encerrado o 29º Fórum Nacional de Jovens Líderes
+  votacao: ''
+  pagina: 14
+  conferido: true
+eleicoes:
+- orgao: Comissão de Escrutínio do Fórum
+  cargo: membro
+  eleito: Laura Cristina
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão de Escrutínio do Fórum
+  cargo: membro
+  eleito: Cristhian Villanova
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão de Escrutínio do Fórum
+  cargo: membro
+  eleito: Luísa Andrade
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão de Assuntos Gerais do Fórum
+  cargo: membro
+  eleito: Isadora Macedo
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão de Assuntos Gerais do Fórum
+  cargo: membro
+  eleito: Carlos Henrique
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão de Assuntos Gerais do Fórum
+  cargo: membro
+  eleito: Gabriel Fischer
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos do Fórum
+  cargo: Presidente
+  eleito: João Gabriel Tadeu dos Santos
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos do Fórum
+  cargo: Primeira Vice-presidente
+  eleito: Mariana Moreira Santos
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos do Fórum
+  cargo: Segundo Vice-presidente
+  eleito: Adrian Cordeiro do Nascimento
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos do Fórum
+  cargo: Primeiro Secretário
+  eleito: Darte Emily Lorranne Pereira da Silva
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos do Fórum
+  cargo: Segundo Secretário
+  eleito: Carlos Eduardo Silva Almeida
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '51'
+  pagina: 2
+  conferido: true
+- o_que: votos na eleição da Comissão de Escrutínio
+  valor: Laura Cristina (21), Cristhian Villanova (13), Luísa Andrade (9)
+  pagina: 3
+  conferido: true
+- o_que: votos na eleição da Cidade-Sede do ENJL 2025
+  valor: Brasília-DF (23), Salvador-BA (18), João Pessoa-PB (5), Rio de Janeiro-RJ (5)
+  pagina: 5
+  conferido: true
+- o_que: votos na eleição do Núcleo Nacional Gestão 2024-2026
+  valor: Chapa Teia (28), Chapa Brasilidade (23)
+  pagina: 6
+  conferido: true
+- o_que: votos para permanência da pauta CRARG
+  valor: Manter (29), Adiar (19), Abstenção (1)
+  pagina: 7
+  conferido: true
+- o_que: votos na moção sobre direito a voto dos Representantes da Rede no CAN
+  valor: 33 contra, 6 a favor, 12 ausências
+  pagina: 12
+  conferido: true
+- o_que: votos na moção de desagravo
+  valor: 32 a favor, 6 contra, 12 ausências, 1 abstenção
+  pagina: 13
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 1cfa67d69a081e6634e95fbb5deffbfd00fa61363c66351c3f6a61d33fd80684
+revisado: null

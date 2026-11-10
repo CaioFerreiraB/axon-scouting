@@ -1,0 +1,106 @@
+doc_key: ata-103a-reuniao-ordinaria-do-can-sessao-aberta-assinado-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-10-02'
+  local: videochamada pelo Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: Escopo do Grupo de Trabalho para a elaboração de Política de Relações Institucionais e Governamentais
+  decisao: 10 votos a favor (ALDENISE, CLAUCIO, DANIELA, MANIQUE, ILKA, MÁRCIO, RAFAEL, RENATO, ROBSON e SARAH) e 4 abstenções
+    por falta de pronunciamento (NETO, MAGU, DAYANNA e LAURA)
+  votacao: 10 votos a favor e 4 abstenções
+  pagina: 2
+  conferido: true
+- tema: Escopo do Grupo de Trabalho de Atualização da Política de Relações Internacionais
+  decisao: 12 votos a favor (ALDENISE, MAGU, CLAUCIO, DANIELA, MANIQUE, ILKA, LAURA, MÁRCIO, RAFAEL, RENATO, ROBSON e SARAH)
+    e 2 abstenções por falta de pronunciamento (NETO e DAYANNA)
+  votacao: 12 votos a favor e 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Ata da 102ª Reunião Ordinária do CAN
+  decisao: 13 votos a favor (ALDENISE, MAGU, CLAUCIO, DANIELA, DAYANNA, MANIQUE, ILKA, LAURA, MÁRCIO, RAFAEL, RENATO, ROBSON
+    e SARAH) e 1 abstenção por falta de pronunciamento (NETO)
+  votacao: 13 votos a favor e 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Escopo do Grupo de Trabalho sobre a Contribuição Associativa
+  decisao: 12 votos a favor (ALDENISE, MAGU, CLAUCIO, DANIELA, DAYANNA, MANIQUE, ILKA, MÁRCIO, RAFAEL, RENATO, ROBSON e SARAH)
+    e 2 abstenções por falta de pronunciamento (NETO e LAURA)
+  votacao: 12 votos a favor e 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Contratação da empresa TATICCA Auditores e Consultores Ltda. para auditoria externa dos Escoteiros do Brasil no exercício
+    de 2021
+  decisao: Aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Autorização de alienação de bem imóvel da Região Escoteira do Rio Grande do Sul
+  decisao: Aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Ratificação das coordenações de novos GTs e CPs
+  decisao: os nomes indicados para coordenação do Grupo de Trabalho para a elaboração de Política de Relações Institucionais
+    e Governamentais (GTRIG) – MANIQUE, do Grupo de Trabalho da Atualização da Política de Relações Internacionais (GTAPRI)
+    – VALOIS, do Grupo de Trabalho sobre a Contribuição Associativa (GTCA) – RENATO, e da Comissão Permanente de Avaliação
+    (CPA) – ROBSON, os quais são ratificados por unanimidade dos conselheiros titulares presentes
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Resolução sobre alterações dos fundamentos deliberadas pela Assembleia Nacional
+  decisao: A resolução proposta é aprovada por unanimidade dos conselheiros titulares presentes e passará a ser a Resolução
+    CAN 08/2021 quando publicada
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Resolução sobre participação dos associados em assuntos do CAN
+  decisao: Considerados os ajustes sugeridos por DANIELA, ROBSON, RENATO e RAFAEL, a resolução proposta é aprovada por unanimidade
+    dos conselheiros titulares presentes e passará a ser a Resolução CAN 09/2021 quando publicada
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Resolução sobre isenção de renovação de registros para Unidades Escoteiras Locais (UELs) fundadas pouco antes da pandemia
+  decisao: Considerando os ajustes textuais sugeridos por ILKA, NICHOLAS, MANIQUE, RAFAEL e RENATO, a resolução proposta é
+    aprovada por unanimidade dos conselheiros titulares presentes e passará a ser a Resolução CAN 10/2021 quando publicada
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos a favor do Escopo do Grupo de Trabalho para a elaboração de Política de Relações Institucionais e Governamentais
+  valor: 10 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções no Escopo do Grupo de Trabalho para a elaboração de Política de Relações Institucionais e Governamentais
+  valor: 4 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos a favor do Escopo do Grupo de Trabalho de Atualização da Política de Relações Internacionais
+  valor: 12 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções no Escopo do Grupo de Trabalho de Atualização da Política de Relações Internacionais
+  valor: 2 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da Ata da 102ª Reunião Ordinária do CAN
+  valor: 13 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções na Ata da 102ª Reunião Ordinária do CAN
+  valor: 1 abstenção
+  pagina: 2
+  conferido: true
+- o_que: votos a favor do Escopo do Grupo de Trabalho sobre a Contribuição Associativa
+  valor: 12 votos a favor
+  pagina: 2
+  conferido: true
+- o_que: abstenções no Escopo do Grupo de Trabalho sobre a Contribuição Associativa
+  valor: 2 abstenções
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: bf8634533157b639b38dc9f946877f5398eb667eb25e71c685c3c6d641063efd
+revisado: null

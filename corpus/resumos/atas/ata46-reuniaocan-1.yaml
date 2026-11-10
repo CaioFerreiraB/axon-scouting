@@ -1,0 +1,102 @@
+doc_key: ata46-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2005-02-11'
+  local: São Bernardo do Campo/SP
+deliberacoes:
+- tema: Ata da reunião anterior
+  decisao: a ata foi aprovada.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Núcleo Nacional de Jovens Líderes
+  decisao: Geraldino propõe e é aceito que o Executivo Luiz César revise o documento em conjunto com os membros do Núcleo
+    e passe um relatório conclusivo aos membros do CAN.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Realização de pesquisas sobre programas dos ramos Lobinho e Escoteiro
+  decisao: Aprovada a realização das três pesquisas.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Definição da Missão da UEB
+  decisao: Quanto a definição da “Missão da UEB” aprovou-se aguardar até o mês de abril.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Definição da Visão da UEB
+  decisao: proposto definir alguns parâmetros junto às regiões para serem apreciadas na reunião de abril.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Relatório Anual da UEB
+  decisao: aprovada mudança na composição do relatório anual da UEB, que deverá conter informações sobre parcerias, ações
+    realizadas pelos diversos níveis, muitas fotos, resumo das ações da mesma forma que informado ao INSS, etc. Tal relatório
+    pode ser apresentado de forma separada do relatório técnico.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Proposta de revisão do P.O.R.
+  decisao: Luiz César deverá preparar documento com base nas sugestões apresentadas e encaminhá-lo aos membros do CAN.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Apresentação da Assembleia Nacional e Congresso Escoteiro – Florianópolis
+  decisao: 'Programação do evento: sujeita a ajustes pela DEN a ser comunicado aos membros do CAN'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação caderno de Jornada
+  decisao: o material foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Aprovação de Balancetes
+  decisao: foram aprovados os balancetes referentes ao período maio a dezembro/2004.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Proposta de confecção de camiseta para o CAN
+  decisao: decidido que a DEN solicite à Loja Escoteira Nacional a elaboração de camisetas para todo nível nacional.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Indicação de representantes nacionais em atividades internacionais
+  decisao: reforçada a necessidade que tais indicações sejam aprovadas pelo CAN ou pela DEN.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Criação da Subcomissão de Saúde Nacional
+  decisao: por maioria foi aprovada a criação da subcomissão na Comissão Nacional de Gestão de Adultos – CNGA.
+  votacao: maioria
+  pagina: 4
+  conferido: true
+- tema: Editais de Convocação de Assembléia Geral Ordinária e Extraordinária
+  decisao: os editais foram aprovados.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Alteração do estatuto da UEB
+  decisao: solicitado que conforme praxe as propostas de reforma especifiquem quais alterações estão sugerindo em relação
+    ao texto atual e que venham acompanhadas das respectivas justificativas para pedido de modificação.
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional
+  cargo: 2.º Vice Presidente
+  eleito: Adir Barusso
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: duração da reunião
+  valor: 11 a 13 de fevereiro de 2005
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 6aa1c1a7ac3149a8cd7e66b801d793f9be8172177d85b4d1e7f74cfbaa5741b3
+revisado: null

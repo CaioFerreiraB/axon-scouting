@@ -1,0 +1,108 @@
+doc_key: sp-2025-02-22-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-02-22'
+  local: Centro Escoteiro Jaraguá, Rua Adriano Reys, 1, São Paulo
+deliberacoes:
+- tema: finalização do GPS (Programa Educativo)
+  decisao: após ser oficializado, a Região de São Paulo irá precisar de um esforço do Conselho Consultivo para a implementação
+    do programa o mais rápido possível
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Certificado de Funcionamento das UELs
+  decisao: houve uma melhora significativa na emissão; membros da Comissão Fiscal precisam ter Registro Escoteiro para vincular
+    o conselheiro no Paxtu do Grupo; reafirmar anualmente o termo de parceria com a entidade patrocinadora; repasses do orçamento
+    compartilhado já foram feitos
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: problema com certificado de funcionamento no Paxtu
+  decisao: grupo precisa entrar em contato com o Escritório Nacional para que o problema seja corrigido manualmente
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: autoavaliação do Distrito
+  decisao: entregou a todos uma autoavaliação do Distrito para que escrevessem sobre a situação atual, pontos de melhora e
+    coisas que deram certo, para que isso fique documentado para o próximo Comissário Distrital
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: melhoria da comunicação entre Região e Distritos
+  decisao: importante deixar claro para as pessoas a necessidade dessa rede de comunicação; comunicação entre comissários
+    e grupos deve ser melhorada para evitar atividades sem aviso
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: comunicação para prefeitura sobre atividades
+  decisao: Comissário deve saber que um Grupo Escoteiro realizará uma atividade no distrito para que a prefeitura seja comunicada
+    e os Grupos não precisem pagar taxa de turismo
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: filtragem de pontos turísticos para comissários responsáveis
+  decisao: seria interessante filtrar os principais pontos turísticos de São Paulo e direcionar para quem é o comissário responsável
+    pela região
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: informação sobre saída de grupo para outros Distritos
+  decisao: precisa ser informada para o Distrito
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: denúncias e acareações
+  decisao: solicitar que seja enviado um e-mail informando se a denúncia foi ou não finalizada; pessoas que não fazem parte
+    da denúncia não podem ser comunicadas
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: informação sobre suspensão de associado
+  decisao: comissário deve ser avisado pois o associado não pode participar de atividades; informação fica registrada no Paxtu
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: publicação de nota sobre documentário da Globo
+  decisao: será publicada uma nota sobre o documentário da Globo que fala sobre o escoteiro desaparecido no Pico do Marins
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: realização da Corrida e Caminhada Escoteira
+  decisao: atividade descentralizada; até o final de março o boletim será publicado; possibilidade de revisão da data para
+    atrair público não escoteiro
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Política Nacional de Inclusão e Diversidade
+  decisao: após publicação da nacional, a região enviou sugestão de melhoria do texto; texto foi revisto; prática escoteira
+    não mudou, respeitando as diferenças e adequado às necessidades
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Distrito Padrão
+  decisao: apenas um distrito enviou informações necessárias, mas não cumpriu todos os requisitos para ser elegível; não houve
+    interesse no projeto
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: agradecimentos finais da Diretoria Regional
+  decisao: agradecimentos pelo empenho e colaboração dos comissários; expectativa de continuar trabalhando juntos na próxima
+    gestão
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Comissários Distritais presentes
+  valor: '30'
+  pagina: 1
+  conferido: true
+- o_que: Diretores Regionais presentes
+  valor: 08
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 04bfbca8ef5e363e81b708ec09fb4bcdf3bf81c3cb180199237b619b1cd4bb9e
+revisado: null

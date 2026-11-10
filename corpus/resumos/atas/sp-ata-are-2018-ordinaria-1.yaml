@@ -1,0 +1,254 @@
+doc_key: sp-ata-are-2018-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2018-03-17'
+  local: Teatro Erotides de Campos, Engenho Central, Avenida Mariluce Allain, 454, Parque do Engenho Central, Piracicaba/SP
+deliberacoes:
+- tema: Mesa Diretora da Assembleia
+  decisao: 'foi aprovada a Mesa Diretora com a seguinte composição: Presidente, Renato Breneizer, 1º Vice-Presidente, Johan
+    Albino Ribeiro, 2º Vice-Presidente, Juliano Ferreira Arcuri, 1º Secretário, Marcelo José Fassina, 2º Secretária, Harelline
+    Belotti Perez'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Comissões Assessoras da Assembleia
+  decisao: 'as comissões ficaram assim formadas: Comissão de Credenciamento: Aline Milan Falcade 315º SP, Kátia Cristina Videira
+    de Freitas Antonin 362º SP, Eliana Márcia Sotello Cabrera 269º SP, Fernando Del Antonini 362º SP, Priscila Oriani de Carvalho
+    9º SP, Vilma Pietropoli Morais — Diretoria Regional, William Capuci Rodrigues 269º SP; Comissão Eleitoral: Marcos Antônio
+    de Carvalho (Moral) 98º SP, Leandro Rodrigues de Campos 402º SP, Paulo Silva Nhemetz (P3) 58º SP e Fábio Soladro 191º
+    SP; Comissão de Escrutínio: Félix Vieira Varejão Filho 66ºSP, Carlos Alberto Barboza 252º SP, Arnoldo Wilde 101º SP, Maurício
+    Freire Dias 150º SP, Vânia Ferrari 206º SP, Alexandro José Pimenta 241º SP, Fernando Faria de Oliveira 235º SP; Comissão
+    de Estilo: dispensada por ser opcional; Comissão de Assuntos Gerais: Victor Brotto Sguillaro 316º SP, Fabiano Kunert 55º
+    SP, Filipe Pereira Bassetto 81º SP, Mariana de Marchi 142º SP'
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: foi dispensada a leitura do documento e declarada aprovada sem quaisquer alterações
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Contas e balanço do exercício fiscal de 2017
+  decisao: as contas e balanço do exercício fiscal de 2017 foram aprovadas
+  votacao: 337 votos a favor, 3 votos contrários e nenhuma abstenção
+  pagina: 3
+  conferido: true
+- tema: Previsão Orçamentária para 2018/2019
+  decisao: a previsão orçamentária foi aprovada
+  votacao: 327 votos a favor, 13 abstenções e nenhum voto contrário
+  pagina: 4
+  conferido: true
+- tema: Relatório de Gestão 2017
+  decisao: foi aprovado por unanimidade
+  votacao: 325 votos a favor, nenhum contra e nenhuma abstenção
+  pagina: 5
+  conferido: true
+- tema: Inversão dos itens 8 e 9 da pauta
+  decisao: a inversão foi aprovada
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Apresentação e encaminhamento das proposições dos Assuntos Gerais
+  decisao: o parecer da Comissão de Assuntos Gerais é encaminhar as propostas à Diretoria Regional ou à Comissão Estatuinte,
+    conforme o caso
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Escolha da Cidade-Sede para a XXVI Reunião Ordinária da Assembleia Escoteira Regional e XVII Fórum Regional de Jovens
+    Líderes em 2019
+  decisao: foi aprovada por unanimidade a indicação da cidade de Ribeirão Pires
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: Permissão para participação de candidatos ausentes no processo eleitoral
+  decisao: a participação de candidatos ausentes no processo eleitoral foi aprovada
+  votacao: 238 votos a favor, 48 contrários e 14 abstenções
+  pagina: 12
+  conferido: true
+- tema: Aprovação das contas e balanço do exercício fiscal de 2017
+  decisao: as contas e balanço do exercício fiscal de 2017 foram aprovadas
+  votacao: 337 votos a favor, 3 votos contrários e nenhuma abstenção
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia
+  cargo: Presidente da mesa
+  eleito: Renato Wanderley Breneizer
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Vice-Presidente
+  eleito: Johan Albino Ribeiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Vice-Presidente
+  eleito: Juliano Ferreira Arcuri
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Secretário
+  eleito: Marcelo José Fassina
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Secretária
+  eleito: Harelline Belotti Perez
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Suplente
+  eleito: Lourival Nhoncanse Júnior
+  mandato: 2018-2019
+  pagina: 13
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Suplente
+  eleito: Luiz Antônio Augusto Monteiro
+  mandato: 2018-2019
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Roberlei Volpe Beneduzi
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Juliano Ferreira Arcuri
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rosemary Peres Motta de Oliveira
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Vânia Ferrari
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Marco Aurélio de Mello Castriani
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Harelline Belotti Perez
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Raphael de Taranto
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Euclides Hisatugo
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Filipe Pereira Bassetto
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ronaldo Engracia
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Lucas Basili Oya da Silva
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Júlia Geiling Cardoso Falconi
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rudner Lauterjung Queiroz
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Maria de Lourdes Santos Teijeira
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Sérgio Ferreira Teijeira
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Luiz Augusto de Paula Lima Zanotta
+  mandato: ''
+  pagina: 13
+  conferido: true
+numeros:
+- o_que: votos para Presidente da mesa
+  valor: Renato Wanderley Breneizer 128 votos, Juliano Ferreira Arcuri 126 votos, Gustavo Lima Soller 67 votos, totalizando
+    321 votos
+  pagina: 1
+  conferido: true
+- o_que: votos para aprovação das contas e balanço do exercício fiscal de 2017
+  valor: 337 votos a favor, 3 votos contrários e nenhuma abstenção
+  pagina: 3
+  conferido: true
+- o_que: votos para aprovação da previsão orçamentária para 2018/2019
+  valor: 327 votos a favor, 13 abstenções e nenhum voto contrário
+  pagina: 4
+  conferido: true
+- o_que: votos para aprovação do relatório de gestão 2017
+  valor: 325 votos a favor, nenhum contra e nenhuma abstenção
+  pagina: 5
+  conferido: true
+- o_que: delegados credenciados até 18h30min do dia 17
+  valor: 385 delegados
+  pagina: 6
+  conferido: true
+- o_que: delegados credenciados atualizados
+  valor: 404 delegados
+  pagina: 12
+  conferido: false
+- o_que: votos para permissão de participação de candidatos ausentes
+  valor: 238 votos a favor, 48 contrários e 14 abstenções
+  pagina: 12
+  conferido: true
+- o_que: votos para suplentes da Comissão Fiscal Regional
+  valor: Lourival Nhoncanse Júnior 198 votos, Luiz Antônio Augusto Monteiro 145 votos, 8 votos nulos
+  pagina: 13
+  conferido: true
+- o_que: votos para delegados regionais à Assembleia Nacional
+  valor: 356 votos, 3 nulos, com detalhamento de votos por candidato
+  pagina: 13
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 51455940e649cf2ffe4d3910cca07800d5b24059392981de0ae1b168d2585fb7
+revisado: null

@@ -1,0 +1,98 @@
+doc_key: ata-conselho-consultivo-20-abr-2026-assinado-1
+reuniao:
+  tipo: ordinaria
+  data: '2026-04-20'
+  local: UNISALES - Centro Universitário Salesiano - Avenida Vitória, 950 - Forte São João - Vitória/Espírito Santo
+deliberacoes:
+- tema: aprovação da ata da reunião anterior
+  decisao: a ata da reunião anterior aprovada com ajustes
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: recomendação para revisão do calendário institucional
+  decisao: a sugestão de CRISTINE é aprovada por unanimidade dos presentes
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+- tema: encaminhamento ao Conselho de Administração Nacional sobre certiûcação da Região Escoteira do Rio de Janeiro
+  decisao: A proposta foi submetida à apreciação dos presentes, não havendo manifestações contrárias
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: apoio à revisão estatutária e fortalecimento do Conselho Consultivo
+  decisao: foi registrado apoio de representantes regionais à proposta de encaminhamento e à necessidade de fortalecimento
+    do Conselho Consultivo como instância de proposição e aprimoramento institucional
+  votacao: ''
+  pagina: 9
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: total de associados em 2025
+  valor: '93.674'
+  pagina: 3
+  conferido: false
+- o_que: associados no primeiro trimestre de 2025
+  valor: '25.223'
+  pagina: 3
+  conferido: false
+- o_que: associados no primeiro trimestre de 2026
+  valor: '24.066'
+  pagina: 3
+  conferido: false
+- o_que: jovens em 2025
+  valor: '15.800'
+  pagina: 3
+  conferido: false
+- o_que: jovens em 2026
+  valor: '15.400'
+  pagina: 3
+  conferido: false
+- o_que: adultos em 2025
+  valor: '9.386'
+  pagina: 3
+  conferido: false
+- o_que: adultos em 2026
+  valor: '8.576'
+  pagina: 3
+  conferido: false
+- o_que: fundo da Ordem da Flor de Lis
+  valor: R$700 mil
+  pagina: 3
+  conferido: true
+- o_que: valor do edital da Ordem da Flor de Lis
+  valor: R$40 mil
+  pagina: 3
+  conferido: true
+- o_que: participantes inscritos no Seminário Nacional de Diálogo Inter-religioso
+  valor: '33'
+  pagina: 7
+  conferido: true
+- o_que: pioneiros inscritos no 2º Moot Pioneiro
+  valor: '173'
+  pagina: 6
+  conferido: true
+- o_que: membros de equipe de serviço no 2º Moot Pioneiro
+  valor: '29'
+  pagina: 6
+  conferido: true
+- o_que: coordenadores no 2º Moot Pioneiro
+  valor: '36'
+  pagina: 6
+  conferido: true
+- o_que: total de participantes no 2º Moot Pioneiro
+  valor: '236'
+  pagina: 6
+  conferido: true
+- o_que: atendimentos realizados pelos canais oficiais no primeiro trimestre
+  valor: '2.254'
+  pagina: 4
+  conferido: false
+- o_que: assinaturas eletrônicas realizadas
+  valor: '5.552'
+  pagina: 5
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 84e6ab573b5680db91b7d87de21f0b3a8354ff4e0510dddf252334b0d0443042
+revisado: null

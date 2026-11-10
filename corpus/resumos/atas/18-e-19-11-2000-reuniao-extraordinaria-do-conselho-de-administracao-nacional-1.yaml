@@ -1,0 +1,84 @@
+doc_key: 18-e-19-11-2000-reuniao-extraordinaria-do-conselho-de-administracao-nacional-1
+reuniao:
+  tipo: extraordinaria
+  data: '2000-11-18'
+  local: Escritório Nacional da UEB, Curitiba/PR
+deliberacoes:
+- tema: aprovação da ata da 29ª Reunião do Conselho de Administração
+  decisao: Posta em votação a proposta, decidiu-se que a revisão da ata da reunião anterior será feita na reunião ordinária
+    de fevereiro.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Proposta de Resolução 012/2000
+  decisao: A proposta de resolução foi analisada e foram feitas as alterações devidas, restando aprovada conforme texto anexo.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Proposta de Resolução 013/2000
+  decisao: A proposta de resolução foi analisada e foram feitas as alterações devidas, restando aprovada conforme texto anexo.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: credenciais para Escotistas sem nível básico de formação
+  decisao: a questão foi decidida indicando na credencial este Escotista como “ESCOTISTA EM FORMAÇÃO”. Quanto aos pais que
+    optarem por recebem a credencial. nesta será indicado sua categoria como “CONTRIBUINTE-RESPONSÁVEL”
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Projeto Educativo da UEB
+  decisao: O CAN aprova a proposta e determina que este documento seja também disponibilizado na Internet para reprodução
+    independente.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Processo Disciplinar GE Guia Lopes
+  decisao: O CAN decidiu por discutir o parecer da Comissão Disciplinar na reunião de fevereiro.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Marcas e Patentes da UEB
+  decisao: O Secretário Geral informa que já foi concluído o trabalho de busca e compilação das marcas e patentes de propriedade
+    da UE, sendo que existem “exigências” a serem cumpridas e que o Escritório Nacional estará dando o acompanhamento devido.
+    Este documento será disponibilizado na Internet e distribuído a todas as Regiões Escoteiras.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Orçamento 2001 - UEB e LEN
+  decisao: os documentos foram aprovados por unanimidade.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: avocação de processo disciplinar da Diretoria Regional de São Paulo
+  decisao: Decidido por 10 votos à favor, 02 contra, 01 ausência e 01 abstenção e consequentemente aprovada a avocação do
+    processo pelo Nível Nacional.
+  votacao: 10 votos à favor, 02 contra, 01 ausência e 01 abstenção
+  pagina: 2
+  conferido: true
+- tema: escolha de nome para a sede nacional
+  decisao: Fica decidido que esta questão será avaliada na próxima reunião de fevereiro de 2001.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: estudo para realização do III Jamboree Nacional no Nordeste
+  decisao: o CAN solicita o encaminhamento de um projeto completo para apresentação em maio de 2001, na reunião do Conselho.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: acompanhar prestação de contas da Região de Pernambuco
+  decisao: O CAN determina que o executivo do Nordeste acompanhe o caso de perto e que o Escritório Nacional encaminhe à Região
+    de PE ofício pedindo informações quanto a esta prestação de contas.
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: cheque devolvido a Modesto
+  valor: US$ 35.000,00
+  pagina: 2
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 263cd0862da90ee4a16c048c9d64d095c76c837fc58b451a37aa3d1791687e6b
+revisado: null

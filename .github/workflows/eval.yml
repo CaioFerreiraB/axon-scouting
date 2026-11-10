@@ -17,6 +17,7 @@ on:
       - "src/axon_scouting/context/**"
       - "src/axon_scouting/eval/**"
       - "src/axon_scouting/pack.py"
+      - "src/axon_scouting/data/**"
       - "eval/**"
       - "pyproject.toml"
       - "uv.lock"
@@ -30,6 +31,7 @@ on:
       - "src/axon_scouting/context/**"
       - "src/axon_scouting/eval/**"
       - "src/axon_scouting/pack.py"
+      - "src/axon_scouting/data/**"
       - "eval/**"
       - "pyproject.toml"
       - "uv.lock"
@@ -98,6 +100,18 @@ jobs:
         run: >-
           uv run --group platform axon eval run
           --golden eval/acervo.yaml --baseline eval/acervo-baseline.json --report acervo-report.json
+      # As perguntas de síntese, cuja resposta está espalhada pelas atas (ADR-062): mede a busca de resumos.
+      - name: Conjunto de síntese contra a linha de base
+        env:
+          AXON_PROFILE: test
+          AXON_PACKS_FILE: eval/packs.yaml
+          AXON_ASSISTANTS_FILE: eval/assistants.yaml
+          AXON_RAG_CANDIDATES: "20"
+          AXON_RAG_PASSAGES: "20"
+          AXON_TOOL_MAX_RESPONSE_BYTES: "65536"
+        run: >-
+          uv run --group platform axon eval run
+          --golden eval/sintese.yaml --baseline eval/sintese-baseline.json --report sintese-report.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -106,4 +120,5 @@ jobs:
             report.json
             regression-report.json
             acervo-report.json
+            sintese-report.json
           if-no-files-found: ignore

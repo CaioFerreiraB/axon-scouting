@@ -1,0 +1,40 @@
+doc_key: ata-114a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-06-24'
+  local: videochamada pelo Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: Ata da 113ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 113ª Reunião Ordinária do Conselho de Administração Nacional, realizada nos dias 29 e 30
+    de abril de 2023, de maneira presencial, na cidade de São Paulo. Aprovada com 11 votos a favor (ALDENISE, NETO, CLAUCIO,
+    DANIELA, FÁBIO, ILKA, KARINA, LUCIANO, RENATO, SÉRIS e SIMONI) e abstenções por falta de pronunciamento (ALEXANDRE, DANIEL
+    e LUIZ).
+  votacao: 11 votos a favor e abstenções
+  pagina: 2
+  conferido: true
+- tema: Agenda provisória da 114ª Reunião Ordinária do CAN
+  decisao: Às 08h08min, DANIELA coloca em deliberação a agenda provisória na qual é aprovada por unanimidade tornando-se agenda
+    definitiva da 114ª Reunião Ordinária do CAN.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Ratificação das novas Coordenações das Comissões Permanentes e dos Grupos de Trabalho do CAN
+  decisao: DANIELA faz a ratificação das CPs e GTs que se reuniram e definiram a nova coordenação. CPO - Claucio da Silva
+    Mendes; CPPI - Daniel Campos de Souza; CPGI - Daniela de Oliveira Rodrigues Gomes; CPPE - Ilka Denise Rossetto Gallego
+    Campos; CPA - Claucio da Silva Mendes; CPPIns - Renato Wanderley Breneizer; CPEJ - Amanda Broholka Martins; CPRC - Aldenise
+    Cordeiro Santos; GTDI - Aldenise Cordeiro Santos e GTRIG - Ilka Denise Rossetto Gallego Campos. As coordenações supracitadas
+    são aprovadas por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos a favor da aprovação da ata da 113ª Reunião Ordinária do CAN
+  valor: 11 votos a favor
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8131be73363bcc4929b02d902d35607271882d6f835b612c90cf8d8d79a249bb
+revisado: null

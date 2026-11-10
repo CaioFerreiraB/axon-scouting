@@ -1,0 +1,180 @@
+# Conjunto de síntese: perguntas cuja resposta está espalhada por várias atas (Fase G do relatório "Diretoria
+# Regional", 2026-11-09; plano da busca global por fichas de ata e linha do tempo).
+#
+# Escrito antes de qualquer mudança, para medir a linha de base. Cada fato de `extra.facts` foi copiado do texto das
+# atas da Assembleia Regional e do Conselho Consultivo Regional de São Paulo e conferido contra o artefato do índice
+# (`tests/eval/test_regression.py`). Um fato pode ter alternativas: a redação da ata e a forma essencial do mesmo
+# conteúdo (a cidade, o período), para os resumos, que não copiam a frase inteira, contarem quando trazem a informação.
+# As duas medições (sem e com os resumos) usam os mesmos fatos. Os grupos:
+# - `eleicoes`: quem foi eleito, que chapas concorreram, os mandatos;
+# - `numeros`: o que se conta ao longo dos anos (delegados credenciados e eleitos);
+# - `pauta`: o que os órgãos discutiram ou decidiram sobre um tema ao longo do tempo;
+# - `locais`: onde os órgãos se reuniram.
+# `extra.split` separa `desenvolvimento` (o que se lê para diagnosticar) de `controle` (o que só se mede).
+version: 1
+name: scouting-sintese
+assistant: scouting
+items:
+  # --- eleicoes ----------------------------------------------------------------------------------------------------
+  - id: presidentes-regionais-desde-2016
+    question: "Quem foram os diretores-presidentes eleitos para a Diretoria Regional de São Paulo desde 2016?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: >-
+      Jabs Amilton Dutra Costa (eleito em 2016), Alexandre Banchi (mandato 2019–2022) e Rodrigo Ramos de Freitas
+      (mandatos 2022–2025 e 2025–2028), pelas atas da Assembleia Regional.
+    extra:
+      group: eleicoes
+      split: desenvolvimento
+      facts:
+        - "Jabs Amilton Dutra Costa (Diretor Presidente)"
+        - "Alexandre Banchi (Diretor-Presidente)"
+        - "Rodrigo Ramos de Freitas (Diretor Presidente)"
+
+  - id: mandatos-da-diretoria-regional
+    question: "Quais foram os períodos de mandato das três últimas Diretorias Regionais de São Paulo?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: "30/03/2019 a 30/03/2022, 31/03/2022 a 31/03/2025 e 29/03/2025 a 28/03/2028."
+    extra:
+      group: eleicoes
+      split: desenvolvimento
+      facts:
+        - ["com mandato de 30 de março de 2019 a 30 de março de 2022", "30 de março de 2019 a 30 de março de 2022"]
+        - ["com mandato de 31 de março de 2022 a 31 de março de 2025", "31 de março de 2022 a 31 de março de 2025"]
+        - ["com mandato de 29 de março de 2025 a 28 de março de 2028", "29 de março de 2025 a 28 de março de 2028"]
+
+  - id: chapas-de-2016
+    question: "Que chapas disputaram a Diretoria Regional de São Paulo na assembleia de 2016?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: "#façapartedaevolução (Jabs Costa), a eleita, e Por Amor a São Paulo (Carlos Eugênio Bakos)."
+    extra:
+      group: eleicoes
+      split: controle
+      facts:
+        - ["chapa a se apresentar é a #façapartedaevolução", "#façapartedaevolução"]
+        - ["chapa a se apresentar é a Por Amor a São Paulo", "Por Amor a São Paulo"]
+
+  - id: presidente-reeleito
+    question: "O diretor-presidente regional eleito em 2022 foi reeleito na assembleia seguinte?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: >-
+      Sim: Rodrigo Ramos de Freitas, eleito para 2022–2025, encabeça a chapa eleita para 2025–2028.
+    extra:
+      group: eleicoes
+      split: controle
+      facts:
+        - "composta por Rodrigo Ramos de Freitas (Diretor Presidente)"
+        - "composta por: Rodrigo Ramos De Freitas, Diretor-Presidente"
+
+  # --- numeros -----------------------------------------------------------------------------------------------------
+  - id: delegados-credenciados-2019-2025
+    question: "Como evoluiu o número de delegados credenciados nas Assembleias Regionais de São Paulo de 2019 a 2025?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: "549 em 2019, 556 em 2021 e 576 em 2025."
+    extra:
+      group: numeros
+      split: desenvolvimento
+      facts:
+        - "549 delegados credenciados"
+        - "556 delegados credenciados"
+        - "576 delegados credenciados na Assembleia"
+
+  - id: delegados-a-assembleia-nacional
+    question: >-
+      Quantos delegados à Assembleia Nacional a Assembleia Regional de São Paulo elegeu em 2022, 2024 e 2025?
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: "18 delegados e 9 suplentes em 2022; 24 delegados e dois suplentes em 2024; 24 em 2025."
+    extra:
+      group: numeros
+      split: controle
+      facts:
+        - "18 delegados e 9 suplentes"
+        - "24 delegados e dois suplentes"
+        - "24 delegados eleitos pela Assembleia Regional"
+
+  # --- pauta -------------------------------------------------------------------------------------------------------
+  - id: alteracoes-do-regulamento-regional
+    question: "O que foi discutido ou decidido sobre o Regulamento Regional de São Paulo nas atas desde 2014?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: >-
+      Em 2014 a assembleia aprovou nova redação; em 2017 o Conselho Consultivo apresentou a minuta das alterações
+      após consulta pública; em 2024 se anunciou a alteração de 2025 com iniciativas de envolvimento juvenil.
+    extra:
+      group: pauta
+      split: desenvolvimento
+      facts:
+        - "aprovada a nova redação do Regulamento Regional"
+        - "minuta com as propostas de alterações do Regulamento Regional"
+        - "alteração do Regulamento Regional no ano de 2025"
+
+  - id: plano-das-chapas-2019
+    question: >-
+      O que o Conselho Consultivo Regional pediu às chapas candidatas à Diretoria Regional para a gestão 2019-2022?
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: "Que apresentassem um plano de ação com base no Planejamento Estratégico construído coletivamente."
+    extra:
+      group: pauta
+      split: desenvolvimento
+      facts:
+        - "apresentem um plano de ação com base no Planejamento Estratégico construído coletivamente"
+
+  - id: novo-regulamento-2001
+    question: "Em que assembleia foi aprovado um novo Regulamento Regional de São Paulo nos anos 2000?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: "Na assembleia ordinária de setembro de 2001."
+    extra:
+      group: pauta
+      split: controle
+      facts:
+        - "aprovado o novo Regulamento Regional"
+
+  - id: quorum-reforma-regulamento
+    question: >-
+      Que quórum a Assembleia Regional de São Paulo decidiu exigir para analisar reformas do Estatuto e do Regulamento
+      Regional?
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: "Mais de um terço dos membros da Assembleia Escoteira Regional presentes (assembleia de 2018)."
+    extra:
+      group: pauta
+      split: controle
+      facts:
+        - ["Regulamento Regional só serão analisadas se se fizerem presentes mais de um terço dos membros",
+           "mais de um terço dos membros"]
+
+  # --- locais ------------------------------------------------------------------------------------------------------
+  - id: conselho-consultivo-2017-2019
+    question: "Onde se reuniu o Conselho Consultivo Regional de São Paulo entre 2017 e 2019?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: >-
+      Centro Escoteiro Jaraguá, FECAP (São Paulo), Tiro de Guerra de Piracicaba, UFSCar (São Carlos) e CECAPE (São
+      Caetano do Sul).
+    extra:
+      group: locais
+      split: desenvolvimento
+      facts:
+        - "Centro Escoteiro Jaraguá"
+        - "Tiro de Guerra de Piracicaba"
+        - "Universidade Federal de São Carlos"
+        - "CECAPE"
+
+  - id: conselho-consultivo-2014-2015
+    question: "Em que cidades o Conselho Consultivo Regional de São Paulo se reuniu em 2014 e 2015?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: "Bauru (2014), Sorocaba e Guarulhos (2015)."
+    extra:
+      group: locais
+      split: controle
+      facts:
+        - ["na cidade de Bauru/SP", "Bauru/SP"]
+        - ["na cidade de Sorocaba/SP", "Sorocaba/SP"]
+        - ["em Guarulhos/SP", "Guarulhos/SP"]
+
+  - id: conselho-consultivo-2023-2024
+    question: "Onde aconteceram as reuniões do Conselho Consultivo Regional de São Paulo em 2023 e 2024?"
+    reference_time: "2026-11-09T12:00:00-03:00"
+    reference_answer: "Clube Mogiano (Mogi Mirim), SESI Campinas e Centro Escoteiro Jaraguá."
+    extra:
+      group: locais
+      split: controle
+      facts:
+        - "Mogi Mirim/SP"
+        - "SESI Campinas"

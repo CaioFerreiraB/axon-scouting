@@ -1,0 +1,35 @@
+doc_key: ata-conselho-consultivo-22-e-23-out-2022-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-10-22'
+  local: Escoteiros do DF em Brasília – DF
+deliberacoes:
+- tema: Estudo sobre Comissão Fiscal das UEL's
+  decisao: Por unanimidade (2 votos contrários Tocantins e Piauí) fica decidido realizar o encaminhamento de um estudo de
+    viabilidade referente a necessidade ou não da Comissão Fiscal no que tange à expedição de certificado para funcionamento
+    de uma UEL, visto que grupos escoteiros menores têm problemas financeiros.
+  votacao: unanimidade (2 votos contrários)
+  pagina: 8
+  conferido: true
+- tema: Encaminhamento sobre Comissão Fiscal das UEL's
+  decisao: O Conselho Consultivo pede ao CAN um estudo de viabilidade de não se ter mais a exigência da obrigatoriedade dos
+    3 membros da Comissão Fiscal para a emissão dos certificados de funcionamento das UEL’s visto a dificuldade que algumas
+    UEL’s têm quanto a essa obrigatoriedade.
+  votacao: ''
+  pagina: 8
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: associados atuais
+  valor: '77.187'
+  pagina: 2
+  conferido: false
+- o_que: meta de associados até 2025
+  valor: '150.000'
+  pagina: 2
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: b6e388f7d5f67c580d77b3c18dd4ee7979b3deb939d2c5f6ece207d1845b8223
+revisado: null

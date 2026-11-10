@@ -1,0 +1,79 @@
+doc_key: ata-conselho-consultivo-18-e-19-de-outubro-de-2025-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-10-18'
+  local: Centro Escoteiro Jaraguá, situado na Rua Adriano Reys, nº 1, Vila Jaraguá, São Paulo/SP
+deliberacoes:
+- tema: Eleição do Coordenador do Conselho Consultivo
+  decisao: SARAH manifestou-se candidata ao cargo de Coordenadora do Conselho Consultivo, sendo aprovada por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: Considerando que a ata havia sido previamente disponibilizada aos Presidentes Regionais, SARAH sugeriu a dispensa
+    da leitura e submeteu a ata à deliberação, sendo esta aprovada por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Encaminhamento ao CAN sobre flexibilização da Regra 057 do POR para Ramo Filhotes
+  decisao: Às 11h30min, SARAH realiza o encaminhamento e a recomendação ao CAN dessa demanda, sendo o encaminhamento aprovado
+    por unanimidade pelos presentes.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Discussão sobre a Resolução CAN 07/2025
+  decisao: Após o debate, deliberou-se pela submissão do tema para discussão presencial na Reunião Ordinária do Conselho de
+    Administração Nacional, prevista para o mês de novembro.
+  votacao: ''
+  pagina: 10
+  conferido: true
+- tema: Encerramento da Reunião Ordinária do Conselho Consultivo
+  decisao: SARAH declarou oficialmente encerrada a Reunião Ordinária do Conselho Consultivo.
+  votacao: ''
+  pagina: 14
+  conferido: true
+eleicoes:
+- orgao: Conselho Consultivo
+  cargo: Coordenadora do Conselho Consultivo
+  eleito: SARAH
+  mandato: até a próxima reunião presencial na Assembleia Nacional
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: Participantes na reunião
+  valor: não especificado, mas listados representantes de 24 estados e membros da Diretoria Executiva Nacional e convidados
+  pagina: 1
+  conferido: false
+- o_que: Número de registros vigentes
+  valor: '93.068'
+  pagina: 9
+  conferido: false
+- o_que: Número de distintivos enviados no período de janeiro a setembro de 2025
+  valor: '131.000'
+  pagina: 9
+  conferido: false
+- o_que: Número de novas Unidades Escoteiras Locais abertas em 2025 até setembro
+  valor: '42'
+  pagina: 9
+  conferido: true
+- o_que: Número de municípios com UELs ativas
+  valor: '710'
+  pagina: 9
+  conferido: true
+- o_que: Número de UELs ativas e regularizadas
+  valor: '1.519'
+  pagina: 9
+  conferido: false
+- o_que: Inscritos no contingente brasileiro para JamCam 2025
+  valor: '272'
+  pagina: 8
+  conferido: true
+- o_que: Participação em eventos EducAção Escoteira, Mutirão Nacional de Ação Ecológica e Dia do Amigo
+  valor: 26 mil, 37 mil e 21 mil respectivamente
+  pagina: 9
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 35125e2d76392612193df0a161e0b347391d2ca39207d4f25a89a1fe55312535
+revisado: null

@@ -1,0 +1,201 @@
+doc_key: sp-2016-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2016-03-11'
+  local: São Caetano do Sul
+deliberacoes:
+- tema: Eleição da Mesa do Fórum
+  decisao: Ivan Valente se candidata e é eleito por aclamação, assim conduzindo o Fórum. Renata Andrade se candidata a Vice,
+    Michael Oliveira a 1º Secretário e Laura Sanctis a 2ª Secretaria, assim são eleitos por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Aprovação da Ata XIII Fórum Regional de Jovens Líderes 2015
+  decisao: Presidente pergunta se tem alguém contra e todos dizem que não e é aprovada por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Alteração da pauta
+  decisao: Fórum aprova a alteração da pauta
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Criação de GT para levar mudanças nos parâmetros ao fórum nacional
+  decisao: Vice pergunta se há alguém contra, Fórum aprova por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação das Diretrizes da Diretoria Jovem com alterações e criação de GT
+  decisao: Aprovadas as Diretrizes com as alterações e criação do GT.
+  votacao: maioria
+  pagina: 6
+  conferido: true
+- tema: Pedido de encaminhamento de alteração do POR ao CAN sobre o saiaço
+  decisao: Pedido de encaminhamento de alteração do POR ao CAN sobre a saia não ser apenas vestimenta feminina – aprovado
+    por aclamação
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: Criação de GT para levar carta sobre saiaço ao Fórum Nacional
+  decisao: Criação de um GT para levar ao Fórum Nacional uma carta sobre o assunto – aprovado com 48 votos
+  votacao: 48 votos a favor
+  pagina: 7
+  conferido: true
+- tema: Aprovação do Projeto “Inserção Juvenil na Região de São Paulo” para apresentação posterior
+  decisao: Apresentação da Natália Freitas sobre seu Projeto “Inserção Juvenil na Região de São Paulo” a ser levado ao Núcleo
+    para posterior apresentação à Região – aprovado por aclamação
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: Aprovação para o Fórum continuar do lado de fora do prédio municipal devido ao horário
+  decisao: Aprovação por aclamação para o Fórum continuar do lado de fora do prédio municipal, devido ao horário
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: Aprovação da Carta de Posicionamento RNJL-SP “Diversidade que nos Unem” para Assembleia Regional
+  decisao: Carta aprovada por aclamação para ser levada a Assembleia Regional.
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+- tema: 'Alteração na Carta de Posicionamento: substituir “opção sexual” por “orientação sexual”'
+  decisao: 'Sugestão de alteração por Raissa Ribeiro - Ebenezer 44/SP: ao invés de “opção sexual”, colocar “orientação sexual”.
+    Aprovada por aclamação.'
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+- tema: Criação de programa de tutores para a RNJL SP
+  decisao: sugiro a criação de um programa de tutores para a RNJL SP – aprovado por aclamação.
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+eleicoes:
+- orgao: Mesa do Fórum Regional de Jovens Líderes
+  cargo: Presidente
+  eleito: Ivan Valente – GE TAMANDARE
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa do Fórum Regional de Jovens Líderes
+  cargo: Vice-Presidente
+  eleito: Renata Andrade – GE SANTO AMARO
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa do Fórum Regional de Jovens Líderes
+  cargo: 1º Secretário
+  eleito: Michael Oliveira – GE IPANEMA
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa do Fórum Regional de Jovens Líderes
+  cargo: 2º Secretário
+  eleito: Laura Sanctis – GE SÃO PAULO
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes - SP
+  cargo: Membro
+  eleito: Fernando Jorge Silveira
+  mandato: 1 ano
+  pagina: 6
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes - SP
+  cargo: Membro
+  eleito: Vinicius Botelho
+  mandato: 2 anos
+  pagina: 6
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes - SP
+  cargo: Membro
+  eleito: Raphael de Taranto
+  mandato: 2 anos
+  pagina: 6
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes - SP
+  cargo: Suplente
+  eleito: Michael Pereira de Oliveira
+  mandato: 1 ano
+  pagina: 6
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes - SP
+  cargo: Suplente
+  eleito: Fernando Sanches de Oliveira
+  mandato: 2 anos
+  pagina: 6
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes - SP
+  cargo: Suplente
+  eleito: Ivan Benigno
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2016
+  cargo: Membro
+  eleito: Nathalia Lourenço
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2016
+  cargo: Membro
+  eleito: Yara Lopes
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2016
+  cargo: Membro
+  eleito: Fernando Sanches
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2016
+  cargo: 1ª suplente
+  eleito: Mariana de Marchi
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2016
+  cargo: 2º suplente
+  eleito: Ivan Valente da Costa
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Fórum Nacional de Jovens Líderes 2016
+  cargo: 3º suplente
+  eleito: Michael Pereira de Oliveira
+  mandato: ''
+  pagina: 6
+  conferido: true
+numeros:
+- o_que: Jovens inscritos no Fórum
+  valor: '150'
+  pagina: 3
+  conferido: true
+- o_que: Votos para Fernando Jorge Silveira
+  valor: '33'
+  pagina: 6
+  conferido: true
+- o_que: Votos para Michael Pereira de Oliveira
+  valor: '30'
+  pagina: 6
+  conferido: true
+- o_que: Abstenções na eleição do Núcleo
+  valor: '2'
+  pagina: 6
+  conferido: true
+- o_que: Votos para Vinicius Botelho
+  valor: '33'
+  pagina: 6
+  conferido: true
+- o_que: Votos para Fernando Sanches de Oliveira
+  valor: '19'
+  pagina: 6
+  conferido: true
+- o_que: Abstenções na eleição do Núcleo
+  valor: '13'
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: acbed693dbbfa7757a27873fd4ef62c689cc5e2535f1ade695befa9b567e018d
+revisado: null

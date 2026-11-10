@@ -1,0 +1,13 @@
+doc_key: sp-2022-03-05-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-03-05'
+  local: São Paulo
+deliberacoes: []
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3e8eeb49fa3bee522be68d75cd84401646d77f277084a87064cceb396387c6c0
+revisado: null

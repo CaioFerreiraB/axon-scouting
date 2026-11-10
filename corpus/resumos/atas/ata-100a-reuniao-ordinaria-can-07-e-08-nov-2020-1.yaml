@@ -1,0 +1,57 @@
+doc_key: ata-100a-reuniao-ordinaria-can-07-e-08-nov-2020-1
+reuniao:
+  tipo: ordinaria
+  data: '2020-11-07'
+  local: videochamada pelo Zoom
+deliberacoes:
+- tema: Criação da Comissão Permanente de Envolvimento Juvenil
+  decisao: foi aprovada por unanimidade dos presentes a criação da Comissão Permanente de Envolvimento Juvenil, com abstenção
+    de ADRIANO, MUSSIO e RENATO, por não estarem presentes no momento da votação
+  votacao: unanimidade dos presentes
+  pagina: 11
+  conferido: true
+- tema: Retorno da Região Tocantins à Área Geográfica Centro-Oeste
+  decisao: foi aprovada por unanimidade dos presentes o retorno da Região TO à Área Geográfica Centro-Oeste, com abstenção
+    de ADRIANO e RENATO, por não estarem presentes no momento da votação
+  votacao: unanimidade dos presentes
+  pagina: 16
+  conferido: true
+- tema: Existência do Comitê de Gestão de Riscos vinculado ao CAN
+  decisao: 'votam por existir o Comitê de Gestão de Gestão de Riscos vinculado ao CAN, tal como proposto: ROMEU, MUSSIO, LEONARDO,
+    DAYANNA, MAGU e ISABELLY. Votam pelo CAN assumir as responsabilidades que seriam do Comitê de Gestão de Riscos: MANIQUE,
+    ADRIANO, SARAH, ROBSON, CHRISTIAN e THIAGO. Com abstenção de MARK e RENATO, por não estarem presentes no momento da votação.
+    Empatada a votação, ISABELLY, apesar de ter a prerrogativa do desempate por ser a presidente, entende que devemos discutir
+    melhor o assunto para quando for ser votada a política. ADRIANO muda o seu voto, votando agora pela criação do Comitê
+    de Gestão de Riscos vinculado ao CAN. MARK adentra a reunião e vota pela criação do Comitê de Gestão de Riscos vinculado
+    ao CAN.'
+  votacao: votação empatada, depois decisão final pela criação do Comitê
+  pagina: 19
+  conferido: true
+- tema: Voto de pesar pelo falecimento do ex-presidente da Região Escoteira do RS, Ronei Castilhos
+  decisao: É aprovado por unanimidade dos presentes o voto de pesar, conforme sugerido pelo ROMEU
+  votacao: unanimidade dos presentes
+  pagina: 33
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: associados atuais
+  valor: 77 mil
+  pagina: 27
+  conferido: true
+- o_que: associados que fizeram renovações até abril
+  valor: 64 mil
+  pagina: 27
+  conferido: true
+- o_que: associados contribuintes projetados para 2021
+  valor: 80 mil
+  pagina: 28
+  conferido: true
+- o_que: UELs que não realizaram nenhum registro em 2020
+  valor: '155'
+  pagina: 29
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 34c3d3038ef22a2a09656416d3fb854f198272bf81ce172072f83a8b003479e6
+revisado: null

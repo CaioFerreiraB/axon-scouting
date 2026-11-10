@@ -1,0 +1,212 @@
+doc_key: 9a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-15-e-16-nov-2002-1
+reuniao:
+  tipo: ordinaria
+  data: '2002-11-15'
+  local: Ritz Plaza Hotel Ltda., Avenida Rio Branco, 2000, Juiz de Fora - MG
+deliberacoes:
+- tema: eleição da mesa diretora
+  decisao: eleição e posse do Presidente, dois Vice-presidentes e dois Secretários para compor a mesa diretora dos trabalhos
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: homologação das comissões assessoradas
+  decisao: homologação das Comissões Assessoras — Comissão de Credenciamento, Comissão Eleitoral, Comissão de Escrutínio e
+    Comissão de Assuntos Gerais
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: recurso em medida disciplinar na Região do Distrito Federal
+  decisao: foi aprovado que os integrantes da Comissão fizessem apresentação sintética das peças, e não sua leitura, para
+    encaminhar a votação na segunda sessão plenária desta Assembléia
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: relatório de atividades e balanço anual de 2001
+  decisao: aprovado por unanimidade o Relatório Anual e as contas do XI Jamboree Panamericano / 2001; aprovadas, com três
+    abstenções as Demonstrações Financeiras da UEB, juntamente com o parecer da Comissão Consultiva constituída pela 8.o Assembléia
+    Nacional e o parecer dos Auditores In Moreira & Associados, com observações
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: relatório anual e balanço da Loja Escoteira Nacional de 2001
+  decisao: 'Relatório e o Balanço foram aprovados, com uma abstenção, e as seguintes observações: corrigir a data de encerramento
+    do Balanço — 31 de dezembro de 2001; considerar no plano de ação do próximo exercício seus elevados custos administrativos'
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: eleição dos membros do Conselho de Administração Nacional
+  decisao: realizar a eleição dos doze candidatos inscritos; recomendar ao Conselho de Administração que os outros quatro
+    candidatos passem a fazer parte do Conselho como convidados, com direito a voz; recomendação aprovada por unanimidade
+    pela Assembléia Nacional
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: abertura solene
+  decisao: realizada a abertura solene da 9.o Assembléia Nacional no Cine Theatro Central, com composição da Mesa e apresentações
+  votacao: ''
+  pagina: 6
+  conferido: true
+- tema: entrega do Certificado de Qualidade Legal
+  decisao: entregues certificados às Regiões do Mato Grosso, Paraná e Rio Grande do Sul por terem cumprido o estabelecido
+    na Resolução CAN-003/2001
+  votacao: ''
+  pagina: 6
+  conferido: true
+- tema: condecorações e recompensas
+  decisao: concedidos Diplomas de Mérito Nacional a Fábio Rodrigo Conde (RJ), Guilherme Augusto Klingelfuss (PR), Paulo Ney
+    Ferreira da Silva (ES), à Prefeitura Municipal de Juiz de Fora - MG e ao Departamento Municipal de Limpeza Urbana - DEMLURB;
+    entregue carta de elogio à Região de Goiás e à Região Eriorana
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: eleição dos suplentes da Comissão de Ética e Disciplina Nacional
+  decisao: eleitos Adonai do Socorro Pongadilha, Álvaro Tavares Gomes de Souza (SP) e Paulo Roberto de Medeiros (PE) para
+    as três vagas com mandatos entre 1/1/2003 a 31/12/2003
+  votacao: ''
+  pagina: 8
+  conferido: true
+- tema: apreciação das recomendações dos seminários
+  decisao: recomendações aprovadas para atualização das diretrizes nacionais para adultos, inclusão de unidade didática sobre
+    Escotismo para Todos, realização de Assembléia Geral Extraordinária para adequar o Estatuto ao novo Código Civil, e aperfeiçoamento
+    da gestão regional
+  votacao: ''
+  pagina: 8
+  conferido: true
+- tema: escolha da Região-sede e Região-sede Alternativa para a 11.o Reunião Ordinária da Assembléia Nacional
+  decisao: inicialmente candidatas as Regiões da Bahia e de Santa Catarina
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: recurso interposto em medida disciplinar na Região do Distrito Federal por Zairo Ferreira Barros
+  decisao: aprovado o parecer da Região Escoteira do Distrito Federal que sugere a exclusão de Zairo Ferreira Barros do quadro
+    de sócios
+  votacao: sessenta e sete votos favoráveis, um contra e dezessete abstenções
+  pagina: 9
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: RUBEM TADEU CORDEIRO PERLINGEIRO (RJ)
+  mandato: até 31 de dezembro de 2003
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: JULIO AUGUSTO MENDES ERICEIRA (MA)
+  mandato: até 31 de dezembro de 2003
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: MARCEL HUGO (SC)
+  mandato: até 31 de dezembro de 2003
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: MARCOS VENÍCIO DE MATTOS CHAVES (SP)
+  mandato: até 31 de dezembro de 2003
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: IRINEU MUNIZ DE RESENDE NETO (PR)
+  mandato: até 31 de dezembro de 2003
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: ALEXANDRE MACHADO SILVA (CE)
+  mandato: até 31 de dezembro de 2004
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: FREDERICO AUGUSTO DE SIQUEIRA NEVES (MG)
+  mandato: até 31 de dezembro de 2004
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: MARCO AURÉLIO DE MELLO CASTRIANNI (SP)
+  mandato: até 31 de dezembro de 2004
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: MARCO AURÉLIO ROMEU FERNÁNDEZ (RS)
+  mandato: até 31 de dezembro de 2004
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: RUBEM SÚFFERT (DF)
+  mandato: até 31 de dezembro de 2004
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: DAVID CRUSIUS (RS)
+  mandato: até 31 de dezembro de 2005
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: FÁBIO RODRIGO CONDE (RJ)
+  mandato: até 31 de dezembro de 2005
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: GERALDINO FERREIRA MOREIRA (SP)
+  mandato: até 31 de dezembro de 2005
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: JOÃO BATISTA FIORINI THOMÉ (SC)
+  mandato: até 31 de dezembro de 2005
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro
+  eleito: PAULO SALAMUNI (PR)
+  mandato: até 31 de dezembro de 2005
+  pagina: 5
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: Suplente
+  eleito: ADONAI DO SOCORRO PONGADILHA
+  mandato: 1/1/2003 a 31/12/2003
+  pagina: 8
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: Suplente
+  eleito: ÁLVARO TAVARES GOMES DE SOUZA (SP)
+  mandato: 1/1/2003 a 31/12/2003
+  pagina: 8
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: Suplente
+  eleito: PAULO ROBERTO DE MEDEIROS (PE)
+  mandato: 1/1/2003 a 31/12/2003
+  pagina: 8
+  conferido: true
+numeros:
+- o_que: votos favoráveis para exclusão de Zairo Ferreira Barros
+  valor: '67'
+  pagina: 9
+  conferido: false
+- o_que: votos contra para exclusão de Zairo Ferreira Barros
+  valor: '1'
+  pagina: 9
+  conferido: true
+- o_que: abstenções na votação da exclusão de Zairo Ferreira Barros
+  valor: '17'
+  pagina: 9
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: ec90fe51af5d56f0b66ea06421e52088dad208f068bc4d5319ab6838007a923d
+revisado: null

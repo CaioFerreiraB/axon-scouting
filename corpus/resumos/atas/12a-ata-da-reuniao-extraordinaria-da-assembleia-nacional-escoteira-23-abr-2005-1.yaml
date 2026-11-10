@@ -1,0 +1,88 @@
+doc_key: 12a-ata-da-reuniao-extraordinaria-da-assembleia-nacional-escoteira-23-abr-2005-1
+reuniao:
+  tipo: extraordinaria
+  data: '2005-04-23'
+  local: Hotel Pralatur, sito a Av. Dom João Becker 222 - Praia dos Ingleses - Florianópolis/SC
+deliberacoes:
+- tema: Composição da mesa diretora
+  decisao: 'foi eleita e empossada a Mesa, conforme segue: Presidente: Baldur Oscar Schubert; Vice-presidentes: Rubem Tadeu
+    Cordeiro Perlingeiro e Donald Malschitzky; Secretárias: Maria Cristina Rutz Debiazio e Maria Terezinha Koneski Weiss.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Homologação das Comissões Assessoras
+  decisao: 'As comissões assessoras restaram constituídas da seguinte forma: COMISSÃO DE CREDENCIAMENTO - Mariovani Carsten
+    Cervi, Pedro Fabiano da Silva Souza auxiliados pelo Executivo Celso Ferreira Filho; COMISSÃO ELEITORAL - Dennys Rodrigues
+    Oliveira, Raphael Tostes e José Caetano de Brito Junior; COMISSÃO DE ESCRUTÍNIO - Siagrio Felipe Pinheiro, Francisca Souza
+    Carrer e Theodomiro Mascarenhas Rios Rodrigues auxiliados pelo Executivo Gino Bacchi; COMISSÃO DE ASSUNTOS GERAIS - Enrico
+    Nichetti, Alessandro Garcia Vieira e Miguel Cabistani; e COMISSÃO DE REDAÇÃO E ESTILO: Irineu Muniz de Resende Neto, Ilvia
+    Oliveira e Marcos Venício Mattos Chaves.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Deliberação sobre ata da reunião extraordinária de 15 e 16 de novembro de 2003
+  decisao: A proposta foi aprovada. Colocada a ata em discussão, a mesma foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Deliberação sobre ata da reunião extraordinária de 15 de novembro de 2004
+  decisao: A proposta foi aprovada. Colocada a ata em discussão, a mesma foi aprovada por 56 (cinquenta e seis) votos a favor,
+    tendo havido quatro abstenções e nenhum voto contrário.
+  votacao: 56 votos a favor, 4 abstenções, 0 contra
+  pagina: 2
+  conferido: true
+- tema: Alteração do estatuto da União dos Escoteiros do Brasil
+  decisao: Colocada em votação, a proposta sugerida foi aprovada. Foi apreciado o destaque apresentado ao Art. 2.o e o novo
+    texto do artigo aprovado por 67 (sessenta e sete) votos a favor, tendo havido 02 (duas) abstenções e nenhum voto contrário.
+    Foram apreciados os destaques apresentados ao Art. 5.o e o novo texto do artigo aprovado por 64 (sessenta e quatro) votos
+    a favor, tendo havido 03 (três) abstenções e nenhum voto contrário. Quanto ao Art. 6.o, foi aceita a recomendação do Sr.
+    Jorgino no sentido de se utilizar, nos documentos públicos da União dos Escoteiros do Brasil, nomes dos órgãos por extenso
+    ao invés de siglas, para facilitar o entendimento por parte de pessoas estranhas ao Movimento. Ainda quanto ao Art. 6.o,
+    em seu Parágrafo Unico (antigo Art. 64), foram apreciados os destaques apresentados e seu texto foi votado de forma separada.
+    O texto “Os limites geográficos das Regiões Escoteiras poderão ser alterados por decisão do Conselho de Administração
+    Nacional” foi aprovado por 64 (sessenta e quatro) votos a favor, tendo havido 05 (cinco) abstenções e 03 (três) votos
+    contrários. A proposta “... mediante deliberação das Assembléias Regionais envolvidas... rejeitado por 43 (sessenta e
+    quatro) votos, tendo havido 05 (cinco) ca 22 (vinte e dois) votos favoráveis o que resulta na manutenção da proposta fe
+    a originalmente “....OUvidas as Assembléias Regionais envolvidas...”. A discussão foi ampla e profunda acerca das alterações
+    e destaques propostos, tendo sido aprovadas as alterações no Estatuto da União dos Escoteiros do a que se encontra anexo,
+    por 69 (sessenta e nove) votos a favor, tendo havido 04 (duas) abstenções e nenhum voto contrário.
+  votacao: vários votos conforme artigo, no total 69 votos a favor, 4 abstenções, 0 contra
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Nacional Extraordinária
+  cargo: Presidente
+  eleito: Baldur Oscar Schubert
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional Extraordinária
+  cargo: Vice-presidente
+  eleito: Rubem Tadeu Cordeiro Perlingeiro
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional Extraordinária
+  cargo: Vice-presidente
+  eleito: Donald Malschitzky
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional Extraordinária
+  cargo: Secretária
+  eleito: Maria Cristina Rutz Debiazio
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional Extraordinária
+  cargo: Secretária
+  eleito: Maria Terezinha Koneski Weiss
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 3630b1ad6227c5f91a0999e9f71d7ac5fc57827a23c528957264fe6beb0c553a
+revisado: null

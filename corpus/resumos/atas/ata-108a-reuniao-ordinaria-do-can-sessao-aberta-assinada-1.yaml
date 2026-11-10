@@ -1,0 +1,54 @@
+doc_key: ata-108a-reuniao-ordinaria-do-can-sessao-aberta-assinada-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-06-25'
+  local: videochamada pelo Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: Atualização dos textos da Política Nacional de Programa Educativo e da Política Nacional de Adultos
+  decisao: Atualização dos textos da Política Nacional de Programa Educativo e da Política Nacional de Adultos no Movimento
+    Escoteiro, com base no Parecer de opinião favorável da Comissão Permanente de Políticas Institucionais. Aprovado com 13
+    votos a favor e 1 abstenção
+  votacao: 13 votos a favor, 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Ata da 107ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 107ª Reunião Ordinária do CAN realizada dia 21/04/2022 aprovada
+  votacao: 12 votos a favor, 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Relatório final e parecer do Grupo de Trabalho de Estudos sobre o Castorismo
+  decisao: Relatório final e parecer com as recomendações do Grupo de Trabalho de Estudos sobre o Castorismo aprovado por
+    unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Resolução que instaura intervenção na Região Escoteira do Tocantins
+  decisao: Resolução que instaura intervenção na Região Escoteira do Tocantins aprovada com 10 votos a favor e 4 abstenções
+  votacao: 10 votos a favor, 4 abstenções
+  pagina: 2
+  conferido: true
+- tema: Destaques da Resolução que regulamenta a concessão de Reconhecimento e Condecorações
+  decisao: Destaques da Resolução que regulamenta a concessão de Reconhecimento e Condecorações outorgadas pela União dos
+    Escoteiros do Brasil aprovados com 13 votos a favor e 1 abstenção
+  votacao: 13 votos a favor, 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Ajustes na peça orçamentária de 2022
+  decisao: Ajustes na peça orçamentária de 2022 mediante justificativa da Diretoria Executiva Nacional aprovados com 9 votos
+    a favor e 5 abstenções
+  votacao: 9 votos a favor, 5 abstenções
+  pagina: 2
+  conferido: true
+- tema: Resolução que altera as regras 171 e 174 do P.O.R. pela implementação do Tribo da Terra
+  decisao: Resolução que altera as regras 171 e 174 do P.O.R. a partir da implementação da iniciativa do Tribo da Terra aprovada
+    por unanimidade
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: a7a63097802cd8639714340730a6e9256e9d1c511848acd070b783c460862a3a
+revisado: null

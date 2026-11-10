@@ -1,0 +1,58 @@
+doc_key: ata88-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2017-04-22'
+  local: Goiânia/GO
+deliberacoes:
+- tema: Eleição do Presidente do Conselho
+  decisao: Paulo foi eleito por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Eleição do Vice-Presidente do Conselho
+  decisao: Kontz foi eleito por unanimidade dos presentes.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Regularização do CNPJ da Região Escoteira de São Paulo
+  decisao: Por unanimidade é aprovada a solicitação, sendo nomeada pelo CAN e pela DEN a atual Diretoria da Região Escoteira
+    de São Paulo como a diretoria do CNPJ Filial da UEB, Região Escoteira de São Paulo, formada pelos companheiros Jabs Costa,
+    Alexandre Banchi, Larissa Avari, Roberlei Beneduzi e Rodrigo Caires.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Eleição do coordenador do Grupo de Trabalho de Avaliação do Planejamento Estratégico
+  decisao: Por unanimidade de votos Marangoni foi eleito como coordenador e os demais membros indicados foram confirmados.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Aprovação do encaminhamento para composição e apresentação dos documentos do Grupo de Trabalho de Eventos Nacionais
+  decisao: Após submeter o encaminhamento para votação, houve aprovação por unanimidade dos presentes.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente do Conselho
+  eleito: Paulo Henrique Maciel Barbosa
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente do Conselho
+  eleito: Ricardo Kontz
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Coordenador do Grupo de Trabalho de Avaliação do Planejamento Estratégico
+  eleito: Sérgio Marangoni Alves
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 32d133e305bd665da7c460da9e2fb4e6352020841ac8d7224e9c2496c18d87dc
+revisado: null

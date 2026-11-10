@@ -1,0 +1,130 @@
+doc_key: ata-2014-xix-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2014-05-01'
+  local: Dayrell Hotel e Centro de Convenções, Rua Espírito Santo, 901, centro, Belo Horizonte – Minas Gerais
+deliberacoes:
+- tema: aprovação da ata do XVIII Fórum Nacional de Jovens Líderes
+  decisao: A ata foi aprovada por aclamação pela plenária do fórum.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: alteração do calendário de eleição da cidade sede do ENRJ
+  decisao: Por vinte e sete (27) a favor, duas (2) abstinências e quatro (4) votos contrários, o encaminhamento de Rodrigo
+    Rocha (MA) foi aceito.
+  votacao: 27 a favor, 2 abstenções, 4 contrários
+  pagina: 8
+  conferido: false
+- tema: escolha da cidade sede do próximo ENRJ
+  decisao: Brasília recebeu dezenove (19) votos e Curitiba quatorze (14) votos, sendo vencedora a cidade de Brasília.
+  votacao: 19 a 14
+  pagina: 8
+  conferido: false
+- tema: manutenção do termo 'líderes' nas marcas e documentos da Rede Nacional de Jovens Líderes
+  decisao: A proposta vencedora foi a da permanência do termo líderes em todas as marcas e documentos da Rede e consequente
+    revogação da recomendação 01/2012.
+  votacao: 32 votos a favor, 1 abstenção
+  pagina: 8
+  conferido: true
+- tema: formação de comissão para redação das recomendações
+  decisao: Por trinta e dois (32) votos a favor e 1 (uma) abstenção, a proposta foi aceita e a comissão montada.
+  votacao: 32 a favor, 1 abstenção
+  pagina: 9
+  conferido: true
+- tema: aprovação da recomendação sobre altos custos dos eventos nacionais
+  decisao: Por trinta e dois (32) votos a favor e uma abstenção, a recomendação foi aprovada pela plenária do Fórum.
+  votacao: 32 a favor, 1 abstenção
+  pagina: 9
+  conferido: true
+- tema: aprovação da recomendação sobre desvinculação da inscrição do congresso para participação no Fórum Nacional de Jovens
+    Líderes
+  decisao: Por vinte e cinco (25) votos a favor, cinco (5) contras e três (3) abstenções, a proposta foi aprovada.
+  votacao: 25 a favor, 5 contra, 3 abstenções
+  pagina: 10
+  conferido: true
+- tema: aprovação da recomendação sobre transparência das planilhas de custos e gastos das atividades
+  decisao: Por trinta e três (33) votos a favor, a recomendação foi aprovada.
+  votacao: 33 a favor
+  pagina: 11
+  conferido: true
+- tema: eleição do coordenador do Núcleo Nacional de Jovens Líderes para 2014-2016
+  decisao: Leandro recebeu vinte e quatro (24) votos e Ivan seis (6) votos, e três (3) abstenções por ausência, desta forma
+    Leandro sendo eleito.
+  votacao: 24 a 6, 3 abstenções
+  pagina: 11
+  conferido: true
+- tema: eleição do comunicador do Núcleo Nacional de Jovens Líderes para 2014-2016
+  decisao: Jefferson, por ser o único candidato, foi eleito pela unanimidade da plenária, havendo apenas três (3) abstenções
+    por ausência.
+  votacao: unanimidade, 3 abstenções
+  pagina: 11
+  conferido: true
+- tema: aprovação das quatro recomendações para encaminhamento à Assembleia Nacional Escoteira
+  decisao: Revisão e redução dos altos custos dos eventos nacionais aprovada por unanimidade; Desvinculação da inscrição do
+    congresso aprovada pela maioria; Transparência aprovada pela maioria; Logos e Marcas aprovada pela maioria.
+  votacao: 33 a favor; 21 a favor, 5 contra, 7 abstenções; 25 a favor, 3 contra, 5 abstenções; 29 a favor, 4 contra
+  pagina: 12
+  conferido: true
+eleicoes:
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Coordenador
+  eleito: Leandro Lunelli (SC)
+  mandato: 2014 – 2016
+  pagina: 11
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Comunicador
+  eleito: Jefferson Paulo (MG)
+  mandato: 2014 – 2016
+  pagina: 11
+  conferido: true
+numeros:
+- o_que: participantes do XIX Fórum Nacional de Jovens Líderes
+  valor: '62'
+  pagina: 1
+  conferido: false
+- o_que: delegados registrados
+  valor: '33'
+  pagina: 4
+  conferido: true
+- o_que: votos para alteração do calendário de eleição da cidade sede do ENRJ
+  valor: 27 a favor, 2 abstenções, 4 contrários
+  pagina: 8
+  conferido: false
+- o_que: votos para escolha da cidade sede do ENRJ
+  valor: Brasília 19, Curitiba 14
+  pagina: 8
+  conferido: false
+- o_que: votos para manutenção do termo 'líderes' nas marcas e documentos
+  valor: 32 a favor, 1 abstenção
+  pagina: 8
+  conferido: true
+- o_que: votos para aprovação da recomendação sobre altos custos dos eventos nacionais
+  valor: 32 a favor, 1 abstenção
+  pagina: 9
+  conferido: true
+- o_que: votos para aprovação da recomendação sobre desvinculação da inscrição do congresso
+  valor: 25 a favor, 5 contra, 3 abstenções
+  pagina: 10
+  conferido: true
+- o_que: votos para aprovação da recomendação sobre transparência das planilhas de custos
+  valor: 33 a favor
+  pagina: 11
+  conferido: true
+- o_que: votos para eleição do coordenador do Núcleo Nacional
+  valor: 24 a favor, 6 contra, 3 abstenções
+  pagina: 11
+  conferido: true
+- o_que: votos para eleição do comunicador do Núcleo Nacional
+  valor: unanimidade, 3 abstenções
+  pagina: 11
+  conferido: true
+- o_que: votos para aprovação das recomendações para Assembleia Nacional Escoteira
+  valor: 33 a favor; 21 a favor, 5 contra, 7 abstenções; 25 a favor, 3 contra, 5 abstenções; 29 a favor, 4 contra
+  pagina: 12
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: e1e745169398bf45897e1bc4d1dc39b586993eeaeafed2f03aa38cfc0154f3dc
+revisado: null

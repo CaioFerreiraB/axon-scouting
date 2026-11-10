@@ -1,6 +1,6 @@
 [project]
 name = "axon-scouting"
-version = "0.9.0"
+version = "0.10.0"
 description = "Pack de domínio escoteiro da plataforma Axon (specs 1xx em axon)."
 readme = "README.md"
 license = "MIT"
@@ -162,7 +162,7 @@ forbidden_modules = [
 name = "camadas do retrieval"
 type = "layers"
 layers = [
-    "axon_scouting.rag.retrieval.retriever | axon_scouting.rag.retrieval.reranker | axon_scouting.rag.retrieval.catalog",
+    "axon_scouting.rag.retrieval.retriever | axon_scouting.rag.retrieval.reranker | axon_scouting.rag.retrieval.catalog | axon_scouting.rag.retrieval.summaries",
     "axon_scouting.rag.retrieval.domain",
 ]
 

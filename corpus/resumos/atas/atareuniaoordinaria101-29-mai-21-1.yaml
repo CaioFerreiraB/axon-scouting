@@ -1,0 +1,105 @@
+doc_key: atareuniaoordinaria101-29-mai-21-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-05-29'
+  local: videochamada pelo Zoom, com transmissao ao vivo na pagina do Facebook dos Escoteiros do Brasil
+deliberacoes:
+- tema: Aprovação da ata da 99ª Reunião Ordinária do CAN
+  decisao: Aprovação da ata da 99ª Reunião Ordinária do CAN (ago/2020)
+  votacao: 5 votos a favor e 9 abstenções
+  pagina: 2
+  conferido: true
+- tema: Comissão Permanente de Planejamento Estratégico
+  decisao: Aprovação do escopo da Comissão Permanente de Planejamento Estratégico (ago/2020)
+  votacao: 11 votos a favor e 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: Alteração da Regra 170 do POR
+  decisao: Aprovação da Resolução 05/2020 do CAN para alteração da Regra 170 do POR (set/2020)
+  votacao: 8 votos a favor e 6 abstenções
+  pagina: 2
+  conferido: true
+- tema: Venda de imóvel da Região Escoteira de Goiás
+  decisao: Autorização para venda de imóvel da Região Escoteira de Goiás (set/2020)
+  votacao: 13 votos a favor e 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Grupo de Trabalho Estudos sobre Castorismo
+  decisao: Aprovação do escopo do Grupo de Trabalho Estudos sobre Castorismo (nov/2020)
+  votacao: 9 votos a favor e 5 abstenções
+  pagina: 2
+  conferido: true
+- tema: Política de Governança Institucional
+  decisao: Aprovação da Resolução 06/2020 do CAN que institui a Política de Governança Institucional (nov/2020)
+  votacao: 8 votos a favor, 1 abstenção e 5 abstenções
+  pagina: 2
+  conferido: true
+- tema: Parceria institucional para atividades educativas para crianças de 5 a 6 anos e meio
+  decisao: Aprovação da Resolução 01/2021 do CAN sobre estabelecimento de parceria institucional com entidades mantenedoras
+    de Grupos Escoteiros que ofertam atividades educativas para crianças com idade de 5 a 6 anos e meio para finalidade de
+    estudo (nov/2020)
+  votacao: 11 votos a favor e 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: Alteração da Resolução 05/2012 do CAN sobre Áreas Geográficas
+  decisao: Aprovação da Resolução 08/2020 do CAN que altera a redação da Resolução 05/2012 do CAN sobre Áreas Geográficas
+    (nov/2020)
+  votacao: 13 votos a favor e 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: Procedimentos para registro institucional e valores da contribuição associativa anual para 2021
+  decisao: Aprovação da Resolução 07/2020 do CAN que determina os procedimentos para o registro institucional e os valores
+    da contribuição associativa anual para o ano-base de 2021 (nov/2020)
+  votacao: 12 votos a favor e 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: Aprovação da ata da 100ª Reunião Ordinária do CAN
+  decisao: Aprovação da ata da 100ª Ordinária Reunião do CAN (nov/2020)
+  votacao: 6 votos a favor, 2 votos contra, 2 abstenções e 4 abstenções
+  pagina: 2
+  conferido: true
+- tema: Disciplina da prática do Escotismo no Brasil
+  decisao: Aprovação da Resolução 09/2020 do CAN que disciplina a prática do Escotismo no Brasil (dez/2020)
+  votacao: Aprovada por unanimidade
+  pagina: 3
+  conferido: true
+- tema: Modalidade de participação na Conferência Escoteira Mundial e Fórum Mundial de Jovens 2021
+  decisao: Referendo sobre a modalidade de participação na Conferência Escoteira Mundial e Fórum Mundial de Jovens 2021 (jan/2021)
+  votacao: 8 votos a favor e 6 abstenções
+  pagina: 3
+  conferido: true
+- tema: Comissão Permanente de Envolvimento Juvenil
+  decisao: Aprovação do escopo da Comissão Permanente de Envolvimento Juvenil (jan/2021)
+  votacao: 9 votos a favor e 5 abstenções
+  pagina: 3
+  conferido: true
+- tema: Implantação da iniciativa “Tribo da Terra” com termos em português
+  decisao: Resolução do CAN sobre a implantação da iniciativa “Tribo da Terra” nos Escoteiros do Brasil, com utilização de
+    termos em português (jan/2021)
+  votacao: 10 votos a favor e 4 abstenções
+  pagina: 3
+  conferido: true
+- tema: Projeto Educativo com base no parecer da CPPINS
+  decisao: Aprovação do Projeto Educativo com base no parecer da CPPINS (mar/2021)
+  votacao: 7 votos a favor e 7 abstenções
+  pagina: 3
+  conferido: true
+- tema: Resolução do CAN 03/2021 sobre iniciativa “Tribo da Terra” com termos em inglês
+  decisao: Nova deliberação acerca da Resolução do CAN 03/2021 que implementa a iniciativa “Tribo da Terra” nos Escoteiros
+    do Brasil, com utilização de termos em inglês (mai/2021)
+  votacao: 7 votos a favor, 5 votos contra e 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: Regulamentação do uso do pin dos Objetivos do Desenvolvimento Sustentável (ODS)
+  decisao: Resolução 04/2021 do CAN sobre a regulamentação do uso do pin dos Objetivos do Desenvolvimento Sustentável (ODS)
+    pelos Escoteiros do Brasil (mai/2021)
+  votacao: 12 votos a favor e 2 abstenções
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 7c886484a7d3a319d20ac3046829d2a55cae909d178399bfba37ef7ef6709b46
+revisado: null

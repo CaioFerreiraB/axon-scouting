@@ -1,0 +1,24 @@
+doc_key: 21a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-03-mai-2014-1
+reuniao:
+  tipo: ordinaria
+  data: '2014-05-03'
+  local: Belo Horizonte/MG
+deliberacoes:
+- tema: recomendações da Rede Nacional
+  decisao: Primeira e segunda recomendação, aprovado seu encaminhamento a DEN por unanimidade. Terceira, aprovado seu encaminhamento
+    à DEN com três abstenções. Quarta recomendação, aprovado seu encaminhamento ao CAN, por sugestão do Conselheiro Nacional
+    Aleksandro Lessa, com duas abstenções.
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: quórum da assembleia
+  valor: 116 (cento e dezesseis) votantes
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 37f43d3f0591f275e44e2c8d6d483434ee9e39a84bb76ecf869f624e9fe1432b
+revisado: null

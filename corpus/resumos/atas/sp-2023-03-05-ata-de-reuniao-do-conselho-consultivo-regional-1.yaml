@@ -1,0 +1,89 @@
+doc_key: sp-2023-03-05-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-03-05'
+  local: Centro Escoteiro Jaraguá
+deliberacoes:
+- tema: Plano Estratégico e crescimento do efetivo
+  decisao: fechamos o ano de 2022 com cerca de 22 mil associados (a expectativa era de 18 mil); e arrecadação financeira –
+    com o ajuste das contas, 2022 foi finalizado com um balanço consolidado de R$60.403,70, sendo o resultado do balanço anterior
+    de R$-349.110,43
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Sugestões para Crescimento e Expansão
+  decisao: plano financeiro para subsidiar atividades de boa qualidade e acessibilidade financeira (campanhas financeiras,
+    busca por patrocínios e subvenções públicas e conscientização dos diversos níveis para captação de recursos); fazer a
+    gestão de pessoas e conflitos (humanização, conflitos, fortalecimento das relações); propor Gestão operacional com pesquisa
+    de clima (equipe e planejamento UEL, com controle e ferramentas e acompanhamento do Comissário); fazer Parceiras Público
+    e Privadas (para abertura de seções autônomas e novas UELs); fortalecimento Gestão Institucional (parceria par conteúdo
+    na formação do adulto dirigente); produzir um Caderno de Atividades sobre Crescimento e Expansão; organizar atividades
+    de grande porte (atividades regionais descentralizadas, de baixo custo e separadas por complexidade); ampliar parcerias
+    estadual e municipais para utilização de espaços públicos (dar apoio às UELs que utilizam espaços públicos como sede)
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Sugestões para Captação e Capacitação de Adultos
+  decisao: contatar o Centro de Voluntariado (criar grupos de trabalho (IM), benchmark com outras instituições (AACD, MSF,
+    Human Hand, Dr. Alegria, para humanização, resolução de conflitos e fortalecimento das relações); aprimorar a recepção
+    de adultos (definição da função do adulto, criar um documento (primeiros meses como adulto escoteiro), e fazer divulgação
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Sugestões para Relações Institucionais
+  decisao: manter parcerias com instituições de classe – OAB, CRC e outros (tirar os grupos que estão na informalidade para
+    geração de receitas)
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Análise das causas da evasão nas UELs
+  decisao: 'foram discutidas as causas de evasão nas UELs para, com isso, propor soluções. Algumas das causas apresentadas
+    foram: falta de atividades atrativas, má aplicação do Método Educativo, custo escoteiro (uniforme e atividades), vestibular,
+    necessidade de trabalhar, chefia desmotivada, concorrência com outras atividades, falta de compromisso pós pandemia, sobrecarga
+    de funções, não aproveitamento das atividades extra escotismo como viáveis para o desenvolvimento e progressão dos jovens,
+    falta de mais voluntários capacitados a promover atividades atraentes educativas e progressiva, falta de reconhecimento
+    do jovem e do adulto, falta de gestão das pessoas na UEL e dirigentes incapazes de atuar como gestores'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Inclusão nas UELs
+  decisao: dissertaram sobre as dificuldades e, principalmente, sobre a importância de preparar as UELs para serem realmente
+    inclusivas
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Comunicação Externa – Implementação
+  decisao: apresentou a equipe regional da comunicação, detalhou cada área de atuação e finalizou apresentando formas de melhoria
+    na comunicação – tanto nas UELs quanto nos Distritos
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Distrito Escoteiro Padrão – Grupo de trabalho
+  decisao: os Comissários ficaram de analisar os prós e contras para avaliar se seria mantido e, caso fosse mantido, será
+    criado um Grupo de trabalho para revisão dos indicadores
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: associados em 2022
+  valor: 22 mil
+  pagina: 1
+  conferido: true
+- o_que: expectativa de associados em 2022
+  valor: 18 mil
+  pagina: 1
+  conferido: true
+- o_que: balanço consolidado financeiro 2022
+  valor: R$60.403,70
+  pagina: 1
+  conferido: false
+- o_que: resultado do balanço anterior
+  valor: R$-349.110,43
+  pagina: 1
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: aa7469f90d3512a19c11f273a28fcf8a68b2aec10798209b183ef200156034b2
+revisado: null

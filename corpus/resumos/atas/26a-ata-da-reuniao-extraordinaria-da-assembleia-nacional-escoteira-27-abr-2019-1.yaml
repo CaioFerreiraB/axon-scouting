@@ -1,0 +1,47 @@
+doc_key: 26a-ata-da-reuniao-extraordinaria-da-assembleia-nacional-escoteira-27-abr-2019-1
+reuniao:
+  tipo: extraordinaria
+  data: '2019-04-27'
+  local: ube do Exército (Sede do Lago), sito no SCES Trecho 02 Lote 23, CEP 70200002 Brasília/DF
+deliberacoes:
+- tema: alteração do Estatuto da União dos Escoteiros do Brasil
+  decisao: Em processo de votação é vencedora a proposta dois e, portanto, se deverá sar à votação acerca proposta de texto
+    do novo Estatuto. O encaminhamento apresentado pela mesa é de que se o texto for aprovado os destaques serão avaliados
+    na sequência com as disposições transitórias. Em regime de votação os favoráveis apresentem a cartão verde (79 votos)
+    e quem rejeita a proposta apresentam o cartão vermelho (51 votos) e, ainda as abstenções (02 votos). Sendo assim e tendo
+    em vista não ser alcançado o quórum mínimo para alteração do Estatuto, a proposta é rejeitada e o texto do Estatuto da
+    UEB não sofrerá nenhuma alteração.
+  votacao: 79 votos a favor, 51 contra, 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: continuidade dos trabalhos para conclusão do novo Estatuto
+  decisao: O encaminhamento sugerido pela mesa é que seja organizado um cronograma pelo CAN e que todas as Regiões participem
+    efetivamente deste processo final. A Assembleia e a continuidade dos trabalhos e que seja definido o trabalho com participação
+    das Regiões Escoteiras, ficando convocada nova Reunião Extraordinária para se dê a conclusão destes trabalhos do novo
+    texto para o Estatuto dos Escoteiros do Brasil.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: quórum de delegados votantes
+  valor: '132'
+  pagina: 2
+  conferido: true
+- o_que: votos favoráveis à proposta de alteração do Estatuto
+  valor: '79'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários à proposta de alteração do Estatuto
+  valor: '51'
+  pagina: 2
+  conferido: true
+- o_que: abstenções na votação da proposta de alteração do Estatuto
+  valor: '2'
+  pagina: 2
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 00f87a8a4e488430cc29fa1782ff719b78b00494a03588edf8795b8e77e91c13
+revisado: null

@@ -1,0 +1,90 @@
+doc_key: ata35-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2002-05-19'
+  local: Hotel Tulip Inn Interactive, São Paulo/SP
+deliberacoes:
+- tema: Delegados para Conferência Mundial e Fórum Mundial
+  decisao: 'Ficam definidos os delegados pela UEB no evento da seguinte forma: Fórum Mundial: Delegados Fernando Brodeschi
+    e Mateus Fernandes / Conferência: Delegados – Oscar Palmquist, Melissa Casagrande, Rubem Süffert, Carlos Frederico dos
+    Santos, Marco Aurélio M. Castrianni e Fernando Mont’Serrat. Decidido ainda que será encaixado no orçamento do II Jamboree
+    Nacional o retorno de taxa às Regiões conforme o número de inscritos por Região.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Revisão do Plano Estratégico
+  decisao: Apresentadas as atualizações aprovadas no seminário. Será entregue até 30 de junho o plano atualizado.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Plano Nacional de Crescimento
+  decisao: 'Ficaram definidas três frentes de trabalho: regularização dos registros, abertura de grupos novos, aproveitamento
+    de vagas em GE’s já existentes.'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução 004/2002, sobre Medidas Disciplinares
+  decisao: Aprovada conforme documento disponível na Internet.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução 005/2002, Ordem da Flor de Lis
+  decisao: Aprovada conforme documento disponível na Internet.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução 006/2002 - Criação do Cargo de Comissário Internacional
+  decisao: Aprovada conforme documento disponível na Internet.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Conclusões do Seminário de Política Comercial
+  decisao: O Escritório Nacional deverá ainda verificar a possibilidade de publicações “econômicas” das literaturas atuais.
+    Acertou-se ainda que na reunião de agosto a Comissão Nacional de Gestão Institucional estará apresentando uma proposta
+    de nova Resolução sobre o assunto.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Registros de Progressão Pessoal do Ramo Escoteiro
+  decisao: Definiu-se que a DEN administrará a edição desses livros e que o Escritório deverá fazer um orçamento para maiores
+    quantidades, verificando a possibilidade de baixar ainda mais o custo de produção, com base nos montantes de compra aventados
+    pelas Regiões.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Conclusões do Seminário para Diretrizes de Gestão de Adultos
+  decisao: Informado pela CNRA que a revisão do livro das Diretrizes será finalizada até o final do mês de junho, e será encaminhada
+    ao CAN via Internet para opiniões com prazo de apresentação e aprovação competente. Quanto aos Manuais de cursos, estão
+    em estudo e processo de montagem e serão apresentados paulatinamente até o mês de novembro.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução 007/02, sobre Perfil do Secretário Geral
+  decisao: Aprovada conforme documento disponível na Internet.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Relações Internacionais - candidatura do Brasil para Conferência Interamericana de 2007 e Jamboree Mundial
+  decisao: Será apresentada na reunião da Região Interamericana, na Conferência Mundial. O CAN decide que deverá ser proposta
+    uma sistemática operacional para organizar a delegação do evento. Será apresentada pela CRI uma proposta de trabalho para
+    o Jamboree Mundial na Inglaterra e questões futuras.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Conclusões das reuniões das Comissões Estratégicas
+  decisao: Decidiu-se reimprimir o Guia de Especialidades como está, sem quaisquer alterações em, pelo menos, 3000 unidades.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Consórcio JamPan - dados finais e aprovação
+  decisao: Apresentados os dados finais do JamPan e aprovados pelo CAN. Os documentos serão apresentados à Assembléia Nacional.
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 26a1c1893395e1bce476ce036bec884cdaafe6b1c91f9846630541e370f81f12
+revisado: null

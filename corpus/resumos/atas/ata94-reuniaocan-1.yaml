@@ -1,0 +1,76 @@
+doc_key: ata94-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2019-04-26'
+  local: sede da União dos Escoteiros do Brasil – DF, em Brasília/DF
+deliberacoes:
+- tema: alteração da Resolução sobre a Política de Conflito de Interesses
+  decisao: A respeito da revisão e adequação da Resolução sobre a Política de Conflito de Interesses, com a indicação de que
+    o conselheiro CHRISTIAN seja o responsável em apresentar o tema para uma próxima reunião do CAN, já com a nova composição
+    de conselheiros eleitos, KONTZ submete o assunto para votação e é aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: revisão do Regulamento do CAN
+  decisao: A respeito da revisão do Regulamento do CAN, também é aprovado por unanimidade, já iniciando com uma composição
+    de Grupo de Trabalho (GT) composto pelos conselheiros que permanecerão, são eles ROMEU, MELISSA e RENATO, além daqueles
+    que serão eleitos durante o Congresso e poderão integrar o GT.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: aprovação da agenda da reunião
+  decisao: Por 11 votos a favor e uma abstenção a alteração foi aprovada.
+  votacao: 11 votos a favor e uma abstenção
+  pagina: 2
+  conferido: true
+- tema: concessão de medalhas “Tapir de Prata”
+  decisao: Foram todas aprovadas pelo CAN.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: retirada do Tapir de Prata de Alfredo Stroessner
+  decisao: Submetido à votação por KONTZ, e é aprovado por unanimidade a retirada do Tapir de Prata de Alfredo Stroessner.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: encaminhamento para avaliação de outras condecorações
+  decisao: PAULO recomenda e é mantido como encaminhamento, por unanimidade, que a Comissão de Medalhas e Condecorações possa
+    avaliar outras pessoas que na história tenham recebido condecorações e não tenham apresentado atitudes condizentes com
+    a homenagem recebida.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: aprovação parcial da Política de Eventos Nacionais
+  decisao: KONTZ submete à votação a aprovação do texto até o seu “Item 3”, sendo aprovado por unanimidade, ficando a continuidade
+    de análise e adequação do documento para a nova composição do CAN.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: aprovação da proposta de Resolução de Transparência Institucional
+  decisao: Sendo submetido à votação, é aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 6
+  conferido: false
+- tema: posse da Diretoria Executiva Nacional eleita
+  decisao: O início da gestão da DEN eleita se dará em 1/5/2019. KONTZ convida os membros da Diretoria Executiva Nacional,
+    renova sua promessa e os empossa para o novo mandato.
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional
+  cargo: membros da Diretoria Executiva Nacional
+  eleito: não especificado individualmente
+  mandato: início em 1/5/2019
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: votos a favor da alteração da Resolução sobre a Política de Conflito de Interesses
+  valor: 11 votos a favor e uma abstenção
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 16edb5cd3ee3ace9b757f9a2fd683d3e3449c0b81526bab14a43e1ebadb55ba5
+revisado: null

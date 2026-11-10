@@ -1,0 +1,127 @@
+doc_key: sp-ata-arpi-2022-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-02-12'
+  local: online, via Google Meet
+deliberacoes:
+- tema: eleição da mesa diretora
+  decisao: 'a mesa diretora foi eleita por aclamação com a seguinte formação: Presidente: Robert Gabriel de Sousa Santos,
+    GE Monte Serrat 432/SP; Vice-presidente: Duilio Caoam Beneducci Moraes, GE Jabuti 108/SP; Primeiro Secretário: Thayná
+    Cristiny Antunes de Oliveira, GE Vuturaty 217/SP; Segundo Secretário: Jorge Augusto Siqueira Pinto, GE Yanomami 210/SP'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição da comissão de escrutínio
+  decisao: Cecilia Midori Hosoda Henriques, GE Craós 195/SP, eleita por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: aprovação da ata da Assembleia anterior
+  decisao: a ata foi aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: votação do tema da Pré Vigília 2022
+  decisao: 'a Pré Vigília de 2022 terá o tema ''Pioneiros: em busca da sua magia'''
+  votacao: 15 votos a favor, 8 votos no outro tema, 4 abstenções
+  pagina: 2
+  conferido: true
+- tema: eleição da cidade-sede do FRPi 2023
+  decisao: a cidade-sede para o FRPi 2023 foi escolhida Mogi das Cruzes
+  votacao: 15 votos a favor Mogi das Cruzes, 8 votos Lorena, 4 abstenções
+  pagina: 3
+  conferido: true
+- tema: eleição da coordenação do EVENTO de 2023
+  decisao: evento da pioneira Katharina Emanuela de Carvalho Farias foi aprovado para ser planejado e posteriormente aprovado
+    pela coordenação de eventos
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: eleição da cidade-sede do Congresso Regional Pioneiro 2022
+  decisao: cidade de Campinas foi eleita para sediar o evento
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: eleição da Comissão Regional Pioneira 2022/23
+  decisao: 'eleitos para a Comissão Regional Pioneira, gestão 2022/2023: Duilio Caoam Beneducci Moraes, Pedro Monnerat Bertoletto,
+    Robert Gabriel de Sousa Santos'
+  votacao: votação secreta por clã, com 27 clãs presentes, sendo necessário 20% dos votos para eleição
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Presidente
+  eleito: Robert Gabriel de Sousa Santos, GE Monte Serrat 432/SP
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Vice-presidente
+  eleito: Duilio Caoam Beneducci Moraes, GE Jabuti 108/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Primeiro Secretário
+  eleito: Thayná Cristiny Antunes de Oliveira, GE Vuturaty 217/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Segundo Secretário
+  eleito: Jorge Augusto Siqueira Pinto, GE Yanomami 210/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Cecilia Midori Hosoda Henriques, GE Craós 195/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Coordenação do EVENTO de 2023
+  cargo: Responsável pela organização do evento
+  eleito: Katharina Emanuela de Carvalho Farias, do Grupo Escoteiro Guaypacaré 223/SP
+  mandato: '2023'
+  pagina: 4
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Duilio Caoam Beneducci Moraes - Grupo Escoteiro Jabuti 108/SP
+  mandato: 2022/2023
+  pagina: 5
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Pedro Monnerat Bertoletto - Seção Autônoma Clã Pioneiro Olave St. Clair 457/SP
+  mandato: 2022/2023
+  pagina: 5
+  conferido: true
+- orgao: Comissão Regional Pioneira
+  cargo: Membro
+  eleito: Robert Gabriel de Sousa Santos - Grupo Escoteiro Monte Serrat 432/SP
+  mandato: 2022/2023
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: clãs presentes
+  valor: '27'
+  pagina: 2
+  conferido: true
+- o_que: votos para tema da Pré Vigília 2022
+  valor: 15 votos a favor do tema escolhido, 8 votos no outro tema, 4 abstenções
+  pagina: 2
+  conferido: true
+- o_que: votos para cidade-sede do FRPi 2023
+  valor: 15 votos Mogi das Cruzes, 8 votos Lorena, 4 abstenções
+  pagina: 3
+  conferido: true
+- o_que: votos para Comissão Regional Pioneira 2022/23
+  valor: Duilio Caoam Beneducci Moraes 19 votos, Pedro Monnerat Bertoletto 13 votos, Robert Gabriel de Sousa Santos 27 votos
+  pagina: 5
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d2530b289846badd2eb351186373089df0100310664fdf1d5fe4f9f21addddf8
+revisado: null

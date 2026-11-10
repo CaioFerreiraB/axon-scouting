@@ -1,0 +1,65 @@
+doc_key: sp-2018-02-04-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2018-02-04'
+  local: Centro Escoteiro Jaraguá (Parque Estadual do Jaraguá, Rua Adryano Reis, 20, Vila Jaraguá, São Paulo/SP)
+deliberacoes:
+- tema: Novos formulários e fluxograma para abertura/reabertura de UEL
+  decisao: Novos formulários e ajuste do fluxograma aprovado por unanimidade. A partir desta data novos processos para abertura/reabertura
+    de UEL já devem seguir o novo fluxograma e considerar os novos formulários.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Criação das Equipes Distritais Pioneiras (EDP)
+  decisao: Proposta das EDPs aprovada por unanimidade dos presentes e agora será encaminhada para oficialização pela Assembleia
+    Regional Escoteira como uma das propostas de alterações do Regulamento Regional.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Mudança de municípios entre Distritos Escoteiros
+  decisao: Proposta já acordado previamente entre ele e o Comissário Distrital do 18º DE. Mudança aprovada por unanimidade
+    dos presentes.
+  votacao: unanimidade
+  pagina: 8
+  conferido: true
+- tema: Alteração da duração e escopo dos Encontros e Diálogos itinerantes
+  decisao: Proposta aprovada por unanimidade dos presentes.
+  votacao: unanimidade
+  pagina: 9
+  conferido: true
+- tema: Formação de Grupo de Trabalho para gestão financeira dos Distritos
+  decisao: GT sobre gestão financeira de Distritos formado por Fabricio e Robson, com assessoria do Roberlei, a apresentar
+    resultados na próxima reunião do Conselho.
+  votacao: ''
+  pagina: 10
+  conferido: true
+- tema: Formação de Grupo de Trabalho sobre padrão de roteiro de visita da Comissão Distrital às UELs
+  decisao: Proposta aprovada por unanimidade. Juliano, Alcides, Fabricio, Arnoldo, Vania e Erenita comporão o GT que deverá
+    apresentar resultados na próxima Reunião do Conselho.
+  votacao: unanimidade
+  pagina: 11
+  conferido: true
+- tema: Prazo para Distritos enviarem planilhas para análise do Distrito Padrão 2017
+  decisao: Distritos que não enviaram a planilha para análise terão 30 dias a contar desta data para preencher a planilha
+    apenas com sim e não, sem necessidade de comprovar evidência, e dar o devido encaminhamento.
+  votacao: ''
+  pagina: 11
+  conferido: true
+- tema: Implantação do segundo Secretário Distrital no 31º DE Araçatuba
+  decisao: Contratação deverá se dar partir de abril/2018, mas a proposta é que o processo seletivo ocorra antes disso.
+  votacao: ''
+  pagina: 12
+  conferido: true
+- tema: Implantação de Secretário Distrital para Guarulhos caso não encontre candidato para 31º DE Araçatuba
+  decisao: 'Resta deliberado em se cumprir a terceira opção já aventada na Reunião do Conselho de julho de 2017: implantar
+    um Secretário Distrital para atender Guarulhos.'
+  votacao: ''
+  pagina: 13
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: a5f17ca3c96f2909d99f3eff324b0046116fe3e1b97e5fe05011ad8b4def2f6b
+revisado: null

@@ -1,0 +1,191 @@
+doc_key: ata-33-reuniao-ordinaria-do-conselho-de-administracao-nacional-1
+reuniao:
+  tipo: ordinaria
+  data: '2001-11-14'
+  local: Hotel Parque da Costeira, Natal/RN
+deliberacoes:
+- tema: aprovação da agenda
+  decisao: aprovada com alterações
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata da XXXII Reunião do CAN
+  decisao: 'Feitas alterações já no texto da própria ata daquela reunião nos itens: 03, 11.2, 11.4, 12 e 13, foi aprovada'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resoluções 016, 017 e 018
+  decisao: Discutidas as Resoluções apresentadas, foram propostas alterações e finalmente aprovadas conforme documentos anexos
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução 019
+  decisao: decidiu-se marcar para o dia 17/11 às 17:00 horas uma nova reunião para dirimir o assunto, após ouvidas as sugestões
+    do Seminário correspondente
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Resolução 020
+  decisao: A Resolução foi aprovada conforme o documento anexo correspondente e o CAN recomenda a criação de uma Subcomissão
+    de Lojas Escoteiras na Comissão Nacional de Gestão Institucional
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: composição da Mesa Diretora dos trabalhos da Assembléia Nacional e suas Comissões Assessoras
+  decisao: 'o CAN decide apresentar aos membros da Assembléia a seguinte nominata: Para Presidente da Assembléia - Paulo Salamuni:
+    para 1o Vice-presidente da Assembléia — Antônio César de Oliveira, que foi posteriormente substituido por Carlos Frederico
+    dos Santos; para 2o Vice-presidente — Bráulio André Dantas da Silva, para 1o Secretária — Diva Irene da Paz Vieira: para
+    2o Secretário Dárcio Hélio Longui. Para Comissão de Escrutínio: Carmen Barreira, Feliz Varejão, Fernando Volkman, Luiz
+    Salgado Klaes, Mariovani Cervi. Para Comissão de Credenciamento: Adir Barusso, Tadeu Ottoni e Everaldo Palumbo. Para Comissão
+    Eleitoral: Guilherme Reichwald, David Crusius e Anderson Barreto. Para Comissão de Assuntos Gerais: João Bastista F. Thomé,
+    Alessandro Garcia Vieira e Elmer de Souza Pessoa'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: parecer da CNED quanto a Paulo Ricardo Puerta Rodrigues
+  decisao: 'Põe em votação a matéria que restou decidida com a seguinte escala de votos: 09 votos a favor de acatar o parecer
+    da CNED, 01 contra do conselheiro David, consignando sua identificação a seu pedido e 05 abstenções'
+  votacao: 09 votos a favor, 01 contra, 05 abstenções
+  pagina: 1
+  conferido: true
+- tema: parecer da CNED quanto a América Lazarini Breijo
+  decisao: o Presidente coloca o tema em votação, o qual restou pelo acatamento do parecer da CNED com 08 votos a favor, 01
+    contra do Conselheiro David, 04 abstenções e 02 ausências
+  votacao: 08 votos a favor, 01 contra, 04 abstenções, 02 ausências
+  pagina: 2
+  conferido: true
+- tema: parecer da CNED quanto a Mário Greggio
+  decisao: o CAN decide enviar de volta à CNED o processo, uma vez que a instrução do mesmo cabe a própria CNED
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: parecer da CNED quanto a Adonai do Socorro Ponçadilha
+  decisao: o CAN decide enviar de volta à CNED o processo, uma vez que a instrução do mesmo cabe a própria CNED
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: parecer da CNED quanto ao GE Guia Lopes do RS
+  decisao: determinar a remissão da dívida do Grupo Escoteiro para com o Nível Nacional
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: decisão sobre processos disciplinares contra Paulo Ricardo Puerta Rodrigues e América Lazarini Breijo
+  decisao: proposta do Conselheiro Carlos Frederico é posta em votação e restou negada com 07 votos a favor e 08 contra
+  votacao: 07 votos a favor, 08 contra
+  pagina: 2
+  conferido: true
+- tema: aprovação da Resolução 020 reformulada
+  decisao: aprovada conforme documento anexo correspondente
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: aprovação da Resolução 019 item a item
+  decisao: restando aprovada conforme documento anexo correspondente
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: decisão sobre situação da Região da BA
+  decisao: o CAN decide que o Escritório Nacional deverá providenciar o pagamento das despesas e impostos ainda pendentes
+    naquela Região, regularizando o que for possível até final do exercício e a partir de 01 de janeiro de 2002, finalizar
+    a Intervenção
+  votacao: 13 votos a favor, 01 contra e 01 abstenção
+  pagina: 2
+  conferido: true
+- tema: análise da proposta orçamentária 2002
+  decisao: proposta, restou aprovada com 13 votos a favor, 01 contra e 01 abstenção
+  votacao: 13 votos a favor, 01 contra e 01 abstenção
+  pagina: 2
+  conferido: true
+- tema: autorização para uso dos valores da Ordem da Flor de Lis para impressão de instrumentos do Programa de Jovens
+  decisao: Posta em votação a proposta foi aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: solicitação de documentos referentes a denúncias da Região de Pernambuco
+  decisao: as solicitações foram aprovadas
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: afastamento do Conselheiro Alexandre da coordenação do Escritório Nordeste
+  decisao: Alexandre pede ainda oficialmente, seu afastamento da coordenação do Escritório Nordeste
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: entrega de documentos do processo disciplinar contra Marta Tolentino
+  decisao: O CAN determina que todos os documentos solicitados lhe sejam entregues
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: decisão sobre pedido de avocação de processo disciplinar contra Paulo Ricardo Puerta Rodrigues
+  decisao: decide pela não avocação do processo, alegando que é um problema regional onde devem ser esgotadas todas as instancias
+    naquele Nível
+  votacao: 10 votos contra a avocação e 5 abstenções
+  pagina: 3
+  conferido: true
+- tema: aprovação do Mutirão Nacional Pioneiro de 2003 no Rio de Janeiro
+  decisao: o CAN aprova a realização do evento no Rio de Janeiro com a supervisão do Nível Nacional
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional da União dos Escoteiros do Brasil
+  cargo: Diretor Presidente da Diretoria Executiva Nacional
+  eleito: Paulo Salamuni
+  mandato: a partir de 01 de janeiro de 2002
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Executiva Nacional da União dos Escoteiros do Brasil
+  cargo: Diretor 1o Vice-presidente
+  eleito: Carlos Frederico dos Santos
+  mandato: a partir de 01 de janeiro de 2002
+  pagina: 3
+  conferido: true
+- orgao: Diretoria Executiva Nacional da União dos Escoteiros do Brasil
+  cargo: Diretor 2o Vice-presidente
+  eleito: Adir Barusso
+  mandato: a partir de 01 de janeiro de 2002
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente do Conselho
+  eleito: Rubem Tadeu Cordeiro Perlingeiro
+  mandato: 1o de janeiro de 2002 a 31 de dezembro do mesmo ano
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente do Conselho
+  eleito: Marcos Venício Mattos Chaves
+  mandato: 1o de janeiro de 2002 a 31 de dezembro do mesmo ano
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: votos para acatar parecer da CNED sobre Paulo Ricardo Puerta Rodrigues
+  valor: 09 votos a favor, 01 contra, 05 abstenções
+  pagina: 1
+  conferido: true
+- o_que: votos para acatar parecer da CNED sobre América Lazarini Breijo
+  valor: 08 votos a favor, 01 contra, 04 abstenções, 02 ausências
+  pagina: 2
+  conferido: true
+- o_que: votos para proposta de não arquivar processos disciplinares contra Paulo Ricardo Puerta Rodrigues e América Lazarini
+    Breijo
+  valor: 07 votos a favor e 08 contra
+  pagina: 2
+  conferido: true
+- o_que: votos para decisão sobre pagamento de despesas e impostos da Região da BA
+  valor: 13 votos a favor, 01 contra e 01 abstenção
+  pagina: 2
+  conferido: true
+- o_que: votos para análise da proposta orçamentária 2002
+  valor: 13 votos a favor, 01 contra e 01 abstenção
+  pagina: 2
+  conferido: true
+- o_que: votos para não avocação do processo disciplinar contra Paulo Ricardo Puerta Rodrigues
+  valor: 10 votos contra a avocação e 5 abstenções
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d123c6570f812488c3a03b3bc490b61a0bd33d953485da1c9b1a2f4ffec1d7d7
+revisado: null

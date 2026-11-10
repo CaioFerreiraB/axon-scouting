@@ -1,0 +1,449 @@
+doc_key: sp-ata-are-2015-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-03-14'
+  local: Instituto Tecnológico de Aeronáutica (ITA), Praça Marechal Eduardo Gomes, nº. 50, Vila da Acácias, São José dos Campos,
+    SP
+deliberacoes:
+- tema: Mesa Diretora da Assembleia
+  decisao: 'foi aprovado pelo plenário, com a seguinte nominata: Carlos Eugênio Bakos — Presidente da Mesa, Marco Aurélio
+    de Mello Castrianni — 1º Vice-Presidente; Rafael Teixeira Nunes — 2º Vice-Presidente; Fábio Sola Aro — 1º Secretário;
+    e João Carlos Valentim Veiga Junior — 2º Secretário'
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Comissões Assessoras da Assembleia
+  decisao: manutenção das Comissões Assessoras, de Credenciamento, Eleitoral e Escrutínio, também eleitas durante a Reunião
+    Extraordinária, com substituição do membro da Comissão de Escrutínio, Carlos Nunes, pelo Carlos Barboza, aprovada por
+    aclamação; e aprovação por aclamação dos membros das Comissões de Assuntos Gerais e Estilo
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Entrega de Medalhas de Gratidão
+  decisao: entrega da Medalha de Gratidão Grau Ouro, Prata e Bronze a diversos agraciados, saudados com uma palma escoteira
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Suspensão e reinício da Assembleia
+  decisao: suspensão da presente Assembleia, com reinício para a manhã de domingo, que, em regime de votação, foi aprovada
+    por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Dispensa da leitura da ata da reunião anterior
+  decisao: a ata foi dispensada por maioria absoluta de votos e aprovada por unanimidade com ressalva apresentada
+  votacao: maioria e unanimidade
+  pagina: 3
+  conferido: true
+- tema: Aprovação das contas e balanço do exercício fiscal de 2014
+  decisao: prestação de contas com a observação do Chefe Vicente, foi aprovada com 4 (quatro) abstenções
+  votacao: 4 abstenções
+  pagina: 4
+  conferido: true
+- tema: Aprovação da previsão orçamentária para 2015/2016
+  decisao: previsão orçamentária aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Referendo ao trabalho dos jovens do XIII Fórum Regional de Jovens Líderes
+  decisao: o trabalho dos jovens fosse referendado
+  votacao: aclamação
+  pagina: 9
+  conferido: true
+- tema: Aprovação da proposta para encaminhamento das decisões da Assembleia
+  decisao: proposta de que as decisões da Assembleia sejam informadas de seu encaminhamento na medida em que as providências
+    forem sendo tomadas; aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 11
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia
+  cargo: Presidente da Mesa
+  eleito: Carlos Eugênio Bakos
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Vice-Presidente
+  eleito: Marco Aurélio de Mello Castrianni
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Vice-Presidente
+  eleito: Rafael Teixeira Nunes
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 1º Secretário
+  eleito: Fábio Sola Aro
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia
+  cargo: 2º Secretário
+  eleito: João Carlos Valentim Veiga Junior
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: Membro
+  eleito: Vilma Pietropoli Morais
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: Membro
+  eleito: Ana Paula Araújo
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Credenciamento
+  cargo: Membro
+  eleito: Marylane Sevo Timoszczuk
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Eleitoral
+  cargo: Membro
+  eleito: Marcos Antônio de Camargo
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Eleitoral
+  cargo: Membro
+  eleito: José Eduardo Biffe
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Eleitoral
+  cargo: Membro
+  eleito: Renata Helena Manzke
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Eleitoral
+  cargo: Membro
+  eleito: Leandro Martins dos Santos
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão Eleitoral
+  cargo: Membro
+  eleito: Juliano Ferreira Arcuri
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Eduardo Luiz Fonseca
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Raphael Tadeu Raiza
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Frederico Leal Costa
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Félix Vieira Varejão Filho
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: Carlos Barboza
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio
+  cargo: Membro
+  eleito: João Roberto da Fonseca
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Assuntos Gerais
+  cargo: Membro
+  eleito: Rodrigo Góes Moreira
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Assuntos Gerais
+  cargo: Membro
+  eleito: Patrícia Diniz
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Assuntos Gerais
+  cargo: Membro
+  eleito: Carlos Nunes
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Assuntos Gerais
+  cargo: Membro
+  eleito: Marcelo Duarte Favarini Silva
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Assuntos Gerais
+  cargo: Membro
+  eleito: Filipe Pereira Bassetto
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Estilo
+  cargo: Membro
+  eleito: Walkiria Pessoa de Almeida Lobo
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Estilo
+  cargo: Membro
+  eleito: Bruna Duarte
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Estilo
+  cargo: Membro
+  eleito: Thaís Gabriela Magalhães
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Candidato a candidato ao CAN
+  cargo: Candidato
+  eleito: José Inácio de Oliveira
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Candidato a candidato ao CAN
+  cargo: Candidato
+  eleito: Ronaldo Engracia
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Candidato a candidato ao CAN
+  cargo: Candidato
+  eleito: Pedro Henrique O. Viviani de Campos
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Candidato a candidato ao CAN
+  cargo: Candidato
+  eleito: Vicente P. Vasconcelos Filho
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Alexandre Banchi
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Marco Aurélio de Mello Castriani
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Rudner Lauterjung Queiroz
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Paulo Roberto Gomes
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Marcelo José Fassina
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Anderson Condrasisen
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Rosemary P. M. de Oliveira
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Rodrigo Góes Moreira
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Luciana Maria Sevo Timosceluck
+  mandato: ''
+  pagina: 11
+  conferido: false
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Ivan V. da Costa
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Lucas Basili Oya da Silva
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Maria Toshiko Yamawaki
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Amandio Mendonça Mendes
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Filipe Pereira Bassetto
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: José Inácio Oliveira
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Ivan Benigno Claudino Silva
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Pedro H. O. Viviani de Campos
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Luiz Carlos Gabriel
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Mariana de Marchi Oliveira
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: João Roberto da Fonseca
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Marcos Roberto Martini Dau
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Titular
+  eleito: Ronaldo Engracia
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Suplente
+  eleito: Fernando Luis M. Donatti
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Suplente
+  eleito: Vicente P. Vasconcelos Filho
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Suplente
+  eleito: Gerald Hall Codling
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Suplente
+  eleito: Evandro L. F. de Oliveira
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Suplente
+  eleito: Henrique de Andrade Messias
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Suplente
+  eleito: Jacir Martins da Silva
+  mandato: ''
+  pagina: 11
+  conferido: true
+- orgao: Delegados regionais à Assembleia Escoteira Nacional
+  cargo: Delegado Suplente
+  eleito: Silvania Etelvina Bhering
+  mandato: ''
+  pagina: 11
+  conferido: true
+numeros:
+- o_que: associados registrados em 2014
+  valor: '21.900'
+  pagina: 11
+  conferido: false
+- o_que: vagas de delegados titulares à Assembleia Nacional
+  valor: '23'
+  pagina: 11
+  conferido: false
+- o_que: votos do candidato José Inácio de Oliveira para CAN
+  valor: '125'
+  pagina: 11
+  conferido: true
+- o_que: votos do candidato Ronaldo Engracia para CAN
+  valor: '116'
+  pagina: 11
+  conferido: true
+- o_que: votos do candidato Pedro Campos para CAN
+  valor: '78'
+  pagina: 11
+  conferido: true
+- o_que: votos do candidato Vicente Vasconcelos para CAN
+  valor: '39'
+  pagina: 11
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 8b060782cfad89a3d241ba611622a7377bdf284c5e8a831d89c307bfb284b8e7
+revisado: null

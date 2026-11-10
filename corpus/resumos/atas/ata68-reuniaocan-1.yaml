@@ -1,0 +1,98 @@
+doc_key: ata68-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2012-03-10'
+  local: São Paulo/SP
+deliberacoes:
+- tema: Agenda da reunião
+  decisao: Aprovada a agenda com inversões de horário de algumas apresentações.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Comissão de Condecorações
+  decisao: formada comissão composta Marcelo, Winder e Ricardo (SE), que fará a avaliação das solicitações e emitirá parecer
+    ao CAN para apreciação.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação do vestuário escoteiro
+  decisao: O CAN aprovou por unanimidade a proposta apresentada em substituição ao traje escoteiro devendo ser mantidos os
+    modelos que constam atualmente no P.O.R (do MAR, do AR e o CAQUI).
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Núcleo Gestor do Planejamento Estratégico
+  decisao: Aprovado pelos Conselheiros que o Núcleo Gestor é dirigido pela DEN e composto por profissionais e voluntários
+    (1 membro do EN e 1 membro de cada Região) para conseguir dados que permitam a atualização do Planejamento.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Guardiões dos Objetivos do Planejamento
+  decisao: os Conselheiros decidiram por 5 votos a 4 que os Guardiões são responsáveis pelo acompanhamento por Perspectivas
+    Estratégicas.
+  votacao: 5 votos a 4
+  pagina: 2
+  conferido: true
+- tema: Espaço para representantes do NNJL e Áreas Geográficas nas reuniões do CAN
+  decisao: Por aclamação o CAN decidiu que os representantes do NNJL e das Áreas Geográficas terão espaço em todas as reuniões
+    do CAN para apresentar informações a respeito da implementação do Planejamento em suas áreas de atuação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Ações para divulgação do vestuário escoteiro
+  decisao: Sugerido que quando da implementação do vestuário a DEN faça um comunicado esclarecendo as razões de tal ação/decisão
+    inclusive, se possível, até com um filme mostrando tal importância.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Prazo para apresentação das alterações do POR
+  decisao: O CAN decide por adiar o prazo para apresentação das alterações e aguardar a versão final do documento para ser
+    analisada na reunião de agosto.
+  votacao: ''
+  pagina: 17
+  conferido: false
+- tema: Sugestão de parceria com empresa aérea
+  decisao: O CAN aprovou que se faça tal sugestão a DEN.
+  votacao: ''
+  pagina: 17
+  conferido: false
+- tema: Ações para divulgação do Plano Estratégico
+  decisao: 'Ficaram aprovadas as seguintes ações: a) Márcio estará destacando dentro do site, através de um banner, o acesso
+    ao Plano Estratégico; b) Ivan enviará a DEN a necessidade de produzirmos um vídeo motivador sobre os objetivos estratégicos
+    da UEB, semelhante ao produzido pelos canadenses; c) Cristine e Sônia estarão avaliando com Manoel as ações que deverão
+    estar presentes no Grupo Padrão que contribuirão com os alcance dos objetivos da UEB; d) Paulo Henrique entrará em contato
+    com a área de Gestão de Adultos para análise em conjunta sobre como incorporar o tema Objetivos Estratégicos da UEB em
+    nossos cursos.'
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: Guardiões dos Objetivos
+  decisao: 'Foram aprovados os seguintes nomes: a) Finanças – Bráulio e Marcelo; b) Sociedade/Beneficiários –Winder e Xaud;
+    c) Pessoas – Rogério e Mussio; d) Processos Internos – Paulo Henrique e Cris.'
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: Inclusão de textos sobre parcerias com instituições religiosas no POR
+  decisao: Solicitou-se que estes dois textos orientativos constem do POR ou de outro documento.
+  votacao: ''
+  pagina: 10
+  conferido: true
+- tema: Representação da UEB em organizações religiosas internacionais
+  decisao: A UEB deverá manter-se como membro da CICE e poderá vir a se filiar às demais organizações religiosas escoteiras
+    internacionais (protestante, budista, islâmica, judaica e ortodoxa grega).
+  votacao: ''
+  pagina: 10
+  conferido: true
+- tema: Aprovação de comissão para ajudar regiões a incluir objetivos estratégicos nacionais em seus planos
+  decisao: foi aprovada uma comissão composta por Márcio, Manoel, Rogério e Bráulio para apresentarem na próxima reunião do
+    CAN um documento para ajudar as regiões incluírem em seus planos objetivos estratégicos nacionais.
+  votacao: ''
+  pagina: 8
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: b01cd112a26f636e9040b549827e8daeedbf23a718149428a436e7437b967370
+revisado: null

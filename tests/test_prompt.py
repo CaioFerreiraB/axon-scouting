@@ -97,3 +97,9 @@ def test_hierarquia_das_normas() -> None:
     for frase in ("de cada nível", "nacional ao regional e ao local", "não pode contrariá-los", "regra complementar"):
         assert frase in NORMALIZED
     assert NORMALIZED.index("primeiro a regra do nível de cima") < NORMALIZED.index("o que o nível de baixo acrescenta")
+
+
+def test_sintese_pelos_resumos_das_atas() -> None:
+    """ADR-062: os resumos das atas em ordem de data, com a ata e a página, nunca como regra."""
+    for frase in ("linha do tempo", "ficha da reunião", "ordem de data", "não o apresente como regra"):
+        assert frase in NORMALIZED

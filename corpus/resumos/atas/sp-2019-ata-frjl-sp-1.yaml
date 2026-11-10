@@ -1,0 +1,169 @@
+doc_key: sp-2019-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2019-03-16'
+  local: auditório da Escola Municipal de Ensino Fundamental (EMEF) Leandro Klein, Rua Prestes Maia, nº. 100 – Bairro Nova
+    Gerti – São Caetano do Sul/SP
+deliberacoes:
+- tema: Eleição da Mesa Diretora do Fórum
+  decisao: Carolina Ikuta obteve 44 votos e Ivan Benigno obteve 28 votos, sendo eleita por maioria de votos, portanto, Carolina
+    Ikuta como a presidente da Mesa do XVII Fórum de Jovens Líderes de 2019. Pietá Rivas como vice-presidente da mesa do XVII
+    Fórum de Jovens Líderes de 2019. Bianca Krauze eleita por aclamação como primeira secretária. Victoria Ennser eleita por
+    maioria de votos como a segunda secretária da mesa do XVII Fórum de Jovens Líderes de 2019.
+  votacao: maioria e aclamação
+  pagina: 1
+  conferido: true
+- tema: Leitura e aprovação da ata do XVI Fórum Regional de Jovens Líderes
+  decisao: O Fórum aprova a medida de leitura da ata de 2018. A Comissão de Revisão e Estilo será criada para entregar a ata
+    reescrita no mesmo dia para ser aprovada no próximo fórum. A medida é aprovada por aclamação. Na segunda sessão, a ata
+    é aprovada por aclamação sob o acordo comum de que as alterações requisitadas durante a sessão serão feitas posteriormente.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Relatório da Gestão 2018 e Prestação de Contas
+  decisao: Foram apresentados os gastos com transporte aéreo para eventos diversos, detalhados em valores específicos para
+    cada evento.
+  votacao: ''
+  pagina: 3
+  conferido: false
+- tema: Projeto Cartilha Diversidades
+  decisao: Comentam sobre a proposta e o surgimento do GT Diversidades, a criação da cartilha pela Nacional e a expectativa
+    de lançamento em breve.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Projeto Conversa temática
+  decisao: Proposta de mini debate em julho e aguardar apresentação na Assembleia sobre pesquisa de satisfação.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Apresentação das chapas candidatas à Diretoria Regional
+  decisao: Apresentação das chapas Caminhando Juntos e Espírito Escoteiro para Diretoria Regional.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Eleição dos Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  decisao: David Beraha, Hareline Belotti e Heloisa Justo eleitos por aclamação como Delegados Titulares e Suplentes.
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: Eleição dos novos membros do Núcleo Regional de Jovens Líderes
+  decisao: Nicholas Casagrande eleito Coordenador 1 ano com 50 votos. Mariana Reali eleita Coordenadora 2 anos com 59 votos.
+    Julia Pacheco eleita Comunicadora 2 anos com 39 votos.
+  votacao: votos expressos
+  pagina: 7
+  conferido: true
+- tema: Eleição da cidade-sede do Encontro Regional de Jovens Líderes 2019
+  decisao: São João da Boa Vista eleita cidade-sede com 44 votos, Santos 39 votos e 7 abstenções.
+  votacao: 44 votos a 39 votos
+  pagina: 8
+  conferido: true
+- tema: Proposta de elaboração de documento formal sobre membros dos GTs regionais e nacionais
+  decisao: Proposta aprovada por aclamação para responsabilização do Núcleo pela elaboração do documento e apresentação à
+    Diretoria Regional.
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora do XVII Fórum de Jovens Líderes
+  cargo: Presidente da Mesa
+  eleito: Carolina Ikuta
+  mandato: XVII Fórum de Jovens Líderes de 2019
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do XVII Fórum de Jovens Líderes
+  cargo: Vice-Presidente da Mesa
+  eleito: Pietá Rivas
+  mandato: XVII Fórum de Jovens Líderes de 2019
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do XVII Fórum de Jovens Líderes
+  cargo: 1° Secretário da Mesa
+  eleito: Bianca Krauze
+  mandato: XVII Fórum de Jovens Líderes de 2019
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do XVII Fórum de Jovens Líderes
+  cargo: 2° Secretário da Mesa
+  eleito: Victoria Ennser
+  mandato: XVII Fórum de Jovens Líderes de 2019
+  pagina: 1
+  conferido: true
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado Titular/Suplente
+  eleito: David Beraha
+  mandato: ''
+  pagina: 7
+  conferido: false
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado Titular/Suplente
+  eleito: Hareline Belotti
+  mandato: ''
+  pagina: 7
+  conferido: false
+- orgao: Delegados Regionais ao Fórum Nacional de Jovens Líderes
+  cargo: Delegado Titular/Suplente
+  eleito: Heloisa Justo
+  mandato: ''
+  pagina: 7
+  conferido: false
+- orgao: Núcleo Regional de Jovens Líderes
+  cargo: Coordenador 1 ano
+  eleito: Nicholas Casagrande
+  mandato: 1 ano
+  pagina: 7
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes
+  cargo: Coordenador 2 anos
+  eleito: Mariana Reali
+  mandato: 2 anos
+  pagina: 7
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes
+  cargo: Comunicadora 2 anos
+  eleito: Julia Pacheco
+  mandato: 2 anos
+  pagina: 7
+  conferido: true
+numeros:
+- o_que: votos para presidente da mesa
+  valor: 44 votos para Carolina Ikuta, 28 votos para Ivan Benigno
+  pagina: 1
+  conferido: true
+- o_que: votos para vice-presidente da mesa
+  valor: 30 votos para Pietá Rivas, 30 votos para Gustavo Soller
+  pagina: 1
+  conferido: true
+- o_que: votos para 2º secretário da mesa
+  valor: 38 votos para Victoria Ennser, 20 votos para Antony
+  pagina: 1
+  conferido: true
+- o_que: gastos transporte aéreo para eventos
+  valor: R$ 134,92; R$ 129,10; R$ 136,09; R$ 142,08
+  pagina: 3
+  conferido: false
+- o_que: participantes Encontro Regional de Jovens Líderes 2018
+  valor: 37 pioneiros, 35 escotistas, 5 chefes de Seção, 30 assistentes, 3 dirigentes, 1 não jovem-líder
+  pagina: 3
+  conferido: true
+- o_que: votos para Coordenador 1 ano do Núcleo Regional
+  valor: 50 votos para Nicholas Casagrande, 34 votos para Heloisa Justo, 3 abstenções
+  pagina: 7
+  conferido: true
+- o_que: votos para Coordenador 2 anos do Núcleo Regional
+  valor: 59 votos para Mariana Reali, 13 votos para Denis Neves, 17 abstenções
+  pagina: 7
+  conferido: true
+- o_que: votos para Comunicadora 2 anos do Núcleo Regional
+  valor: 39 votos para Julia Pacheco, 35 votos para Camila Beatriz, 16 abstenções
+  pagina: 7
+  conferido: true
+- o_que: votos para cidade-sede do Encontro Regional de Jovens Líderes 2019
+  valor: 44 votos para São João da Boa Vista, 39 votos para Santos, 7 abstenções
+  pagina: 8
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: dc19d1596aca1c821cae063bae477e6e3218091ce3d4496007e0df18e640265f
+revisado: null

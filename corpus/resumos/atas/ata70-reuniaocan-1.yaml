@@ -1,0 +1,73 @@
+doc_key: ata70-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2012-08-25'
+  local: São Paulo/SP
+deliberacoes:
+- tema: Aprovação da ata anterior
+  decisao: aprovada a ata da reunião anterior
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Ratificação de condecorações Tiradentes
+  decisao: 'Ratificadas a concessão de condecorações Tiradentes aos Grupos do Rio de Janeiro: 002/RJ – São João Batista da
+    Lagoa, 009/RJ – Marechal Deodoro, 011/RJ – Siqueira Campos, 016/RJ – Anhangá e 123/RJ – Mar Almirante Saldanha'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Alteração em Objetivos Estratégicos
+  decisao: O CAN decide por manter o texto podendo vir a ser alterado quando de nova publicação
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Decisões quanto manutenção/retirada/alteração de Ações Estratégicas
+  decisao: Foram aprovadas diversas alterações e manutenções nos objetivos estratégicos conforme detalhado na ata, incluindo
+    exclusão do item 1.4, manutenção do item 14.2 no objetivo 14, desenvolvimento do item 2.8 pelo Grupo de Trabalho de Posicionamento
+    Institucional, aprovação de que o item 2.16 está atendido, aceitação parcial do item 2.12, definição do modelo de gestão
+    do PE, inclusão de representantes regionais no Núcleo de Gestão, encaminhamento do estudo sobre comunicação interna para
+    apreciação do CAN, aprovação da inserção do vestuário escoteiro no objetivo 5, manutenção do Projeto Nordeste no objetivo
+    6, aprovação da inclusão do item de atualização permanente do material de Programa no objetivo 9, aprovação do item 13.5
+    como atendido, e observações sobre a política comercial no objetivo 14
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Plano de Crescimento e Expansão
+  decisao: O plano será complementado para a reunião de novembro e foi discutido o envolvimento das Regiões e a importância
+    de dados e diagnósticos para sua elaboração
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Aprovação do texto base sobre religião e escotismo
+  decisao: Aprovado o texto base com os itens 1.a), 1.b), 2.a) e 2.b) conforme apresentados na ata
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Decisão sobre consolidação de balanços das Regiões
+  decisao: Proposta aprovada para que as Regiões se adéqüem a uma das 3 primeiras opções apresentadas para consolidação de
+    balanços, com alternativas imediatas para quem não aceitar, incluindo suspensão de repasse, cancelamento de CNPJ e intervenção;
+    e que as Regiões que estão consolidando atualizem seus lançamentos até 30 de setembro sob pena de retenção do repasse
+  votacao: ''
+  pagina: 6
+  conferido: true
+- tema: Decisão sobre divulgação de documentos contábeis
+  decisao: Decidido que devem permanecer no texto somente a divulgação do Balanço, Demonstração de Resultados e Parecer da
+    Comissão Fiscal, excluindo a divulgação dos livros Razão e Diário; proposta aprovada com 7 votos favoráveis
+  votacao: 7 votos a favor
+  pagina: 10
+  conferido: true
+- tema: Aprovação da venda de imóvel da UEB/MG
+  decisao: Aprovada a venda do imóvel situado na Rua Jordão, número 13, salas 06 e 08, bairro Canaã, em Ipatinga - Minas Gerais
+  votacao: 9 votos favoráveis, 1 abstenção
+  pagina: 11
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos na decisão sobre recurso do processo originado na UEB/MG
+  valor: 8 votos favoráveis, 1 abstenção, 2 impedimentos
+  pagina: 10
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: c957bc839773a824e38df116efc926197f222d3cbdc7ccdbb3f6a122b975a33d
+revisado: null

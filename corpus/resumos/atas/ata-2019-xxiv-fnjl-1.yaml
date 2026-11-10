@@ -1,0 +1,238 @@
+doc_key: ata-2019-xxiv-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2019-04-27'
+  local: Sede Regional do Distrito Federal, situada na SCES Trecho 3 Lote 3
+deliberacoes:
+- tema: eleição da mesa
+  decisao: 'Não havendo novos candidatos, as indicações do núcleo foram aceitas por aclamação pelos presentes. Deste modo
+    a mesa foi composta por: PRESIDENTE – Maria Julia de Souza Rocha de Macedo (GO), VICE-PRESIDENTE – Rafael Werneburg (DF),
+    1º SECRETÁRIO – Isabella Gomes Rosa Galdino Bezerra (GO) e 2º SECRETÁRIO - Harelline Belotti (SP).'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição da comissão de escrutínio
+  decisao: 'os três voluntários: Ana Fonseca (MG), João Pedro (RJ) e Anandha Liz (PR) foram eleitos por aclamação.'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata do Fórum Nacional de Jovens Líderes realizado em Curitiba/PR
+  decisao: A ATA do Fórum Nacional de Jovens Líderes realizado em Curitiba/PR foi aprovada com total de 30 votos a favor.
+  votacao: 30 votos a favor
+  pagina: 1
+  conferido: true
+- tema: liberação da participação dos delegados da Amazonas no fórum
+  decisao: Foi posto em votação a liberação da participação dos delegados da Amazonas no fórum, sendo que foram 32 votos a
+    favor e 3 abstenções.
+  votacao: 32 votos a favor e 3 abstenções
+  pagina: 1
+  conferido: true
+- tema: aprovação do plano de ação
+  decisao: Em seguida a presidente abriu votação para aprovação do plano de ação, tendo 34 votos a favor, nenhum contra, 2
+    abstenções, assim o plano foi aprovado.
+  votacao: 34 votos a favor, nenhum contra, 2 abstenções
+  pagina: 1
+  conferido: true
+- tema: aprovação da proposta para levar o Plano de Ação para Assembleia Nacional
+  decisao: Foi votado pela aprovação da proposta, tendo 35 votos a favor, nenhum contra e 3 abstenções.
+  votacao: 35 votos a favor, nenhum contra e 3 abstenções
+  pagina: 1
+  conferido: true
+- tema: eleição do Núcleo Nacional - coordenador e comunicadora
+  decisao: 'sendo eleitos: para coordenador Matheus Valois (MA) com 19 votos e para comunicadora Carolina Ikuta (SP) com 34
+    votos.'
+  votacao: 19 votos para Matheus Valois, 34 votos para Carolina Ikuta
+  pagina: 2
+  conferido: true
+- tema: continuidade do Grupo de Trabalho de Debates
+  decisao: a deliberação foi aceita por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: não aceitação dos votos das regiões Amazonas, Piauí e São Paulo
+  decisao: Em virtude da questão de ordem apresentada pelo Núcleo Nacional, os votos da Amazonas, Piauí e São Paulo não serão
+    aceitos, pois as atas não foram enviadas dentro do prazo.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: nova votação para o Núcleo Nacional - coordenador e comunicadora
+  decisao: 'Foi realizada nova votação de acordo com o edital a votação para o Núcleo Nacional sendo eleitos: para coordenador
+    Felipe Bertoglio (RS), com 18 votos e para comunicadora Carolina Ikuta (SP) com 30 votos.'
+  votacao: 18 votos para Felipe Bertoglio, 30 votos para Carolina Ikuta
+  pagina: 3
+  conferido: true
+- tema: aprovação da proposta para que o Núcleo Nacional publique relação dos delegados e disponibilize atas
+  decisao: A proposta foi votada e aprovada por aclamação.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: aprovação da candidatura do Rio Grande do Norte para o Encontro Nacional
+  decisao: Foi levado à votação a aprovação da candidatura do RN para o Encontro Nacional. Foram 12 votos a favor, nenhum
+    contra e 19 abstenções, sendo assim a candidatura foi aceita.
+  votacao: 12 votos a favor, nenhum contra e 19 abstenções
+  pagina: 6
+  conferido: true
+- tema: eleição do local do Encontro Nacional de Jovens Líderes de 2020
+  decisao: 'Foi realizada a votação: GO com 10 votos, MG com 18 votos e RN com 3 votos, com isso, Minas Gerais foi eleita
+    local do Encontro Nacional de Jovens Líderes de 2020.'
+  votacao: 18 votos para MG, 10 para GO, 3 para RN
+  pagina: 6
+  conferido: true
+- tema: aprovação da ata do fórum passado apresentada na primeira sessão do fórum
+  decisao: Foi aprovada com 28 votos a favor, nenhum voto contra e 3 abstenções.
+  votacao: 28 votos a favor, nenhum contra, 3 abstenções
+  pagina: 6
+  conferido: true
+eleicoes:
+- orgao: mesa do Fórum Nacional de Jovens Líderes
+  cargo: PRESIDENTE
+  eleito: Maria Julia de Souza Rocha de Macedo (GO)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa do Fórum Nacional de Jovens Líderes
+  cargo: VICE-PRESIDENTE
+  eleito: Rafael Werneburg (DF)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa do Fórum Nacional de Jovens Líderes
+  cargo: 1º SECRETÁRIO
+  eleito: Isabella Gomes Rosa Galdino Bezerra (GO)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa do Fórum Nacional de Jovens Líderes
+  cargo: 2º SECRETÁRIO
+  eleito: Harelline Belotti (SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: comissão de escrutínio do Fórum Nacional de Jovens Líderes
+  cargo: membro
+  eleito: Ana Fonseca (MG)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: comissão de escrutínio do Fórum Nacional de Jovens Líderes
+  cargo: membro
+  eleito: João Pedro (RJ)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: comissão de escrutínio do Fórum Nacional de Jovens Líderes
+  cargo: membro
+  eleito: Anandha Liz (PR)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: coordenador
+  eleito: Matheus Valois (MA)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: comunicadora
+  eleito: Carolina Ikuta (SP)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: coordenador
+  eleito: Felipe Bertoglio (RS)
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: comunicadora
+  eleito: Carolina Ikuta (SP)
+  mandato: ''
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: delegados com direito a voto inicialmente
+  valor: '38'
+  pagina: 1
+  conferido: true
+- o_que: votos a favor da aprovação da ata do Fórum Nacional de Jovens Líderes realizado em Curitiba/PR
+  valor: '30'
+  pagina: 1
+  conferido: true
+- o_que: votos a favor da liberação da participação dos delegados da Amazonas no fórum
+  valor: '32'
+  pagina: 1
+  conferido: true
+- o_que: abstenções na votação da liberação da participação dos delegados da Amazonas
+  valor: '3'
+  pagina: 1
+  conferido: true
+- o_que: votos a favor da aprovação do plano de ação
+  valor: '34'
+  pagina: 1
+  conferido: true
+- o_que: abstenções na votação da aprovação do plano de ação
+  valor: '2'
+  pagina: 1
+  conferido: true
+- o_que: votos a favor da aprovação da proposta para levar o Plano de Ação para Assembleia Nacional
+  valor: '35'
+  pagina: 1
+  conferido: true
+- o_que: abstenções na votação da aprovação da proposta para levar o Plano de Ação para Assembleia Nacional
+  valor: '3'
+  pagina: 1
+  conferido: true
+- o_que: votos para coordenador Matheus Valois (MA) na primeira eleição
+  valor: '19'
+  pagina: 2
+  conferido: true
+- o_que: votos para comunicadora Carolina Ikuta (SP) na primeira eleição
+  valor: '34'
+  pagina: 2
+  conferido: true
+- o_que: votos para coordenador Felipe Bertoglio (RS) na nova votação
+  valor: '18'
+  pagina: 3
+  conferido: true
+- o_que: votos para comunicadora Carolina Ikuta (SP) na nova votação
+  valor: '30'
+  pagina: 3
+  conferido: true
+- o_que: votos a favor da proposta para que o Núcleo Nacional publique relação dos delegados e disponibilize atas
+  valor: aclamação
+  pagina: 4
+  conferido: true
+- o_que: votos a favor da aprovação da candidatura do RN para o Encontro Nacional
+  valor: '12'
+  pagina: 6
+  conferido: true
+- o_que: abstenções na votação da aprovação da candidatura do RN para o Encontro Nacional
+  valor: '19'
+  pagina: 6
+  conferido: true
+- o_que: votos para GO na eleição do local do Encontro Nacional de Jovens Líderes de 2020
+  valor: '10'
+  pagina: 6
+  conferido: true
+- o_que: votos para MG na eleição do local do Encontro Nacional de Jovens Líderes de 2020
+  valor: '18'
+  pagina: 6
+  conferido: true
+- o_que: votos para RN na eleição do local do Encontro Nacional de Jovens Líderes de 2020
+  valor: '3'
+  pagina: 6
+  conferido: true
+- o_que: votos a favor da aprovação da ata do fórum passado apresentada na primeira sessão do fórum
+  valor: '28'
+  pagina: 6
+  conferido: true
+- o_que: abstenções na aprovação da ata do fórum passado apresentada na primeira sessão do fórum
+  valor: '3'
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 725f703630da46ee7318a4829163ae01f7d9b379a488ebefdb67289c306b6321
+revisado: null

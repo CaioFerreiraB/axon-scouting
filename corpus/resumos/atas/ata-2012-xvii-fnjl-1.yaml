@@ -1,0 +1,69 @@
+doc_key: ata-2012-xvii-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2012-04-27'
+  local: Sesc Turismo, Rua São Carlos, 3849 São Luís - MA
+deliberacoes:
+- tema: Aprovação da ata do XVI Fórum Nacional de Jovens Líderes
+  decisao: Com quinze votos a favor e duas abstenções, a ata foi aprovada.
+  votacao: 15 votos a favor, 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: Data do Encontro Nacional de Jovens Líderes (ENJL)
+  decisao: Após a retirada de Santa Catarina, a eleição segue, com o resultado de 10 votos a favor de sede do ENJL ser no
+    RN e 8 votos a favor da sede do ENJL ser no RS.
+  votacao: 10 votos a favor RN, 8 votos a favor RS
+  pagina: 3
+  conferido: true
+- tema: Eleição dos Coordenador e Comunicador do Núcleo Nacional de Jovens Líderes
+  decisao: São aclamados respectivamente como Coordenador e Comunicador Lucas e Tiago, para o Núcleo Nacional de Jovens Líderes.
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Continuidade do Troféu Joinha
+  decisao: Com 17 votos a favor e um contra, o Fórum preza para a continuidade do Troféu Joinha para os Núcleos Regionais
+    que se destacarem além dos critérios definidos pela rede padrão, ficando o mesmo a cargo do NNJL.
+  votacao: 17 votos a favor, 1 contra
+  pagina: 4
+  conferido: true
+- tema: Criação do Troféu Rede Padrão
+  decisao: Foi votado por unanimidade a criação do troféu Rede Padrão nos níveis Bronze, Prata e Ouro nos moldes e critérios
+    apresentados na recomendação em anexo.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Coordenador
+  eleito: Lucas Machado Moreira
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Núcleo Nacional de Jovens Líderes
+  cargo: Comunicador
+  eleito: Tiago Lacerda Queiroz Carvalho
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: participantes no XVII Fórum Nacional de Jovens Líderes
+  valor: 67 jovens e 9 observadores
+  pagina: 1
+  conferido: false
+- o_que: votos para aprovação da ata do XVI Fórum
+  valor: 15 votos a favor e 2 abstenções
+  pagina: 3
+  conferido: false
+- o_que: votos para sede do ENJL
+  valor: 10 votos RN e 8 votos RS
+  pagina: 3
+  conferido: true
+- o_que: votos para continuidade do Troféu Joinha
+  valor: 17 votos a favor e 1 contra
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: a2e1abbd358b9cec21425cc219a5db0738b0bbdfe85f6c5c9189ac8b95eea4a1
+revisado: null

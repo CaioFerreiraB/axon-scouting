@@ -1,0 +1,202 @@
+doc_key: sp-ata-are-2011-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2011-03-26'
+  local: Teatro Municipal Brás Cubas, Avenida Pinheiro Machado, nº 48, bairro Campo Grande, Santos - SP
+deliberacoes:
+- tema: Aprovação das atas das Assembleias Regionais Ordinária e Extraordinária do ano anterior
+  decisao: Ambas as atas foram aprovadas por unanimidade.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Aprovação do relatório de 2010
+  decisao: Aprovação do relatório de 2010
+  votacao: unanimidade
+  pagina: 11
+  conferido: true
+- tema: Aprovação das contas do exercício de 2010
+  decisao: Aprovação das contas de 2010
+  votacao: uma abstenção e nenhum voto contrário, aprovado por maioria absoluta
+  pagina: 11
+  conferido: true
+- tema: Orçamento para 2012
+  decisao: Proposta de reajuste das anuidades pelo INPC para vigência em 2012 aprovada por grande maioria; Majoração de um
+    real além do reajuste aprovada pela maioria
+  votacao: 109 votos a favor, 35 contra e oito abstenções para a majoração; nove votos contra e cinco abstenções para o reajuste
+    pelo INPC
+  pagina: 11
+  conferido: true
+- tema: Eleição dos Delegados Regionais à Assembleia Nacional
+  decisao: 17 delegados e 7 suplentes aprovados por aclamação
+  votacao: aclamação
+  pagina: 13
+  conferido: true
+- tema: Indicação da cidade sede para a XIX Assembleia Regional Escoteira em 2012
+  decisao: Distrito de Guarulhos indicado e aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 19
+  conferido: true
+eleicoes:
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Alexandre Banchi
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Antônio Lívio Abraços Jorge
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Cristina Mary K. Sototuka
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Euclides Santos Pallamin
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Francisca de Souza Carrer
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Jacir Martins da Silva
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Jorge Kuma Sototuka
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: José Eduardo Fujiwara
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: José Inácio de Oliveira
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Marcos Ramacciato
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Patricia Diniz
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Renato Araujo da Silva
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Rosemary P Motta de Oliveira
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Sonia Maria G. Jorge
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Vera Lucia Santos da Silva
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Vicente Vasconcellos
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: delegado
+  eleito: Benedito Sergio Leme de Faria
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: suplente
+  eleito: Marcos Vinicius de Mattos Chaves
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: suplente
+  eleito: Frederico Leal Costa
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: suplente
+  eleito: José Maurício Sanches
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: suplente
+  eleito: Soraya Soares da Silva
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: suplente
+  eleito: Carlos Augusto da Costa Frazão
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: suplente
+  eleito: Márcio Rogério Bernardino
+  mandato: ''
+  pagina: 13
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: suplente
+  eleito: Mário Luiz Alvarenga
+  mandato: ''
+  pagina: 13
+  conferido: true
+numeros:
+- o_que: delegados registrados no início da Assembleia
+  valor: '180'
+  pagina: 4
+  conferido: true
+- o_que: delegados credenciados no momento da votação do orçamento
+  valor: '216'
+  pagina: 11
+  conferido: true
+- o_que: doações para o projeto Volta a Gilwell
+  valor: R$ 400; R$ 42; R$ 300; R$ 600; R$ 300; R$ 150; R$ 400; R$ 300; R$ 1,5 mil; R$ 11,60; R$ 20; R$ 600; R$ 200; R$ 50;
+    R$ 100; R$ 5; R$ 5
+  pagina: 18
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: b93b76f53459493721f4e10719b65e8e620d827580ff8515f1f90e52950e6354
+revisado: null

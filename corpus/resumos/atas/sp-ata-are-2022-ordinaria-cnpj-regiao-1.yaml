@@ -1,0 +1,225 @@
+doc_key: sp-ata-are-2022-ordinaria-cnpj-regiao-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-03-20'
+  local: online
+deliberacoes:
+- tema: Composição da Mesa Diretora
+  decisao: Renato Breneizer foi eleito Presidente da Assembleia com 235 votos; Bruno Gonçalves Fonseca e Paula Acirón Loureiro
+    eleitos 1º e 2º Vice-Presidentes; Lucas Matos Foltran eleito 1º Secretário.
+  votacao: 235 votos a favor para Presidente, demais por votação secreta
+  pagina: 5
+  conferido: true
+- tema: Alteração da Comissão de Estilo para Comissão de Assuntos Gerais
+  decisao: Proposta de alteração de Comissão de Estilo para Comissão de Assuntos Gerais aprovada por aclamação.
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Composição das Comissões Assessoras da Assembleia
+  decisao: Eleitos por aclamação os membros das Comissões Eleitoral, Escrutínio e Assuntos Gerais; referendada a composição
+    da Comissão de Credenciais.
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: Ata da reunião anterior aprovada por unanimidade, sem necessidade de correções.
+  votacao: unanimidade
+  pagina: 6
+  conferido: true
+- tema: Aprovação das contas e balanço do exercício fiscal anterior
+  decisao: Contas e Balanço Patrimonial de 2021 aprovados por 357 votos a favor, 10 brancos e 15 nulos.
+  votacao: 357 votos a favor, 10 brancos, 15 nulos
+  pagina: 6
+  conferido: true
+- tema: Aprovação da Previsão Orçamentária para o exercício fiscal de 2022
+  decisao: Previsão Orçamentária 2022 aprovada com 371 votos a favor, 20 contra, 8 brancos e 9 nulos.
+  votacao: 371 votos a favor, 20 contra, 8 brancos, 9 nulos
+  pagina: 7
+  conferido: true
+- tema: Aprovação do Relatório da Diretoria Regional gestão 2021
+  decisao: Relatório da Diretoria Regional relativo ao ano 2021 aprovado por 340 votos a favor, 58 contra, 9 brancos e 6 nulos.
+  votacao: 340 votos a favor, 58 contra, 9 brancos, 6 nulos
+  pagina: 8
+  conferido: true
+- tema: Recomendações do XX Fórum Regional de Jovens Líderes
+  decisao: Encaminhamento como recomendação para a próxima Direção Regional a participação da Diretoria Jovem no processo
+    seletivo dos seus sucessores e composição da comissão de seleção por Jovens Líderes.
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: Eleição dos Delegados Regionais à Assembleia Escoteira Nacional 2022
+  decisao: Eleitos 18 delegados titulares e 9 suplentes conforme votação nominal apresentada.
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: Eleição da Comissão de Ética e Disciplina Regional gestão 2022-2025
+  decisao: Eleitos titulares Eduardo Gutierrez, Fábio Sola Aro, Roberto Enrico Manca Di Villahermosa e suplente Elídio Aparecido
+    Silva.
+  votacao: ''
+  pagina: 9
+  conferido: true
+- tema: Eleição da Comissão Fiscal Regional gestão 2022-2025
+  decisao: Eleitos titulares Silvio Yoshiro Mizuguchi, Amandio Mendonça Mendes, Sergio Correa dos Reis e suplentes Fabiano
+    Rioli Kunert e Laércio Alexandre Canizela.
+  votacao: ''
+  pagina: 10
+  conferido: true
+- tema: Eleição da Direção Regional gestão 2022-2025
+  decisao: Eleita chapa “Espírito Escoteiro” com 287 votos para Diretoria Regional, composta por Rodrigo Ramos de Freitas
+    (Diretor Presidente), Vânia Ferrari (Diretora-Vice-Presidente), Lucas Jun Sakajiri (Diretor Financeiro), Ana Letícia Bueno
+    Perin Campos (Diretora Administrativa) e Matheus Luis Cardoso França (Diretor de Relações Institucionais).
+  votacao: 287 votos para chapa Espírito Escoteiro, 140 para chapa Conexão Escoteira
+  pagina: 10
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: Presidente
+  eleito: Renato Breneizer
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 1º Vice-Presidente
+  eleito: Bruno Gonçalves Fonseca
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 2º Vice-Presidente
+  eleito: Paula Acirón Loureiro
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 1º Secretário
+  eleito: Lucas Matos Foltran
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Comissão Eleitoral e Escrutínio da Assembleia Regional
+  cargo: Membros
+  eleito: José Eduardo Biffe, Marcos Antonio de Carvalho, Marcela Andalaft, Ana Serafina de Souza Hidaka, Ana Carolina Casagrande
+    Bortolozzo, Silmar Tolotto
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão de Assuntos Gerais da Assembleia Regional
+  cargo: Membros
+  eleito: Eliana Márcia Sotello Cabrera, Renata Manzke
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Comissão de Credenciais da Assembleia Regional
+  cargo: Membros
+  eleito: Ana Paula Araújo, Kael Bastos, Morgana Russo, Renato Saito, Tânia Rossetti, Vilma Pietrópolis
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegados Titulares
+  eleito: Carlos Eugênio Bakos, Vania Ferrari, Marco Aurelio Castrianni, Edson Carlos Pires, Pedro Hernandez, Luiz Carlos
+    Ferreira, Antônio Fischer Neto, Anna Beatriz Reali, Eva Alice Gonçalves, Rodrigo Ramos de Freitas, Lidia Sadaco Minamizaki,
+    Rosemary Peres Motta, Marcos Cunha, Fabiano Rioli Kunert, Julio Cesar Osorio, Euclides Hisatugo, Gerald Hall Codling,
+    Robson Lancaster
+  mandato: '2022'
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegados Suplentes
+  eleito: Regina Antonia Ribeiro, Edison Vieira, Gabriel de Souza, Ronaldo Engracia, Marcelo Moliterno, Marco Roberto Brito,
+    Gilvécio Paulo Arruda, André Ricardo da Silva, Jacir Martins da Silva
+  mandato: '2022'
+  pagina: 9
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Titulares
+  eleito: Eduardo Gutierrez, Fábio Sola Aro, Roberto Enrico Manca Di Villahermosa
+  mandato: 31/03/2022 a 31/03/2025
+  pagina: 9
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Suplente
+  eleito: Elídio Aparecido Silva
+  mandato: 31/03/2022 a 31/03/2025
+  pagina: 9
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Titulares
+  eleito: Silvio Yoshiro Mizuguchi, Amandio Mendonça Mendes, Sergio Correa dos Reis
+  mandato: 31/03/2022 a 31/03/2025
+  pagina: 10
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Suplentes
+  eleito: Fabiano Rioli Kunert, Laércio Alexandre Canizela
+  mandato: 31/03/2022 a 31/03/2025
+  pagina: 10
+  conferido: true
+- orgao: Direção Regional
+  cargo: Diretor Presidente
+  eleito: Rodrigo Ramos de Freitas
+  mandato: 31/03/2022 a 31/03/2025
+  pagina: 10
+  conferido: true
+- orgao: Direção Regional
+  cargo: Diretora-Vice-Presidente
+  eleito: Vânia Ferrari
+  mandato: 31/03/2022 a 31/03/2025
+  pagina: 10
+  conferido: true
+- orgao: Direção Regional
+  cargo: Diretor Financeiro
+  eleito: Lucas Jun Sakajiri
+  mandato: 31/03/2022 a 31/03/2025
+  pagina: 10
+  conferido: true
+- orgao: Direção Regional
+  cargo: Diretora Administrativa
+  eleito: Ana Letícia Bueno Perin Campos
+  mandato: 31/03/2022 a 31/03/2025
+  pagina: 10
+  conferido: true
+- orgao: Direção Regional
+  cargo: Diretor de Relações Institucionais
+  eleito: Matheus Luis Cardoso França
+  mandato: 31/03/2022 a 31/03/2025
+  pagina: 10
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '377'
+  pagina: 5
+  conferido: true
+- o_que: votos para Presidente da Assembleia
+  valor: '235'
+  pagina: 5
+  conferido: true
+- o_que: votos para Vice-Presidentes e Secretário
+  valor: 195, 178, 216 respectivamente
+  pagina: 5
+  conferido: true
+- o_que: votos para aprovação das contas e balanço 2021
+  valor: 357 a favor, 10 brancos, 15 nulos
+  pagina: 6
+  conferido: true
+- o_que: votos para aprovação da previsão orçamentária 2022
+  valor: 371 a favor, 20 contra, 8 brancos, 9 nulos
+  pagina: 7
+  conferido: true
+- o_que: votos para aprovação do relatório da diretoria 2021
+  valor: 340 a favor, 58 contra, 9 brancos, 6 nulos
+  pagina: 8
+  conferido: true
+- o_que: votos para eleição da chapa Espírito Escoteiro
+  valor: '287'
+  pagina: 10
+  conferido: true
+- o_que: votos para eleição da chapa Conexão Escoteira
+  valor: '140'
+  pagina: 10
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 681096af0ea9034d5bdbdc2072d00bfdda630ef7f084f3eb12fee1feea9fc1fc
+revisado: null

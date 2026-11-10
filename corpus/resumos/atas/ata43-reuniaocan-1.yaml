@@ -1,0 +1,51 @@
+doc_key: ata43-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2004-06-12'
+  local: Chácara do Colégio Arquidiocesano, São B. do Campo/SP
+deliberacoes:
+- tema: Projeto Congresso de Educação Não Formal
+  decisao: Diretoria Executiva Nacional – DEN analisará o projeto total do evento (dois congressos) e manterá informado os
+    Conselheiros de modo que no prazo de 30 (trinta) dias possa ser tomada uma decisão quanto a sua realização.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Projeto Cidadania Ativa
+  decisao: autorização da DEN para formalizar parcerias e captação de recursos junto a outras Associações Escoteiras Internacionais
+    e o Bureau Mundial, a qual foi concedida.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação de balancetes da UEB
+  decisao: Apresentados os balancetes relativos aos meses de Janeiro e Fevereiro os quais foram aprovados.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Política comercial LEN
+  decisao: o CAN autoriza a venda direta e solicita a elaboração de uma Resolução que contemple a nova Política Comercial.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Projeto Grupo Padrão
+  decisao: Definido que a DEN encaminhará aos Conselheiros, no início de julho, proposta de Resolução do Projeto Grupo Padrão
+    que, se aceita pelos Conselheiros, poderá ser divulgada ad referendum do CAN em sua próxima reunião.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Concessão de Medalhas e Condecorações
+  decisao: os pareceres da subcomissão de condecorações e recompensas foram aprovados. Decidido homenagear o Chefe Lino dando
+    seu nome à sessão solene da próxima Assembléia Nacional e concessão da Medalha Velho Lobo post-mortem.
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: data da reunião
+  valor: 12 de junho de 2004
+  pagina: 1
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: bdfcfbb48a4f6a19f597586020660aed8049d085aa8cf0e81531f23f8bb3d571
+revisado: null

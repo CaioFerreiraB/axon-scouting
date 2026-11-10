@@ -1,0 +1,13 @@
+doc_key: ata65-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2011-08-28'
+  local: Curitiba/PR
+deliberacoes: []
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: baf26423692645eddc8d4c886638dc732dac0f5da5d0b22cd62cf8c99152513d
+revisado: null

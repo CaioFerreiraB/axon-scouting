@@ -1,0 +1,170 @@
+doc_key: sp-ata-frpio-2023-i-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-02-11'
+  local: UMC – Universidade Mogi das Cruzes, situada à Av. Dr. Cândido X. de Almeida e Souza, 200 – Centro Cívico, Mogi das
+    Cruzes – SP
+deliberacoes:
+- tema: eleição da mesa diretora
+  decisao: 'mesa diretora – que foi eleita por aclamação com a seguinte composição: presidente, Rafael Melis Rogéro (GE São
+    Carlos 251/SP), 1º Vice-Presidente: Ygor Rezende Monrinishi (GE Tiradentes 107/SP), 2º Vice-Presidente, Lucas Mendelson
+    Bertholdo da Silva Botelho (GE Orzel Bialy 368/SP), 1º Secretário, Sabrina Mirabal Czarnotta (GE Tapajós 32/SP), 2º Secretário,
+    Ana Clara Lucio Panese (GE Irapuã 189/SP) e 3º Secretário, Diogo Spinellida da Silva (GE Falcão Peregrino 20/SP).'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação da ata da Assembleia anterior
+  decisao: por entendimento da mesa e votação por aclamação da plenária não houve necessidade de leitura, assim aprovando
+    a ata por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: prestação de contas da Equipe Regional Pioneira 2022
+  decisao: o então Presidente da CP, Robert Santos, informa à plenária que não houve gastos.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: eleição da cidade-sede do Fórum Regional Pioneiro 2024
+  decisao: foi eleita a cidade de Jundiaí para sediar o evento, com 17 votos. Guarulhos e São Carlos receberam respectivamente
+    14 e 4 votos, e não houve abstenções.
+  votacao: 17 votos a favor
+  pagina: 2
+  conferido: true
+- tema: eleição da cidade-sede do Interclãs 2024
+  decisao: cidade de Santos (Grupo Escoteiro Morvan 55/SP), que foi aprovada com unanimidade, não havendo abstenções.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: eleição da cidade-sede do Mutirão Regional Pioneiro 2024
+  decisao: Ituverava (Grupo Escoteiro José Amauri de Souza 225/SP) que também foi aprovada com unanimidade, não havendo abstenções.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: eleição da cidade-sede do Congresso Regional Pioneiro 2024
+  decisao: cidade de São Paulo (Grupo Escoteiro Tiradentes 107/SP), que foi aprovada com unanimidade e sem abstenções.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: aprovação da criação de Equipe de Interesse aberta para todos os pioneiros da região de São Paulo
+  decisao: proposta foi levada para votação e resultou em 22 votos a favor e 1 voto contra, sendo então aprovada a solicitação
+    de uma Equipe de Interesse aberta para todos os pioneiros da região de São Paulo.
+  votacao: 22 votos a favor e 1 voto contra
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora do I Fórum Regional Pioneiro 2023
+  cargo: presidente
+  eleito: Rafael Melis Rogéro (GE São Carlos 251/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do I Fórum Regional Pioneiro 2023
+  cargo: 1º Vice-Presidente
+  eleito: Ygor Rezende Monrinishi (GE Tiradentes 107/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do I Fórum Regional Pioneiro 2023
+  cargo: 2º Vice-Presidente
+  eleito: Lucas Mendelson Bertholdo da Silva Botelho (GE Orzel Bialy 368/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do I Fórum Regional Pioneiro 2023
+  cargo: 1º Secretário
+  eleito: Sabrina Mirabal Czarnotta (GE Tapajós 32/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do I Fórum Regional Pioneiro 2023
+  cargo: 2º Secretário
+  eleito: Ana Clara Lucio Panese (GE Irapuã 189/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora do I Fórum Regional Pioneiro 2023
+  cargo: 3º Secretário
+  eleito: Diogo Spinellida da Silva (GE Falcão Peregrino 20/SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Equipe Regional Pioneira
+  cargo: membro
+  eleito: Tyago Ferreira dos Reis (GE Aimoés 59/SP)
+  mandato: '2023'
+  pagina: 3
+  conferido: true
+- orgao: Equipe Regional Pioneira
+  cargo: membro
+  eleito: Tamy Sayuri Ishi (GE Gaia 190/SP)
+  mandato: '2023'
+  pagina: 3
+  conferido: true
+- orgao: Equipe Regional Pioneira
+  cargo: membro
+  eleito: Azrael (João Pedro) Briotto Zucherato (GE Morvan Dias Figueiredo 55/SP)
+  mandato: '2023'
+  pagina: 3
+  conferido: true
+- orgao: Equipe Regional Pioneira
+  cargo: membro
+  eleito: Ygor Rezende Morinishi (GE Tiradentes 107/SP)
+  mandato: '2023'
+  pagina: 3
+  conferido: true
+- orgao: Equipe Regional Pioneira
+  cargo: membro
+  eleito: Paulo Ricardo Santos Praes (GE José Amauri de Sousa 225/SP)
+  mandato: '2023'
+  pagina: 3
+  conferido: true
+- orgao: Equipe Regional Pioneira
+  cargo: membro
+  eleito: Pedro Miguel Alves Lima Espindola (GE Santo Amaro 56/SP)
+  mandato: '2023'
+  pagina: 3
+  conferido: true
+- orgao: Equipe Regional Pioneira
+  cargo: membro
+  eleito: Marco Aurélio Lérias Guereta (GE Dr. José Ribeiro Fortes 240/SP)
+  mandato: '2023'
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: jovens presentes
+  valor: '80'
+  pagina: 1
+  conferido: true
+- o_que: adultos presentes
+  valor: '50'
+  pagina: 1
+  conferido: true
+- o_que: clãs credenciados
+  valor: '23'
+  pagina: 1
+  conferido: true
+- o_que: votos para cidade-sede do Fórum Regional Pioneiro 2024 - Jundiaí
+  valor: '17'
+  pagina: 2
+  conferido: true
+- o_que: votos para cidade-sede do Fórum Regional Pioneiro 2024 - Guarulhos
+  valor: '14'
+  pagina: 2
+  conferido: true
+- o_que: votos para cidade-sede do Fórum Regional Pioneiro 2024 - São Carlos
+  valor: '4'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor da criação da Equipe de Interesse aberta
+  valor: '22'
+  pagina: 2
+  conferido: true
+- o_que: votos contra da criação da Equipe de Interesse aberta
+  valor: '1'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 7c121b8efb3c1a399fcf8c5f24323f8f6357bf03682179f28d819cec70a08d66
+revisado: null

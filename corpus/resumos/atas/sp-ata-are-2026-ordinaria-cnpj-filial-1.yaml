@@ -1,0 +1,402 @@
+doc_key: sp-ata-are-2026-ordinaria-cnpj-filial-1
+reuniao:
+  tipo: ordinaria
+  data: '2026-03-21'
+  local: Centro Universitário Estácio, Rua Abrahão Issa Halak, 980, Ribeirânia, Ribeirão Preto/SP
+deliberacoes:
+- tema: Eleição e posse da Comissão Assessora da Assembleia
+  decisao: composição aprovada por aclamação pela plenária e ficaram encarregados de monitorar o sistema de votação da empresa
+    EasyVote Soluções Interativas
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Eleição e posse da Mesa Diretora
+  decisao: Renato Breneizer tomou posse como Presidente; Victor Gabriel Fogarolli Marcondes como 1º Vice-Presidente; Milena
+    Gonçalves Leite como 2º Vice-Presidente; Neide Osawa Watanabe como 1ª Secretária; Edson Carlos Pires como 2º Secretário
+  votacao: 'votação para Presidente: Renato Breneizer 193 votos, Rafael Melis Rogero 67 votos, 15 abstenções; para Vice-Presidentes:
+    Victor Gabriel Fogarolli Marcondes 164 votos, Milena Gonçalves 62 votos, Leonardo Gobira de Macedo 20 votos, Rafael Melis
+    Rogero 18 votos, 11 abstenções; para Secretários: Neide Osawa Watanabe 107 votos, Edson Carlos Pires 60 votos, Pedro Antônio
+    Hernandez 51 votos, Beatriz Chrispim 35 votos, 22 abstenções'
+  pagina: 5
+  conferido: true
+- tema: Eleição e posse dos membros das Comissões Assessoras da Assembleia
+  decisao: Comissão de Credenciais referendada por aclamação; Comissão Eleitoral eleitos por aclamação; Comissão de Assuntos
+    Gerais aprovada por aclamação
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: a ata foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Aprovação do Relatório da Diretoria Regional na Gestão do ano de 2025
+  decisao: relatório foi aprovado por aclamação
+  votacao: aclamação
+  pagina: 6
+  conferido: true
+- tema: Aprovação das contas e balanço do exercício fiscal anterior
+  decisao: aprovação das contas de 2025 foi votada e aprovada por 174 votos a favor, 53 votos contra e 47 abstenções
+  votacao: 174 votos a favor, 53 votos contra e 47 abstenções
+  pagina: 6
+  conferido: true
+- tema: Aprovação da Previsão Orçamentária para o próximo exercício fiscal
+  decisao: Previsão Orçamentária aprovada com 163 votos a favor, 56 contra e 42 abstenções
+  votacao: 163 votos a favor, 56 contra e 42 abstenções
+  pagina: 7
+  conferido: true
+- tema: Alteração de decisão da Assembleia Regional de 2014 sobre uso de valores da venda do terreno em Jales
+  decisao: aprovação da destinação dos recursos da venda do terreno de Jales para a Modernização do Escritório Regional
+  votacao: 192 votos a favor, 43 votos contra e 13 abstenções
+  pagina: 7
+  conferido: true
+- tema: Eleição da suplente da Comissão de Ética e Disciplina para mandato complementar 2026-2028
+  decisao: eleita Elaine Cristina Luqueta Pinto para suplente da Comissão de Ética e Disciplina para mandato complementar
+    até 31 de março de 2028
+  votacao: 183 votos para Elaine Cristina Luqueta Pinto, 50 votos para Anderson Davis da Rosa, 34 abstenções
+  pagina: 9
+  conferido: true
+- tema: Escolha da cidade sede para a 34ª Assembleia Regional Escoteira
+  decisao: cidade de Itu eleita como sede da 34ª Assembleia Regional Escoteira de São Paulo, a realizar-se em 2027
+  votacao: 174 votos para Itu, 78 votos para São João da Boa Vista, 16 abstenções
+  pagina: 9
+  conferido: true
+- tema: Eleição dos Delegados Regionais à Assembleia Escoteira Nacional
+  decisao: eleitos os delegados conforme resultado divulgado
+  votacao: votos variados conforme resultado apresentado
+  pagina: 9
+  conferido: true
+- tema: Posse dos Eleitos
+  decisao: posse dos eleitos realizada com renovação da Promessa Escoteira
+  votacao: ''
+  pagina: 9
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: Presidente
+  eleito: Renato Breneizer
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 1º Vice-Presidente
+  eleito: Victor Gabriel Fogarolli Marcondes
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 2º Vice-Presidente
+  eleito: Milena Gonçalves Leite
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 1ª Secretária
+  eleito: Neide Osawa Watanabe
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 2º Secretário
+  eleito: Edson Carlos Pires
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Suplente
+  eleito: Elaine Cristina Luqueta Pinto
+  mandato: até 31 de março de 2028
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Jorge Kuma Sototuka
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rosemary Peres Motta
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Milena Gonçalves Leite
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Robson Alexandre de Moraes
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Luiz Carlos Ferreira
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Antonio Fischer Neto
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Fernando Farias de Oliveira
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Vania Ferrari
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Matheus Luis Cardoso França
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Neide Osawa Watanabe
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Eva Alice Gonçalves
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Denise Ribeiro Cardoso Terra
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rosemary Silva Miranda
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ana Rita Moura Cunha
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Eliana de Arruda Ferreira
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Michael Pereira de Oliveira
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ana Claudia Arnoni Poncio
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Renato Wanderley Breneizer
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ronaldo Engracia
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Fabiano Rioli Kunert
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Johan Albino Ribeiro
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Glaucia Garcia Ribeiro
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Marien Elisa Dib Cerqueira
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rafael Melis Rogero
+  mandato: ''
+  pagina: 9
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Raissa Melis Rogero
+  mandato: ''
+  pagina: 9
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '275'
+  pagina: 5
+  conferido: true
+- o_que: delegados credenciados no momento da votação para Presidente
+  valor: '275'
+  pagina: 5
+  conferido: true
+- o_que: votos para Presidente Renato Breneizer
+  valor: '193'
+  pagina: 5
+  conferido: true
+- o_que: votos para Presidente Rafael Melis Rogero
+  valor: '67'
+  pagina: 5
+  conferido: true
+- o_que: abstenções na votação para Presidente
+  valor: '15'
+  pagina: 5
+  conferido: true
+- o_que: votos para Vice-Presidente Victor Gabriel Fogarolli Marcondes
+  valor: '164'
+  pagina: 5
+  conferido: true
+- o_que: votos para Vice-Presidente Milena Gonçalves
+  valor: '62'
+  pagina: 5
+  conferido: true
+- o_que: votos para Vice-Presidente Leonardo Gobira de Macedo
+  valor: '20'
+  pagina: 5
+  conferido: true
+- o_que: votos para Vice-Presidente Rafael Melis Rogero
+  valor: '18'
+  pagina: 5
+  conferido: true
+- o_que: abstenções na votação para Vice-Presidentes
+  valor: '11'
+  pagina: 5
+  conferido: true
+- o_que: votos para Secretária Neide Osawa Watanabe
+  valor: '107'
+  pagina: 5
+  conferido: true
+- o_que: votos para Secretário Edson Carlos Pires
+  valor: '60'
+  pagina: 5
+  conferido: true
+- o_que: votos para Secretário Pedro Antônio Hernandez
+  valor: '51'
+  pagina: 5
+  conferido: true
+- o_que: votos para Secretária Beatriz Chrispim
+  valor: '35'
+  pagina: 5
+  conferido: true
+- o_que: abstenções na votação para Secretários
+  valor: '22'
+  pagina: 5
+  conferido: true
+- o_que: votos a favor da aprovação das contas de 2025
+  valor: '174'
+  pagina: 6
+  conferido: true
+- o_que: votos contra a aprovação das contas de 2025
+  valor: '53'
+  pagina: 6
+  conferido: true
+- o_que: abstenções na aprovação das contas de 2025
+  valor: '47'
+  pagina: 6
+  conferido: true
+- o_que: votos a favor da aprovação da Previsão Orçamentária
+  valor: '163'
+  pagina: 7
+  conferido: true
+- o_que: votos contra a aprovação da Previsão Orçamentária
+  valor: '56'
+  pagina: 7
+  conferido: true
+- o_que: abstenções na aprovação da Previsão Orçamentária
+  valor: '42'
+  pagina: 7
+  conferido: true
+- o_que: votos a favor da destinação dos recursos da venda do terreno de Jales para modernização do Escritório Regional
+  valor: '192'
+  pagina: 7
+  conferido: true
+- o_que: votos contra a destinação dos recursos da venda do terreno de Jales
+  valor: '43'
+  pagina: 7
+  conferido: true
+- o_que: abstenções na destinação dos recursos da venda do terreno de Jales
+  valor: '13'
+  pagina: 7
+  conferido: true
+- o_que: credenciados no momento da votação da suplente da Comissão de Ética e Disciplina
+  valor: '267'
+  pagina: 9
+  conferido: true
+- o_que: votos para Elaine Cristina Luqueta Pinto
+  valor: '183'
+  pagina: 9
+  conferido: true
+- o_que: votos para Anderson Davis da Rosa
+  valor: '50'
+  pagina: 9
+  conferido: true
+- o_que: abstenções na eleição da suplente da Comissão de Ética e Disciplina
+  valor: '34'
+  pagina: 9
+  conferido: true
+- o_que: credenciados no momento da escolha da cidade sede para a 34ª Assembleia
+  valor: '267'
+  pagina: 9
+  conferido: true
+- o_que: votos para cidade de Itu
+  valor: '174'
+  pagina: 9
+  conferido: true
+- o_que: votos para cidade de São João da Boa Vista
+  valor: '78'
+  pagina: 9
+  conferido: true
+- o_que: abstenções na escolha da cidade sede para a 34ª Assembleia
+  valor: '16'
+  pagina: 9
+  conferido: true
+- o_que: credenciados no momento da votação da Previsão Orçamentária
+  valor: '261'
+  pagina: 7
+  conferido: true
+- o_que: credenciados no momento da votação das contas de 2025
+  valor: '274'
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 79f70e2baaafff8950f3709814a187bed5269b95893662d32fc2e4107b998041
+revisado: null

@@ -1,0 +1,357 @@
+doc_key: sp-ata-are-2014-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2014-03-15'
+  local: Câmara Municipal de Louveira, situada à Rua Wagner Luiz Bevilacqua, nº 35, Bairro de Guembé, em Louveira/SP
+deliberacoes:
+- tema: Mesa Diretora dos Trabalhos
+  decisao: 'eleita e empossada a mesa de trabalhos conforme Regulamento, com a seguinte composição: Presidência: Marco Aurélio
+    de Mello Castrianni, Primeira Vice-Presidente: Mariana de Marchi Oliveira; Segundo Vice-Presidente: César Augusto Reche
+    Ferreira, Primeiro Secretário: Marcelo José Fassina; e Segundo Secretário: Edison Luiz Benato'
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Comissões Assessoras da Assembleia
+  decisao: apresentadas e homologadas as comissões, tais como propostas, aprovadas por aclamação
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: Dispensa da leitura da Ata da reunião anterior
+  decisao: dispensa da leitura da Ata referente ao 4º item da ordem do dia, visto que a mesma foi disponibilizada com antecedência
+    no site da Região e também aos delegados inscritos na Assembleia através do kit de participação, sendo aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Aprovação da ata da reunião anterior
+  decisao: atas foram aprovadas por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Aprovação do Relatório de Gestão 2013
+  decisao: relatório foi aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 5
+  conferido: true
+- tema: Eleição dos Delegados Regionais à Assembleia Escoteira Nacional
+  decisao: 22 vagas e o mesmo número de candidatos foi inscrito, apresenta os candidatos para deliberação do plenário, sendo
+    aprovados por aclamação
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Ordem dos suplentes para Delegados Regionais
+  decisao: Colocado em votação, os suplentes foram aprovados por grande maioria na ordem apresentada
+  votacao: grande maioria
+  pagina: 7
+  conferido: true
+- tema: Requerimento para inclusão de item sobre divulgação de nome e exclusão de membro da Comissão de Ética e Disciplina
+  decisao: Colocado em votação o pedido de inclusão do item nesta assembleia Foram 2 votos a favor, 260 contrários e 5 abstenções.
+    Assim, fica reprovado o requerimento
+  votacao: 2 votos a favor, 260 contrários e 5 abstenções
+  pagina: 9
+  conferido: true
+- tema: Aprovação das contas e balanço do exercício fiscal de 2013
+  decisao: Balanço de 2013 para votação, sendo aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+- tema: Aprovação da Previsão Orçamentária para 2014/2015
+  decisao: Previsão Orçamentária de 2014/2015 para votação, sendo aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 10
+  conferido: true
+- tema: Aprovação “ad-referendum" da atualização dos valores da Contribuição Associativa Regional 2014
+  decisao: presidente encaminha o oitavo item para votação, sendo aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 11
+  conferido: true
+- tema: Aprovação do índice de reajuste da Contribuição Associativa Regional 2015
+  decisao: encaminhá o nono item para votação, sendo aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 11
+  conferido: true
+- tema: Justificativa e aprovação da venda dos lotes do CEUR — Campo Escola Urbano Rocha e do terreno na cidade de Jales-SP
+  decisao: Colocado em votação, foram duzentos e vinte e dois (222) votos a favor, nenhum contra e duas (2) abstenções. Fica
+    então aprovada a venda dos terrenos
+  votacao: 222 votos a favor, nenhum contra e 2 abstenções
+  pagina: 12
+  conferido: true
+- tema: Encaminhamento das proposições de Assuntos Gerais
+  decisao: encaminhamento das proposições para análise da Diretoria Regional e/ou DEN, aprovados por unanimidade em várias
+    votações
+  votacao: unanimidade
+  pagina: 15
+  conferido: true
+- tema: Posse dos eleitos
+  decisao: conduziu a renovação da Promessa Escoteira dos eleitos, voltados ao Pavilhão Nacional
+  votacao: ''
+  pagina: 18
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Presidente
+  eleito: Marco Aurélio de Mello Castrianni
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Primeira Vice-Presidente
+  eleito: Mariana de Marchi Oliveira
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Segundo Vice-Presidente
+  eleito: César Augusto Reche Ferreira
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Primeiro Secretário
+  eleito: Marcelo José Fassina
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos
+  cargo: Segundo Secretário
+  eleito: Edison Luiz Benato
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Alexandre Banchi
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Daniel Guamieri Veloso
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Gerald Hall Codling
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Isadora Prado Cavichioll
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ivan Valente da Costa
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: José Inácio de Oliveira
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Juliana Pereira Thomazo
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Larissa Lemes Avari Lauterjung
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Márcia Thais Garcia Gomes
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Marco Aurélio de Mello Castrianni
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Mariana de Marchi Oliveira
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Nathalia Lourenço
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Patrícia Diniz
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Paula Cardoso dos Anjos
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Paulo Roberto Gomes
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ricardo Krause Esteves Naijur
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rodnei Erik de Souza Bueno
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Ronaldo Engracia
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rosemary Pires Motta de Oliveira
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Rudner Lauterjung Queiroz
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Vicente P. Vasconcellos Júnior
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Delegado
+  eleito: Viamir Pereira
+  mandato: ''
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Rayne Soares de Andrade
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Henrique Pompeu M. de Lima
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: André R. Nogueira
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Lilian Ribeiro
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Mateus Luis Cardoso França
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Carlos Augusto Nunes de Souza
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Fernando Donatti
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Tamara Greicius
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Euclides Hysatugo
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Everaldo Wieck
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Silvani Bhering
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Vilma Morais
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Roberlei Volpe
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Ricardo Abrão
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Amândio Mendonça Mendes
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Escoteira Nacional
+  cargo: Suplente
+  eleito: Thiago Martins Barbosa Bueno
+  mandato: ''
+  pagina: 7
+  conferido: true
+numeros:
+- o_que: delegados cadastrados
+  valor: '332'
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: b8c05d27b649e21155a3c36825e3b83e990498e2b5e390539826a9c2a0492eaf
+revisado: null

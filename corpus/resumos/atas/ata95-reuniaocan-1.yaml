@@ -1,0 +1,41 @@
+doc_key: ata95-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2019-04-28'
+  local: sede da União dos Escoteiros do Brasil – DF, em Brasília/DF
+deliberacoes:
+- tema: eleição da presidência do CAN
+  decisao: ISABELLY é eleita por aclamação dos conselheiros.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: eleição da vice-presidência do CAN
+  decisao: CHRISTIAN retirou seu interesse de candidatura ao cargo. DELMAR submete então o nome de ROMEU para ocupar a vice-presidência,
+    tendo sido eleito então por aclamação dos presentes.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: registro provisório para novos associados
+  decisao: Submetido à votação por ISABELLY, a proposta de seguro provisório foi aprovada por unanimidade pelo CAN.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Presidente
+  eleito: ISABELLY
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente
+  eleito: ROMEU
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 27bf9f394074773a53a10718e0780ed7198be0fc64a97249f4a94dff0d26e098
+revisado: null

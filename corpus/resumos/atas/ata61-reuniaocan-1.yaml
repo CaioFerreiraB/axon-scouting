@@ -1,0 +1,81 @@
+doc_key: ata61-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2010-02-27'
+  local: São Paulo/SP
+deliberacoes:
+- tema: aprovação da nova marca da UEB
+  decisao: o CAN aprovou por unanimidade a nova marca e repassou a DEN para a implantação do trabalho com a observação que
+    deve ser resguardado o Distintivo de Promessa
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: projeto de crescimento do escotismo no Nordeste
+  decisao: Colocado para deliberação o CAN decidiu por aceitá-lo com as modificações sugeridas e que o mesmo seja encaminhado
+    a DEN
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: aceitação da proposta da Insígnia Mundial de Meio Ambiente
+  decisao: o CAN decidiu por aceitá-la com as modificações sugeridas
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: alteração da regra 13 do POR para crianças com idade superior a 6 anos e meio
+  decisao: O CAN aprovou, portanto, a alteração para seis anos e meio com as modificações sugeridas
+  votacao: 10 votos favoráveis, 4 contrários e 1 abstenção
+  pagina: 3
+  conferido: true
+- tema: proposta de alteração no procedimento de registro para menores de 6 anos e meio
+  decisao: O CAN decidiu não aceitar a proposta apresentada
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: ampliação da possibilidade de gratuidade a carentes
+  decisao: o CAN aprova por unanimidade a proposta de alteração na Resolução
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: aprovação do Balancete relativo ao segundo semestre/2009
+  decisao: o CAN considera aprovado o Balancete
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: aprovação da Previsão Financeira 2010
+  decisao: A Previsão Financeira foi aprovada pelo CAN
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: decisão sobre pesquisa do Projeto Grupo Padrão 2011/2010
+  decisao: o CAN decidiu que sejam revistas as perguntas e reaplicar o questionário junto ao Projeto Grupo Padrão 2011/2010
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: composição da Comissão para acompanhamento do Planejamento Estratégico
+  decisao: 'O CAN decidiu compor a Comissão com os seguintes Conselheiros: Ivan, Xaud e David'
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: reconhecimento aos cônjuges ou companheiros de dirigentes e escotistas
+  decisao: O CAN decidiu por aceitar a proposta e alterar a resolução vigente sendo divulgada a informação, aos associados,
+    através do site da UEB
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: alteração do Estatuto proposta pela Comissão Estatuinte
+  decisao: O CAN decidiu encaminhar as mudanças propostas para apreciação pela Assembléia Extraordinária e aprovou a inclusão
+    do Tostes na Comissão Estatuinte
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: participantes do Camporee 2010
+  valor: 1.129 pessoas
+  pagina: 4
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 04c838606dfa5f9d38a9b0f93ed6f906cfb6f5f78f18d436c9dc301a6c28ec34
+revisado: null

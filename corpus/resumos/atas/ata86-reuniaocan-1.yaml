@@ -1,0 +1,61 @@
+doc_key: ata86-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2016-11-19'
+  local: Hotel Tulip Inn, em Curitiba – PR
+deliberacoes:
+- tema: Resolução sobre requisitos para reconhecimento de UEL
+  decisao: Ao final aprovou-se por unanimidade este ponto específico, e passou-se a apreciação de outros pontos para ajustes
+    e acordo. Após várias discussões aprovou-se texto final da Resolução.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Orçamento para 2017
+  decisao: A DEN deverá apresentar, na próxima reunião do CAN em abril/2017, o Plano de Investimento da Loja Escoteira.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Indicação de Fernando Brodeschi como candidato à reeleição para o Comitê Mundial
+  decisao: O CAN aprovou a indicação por aclamação.
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Taxa de registro e orçamento para 2017
+  decisao: O CAN aprovou o valor de R$ 24 mil anuais, pagos no valor mensal de R$ 2 mil conforme solicitado, a ser repassado
+    ao CCME e solicitou que a DEN desse encaminhamento ao assunto com vistas a assinatura do contrato de patrocínio/convênio.
+    Finalmente a proposta da taxa de registro e orçamento para 2017, com todas as correções – aumento do efetivo, ajuste no
+    valor de dezembro/2016, aporte ao fundo de emergência no início do exercício e efetivação do repasse para o CCME - foi
+    aprovada por unanimidade.
+  votacao: maioria e depois unanimidade
+  pagina: 4
+  conferido: true
+- tema: Estudos sobre a taxa de registro anual para 2017
+  decisao: Vendramini solicita à DEN estudos sobre a unificação da taxa com validade de doze meses a partir do seu pagamento
+    e sobre a existência de uma tarifa social contemplando uma faixa intermediária de renda acima do limite atual de isenção.
+    Alessandro propõe que estes estudos sejam apresentados em agosto de 2017, recebendo concordância do CAN.
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: Data da reunião
+  valor: Dias 19 e 20 de novembro de 2016
+  pagina: 1
+  conferido: true
+- o_que: Valor da taxa de registro para dezembro
+  valor: R$ 53,50
+  pagina: 3
+  conferido: false
+- o_que: Valor anual aprovado para repasse ao CCME
+  valor: R$ 24 mil
+  pagina: 4
+  conferido: true
+- o_que: Pagamento mensal aprovado para repasse ao CCME
+  valor: R$ 2 mil
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 2748909e97915d29a6e46f41ab68033d276b7fef6bc668fb7b8af11f303252b5
+revisado: null

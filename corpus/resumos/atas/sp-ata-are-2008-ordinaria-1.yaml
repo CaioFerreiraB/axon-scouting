@@ -1,0 +1,96 @@
+doc_key: sp-ata-are-2008-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2008-09-27'
+  local: salão social do Esporte Clube Taubaté, na Rua Marrocos s/n, Jardim das Nações, Taubaté/SP
+deliberacoes:
+- tema: aprovação da ata da Assembleia Regional anterior
+  decisao: A ata da reunião anterior foi aprovada.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: contas do exercício de 2007 e balancete do 1º semestre de 2008
+  decisao: as contas da Região Escoteira de São Paulo do exercício de 2007 e do primeiro semestre de 2008 foram aprovadas
+    por aclamação
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: orçamento para 2009 e reajuste da tabela de renovações
+  decisao: o orçamento para 2009 foi aprovado por aclamação e a tabela de renovações foi alterada para R$ 17,00 até 31 de
+    dezembro, com reajustes mensais até R$ 23,00 a partir de agosto
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: relatório do 2º semestre de 2007 e 1º semestre de 2008
+  decisao: relatório apresentado pelo Diretor Presidente foi aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: realização de assembleia extraordinária para discussão do estatuto
+  decisao: sugestão para realização de uma assembléia extraordinária para a discussão da questão do estatuto
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: eleição do candidato ao Conselho de Administração Nacional
+  decisao: Chefe Castrianni foi eleito por aclamação para candidato ao Conselho de Administração Nacional - CAN
+  votacao: aclamação
+  pagina: 4
+  conferido: true
+- tema: eleição de membros da Comissão Fiscal Regional
+  decisao: foram apresentados os candidatos Luiz Carlos Gabriel e Valdir Luiz Almino de Souza para a Comissão Fiscal Regional
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: eleição dos Delegados Regionais à Assembleia Nacional
+  decisao: foram apresentados 30 candidatos para 18 vagas e realizada a votação
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: escolha da sede da XVI Assembleia Regional em 2009
+  decisao: São Bernardo do Campo foi aprovada por aclamação como sede da XVI Assembleia Regional em 2009
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: posse dos eleitos
+  decisao: Valdir Luiz Almino de Souza eleito membro efetivo da Comissão Fiscal Regional com 144 votos; Luiz Carlos Gabriel
+    suplente com 109 votos; delegados eleitos com votos variados conforme lista
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: candidato ao Conselho de Administração Nacional - CAN
+  eleito: Chefe Castrianni
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: membro efetivo
+  eleito: Valdir Luiz Almino de Souza
+  mandato: 1º de janeiro a 31 de dezembro de 2009
+  pagina: 6
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: membro suplente
+  eleito: Luiz Carlos Gabriel
+  mandato: 1º de janeiro a 31 de dezembro de 2009
+  pagina: 6
+  conferido: true
+numeros:
+- o_que: delegados inscritos
+  valor: '259'
+  pagina: 3
+  conferido: true
+- o_que: pessoas credenciadas
+  valor: '229'
+  pagina: 3
+  conferido: true
+- o_que: total de votantes na posse dos eleitos
+  valor: '255'
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 99e427fa7b834b15c66fa6ca5c621e38b233588463034285b749af72ee434a34
+revisado: null

@@ -1,0 +1,103 @@
+doc_key: ata-124a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-10-04'
+  local: de forma virtual por meio da plataforma Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: agenda provisória
+  decisao: Não havendo manifestações contrárias, às 09h08min a agenda é aprovada como definitiva.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: requerimentos sobre Processo Seletivo Comitê Escoteiro Interamericano
+  decisao: Assim, o CAN deliberou pela manutenção do processo seletivo conforme edital, em alinhamento com os pareceres jurídicos
+    apresentados. Os requerimentos foram submetidos à votação e rejeitados por unanimidade, com todos os conselheiros votando
+    favoravelmente à orientação dos pareceres.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: votação de candidaturas ao Comitê Interamericano de Escotismo
+  decisao: Após votação da maioria dos Conselheiros Nacionais, foi escolhida a candidata Fernanda Cristina Santos Soares para
+    concorrer à eleição durante a 29ª Conferência Escoteira Interamericana.
+  votacao: 10 votos para Fernanda, 3 votos para Patrícia e 1 voto para Luiza
+  pagina: 2
+  conferido: true
+- tema: resoluções para a Conferência Interamericana 2025
+  decisao: Após análise, as propostas foram submetidas à apreciação deste Conselho e aprovadas pela maioria, definindo as
+    orientações a serem observadas pela delegação brasileira na Conferência Interamericana.
+  votacao: Aprovado por 12 votos e 2 abstenções
+  pagina: 2
+  conferido: true
+- tema: ata da reunião extraordinária do CAN 27/07
+  decisao: Aprovada a ata de Reunião Extraordinária do CAN realizada em regime de sessão fechada na qual tratou sobre o tema
+    Conferência Interamericana de Escotismo - 2028.
+  votacao: Aprovada por 11 votos, 2 abstenções e 1 abstenção por falta de pronunciamento
+  pagina: 3
+  conferido: true
+- tema: alteração do Artigo 1º da Resolução 05/2025
+  decisao: Proposta aprovada de forma unânime com a inclusão do Conselheiro LUIZ CÉSAR de atualizar a alínea “g” do Artigo
+    1º da Resolução CAN 05/2025.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Proposta de Resolução CAN 10/2025 – Insígnia Inovadores de Impacto
+  decisao: Após discussão, a matéria foi submetida à votação e aprovada pela maioria dos conselheiros, ficando estabelecida
+    sua implementação nos Escoteiros do Brasil.
+  votacao: Aprovado por 12 votos e 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: Revisão do Regulamento do CAN
+  decisao: Após a reunião, o texto passou por revisão de redação e foi aprovado por este Conselho, encontrando-se atualmente
+    em fase de ajustes finais para posterior disponibilização aos associados.
+  votacao: Aprovado por 08 votos, 4 abstenções e 1 abstenção - votação fora de prazo
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Comitê Interamericano de Escotismo
+  cargo: candidata para concorrer à eleição
+  eleito: Fernanda Cristina Santos Soares
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: participantes inscritos no Jamboree Mundial 2027
+  valor: '1.957'
+  pagina: 5
+  conferido: false
+- o_que: distintivos enviados aos associados de janeiro a setembro de 2025
+  valor: '131.000'
+  pagina: 5
+  conferido: false
+- o_que: Unidades Escoteiras Locais abertas em 2025
+  valor: '42'
+  pagina: 5
+  conferido: true
+- o_que: municípios com atuação do Escotismo
+  valor: '710'
+  pagina: 5
+  conferido: true
+- o_que: Unidades Escoteiras Locais ativas no Projeto Multiplica
+  valor: '11'
+  pagina: 5
+  conferido: true
+- o_que: estados abrangidos pelo Projeto Multiplica
+  valor: '7'
+  pagina: 5
+  conferido: true
+- o_que: seguidores nas mídias sociais
+  valor: '278.442'
+  pagina: 5
+  conferido: false
+- o_que: alcance das mídias sociais
+  valor: 3,8 milhões de contas
+  pagina: 5
+  conferido: false
+- o_que: atendimentos realizados pela Loja Escoteira entre janeiro e setembro
+  valor: '36.557'
+  pagina: 5
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: e0198d8920bb10539c673c5dc498ad9b7e10b0d1727e882da404ae6a09bc6335
+revisado: null

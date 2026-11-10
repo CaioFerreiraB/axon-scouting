@@ -1,0 +1,90 @@
+doc_key: ata-reuniao-extraordinaria-ccn-07-ago-2021-1
+reuniao:
+  tipo: extraordinaria
+  data: '2021-08-07'
+  local: videochamada pelo Microsoft Teams
+deliberacoes:
+- tema: Eleição da mesa da reunião
+  decisao: São aclamados BANCHI como Presidente e THIAGO como Secretário desta reunião.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Atualização dos princípios do Escotismo
+  decisao: O CCN encaminha ao CAN a preocupação de que não é o momento mais adequado para se discutir o assunto pela fragilidade
+    institucional e manifesta que a Assembleia Nacional estatuinte não seja realizada neste ano por não termos clima para
+    esse debate.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Orientações para realização de cursos do Sistema Nacional de Formação em EAD
+  decisao: A proposta será enviada pela lista de e-mails do CCN e não tendo nenhuma manifestação contrária, será publicada
+    oficialmente.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Encaminhamento para reunião do CAN em 14 de agosto
+  decisao: Convite ao CCN para participação na reunião ordinária do CAN agendada para o próximo dia 14 de agosto, especificamente
+    para tratar sobre a pauta da composição da mesa diretora e das comissões assessoras para as próximas Reuniões Extraordinárias
+    da Assembleia Nacional.
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: UELs autorizadas a retomar atividades presenciais em São Paulo
+  valor: cerca de 150
+  pagina: 6
+  conferido: true
+- o_que: UELs aptas a retornar às atividades presenciais em Minas Gerais
+  valor: 50% das UELs
+  pagina: 6
+  conferido: true
+- o_que: UELs autorizadas a retornar às atividades presenciais no Paraná
+  valor: 30 das 145 UELs
+  pagina: 6
+  conferido: true
+- o_que: UELs existentes antes da pandemia no Tocantins
+  valor: '3'
+  pagina: 6
+  conferido: true
+- o_que: UELs funcionando no Tocantins
+  valor: '1'
+  pagina: 6
+  conferido: true
+- o_que: UELs paralisadas no Tocantins
+  valor: '2'
+  pagina: 6
+  conferido: true
+- o_que: UELs antes da pandemia no Acre
+  valor: '6'
+  pagina: 6
+  conferido: true
+- o_que: UELs restantes no Acre após pandemia
+  valor: '5'
+  pagina: 6
+  conferido: true
+- o_que: UELs com certificado de funcionamento no Acre
+  valor: '2'
+  pagina: 6
+  conferido: true
+- o_que: UELs realizando atividades no Acre
+  valor: '1'
+  pagina: 6
+  conferido: true
+- o_que: UELs retornadas às atividades presenciais na Paraíba
+  valor: '2'
+  pagina: 6
+  conferido: true
+- o_que: UELs no Mato Grosso
+  valor: '15'
+  pagina: 6
+  conferido: true
+- o_que: UELs aptas a retornar no Mato Grosso
+  valor: '2'
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 402cdd22ee11da8362afebed9eb7de0081813b9aff4d01182dc9c5d973f6638b
+revisado: null

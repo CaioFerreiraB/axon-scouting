@@ -1,0 +1,102 @@
+doc_key: ata-123a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-08-16'
+  local: de forma virtual por meio da plataforma Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: aprovação da inversão da pauta
+  decisao: Não havendo objeções, a proposta foi aprovada por unanimidade, sendo a agenda confirmada como definitiva.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: aprovação da ata da 122ª Reunião Ordinária do CAN
+  decisao: Ata da sessão aberta da 122ª Reunião Ordinária do Conselho de Administração Nacional, realizada no dia 03 de maio
+    de 2025. Aprovada por 11 votos e 3 abstenções por falta de pronunciamento.
+  votacao: 11 votos a favor, 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: aprovação da ata da sessão fechada da reunião ordinária do CAN 03/05/2025
+  decisao: Ata da sessão da sessão fechada da Reunião Extraordinária do Conselho de Administração Nacional, realizada no dia
+    03 de maio de 2025 (sábado), às 19h. Aprovada por 11 votos e 3 abstenções por falta de pronunciamento.
+  votacao: 11 votos a favor, 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: indicação de Lucas Lahoni como Youth Advisor e Delegado para a 29ª Conferência Interamericana
+  decisao: Aprovada a indicação do jovem Lucas Lahoni como Youth Advisor e Delegado para a 29ª Conferência Interamericana.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: anulação do Processo Seletivo para o Comitê Escoteiro Interamericano
+  decisao: Opção 1 – Cancelamento do edital e realização de um novo processo seletivo; Aprovada pela maioria dos(as) Conselheiros(as)
+    Nacionais.
+  votacao: 10 votos a favor, 3 contrários, 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: aprovação das propostas de Resoluções para a 29ª Conferência Escoteira Interamericana do Cone Sul
+  decisao: Aprovada as propostas de Resoluções para submissão à 29ª Conferência Escoteira Interamericana.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: indicação do Núcleo Nacional de Jovens Líderes para a 29ª Conferência Escoteira Interamericana
+  decisao: Aprovada a indicação de Luís Sebben como representante da Rede Nacional na delegação e reconhecida a posição de
+    Lucas Lahoni como delegado em vaga remanescente.
+  votacao: 6 votos a favor, 5 contrários, 3 abstenções
+  pagina: 3
+  conferido: true
+- tema: inclusão de encartes no POR (Mapa de Distintivos e Patrulhas)
+  decisao: Aprovada a inclusão de encartes no POR (Mapa de Localização dos Distintivos e Sugestão de Patrulhas).
+  votacao: 13 votos a favor, 1 abstenção
+  pagina: 3
+  conferido: true
+- tema: aprovação da ata da Reunião Extraordinária do CAN (21/05/2025) - sessão fechada
+  decisao: Aprovada a ata de Reunião Extraordinária do CAN realizada em regime de sessão fechada sobre Alinhamentos Iniciais.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: criação do Grupo de Trabalho de Saúde Mental (GTSM)
+  decisao: Diante do exposto, o Grupo de Trabalho de Saúde Mental (GTSM) foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: ratificação das deliberações realizadas por votação eletrônica
+  decisao: BRAGA realizou a ratificação das deliberações realizadas por votação eletrônica, incluindo a aprovação de atas,
+    processos seletivos e propostas para conferências escoteiras.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: aprovação das coordenações das Comissões Permanentes (CPs) e Grupos de Trabalho (GTs)
+  decisao: O Conselho aprovou, por unanimidade e sem objeções, as coordenações das CPs e GTs.
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Youth Advisor e Delegado para a 29ª Conferência Interamericana
+  eleito: Lucas Lahoni
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: delegação para a 29ª Conferência Escoteira Interamericana
+  cargo: representante da Rede Nacional
+  eleito: Luís Sebben
+  mandato: ''
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: unidades de distintivos comercializadas entre janeiro e julho
+  valor: '105.000'
+  pagina: 6
+  conferido: false
+- o_que: associados da UEB
+  valor: cerca de 92 mil
+  pagina: 6
+  conferido: true
+- o_que: inscritos para o Jamboree Mundial 2027
+  valor: '1.310'
+  pagina: 7
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d201199f1c6cac10f086e53913833329029edbccfec82236dcedd04548e8fb64
+revisado: null

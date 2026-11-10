@@ -1,0 +1,275 @@
+doc_key: 20a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-27-abr-2013-1
+reuniao:
+  tipo: ordinaria
+  data: '2013-04-27'
+  local: Recife/PE
+deliberacoes:
+- tema: aprovação da ata da XIX Assembleia Nacional Ordinária
+  decisao: a ata foi aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: aprovação do Balanço Anual de 2012
+  decisao: o balanço anual foi aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: aprovação do relatório anual da DEN
+  decisao: o relatório anual foi aprovado por 89 (oitenta e nove) votos à favor e 1 (uma) abstenção, sem nenhum voto contrário
+  votacao: 89 votos a favor e 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: credenciamento de delegado fora do prazo
+  decisao: foi aprovado o credenciamento deste delegado por 90 (noventa) votos favoráveis, tendo 5 (cinco) votos contrários
+  votacao: 90 votos favoráveis e 5 contrários
+  pagina: 2
+  conferido: true
+- tema: estudo de viabilidade para incorporação do CCME pela UEB
+  decisao: A Assembleia aprovou por aclamação a realização do estudo de viabilidade dessa incorporação, que será coordenado
+    pelo Escritório Nacional
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: Comissão de Ética Nacional
+  cargo: membro titular
+  eleito: Marcos Magno Gomide Vieira
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão de Ética Nacional
+  cargo: membro titular
+  eleito: Arcângelo dos Santos Safanelli
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: membro titular
+  eleito: Adir Barruso
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: membro titular
+  eleito: Ronaldo Santos da Cruz
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: membro titular
+  eleito: Luiz Salgado Klaes
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: membro titular
+  eleito: Antonio Luis Malafaia
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: membro titular
+  eleito: Wesley Stecca Steindorff
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Jonathan Grovier
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: André Carreira
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Antonino Pio de Carvalho
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Sandra Valda Nogueira dos Santos
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: José Pracilio da Silva Filho
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Luiz Fernando Vendramini
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro titular
+  eleito: Winder Oliveira Garcia
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: suplente
+  eleito: Maurício Roth Volkweis
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: suplente
+  eleito: Marcio Randig
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: suplente
+  eleito: Adriano de Almeida Costa
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: suplente
+  eleito: Julio Crivellari
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: suplente
+  eleito: Miguel Ney Carvalho de Oliveira
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: suplente
+  eleito: Ricardo Coelho
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: suplente
+  eleito: Ana Maria Marcelino
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Congresso Escoteiro Nacional
+  cargo: sede 2015
+  eleito: São Paulo
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: delegados votantes credenciados
+  valor: '119'
+  pagina: 2
+  conferido: true
+- o_que: votos a favor do relatório anual
+  valor: '89'
+  pagina: 2
+  conferido: true
+- o_que: abstenções no voto do relatório anual
+  valor: '1'
+  pagina: 2
+  conferido: true
+- o_que: votos favoráveis ao credenciamento de delegado fora do prazo
+  valor: '90'
+  pagina: 2
+  conferido: true
+- o_que: votos contrários ao credenciamento de delegado fora do prazo
+  valor: '5'
+  pagina: 2
+  conferido: true
+- o_que: votos para Comissão de Ética Nacional - Marcos Magno Gomide Vieira
+  valor: '66'
+  pagina: 3
+  conferido: true
+- o_que: votos para Comissão de Ética Nacional - Arcângelo dos Santos Safanelli
+  valor: '51'
+  pagina: 3
+  conferido: true
+- o_que: votos para Comissão Fiscal Nacional - Adir Barruso
+  valor: '37'
+  pagina: 3
+  conferido: true
+- o_que: votos para Comissão Fiscal Nacional - Ronaldo Santos da Cruz
+  valor: '29'
+  pagina: 3
+  conferido: false
+- o_que: votos para Comissão Fiscal Nacional - Luiz Salgado Klaes
+  valor: '21'
+  pagina: 3
+  conferido: true
+- o_que: votos para Comissão Fiscal Nacional - Antonio Luis Malafaia
+  valor: '20'
+  pagina: 3
+  conferido: true
+- o_que: votos para Comissão Fiscal Nacional - Wesley Stecca Steindorff
+  valor: '18'
+  pagina: 3
+  conferido: true
+- o_que: votos para Conselho de Administração Nacional - Jonathan Grovier
+  valor: '43'
+  pagina: 4
+  conferido: true
+- o_que: votos para Conselho de Administração Nacional - André Carreira
+  valor: '41'
+  pagina: 4
+  conferido: true
+- o_que: votos para Conselho de Administração Nacional - Antonino Pio de Carvalho
+  valor: '38'
+  pagina: 4
+  conferido: true
+- o_que: votos para Conselho de Administração Nacional - Sandra Valda Nogueira dos Santos
+  valor: '37'
+  pagina: 4
+  conferido: true
+- o_que: votos para Conselho de Administração Nacional - José Pracilio da Silva Filho
+  valor: '36'
+  pagina: 4
+  conferido: true
+- o_que: votos para Conselho de Administração Nacional - Luiz Fernando Vendramini
+  valor: '35'
+  pagina: 4
+  conferido: true
+- o_que: votos para Conselho de Administração Nacional - Winder Oliveira Garcia
+  valor: '32'
+  pagina: 4
+  conferido: true
+- o_que: votos para suplentes do Conselho de Administração Nacional - Maurício Roth Volkweis
+  valor: '28'
+  pagina: 4
+  conferido: true
+- o_que: votos para suplentes do Conselho de Administração Nacional - Marcio Randig
+  valor: '27'
+  pagina: 4
+  conferido: true
+- o_que: votos para suplentes do Conselho de Administração Nacional - Adriano de Almeida Costa
+  valor: '12'
+  pagina: 4
+  conferido: true
+- o_que: votos para suplentes do Conselho de Administração Nacional - Julio Crivellari
+  valor: '11'
+  pagina: 4
+  conferido: true
+- o_que: votos para suplentes do Conselho de Administração Nacional - Miguel Ney Carvalho de Oliveira
+  valor: '7'
+  pagina: 4
+  conferido: true
+- o_que: votos para suplentes do Conselho de Administração Nacional - Ricardo Coelho
+  valor: '5'
+  pagina: 4
+  conferido: true
+- o_que: votos para suplentes do Conselho de Administração Nacional - Ana Maria Marcelino
+  valor: '4'
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 4b1f906538e29d90d85239bd1b2f117b365b2909ef03540a15f79ed490cf397c
+revisado: null

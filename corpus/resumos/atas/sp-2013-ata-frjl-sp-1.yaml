@@ -1,0 +1,104 @@
+doc_key: sp-2013-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2013-03-16'
+  local: sala Luiz Tenório de Lima da Câmara Municipal de São Paulo
+deliberacoes:
+- tema: eleição de coordenador para gestão 2013/2015
+  decisao: Henrique Lima, do GE Almirante Tamandaré 46/SP, venceu por dezessete votos a doze, com uma abstenção.
+  votacao: 17 votos a 12, com 1 abstenção
+  pagina: 2
+  conferido: true
+- tema: eleição de coordenador para gestão 2013/2014
+  decisao: Ivan Valente da Costa, do GE Almirante Tamandaré 46/SP, foi eleito por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: eleição de comunicador para gestão 2013/2015
+  decisao: Carlos Nunes, do GE Santo Amaro 56/SP, foi eleito por 15 votos a 11, com 3 abstenções.
+  votacao: 15 votos a 11, com 3 abstenções
+  pagina: 2
+  conferido: true
+- tema: eleição de delegados ao Fórum Nacional de Jovens
+  decisao: Foram eleitos por aclamação Caio Augusto Gois, do GE Tocantins 112/SP, Ivan Costa, do GE Almirante Tamandaré 46/SP,
+    e Fernando Donatti, do GE Guia Lopes 39/SP.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: eleição de suplentes para delegados ao Fórum Nacional de Jovens
+  decisao: Foram eleitos por aclamação Thiago Bueno (primeiro suplente), Guilherme Novaes (segundo suplente) e Mariana De
+    Marchi (terceira suplente).
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: formação de grupo de trabalho para revisão e atualização de parâmetros regulamentares
+  decisao: Durante nosso próximo Encontro Regional fosse formado um grupo de trabalho responsável pela revisão e atualização
+    de nossos parâmetros regulamentares, de modo a submeter sua aprovação ao Fórum do próximo ano.
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Rede Paulista de Jovens
+  cargo: coordenador para gestão 2013/2015
+  eleito: Henrique Lima, do GE Almirante Tamandaré 46/SP
+  mandato: 2013/2015
+  pagina: 2
+  conferido: true
+- orgao: Rede Paulista de Jovens
+  cargo: coordenador para gestão 2013/2014
+  eleito: Ivan Valente da Costa, do GE Almirante Tamandaré 46/SP
+  mandato: 2013/2014
+  pagina: 2
+  conferido: true
+- orgao: Rede Paulista de Jovens
+  cargo: comunicador para gestão 2013/2015
+  eleito: Carlos Nunes, do GE Santo Amaro 56/SP
+  mandato: 2013/2015
+  pagina: 2
+  conferido: true
+- orgao: Rede Paulista de Jovens
+  cargo: delegado ao Fórum Nacional de Jovens
+  eleito: Caio Augusto Gois, do GE Tocantins 112/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Rede Paulista de Jovens
+  cargo: delegado ao Fórum Nacional de Jovens
+  eleito: Ivan Costa, do GE Almirante Tamandaré 46/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Rede Paulista de Jovens
+  cargo: delegado ao Fórum Nacional de Jovens
+  eleito: Fernando Donatti, do GE Guia Lopes 39/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Rede Paulista de Jovens
+  cargo: primeiro suplente delegado ao Fórum Nacional de Jovens
+  eleito: Thiago Bueno, do GE do Ar Major Brigadeiro Newton Braga 16/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Rede Paulista de Jovens
+  cargo: segundo suplente delegado ao Fórum Nacional de Jovens
+  eleito: Guilherme Novaes, do GE Raposo Tavares 254/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Rede Paulista de Jovens
+  cargo: terceiro suplente delegado ao Fórum Nacional de Jovens
+  eleito: Mariana De Marchi, do GE Curuqui 142/SP
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros:
+- o_que: participantes totais do Fórum
+  valor: '61'
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 6dafe7c5c9e6174153d788ac0455c4557fc817e57d534b5df8b99634ba073f4c
+revisado: null

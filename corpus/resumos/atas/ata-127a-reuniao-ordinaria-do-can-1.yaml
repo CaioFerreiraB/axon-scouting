@@ -1,0 +1,192 @@
+doc_key: ata-127a-reuniao-ordinaria-do-can-1
+reuniao:
+  tipo: ordinaria
+  data: '2026-08-15'
+  local: de forma virtual por meio da plataforma Zoom, com transmissão pelo canal dos Escoteiros do Brasil no Youtube
+deliberacoes:
+- tema: Posicionamento Institucional - Segurança Digital e Proteção à Infância
+  decisao: foi submetida à votação e aprovada pela maioria dos conselheiros, ficando estabelecido o posicionamento público
+    oficial dos Escoteiros do Brasil sobre o tema
+  votacao: 08 votos a favor e 06 abstenções
+  pagina: 3
+  conferido: true
+- tema: Ata da 126ª Reunião Ordinária do CAN
+  decisao: Aprovada
+  votacao: 04 votos a favor, 03 abstenções e 07 abstenções por falta de pronunciamento
+  pagina: 3
+  conferido: true
+- tema: Utilização de barretas (Condecorações e Reconhecimentos de Ramos)
+  decisao: matéria foi aprovada pela maioria, estabelecendo-se a orientação institucional sobre o uso das barretas
+  votacao: 10 votos a favor e 04 abstenções por falta de pronunciamento
+  pagina: 3
+  conferido: true
+- tema: Resolução que restringe o acesso ao documentos da reuniões fechadas do CAN
+  decisao: Aprovada
+  votacao: 10 votos a favor e 04 abstenções por falta de pronunciamento
+  pagina: 3
+  conferido: true
+- tema: Ata de Sessão Fechada do CAN (11/11/2025)
+  decisao: Aprovada
+  votacao: 08 votos a favor, 06 abstenções por falta de pronunciamento e 01 abstenção
+  pagina: 3
+  conferido: true
+- tema: Ata de Sessão Fechada do CAN (23/04/2026) | Processos Judiciais
+  decisao: Aprovada
+  votacao: 10 votos a favor, 03 abstenções por falta de pronunciamento e 01 abstenção
+  pagina: 3
+  conferido: true
+- tema: Novos Processos Judiciais e Autorização de Retirada do Fundo de Risco
+  decisao: foi solicitada a autorização para retirada de até R$15.000,00 do Fundo de Risco
+  votacao: 12 votos a favor, 1 abstenção e 1 abstenção por falta de pronunciamento
+  pagina: 4
+  conferido: true
+- tema: Proposta de Resolução Nacional - Listel de Assistente de Espiritualidade
+  decisao: foi submetida à votação e aprovada pela maioria dos conselheiros, ficando estabelecida a criação do listel "Assistente
+    de Espiritualidade"
+  votacao: 14 votos a favor
+  pagina: 4
+  conferido: true
+- tema: Ratificação da Composição dos Grupos de Trabalho
+  decisao: os grupos de trabalho foram ratificados por aclamação, com as alterações propostas por IRINEU incorporadas
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: associados em 1º de agosto de 2026
+  valor: '92.368'
+  pagina: 12
+  conferido: false
+- o_que: associados em 14 de agosto de 2026
+  valor: '95.088'
+  pagina: 12
+  conferido: false
+- o_que: novas unidades escoteiras abertas no primeiro semestre
+  valor: '18'
+  pagina: 13
+  conferido: false
+- o_que: autorizações provisórias em processo de fundação
+  valor: '11'
+  pagina: 13
+  conferido: true
+- o_que: total de unidades escoteiras entre fundadas e em processo de autorização provisória
+  valor: '28'
+  pagina: 13
+  conferido: false
+- o_que: associados no Ramo Pioneiro
+  valor: '4.900'
+  pagina: 13
+  conferido: false
+- o_que: participantes do 2º Moot Nacional Pioneiro
+  valor: '370'
+  pagina: 15
+  conferido: true
+- o_que: voluntários no 2º Moot Nacional Pioneiro
+  valor: mais de 70
+  pagina: 15
+  conferido: true
+- o_que: patrocinadores e apoiadores no 2º Moot Nacional Pioneiro
+  valor: mais de 70
+  pagina: 15
+  conferido: true
+- o_que: contingente brasileiro inscrito para o 26º Jamboree Mundial
+  valor: '2.446'
+  pagina: 15
+  conferido: false
+- o_que: receita realizada até junho de 2026
+  valor: R$ 3.847.000
+  pagina: 16
+  conferido: false
+- o_que: orçamento até junho de 2026
+  valor: aproximadamente R$ 4.700.000
+  pagina: 16
+  conferido: false
+- o_que: saldo de recursos próprios
+  valor: aproximadamente R$ 8 milhões
+  pagina: 16
+  conferido: true
+- o_que: saldo do fundo relativo ao Jamboree Mundial
+  valor: aproximadamente R$ 8 milhões
+  pagina: 16
+  conferido: true
+- o_que: fundo de risco disponível
+  valor: R$ 2.597.000
+  pagina: 16
+  conferido: false
+- o_que: fundo de eventos até junho
+  valor: R$ 2.370.000
+  pagina: 16
+  conferido: false
+- o_que: envios de condecorações e reconhecimentos de ramo (jan-jul)
+  valor: '6.167'
+  pagina: 14
+  conferido: false
+- o_que: atendimentos ao associado no ano
+  valor: mais de 5.100
+  pagina: 14
+  conferido: false
+- o_que: acessos ao sistema Paxtu no ano
+  valor: mais de 707 mil
+  pagina: 14
+  conferido: true
+- o_que: acessos ao novo Paxtu
+  valor: mais de 41,6 mil
+  pagina: 14
+  conferido: false
+- o_que: emissão de notas fiscais pela Loja Escoteira Nacional
+  valor: '24.605'
+  pagina: 17
+  conferido: false
+- o_que: faturamento da Loja Escoteira Nacional em eventos presenciais no ano
+  valor: R$ 560 mil
+  pagina: 17
+  conferido: true
+- o_que: resultado líquido da Loja Escoteira Nacional em eventos presenciais no ano
+  valor: R$ 148 mil
+  pagina: 17
+  conferido: true
+- o_que: faturamento Dia do Consumidor
+  valor: R$ 113 mil
+  pagina: 17
+  conferido: true
+- o_que: cupons utilizados na parceria com Canal SAPS
+  valor: '130'
+  pagina: 17
+  conferido: true
+- o_que: reativações de associados na parceria com Canal SAPS
+  valor: '58'
+  pagina: 17
+  conferido: true
+- o_que: faturamento campanha divulgação da Aventura
+  valor: R$ 215 mil
+  pagina: 17
+  conferido: true
+- o_que: faturamento promoções sazonais Dia do Fundador
+  valor: R$ 190 mil
+  pagina: 17
+  conferido: true
+- o_que: faturamento promoções sazonais Dia do Escoteiro
+  valor: R$ 192 mil
+  pagina: 17
+  conferido: true
+- o_que: receita orçada da Loja Escoteira Nacional
+  valor: R$ 6.420.000
+  pagina: 17
+  conferido: false
+- o_que: receita realizada da Loja Escoteira Nacional
+  valor: R$ 6.380.000
+  pagina: 17
+  conferido: false
+- o_que: despesa orçada da Loja Escoteira Nacional
+  valor: R$ 5.480.000
+  pagina: 17
+  conferido: false
+- o_que: despesa realizada da Loja Escoteira Nacional
+  valor: R$ 5.813.000
+  pagina: 17
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 74d1eab6cad8ef40fd242cc20b7878c1b91b4c791b9b171e0f12c8e73d96a09e
+revisado: null

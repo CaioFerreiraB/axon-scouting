@@ -1,0 +1,333 @@
+doc_key: sp-ata-are-1996-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '1996-09-14'
+  local: Escola de Primeiro e Segundo Grau “Cardoso de Almeida”, Avenida Santana S/N, Centro, Botucatu; SP
+deliberacoes:
+- tema: aprovação da ata da Assembléia anterior
+  decisao: por aclamação da plenária foi abolida sua leitura, e colocada em discussão, não havendo nada a discutir, foi colocada
+    em votação, sendo aprovada pôr unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: apresentação e deliberação das contas do exercício de 1995
+  decisao: Colocado em votação as contas de 1995, foram aprovadas por unanimidade
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: apresentação e deliberação do orçamento para 1996
+  decisao: Foi colocado em votação a proposta orçamentaria de 1996 sendo aprovado pela maioria, tendo três votos contra
+  votacao: maioria
+  pagina: 3
+  conferido: false
+- tema: proposta de alteração do Regulamento Regional (inclusão de artigo referente à Biblioteca Regional)
+  decisao: não há decisão explícita sobre aprovação, apenas menção na pauta e discussão geral, sem deliberação clara
+  votacao: ''
+  pagina: 1
+  conferido: false
+- tema: estudo para modificação da Bandeira Regional
+  decisao: foi colocado em votação, sendo aprovado pela Assembléia que se faça o estudo para a modificação da Bandeira Regional
+  votacao: aprovado pela Assembléia
+  pagina: 8
+  conferido: true
+- tema: escolha da cidade sede da próxima Assembléia Regional
+  decisao: 'foi colocado em votação e tivemos os seguintes votos: Mogi das Cruzes 60 votos; Lapa 28 votos, ficando eleita
+    para sediar a próxima Assembléia a cidade de Mogi das Cruzes'
+  votacao: 60 votos a 28
+  pagina: 8
+  conferido: true
+- tema: aceitação da inscrição dos delegados de Araraquara para votação
+  decisao: foi colocado em votação, sendo aprovado o credenciamento com 64 votos a favor e 12 contra
+  votacao: 64 votos a favor e 12 contra
+  pagina: 9
+  conferido: true
+- tema: aprovação dos relatórios de atividades de 1995
+  decisao: foi colocado em votação e aprovado por unanimidade
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: proposta de taxa máxima para inscrição nas Assembléias
+  decisao: foi colocado em votação e a decisão pela planilha de custo venceu por 37 votos contra 26 para o custo máximo de
+    R$15,00
+  votacao: 37 votos contra 26
+  pagina: 12
+  conferido: true
+- tema: encaminhamento da proposta para a Assembléia Nacional para suprimir frase do POR sobre traje escoteiro
+  decisao: foi colocado em votação obtivemos 43 votos para à encaminhamento da propostas para a Nacional e 11 votos contra
+  votacao: 43 votos a favor e 11 contra
+  pagina: 13
+  conferido: true
+- tema: encaminhamento da proposta para incluir no calendário nacional o dia Internacional da Paz
+  decisao: foi colocado o encaminhamento em votação e aprovado
+  votacao: aprovado
+  pagina: 13
+  conferido: true
+eleicoes:
+- orgao: Assembléia Regional
+  cargo: Presidente da Assembléia
+  eleito: Doutor Marcos Venicio Mattos Chaves
+  mandato: 3º Assembléia Regional
+  pagina: 1
+  conferido: true
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Lenita de Abreu Pessoa
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Elmer de Souza Pessoa
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Walter Dohme
+  mandato: não especificado
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Francisco Carlos G. da Costa ( Chico)
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Vânia D'Angelo Dohme
+  mandato: não especificado
+  pagina: 10
+  conferido: true
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Enio Hideyuki Cojho
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Koshiro Otani
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Duxtei Vinhas Itavo
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Edson Caetano dos Santos
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Marcelo Lamas
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Álvaro Tavares Gomes de Souza
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Maria das Graças Dias Andrade de Souza
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Vera Lúcia Santos da Silva
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Paulo César Assumpção Cabelo
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Roberto Lucas de Souza
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Titular
+  eleito: Mauro Gomes Cardoso
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Suplente
+  eleito: Mário Brasil Espósito Júnior
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Suplente
+  eleito: Luís Carlos Torquato ( Ti )
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Suplente
+  eleito: Marcos Venício de Mattos Chaves
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Suplente
+  eleito: Maria C. Moura Pimentel
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Suplente
+  eleito: Ricardo Rinaldi Baumgartner
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Suplente
+  eleito: Luís Roberto de Moraes
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Delegados Regionais à Assembléia Nacional
+  cargo: Delegado Suplente
+  eleito: Gerson Donizete Paes
+  mandato: não especificado
+  pagina: 10
+  conferido: false
+- orgao: Diretoria Nacional
+  cargo: Candidato a Diretor Nacional
+  eleito: Edson Caetano dos Santos
+  mandato: não especificado
+  pagina: 10
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '93'
+  pagina: 8
+  conferido: true
+- o_que: votos válidos na eleição dos delegados
+  valor: '93'
+  pagina: 10
+  conferido: true
+- o_que: votos para Lenita de Abreu Pessoa
+  valor: '80'
+  pagina: 10
+  conferido: false
+- o_que: votos para Elmer de Souza Pessoa
+  valor: '78'
+  pagina: 10
+  conferido: false
+- o_que: votos para Walter Dohme
+  valor: '77'
+  pagina: 10
+  conferido: false
+- o_que: votos para Francisco Carlos G. da Costa ( Chico)
+  valor: '72'
+  pagina: 10
+  conferido: false
+- o_que: votos para Vânia D'Angelo Dohme
+  valor: '71'
+  pagina: 10
+  conferido: false
+- o_que: votos para Enio Hideyuki Cojho
+  valor: '62'
+  pagina: 10
+  conferido: false
+- o_que: votos para Koshiro Otani
+  valor: '56'
+  pagina: 10
+  conferido: false
+- o_que: votos para Duxtei Vinhas Itavo
+  valor: '51'
+  pagina: 10
+  conferido: false
+- o_que: votos para Edson Caetano dos Santos
+  valor: '51'
+  pagina: 10
+  conferido: false
+- o_que: votos para Marcelo Lamas
+  valor: '48'
+  pagina: 10
+  conferido: false
+- o_que: votos para Álvaro Tavares Gomes de Souza
+  valor: '46'
+  pagina: 10
+  conferido: false
+- o_que: votos para Maria das Graças Dias Andrade de Souza
+  valor: '46'
+  pagina: 10
+  conferido: false
+- o_que: votos para Vera Lúcia Santos da Silva
+  valor: '41'
+  pagina: 10
+  conferido: false
+- o_que: votos para Paulo César Assumpção Cabelo
+  valor: '39'
+  pagina: 10
+  conferido: false
+- o_que: votos para Roberto Lucas de Souza
+  valor: '38'
+  pagina: 10
+  conferido: false
+- o_que: votos para Mauro Gomes Cardoso
+  valor: '38'
+  pagina: 10
+  conferido: false
+- o_que: votos para Mário Brasil Espósito Júnior (suplente)
+  valor: '37'
+  pagina: 10
+  conferido: false
+- o_que: votos para Luís Carlos Torquato ( Ti ) (suplente)
+  valor: '37'
+  pagina: 10
+  conferido: false
+- o_que: votos para Marcos Venício de Mattos Chaves (suplente)
+  valor: '36'
+  pagina: 10
+  conferido: false
+- o_que: votos para Maria C. Moura Pimentel (suplente)
+  valor: '32'
+  pagina: 10
+  conferido: false
+- o_que: votos para Ricardo Rinaldi Baumgartner (suplente)
+  valor: '31'
+  pagina: 10
+  conferido: true
+- o_que: votos para Luís Roberto de Moraes (suplente)
+  valor: '21'
+  pagina: 10
+  conferido: false
+- o_que: votos para Gerson Donizete Paes (suplente)
+  valor: '15'
+  pagina: 10
+  conferido: true
+- o_que: votos para Edson Caetano dos Santos (candidato a Diretor Nacional)
+  valor: '51'
+  pagina: 10
+  conferido: false
+- o_que: votos para Marcos Venício de Mattos Chaves (candidato a Diretor Nacional)
+  valor: '39'
+  pagina: 10
+  conferido: false
+- o_que: votos nulos na eleição para Diretor Nacional
+  valor: '3'
+  pagina: 10
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 812f53d61ecfc92e4ae9f9d13149cdc0d2bcfb41c818da5fe00aa4058f2c0fb5
+revisado: null

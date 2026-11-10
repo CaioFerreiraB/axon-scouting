@@ -1,0 +1,82 @@
+doc_key: ata-conselho-consultivo-novembro-2024-1
+reuniao:
+  tipo: ordinaria
+  data: '2024-11-02'
+  local: Planetário - Rua Vice-Governador Rúbens Berardo, nº 100, Gávea, Rio de Janeiro/RJ
+deliberacoes:
+- tema: dispensa da leitura da ata anterior
+  decisao: Propôs a dispensa de sua leitura, sendo a sugestão aprovada por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: aprovação da proposta do Suporte Nacional e profissionalização das Regiões Escoteiras
+  decisao: IVAN apresentou a proposta do Suporte Nacional e a profissionalização das Regiões Escoteiras
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: cronograma de encerramento contábil
+  decisao: GRACE apresentou o cronograma de encerramento contábil
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: atualização do sistema PAXTU
+  decisao: o módulo administrativo estará concluído até abril de 2025 para apresentação no Congresso Nacional Escoteiro
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: inclusão de participantes de todas as Regiões na fase de testes do sistema
+  decisao: IVAN confirmou que um edital já foi publicado
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: nomeação de Consultor Regional por Região
+  decisao: Solicitou que cada Região nomeasse um Consultor Regional, considerado por IVAN um ponto estratégico para o desenvolvimento
+    dos Escoteiros do Brasil
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: criação de Grupo de Trabalho para discutir estratégias de crescimento
+  decisao: RODRIGUINHO propõe a criação de um Grupo de Trabalho (GT) para discutir estratégias dentro do Conselho Consultivo
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: retomada de estudos sobre redução de custos do vestuário
+  decisao: RODRIGUINHO solicita a retomada de estudos sobre a redução de custos do vestuário
+  votacao: ''
+  pagina: 6
+  conferido: true
+- tema: realização de seminário técnico sobre a operação da Loja Escoteira no próximo Congresso Nacional Escoteiro
+  decisao: IVAN sugere a realização de um seminário técnico sobre a operação da Loja Escoteira durante o próximo Congresso
+    Nacional Escoteiro
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes:
+- orgao: Mesa da reunião do Conselho Consultivo
+  cargo: Presidente da Mesa
+  eleito: Rodrigo Ramos De Freitas (RODRIGUINHO)
+  mandato: ''
+  pagina: 3
+  conferido: true
+numeros:
+- o_que: associados advindos do Projeto Multiplica na Bahia
+  valor: '129'
+  pagina: 4
+  conferido: true
+- o_que: associados advindos do Projeto Multiplica em São Paulo
+  valor: '30'
+  pagina: 4
+  conferido: true
+- o_que: associados advindos do Projeto Multiplica no Pará e Paraná
+  valor: '49'
+  pagina: 4
+  conferido: true
+- o_que: percentual de UELs com Certificado de Funcionamento
+  valor: 84%
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 5fbdc9c9a07e9008cd1739281baa7dc868212d1afbd9cc58d744854d52e3ceaa
+revisado: null

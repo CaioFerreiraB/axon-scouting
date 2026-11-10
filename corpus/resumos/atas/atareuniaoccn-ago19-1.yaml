@@ -1,0 +1,50 @@
+doc_key: atareuniaoccn-ago19-1
+reuniao:
+  tipo: ordinaria
+  data: '2019-08-17'
+  local: Centro Escoteiro Jaraguá, em São Paulo/SP
+deliberacoes:
+- tema: eleição da presidência da reunião
+  decisao: propondo a eleição de Alexandre Banchi, presidente da Região Escoteira de São Paulo, para assumir a presidência
+    desta reunião, o que foi aprovado por unanimidade dos presentes
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: eleição do vice-presidente da reunião
+  decisao: proposto a eleição de um vice-presidente, ficando eleito Jesse Alves Laudelino, presidente da Região Escoteira
+    de Alagoas
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: data do Curso Nacional de Gestores Institucionais
+  decisao: decidiu-se para os dias 16 e 17 de maio de 2020 a data do 1º Curso Nacional de Gestão Institucional
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Conselho Consultivo
+  cargo: presidente da reunião
+  eleito: Alexandre Banchi
+  mandato: 17 e 18 de agosto de 2019
+  pagina: 1
+  conferido: true
+- orgao: Conselho Consultivo
+  cargo: vice-presidente da reunião
+  eleito: Jesse Alves Laudelino
+  mandato: 17 e 18 de agosto de 2019
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: dias da reunião
+  valor: 17 e 18 de agosto de 2019
+  pagina: 1
+  conferido: true
+- o_que: participantes do 24º Jamboree Mundial
+  valor: '1.448'
+  pagina: 4
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: c3607ddfc89fe4e4b47ef03285bc3bfe99ff9e9eb1da13c23bc412f2a9d2f687
+revisado: null

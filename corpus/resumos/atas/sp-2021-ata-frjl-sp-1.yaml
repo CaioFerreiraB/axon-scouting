@@ -1,0 +1,159 @@
+doc_key: sp-2021-ata-frjl-sp-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-03-27'
+  local: online através da plataforma ZOOM
+deliberacoes:
+- tema: Eleição e Posse da Mesa Diretora dos trabalhos
+  decisao: 'foi eleita e empossada a mesa diretora do XIX Fórum Regional de Jovens Líderes, composta por: Presidente Rafael
+    Gomes de Araújo, Vice-presidente Isabela Barros Lacerda, Primeiro Secretário Maria Cecília Gatti, Segundo Secretário Felipe
+    Lian Carvalhal Maroti'
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Eleição e posse da comissão de escrutínio
+  decisao: foi eleita e empossada a comissão de escrutínio do XIX Fórum Regional de Jovens Líderes composta por Ana Beatriz
+    Pereira de Lima, Juliana de Souza Francisco e Vitor Correa Pereira Dos Santos
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Leitura e aprovação da Ata do XVIII Fórum Regional de Jovens Líderes
+  decisao: foi aceita a modificação na ATA sendo a única proposta e procedeu-se à aprovação da ata com alteração
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Eleição dos Delegados Regionais aos Fóruns Nacionais de Jovens Líderes
+  decisao: declaram-se eleitos por aclamação os três candidatos Aleksander Dimitrius Rugeroni, Denis Valenzuela das Neves
+    e João Pedro Maia
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Eleição da cidade sede do Encontro Regional de Jovens Líderes
+  decisao: foi decidido que Santos será a cidade sede do Encontro Regional de Jovens Líderes
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Eleição dos novos membros do Núcleo Regional de Jovens Líderes
+  decisao: foram eleitos Denis Valenzuela das Neves para Coordenador e Isabela Lacerda para Comunicadora
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Encaminhamento sobre Regulamento Geral da Rede Nacional de Jovens Líderes (RNJL)
+  decisao: foi aprovado por aclamação para votar contra a aprovação do Regulamento Geral da Rede Nacional de Jovens Líderes
+    no caso de a PNEJ não ser publicada antes do Fórum Nacional ou se os delegados julgarem que não há tempo hábil de consultar
+    a rede antes do Fórum; foram aprovados por aclamação os encaminhamentos para a Assembleia Regional e para o Fórum Nacional;
+    foi aprovado por aclamação a criação de Grupo de Trabalho para análise das propostas
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora do XIX Fórum Regional de Jovens Líderes
+  cargo: Presidente
+  eleito: Rafael Gomes de Araújo
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora do XIX Fórum Regional de Jovens Líderes
+  cargo: Vice-presidente
+  eleito: Isabela Barros Lacerda
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora do XIX Fórum Regional de Jovens Líderes
+  cargo: Primeiro Secretário
+  eleito: Maria Cecília Gatti
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora do XIX Fórum Regional de Jovens Líderes
+  cargo: Segundo Secretário
+  eleito: Felipe Lian Carvalhal Maroti
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio do XIX Fórum Regional de Jovens Líderes
+  cargo: Membro
+  eleito: Ana Beatriz Pereira de Lima
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio do XIX Fórum Regional de Jovens Líderes
+  cargo: Membro
+  eleito: Juliana de Souza Francisco
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Comissão de Escrutínio do XIX Fórum Regional de Jovens Líderes
+  cargo: Membro
+  eleito: Vitor Correa Pereira Dos Santos
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Delegados Regionais aos Fóruns Nacionais de Jovens Líderes
+  cargo: Delegado
+  eleito: Aleksander Dimitrius Rugeroni
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Delegados Regionais aos Fóruns Nacionais de Jovens Líderes
+  cargo: Delegado
+  eleito: Denis Valenzuela das Neves
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Delegados Regionais aos Fóruns Nacionais de Jovens Líderes
+  cargo: Delegado
+  eleito: João Pedro Maia
+  mandato: ''
+  pagina: 3
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes de São Paulo
+  cargo: Coordenador
+  eleito: Denis Valenzuela das Neves
+  mandato: ''
+  pagina: 7
+  conferido: true
+- orgao: Núcleo Regional de Jovens Líderes de São Paulo
+  cargo: Comunicadora
+  eleito: Isabela Lacerda
+  mandato: ''
+  pagina: 7
+  conferido: true
+numeros:
+- o_que: Orçamento Previsto
+  valor: R$ 0,00
+  pagina: 9
+  conferido: false
+- o_que: Número de jovens líderes na região
+  valor: ~ 2000
+  pagina: 9
+  conferido: false
+- o_que: Respostas recebidas no formulário
+  valor: '43'
+  pagina: 9
+  conferido: false
+- o_que: Total de inscritos no VII Encontro Regional de Jovens Líderes
+  valor: '270'
+  pagina: 10
+  conferido: false
+- o_que: Participantes efetivos no VII Encontro Regional de Jovens Líderes
+  valor: '230'
+  pagina: 10
+  conferido: false
+- o_que: Participantes
+  valor: '170'
+  pagina: 10
+  conferido: false
+- o_que: Aplicadores
+  valor: '90'
+  pagina: 10
+  conferido: false
+- o_que: Organizadores
+  valor: '20'
+  pagina: 10
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 0fa48a650ce75c97d37a1ee2628b0053661a9513e92fdbb92ca30f23d0b2eeff
+revisado: null

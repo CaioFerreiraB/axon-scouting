@@ -1,0 +1,102 @@
+doc_key: ata83-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2016-02-27'
+  local: Hotel Tulip Inn, em São José dos Pinhais – PR
+deliberacoes:
+- tema: Aprovação da pauta da reunião
+  decisao: Colocado em votação, a agenda foi aprovada por todos.
+  votacao: todos
+  pagina: 1
+  conferido: true
+- tema: Encaminhamento para conclusão do Planejamento Estratégico 2016-2021
+  decisao: O encaminhamento foi aprovado por todos.
+  votacao: todos
+  pagina: 1
+  conferido: true
+- tema: Designação de comissão de redação e estilo para o Planejamento Estratégico
+  decisao: A proposta foi aprovada por todos.
+  votacao: todos
+  pagina: 1
+  conferido: true
+- tema: Aprovação da Base Estratégica (Missão, Visão e Valores)
+  decisao: Após um ajuste, o texto foi aprovado por unanimidade. Ao final, os itens da base estratégica também foram aprovados
+    por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Aprovação dos objetivos e indicadores do marco "Métodos Educativos"
+  decisao: Após ajustes, aprovados.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação dos itens do marco "Governança"
+  decisao: Sendo os mesmos aprovados.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação dos ajustes e aprovação do marco "Recursos"
+  decisao: Recebeu ajustes e terminou aprovado.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do marco "Desenvolvimento Institucional"
+  decisao: Após contribuições, também, foi aprovado pelo CAN.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do prazo para finalização e impressão do Planejamento Estratégico para lançamento no Congresso Nacional
+    Escoteiro de Campo Grande – MS em abril/2016
+  decisao: Informado os prazos para finalizar e imprimir o documento que será lançado no Congresso Nacional Escoteiro de Campo
+    Grande – MS em abril/2016.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Plano de Trabalho do CAN junto com o da DEN
+  decisao: Sendo a proposta aprovada.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Autorização para a DEN eleita ampliar o plano de ação até dezembro de 2019, sem estender o período do planejamento
+    estratégico
+  decisao: Vendramini coloca em votação a proposta, recebendo aprovação de 11 votos a favor e 1 voto contrário.
+  votacao: 11 votos a favor e 1 voto contrário
+  pagina: 2
+  conferido: true
+- tema: Revogação da convocação da reunião da assembleia regional de Pernambuco
+  decisao: Proposta que a convocação da reunião da assembleia de Pernambuco seja revogada.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Realização da reunião da assembleia regional de Pernambuco sem eleição da diretoria
+  decisao: Colocada em votação, essa proposta recebeu 12 votos a favor e nenhum contrário.
+  votacao: 12 votos a favor e nenhum contrário
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Diretoria Executiva Nacional eleita
+  cargo: Diretor Presidente eleito
+  eleito: Alessandro Garcia Vieira
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Diretoria Executiva Nacional eleita
+  cargo: 1o Vice-Presidente eleito
+  eleito: Ivan Nascimento
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: votos na autorização para ampliar plano de ação até dezembro de 2019
+  valor: 11 votos a favor e 1 voto contrário
+  pagina: 2
+  conferido: true
+- o_que: votos na aprovação da realização da assembleia regional de Pernambuco sem eleição da diretoria
+  valor: 12 votos a favor e nenhum contrário
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 84825577de387f7da78fb9f274120f0e1db1064eeb83f998b956ad1e9ae1353a
+revisado: null

@@ -1,0 +1,288 @@
+doc_key: 27a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-30-mai-2021-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-05-30'
+  local: Curitiba/PR (telepresencial)
+deliberacoes:
+- tema: Composição da mesa diretora e comissões assessoradas
+  decisao: Composição da mesa diretora dos trabalhos e das Comissões Assessoras da Assembleia conforme sugestões do CAN com
+    o Conselho Consultivo, sendo eleitos Larissa Mendes Terra de Sousa - Presidente, Isabelly Castro da Silva e Santos - Primeira
+    Vice-presidente, Rudner Lauterjung Queiroz - Segundo Vice-presidente, Rebeca Pizzi Rodrigues e Larissa Lemes Avari Lauterjung
+    - Secretárias, e membros das comissões conforme listados.
+  votacao: 131 votantes, 105 favoráveis, 09 desaprovações, 10 abstenções e 07 não votantes
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Ata da Reunião Extraordinária de 26/09/2020
+  decisao: Aprovada a Ata da Reunião Extraordinária da Assembleia Nacional de 26/09/2020
+  votacao: 131 votantes, 108 favoráveis, 00 desaprovações, 18 abstenções e 05 não votantes
+  pagina: 2
+  conferido: true
+- tema: Relatórios anuais 2020 do CAN, DEN, CFN e CEDN
+  decisao: Aprovados os relatórios do CAN, DEN e CEDN conforme apresentados
+  votacao: 'Relatório do CAN: 131 votantes, 117 favoráveis, 08 desaprovações, 03 abstenções e 03 não votantes; Relatório da
+    DEN: 131 votantes, 108 favoráveis, 12 desaprovações, 08 abstenções e 03 não votantes; Relatório da CEDN: 131 votantes,
+    96 favoráveis, 27 desaprovações, 05 abstenções e 03 não votantes'
+  pagina: 2
+  conferido: true
+- tema: Contas e Balanço Anual de 2020 da UEB
+  decisao: Aprovadas as contas e o Balanço Anual de 2020 da UEB, ante o parecer da Comissão Fiscal Nacional
+  votacao: 131 votantes, 123 favoráveis, 04 desaprovações, 03 abstenções e 01 não votante
+  pagina: 6
+  conferido: true
+- tema: Inversão da pauta para apresentação do Projeto Educativo
+  decisao: Aprovada a inversão da pauta para apresentação do projeto de alteração dos fundamentos do Escotismo e pausa para
+    almoço
+  votacao: 131 votantes, 67 favoráveis, 55 desaprovações, 04 abstenções e 05 não votantes
+  pagina: 6
+  conferido: true
+- tema: Eleição dos membros do Conselho de Administração Nacional (CAN)
+  decisao: 'Eleitos para o CAN com mandato de quatro anos: RENATO WANDERLEY BRENEIZER, ANTONIO VARELA DA SILVA NETO, ALDENISE
+    CORDEIRO SANTOS, ILKA DENISE ROSSETTO GALLEGO CAMPOS, MARCIO SEQUEIRA DA SILVA, DANIELA DE OLIVEIRA RODRIGUES COMES, CLAUCIO
+    DA SILVA MENDES; Suplentes com mandato de dois anos: LAURA ALVES PEREIRA PAIVA, RAFAEL FAGUNDES CAVALCANTI, LINDOMAR SOBRINHO
+    CHAVES, CARMEN BARREIRA, LINDOMAR FAUSTINO RAIMUNDO, RICARDO COELHO DOS SANTOS'
+  votacao: 131 votantes, votos conforme detalhado na ata, com votação de desempate realizada
+  pagina: 7
+  conferido: true
+- tema: Eleição dos membros da Comissão Fiscal Nacional (CFN) e Comissão de Ética e Disciplina Nacional (CEDN)
+  decisao: 'Eleitos para a CFN: APARECIDO CARLOS DUARTE, CARLOS ALBERTO BARBOZA, ARCÂNGELO DOS SANTOS SAFANELLI, MARIOVANI
+    CARSTEN CERVI, MARLON BENITES DE SOUZA; Suplentes: ALEX AMORIM FAIA (não eleito); Para a CEDN: VALDÊNIA RIBEIRO PIRES,
+    VIVIAN DA SILVA LOPES, MARIA LAURA SOUZA LIBONI, RODRIGO TOLEDO DA SILVA RODRIGUES, MARIO HENRIQUE PETERS FARINON; Suplentes:
+    FELIPE EDUARDO PORTELA DE PAULO (declinou), RONALDO ENGRACIA, JOSEMAR FRANCISCO PEGORETTE, MATEUS Q. C. COELHO VERGARA,
+    JOSÉ ALBERTO FERREIRA TRINDADE (não eleitos)'
+  votacao: 131 votantes, votos conforme detalhado na ata
+  pagina: 8
+  conferido: true
+- tema: Reprovação de candidato sem votos para suplente do CAN
+  decisao: ELINSON SOARES DE ARAÚJO não será suplente do CAN por não ter recebido votos
+  votacao: 83 votos pela reprovação, 33 a favor, 04 abstenções e 11 não votantes
+  pagina: 9
+  conferido: true
+- tema: Deliberação sobre a proposta de texto para o Projeto Educativo quanto aos Fundamentos do Escotismo Brasileiro
+  decisao: Aprovado o texto original para os itens DEFINIÇÃO, PROPÓSITO e MÉTODO ESCOTEIRO; encaminhada para Assembleia Extraordinária
+    a deliberação sobre os PRINCÍPIOS do Escotismo
+  votacao: 'DEFINIÇÃO: 91 votos aprovação, 27 para Assembleia Extraordinária; PROPÓSITO: 90 votos aprovação, 27 para Assembleia
+    Extraordinária; PRINCÍPIOS: 63 votos para Assembleia Extraordinária, 55 aprovação; MÉTODO ESCOTEIRO: 61 votos aprovação,
+    57 para Assembleia Extraordinária'
+  pagina: 10
+  conferido: true
+- tema: Assuntos Gerais - Proposições recebidas
+  decisao: Apresentadas proposições para restauro da Estátua El Scout (1923) e Projeto Cultural Livro Histórico “O Movimento
+    Escoteiro Catarinense”
+  votacao: ''
+  pagina: 11
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Presidente
+  eleito: Larissa Mendes Terra de Sousa
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Primeira Vice-presidente
+  eleito: Isabelly Castro da Silva e Santos
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Segundo Vice-presidente
+  eleito: Rudner Lauterjung Queiroz
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretária
+  eleito: Rebeca Pizzi Rodrigues
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Secretária
+  eleito: Larissa Lemes Avari Lauterjung
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro Titular
+  eleito: RENATO WANDERLEY BRENEIZER
+  mandato: 4 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro Titular
+  eleito: ANTONIO VARELA DA SILVA NETO
+  mandato: 4 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheira Titular
+  eleito: ALDENISE CORDEIRO SANTOS
+  mandato: 4 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheira Titular
+  eleito: ILKA DENISE ROSSETTO GALLEGO CAMPOS
+  mandato: 4 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro Titular
+  eleito: MARCIO SEQUEIRA DA SILVA
+  mandato: 4 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheira Titular
+  eleito: DANIELA DE OLIVEIRA RODRIGUES COMES
+  mandato: 4 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro Titular
+  eleito: CLAUCIO DA SILVA MENDES
+  mandato: 4 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheira Suplente
+  eleito: LAURA ALVES PEREIRA PAIVA
+  mandato: 2 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro Suplente
+  eleito: RAFAEL FAGUNDES CAVALCANTI
+  mandato: 2 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro Suplente
+  eleito: LINDOMAR SOBRINHO CHAVES
+  mandato: 2 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheira Suplente
+  eleito: CARMEN BARREIRA
+  mandato: 2 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro Suplente
+  eleito: LINDOMAR FAUSTINO RAIMUNDO
+  mandato: 2 anos
+  pagina: 7
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Conselheiro Suplente
+  eleito: RICARDO COELHO DOS SANTOS
+  mandato: 2 anos
+  pagina: 7
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro Titular
+  eleito: APARECIDO CARLOS DUARTE
+  mandato: 4 anos
+  pagina: 8
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro Titular
+  eleito: CARLOS ALBERTO BARBOZA
+  mandato: 4 anos
+  pagina: 8
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro Titular
+  eleito: ARCÂNGELO DOS SANTOS SAFANELLI
+  mandato: 4 anos
+  pagina: 8
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Suplente
+  eleito: MARIOVANI CARSTEN CERVI
+  mandato: 2 anos
+  pagina: 8
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Suplente
+  eleito: MARLON BENITES DE SOUZA
+  mandato: 2 anos
+  pagina: 8
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: Membro Titular
+  eleito: VALDÊNIA RIBEIRO PIRES
+  mandato: 4 anos
+  pagina: 8
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: Membro Titular
+  eleito: VIVIAN DA SILVA LOPES
+  mandato: 4 anos
+  pagina: 8
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: Suplente
+  eleito: MARIA LAURA SOUZA LIBONI
+  mandato: 2 anos
+  pagina: 8
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: Suplente
+  eleito: RODRIGO TOLEDO DA SILVA RODRIGUES
+  mandato: 2 anos
+  pagina: 8
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Nacional
+  cargo: Suplente
+  eleito: MARIO HENRIQUE PETERS FARINON
+  mandato: 2 anos
+  pagina: 8
+  conferido: true
+numeros:
+- o_que: delegados credenciados
+  valor: '131'
+  pagina: 1
+  conferido: true
+- o_que: votantes na composição da mesa e comissões
+  valor: '131'
+  pagina: 2
+  conferido: true
+- o_que: votantes na aprovação da Ata da Reunião Extraordinária
+  valor: '131'
+  pagina: 2
+  conferido: true
+- o_que: votantes na aprovação dos relatórios do CAN, DEN e CEDN
+  valor: '131'
+  pagina: 2
+  conferido: true
+- o_que: votantes na aprovação das contas e balanço anual de 2020
+  valor: '131'
+  pagina: 6
+  conferido: true
+- o_que: votantes na inversão da pauta
+  valor: '131'
+  pagina: 6
+  conferido: true
+- o_que: votantes na eleição dos membros do CAN
+  valor: '131'
+  pagina: 7
+  conferido: true
+- o_que: votantes na eleição dos membros da CFN e CEDN
+  valor: '131'
+  pagina: 8
+  conferido: true
+- o_que: votantes na reprovação de candidato sem votos para suplente do CAN
+  valor: '131'
+  pagina: 9
+  conferido: false
+- o_que: votantes na deliberação sobre o Projeto Educativo
+  valor: '131'
+  pagina: 10
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 82526180482c9264141c5b2dc30a1bfd244d194b94d64c7c9564883467d7db41
+revisado: null

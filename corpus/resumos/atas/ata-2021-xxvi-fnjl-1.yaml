@@ -1,0 +1,77 @@
+doc_key: ata-2021-xxvi-fnjl-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-05-23'
+  local: ''
+deliberacoes:
+- tema: aprovação da mesa do fórum
+  decisao: a mesa sugerida pelo Núcleo Nacional foi aprovada por aclamação
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: dispensa da leitura da ata anterior
+  decisao: A dispensa de leitura é aprovada por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: aprovação da ata do fórum anterior
+  decisao: a ata seja aprovada e encaminhada para correção nos próximos dias... a deliberação da ata, que foi aprovada por
+    aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: aprovação do Regulamento Geral da RNJL com destaques
+  decisao: foi aprovado por aclamação o destaque 3; destaque 4; destaque 5; e a proposta integral do Regulamento Geral da
+    Rede Nacional de Jovens Líderes, já com os destaques aprovados durante o Fórum, sendo aprovado por aclamação
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+- tema: prazo para envio e publicação da ata
+  decisao: O presidente da mesa colocou em votação o prazo de15 dias para envio da ata pela mesa e mais 5 dias para publicação
+    da ata pelo Núcleo Nacional. Os prazos foram aprovados por aclamação
+  votacao: aclamação
+  pagina: 8
+  conferido: true
+eleicoes:
+- orgao: mesa do XXVI Fórum Nacional de Jovens Líderes
+  cargo: Presidente
+  eleito: Eduardo Manique (RS)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa do XXVI Fórum Nacional de Jovens Líderes
+  cargo: Vice-Presidente
+  eleito: Larissa Durães (MG)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa do XXVI Fórum Nacional de Jovens Líderes
+  cargo: 1ª secretária
+  eleito: Raphaela Faustino (ES)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: mesa do XXVI Fórum Nacional de Jovens Líderes
+  cargo: 2º secretário
+  eleito: Filipe Malizia (BA)
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: regiões que enviaram documentos para credenciamento dos delegados
+  valor: '16'
+  pagina: 1
+  conferido: true
+- o_que: votos na rejeição do primeiro destaque
+  valor: 5 votos a favor; 39 votos contra; 3 votos abstenções
+  pagina: 4
+  conferido: true
+- o_que: votos na rejeição do segundo destaque
+  valor: 6 votos a favor; 37 votos contra; 4 abstenções
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: e545f0f46d93ec89d0b3ec35ae1c78d475bbcd43d107234d5dd4f292c3ae3be7
+revisado: null

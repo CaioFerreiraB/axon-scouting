@@ -1,0 +1,74 @@
+doc_key: sp-ata-arpi-2022-extraordinaria-1
+reuniao:
+  tipo: extraordinaria
+  data: '2022-02-12'
+  local: online, via Google Meet
+deliberacoes:
+- tema: eleição da mesa diretora e comissão de escrutínio
+  decisao: 'a mesa diretora foi eleita por aclamação com a seguinte formação: Presidente: Robert Gabriel de Sousa Santos,
+    GE Monte Serrat 432/SP; Vice-presidente: Duilio Caoam Beneducci Moraes, GE Jabuti 108/SP; Primeiro Secretário: Thayna
+    Cristina Antunes de Oliveira, GE Vuturaty 217/SP; Segundo Secretário: Diogo Henrique Molina, GE Rekôy 282/SP. A comissão
+    de escrutínio teve Cecília Midori Hosoda Henriques eleita por aclamação, com exceção do segundo secretário, ausente na
+    plenária e sem voluntários para o cargo.'
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: alterações no regulamento da ARPi
+  decisao: as alterações do regulamento da ARPi são aprovadas,sob efeito imediato com exceção do nome de sua instância, que
+    será alterado para Fórum Regional Pioneiro a partir de sua edição de 2023, ou em qualquer instância extraordinária próxima
+    do mesmo.
+  votacao: 20 votos a favor, 0 votos contra e 6 abstenções
+  pagina: 2
+  conferido: true
+- tema: alterações no regulamento da CP
+  decisao: as alterações do regulamento da CP são aprovadas, sob efeito imediato, a partir da sessão ordinária da ARPi de
+    2022.
+  votacao: 18 votos a favor, 1 voto contra e 7 abstenções
+  pagina: 3
+  conferido: true
+- tema: aprovação da ata da Assembleia Regional Pioneira Extraordinária 2022
+  decisao: a ata da Assembleia Regional Pioneira Extraordinária 2022 foi lida e aprovada por todos os presentes.
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora dos Trabalhos da Assembleia Regional Pioneira Extraordinária 2022
+  cargo: Presidente
+  eleito: Robert Gabriel de Sousa Santos
+  mandato: '2022'
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos da Assembleia Regional Pioneira Extraordinária 2022
+  cargo: Vice-presidente
+  eleito: Duilio Caoam Beneducci Moraes
+  mandato: '2022'
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos da Assembleia Regional Pioneira Extraordinária 2022
+  cargo: Primeiro Secretário
+  eleito: Thayna Cristina Antunes de Oliveira
+  mandato: '2022'
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora dos Trabalhos da Assembleia Regional Pioneira Extraordinária 2022
+  cargo: Segundo Secretário
+  eleito: Diogo Henrique Molina
+  mandato: '2022'
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Escrutínio da Assembleia Regional Pioneira Extraordinária 2022
+  cargo: Membro
+  eleito: Cecília Midori Hosoda Henriques
+  mandato: '2022'
+  pagina: 1
+  conferido: true
+numeros:
+- o_que: clãs presentes
+  valor: '26'
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: ddc494d8ee876789c3cd4d21b9bc1d5ee5d3cebf5ceb6a43a50604541f2d20ee
+revisado: null

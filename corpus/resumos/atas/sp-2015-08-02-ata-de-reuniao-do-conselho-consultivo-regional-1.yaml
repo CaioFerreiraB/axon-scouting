@@ -1,0 +1,79 @@
+doc_key: sp-2015-08-02-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2015-08-02'
+  local: sede do Grupo Escoteiro Guaru 198SP, Guarulhos/SP
+deliberacoes:
+- tema: entrega das Insígnias da Madeira
+  decisao: o Escritório Regional passará a enviar a insígnia e certificado diretamente para o Grupo Escoteiro, dando ciência
+    ao Assessor Pessoal de Formação do concluinte, e a notificação ao comissário distrital como hoje é feito com os níveis
+    básicos e distintivos especiais
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: manutenção dos dados de contato das comissões distritais
+  decisao: O ch. Thiago preparou uma planilha on line (google docs), onde cada comissário distrital passa a manter os dados
+    atualizados de contato com cada membro da comissão distrital
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: autorização de nova Unidade Escoteira Local
+  decisao: foi sugerido retomar o tema adiante como parte das discussões dos comissários
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: solicitação de medalhas e reconhecimentos
+  decisao: os processos devem ser solicitados diretamente dos Grupos à Região a fim de evitar atrasos
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: mudança de Distrito de Unidade Escoteira Local
+  decisao: 'definiu-se o seguinte fluxo e procedimentos: aprovação em Assembleia da UEL, solicitação por escrito ao Conselho
+    Distrital, parecer do Conselho Distrital, encaminhamento à Região, consulta a distritos envolvidos, decisão da diretoria
+    regional e retorno à UEL solicitante'
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: fundação de nova Unidade Escoteira Local
+  decisao: a fundação de uma UEL se dará na realização da assembleia de sua formalização ou, no caso de Unidades Escoteiras
+    Patrocinadas, a data da nomeação da diretoria pela entidade patrocinadora; formação dos dirigentes e escotistas deve ser
+    iniciada e planejada antes da fundação; deve haver planejamento escrito para a criação da UEL; resultado deve ser enviado
+    à diretoria regional junto com parecer do conselho distrital
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: criação de Grupo de Trabalho para revisão do processo de fundação de UEL
+  decisao: Criou-se um Grupo de Trabalho (GT) com a incumbência de revisar o fluxograma e criar um modelo deste planejamento,
+    composto inicialmente pelos comissários Anderson, Filipe, Kleber, Rodrigo e Vlamir
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: atuação do comissário distrital em UELs com pendências para Certificado de Funcionamento Anual
+  decisao: o comissário distrital deve atuar com orientação e apoio, não coercitiva; em caso de fechamento de UEL, decisão
+    da diretoria regional; notificação para diretoria da UEL; assessoramento para plano de regularização; revisão periódica
+    do plano; providências contra acúmulo fictício de cargos; registro de associados é atribuição da diretoria da UEL
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: composição e mandato dos órgãos distritais
+  decisao: 'há dois órgãos em cada distrito: Conselho Distrital (comissário distrital e diretores presidentes das UELs, órgão
+    deliberativo) e Comissão Distrital (órgão executivo, formado por comissário distrital, secretário distrital, tesoureiro
+    distrital, coordenadores e outros cargos correlatos); conselho distrital deve se reunir até fim de novembro e indicar
+    nome do comissário distrital para próxima gestão; mandato do comissário distrital é de dois anos; proposta de prorrogação
+    para coincidir com mandato da diretoria regional de 3 anos'
+  votacao: aprovado
+  pagina: 5
+  conferido: true
+- tema: próxima reunião do conselho consultivo regional
+  decisao: definida para iniciar às 14h do dia 7 de novembro até às 15h do dia 8 de novembro, no 19º Distrito Escoteiro Campinas,
+    com pauta inicial sobre criação de procedimentos para atuação dos distritos escoteiros
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: f61c4491dc977e1923025e495ad604a892e10829a04826d52a356fe633a9b668
+revisado: null

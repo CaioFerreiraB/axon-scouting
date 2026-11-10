@@ -1,0 +1,61 @@
+doc_key: sp-2017-12-03-ata-de-reuniao-do-conselho-consultivo-regional-1
+reuniao:
+  tipo: ordinaria
+  data: '2017-12-03'
+  local: Tiro de Guerra de Piracicaba (R. Anhanguera, 362, Morumbi, CEP 13420-350, Piracicaba/SP)
+deliberacoes:
+- tema: Projeto-piloto Secretário Distrital profissional
+  decisao: Ficou definido que o projeto-piloto terá duração de seis meses e que o Secretário Distrital profissional deverá
+    viabilizar ao menos três novas UELs durante o período do projeto-piloto, além de cumprir as atribuições previstas na descrição
+    de funções do cargo.
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Fluxograma de atividades distritais de programa educativo
+  decisao: Restou, por fim, deliberado criar um Grupo de Trabalho entre Comissários, Coordenadores Distritais e Diretoria
+    Regional e Coordenações Regionais de Programa Educativo, visando a criação do fluxograma de atividades distritais da área
+    de programa educativo. Também ficou assumido compromisso pelos presentes de os Distritos Escoteiros compartilharem com
+    as Coordenações Regionais de Programa Educativo relatórios das atividades distritais realizadas, e por sua vez, as Coordenações
+    Regionais darem uma devolutiva sobre como serão utilizadas as informações obtidas.
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Data do Congresso Regional Escoteiro 2018
+  decisao: Decidida pela maioria dos presentes que a data de realização do Congresso Regional Escoteiro 2018 será alterada
+    para os dias 25 e 26 de agosto.
+  votacao: maioria
+  pagina: 6
+  conferido: true
+- tema: Instrução normativa regional para participação de UEL em atividades fora do Estado de São Paulo
+  decisao: A Diretoria Regional irá considerar as sugestões feitas nesta reunião do CCR para simplificação do regramento proposto
+    e deverá tomar por base a ficha disponibilizada pelo Simões para elaborar a ficha de comunicação das atividades de UEL
+    fora dos limites da Região Escoteira de São Paulo.
+  votacao: ''
+  pagina: 8
+  conferido: true
+- tema: Calendário unificado de cursos distritais e regionais para 2018
+  decisao: No próximo dia 16 de dezembro, na Casa do Escoteiro, acontecerá uma reunião entre a Diretoria Regional de Gestão
+    de Adultos e Coordenadores Distritais de Gestão de Adultos (CDGAs), objetivando a elaboração coletiva de um calendário
+    unificado de cursos distritais e regionais para 2018, a fim de dar sustentabilidade ao projeto de descentralização da
+    formação de adultos voluntários iniciado em 2013 e evitar cancelamentos de cursos por falta de quórum.
+  votacao: ''
+  pagina: 7
+  conferido: true
+- tema: Calendário de reuniões do CCR em 2018
+  decisao: 'Aprovado o calendário de Reuniões do CCR em 2018: a primeira no Centro Escoteiro Jaraguá, no domingo 4 de fevereiro
+    de 2018; a segunda durante o Congresso Regional Escoteiro; e a decisão sobre a necessidade de uma terceira reunião no
+    final do ano será tomada na segunda reunião.'
+  votacao: aprovado
+  pagina: 10
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: inscritos para o 7º Jamboree Nacional Escoteiro na Região Escoteira de São Paulo
+  valor: '708'
+  pagina: 10
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: d7dafc1378d670d66ccf5c2c2cbf55be9fcd24c0878ba78cd6af1d314c2fc460
+revisado: null

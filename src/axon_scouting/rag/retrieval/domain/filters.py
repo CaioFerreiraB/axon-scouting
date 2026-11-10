@@ -7,7 +7,7 @@ facetas (`branches`, dois ramos ou mais) não são filtro do índice: o retrieve
 sugeridos (`suggested_types`) também não: só desempatam a ordem (ADR-046). O pedido de lista (`catalog`) é da tool de
 lista de documentos (ADR-047), e o de enumeração (`enumeration`), da tool de unidades (ADR-048); a busca por trechos
 ignora os dois. A âncora (`anchor`, ADR-061) é a pergunta anterior que a de seguimento retoma: o retriever busca também
-com ela.
+com ela. O pedido de síntese (`synthesis`, ADR-062) é da tool de resumos das atas; a busca por trechos o ignora.
 """
 
 from __future__ import annotations
@@ -20,6 +20,7 @@ from axon_ai_contracts import JSONValue
 
 from axon_scouting.rag.index.api import BRANCHES, SCOPES, IndexFilters, taxonomy_id
 from axon_scouting.rag.retrieval.domain.catalog import CatalogRequest
+from axon_scouting.rag.retrieval.domain.summaries import SynthesisRequest
 from axon_scouting.rag.retrieval.domain.units import EnumerationRequest
 
 KNOWN: Final = frozenset(
@@ -39,6 +40,7 @@ KNOWN: Final = frozenset(
         "catalog",
         "enumeration",
         "anchor",
+        "synthesis",
     }
 )
 ANCHOR_MAX_CHARS: Final = 400
@@ -171,6 +173,30 @@ def anchor(raw: Mapping[str, JSONValue] | None) -> str | None:
     if not isinstance(value, str) or not value.strip() or len(value) > ANCHOR_MAX_CHARS:
         raise InvalidFilters("anchor", f"esperado texto não vazio de até {ANCHOR_MAX_CHARS} caracteres, veio {value!r}")
     return value
+
+
+def synthesis_request(raw: Mapping[str, JSONValue] | None) -> SynthesisRequest | None:
+    """O pedido de síntese (ADR-062); `None` na pergunta pontual."""
+    value = (raw or {}).get("synthesis")
+    if value is None:
+        return None
+    if not isinstance(value, Mapping):
+        raise InvalidFilters("synthesis", f"esperado um mapa, veio {value!r}")
+    years = [value.get("year_from"), value.get("year_until")]
+    if any(year is not None and (not isinstance(year, int) or isinstance(year, bool)) for year in years):
+        raise InvalidFilters("synthesis", f"year_from e year_until: inteiros ou null, veio {value!r}")
+    year_from, year_until = (year if isinstance(year, int) else None for year in years)
+    if year_from is not None and year_until is not None and year_from > year_until:
+        raise InvalidFilters("synthesis", f"year_from depois de year_until: {value!r}")
+    scopes = value.get("scopes") or []
+    if not isinstance(scopes, list) or any(scope not in SCOPES for scope in scopes):
+        raise InvalidFilters("synthesis", f"scopes fora de {', '.join(SCOPES)}: {value!r}")
+    return SynthesisRequest(
+        year_from=year_from,
+        year_until=year_until,
+        scopes=tuple(str(scope) for scope in scopes),
+        bodies=_ids(value, "bodies"),
+    )
 
 
 def suggested_types(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:

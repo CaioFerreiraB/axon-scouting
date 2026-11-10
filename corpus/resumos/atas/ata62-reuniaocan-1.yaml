@@ -1,0 +1,53 @@
+doc_key: ata62-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2010-04-24'
+  local: Rio de Janeiro/RJ
+deliberacoes:
+- tema: Doação da UEB para o Comitê Scout Interamericano
+  decisao: O CAN aprovou a proposta apresentada.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Planejamento Estratégico da UEB
+  decisao: Proposto e aceito pelo CAN alterar a data da reunião de agosto para 4 a 7 de setembro, com vistas a trabalhar exclusivamente
+    no desenvolvimento do Planejamento Estratégico. Cabe a DEN definir o melhor local para tal reunião. Participarão da reunião
+    os membros do CAN, DEN, Coordenadores de Comissões, os Presidentes de Regiões Escoteiras ou uma pessoa por eles indicada.
+    Márcio sugeriu que se convide pessoa fora do Movimento Escoteiro para mediar a reunião de setembro, o que foi aprovado
+    pelo Conselho.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Alteração Estatutária
+  decisao: A sugestão foi aceita e será incluída nas modificações estatutárias a serem analisadas na Assembléia Extraordinária.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Indicações de Delegados para a Conferência da Região Interamericana – Panamá
+  decisao: O CAN delega a DEN a indicação dos Delegados que representarão a UEB na Conferência do Panamá.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Comissão de Credenciamento para as Assembléias
+  decisao: Decidido que a mesma seja constituída por Luiz Salgado Klaes, Mariovani Carsten Cervi e Celso Ferreira Filho.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Mudança na Vice-Presidência do CAN
+  decisao: A indicação de Rafael Macedo para Vice-Presidência foi referendada por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidência
+  eleito: Rafael Macedo
+  mandato: ''
+  pagina: 2
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: bf95f9ce0731a9b4da62c7c91be3d84b299a1b3b3732cff7bd356f275d1a0417
+revisado: null

@@ -1,0 +1,227 @@
+doc_key: 29a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-30-abr-2023-1
+reuniao:
+  tipo: ordinaria
+  data: '2023-04-30'
+  local: Faculdade Campos Sales, sita à Rua Nossa Senhora da Lapa, 270, Lapa São Paulo, SP
+deliberacoes:
+- tema: Composição da Mesa Diretora da Assembleia
+  decisao: Aprovada a composição proposta, por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Composição das Comissões Assessoras da Assembleia
+  decisao: 'foi do mesmo modo aprovada a composição das Comissões Assessoras da Assembleia: Comissão de Credenciamento, Comissão
+    Eleitoral, Comissão de Escrutínio e Comissão de Assuntos Gerais'
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da 28ª Reunião Ordinária da Assembleia Nacional
+  decisao: fica o documento aprovado por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Aprovação da ata da Reunião Extraordinária da Assembleia Nacional
+  decisao: é aprovado por aclamação.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Credenciamento de delegados fora do prazo
+  decisao: Desta forma os mencionados delegados não estão credenciados para votar.
+  votacao: 43 votos a favor da liberação; 82 contra
+  pagina: 2
+  conferido: true
+- tema: Aprovação dos relatórios anuais de 2022 do CAN, DEN, CFN e Comissão de Ética
+  decisao: os relatórios, que são aprovados por aclamação.
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação das contas e balanço anual de 2022
+  decisao: Aprovadas, portanto, as contas dos Escoteiros do Brasil referentes ao ano de 2022.
+  votacao: 118 votos favoráveis, 3 contra, 5 não votantes
+  pagina: 4
+  conferido: true
+- tema: Recebimento das candidaturas para o Conselho de Administração Nacional
+  decisao: 'Votos favoráveis: 61 pelo recebimento das candidaturas; Votos Contra: 64 pelo não acolhimento das candidaturas;
+    Não votantes: 1.'
+  votacao: 61 a favor, 64 contra, 1 não votante
+  pagina: 4
+  conferido: true
+- tema: Instituição de grupo de trabalho para orientar assembleias regionais e nacional
+  decisao: A proposta foi acatada por aclamação pela assembleia e será implementada pela Diretoria Executiva Nacional em 2024.
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Atualização do Regulamento da Assembleia Nacional
+  decisao: Alessandro então sugere que o CAN considere incluir a atualização do Regulamento da Assembleia na convocação da
+    próxima reunião extraordinária da Assembleia Nacional, sem prejuízo de que a Comissão do CAN, encarregada do assunto,
+    possa avançar na elaboração da proposta.
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Presidente
+  eleito: Alessandro Garcia Vieira (DF)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 1ª Vice-Presidente
+  eleito: Sarah Raquel Loureiro do Amaral (MA)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 2º Vice-Presidente
+  eleito: Rafael Melis Rógero (SP)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 1ª Secretária
+  eleito: Marize Ribeiro Pisoni (RS)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 2º Secretário
+  eleito: Hilton Kayan Costa Barbosa (PA)
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro titular
+  eleito: SIMONI APARECIDA
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro titular
+  eleito: LUIZ CESAR
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro titular
+  eleito: SÉRIS APARECIDA
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro titular
+  eleito: LUCIANO ANTONIO
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro titular
+  eleito: FABIO GOMES
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro titular
+  eleito: ALEXANDRE BRAGA
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro titular
+  eleito: DANIEL CAMPOS
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro titular
+  eleito: KARINA FREIRE
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Comissão Ética e Disciplina Nacional
+  cargo: Membro titular
+  eleito: RODRIGO FRANCO
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Comissão Ética e Disciplina Nacional
+  cargo: Membro titular
+  eleito: RAFAEL FAGUNDES
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+- orgao: Comissão Fiscal Nacional
+  cargo: Membro titular
+  eleito: LUIS SALGADO KLAES
+  mandato: quatro anos
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: delegados com direito a voto
+  valor: '126'
+  pagina: 2
+  conferido: true
+- o_que: votos favoráveis à aprovação das contas de 2022
+  valor: '118'
+  pagina: 4
+  conferido: true
+- o_que: votos contra à aprovação das contas de 2022
+  valor: '3'
+  pagina: 4
+  conferido: true
+- o_que: não votantes na aprovação das contas de 2022
+  valor: '5'
+  pagina: 4
+  conferido: true
+- o_que: votos para Simoni Aparecida ao CAN
+  valor: '72'
+  pagina: 5
+  conferido: true
+- o_que: votos para Luiz Cesar ao CAN
+  valor: '57'
+  pagina: 5
+  conferido: true
+- o_que: votos para Séris Aparecida ao CAN
+  valor: '52'
+  pagina: 5
+  conferido: true
+- o_que: votos para Luciano Antonio ao CAN
+  valor: '52'
+  pagina: 5
+  conferido: true
+- o_que: votos para Fabio Gomes ao CAN
+  valor: '48'
+  pagina: 5
+  conferido: true
+- o_que: votos para Alexandre Braga ao CAN
+  valor: '42'
+  pagina: 5
+  conferido: true
+- o_que: votos para Daniel Campos ao CAN
+  valor: '41'
+  pagina: 5
+  conferido: true
+- o_que: votos para Karina Freire ao CAN
+  valor: '11'
+  pagina: 5
+  conferido: true
+- o_que: votos para Rodrigo Franco à Comissão Ética e Disciplina Nacional
+  valor: '66'
+  pagina: 5
+  conferido: true
+- o_que: votos para Rafael Fagundes à Comissão Ética e Disciplina Nacional
+  valor: '30'
+  pagina: 5
+  conferido: true
+- o_que: votos para Bruno Braga à Comissão Ética e Disciplina Nacional
+  valor: '26'
+  pagina: 5
+  conferido: true
+- o_que: votos para Luis Salgado Klaes à Comissão Fiscal Nacional
+  valor: '123'
+  pagina: 5
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: ae9a0c0a6b7f010cf4717e90c3314245c8a0d49b9499e63bcfa882bb57a801e8
+revisado: null

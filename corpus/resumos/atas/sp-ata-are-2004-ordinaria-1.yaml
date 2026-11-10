@@ -1,0 +1,237 @@
+doc_key: sp-ata-are-2004-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '2004-09-19'
+  local: avenida Carlos Mauro, 213, Águas de São Pedro — São Paulo
+deliberacoes:
+- tema: aprovação da ata da Assembleia Regional anterior
+  decisao: foi corrigido o nome do escotista Erick do G.E. Comremes para Erick Fernando Alves feita a correção, sem que se
+    realizasse a leitura
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: prestação de contas do exercício de 2003
+  decisao: 'foi colocada em votação para os que concordam que estas contas estão encerradas, o resultado é o seguinte: 78
+    votos a favor, 40 contra e 10 abstenções'
+  votacao: 78 votos a favor, 40 contra e 10 abstenções
+  pagina: 2
+  conferido: true
+- tema: redução do orçamento para 2005
+  decisao: foi colocada em votação para a assembléia a redução de 20%, o resultado foi 199 votos a favor, 13 votos contra
+    e 5 abstenções, ficando definido então a redução de 20%
+  votacao: 199 votos a favor, 13 votos contra e 5 abstenções
+  pagina: 3
+  conferido: true
+- tema: reencaminhamento do processo dos castores à nacional
+  decisao: foi aprovado por aclamação o reencaminhamento do processo a nacional
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: escolha da sede da Assembleia Regional de 2005
+  decisao: foi colocada em votação e o resultado foi 121 votos a favor de Espírito Santo do Pinhal e 85 votos a favor de Taubaté
+  votacao: 121 votos a favor de Espírito Santo do Pinhal e 85 votos a favor de Taubaté
+  pagina: 3
+  conferido: true
+eleicoes:
+- orgao: Assembleia Regional
+  cargo: Presidente da Assembleia Regional
+  eleito: Marcos Venicio Mattos Chaves
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Assembleia Regional
+  cargo: Vice Presidente da Assembleia Regional
+  eleito: Ricardo Birkholz Duarte Stuber
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Fernando Braga Monte Serrat
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Luiz Henrique S.Guimarães
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Augusto José da Silva
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Ana Rika Moura Cunha
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: lida Okamura Pallamin
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Luiz Carlos Torquato
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Mara de Fátima M. Silva
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Carla B.de Oliveira Neves
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Francisca Souza Carrer
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Adilson Xavier Lima
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Euclides Santos Paltamin
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Jahui Alberto Santos Ocroche
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Ricardo B. Stuber
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: João Roberto Andriani da Cunha
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado
+  eleito: Felix Vieira Varejão Filho
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Juliana Pereira Thomazo
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Jorge Laucevicius
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Luiz Roberto de Morass
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Vicente de Vasconcellos Filho
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Elaine Jordão Gobbo
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Christian de Mello Szvick
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Eleny Farias dos Reis
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: João Floriano Ribeiro
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Rafael Teixeira Nunes
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Marcos Venicio Mattos Chaves
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Maria Cristina G.Cecilio Chaves
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: delegados à Assembleia Nacional
+  cargo: delegado suplente
+  eleito: Sueli Alves Ocroche
+  mandato: ''
+  pagina: 4
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: membro
+  eleito: João Roberto Adriani da Cunha
+  mandato: ''
+  pagina: 4
+  conferido: true
+numeros:
+- o_que: votos válidos na eleição para delegados e Conselho de Administração Nacional
+  valor: '245'
+  pagina: 4
+  conferido: true
+- o_que: votos em branco na eleição para delegados e Conselho de Administração Nacional
+  valor: '01'
+  pagina: 4
+  conferido: true
+- o_que: votos nulos na eleição para delegados e Conselho de Administração Nacional
+  valor: '04'
+  pagina: 4
+  conferido: true
+- o_que: total de votantes na eleição para delegados e Conselho de Administração Nacional
+  valor: '250'
+  pagina: 4
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: fcc0658174d7103f85f44863d9d65c662e75ba6f912883e89bf186617c111152
+revisado: null

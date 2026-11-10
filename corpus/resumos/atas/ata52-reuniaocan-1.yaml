@@ -1,0 +1,96 @@
+doc_key: ata52-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2006-11-04'
+  local: Íbis Hotel, São Paulo/SP
+deliberacoes:
+- tema: Gestão de Adultos - atualização política nacional
+  decisao: O CAN aprova por 10 votos a proposta de ser feito um esforço concentrado com vistas a serem enviadas sugestões
+    à CNGA quanto a atualização da política nacional de Gestão de Adultos (Diretrizes Nacionais) e propostas metodológicas
+    das Unidades Didáticas dos cursos até dezembro/2006, que a CNGA fará a consolidação do material recebido até janeiro/2007
+    com imediata disponibilização aos membros do CAN para que sejam apreciadas até o final de fevereiro/2007. A oficialização
+    das solicitações acima aprovadas deverá ser feita às Regiões via Escritório Nacional.
+  votacao: 10 votos a favor
+  pagina: 1
+  conferido: true
+- tema: Programa de Jovens - revisão dos guias do Ramo Lobinho
+  decisao: Meta 1 – a revisão dos conteúdos dos guias do Ramo Lobinho estará sendo finalizada neste mês devendo ser remetido
+    aos membros do CAN até dezembro/2006 para apreciação e posterior publicação.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Programa de Jovens - paralisação temporária da meta 2
+  decisao: Meta 2 Alessandro propõe e é aceito que a meta 2 seja paralisada temporariamente com a priorização de realização
+    da meta 1 até que se contrate maior quantidade de pessoal técnico para tal.
+  votacao: aceito
+  pagina: 1
+  conferido: true
+- tema: Programa de Jovens - avaliação do Programa até 2010
+  decisao: Colocada em votação a proposta 1 recebeu 7 (sete) votos favoráveis e a proposta 2 recebeu 6 (seis) votos.
+  votacao: 7 votos a favor da proposta 1, 6 votos a favor da proposta 2
+  pagina: 2
+  conferido: true
+- tema: Comissão Nacional de Relações Institucionais - inclusão de ações no Planejamento Estratégico
+  decisao: A proposta de inclusão das ações no Planejamento estratégico foi aprovada com a adequação da meta 2 e exclusão
+    da meta 1.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Comissão Nacional de Gestão Institucional - busca de apoio externo para estrutura
+  decisao: Aprovada a idéia de se buscar apoio externo para auxiliar na busca dessa prioridade.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Posicionamento do distintivo de Grupo Padrão
+  decisao: Proposto que o distintivo do Grupo Padrão seja colocado acima do distintivo de Escoteiros do Brasil – aprovado
+    por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Previsão Financeira 2007
+  decisao: O CAN aprova a Previsão apresentada.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Aprovação de Balancetes
+  decisao: o CAN aprova os balancetes com base no parecer da Comissão Fiscal Nacional – CFN.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Disponibilização do nome dos Grupos Escoteiros regulares no site da UEB
+  decisao: aprovada a disponibilização periódica no site da UEB da relação de “Grupos Escoteiros autorizados a prática do
+    escotismo” com endereço e telefone de contato. Rejeitada a colocação do nome das Regiões.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Deliberação sobre cores no emblema da UEB
+  decisao: Proposta a aprovação dos modelos apresentados e que junto com sua divulgação sejam disponibilizadas as políticas
+    comerciais relativas ao seu uso. A proposta é aprovada por maioria.
+  votacao: maioria
+  pagina: 3
+  conferido: true
+- tema: Edital de Convocação AGO
+  decisao: aprovado o Edital de Convocação para realização da 14.ªReunião Ordinária da Assembléia Nacional da União dos Escoteiros
+    do Brasil.
+  votacao: ''
+  pagina: 3
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: votos para esforço concentrado na atualização da política nacional de Gestão de Adultos
+  valor: 10 votos a favor
+  pagina: 1
+  conferido: true
+- o_que: votos na avaliação do Programa de Jovens - proposta 1
+  valor: 7 votos favoráveis
+  pagina: 2
+  conferido: true
+- o_que: votos na avaliação do Programa de Jovens - proposta 2
+  valor: 6 votos favoráveis
+  pagina: 2
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: ba4d7d59afc17b0f6a9d9ee46487fb8d3fad67a89e1303ac396f59d0e91773ca
+revisado: null

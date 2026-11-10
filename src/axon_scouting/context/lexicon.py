@@ -72,6 +72,12 @@ class Lexicon:
     """Começos que retomam a pergunta anterior ("e no", "e quanto"): só valem no início da pergunta."""
     follow_up_max_words: int = 6
     """Pergunta sem assunto próprio com até esse número de palavras é de seguimento, mesmo sem marcador."""
+    synthesis_markers: tuple[str, ...] = ()
+    """Pedido de síntese ao longo do acervo ("ao longo", "desde", "quem foram", "onde se reuniu"): a resposta está
+    espalhada pelas atas, e a busca de resumos responde (ADR-062)."""
+    meeting_terms: tuple[str, ...] = ()
+    """Palavras de reunião ("assembleia", "reunião", "atas"): com um ano citado, a pergunta é sobre o que as atas
+    registram, e também é de síntese (ADR-062)."""
 
 
 LEXICON: Final = Lexicon(
@@ -244,7 +250,7 @@ LEXICON: Final = Lexicon(
                 "conselho de administracao nacional",
             ),
             "diretoria_executiva_nacional": ("den", "diretoria executiva", "diretoria executiva nacional"),
-            "diretoria_regional": ("diretoria regional",),
+            "diretoria_regional": ("diretoria regional", "diretorias regionais"),
             "conselho_consultivo": ("conselho consultivo",),
             "comissao_fiscal": ("comissao fiscal", "comissoes fiscais"),
             "comissao_de_etica": ("comissao de etica", "cedn", "cedr"),
@@ -350,6 +356,50 @@ LEXICON: Final = Lexicon(
         "veja na",
         "procure no",
         "procure na",
+    ),
+    synthesis_markers=(
+        "ao longo",
+        "desde",
+        "evolucao",
+        "evoluiu",
+        "historico",
+        "historia",
+        "quem foram",
+        "quais foram",
+        "o que foi decidido",
+        "o que foi discutido",
+        "o que foi aprovado",
+        "decidiu",
+        "decidiram",
+        "deliberou",
+        "deliberaram",
+        "decisoes",
+        "deliberacoes",
+        "onde se reuniu",
+        "onde se reuniram",
+        "onde aconteceram",
+        "onde aconteceu",
+        "onde foram realizadas",
+        "onde foi realizada",
+        "em que assembleia",
+        "em que reuniao",
+        "nas atas",
+        "quantos delegados",
+    ),
+    meeting_terms=(
+        "assembleia",
+        "assembleias",
+        "reuniao",
+        "reunioes",
+        "conselho consultivo",
+        "ata",
+        "atas",
+        "gestao",
+        "eleito",
+        "eleita",
+        "eleitos",
+        "eleicao",
+        "eleicoes",
     ),
     catalog_kinds=MappingProxyType(
         {

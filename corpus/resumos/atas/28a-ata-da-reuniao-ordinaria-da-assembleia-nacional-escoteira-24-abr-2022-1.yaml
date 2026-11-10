@@ -1,0 +1,117 @@
+doc_key: 28a-ata-da-reuniao-ordinaria-da-assembleia-nacional-escoteira-24-abr-2022-1
+reuniao:
+  tipo: ordinaria
+  data: '2022-04-24'
+  local: Universidade Tecnológica Federal do Paraná (UTFPR), Avenida Sete de Setembro, no 3.165, Bairro Rebouças, Curitiba/PR
+deliberacoes:
+- tema: Mesa Diretora da Assembleia
+  decisao: 'aclamados e empossados nas funções: Presidente: Raphael Tostes Salin e Souza (PR), 1o Vice-Presidente: Daniela
+    de Oliveira Rodrigues Gomes (SC), 2o Vice-Presidente: Frederico Coelho Pinto Junior (SC), 1o Secretária: Marize Ribeiro
+    Pisoni (RS), 2o Secretária: Aldenise Cordeiro Santos (SE)'
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Comissões Assessoras da Assembleia
+  decisao: 'Comissão de Credenciamento: Carmen Virgínia Carvalho Barreira (DF), Katerine Keller Correa (PR), Luiz Salgado
+    Klaes (SC); Comissão de Escrutínio: Ilvia Oliveira (GO), Adriano Henrique Rocha S. Filho (SE), David de Ferreira Bandeira
+    (PR), Kleber Broch (PR); Comissão Eleitoral: Bernardo Souza da Costa Gaia (SP), Júlio Cesar Osorio (SP), Marcos Magno
+    Gomide Vieira (MG); Comissão de Assuntos Gerais: Paulo Juraci Carvalho Neto (MA), Jose Pracilio da Silva Filho (BA), Hugo
+    Marcel Marcelino Galvão (RJ)'
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Ata da Reunião Extraordinária de 12.09.2021
+  decisao: aprovada por unanimidade
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Relatórios anuais de 2021
+  decisao: relatórios apresentados e comentados, incluindo Conselho de Administração Nacional, Diretoria Executiva Nacional,
+    Comissão Fiscal Nacional e Comissão de Ética e Disciplina Nacional
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Contas e Balanço Anual de 2021
+  decisao: relatório, contas e parecer restaram aprovados por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Certificados de Qualidade Legal entregues às Regiões Escoteiras
+  decisao: entregues às Regiões de Alagoas, Espirito Santo, Mato Grosso do Sul, Mato Grosso, Minas Gerais, Pará, Paraná, Pernambuco,
+    Piauí, Rio de Janeiro, Rio Grande do Sul, Santa Catarina, São Paulo e Tocantins
+  votacao: ''
+  pagina: 4
+  conferido: true
+- tema: Recomendações da 27o Reunião Ordinária do Fórum Nacional de Jovens Líderes
+  decisao: aprovadas por unanimidade
+  votacao: unanimidade
+  pagina: 4
+  conferido: true
+- tema: Assuntos Gerais - encaminhamento de temas deliberativos
+  decisao: temas deliberativos apresentados não serão tratados pela assembleia e serão encaminhados à Presidência do CAN para
+    análise, deliberação e encaminhamento
+  votacao: ''
+  pagina: 5
+  conferido: true
+- tema: Posse da nova Diretoria Executiva Nacional
+  decisao: 'posse e renovação da Promessa Escoteira dos novos integrantes da DEN: Diretor Presidente: Ivan Alves do Nascimento,
+    Diretora Vice-Presidente: Carmen Barreira, Diretor Vice-Presidente: Irineu Resende, demais diretores nomeados para mandato
+    2022 a 2025'
+  votacao: ''
+  pagina: 6
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: Presidente
+  eleito: Raphael Tostes Salin e Souza (PR)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 1o Vice-Presidente
+  eleito: Daniela de Oliveira Rodrigues Gomes (SC)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 2o Vice-Presidente
+  eleito: Frederico Coelho Pinto Junior (SC)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 1o Secretária
+  eleito: Marize Ribeiro Pisoni (RS)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Nacional
+  cargo: 2o Secretária
+  eleito: Aldenise Cordeiro Santos (SE)
+  mandato: ''
+  pagina: 2
+  conferido: true
+- orgao: Diretoria Executiva Nacional
+  cargo: Diretor Presidente
+  eleito: Ivan Alves do Nascimento
+  mandato: 2022 a 2025
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Executiva Nacional
+  cargo: Diretora Vice-Presidente
+  eleito: Carmen Barreira
+  mandato: 2022 a 2025
+  pagina: 6
+  conferido: true
+- orgao: Diretoria Executiva Nacional
+  cargo: Diretor Vice-Presidente
+  eleito: Irineu Resende
+  mandato: 2022 a 2025
+  pagina: 6
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: b154342d980f7d9a9a413f2d482fa467a37858c27b7d4a5db7e7a1cf1b4332bc
+revisado: null

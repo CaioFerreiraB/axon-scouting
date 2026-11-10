@@ -1,0 +1,29 @@
+doc_key: ata-reuniao-ordinaria-ccn-23-out-2021-1
+reuniao:
+  tipo: ordinaria
+  data: '2021-10-23'
+  local: por meio de videochamada pelo Zoom
+deliberacoes:
+- tema: Eleição do Presidente e do Secretário da reunião
+  decisao: São aclamados JEFFERSON como Presidente e THIAGO como Secretário desta reunião.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Aprovação das atas das reuniões anteriores
+  decisao: Ambas as atas são aprovadas por unanimidade dos presentes.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Composição do Comitê Gestor da Loja Escoteira
+  decisao: Por aclamação, são escolhidas as Regiões do RJ e AL, junto com as Regiões de SP, RS e PR, para nova composição
+    do Comitê de Governança e Transparência da Loja Escoteira, com mandato até outubro de 2022.
+  votacao: aclamação
+  pagina: 7
+  conferido: true
+eleicoes: []
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 2fa8da4512ee37d25870fd2ea6f2ed32257e6694abf77d719c3a79a80fad063f
+revisado: null

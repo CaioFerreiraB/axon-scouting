@@ -1,0 +1,118 @@
+doc_key: ata55-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2007-11-02'
+  local: Guarulhos/SP
+deliberacoes:
+- tema: Agenda de trabalho
+  decisao: A agenda de trabalho foi aprovada.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Ata da 54ª reunião do CAN
+  decisao: a ata, colocada em votação, foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 1
+  conferido: true
+- tema: Alienação terreno Região Escoteira de São Paulo
+  decisao: a Assembléia Regional de São Paulo aprovou, sem nenhum voto contrário, a alienação dos terrenos já citados na última
+    reunião do CAN.
+  votacao: sem nenhum voto contrário
+  pagina: 1
+  conferido: true
+- tema: Comitê Conferência - 2011
+  decisao: O CAN formalizou à DEN a montagem de tal Comitê e na próxima reunião o CAN indicará a Presidência.
+  votacao: ''
+  pagina: 1
+  conferido: true
+- tema: Sede Nacional - aquisição de imóvel
+  decisao: Proposto e aprovado pelos Conselheiros que o valor estimado seja autorizado à DEN e que havendo uma diferença significativa
+    a DEN faça consulta aos Conselheiros.
+  votacao: aprovado pelos Conselheiros
+  pagina: 2
+  conferido: true
+- tema: Relatório financeiro Jamboree Mundial
+  decisao: apresentado relatório financeiro do evento, com detalhamento dos valores recebidos e pagos, o qual apresentou resultado
+    positivo de R$162.476,22 (cento e sessenta e dois mil quatrocentos e setenta e seis reais e vinte e dois centavos).
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação de balancetes
+  decisao: Aprovados os balancetes apresentados.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Previsão Financeira 2008
+  decisao: aprovado pelo CAN que tal item seja revisto quando da reunião de agosto/2008.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Jamboree Nacional - data
+  decisao: Colocada em votação foi mantida a data do Jamboree Nacional para Janeiro/2009, no Paraná, por 10 votos.
+  votacao: 10 votos
+  pagina: 3
+  conferido: true
+- tema: Moot Pan-Americano - participação de jovens Seniores
+  decisao: decidido quanto a liberação da participação de jovens na faixa de Seniores na atividade eis que a atividade contempla,
+    em sua programação, atividades específicas para o ramo.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Concessão de Medalhas - Medalha Tapir de Prata
+  decisao: 'aprovada por unanimidade a seguinte concessão: Medalha Tapir de Prata para Áttila Bitencourt Paiva apresentada
+    por Rubem Tadeu, por iniciativa da Região Escoteira do Rio de Janeiro, e secundada por César.'
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Concessão de Medalha Tiradentes para Helmgton B. Souza
+  decisao: foi recusada pelo voto de 10 Conselheiros, tendo recebido 1 voto favorável e 2 abstenções.
+  votacao: 10 votos contra, 1 a favor, 2 abstenções
+  pagina: 3
+  conferido: true
+- tema: Pedido de Constituição de personalidade jurídica própria da UEB/AP
+  decisao: O CAN encaminha o Estatuto a DEN para análise e, estando de acordo, deverá ser então enviado ao Vice-Presidente
+    do CAN.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Alteração Estatutária - propostas
+  decisao: as propostas apresentadas nos parágrafos 1, 2, 3 e 5 foram aceitas e a no parágrafo 4 recusada. Sugerida e aceita
+    a adequação da redação dos Art. 48 e 66 do Estatuto.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Programa de Jovens - proposta de trabalho
+  decisao: O CAN aprovou por unanimidade a proposta de trabalho apresentada. Proposto, e aprovado, que após o passo 4 seja
+    apresentado o cronograma das ações seguintes, com fixação de datas para a implementação.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Reserva de data para Reunião Extraordinária do CAN
+  decisao: O Conselho definiu os dias 23 e 24 de fevereiro de 2008.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Sucessão da DEN
+  decisao: a escolha da DEN deverá ser realizada na próxima reunião do CAN, junto à Assembléia Nacional, no Espírito Santo.
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: número de inscritos para Conferência Equador
+  valor: 11 (onze)
+  pagina: 2
+  conferido: true
+- o_que: resultado financeiro do Jamboree Mundial
+  valor: R$162.476,22
+  pagina: 2
+  conferido: false
+- o_que: votos para manter data do Jamboree Nacional
+  valor: 10 votos
+  pagina: 3
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 5cce4819b4bb86e30f98d2fc2d7977ddd8f15aec0cd38a27a0aebb0f497477b4
+revisado: null

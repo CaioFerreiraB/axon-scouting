@@ -1,7 +1,9 @@
 """Seam *Índice do scouting* (spec 102): modelo de chunk indexado, filtros, versão do índice, `ChunkIndex` e a árvore de
 unidades de cada documento (`DocumentOutline`, ADR-048).
 
-Consumido por 103 e 106 (busca) e por 104 (valores de status). Importa só stdlib e os contratos — nunca o resto do
+Desde o ADR-062, também os resumos das atas (`SummaryEntry`, porta `MeetingSummaries`): fichas de reunião e linha do
+tempo, montadas pela ingestão e entregues só à pergunta de síntese. Consumido por 103 e 106 (busca) e por 104 (valores
+de status). Importa só stdlib e os contratos — nunca o resto do
 índice nem a ingestão (research R14, R18). O schema do Qdrant é detalhe do adapter.
 """
 
@@ -372,6 +374,80 @@ class IndexMismatch(Exception):
             f"o índice publicado foi construído com {index}, mas esta instância codifica com {encoder}; "
             "rode `axon-scouting-corpus reindex` ou monte o pack com a codificação do índice"
         )
+
+
+SUMMARY_KINDS: Final = ("ficha", "linha_do_tempo")
+"""A ficha de uma reunião e a linha do tempo de um órgão num ano (ADR-062)."""
+
+
+@dataclass(frozen=True, slots=True, kw_only=True)
+class SummaryEntry:
+    """Um resumo das atas, como a ingestão o montou a partir das fichas conferidas (ADR-062). Não tem vetor: a seleção é
+    por órgão, abrangência e ano, e a ordem, pelos termos da pergunta. `doc_keys` são as atas de onde ele veio."""
+
+    summary_id: str
+    kind: str
+    title: str
+    text: str
+    year: int | None
+    meeting_date: date | None
+    doc_keys: tuple[str, ...]
+    bodies: tuple[str, ...] = ()
+    scope: str | None = None
+    page: int | None = None
+    source_url: str | None = None
+
+    def __post_init__(self) -> None:
+        if not _CHUNK_ID.match(self.summary_id):
+            raise ValueError(f"summary_id inválido: {self.summary_id!r}")
+        if self.kind not in SUMMARY_KINDS:
+            raise ValueError(f"tipo de resumo desconhecido: {self.kind!r}")
+        if not self.text.strip() or not self.doc_keys:
+            raise ValueError(f"resumo {self.summary_id} sem texto ou sem ata de origem")
+        _require_scope(self.scope)
+
+    def to_json(self) -> dict[str, JSONValue]:
+        return {
+            "summary_id": self.summary_id,
+            "kind": self.kind,
+            "title": self.title,
+            "text": self.text,
+            "year": self.year,
+            "meeting_date": _iso(self.meeting_date),
+            "doc_keys": list(self.doc_keys),
+            "bodies": list(self.bodies),
+            "scope": self.scope,
+            "page": self.page,
+            "source_url": self.source_url,
+        }
+
+    @classmethod
+    def from_json(cls, raw: Mapping[str, JSONValue]) -> SummaryEntry:
+        meeting = raw.get("meeting_date")
+        year = raw.get("year")
+        page = raw.get("page")
+        return cls(
+            summary_id=str(raw["summary_id"]),
+            kind=str(raw["kind"]),
+            title=str(raw["title"]),
+            text=str(raw["text"]),
+            year=year if isinstance(year, int) else None,
+            meeting_date=date.fromisoformat(meeting) if isinstance(meeting, str) else None,
+            doc_keys=tuple(str(key) for key in raw.get("doc_keys") or ()),  # type: ignore[union-attr]
+            bodies=tuple(str(body) for body in raw.get("bodies") or ()),  # type: ignore[union-attr]
+            scope=raw["scope"] if isinstance(raw.get("scope"), str) else None,  # type: ignore[arg-type]
+            page=page if isinstance(page, int) else None,
+            source_url=raw["source_url"] if isinstance(raw.get("source_url"), str) else None,  # type: ignore[arg-type]
+        )
+
+
+@runtime_checkable
+class MeetingSummaries(Protocol):
+    """Os resumos das atas (seam da 102, ADR-062), consumidos pela busca de síntese da 103."""
+
+    async def summaries(self) -> list[SummaryEntry]:
+        """Todos os resumos do build, na ordem gravada; sem resumos, []."""
+        ...
 
 
 @runtime_checkable

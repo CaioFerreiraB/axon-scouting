@@ -1,0 +1,255 @@
+doc_key: sp-ata-are-1999-ordinaria-1
+reuniao:
+  tipo: ordinaria
+  data: '1999-09-18'
+  local: Câmara Municipal, Rua Seis 2241, Centro, Jales, Estado de São Paulo
+deliberacoes:
+- tema: Comissões de trabalho
+  decisao: Não havendo objeções à composição das comissões, o Sr. Presidente colocou em votação, sendo aprovadas por aclamação
+    pela Assembléia.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Leitura da Ata da Reunião Ordinária da Assembléia Regional de 1998
+  decisao: foi aprovado não ler a ata em plenário
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Ata da Reunião Ordinária da Assembléia Regional de 1998
+  decisao: O Sr. Presidente colocou a Ata da Reunião Ordinária da Assembléia Regional de 1998 em votação tendo sido aprovada
+    pelo plenário.
+  votacao: ''
+  pagina: 2
+  conferido: true
+- tema: Aprovação do balanço de 1998
+  decisao: O Sr. Presidente colocou em votação a aprovação do balanço de 1998, obtendo unanimidade na aprovação do balanço
+    de 1998.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Orçamento para o ano 2000 e taxa de contribuição associativa regional
+  decisao: O Sr. Presidente colocou em votação na forma que foi apresentado o orçamento para o ano 2000, incluindo a taxa
+    de contribuição associativa regional, obtendo 81 votos a favor e 51 votos contra, sem abstenções.
+  votacao: 81 votos a favor e 51 votos contra
+  pagina: 4
+  conferido: true
+- tema: Discussão sobre proposta de alteração do Estatuto da UEB, Artigo 23
+  decisao: O Sr. Presidente colocou em votação se o plenário prefere discutir a proposta referente a mudança do Estatuto da
+    UEB em outro momento e esse foi aprovado com 76 votos a favor e 44 votos contra.
+  votacao: 76 votos a favor e 44 votos contra
+  pagina: 4
+  conferido: true
+- tema: Encaminhamento da proposta de manutenção do texto atual da Promessa e Leis do Lobinho à Diretoria Nacional
+  decisao: O Sr. Presidente consulta ao plenário se concorda com o encaminhamento da proposta de manutenção do texto atual
+    ao nível Nacional, sendo aprovada pelo plenário.
+  votacao: aprovada pelo plenário
+  pagina: 5
+  conferido: true
+- tema: Manutenção das Leis Escoteiras
+  decisao: Colocada em votação em manter as Leis Escoteiras, houve 74 votos a favor e 44 votos contra, sendo que o plenário
+    manifestou-se para que na próxima reunião ordinária da Assembléia Nacional, os Delegados Regionais insistam na manutenção
+    dos textos das Leis e da Promessa.
+  votacao: 74 votos a favor e 44 votos contra
+  pagina: 5
+  conferido: true
+- tema: Encaminhamento da proposta para trazer ao Brasil o Jamboree Mundial em 2011
+  decisao: O Sr. Presidente pôs em votação o encaminhamento da proposta à Assembléia Nacional, proposta aprovada por aclamação.
+  votacao: aclamação
+  pagina: 5
+  conferido: true
+- tema: Eleição da cidade sede da 7º Assembléia Regional de 2000
+  decisao: sendo eleita a cidade de São Paulo.
+  votacao: ''
+  pagina: 5
+  conferido: true
+eleicoes:
+- orgao: 6º Reunião Ordinária da Assembléia Regional da UEB
+  cargo: Presidente
+  eleito: Dr. Marco Aurelio de Mello Castriani
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: 6º Reunião Ordinária da Assembléia Regional da UEB
+  cargo: Vice Presidente
+  eleito: Dr. Roberto Lucas de Souza
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: 6º Reunião Ordinária da Assembléia Regional da UEB
+  cargo: Vice Presidente
+  eleito: Dr. Álvaro Tavares
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: 6º Reunião Ordinária da Assembléia Regional da UEB
+  cargo: Secretária
+  eleito: Srta. Rosangela Menile
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: 6º Reunião Ordinária da Assembléia Regional da UEB
+  cargo: Secretária
+  eleito: Sra. Rosana Menile Silva
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Candidato a Diretor Nacional
+  eleito: Geraldino Ferreira de Moreira
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Diretoria Nacional
+  cargo: Candidato a Diretor Nacional
+  eleito: Edson Caetano dos Santos
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Enio Hideyuki Cojho
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Marco Aurélio de Mello Castriani
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Paulo Roberto Nunes de Campos
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Everaldo de Faria Palumbo
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Geraldino Ferreira Moreira
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Marcelo Daniel V. Penteado
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Cyro Okamoto
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Elizabeth S. Bonfim Moreira
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Félix V. Varejão Filho
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Francisca Sousa Carrer
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Gerson Donizete Paes
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Eliezer Becker Melo
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Luiz Carlos Torquato
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Paulo César A. Cabelo
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: Satoshi Shimohirao
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Delegado Regional
+  eleito: José Líber de Oliveira
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Suplente
+  eleito: Ilda Okamura Palamin
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Suplente
+  eleito: Vera Lúcia dos Santos Silva
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais para a reunião ordinária da Assembléia Nacional
+  cargo: Suplente
+  eleito: Márcio Nishi
+  mandato: ''
+  pagina: 5
+  conferido: true
+numeros:
+- o_que: Número de votantes na eleição
+  valor: '165'
+  pagina: 5
+  conferido: true
+- o_que: Número de votos válidos na eleição
+  valor: '159'
+  pagina: 5
+  conferido: true
+- o_que: Número de votos em branco na eleição
+  valor: '6'
+  pagina: 5
+  conferido: true
+- o_que: Número de votos obtidos por Geraldino Ferreira de Moreira
+  valor: '100'
+  pagina: 5
+  conferido: true
+- o_que: Percentual de votos obtidos por Geraldino Ferreira de Moreira
+  valor: 60,60%
+  pagina: 5
+  conferido: false
+- o_que: Número de votos obtidos por Edson Caetano dos Santos
+  valor: '59'
+  pagina: 5
+  conferido: true
+- o_que: Percentual de votos obtidos por Edson Caetano dos Santos
+  valor: 35,75%
+  pagina: 5
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 013b93f491a6e0ed46b367f994f9327dffac136f0af1fb094b0655b7bf2896d7
+revisado: null

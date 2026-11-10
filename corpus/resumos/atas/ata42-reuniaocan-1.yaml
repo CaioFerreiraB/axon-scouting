@@ -1,0 +1,62 @@
+doc_key: ata42-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2004-02-28'
+  local: Curitiba/PR
+deliberacoes:
+- tema: Projeto Escotismo em Cidades Pólo
+  decisao: Colocado em votação, o Projeto foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 2
+  conferido: true
+- tema: Escotismo nas APAEs
+  decisao: Colocado em votação, o Projeto foi aprovado por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Andamento dos Processos Disciplinares
+  decisao: aprovado o encaminhamento à CEDN para análise e emissão de parecer quanto aos processos pendentes.
+  votacao: um Conselheiro se manifestou contrário ao encaminhamento à CEDN, oito se manifestaram favoravelmente e dois se
+    abstiveram
+  pagina: 3
+  conferido: true
+- tema: Resolução sobre Medidas Disciplinares
+  decisao: a proposta de resolução foi aprovada com alterações.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Resolução sobre Concessão de Condecorações
+  decisao: a proposta de resolução foi aprovada com alterações.
+  votacao: ''
+  pagina: 3
+  conferido: true
+- tema: Proposta de concessão de condecorações
+  decisao: aprovado por unanimidade o parecer da subcomissão de Condecorações e Recompensas.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Proposta de alteração orçamentária para área estratégica de Crescimento
+  decisao: Colocada em votação, a alteração orçamentária foi aprovada por unanimidade.
+  votacao: unanimidade
+  pagina: 3
+  conferido: true
+- tema: Estatuto da UEB
+  decisao: aprovada a divulgação e publicação.
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes: []
+numeros:
+- o_que: resultado positivo da UEB em 2003
+  valor: R$50.000,00
+  pagina: 2
+  conferido: false
+- o_que: resultado negativo da Loja Escoteira Nacional em 2003
+  valor: R$70.000,00
+  pagina: 2
+  conferido: false
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: eac469ee6c1348d923fef215ee79f1fc2c3b6b0dbf9dcc59eeda4c79fd5c3b24
+revisado: null

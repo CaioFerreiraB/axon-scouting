@@ -1,0 +1,41 @@
+doc_key: ata73-reuniaocan-1
+reuniao:
+  tipo: ordinaria
+  data: '2013-04-27'
+  local: Recife/Pernambuco
+deliberacoes:
+- tema: eleição da presidência do CAN
+  decisao: Aprovado por aclamação o nome do conselheiro Márcio Albuquerque como presidente do CAN.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: eleição do Vice-Presidente do CAN
+  decisao: A conselheira Sonia Jorge é eleita por aclamação como Vice-Presidente do CAN.
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: integração jurídica do CCME à União dos Escoteiros do Brasil
+  decisao: O CAN aprova a elaboração de um estudo de viabilidade proposto pela DEN que apresentará relatório para deliberação
+    do CAN, oportunamente
+  votacao: ''
+  pagina: 2
+  conferido: true
+eleicoes:
+- orgao: Conselho de Administração Nacional
+  cargo: presidente do CAN
+  eleito: Márcio Albuquerque
+  mandato: ''
+  pagina: 1
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Vice-Presidente do CAN
+  eleito: Sonia Jorge
+  mandato: ''
+  pagina: 1
+  conferido: true
+numeros: []
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 2ebc23a2363e9e7ac37ce919d995cb83a32e2c7f9a872b5967ee17a6254e9e1c
+revisado: null

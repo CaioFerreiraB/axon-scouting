@@ -1,0 +1,324 @@
+doc_key: sp-ata-are-2025-ordinaria-cnpj-regiao-1
+reuniao:
+  tipo: ordinaria
+  data: '2025-03-22'
+  local: Palácio do Trabalhador, Rua Galvão Bueno, 782, bairro da Liberdade, São Paulo/SP
+deliberacoes:
+- tema: 'Eleição e posse da Comissão Assessora da Assembleia: Escrutínio'
+  decisao: foi composta pelos associados Lucas Luiz De Oliveira 521/SP (Retirou sua candidatura), Morgana Rejane Rabelo Rosa
+    Russo 041/SP, Vinicius Botelho 147/SP, Jaquilene de Lima Luz 160/SP, Luis Gustavo Arruda de Figueiredo Torres 122/SP,
+    Marcelo Perdomo Sevilla 122/SP, Graziela Gon da Silva 206/SP, Fabio de Moraes Sabino 122/SP e Pedro Antonio Hernandez
+    Costa 194/SP, aprovados por aclamação pela plenária
+  votacao: aclamação
+  pagina: 1
+  conferido: true
+- tema: Eleição e posse da Mesa Diretora
+  decisao: Rafael Melis Rogéro foi eleito Presidente da Trigésima Segunda Reunião Ordinária da Assembleia Escoteira Regional
+    de São Paulo por aclamação; Mariana de Marchi foi eleita primeira vice-presidente por 206 votos; Carlos Eugênio Bakos,
+    o segundo vice-presidente da mesa por 170 votos; Neide Osawa Watanabe foi eleita 1ª secretária por 160 votos; Robson Lancaster
+    de Torres como 2º secretário com 108 votos
+  votacao: aclamação e votos contados conforme descrito
+  pagina: 1
+  conferido: true
+- tema: Eleição da Comissão de Credenciais
+  decisao: eleitos por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Eleição da Comissão Eleitoral
+  decisao: eleitos por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Eleição da Comissão de Assuntos Gerais
+  decisao: eleitos por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Dispensa da leitura da ata da reunião anterior e aprovação da ata
+  decisao: dispensada a leitura e aprovada por aclamação
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação do Relatório Anual
+  decisao: O Relatório Anual foi aprovado por aclamação pela Plenária
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação das contas e balanço do exercício fiscal anterior (2024)
+  decisao: as contas e o balanço fiscal de 2024 foram aprovadas por aclamação pela plenária
+  votacao: aclamação
+  pagina: 2
+  conferido: true
+- tema: Aprovação da Previsão Orçamentária para o exercício fiscal 2025
+  decisao: a previsão orçamentária para 2025 foi aprovada por aclamação pela Plenária
+  votacao: aclamação
+  pagina: 3
+  conferido: true
+- tema: Eleição da Comissão de Ética e Disciplina Regional – Gestão 2025-2028
+  decisao: votação realizada com 555 votos computados; resultados divulgados no Item 20
+  votacao: 555 votos computados
+  pagina: 4
+  conferido: true
+- tema: Eleição da Comissão Fiscal Regional – Gestão 2025-2028
+  decisao: votação realizada com 552 votos computados
+  votacao: 552 votos computados
+  pagina: 4
+  conferido: true
+- tema: Eleição dos candidatos Paulista ao Conselho de Administração Nacional (CAN)
+  decisao: votação realizada com 558 votos computados
+  votacao: 558 votos computados
+  pagina: 4
+  conferido: true
+- tema: Eleição das chapas para Direção Regional – Gestão 2025-2028
+  decisao: votação realizada com 553 votos computados; chapa eSPírito Escoteiro eleita
+  votacao: 553 votos computados
+  pagina: 4
+  conferido: true
+- tema: Eleição dos Delegados Regionais à Assembleia Escoteira Nacional
+  decisao: votação realizada com 524 votos computados
+  votacao: 524 votos computados
+  pagina: 4
+  conferido: true
+- tema: Escolha da cidade sede para a 33º Assembleia Regional Escoteira
+  decisao: nenhum Distrito se inscreveu para sediar a Assembleia Regional 2026; ficará sob responsabilidade da Diretoria Regional
+  votacao: ''
+  pagina: 4
+  conferido: true
+eleicoes:
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: Presidente
+  eleito: Rafael Melis Rogéro
+  mandato: '2025'
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 1ª Vice-Presidente
+  eleito: Mariana de Marchi
+  mandato: '2025'
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 2º Vice-Presidente
+  eleito: Carlos Eugênio Bakos
+  mandato: '2025'
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 1ª Secretária
+  eleito: Neide Osawa Watanabe
+  mandato: '2025'
+  pagina: 1
+  conferido: true
+- orgao: Mesa Diretora da Assembleia Regional
+  cargo: 2º Secretário
+  eleito: Robson Lancaster de Torres
+  mandato: '2025'
+  pagina: 1
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Titular
+  eleito: Elídio Aparecido Silva Parreira
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Titular
+  eleito: Aparecido Carlos Duarte
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Titular
+  eleito: Almir Ramos da Silva
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Suplente
+  eleito: Lucas Luiz De Oliveira
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Suplente
+  eleito: Afonso Robles Petry
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão de Ética e Disciplina Regional
+  cargo: Suplente
+  eleito: José Bernardo Direito Netto
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Titular
+  eleito: Denise Nobre De Freitas
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Titular
+  eleito: Sergio Correa dos Reis
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Titular
+  eleito: Amandio Mendonca Mendes
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Suplente
+  eleito: Ricardo Rodrigues
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Comissão Fiscal Regional
+  cargo: Suplente
+  eleito: Tiago Vinicius Carneiro Marques
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro
+  eleito: Lidia Sadaco Minamizaki Ikuta
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro
+  eleito: Robson Alexandre de Moraes
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Conselho de Administração Nacional
+  cargo: Membro
+  eleito: Aparecido Carlos Duarte
+  mandato: ''
+  pagina: 5
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor-Presidente
+  eleito: Rodrigo Ramos De Freitas
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretora Vice-Presidente
+  eleito: Vania Ferrari
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor Financeiro
+  eleito: Lucas Jun Sakajiri
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretora Administrativa
+  eleito: Ana Letícia Bueno Perin Campos
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Diretoria Regional
+  cargo: Diretor de Relações Institucionais
+  eleito: Matheus Luis Cardoso França
+  mandato: 29 de março de 2025 a 28 de março de 2028
+  pagina: 5
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Giuliano Tovo Di Raimo
+  mandato: '2025'
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Lidia Sadaco Minamizaki Ikuta
+  mandato: '2025'
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Rafael Melis Rogéro
+  mandato: '2025'
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Juliano Ferreira Arcuri
+  mandato: '2025'
+  pagina: 6
+  conferido: true
+- orgao: Delegados Regionais à Assembleia Nacional
+  cargo: Delegado
+  eleito: Luciana Timoszczuk Ribeiro
+  mandato: '2025'
+  pagina: 6
+  conferido: true
+numeros:
+- o_que: delegados credenciados na Assembleia
+  valor: '590'
+  pagina: 1
+  conferido: false
+- o_que: votos computados na eleição dos vice-presidentes
+  valor: '415'
+  pagina: 1
+  conferido: true
+- o_que: votos para Mariana de Marchi na eleição de vice-presidente
+  valor: '206'
+  pagina: 1
+  conferido: true
+- o_que: votos para Carlos Eugênio Bakos na eleição de vice-presidente
+  valor: '170'
+  pagina: 1
+  conferido: true
+- o_que: votos computados na eleição dos secretários
+  valor: '429'
+  pagina: 1
+  conferido: true
+- o_que: votos para Neide Osawa Watanabe na eleição de 1ª secretária
+  valor: '160'
+  pagina: 1
+  conferido: true
+- o_que: votos para Robson Lancaster de Torres na eleição de 2º secretário
+  valor: '108'
+  pagina: 1
+  conferido: true
+- o_que: delegados credenciados na Assembleia (comunicação da Comissão de Credenciamento)
+  valor: '576'
+  pagina: 4
+  conferido: true
+- o_que: votos computados na eleição da Comissão de Ética e Disciplina Regional
+  valor: '555'
+  pagina: 4
+  conferido: true
+- o_que: votos computados na eleição da Comissão Fiscal Regional
+  valor: '552'
+  pagina: 4
+  conferido: true
+- o_que: votos computados na eleição dos candidatos ao Conselho de Administração Nacional
+  valor: '558'
+  pagina: 4
+  conferido: true
+- o_que: votos computados na eleição das chapas para Direção Regional
+  valor: '553'
+  pagina: 4
+  conferido: true
+- o_que: votos computados na eleição dos Delegados Regionais à Assembleia Escoteira Nacional
+  valor: '524'
+  pagina: 4
+  conferido: true
+- o_que: delegados efetivos eleitos para Assembleia Nacional (exemplos de votos)
+  valor: 38 votos para Giuliano Tovo Di Raimo
+  pagina: 6
+  conferido: true
+extracao:
+  modelo: openai/gpt-4.1-mini
+  data: '2026-11-10'
+  fontes_sha256: 975d87aeaf8248075eb1d04ade30d6f6ff9962c35fbdf9c5d1f52ccf7da9f7f1
+revisado: null
