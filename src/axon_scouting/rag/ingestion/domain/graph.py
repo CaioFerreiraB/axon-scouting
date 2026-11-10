@@ -94,6 +94,48 @@ def organs_from_mapping(raw: Mapping[str, Any]) -> list[Organ]:
     return found
 
 
+@dataclass(frozen=True, slots=True, kw_only=True)
+class Relation:
+    """Uma relação de governança com fonte conferida: quem elege, compõe, fiscaliza… quem, e o trecho que o diz."""
+
+    kind: str
+    source: str
+    target: str
+    chunk_id: str
+
+
+VERIFY: Final = "a verificar"
+
+
+def cargo_terms(raw: Mapping[str, Any]) -> dict[str, tuple[str, ...]]:
+    """Órgão → os nomes dos cargos dele que dizem o nível ("Conselheiro Nacional", "Diretor-Presidente de Grupo"):
+    só o `nome`, nunca o apelido curto ("vice", "presidente"), que vale em vários órgãos."""
+    found: dict[str, list[str]] = {}
+    for entry in raw.get("cargos") or []:
+        if isinstance(entry, Mapping) and isinstance(entry.get("orgao"), str) and entry.get("nome"):
+            term = normalize(str(entry["nome"]))
+            if len(term.split()) >= 2:
+                found.setdefault(entry["orgao"], []).append(term)
+    return {organ: tuple(dict.fromkeys(terms)) for organ, terms in found.items()}
+
+
+def relations_from_mapping(raw: Mapping[str, Any], known_chunks: set[str]) -> list[Relation]:
+    """As relações com fonte conferida e presente no índice; "a verificar" e fonte ausente ficam fora."""
+    found: list[Relation] = []
+    for entry in raw.get("relacoes") or []:
+        if not isinstance(entry, Mapping):
+            raise OrganizationError(f"relacoes: entrada inválida: {entry!r}")
+        source = entry.get("fonte")
+        if not isinstance(source, str) or source == VERIFY or source not in known_chunks:
+            continue
+        found.append(
+            Relation(
+                kind=str(entry.get("tipo")), source=str(entry.get("de")), target=str(entry.get("para")), chunk_id=source
+            )
+        )
+    return found
+
+
 def organ_of_title(title: str, organs: Sequence[Organ]) -> str | None:
     """O órgão que o título nomeia: o termo mais longo contido nele; nenhum, `None`."""
     text = f" {normalize(title)} "

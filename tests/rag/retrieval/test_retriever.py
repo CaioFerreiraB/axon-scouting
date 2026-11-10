@@ -294,6 +294,11 @@ class Grafo:
     async def sections(self, organs: object) -> list[object]:
         return list(self._secoes) if "conselho_x" in organs else []  # type: ignore[operator]
 
+    async def relations(self, organs: object) -> list[object]:
+        from axon_scouting.rag.index.api import NormRelation
+
+        return [NormRelation(kind="ELEGE", source="assembleia_x", target="conselho_x", chunk_id="por-2025#regra5@p15")]
+
 
 def test_grafo_traz_a_secao_do_orgao_a_frente() -> None:
     """A Regra 33 (nome do grupo) não casa com "acampamento da tropa", mas é a seção do órgão: entra à frente."""
@@ -315,6 +320,7 @@ def test_grafo_traz_a_secao_do_orgao_a_frente() -> None:
 
     com = asyncio.run(go(["conselho_x"]))
     assert com[0].metadata[GRAPH_RANK] == 0 and com[0].chunk_id.startswith("por-2025#")
+    # as duas regras da seção; a relação (quem elege o conselho) não entra na busca
     assert {c.chunk_id for c in com if GRAPH_RANK in c.metadata} == set(secao.chunk_ids)
     sem = asyncio.run(go([]))
     assert all(GRAPH_RANK not in c.metadata for c in sem)

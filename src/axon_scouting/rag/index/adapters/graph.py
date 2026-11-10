@@ -14,7 +14,7 @@ from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Final
 
-from axon_scouting.rag.index.api import NormSection
+from axon_scouting.rag.index.api import NormRelation, NormSection
 
 GRAPH: Final = "graph.jsonl"
 
@@ -24,7 +24,7 @@ class ArtifactGraph:
 
     def __init__(self, root: Path) -> None:
         self._path = root / GRAPH
-        self._loaded: tuple[dict[str, tuple[str, ...]], dict[str, list[NormSection]]] | None = None
+        self._loaded: tuple[dict[str, tuple[str, ...]], dict[str, list[NormSection]], list[NormRelation]] | None = None
         self._lock = threading.Lock()
 
     async def organ_terms(self) -> Mapping[str, tuple[str, ...]]:
@@ -34,11 +34,16 @@ class ArtifactGraph:
         by_organ = self._load()[1]
         return [section for organ in organs for section in by_organ.get(organ, [])]
 
-    def _load(self) -> tuple[dict[str, tuple[str, ...]], dict[str, list[NormSection]]]:
+    async def relations(self, organs: Sequence[str]) -> list[NormRelation]:
+        wanted = set(organs)
+        return [r for r in self._load()[2] if r.source in wanted or r.target in wanted]
+
+    def _load(self) -> tuple[dict[str, tuple[str, ...]], dict[str, list[NormSection]], list[NormRelation]]:
         with self._lock:
             if self._loaded is None:
                 terms: dict[str, tuple[str, ...]] = {}
                 by_organ: dict[str, list[NormSection]] = {}
+                relations: list[NormRelation] = []
                 if self._path.exists():
                     with self._path.open(encoding="utf-8") as lines:
                         for line in lines:
@@ -50,13 +55,36 @@ class ArtifactGraph:
                             elif raw.get("kind") == "section":
                                 section = NormSection.from_json(raw)
                                 by_organ.setdefault(section.organ, []).append(section)
-                self._loaded = (terms, by_organ)
+                            elif raw.get("kind") == "relation":
+                                relations.append(
+                                    NormRelation(
+                                        kind=str(raw["type"]),
+                                        source=str(raw["source"]),
+                                        target=str(raw["target"]),
+                                        chunk_id=str(raw["chunk_id"]),
+                                    )
+                                )
+                self._loaded = (terms, by_organ, relations)
             return self._loaded
 
 
-def write_graph(path: Path, organs: Mapping[str, tuple[str, ...]], sections: Sequence[NormSection]) -> None:
+def write_graph(
+    path: Path,
+    organs: Mapping[str, tuple[str, ...]],
+    sections: Sequence[NormSection],
+    relations: Sequence[NormRelation] = (),
+) -> None:
     with path.open("w", encoding="utf-8") as out:
         for organ, terms in organs.items():
             out.write(json.dumps({"kind": "organ", "id": organ, "terms": list(terms)}, ensure_ascii=False) + "\n")
         for section in sections:
             out.write(json.dumps({"kind": "section", **section.to_json()}, ensure_ascii=False) + "\n")
+        for relation in relations:
+            record = {
+                "kind": "relation",
+                "type": relation.kind,
+                "source": relation.source,
+                "target": relation.target,
+                "chunk_id": relation.chunk_id,
+            }
+            out.write(json.dumps(record, ensure_ascii=False) + "\n")

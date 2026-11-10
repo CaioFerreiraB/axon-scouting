@@ -21,8 +21,14 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from axon_scouting.rag.index.adapters.graph import GRAPH, write_graph  # noqa: E402
-from axon_scouting.rag.index.api import NormSection  # noqa: E402
-from axon_scouting.rag.ingestion.domain.graph import ChunkPlace, organs_from_mapping, sections  # noqa: E402
+from axon_scouting.rag.index.api import NormRelation, NormSection  # noqa: E402
+from axon_scouting.rag.ingestion.domain.graph import (  # noqa: E402
+    ChunkPlace,
+    cargo_terms,
+    organs_from_mapping,
+    relations_from_mapping,
+    sections,
+)
 
 INDEX = ROOT / "src" / "axon_scouting" / "data" / "index"
 ORGANIZATION = ROOT / "corpus" / "organizacao.yaml"
@@ -48,21 +54,27 @@ def places(index: Path) -> list[ChunkPlace]:
 
 
 def build(args: argparse.Namespace) -> int:
-    organs = organs_from_mapping(yaml.safe_load(args.organization.read_text(encoding="utf-8")))
-    found = sections(places(args.index), organs)
+    raw = yaml.safe_load(args.organization.read_text(encoding="utf-8"))
+    organs = organs_from_mapping(raw)
+    where = places(args.index)
+    found = sections(where, organs)
+    relations = relations_from_mapping(raw, {place.chunk_id for place in where})
+    cargos = cargo_terms(raw)
+    terms = {organ.id: tuple(dict.fromkeys((*organ.terms, *cargos.get(organ.id, ())))) for organ in organs}
     write_graph(
         args.index / GRAPH,
-        {organ.id: organ.terms for organ in organs},
+        terms,
         [
             NormSection(
                 organ=s.organ, doc_key=s.doc_key, unit_id=s.unit_id, title=s.title, scope=s.scope, chunk_ids=s.chunk_ids
             )
             for s in found
         ],
+        [NormRelation(kind=r.kind, source=r.source, target=r.target, chunk_id=r.chunk_id) for r in relations],
     )
     per_organ = Counter(s.organ for s in found)
     missing = [organ.id for organ in organs if organ.id not in per_organ]
-    print(f"{len(organs)} órgãos e instituições, {len(found)} seções → {args.index / GRAPH}")
+    print(f"{len(organs)} órgãos e instituições, {len(found)} seções, {len(relations)} relações → {args.index / GRAPH}")
     for organ, count in sorted(per_organ.items()):
         print(
             f"  {organ}: {count} seção(ões) — "

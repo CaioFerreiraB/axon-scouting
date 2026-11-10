@@ -575,3 +575,27 @@ items:
       facts:
         - "por mais de um mandato consecutivo, para a mesma função"
 
+  # --- ADR-063 (2026-11-10): a resposta está na seção de outro órgão (as relações de governança do grafo) ----------
+  - id: quem-fiscaliza-a-diretoria-regional
+    question: "Quem fiscaliza as contas da Diretoria Regional?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      A Comissão Fiscal Regional, que se reúne no mínimo quadrimestralmente e emite relatório à Diretoria Regional
+      sobre os balancetes mensais (Estatuto, Art. 29).
+    extra:
+      group: normativo
+      split: desenvolvimento
+      facts:
+        - "emitir relatório à Diretoria Regional quanto aos balancetes mensais"
+
+  - id: quem-elege-a-etica-regional
+    question: "Quem elege a Comissão de Ética e Disciplina Regional?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      A Assembleia Regional, por votação unitária, junto com a Comissão Fiscal Regional (Estatuto, Art. 24, III).
+    extra:
+      group: normativo
+      split: controle
+      facts:
+        - "da Comissão de Ética e Disciplina Regional, por meio de votação unitária"
+

@@ -486,6 +486,17 @@ class NormSection:
         )
 
 
+@dataclass(frozen=True, slots=True, kw_only=True)
+class NormRelation:
+    """Uma relação de governança entre órgãos com o trecho que a prova (ADR-063): a pergunta sobre a Diretoria Regional
+    recebe também "a Assembleia Regional elege a Diretoria Regional", que está na seção da Assembleia."""
+
+    kind: str
+    source: str
+    target: str
+    chunk_id: str
+
+
 @runtime_checkable
 class NormGraph(Protocol):
     """O grafo das normas por órgão (seam da 102, ADR-063): a 103 o consome, e a 101 lê os termos dos órgãos."""
@@ -496,6 +507,10 @@ class NormGraph(Protocol):
 
     async def sections(self, organs: Sequence[str]) -> list[NormSection]:
         """As seções que disciplinam esses órgãos, da norma de cima para a de baixo; órgão desconhecido → nenhuma."""
+        ...
+
+    async def relations(self, organs: Sequence[str]) -> list[NormRelation]:
+        """As relações de governança em que esses órgãos estão numa das pontas, na ordem do catálogo."""
         ...
 
 

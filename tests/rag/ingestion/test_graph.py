@@ -146,3 +146,22 @@ def test_o_catalogo_do_corpus_carrega() -> None:
     organs = organs_from_mapping(yaml.safe_load((ROOT / "corpus" / "organizacao.yaml").read_text(encoding="utf-8")))
     ids = {organ.id for organ in organs}
     assert {"diretoria_regional", "assembleia_regional", "conselho_de_administracao_nacional"} <= ids
+
+
+def test_relacoes_so_com_fonte_conferida_e_presente() -> None:
+    from axon_scouting.rag.ingestion.domain.graph import cargo_terms, relations_from_mapping
+
+    bruto = {
+        "relacoes": [
+            {"tipo": "ELEGE", "de": "assembleia_regional", "para": "diretoria_regional", "fonte": "e#art24@p17"},
+            {"tipo": "NOMEIA", "de": "can", "para": "den", "fonte": "a verificar"},
+            {"tipo": "FISCALIZA", "de": "cfr", "para": "dr", "fonte": "inexistente#x"},
+        ],
+        "cargos": [
+            {"id": "c1", "nome": "Conselheiro Nacional", "orgao": "conselho_de_administracao_nacional"},
+            {"id": "c2", "nome": "Vice", "orgao": "diretoria_regional"},
+        ],
+    }
+    (relacao,) = relations_from_mapping(bruto, {"e#art24@p17"})
+    assert (relacao.kind, relacao.source, relacao.target) == ("ELEGE", "assembleia_regional", "diretoria_regional")
+    assert cargo_terms(bruto) == {"conselho_de_administracao_nacional": ("conselheiro nacional",)}

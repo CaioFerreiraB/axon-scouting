@@ -127,23 +127,20 @@ class ScoutingRetriever:
         preferred: tuple[tuple[str, ...], tuple[str, ...]],
     ) -> list[Chunk]:
         """Os trechos das seções que disciplinam os órgãos nomeados, documento a documento da norma de cima para a de
-        baixo, até `GRAPH_PER_DOCUMENT` por documento — os que mais casam com a pergunta, na ordem do documento."""
+        baixo, até `GRAPH_PER_DOCUMENT` por documento — os que mais casam com a pergunta, na ordem do documento. As
+        relações de governança do grafo (quem elege, fiscaliza… o órgão) não entram: medidas, não mudaram nada."""
         if self._graph is None or not named or self._shape is not None:
             return []
         documents: dict[str, list[str]] = {}
         for section in await self._graph.sections(named):
             documents.setdefault(section.doc_key, []).extend(section.chunk_ids)
         chosen = list(documents.items())[:GRAPH_DOCUMENTS]
-        chunks = {chunk.chunk_id: chunk for chunk in await self._index.get([c for _, ids in chosen for c in ids])}
+        wanted = [c for _, ids in chosen for c in ids]
+        chunks = {chunk.chunk_id: chunk for chunk in await self._index.get(list(dict.fromkeys(wanted)))}
         terms = query_terms(query)
         result: list[IndexedChunk] = []
         for _, ids in chosen:
-            present = [chunks[i] for i in dict.fromkeys(ids) if i in chunks]
-            counts = {chunk.chunk_id: bag(chunk.text) for chunk in present}
-            weights = idf(list(counts.values()), terms)
-            best = sorted(present, key=lambda c: -score(counts[c.chunk_id], terms, weights))[:GRAPH_PER_DOCUMENT]
-            best.sort(key=lambda c: ids.index(c.chunk_id))
-            result.extend(best)
+            result.extend(_best(ids, chunks, terms, GRAPH_PER_DOCUMENT))
         return [
             dataclasses.replace(
                 marked := _to_chunk(chunk, filters, *preferred), metadata={**marked.metadata, GRAPH_RANK: rank}
@@ -192,6 +189,15 @@ class ScoutingRetriever:
                 metadata = {**marked.metadata, FACET: branch, FACET_RANK: rank, FACET_ORDER: order}
                 chunks.append(dataclasses.replace(marked, metadata=metadata))
         return ordered(chunks)[:limit]
+
+
+def _best(ids: list[str], chunks: Mapping[str, IndexedChunk], terms: list[str], limit: int) -> list[IndexedChunk]:
+    """Os `limit` trechos que mais casam com a pergunta (BM25 entre eles), na ordem em que vieram."""
+    present = [chunks[i] for i in dict.fromkeys(ids) if i in chunks]
+    counts = {chunk.chunk_id: bag(chunk.text) for chunk in present}
+    weights = idf(list(counts.values()), terms)
+    best = sorted(present, key=lambda c: -score(counts[c.chunk_id], terms, weights))[:limit]
+    return sorted(best, key=lambda c: ids.index(c.chunk_id))
 
 
 def search_docs(retriever: ScoutingRetriever, *, collection: str = "scouting") -> NamedRetriever:
