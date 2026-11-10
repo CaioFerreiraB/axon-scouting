@@ -535,3 +535,43 @@ items:
       facts:
         - "órgão executivo do Grupo Escoteiro, com mandato de dois anos"
         - "É composta por, no mínimo, três membros"
+
+  # --- ADR-061 (2026-11-09): a conversa de 08/11 sobre a Diretoria Regional -----------------------------------------
+  - id: regulamento-sobre-a-diretoria-regional
+    question: "O que o regulamento regional diz sobre a diretoria regional? Qual o mandato e a composição?"
+    reference_time: "2026-11-08T12:00:00-03:00"
+    reference_answer: >-
+      Órgão executivo da Região, com mandato de três anos: Diretor-presidente, Diretor Vice-presidente, Diretor
+      Financeiro, Diretor Administrativo e Diretor de Relações Institucionais (Regulamento da Região SP, Art. 26).
+    extra:
+      group: normativo
+      split: desenvolvimento
+      facts:
+        - "A Diretoria Regional é o órgão executivo da Região, com mandato de três anos"
+        - "Diretor Vice-presidente"
+
+  - id: estatuto-sobre-a-diretoria-regional
+    question: "Segundo o estatuto, qual o mandato da diretoria regional e como ela é eleita?"
+    reference_time: "2026-11-08T12:00:00-03:00"
+    reference_answer: >-
+      Três anos; no mínimo cinco membros, eleitos por chapa pela Assembleia Regional (Estatuto, Art. 27).
+    extra:
+      group: normativo
+      split: desenvolvimento
+      facts:
+        - "eleitos por chapa pela Assembleia Regional"
+
+  - id: vice-regional-pode-ser-presidente
+    question: >-
+      Para a diretoria regional da região de são paulo, uma pessoa que foi diretor vice presidente em duas gestões
+      seguidas pode se candidatar a diretor presidente na gestão seguinte?
+    reference_time: "2026-11-08T12:00:00-03:00"
+    reference_answer: >-
+      O Estatuto veda a reeleição por mais de um mandato consecutivo para a mesma função (Art. 27, §3º); presidente e
+      vice são funções distintas no Regulamento SP (Art. 26).
+    extra:
+      group: multidocumento
+      split: controle
+      facts:
+        - "por mais de um mandato consecutivo, para a mesma função"
+

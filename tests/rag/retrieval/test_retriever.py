@@ -13,7 +13,7 @@ from axon_scouting.rag.index.adapters.bm25 import Bm25Encoder
 from axon_scouting.rag.index.adapters.memory import HashingEmbedder, MemoryIndex, MemoryStorage
 from axon_scouting.rag.index.api import IndexMismatch, IndexUnavailable
 from axon_scouting.rag.retrieval.domain.filters import InvalidFilters
-from axon_scouting.rag.retrieval.domain.ordering import BRANCH_MATCH, FUSION_SCORE, TYPE_MATCH, sort_key
+from axon_scouting.rag.retrieval.domain.ordering import BRANCH_MATCH, FUSION_SCORE, RELAXED, TYPE_MATCH, sort_key
 from axon_scouting.rag.retrieval.retriever import ScoutingRetriever, search_docs
 
 from .corpus import filtros, indice
@@ -243,3 +243,39 @@ def test_tipo_sugerido_nao_exclui_e_marca_o_desempate() -> None:
 def test_tipo_sugerido_invalido_e_erro() -> None:
     with pytest.raises(InvalidFilters, match="suggested_types"):
         buscar("acampamento", filtros(suggested_types=["Ata"]))
+
+
+# --- ADR-061: a âncora do seguimento e o recuo sem órgão e abrangência ----------------------------------------------
+
+
+def test_ancora_soma_a_busca_sem_perder_a_da_pergunta() -> None:
+    """Com âncora, duas buscas juntas pela melhor posição: o que a pergunta sozinha acha continua entre os achados, e a
+    âncora traz o assunto que a pergunta de seguimento não diz."""
+    sozinha = {c.chunk_id for c in buscar("e o cardápio?", top_k=30)}
+    ancorada = buscar("e o cardápio?", filtros(anchor="Como é o acampamento da tropa?"), top_k=30)
+    ids = {c.chunk_id for c in ancorada}
+    assert sozinha <= ids
+    assert any("acampamento" in c.text.lower() for c in ancorada)
+    assert len(ids) == len(ancorada)
+
+
+def test_ancora_invalida() -> None:
+    for valor in ("", "   ", "x" * 401, 3):
+        with pytest.raises(InvalidFilters) as erro:
+            buscar("acampamento", filtros(anchor=valor))
+        assert erro.value.key == "anchor"
+
+
+def test_busca_vazia_com_orgao_e_refeita_sem_ele() -> None:
+    """O órgão e a abrangência são a pasta do documento na taxonomia, não o assunto: se a busca filtrada não acha nada,
+    ela é refeita sem os dois, com a marca `relaxed`, e os demais filtros continuam valendo."""
+    achados = buscar("acampamento da tropa", filtros(bodies=["diretoria_regional"], scopes=["regional"]), top_k=30)
+    assert achados and all(c.metadata[RELAXED] is True for c in achados)
+    assert "manual-x-2023" not in documentos(achados)  # a vigência continua valendo
+    sem_orgao = buscar("acampamento da tropa", top_k=30)
+    assert {c.chunk_id for c in achados} == {c.chunk_id for c in sem_orgao}
+    assert all(RELAXED not in c.metadata for c in sem_orgao)
+
+
+def test_sem_orgao_a_busca_vazia_continua_vazia() -> None:
+    assert buscar("acampamento", filtros(branch="lobinho", document_types=["estatuto"]), top_k=30) == []

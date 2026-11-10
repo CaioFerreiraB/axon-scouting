@@ -1,0 +1,990 @@
+{
+  "style": {
+    "font-family": "Nunito Sans",
+    "background-color": "#F2F2F2",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#4C8EDA",
+    "border-width": 0,
+    "border-color": "#000000",
+    "radius": 75,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#ffffff",
+    "caption-font-size": 20,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "bare",
+    "label-color": "#ffffff",
+    "label-background-color": "#848484",
+    "label-border-color": "#848484",
+    "label-border-width": 3,
+    "label-font-size": 20,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "above",
+    "detail-orientation": "parallel",
+    "arrow-width": 3,
+    "arrow-color": "#848484",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#848484",
+    "type-background-color": "#F2F2F2",
+    "type-border-color": "#848484",
+    "type-border-width": 0,
+    "type-font-size": 21,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#848484",
+    "property-font-size": 20,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": 667.2886027992084,
+        "y": 63.70306193880663
+      },
+      "caption": "Estatuto",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": 1052.585297750109,
+        "y": 63.70306193880663
+      },
+      "caption": "Título",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": 1350.7635501632003,
+        "y": 58.59361496489856
+      },
+      "caption": "Capítulo",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": 1676.8819927010118,
+        "y": 63.70306193880663
+      },
+      "caption": "Seção",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": 2008.4228203404573,
+        "y": 63.70306193880606
+      },
+      "caption": "Artigo",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n5",
+      "position": {
+        "x": 2385.2505351916807,
+        "y": 58.59361496489856
+      },
+      "caption": "Parágrafo",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n6",
+      "position": {
+        "x": 2154.881992701011,
+        "y": 457.60363502432614
+      },
+      "caption": "Inciso",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n7",
+      "position": {
+        "x": 1002.1858239581046,
+        "y": -521.5110018558961
+      },
+      "caption": "Regulamento",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n8",
+      "position": {
+        "x": 881.1980945066576,
+        "y": -927.4553932955597
+      },
+      "caption": "UEL",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n9",
+      "position": {
+        "x": 881.1980945066576,
+        "y": -1156.2102711324878
+      },
+      "caption": "Distrito Escoteiro",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n10",
+      "position": {
+        "x": 1540.5544711337764,
+        "y": -927.4553932955597
+      },
+      "caption": "Região Escoteira",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n11",
+      "position": {
+        "x": 1869.5224291497984,
+        "y": -927.4553932955597
+      },
+      "caption": "Organização Nacional Escoteira",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n12",
+      "position": {
+        "x": 2147.58280093473,
+        "y": -649.3950215106283
+      },
+      "caption": "Organização Reiongal Internacional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n13",
+      "position": {
+        "x": 2425.643172719661,
+        "y": -927.4553932955591
+      },
+      "caption": "Organização Mundial do Movimento Escoteiro",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n14",
+      "position": {
+        "x": 3030.6977365091557,
+        "y": -927.4553932955591
+      },
+      "caption": "Resolução",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n15",
+      "position": {
+        "x": 3030.6977365091557,
+        "y": -1825.4666844997466
+      },
+      "caption": "Política",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n16",
+      "position": {
+        "x": 3030.6977365091557,
+        "y": -1397.04938348119
+      },
+      "caption": "P.O.R",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n17",
+      "position": {
+        "x": 1540.5544711337764,
+        "y": -1393.2713050356856
+      },
+      "caption": "Diretor",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n18",
+      "position": {
+        "x": 1869.5224291497984,
+        "y": -1397.04938348119
+      },
+      "caption": "Diretoria Executiva Nacional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n19",
+      "position": {
+        "x": 2198.4903871658207,
+        "y": -1393.2713050357056
+      },
+      "caption": "Conselho de Administração Nacional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n20",
+      "position": {
+        "x": 1869.5224291497984,
+        "y": -2073.039620679132
+      },
+      "caption": "Assembleia Nacional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n21",
+      "position": {
+        "x": 2198.4903871658207,
+        "y": -1691.9293319560174
+      },
+      "caption": "Conselheiro Nacional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n22",
+      "position": {
+        "x": 518.6769989396038,
+        "y": -1173.2687815217764
+      },
+      "caption": "Grupo Escoteiro",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n23",
+      "position": {
+        "x": 518.6769989396038,
+        "y": -714.3186241787504
+      },
+      "caption": "Seção Autônoma",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n24",
+      "position": {
+        "x": 1869.5224291497984,
+        "y": -1691.9293319560174
+      },
+      "caption": "Comissão FIsca Nacional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n26",
+      "position": {
+        "x": 2198.4903871658225,
+        "y": -2073.039620679132
+      },
+      "caption": "Comissão de Ética e Disciplina Nacional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n27",
+      "position": {
+        "x": 1540.5544711337764,
+        "y": -1156.2102711324878
+      },
+      "caption": "Diretoria Regional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n28",
+      "position": {
+        "x": 1063.107213799293,
+        "y": -1393.2713050356856
+      },
+      "caption": "Diretoria de Grupo",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n29",
+      "position": {
+        "x": 68.37166837185734,
+        "y": -1173.2687815217764
+      },
+      "caption": "Seção",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n30",
+      "position": {
+        "x": 2198.4903871658207,
+        "y": -1120.5450521485382
+      },
+      "caption": "Conselho Consultivo Nacional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n31",
+      "position": {
+        "x": 1140.3860755394041,
+        "y": -1768.9279338579454
+      },
+      "caption": "Assembleia Regional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n32",
+      "position": {
+        "x": 1869.5224291497984,
+        "y": -534.2186443588064
+      },
+      "caption": "Conselho Consultivo Nacional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n33",
+      "position": {
+        "x": 806.1743824089991,
+        "y": -1768.9279338579454
+      },
+      "caption": "Comissão Fiscal Regional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n34",
+      "position": {
+        "x": 1474.5977686698093,
+        "y": -1768.9279338579454
+      },
+      "caption": "Comissão de Ética e Disciplina Regional",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n35",
+      "position": {
+        "x": 1140.3860755394044,
+        "y": -2073.039620679132
+      },
+      "caption": "Ata",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n36",
+      "position": {
+        "x": 471.96268927859415,
+        "y": -1734.5687553976845
+      },
+      "caption": "Assembleia Local",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n37",
+      "position": {
+        "x": 182.41065869953636,
+        "y": -1393.2713050356856
+      },
+      "caption": "Comissão Fiscal Local",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "fromId": "n0",
+      "toId": "n1",
+      "type": "CONTEM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n1",
+      "fromId": "n1",
+      "toId": "n2",
+      "type": "CONTEM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n2",
+      "fromId": "n2",
+      "toId": "n3",
+      "type": "CONTEM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n3",
+      "fromId": "n3",
+      "toId": "n4",
+      "type": "DISPOE_EM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "fromId": "n4",
+      "toId": "n5",
+      "type": "DESMEMBRA_EM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n5",
+      "fromId": "n5",
+      "toId": "n6",
+      "type": "DESMEMBRA_EM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n6",
+      "fromId": "n4",
+      "toId": "n6",
+      "type": "DESMEMBRA_EM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n7",
+      "fromId": "n7",
+      "toId": "n1",
+      "type": "CONTEM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n8",
+      "fromId": "n4",
+      "toId": "n4",
+      "type": "CITA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n9",
+      "fromId": "n4",
+      "toId": "n4",
+      "type": "SUBMETE_SE_A",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n10",
+      "fromId": "n4",
+      "toId": "n7",
+      "type": "CITA",
+      "properties": {},
+      "style": {
+        "directionality": "undirected"
+      }
+    },
+    {
+      "id": "n11",
+      "fromId": "n7",
+      "toId": "n7",
+      "type": "CITA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n12",
+      "fromId": "n7",
+      "toId": "n7",
+      "type": "SUBMETE_SE_A",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n13",
+      "fromId": "n0",
+      "toId": "n0",
+      "type": "CITA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n14",
+      "fromId": "n0",
+      "toId": "n0",
+      "type": "SUBMETE_SE_A",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n15",
+      "fromId": "n0",
+      "toId": "n7",
+      "type": "CITA",
+      "properties": {},
+      "style": {
+        "directionality": "undirected"
+      }
+    },
+    {
+      "id": "n16",
+      "fromId": "n0",
+      "toId": "n7",
+      "type": "SUBMETE_SE_A",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n19",
+      "fromId": "n20",
+      "toId": "n21",
+      "type": "ELEGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n20",
+      "fromId": "n21",
+      "toId": "n19",
+      "type": "COMPOE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n21",
+      "fromId": "n19",
+      "toId": "n18",
+      "type": "NOMEIA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n22",
+      "fromId": "n18",
+      "toId": "n11",
+      "type": "DIRIGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n23",
+      "fromId": "n11",
+      "toId": "n10",
+      "type": "SE_ORGANIZA_EM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n24",
+      "fromId": "n12",
+      "toId": "n11",
+      "type": "SE_ORGANIZA_EM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n25",
+      "fromId": "n13",
+      "toId": "n12",
+      "type": "SE_ORGANIZA_EM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n27",
+      "fromId": "n9",
+      "toId": "n8",
+      "type": "APOIA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n32",
+      "fromId": "n20",
+      "toId": "n24",
+      "type": "ELEGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n33",
+      "fromId": "n20",
+      "toId": "n26",
+      "type": "ELEGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n36",
+      "fromId": "n27",
+      "toId": "n10",
+      "type": "DIRIGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n37",
+      "fromId": "n27",
+      "toId": "n9",
+      "type": "ORGANIZA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n38",
+      "fromId": "n17",
+      "toId": "n28",
+      "type": "INTEGRA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n39",
+      "fromId": "n28",
+      "toId": "n22",
+      "type": "DIRIGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n40",
+      "fromId": "n10",
+      "toId": "n8",
+      "type": "ABRANGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n41",
+      "fromId": "n17",
+      "toId": "n27",
+      "type": "INTEGRA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n42",
+      "fromId": "n17",
+      "toId": "n18",
+      "type": "INTEGRA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n43",
+      "fromId": "n22",
+      "toId": "n29",
+      "type": "CONTEM",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n44",
+      "fromId": "n22",
+      "toId": "n0",
+      "type": "REGIDO_POR",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n45",
+      "fromId": "n10",
+      "toId": "n7",
+      "type": "REGIDO_POR",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n46",
+      "fromId": "n11",
+      "toId": "n0",
+      "type": "REGIDO_POR",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n47",
+      "fromId": "n10",
+      "toId": "n0",
+      "type": "REGIDO_POR",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n48",
+      "fromId": "n22",
+      "toId": "n8",
+      "type": "E_TIPO_DE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n49",
+      "fromId": "n23",
+      "toId": "n8",
+      "type": "E_TIPO_DE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n50",
+      "fromId": "n11",
+      "toId": "n13",
+      "type": "MEMBRO_DE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n51",
+      "fromId": "n24",
+      "toId": "n18",
+      "type": "FISCALIZA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n52",
+      "fromId": "n31",
+      "toId": "n27",
+      "type": "ELEGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n53",
+      "fromId": "n19",
+      "toId": "n16",
+      "type": "APROVA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n54",
+      "fromId": "n19",
+      "toId": "n15",
+      "type": "APROVA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n55",
+      "fromId": "n11",
+      "toId": "n32",
+      "type": "POSSUI_ORGAO",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n56",
+      "type": "ELEGE",
+      "style": {},
+      "properties": {},
+      "fromId": "n31",
+      "toId": "n33"
+    },
+    {
+      "id": "n57",
+      "type": "ELEGE",
+      "style": {},
+      "properties": {},
+      "fromId": "n31",
+      "toId": "n34"
+    },
+    {
+      "id": "n58",
+      "fromId": "n33",
+      "toId": "n27",
+      "type": "FISCALIZA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n59",
+      "fromId": "n20",
+      "toId": "n35",
+      "type": "GERA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n60",
+      "fromId": "n31",
+      "toId": "n35",
+      "type": "GERA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n63",
+      "fromId": "n37",
+      "toId": "n28",
+      "type": "FISCALIZA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n64",
+      "fromId": "n36",
+      "toId": "n37",
+      "type": "ELEGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n65",
+      "fromId": "n36",
+      "toId": "n28",
+      "type": "ELEGE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n66",
+      "fromId": "n36",
+      "toId": "n35",
+      "type": "GERA",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n67",
+      "type": "POSSUI_ORGAO",
+      "style": {},
+      "properties": {},
+      "fromId": "n11",
+      "toId": "n30"
+    },
+    {
+      "id": "n68",
+      "type": "REGIDA_POR",
+      "style": {},
+      "properties": {},
+      "fromId": "n8",
+      "toId": "n16"
+    },
+    {
+      "id": "n69",
+      "type": "EMITE",
+      "style": {},
+      "properties": {},
+      "fromId": "n19",
+      "toId": "n14"
+    },
+    {
+      "id": "n70",
+      "type": "ALTERA",
+      "style": {},
+      "properties": {},
+      "fromId": "n14",
+      "toId": "n16"
+    },
+    {
+      "id": "n71",
+      "type": "EMITE",
+      "style": {},
+      "properties": {},
+      "fromId": "n18",
+      "toId": "n14"
+    },
+    {
+      "id": "n72",
+      "type": "EMITE",
+      "style": {},
+      "properties": {},
+      "fromId": "n27",
+      "toId": "n14"
+    },
+    {
+      "id": "n73",
+      "type": "OBSERVA",
+      "style": {},
+      "properties": {},
+      "fromId": "n8",
+      "toId": "n15"
+    },
+    {
+      "id": "n74",
+      "type": "ADOTA",
+      "style": {},
+      "properties": {},
+      "fromId": "n11",
+      "toId": "n15"
+    },
+    {
+      "id": "n75",
+      "type": "OBSERVAw",
+      "style": {},
+      "properties": {},
+      "fromId": "n10",
+      "toId": "n15"
+    }
+  ]
+}

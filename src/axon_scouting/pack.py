@@ -31,7 +31,7 @@ from axon_ai_contracts import (
 )
 from axon_ai_contracts.eval import EvalMetric
 
-from axon_scouting.context.derivation import derive_context, to_slice
+from axon_scouting.context.derivation import derive_context, earlier_questions, to_slice
 from axon_scouting.context.periods import reference_day
 from axon_scouting.prompts import SYSTEM_PROMPT
 
@@ -45,7 +45,7 @@ if TYPE_CHECKING:
 
     from axon_scouting.rag.index.ports import Embedder
 
-VERSION: Final = "0.8.1"
+VERSION: Final = "0.9.0"
 """Versão do manifest; igual à da distribuição `axon-scouting` (verificado em tests/test_pack.py)."""
 
 COLLECTION: Final = "scouting"
@@ -366,14 +366,18 @@ class ScoutingPack(PackBase):
 
     async def prepare_context(self, view: TurnView, ctx: PackContext) -> Mapping[str, JSONValue]:
         """Contexto e filtros de recuperação derivados da pergunta, sem modelo e sem relógio (FR-004, FR-005); o léxico
-        leva os tipos de unidade do índice (ADR-048), e a derivação continua pura."""
+        leva os tipos de unidade do índice (ADR-048), e a derivação continua pura. As perguntas anteriores do usuário
+        vão junto, para a pergunta de seguimento herdar o assunto (ADR-061)."""
         import dataclasses
         from types import MappingProxyType
 
         from axon_scouting.context.lexicon import LEXICON
 
         lexicon = dataclasses.replace(LEXICON, unit_kinds=MappingProxyType(dict(await self._unit_kinds(ctx))))
-        return to_slice(derive_context(view.question, reference_day(view.reference_time), lexicon))
+        context = derive_context(
+            view.question, reference_day(view.reference_time), lexicon, previous=earlier_questions(view)
+        )
+        return to_slice(context)
 
 
 def _compose_index(config: ScoutingConfig) -> _Index:

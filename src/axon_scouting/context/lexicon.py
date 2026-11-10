@@ -59,6 +59,19 @@ class Lexicon:
     """Tipo de unidade da árvore dos documentos → os plurais que o pedem ("especialidade" → "especialidades"),
     normalizados. Vêm do índice (os tipos do `estrutura.yaml` na ingestão), postos aqui pela composição do pack
     (ADR-048); o léxico em código não os tem."""
+    issuer_links: tuple[str, ...] = ()
+    """Palavras que ligam o tipo citado ao órgão que o emitiu ("resoluções **da** diretoria regional"): só com uma
+    delas logo depois do tipo o órgão é emissor e filtra (ADR-061)."""
+    issuer_fillers: tuple[str, ...] = ()
+    """Palavras que podem ficar entre o tipo e a ligação sem desfazer o emissor ("regimento **interno** do conselho");
+    a abrangência ("regulamento **regional** da …") também pode."""
+    follow_up_markers: tuple[str, ...] = ()
+    """Retomada da pergunta anterior em qualquer ponto ("isso", "disso", "nele"): com eles, a pergunta sem assunto
+    próprio é de seguimento (ADR-061)."""
+    follow_up_openers: tuple[str, ...] = ()
+    """Começos que retomam a pergunta anterior ("e no", "e quanto"): só valem no início da pergunta."""
+    follow_up_max_words: int = 6
+    """Pergunta sem assunto próprio com até esse número de palavras é de seguimento, mesmo sem marcador."""
 
 
 LEXICON: Final = Lexicon(
@@ -287,6 +300,56 @@ LEXICON: Final = Lexicon(
         "existem",
         "todas as",
         "todos os",
+    ),
+    issuer_links=("da", "do", "das", "dos", "de"),
+    issuer_fillers=("interno", "interna", "geral"),
+    follow_up_markers=(
+        "isso",
+        "disso",
+        "nisso",
+        "esse",
+        "essa",
+        "desse",
+        "dessa",
+        "nesse",
+        "nessa",
+        "deste",
+        "desta",
+        "neste",
+        "nesta",
+        "nele",
+        "nela",
+        "dele",
+        "dela",
+        "o mesmo",
+        "a mesma",
+        "tambem",
+    ),
+    follow_up_openers=(
+        "e no",
+        "e na",
+        "e nos",
+        "e nas",
+        "e o",
+        "e a",
+        "e os",
+        "e as",
+        "e se",
+        "e quanto",
+        "e para",
+        "e em",
+        "e qual",
+        "e quais",
+        "e quem",
+        "e como",
+        "e quando",
+        "mas e",
+        "olhe no",
+        "olhe na",
+        "veja no",
+        "veja na",
+        "procure no",
+        "procure na",
     ),
     catalog_kinds=MappingProxyType(
         {

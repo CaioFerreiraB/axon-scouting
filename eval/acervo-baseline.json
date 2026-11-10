@@ -4,7 +4,7 @@
   "assistant": "scouting",
   "judge": null,
   "started_at": "2026-01-01T12:00:00+00:00",
-  "core_version": "0.7.0rc4",
+  "core_version": "0.7.0rc8",
   "k": [
     5,
     20
@@ -94,7 +94,7 @@
       "name": "latency_ms_p50",
       "value": 0.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": "lower"
     },
@@ -102,7 +102,7 @@
       "name": "latency_ms_p95",
       "value": 0.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": "lower"
     },
@@ -110,7 +110,7 @@
       "name": "ttft_ms_p50",
       "value": 0.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": "lower"
     },
@@ -118,7 +118,7 @@
       "name": "ttft_ms_p95",
       "value": 0.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": "lower"
     },
@@ -126,7 +126,7 @@
       "name": "tokens_per_answer",
       "value": 9.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": "lower"
     },
@@ -134,7 +134,7 @@
       "name": "model_calls_per_answer",
       "value": 1.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": "lower"
     },
@@ -158,7 +158,7 @@
       "name": "error_rate",
       "value": 0.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": "lower"
     },
@@ -174,7 +174,7 @@
       "name": "scouting:current_document_rate",
       "value": 1.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": true,
       "better": "higher"
     },
@@ -190,15 +190,15 @@
       "name": "scouting:absence_claim_rate",
       "value": 0.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": "lower"
     },
     {
       "name": "scouting:fact_recall",
-      "value": 0.8914728682170543,
+      "value": 0.8768115942028986,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": true,
       "better": "higher"
     },
@@ -206,7 +206,7 @@
       "name": "flag_rate:ungrounded",
       "value": 1.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": null
     },
@@ -214,7 +214,7 @@
       "name": "gate_route:generate",
       "value": 1.0,
       "variance": null,
-      "n": 43,
+      "n": 46,
       "deterministic": false,
       "better": null
     }
@@ -1713,6 +1713,111 @@
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
         "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "regulamento-sobre-a-diretoria-regional",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "estatuto-sobre-a-diretoria-regional",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 1.0
+      },
+      "citations": [],
+      "flags": [
+        "ungrounded"
+      ],
+      "issue_kinds": [
+        "ValidatorIssue"
+      ],
+      "gate_route": "generate",
+      "failure": null,
+      "warnings": []
+    },
+    {
+      "id": "vice-regional-pode-ser-presidente",
+      "metrics": {
+        "recall@5": null,
+        "recall@20": null,
+        "mrr": null,
+        "delivered_recall": null,
+        "rerank_gain": null,
+        "citation_resolvable_rate": null,
+        "citation_invented_rate": null,
+        "expected_citation_recall": null,
+        "latency_ms": 0.0,
+        "ttft_ms": 0.0,
+        "tokens_per_answer": 9.0,
+        "model_calls_per_answer": 1.0,
+        "generation_tokens_per_s": null,
+        "controller_invalid_rate": null,
+        "error_rate": 0.0,
+        "scouting:context_accuracy": null,
+        "scouting:current_document_rate": 1.0,
+        "scouting:validity_notice_rate": null,
+        "scouting:absence_claim_rate": 0.0,
+        "scouting:fact_recall": 0.0
       },
       "citations": [],
       "flags": [

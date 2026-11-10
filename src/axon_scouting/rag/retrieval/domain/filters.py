@@ -6,7 +6,8 @@ contrato da 101 diz que nenhuma chave nova entra sem atualizar a 103. Os temas s
 facetas (`branches`, dois ramos ou mais) não são filtro do índice: o retriever faz uma busca por ramo. Os tipos
 sugeridos (`suggested_types`) também não: só desempatam a ordem (ADR-046). O pedido de lista (`catalog`) é da tool de
 lista de documentos (ADR-047), e o de enumeração (`enumeration`), da tool de unidades (ADR-048); a busca por trechos
-ignora os dois.
+ignora os dois. A âncora (`anchor`, ADR-061) é a pergunta anterior que a de seguimento retoma: o retriever busca também
+com ela.
 """
 
 from __future__ import annotations
@@ -37,8 +38,11 @@ KNOWN: Final = frozenset(
         "previous_version",
         "catalog",
         "enumeration",
+        "anchor",
     }
 )
+ANCHOR_MAX_CHARS: Final = 400
+"""O mesmo teto da 101: uma âncora maior é contrato quebrado, não texto a cortar aqui."""
 
 
 class InvalidFilters(ValueError):
@@ -157,6 +161,16 @@ def enumeration_request(raw: Mapping[str, JSONValue] | None) -> EnumerationReque
             "enumeration", f"esperado {{'unit_kind': texto ou null, 'terms': [textos]}}, veio {value!r}"
         )
     return EnumerationRequest(unit_kind=kind, terms=tuple(str(term) for term in terms))
+
+
+def anchor(raw: Mapping[str, JSONValue] | None) -> str | None:
+    """A pergunta anterior que a de seguimento retoma (ADR-061); `None` quando a pergunta tem assunto próprio."""
+    value = (raw or {}).get("anchor")
+    if value is None:
+        return None
+    if not isinstance(value, str) or not value.strip() or len(value) > ANCHOR_MAX_CHARS:
+        raise InvalidFilters("anchor", f"esperado texto não vazio de até {ANCHOR_MAX_CHARS} caracteres, veio {value!r}")
+    return value
 
 
 def suggested_types(raw: Mapping[str, JSONValue] | None) -> tuple[str, ...]:

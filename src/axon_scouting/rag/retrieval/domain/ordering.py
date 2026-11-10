@@ -41,6 +41,8 @@ STRUCTURE_RANK: Final = "structure_rank"
 """Posição no que a tool de unidades devolveu (ADR-048); só o que ela trouxe a tem."""
 ALSO_IN: Final = "also_in"
 """Os rótulos dos trechos de texto idêntico que a busca juntou neste (103 FR-016)."""
+RELAXED: Final = "relaxed"
+"""O trecho veio da busca refeita sem órgão e abrangência, porque a filtrada voltou vazia (ADR-061)."""
 
 
 def marks(

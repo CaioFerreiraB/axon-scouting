@@ -7,6 +7,11 @@ ordem. Com facetas (`branches`, ADR-045), uma busca por ramo — a pergunta segu
 intercaladas: o primeiro de cada ramo, depois o segundo. Trechos de texto idêntico (o mesmo bloco repetido em cada
 insígnia) ficam um só, com os rótulos dos outros nos metadados (FR-016, ADR-048). Erros do índice (`IndexUnavailable`,
 `IndexMismatch`) passam sem tradução: são explícitos (FR-007).
+
+Desde o ADR-061: na pergunta de seguimento, uma busca com a âncora antes da pergunta e outra só com a pergunta,
+juntas pela melhor posição de cada trecho — a âncora traz o assunto, e a pergunta sozinha protege de uma âncora
+errada. E a busca filtrada por órgão ou abrangência que volta vazia é refeita sem esses dois filtros, com a marca
+`relaxed` nos trechos.
 """
 
 from __future__ import annotations
@@ -21,13 +26,20 @@ from axon_ai_contracts import Chunk, JSONValue, NamedRetriever
 from axon_scouting.rag.index.api import ChunkIndex, IndexedChunk, IndexFilters, Shape
 from axon_scouting.rag.retrieval.domain.catalog import BRANCH_NAMES
 from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
-from axon_scouting.rag.retrieval.domain.filters import facets, index_filters, suggested_bodies, suggested_types
+from axon_scouting.rag.retrieval.domain.filters import (
+    anchor,
+    facets,
+    index_filters,
+    suggested_bodies,
+    suggested_types,
+)
 from axon_scouting.rag.retrieval.domain.ordering import (
     ALSO_IN,
     FACET,
     FACET_ORDER,
     FACET_RANK,
     FUSION_SCORE,
+    RELAXED,
     marks,
     ordered,
 )
@@ -53,17 +65,54 @@ class ScoutingRetriever:
         self, query: str, *, top_k: int | None = None, filters: Mapping[str, JSONValue] | None = None
     ) -> list[Chunk]:
         limit = self._config.limit(top_k)
-        index_filters_ = dataclasses.replace(index_filters(filters), shape=self._shape)
+        base = dataclasses.replace(index_filters(filters), shape=self._shape)
+        found = await self._search(query, anchor(filters), base, limit, filters)
+        if found or not (base.bodies or base.scopes):
+            return found
+        relaxed = dataclasses.replace(base, bodies=(), scopes=())
+        return [
+            dataclasses.replace(chunk, metadata={**chunk.metadata, RELAXED: True})
+            for chunk in await self._search(query, anchor(filters), relaxed, limit, filters)
+        ]
+
+    async def _search(
+        self,
+        query: str,
+        anchor_: str | None,
+        index_filters_: IndexFilters,
+        limit: int,
+        filters: Mapping[str, JSONValue] | None,
+    ) -> list[Chunk]:
         branches = facets(filters)
         preferred = (suggested_types(filters), suggested_bodies(filters))
-        if not branches:
-            found = await self._index.search(query, filters=index_filters_, limit=limit)
-            unique = without_repeats(ordered([_to_chunk(chunk, index_filters_, *preferred) for chunk in found]))
-            if len(unique) < len(found):  # o que a junção liberou vem da mesma busca, um pouco mais funda
-                found = await self._index.search(query, filters=index_filters_, limit=limit + len(found) - len(unique))
-                unique = without_repeats(ordered([_to_chunk(chunk, index_filters_, *preferred) for chunk in found]))
-            return unique[:limit]
-        return without_repeats(ordered(await self._by_facet(query, index_filters_, branches, limit, preferred)))
+        if branches:
+            text = query if anchor_ is None else f"{anchor_} {query}"
+            return without_repeats(ordered(await self._by_facet(text, index_filters_, branches, limit, preferred)))
+        queries = [query] if anchor_ is None else [f"{anchor_} {query}", query]
+        best: dict[str, IndexedChunk] = {}
+        for text in queries:
+            for chunk in await self._unique(text, index_filters_, limit, preferred):
+                kept = best.get(chunk.chunk_id)
+                if kept is None or (chunk.score or 0.0) > (kept.score or 0.0):
+                    best[chunk.chunk_id] = chunk
+        return without_repeats(ordered([_to_chunk(chunk, index_filters_, *preferred) for chunk in best.values()]))[
+            :limit
+        ]
+
+    async def _unique(
+        self,
+        query: str,
+        filters: IndexFilters,
+        limit: int,
+        preferred: tuple[tuple[str, ...], tuple[str, ...]],
+    ) -> list[IndexedChunk]:
+        """Os achados de uma consulta; quando a junção de textos idênticos libera vagas, a mesma busca um pouco mais
+        funda as preenche."""
+        found = await self._index.search(query, filters=filters, limit=limit)
+        unique = without_repeats(ordered([_to_chunk(chunk, filters, *preferred) for chunk in found]))
+        if len(unique) < len(found):
+            found = await self._index.search(query, filters=filters, limit=limit + len(found) - len(unique))
+        return found
 
     async def _by_facet(
         self,

@@ -90,3 +90,10 @@ def test_a_resposta_nao_fala_do_mecanismo() -> None:
     for palavra in ("trecho", "busca", "ferramenta", "ficha"):
         assert f'"{palavra}"' in NORMALIZED
     assert "não apareceu nos trechos" not in NORMALIZED
+
+
+def test_hierarquia_das_normas() -> None:
+    """ADR-061: a resposta sobre um órgão junta os níveis, do de cima para o de baixo, e o de baixo não contraria."""
+    for frase in ("de cada nível", "nacional ao regional e ao local", "não pode contrariá-los", "regra complementar"):
+        assert frase in NORMALIZED
+    assert NORMALIZED.index("primeiro a regra do nível de cima") < NORMALIZED.index("o que o nível de baixo acrescenta")

@@ -103,6 +103,7 @@ def test_fatia_com_ramo() -> None:
             "suggested_bodies": [],
             "catalog": None,
             "enumeration": {"unit_kind": None, "terms": ["competencias", "relacionadas", "lideranca"]},
+            "anchor": None,
         },
         "retrieval_filters": {
             "branch": "pioneiro",
@@ -321,3 +322,128 @@ def test_orgao_e_abrangencia_filtram_so_com_tipo_ou_lista(
     contexto = derive_context(pergunta, DIA)
     assert (contexto.document_types, contexto.bodies, contexto.scopes) == (tipos, orgaos, abrangencias)
     assert contexto.suggested_bodies == sugeridos
+
+
+# --- ADR-061: o órgão emissor filtra; o órgão assunto só desempata --------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("pergunta", "tipos", "orgaos", "abrangencias", "sugeridos"),
+    [
+        # Assunto: o tipo citado filtra, o órgão vira desempate, e o nome dele não é abrangência.
+        (
+            "O que diz o regulamento regional sobre a diretoria regional?",
+            ("regulamento",),
+            (),
+            ("regional",),
+            ("diretoria_regional",),
+        ),
+        ("Segundo o estatuto, qual o mandato da diretoria regional?", ("estatuto",), (), (), ("diretoria_regional",)),
+        ("O que o estatuto diz sobre o CAN?", ("estatuto",), (), (), ("conselho_de_administracao_nacional",)),
+        # Emissor: o órgão logo depois do tipo, ligado por da/do/das/dos/de, filtra.
+        ("Quais as resoluções da diretoria regional?", ("resolucao",), ("diretoria_regional",), ("regional",), ()),
+        ("Quais são as atas da assembleia regional?", ("ata",), ("assembleias",), ("regional",), ()),
+        ("Regimento interno do conselho jovem: quem vota?", ("regulamento",), ("conselho_jovem",), (), ()),
+        ("O parecer da comissão fiscal aprovou as contas?", ("parecer",), ("comissao_fiscal",), (), ()),
+    ],
+)
+def test_orgao_emissor_filtra_e_assunto_desempata(
+    pergunta: str,
+    tipos: tuple[str, ...],
+    orgaos: tuple[str, ...],
+    abrangencias: tuple[str, ...],
+    sugeridos: tuple[str, ...],
+) -> None:
+    contexto = derive_context(pergunta, DIA)
+    assert (contexto.document_types, contexto.bodies, contexto.scopes) == (tipos, orgaos, abrangencias)
+    assert contexto.suggested_bodies == sugeridos
+
+
+# --- ADR-061: a pergunta de seguimento herda o assunto da anterior --------------------------------------------------
+
+REELEICAO = (
+    "para a diretoria regional da região de são paulo, uma pessoa que foi diretor vice presidente em duas gestões "
+    "seguidas, pode se candidatar a diretor presidente na gestão seguinte?"
+)
+
+
+@pytest.mark.parametrize(
+    ("pergunta", "anteriores", "ancora"),
+    [
+        ("olhe no estatuto nacional", (REELEICAO,), REELEICAO),
+        ("e no estatuto nacional?", (REELEICAO,), REELEICAO),
+        ("Qual o prazo de gestão?", ("Como funciona a diretoria regional?",), "Como funciona a diretoria regional?"),
+        (
+            "e quem pode ser reeleito para a mesma função?",
+            ("Como funciona a diretoria regional?",),
+            "Como funciona a diretoria regional?",
+        ),
+        # A âncora encadeada: a anterior também era de seguimento; recua até a que tem assunto.
+        (
+            "e no regulamento?",
+            ("Como funciona a diretoria regional?", "e no estatuto?"),
+            "Como funciona a diretoria regional?",
+        ),
+        # Com assunto próprio, não é seguimento.
+        ("Qual o mandato do CAN?", ("Como funciona a diretoria regional?",), None),
+        # Longa e sem marcador de retomada: pergunta nova.
+        ("O que é a flor de lis no escotismo mundial?", ("Como funciona a diretoria regional?",), None),
+        # Sem pergunta anterior, não há âncora.
+        ("Qual o prazo de gestão?", (), None),
+    ],
+)
+def test_seguimento_e_a_ancora(pergunta: str, anteriores: tuple[str, ...], ancora: str | None) -> None:
+    assert derive_context(pergunta, DIA, previous=anteriores).anchor == ancora
+
+
+def test_seguimento_herda_o_assunto_e_mantem_o_tipo_da_pergunta_atual() -> None:
+    contexto = derive_context("e no estatuto nacional?", DIA, previous=(REELEICAO,))
+    assert contexto.document_types == ("estatuto",)  # o tipo é o da pergunta atual
+    assert contexto.scopes == ("nacional",)
+    assert contexto.suggested_bodies == ("diretoria_regional",)  # o assunto veio da âncora
+    assert "gestao_do_grupo" in contexto.topics
+    filtros = to_slice(contexto)["retrieval_filters"]
+    assert isinstance(filtros, dict) and filtros["anchor"] == REELEICAO
+
+
+def test_seguimento_herda_o_ramo_so_quando_nao_cita_outro() -> None:
+    anterior = ("Quais são as especialidades do ramo lobinho?",)
+    assert derive_context("e quantas são?", DIA, previous=anterior).branch == "lobinho"
+    assert derive_context("e para o ramo pioneiro?", DIA, previous=anterior).branch == "pioneiro"
+    # Tema próprio ("uniforme") é assunto: não é seguimento, e nada se herda.
+    assert derive_context("e o uniforme?", DIA, previous=anterior).anchor is None
+
+
+def test_ancora_e_cortada_no_teto() -> None:
+    longa = "Como funciona a diretoria regional? " + "detalhe " * 100
+    ancora = derive_context("e no estatuto?", DIA, previous=(longa,)).anchor
+    assert ancora is not None and len(ancora) == 400
+
+
+def test_perguntas_anteriores_da_turn_view() -> None:
+    from axon_scouting.context.derivation import earlier_questions
+
+    view = turn_view(
+        question="e no estatuto nacional?",
+        messages=[
+            {"role": "user", "content": REELEICAO},
+            {"role": "assistant", "content": "Não encontrei."},
+            {"role": "user", "content": "e no estatuto nacional?"},
+        ],
+    )
+    assert earlier_questions(view) == (REELEICAO,)
+
+
+def test_prepare_context_publica_a_ancora() -> None:
+    view = turn_view(
+        question="e no estatuto nacional?",
+        messages=[
+            {"role": "user", "content": REELEICAO},
+            {"role": "assistant", "content": "Não encontrei."},
+            {"role": "user", "content": "e no estatuto nacional?"},
+        ],
+    )
+    fatia = asyncio.run(ScoutingPack().prepare_context(view, pack_context("scouting")))
+    filtros = fatia["retrieval_filters"]
+    assert isinstance(filtros, dict) and filtros["anchor"] == REELEICAO
+    assert filtros["document_types"] == ["estatuto"]

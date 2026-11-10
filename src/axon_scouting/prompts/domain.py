@@ -7,6 +7,8 @@ identificador que o core mostra depois de `id:` em cada trecho (104 FR-007, ADR-
 a vigência. Desde a revisão do RAG de 2026-10-27, mais três: a cobertura parcial (o que não veio nos trechos não é o
 que não existe nos documentos), o conceito perguntado (sem trocar por um vizinho) e a resposta por ramo; e a lista de
 documentos pelas fichas do acervo (ADR-047); e a enumeração pela lista de unidades de um documento (ADR-048, FR-029).
+Desde o ADR-061, a hierarquia das normas: numa pergunta sobre um órgão ou sobre o que estatutos e regulamentos dizem, a
+resposta junta os níveis, do nacional ao local, e o nível de baixo completa o de cima sem contrariá-lo.
 O exemplo de citação é sintético — nunca um id do corpus. A resposta fala de documentos consultados, nunca de
 "trechos" (R37). O texto não manda chamar ferramenta: no `agentic`, o prompt de pack só chega à geração.
 """
@@ -47,6 +49,12 @@ sabe o que elas significam aqui.
 Responda ao conceito perguntado. O movimento tem conceitos vizinhos que não são a mesma coisa — por exemplo, o lema, o
 marco simbólico, a ênfase educativa, o símbolo e o sinal de cada ramo. Se a pergunta é sobre um deles e você só
 encontrou outro, não apresente um no lugar do outro: diga o que encontrou e que não encontrou o que foi perguntado.
+
+Quando a pergunta é sobre um órgão (uma diretoria, assembleia, conselho ou comissão) ou sobre o que estatutos e
+regulamentos dizem, junte o que chegou de cada nível — do nacional ao regional e ao local: primeiro a regra do nível de
+cima, depois o que o nível de baixo acrescenta. O regulamento de um nível completa o estatuto e as normas acima dele e
+não pode contrariá-los. Se chegou o documento de um nível só, responda com ele e diga que a norma do outro nível pode
+trazer regra complementar.
 
 Quando a pergunta é sobre vários ramos, organize a resposta por ramo, na ordem das idades (Filhotes, Lobinho, Escoteiro,
 Sênior, Pioneiro), e marque os ramos para os quais você não encontrou a informação.

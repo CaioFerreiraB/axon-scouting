@@ -1,0 +1,926 @@
+{
+  "style": {
+    "font-family": "Nunito Sans",
+    "background-color": "#F2F2F2",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#4C8EDA",
+    "border-width": 0,
+    "border-color": "#000000",
+    "radius": 75,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#ffffff",
+    "caption-font-size": 18,
+    "caption-font-weight": "bold",
+    "label-position": "inside",
+    "label-display": "bare",
+    "label-color": "#ffffff",
+    "label-background-color": "#848484",
+    "label-border-color": "#848484",
+    "label-border-width": 3,
+    "label-font-size": 14,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "above",
+    "detail-orientation": "parallel",
+    "arrow-width": 3,
+    "arrow-color": "#848484",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#848484",
+    "type-background-color": "#F2F2F2",
+    "type-border-color": "#848484",
+    "type-border-width": 0,
+    "type-font-size": 16,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#848484",
+    "property-font-size": 14,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "a1",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "caption": "Nivel",
+      "labels": [
+        "Organização"
+      ],
+      "properties": {
+        "id": "mundial|interamericano|nacional|regional|distrital|local",
+        "ordem": "0–5 (este nível e os de cima)",
+        "origem": "curado"
+      },
+      "style": {
+        "node-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "a2",
+      "position": {
+        "x": 450,
+        "y": 0
+      },
+      "caption": "TipoDeInstituicao",
+      "labels": [
+        "Organização"
+      ],
+      "properties": {
+        "id": "ueb|regiao|distrito|grupo_escoteiro|secao_autonoma",
+        "nome": "texto",
+        "aliases": "lista",
+        "origem": "curado"
+      },
+      "style": {
+        "node-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "a3",
+      "position": {
+        "x": 450,
+        "y": 450
+      },
+      "caption": "Instituicao",
+      "labels": [
+        "Organização"
+      ],
+      "properties": {
+        "id": "regiao_sp, ge_147_sp…",
+        "nome": "texto",
+        "aliases": "SP, Região de São Paulo, 147/SP",
+        "origem": "gerado do acervo (taxonomia e catálogo)"
+      },
+      "style": {
+        "node-color": "#68BDF6"
+      }
+    },
+    {
+      "id": "a4",
+      "position": {
+        "x": 950,
+        "y": 0
+      },
+      "caption": "TipoDeOrgao",
+      "labels": [
+        "Organização"
+      ],
+      "properties": {
+        "id": "diretoria_regional, assembleia_regional, can…",
+        "nome": "texto",
+        "aliases": "termos do léxico (DR, diretoria regional)",
+        "natureza": "deliberativo|executivo|fiscal|etico|consultivo|juvenil|apoio",
+        "instituido_em": "unit_id (ex.: Estatuto, Seção III)",
+        "origem": "curado"
+      },
+      "style": {
+        "node-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "a5",
+      "position": {
+        "x": 1250,
+        "y": 450
+      },
+      "caption": "Orgao",
+      "labels": [
+        "Organização"
+      ],
+      "properties": {
+        "id": "diretoria_regional@regiao_sp",
+        "origem": "gerado (tipo × instituição do acervo)"
+      },
+      "style": {
+        "node-color": "#68BDF6"
+      }
+    },
+    {
+      "id": "a6",
+      "position": {
+        "x": 1450,
+        "y": 0
+      },
+      "caption": "Cargo",
+      "labels": [
+        "Organização"
+      ],
+      "properties": {
+        "id": "diretor_vice_presidente_regional…",
+        "nome": "texto",
+        "aliases": "vice, vice-presidente",
+        "provimento": "eleito|nomeado",
+        "fonte": "unit_id · obrigatória",
+        "origem": "curado + LLM revisado"
+      },
+      "style": {
+        "node-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "a7",
+      "position": {
+        "x": 0,
+        "y": -450
+      },
+      "caption": "Ramo",
+      "labels": [
+        "Organização"
+      ],
+      "properties": {
+        "id": "filhotes|lobinho|escoteiro|senior|pioneiro",
+        "nome": "texto",
+        "aliases": "lista",
+        "origem": "léxico"
+      },
+      "style": {
+        "node-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "a8",
+      "position": {
+        "x": 450,
+        "y": -450
+      },
+      "caption": "TipoDeSecao",
+      "labels": [
+        "Organização"
+      ],
+      "properties": {
+        "id": "alcateia, tropa_escoteira, tropa_senior, cla…",
+        "nome": "texto",
+        "aliases": "lista",
+        "origem": "curado"
+      },
+      "style": {
+        "node-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "b1",
+      "position": {
+        "x": 450,
+        "y": 1000
+      },
+      "caption": "Documento",
+      "labels": [
+        "Normas"
+      ],
+      "properties": {
+        "doc_key": "estatuto-2024",
+        "versao": "texto",
+        "tipo": "id da taxonomia (estatuto, regulamento, ata…)",
+        "titulo": "texto",
+        "categoria": "taxonomia",
+        "subcategoria": "taxonomia",
+        "status": "vigente|substituido|revogado",
+        "vigencia": "início–fim",
+        "source_url": "link do original",
+        "origem": "documents.jsonl"
+      },
+      "style": {
+        "node-color": "#57A773"
+      }
+    },
+    {
+      "id": "b2",
+      "position": {
+        "x": 950,
+        "y": 1000
+      },
+      "caption": "Unidade",
+      "labels": [
+        "Normas"
+      ],
+      "properties": {
+        "unit_id": "estatuto-2024#u/art27-p3",
+        "kind": "titulo|capitulo|secao|artigo|regra|paragrafo|inciso|alinea|item_de_pauta…",
+        "rotulo": "Art. 27 · §3º · III",
+        "titulo": "Da Diretoria Regional",
+        "anchor": "art27-p3",
+        "pagina": "número",
+        "posicao": "início/fim no texto do trecho",
+        "origem": "árvore da ingestão"
+      },
+      "style": {
+        "node-color": "#57A773"
+      }
+    },
+    {
+      "id": "b3",
+      "position": {
+        "x": 1450,
+        "y": 1000
+      },
+      "caption": "Trecho",
+      "labels": [
+        "Normas"
+      ],
+      "properties": {
+        "chunk_id": "estatuto-2024#art27@p19",
+        "texto": "até 512 tokens",
+        "pagina": "número",
+        "forma": "prose|list|outline|summary",
+        "vetores": "e5 + BM25",
+        "origem": "chunks.jsonl"
+      },
+      "style": {
+        "node-color": "#57A773"
+      }
+    },
+    {
+      "id": "g1",
+      "position": {
+        "x": 450,
+        "y": 1550
+      },
+      "caption": "FichaDeReuniao",
+      "labels": [
+        "Busca global"
+      ],
+      "properties": {
+        "doc_key": "a ata",
+        "tipo": "ordinaria|extraordinaria",
+        "data": "AAAA-MM-DD",
+        "local": "texto",
+        "extracao": "modelo, data, sha256 da fonte",
+        "revisado": "data e quem",
+        "origem": "LLM offline + checagem de página"
+      },
+      "style": {
+        "node-color": "#C990C0"
+      }
+    },
+    {
+      "id": "g2",
+      "position": {
+        "x": 150,
+        "y": 1950
+      },
+      "caption": "Deliberacao",
+      "labels": [
+        "Busca global"
+      ],
+      "properties": {
+        "tema": "texto",
+        "decisao": "texto",
+        "votacao": "texto",
+        "pagina": "número"
+      },
+      "style": {
+        "node-color": "#C990C0"
+      }
+    },
+    {
+      "id": "g3",
+      "position": {
+        "x": 750,
+        "y": 1950
+      },
+      "caption": "Eleicao",
+      "labels": [
+        "Busca global"
+      ],
+      "properties": {
+        "eleito": "nome",
+        "mandato": "AAAA–AAAA",
+        "pagina": "número"
+      },
+      "style": {
+        "node-color": "#C990C0"
+      }
+    },
+    {
+      "id": "g4",
+      "position": {
+        "x": 1100,
+        "y": 1550
+      },
+      "caption": "LinhaDoTempo",
+      "labels": [
+        "Busca global"
+      ],
+      "properties": {
+        "orgao": "Orgao",
+        "ano": "AAAA",
+        "origem": "gerada das fichas por código"
+      },
+      "style": {
+        "node-color": "#C990C0"
+      }
+    },
+    {
+      "id": "g5",
+      "position": {
+        "x": 1600,
+        "y": 1550
+      },
+      "caption": "ResumoDeNorma",
+      "labels": [
+        "Busca global"
+      ],
+      "properties": {
+        "doc_key": "a norma",
+        "texto": "um parágrafo + seções",
+        "extracao": "modelo, data, sha256",
+        "revisado": "data e quem"
+      },
+      "style": {
+        "node-color": "#C990C0"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "r1",
+      "fromId": "a3",
+      "toId": "a2",
+      "type": "INSTANCIA_DE",
+      "properties": {},
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r2",
+      "fromId": "a3",
+      "toId": "a3",
+      "type": "PARTE_DE",
+      "properties": {},
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r3",
+      "fromId": "a2",
+      "toId": "a1",
+      "type": "DE_NIVEL",
+      "properties": {},
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r4",
+      "fromId": "a4",
+      "toId": "a2",
+      "type": "ORGAO_DE",
+      "properties": {},
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r5",
+      "fromId": "a5",
+      "toId": "a4",
+      "type": "INSTANCIA_DE",
+      "properties": {},
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r6",
+      "fromId": "a5",
+      "toId": "a3",
+      "type": "ORGAO_DE",
+      "properties": {},
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r7",
+      "fromId": "a6",
+      "toId": "a4",
+      "type": "INTEGRA",
+      "properties": {
+        "fonte": "unit_id · obrigatória"
+      },
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r8",
+      "fromId": "a8",
+      "toId": "a7",
+      "type": "DE_RAMO",
+      "properties": {},
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r9",
+      "fromId": "a8",
+      "toId": "a2",
+      "type": "PARTE_DE",
+      "properties": {},
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r10",
+      "fromId": "a4",
+      "toId": "a4",
+      "type": "ELEGE",
+      "properties": {
+        "fonte": "unit_id · obrigatória",
+        "modo": "chapa|unitaria",
+        "mandato": "texto da fonte",
+        "proveniencia": "regra|llm|curador",
+        "revisado": "data e quem"
+      },
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r11",
+      "fromId": "a4",
+      "toId": "a6",
+      "type": "ELEGE",
+      "properties": {
+        "fonte": "unit_id · obrigatória"
+      },
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r12",
+      "fromId": "a4",
+      "toId": "a4",
+      "type": "COMPOE",
+      "properties": {
+        "fonte": "unit_id · obrigatória",
+        "quantidade": "ex.: cinco membros eleitos"
+      },
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r13",
+      "fromId": "a4",
+      "toId": "a4",
+      "type": "FISCALIZA",
+      "properties": {
+        "fonte": "unit_id · obrigatória"
+      },
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r14",
+      "fromId": "a4",
+      "toId": "a4",
+      "type": "NOMEIA",
+      "properties": {
+        "fonte": "unit_id · obrigatória"
+      },
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r15",
+      "fromId": "a4",
+      "toId": "a4",
+      "type": "CONVOCA",
+      "properties": {
+        "fonte": "unit_id · obrigatória"
+      },
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r16",
+      "fromId": "a4",
+      "toId": "a4",
+      "type": "APRECIA_RECURSO_DE",
+      "properties": {
+        "fonte": "unit_id · obrigatória"
+      },
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r17",
+      "fromId": "a4",
+      "toId": "a2",
+      "type": "DIRIGE",
+      "properties": {
+        "fonte": "unit_id · obrigatória"
+      },
+      "style": {
+        "arrow-color": "#4C8EDA"
+      }
+    },
+    {
+      "id": "r20",
+      "fromId": "b1",
+      "toId": "b2",
+      "type": "CONTEM",
+      "properties": {},
+      "style": {
+        "arrow-color": "#57A773"
+      }
+    },
+    {
+      "id": "r21",
+      "fromId": "b2",
+      "toId": "b2",
+      "type": "CONTEM",
+      "properties": {},
+      "style": {
+        "arrow-color": "#57A773"
+      }
+    },
+    {
+      "id": "r22",
+      "fromId": "b2",
+      "toId": "b3",
+      "type": "NO_TRECHO",
+      "properties": {},
+      "style": {
+        "arrow-color": "#57A773"
+      }
+    },
+    {
+      "id": "r23",
+      "fromId": "b2",
+      "toId": "b2",
+      "type": "CITA",
+      "properties": {
+        "texto_citado": "Art. 28",
+        "resolvida": "sim|não",
+        "proveniencia": "regra"
+      },
+      "style": {
+        "arrow-color": "#57A773"
+      }
+    },
+    {
+      "id": "r24",
+      "fromId": "b2",
+      "toId": "b1",
+      "type": "CITA",
+      "properties": {
+        "texto_citado": "Estatuto da UEB, P.O.R., Resolução CAN 08/2021"
+      },
+      "style": {
+        "arrow-color": "#57A773"
+      }
+    },
+    {
+      "id": "r25",
+      "fromId": "b1",
+      "toId": "b1",
+      "type": "SUBORDINA_SE_A",
+      "properties": {
+        "motivo": "nivel|tipo|curada"
+      },
+      "style": {
+        "arrow-color": "#57A773"
+      }
+    },
+    {
+      "id": "r26",
+      "fromId": "b1",
+      "toId": "b1",
+      "type": "SUBSTITUI",
+      "properties": {
+        "origem": "linhagem do corpus.yaml"
+      },
+      "style": {
+        "arrow-color": "#57A773"
+      }
+    },
+    {
+      "id": "r27",
+      "fromId": "b1",
+      "toId": "b1",
+      "type": "REVOGA",
+      "properties": {
+        "em": "data do ato"
+      },
+      "style": {
+        "arrow-color": "#57A773"
+      }
+    },
+    {
+      "id": "r28",
+      "fromId": "b1",
+      "toId": "b2",
+      "type": "ALTERA",
+      "properties": {
+        "em": "data do ato"
+      },
+      "style": {
+        "arrow-color": "#57A773"
+      }
+    },
+    {
+      "id": "r30",
+      "fromId": "b2",
+      "toId": "a4",
+      "type": "DISCIPLINA",
+      "properties": {
+        "proveniencia": "titulo|llm",
+        "fonte": "a própria unidade",
+        "revisado": "obrigatório se llm"
+      },
+      "style": {
+        "arrow-color": "#F79767"
+      }
+    },
+    {
+      "id": "r31",
+      "fromId": "b2",
+      "toId": "a5",
+      "type": "DISCIPLINA",
+      "properties": {
+        "proveniencia": "titulo|llm"
+      },
+      "style": {
+        "arrow-color": "#F79767"
+      }
+    },
+    {
+      "id": "r32",
+      "fromId": "b2",
+      "toId": "a6",
+      "type": "DISCIPLINA",
+      "properties": {
+        "proveniencia": "titulo|llm"
+      },
+      "style": {
+        "arrow-color": "#F79767"
+      }
+    },
+    {
+      "id": "r33",
+      "fromId": "b2",
+      "toId": "a2",
+      "type": "DISCIPLINA",
+      "properties": {
+        "proveniencia": "titulo|llm"
+      },
+      "style": {
+        "arrow-color": "#F79767"
+      }
+    },
+    {
+      "id": "r34",
+      "fromId": "b2",
+      "toId": "a7",
+      "type": "DISCIPLINA",
+      "properties": {
+        "proveniencia": "titulo|llm"
+      },
+      "style": {
+        "arrow-color": "#F79767"
+      }
+    },
+    {
+      "id": "r35",
+      "fromId": "b1",
+      "toId": "a5",
+      "type": "EMITIDO_POR",
+      "properties": {
+        "origem": "categoria da taxonomia"
+      },
+      "style": {
+        "arrow-color": "#F79767"
+      }
+    },
+    {
+      "id": "r36",
+      "fromId": "b1",
+      "toId": "a3",
+      "type": "APLICA_SE_A",
+      "properties": {
+        "origem": "nível e pasta da taxonomia"
+      },
+      "style": {
+        "arrow-color": "#F79767"
+      }
+    },
+    {
+      "id": "r37",
+      "fromId": "b1",
+      "toId": "a1",
+      "type": "APLICA_SE_A",
+      "properties": {},
+      "style": {
+        "arrow-color": "#F79767"
+      }
+    },
+    {
+      "id": "r40",
+      "fromId": "g1",
+      "toId": "b1",
+      "type": "RESUME",
+      "properties": {},
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r41",
+      "fromId": "g1",
+      "toId": "a5",
+      "type": "REUNIAO_DE",
+      "properties": {},
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r42",
+      "fromId": "g1",
+      "toId": "g2",
+      "type": "TEM",
+      "properties": {},
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r43",
+      "fromId": "g1",
+      "toId": "g3",
+      "type": "TEM",
+      "properties": {},
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r44",
+      "fromId": "g2",
+      "toId": "b2",
+      "type": "FONTE",
+      "properties": {
+        "pagina": "conferida por código"
+      },
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r45",
+      "fromId": "g3",
+      "toId": "b2",
+      "type": "FONTE",
+      "properties": {
+        "pagina": "conferida por código"
+      },
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r46",
+      "fromId": "g3",
+      "toId": "a6",
+      "type": "PARA_CARGO",
+      "properties": {},
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r47",
+      "fromId": "g4",
+      "toId": "a5",
+      "type": "DE",
+      "properties": {},
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r48",
+      "fromId": "g4",
+      "toId": "g1",
+      "type": "REUNE",
+      "properties": {},
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r49",
+      "fromId": "g5",
+      "toId": "b1",
+      "type": "RESUME",
+      "properties": {},
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r50",
+      "fromId": "g1",
+      "toId": "b3",
+      "type": "VIRA_TRECHO",
+      "properties": {
+        "forma": "summary"
+      },
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r51",
+      "fromId": "g4",
+      "toId": "b3",
+      "type": "VIRA_TRECHO",
+      "properties": {
+        "forma": "summary"
+      },
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    },
+    {
+      "id": "r52",
+      "fromId": "g5",
+      "toId": "b3",
+      "type": "VIRA_TRECHO",
+      "properties": {
+        "forma": "summary"
+      },
+      "style": {
+        "arrow-color": "#C990C0"
+      }
+    }
+  ]
+}

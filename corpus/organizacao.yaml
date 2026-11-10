@@ -1,0 +1,184 @@
+# Organização do movimento: a camada A do grafo do scouting (relatório "Diretoria Regional", 2026-11-09).
+#
+# RASCUNHO para revisão do mantenedor. Ainda não é lido por nenhum código: a ingestão passa a lê-lo na Fase 2 do
+# relatório, quando o grafo for construído. O desenho está em `Organização Escoteira.revisado.json` (arrows.app).
+#
+# Só tipos e relações. As instâncias (a Região SP, o GE 147/SP, a "Diretoria Regional de SP") são geradas do acervo
+# pela ingestão, a partir da taxonomia e do catálogo; nenhuma UEL do Brasil é cadastrada aqui.
+#
+# `fonte` é o `chunk_id` do trecho que prova a relação. Na Fase 2, com parágrafo e inciso na árvore, ele vira o
+# `unit_id` do parágrafo. `citacao` é o pedaço do texto que a prova, para conferência. Uma relação sem prova encontrada
+# está com `fonte: a verificar` e não entra no grafo até ser conferida.
+#
+# `taxonomia` liga o tipo de órgão ao órgão da pasta (`bodies` no índice, o léxico da 101): é por ele que um documento
+# fica EMITIDO_POR um órgão.
+version: 1
+
+niveis:
+  - {id: mundial, ordem: 0}
+  - {id: interamericano, ordem: 1}
+  - {id: nacional, ordem: 2}
+  - {id: regional, ordem: 3}
+  - {id: distrital, ordem: 4}
+  - {id: local, ordem: 5}
+
+tipos_de_instituicao:
+  - {id: omme, nome: Organização Mundial do Movimento Escoteiro, nivel: mundial, aliases: [omme, wosm]}
+  - {id: regiao_interamericana, nome: Região Interamericana, nivel: interamericano, aliases: [regiao interamericana]}
+  - id: ueb
+    nome: União dos Escoteiros do Brasil
+    nivel: nacional
+    aliases: [ueb, escoteiros do brasil]
+    fonte: estatuto-2024#art6@p7
+    citacao: "A UEB está organizada em três níveis: I - o NACIONAL … II - o REGIONAL … III - o LOCAL"
+  - {id: regiao, nome: Região Escoteira, nivel: regional, aliases: [regiao, regiao escoteira], fonte: estatuto-2024#art6@p7}
+  - id: distrito
+    nome: Distrito Escoteiro
+    nivel: distrital
+    aliases: [distrito, distrito escoteiro]
+    fonte: estatuto-2024#art6@p7
+    citacao: "Os Distritos Escoteiros têm atribuições definidas pela Diretoria Regional"
+  - {id: grupo_escoteiro, nome: Grupo Escoteiro, nivel: local, aliases: [grupo escoteiro, ge], tipo_de: uel}
+  - {id: secao_escoteira_autonoma, nome: Seção Escoteira Autônoma, nivel: local, aliases: [secao autonoma], tipo_de: uel}
+
+tipos_de_orgao:
+  # --- nacional (Estatuto, Art. 12) ---------------------------------------------------------------------------------
+  - {id: assembleia_nacional, nome: Assembleia Nacional, nivel: nacional, instituicao: ueb, natureza: deliberativo,
+     aliases: [assembleia nacional], taxonomia: assembleias, instituido_em: estatuto-2024#art12@p9}
+  - {id: conselho_de_administracao_nacional, nome: Conselho de Administração Nacional, nivel: nacional,
+     instituicao: ueb, natureza: diretivo, aliases: [can, conselho de administracao nacional],
+     taxonomia: conselho_de_administracao_nacional, instituido_em: estatuto-2024#art16@p11}
+  - {id: diretoria_executiva_nacional, nome: Diretoria Executiva Nacional, nivel: nacional, instituicao: ueb,
+     natureza: executivo, aliases: [den, diretoria executiva nacional], taxonomia: diretoria_executiva_nacional,
+     instituido_em: estatuto-2024#art18@p14}
+  - {id: conselho_consultivo_nacional, nome: Conselho Consultivo, nivel: nacional, instituicao: ueb,
+     natureza: consultivo, aliases: [conselho consultivo nacional, ccn], taxonomia: conselho_consultivo,
+     instituido_em: estatuto-2024#art20@p15}
+  - {id: comissao_fiscal_nacional, nome: Comissão Fiscal Nacional, nivel: nacional, instituicao: ueb,
+     natureza: fiscal, aliases: [comissao fiscal nacional], taxonomia: comissao_fiscal,
+     instituido_em: estatuto-2024#art21@p15}
+  - {id: comissao_de_etica_nacional, nome: Comissão de Ética e Disciplina Nacional, nivel: nacional,
+     instituicao: ueb, natureza: etico, aliases: [comissao de etica nacional, cedn], taxonomia: comissao_de_etica,
+     instituido_em: estatuto-2024#art22@p16}
+  # --- regional (Estatuto, Art. 23; Regulamento da Região SP) --------------------------------------------------------
+  - {id: assembleia_regional, nome: Assembleia Regional, nivel: regional, instituicao: regiao,
+     natureza: deliberativo, aliases: [assembleia regional], taxonomia: assembleias,
+     instituido_em: estatuto-2024#art24@p17}
+  - {id: diretoria_regional, nome: Diretoria Regional, nivel: regional, instituicao: regiao, natureza: executivo,
+     aliases: [diretoria regional, dr], taxonomia: diretoria_regional, instituido_em: estatuto-2024#art27@p19}
+  - {id: comissao_fiscal_regional, nome: Comissão Fiscal Regional, nivel: regional, instituicao: regiao,
+     natureza: fiscal, aliases: [comissao fiscal regional], taxonomia: comissao_fiscal,
+     instituido_em: estatuto-2024#art29@p21}
+  - {id: comissao_de_etica_regional, nome: Comissão de Ética e Disciplina Regional, nivel: regional,
+     instituicao: regiao, natureza: etico, aliases: [comissao de etica regional, cedr], taxonomia: comissao_de_etica,
+     instituido_em: estatuto-2024#art30@p21, nota: "de criação facultativa"}
+  - {id: conselho_consultivo_regional, nome: Conselho Consultivo Regional, nivel: regional, instituicao: regiao,
+     natureza: consultivo, aliases: [conselho consultivo regional], taxonomia: conselho_consultivo,
+     instituido_em: regulamento-regional-sp-2022#art44@p17}
+  - {id: escritorio_regional, nome: Escritório Regional, nivel: regional, instituicao: regiao, natureza: apoio,
+     aliases: [escritorio regional], instituido_em: a verificar, nota: "citado no Estatuto, Art. 28, XIV"}
+  - {id: conselho_regional_jovem, nome: Conselho Regional Jovem, nivel: regional, instituicao: regiao,
+     natureza: juvenil, aliases: [conselho jovem, conselho regional jovem], taxonomia: conselho_jovem,
+     instituido_em: a verificar}
+  - {id: conselho_regional_velhos_lobos, nome: Conselho Regional dos Portadores da Medalha de Velhos Lobos,
+     nivel: regional, instituicao: regiao, natureza: consultivo, aliases: [velhos lobos],
+     taxonomia: conselho_de_velhos_lobos, instituido_em: a verificar}
+  - {id: comissao_regional_pioneira, nome: Comissão Regional Pioneira, nivel: regional, instituicao: regiao,
+     natureza: juvenil, aliases: [comissao regional pioneira, forum regional pioneiro],
+     taxonomia: comissao_regional_pioneira, instituido_em: a verificar}
+  - {id: rede_de_jovens_lideres, nome: Rede de Jovens Líderes, nivel: nacional, instituicao: ueb, natureza: juvenil,
+     aliases: [rede de jovens lideres, rnjl], taxonomia: rede_de_jovens_lideres, instituido_em: a verificar,
+     nota: "tem núcleos e fóruns regionais (Regulamento Geral da RNJL, Título IV)"}
+  # --- local (Estatuto, Art. 31) -------------------------------------------------------------------------------------
+  - {id: assembleia_de_grupo, nome: Assembleia de Grupo, nivel: local, instituicao: grupo_escoteiro,
+     natureza: deliberativo, aliases: [assembleia de grupo], instituido_em: estatuto-2024#art32@p22}
+  - {id: diretoria_de_grupo, nome: Diretoria de Grupo, nivel: local, instituicao: grupo_escoteiro,
+     natureza: executivo, aliases: [diretoria de grupo, diretoria do grupo], instituido_em: estatuto-2024#art35@p24}
+  - {id: comissao_fiscal_de_grupo, nome: Comissão Fiscal de Grupo, nivel: local, instituicao: grupo_escoteiro,
+     natureza: fiscal, aliases: [comissao fiscal de grupo], instituido_em: estatuto-2024#art37@p26}
+  - {id: conselho_de_pais, nome: Conselho de Pais, nivel: local, instituicao: grupo_escoteiro, natureza: apoio,
+     aliases: [conselho de pais], instituido_em: estatuto-2024#art40@p26, nota: "um por seção"}
+
+cargos:
+  - {id: presidente_ueb, nome: Presidente da UEB, orgao: diretoria_executiva_nacional, provimento: a verificar,
+     fonte: estatuto-2024#art18@p14, citacao: "constituído pelo Presidente e pelos dois Vice-Presidentes da UEB"}
+  - {id: vice_presidente_ueb, nome: Vice-Presidente da UEB, orgao: diretoria_executiva_nacional,
+     provimento: a verificar, fonte: estatuto-2024#art18@p14}
+  - {id: conselheiro_nacional, nome: Conselheiro Nacional, orgao: conselho_de_administracao_nacional,
+     provimento: eleito, aliases: [conselheiro nacional, conselheiros nacionais], fonte: estatuto-2024#art16@p11}
+  - {id: diretor_presidente_regional, nome: Diretor-Presidente Regional, orgao: diretoria_regional,
+     provimento: eleito, aliases: [diretor presidente, diretor-presidente, presidente da regiao],
+     fonte: estatuto-2024#art27@p19, citacao: "sendo um deles o Diretor-Presidente, que coordena, dirige e representa a Região"}
+  # Os quatro abaixo são da Região SP (Regulamento, Art. 26): o Estatuto deixa ao regulamento regional o número e as
+  # atribuições dos diretores (Art. 27, §1º).
+  - {id: diretor_vice_presidente_regional, nome: Diretor Vice-presidente Regional, orgao: diretoria_regional,
+     instituicao: regiao_sp, provimento: eleito, aliases: [vice presidente, vice-presidente, vice],
+     fonte: regulamento-regional-sp-2022#art26@p9}
+  - {id: diretor_financeiro_regional, nome: Diretor Financeiro Regional, orgao: diretoria_regional,
+     instituicao: regiao_sp, provimento: eleito, aliases: [diretor financeiro], fonte: regulamento-regional-sp-2022#art26@p9}
+  - {id: diretor_administrativo_regional, nome: Diretor Administrativo Regional, orgao: diretoria_regional,
+     instituicao: regiao_sp, provimento: eleito, aliases: [diretor administrativo],
+     fonte: regulamento-regional-sp-2022#art26@p9}
+  - {id: diretor_relacoes_institucionais_regional, nome: Diretor de Relações Institucionais Regional,
+     orgao: diretoria_regional, instituicao: regiao_sp, provimento: eleito,
+     aliases: [diretor de relacoes institucionais], fonte: regulamento-regional-sp-2022#art26@p9}
+  - {id: diretor_presidente_de_grupo, nome: Diretor-Presidente de Grupo, orgao: diretoria_de_grupo, provimento: eleito,
+     fonte: estatuto-2024#art35@p24, citacao: "sendo um deles o Diretor-Presidente, que coordena, dirige e representa o Grupo"}
+
+ramos:
+  - {id: filhotes, nome: Ramo Filhotes, secao: ninhada}
+  - {id: lobinho, nome: Ramo Lobinho, secao: alcateia}
+  - {id: escoteiro, nome: Ramo Escoteiro, secao: tropa_escoteira}
+  - {id: senior, nome: Ramo Sênior, secao: tropa_senior}
+  - {id: pioneiro, nome: Ramo Pioneiro, secao: cla}
+  # Os nomes das seções vêm do léxico da 101; a fonte no POR fica a verificar.
+
+relacoes:
+  # --- quem elege quem -----------------------------------------------------------------------------------------------
+  - {tipo: ELEGE, de: assembleia_nacional, para: conselho_de_administracao_nacional, modo: "até 3 candidatos por eleitor",
+     periodicidade: bienal (metade), fonte: estatuto-2024#art13@p10,
+     citacao: "bienalmente, 1/2 (metade) dos membros com direito a voto do Conselho de Administração Nacional"}
+  - {tipo: ELEGE, de: assembleia_nacional, para: comissao_fiscal_nacional, modo: unitaria, fonte: estatuto-2024#art13@p10}
+  - {tipo: ELEGE, de: assembleia_nacional, para: comissao_de_etica_nacional, modo: unitaria, fonte: estatuto-2024#art13@p10}
+  - {tipo: ELEGE, de: assembleia_regional, para: diretoria_regional, modo: chapa, periodicidade: trienal,
+     fonte: estatuto-2024#art24@p17,
+     citacao: "eleger … trienalmente, os membros da Diretoria Regional, por chapa"}
+  - {tipo: ELEGE, de: assembleia_regional, para: comissao_fiscal_regional, modo: unitaria, periodicidade: trienal,
+     fonte: estatuto-2024#art24@p17}
+  - {tipo: ELEGE, de: assembleia_regional, para: comissao_de_etica_regional, modo: unitaria, periodicidade: trienal,
+     fonte: estatuto-2024#art24@p17, nota: "se houver"}
+  - {tipo: ELEGE, de: assembleia_de_grupo, para: diretoria_de_grupo, modo: chapa, periodicidade: bienal,
+     fonte: estatuto-2024#art32@p22}
+  - {tipo: ELEGE, de: assembleia_de_grupo, para: comissao_fiscal_de_grupo, modo: unitaria, periodicidade: bienal,
+     fonte: estatuto-2024#art32@p22}
+  - {tipo: ELEGE, de: conselho_de_administracao_nacional, para: diretoria_executiva_nacional, fonte: a verificar,
+     nota: "o desenho original dizia CAN NOMEIA DEN; o Art. 18, §1º só diz que os membros da DEN podem ser escolhidos entre os conselheiros"}
+  # --- composição ------------------------------------------------------------------------------------------------------
+  - {tipo: COMPOE, de: diretoria_regional, para: assembleia_regional, quantidade: cinco membros eleitos,
+     fonte: estatuto-2024#art25@p18, citacao: "I - de cinco membros eleitos da Diretoria Regional"}
+  - {tipo: COMPOE, de: diretoria_de_grupo, para: assembleia_regional, quantidade: um representante por Grupo,
+     fonte: estatuto-2024#art25@p18}
+  - {tipo: COMPOE, de: conselho_de_administracao_nacional, para: assembleia_regional,
+     quantidade: os conselheiros titulares residentes na Região, fonte: estatuto-2024#art25@p18}
+  - {tipo: COMPOE, de: diretoria_de_grupo, para: assembleia_de_grupo, quantidade: três membros eleitos,
+     fonte: estatuto-2024#art33@p23}
+  - {tipo: COMPOE, de: diretoria_regional, para: conselho_consultivo_regional, quantidade: os diretores regionais eleitos,
+     fonte: regulamento-regional-sp-2022#art44@p17}
+  - {tipo: INTEGRA, de: diretor_presidente_regional, para: conselho_consultivo_nacional,
+     fonte: estatuto-2024#art20@p15, citacao: "formado pelos Diretores-Presidentes das Regiões"}
+  # --- convocação, fiscalização, recurso, direção ----------------------------------------------------------------------
+  - {tipo: CONVOCA, de: diretoria_regional, para: assembleia_regional, fonte: estatuto-2024#art26@p18,
+     citacao: "por convocação da Diretoria Regional, feita com antecedência mínima de trinta dias"}
+  - {tipo: CONVOCA, de: diretoria_de_grupo, para: assembleia_de_grupo, fonte: estatuto-2024#art34@p23}
+  - {tipo: FISCALIZA, de: comissao_fiscal_regional, para: diretoria_regional, fonte: estatuto-2024#art29@p21,
+     citacao: "para analisar e emitir relatório à Diretoria Regional quanto aos balancetes mensais"}
+  - {tipo: FISCALIZA, de: comissao_fiscal_de_grupo, para: diretoria_de_grupo, fonte: estatuto-2024#art38@p26}
+  - {tipo: FISCALIZA, de: comissao_fiscal_nacional, para: diretoria_executiva_nacional, fonte: a verificar,
+     nota: "o Art. 21 diz 'gestão patrimonial e financeira nacional', sem nomear o órgão fiscalizado"}
+  - {tipo: APRECIA_RECURSO_DE, de: diretoria_regional, para: diretoria_de_grupo, materia: disciplinar,
+     fonte: estatuto-2024#art28@p20,
+     citacao: "apreciar, em grau de recurso, as decisões das Diretorias de Grupos Escoteiros"}
+  - {tipo: DIRIGE, de: diretoria_regional, para: distrito, fonte: estatuto-2024#art23@p16,
+     citacao: "os Distritos Escoteiros, que têm atribuições definidas pela Diretoria Regional"}
+  - {tipo: DIRIGE, de: diretoria_regional, para: regiao, fonte: estatuto-2024#art27@p19}
+  - {tipo: DIRIGE, de: diretoria_de_grupo, para: grupo_escoteiro, fonte: estatuto-2024#art35@p24}
