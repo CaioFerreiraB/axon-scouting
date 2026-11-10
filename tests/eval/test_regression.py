@@ -1,4 +1,5 @@
-"""Os conjuntos de regressão e do acervo, só com os contratos (spec 105 US6, FR-015; research R15, R22).
+"""Os conjuntos de regressão, do acervo, de síntese e de programa e adultos, só com os contratos (spec 105 US6, US7,
+FR-015, FR-021–FR-023; research R15, R22, R26).
 
 Confere o formato que o harness da 009 lê e as regras do domínio: todo item declara fatos em `extra.facts`, e todo fato
 existe no texto do artefato do índice — um fato que nenhum trecho contém tornaria o item impossível, e a métrica
@@ -23,10 +24,28 @@ ROOT = Path(__file__).resolve().parents[2]
 REGRESSION = ROOT / "eval" / "regression.yaml"
 ACERVO = ROOT / "eval" / "acervo.yaml"
 SINTESE = ROOT / "eval" / "sintese.yaml"
+PROGRAMA = ROOT / "eval" / "programa-adultos.yaml"
 CHUNKS = ROOT / "src" / "axon_scouting" / "data" / "index" / "chunks.jsonl"
 GROUPS = frozenset({"individual", "agregado", "comparativo", "normativo", "lista", "pessoa"})
 ACERVO_GROUPS = frozenset({"simples", "lista", "comparativo", "multidocumento", "normativo"})
 SINTESE_GROUPS = frozenset({"eleicoes", "numeros", "pauta", "locais"})
+PROGRAMA_GROUPS = frozenset(
+    {
+        "o_que_e",
+        "requisitos",
+        "duas_entidades",
+        "lista_documentos",
+        "lista_itens",
+        "cada_ramo",
+        "situada",
+        "orgao",
+        "historico",
+        "mudanca",
+        "publicacoes",
+        "obrigatorio",
+    }
+)
+"""As formas de pergunta que as consultas do grafo de domínio atendem (ADR-064; relatório do grafo, seção 11.6)."""
 SPLITS = frozenset({"desenvolvimento", "controle"})
 
 
@@ -138,3 +157,35 @@ def test_sintese_tem_controle_em_cada_grupo() -> None:
     items = yaml.safe_load(SINTESE.read_text(encoding="utf-8"))["items"]
     for group in SINTESE_GROUPS:
         assert {item["extra"]["split"] for item in items if item["extra"]["group"] == group} == SPLITS, group
+
+
+def test_programa_sem_problemas(texts: list[str]) -> None:
+    """US7 (ADR-064): as perguntas de programa e adultos, com os fatos presentes no artefato."""
+    programa = yaml.safe_load(PROGRAMA.read_text(encoding="utf-8"))
+    assert _problems(programa, texts, PROGRAMA_GROUPS) == []
+
+
+def test_programa_tem_controle_em_cada_grupo() -> None:
+    items = yaml.safe_load(PROGRAMA.read_text(encoding="utf-8"))["items"]
+    assert {item["extra"]["group"] for item in items} == PROGRAMA_GROUPS
+    for group in PROGRAMA_GROUPS:
+        assert {item["extra"]["split"] for item in items if item["extra"]["group"] == group} == SPLITS, group
+
+
+def test_programa_tamanho_e_metade_de_controle() -> None:
+    """De 24 a 36 itens, e metade de controle com folga de um (FR-021, FR-022)."""
+    items = yaml.safe_load(PROGRAMA.read_text(encoding="utf-8"))["items"]
+    control = sum(1 for item in items if item["extra"]["split"] == "controle")
+    assert 24 <= len(items) <= 36
+    assert abs(control - (len(items) - control)) <= 1
+
+
+def test_programa_nao_repete_perguntas_de_outros_conjuntos() -> None:
+    """Cada conjunto mede perguntas próprias (FR-021)."""
+    others = {
+        normalize(item["question"])
+        for path in (REGRESSION, ACERVO, SINTESE, ROOT / "eval" / "golden.yaml")
+        for item in yaml.safe_load(path.read_text(encoding="utf-8"))["items"]
+    }
+    items = yaml.safe_load(PROGRAMA.read_text(encoding="utf-8"))["items"]
+    assert [item["id"] for item in items if normalize(item["question"]) in others] == []

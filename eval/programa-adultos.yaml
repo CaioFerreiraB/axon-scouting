@@ -1,0 +1,481 @@
+# Conjunto de programa, adultos e formas de pergunta (spec 105 US7, research R26; ADR-064).
+#
+# Escrito antes de qualquer código do grafo de domínio (106), lendo os PDFs: cada fato de `extra.facts` foi copiado do
+# texto do original na ordem de leitura do PdfiumParser, sem passar pelo índice, e conferido contra ele e contra o texto
+# do artefato. Nenhuma pergunta repete ou parafraseia uma do acervo, da regressão, da síntese ou da semente.
+#
+# Os grupos são as formas de pergunta que as consultas do grafo atendem (relatório do grafo, seção 11.6):
+#   o_que_e            o que é, como funciona
+#   requisitos         quem pode, que requisitos
+#   duas_entidades     duas entidades ao mesmo tempo (ramo × cargo, ramo × conceito…)
+#   lista_documentos   uma lista de documentos
+#   lista_itens        uma lista de itens dentro de documentos
+#   cada_ramo          cada ramo, comparação
+#   situada            numa instituição: o GE Professora Inah de Mello
+#   orgao              o que as normas dizem de um órgão
+#   historico          histórico de um órgão, de um cargo ou de um documento (atas)
+#   mudanca            o que mudou numa norma (resoluções)
+#   publicacoes        o que um órgão publicou
+#   obrigatorio        obrigatório × recomendado
+# `extra.split` separa `desenvolvimento` — o que se lê para diagnosticar — de `controle` — o que só se mede.
+version: 1
+name: scouting-programa-adultos
+assistant: scouting
+items:
+  # --- o_que_e ---------------------------------------------------------------------------------------------------
+  - id: insignia-de-madeira
+    question: "O que é a Insígnia de Madeira?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      É o símbolo de reconhecimento concedido aos adultos que satisfazem os critérios de capacitação da formação da
+      Insígnia de Madeira; corresponde ao programa de formação reconhecido por 2 contas (Marco de Referência da
+      Insígnia de Madeira, p. 11–12).
+    extra:
+      group: o_que_e
+      split: desenvolvimento
+      facts:
+        - "é o símbolo de reconhecimento concedido a todos os adultos"
+        - "IM se refere ao Programa de Formação reconhecido por 2 contas"
+
+  - id: papel-do-apf
+    question: "O que faz o Assessor Pessoal de Formação e quem o designa?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      É o adulto designado para acompanhar, orientar e apoiar o escotista ou dirigente em seu processo de formação;
+      é designado pela Diretoria do órgão que fez a captação (Política Nacional de Adultos, seção 6, p. 30).
+    extra:
+      group: o_que_e
+      split: controle
+      facts:
+        - "é o adulto designado para acompanhar, orientar e apoiar o"
+        - "é designado pela Diretoria do órgão que desenvolveu o processo de"
+
+  # --- requisitos ------------------------------------------------------------------------------------------------
+  - id: requisitos-do-apf
+    question: "Que requisitos um adulto deve atender para ser Assessor Pessoal de Formação de outro?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Preferencialmente: atuar na mesma estrutura do assessorado, ter mais conhecimento e vivência do Movimento na
+      mesma linha, mais experiência de vida e maturidade, nível de formação superior ao de quem assessora e buscar a
+      atualização da própria formação (Política Nacional de Adultos, seção 6.1, p. 31).
+    extra:
+      group: requisitos
+      split: desenvolvimento
+      facts:
+        - "Ter maior experiência de vida e maturidade"
+        - "Possuir Nível de Formação superior"
+        - "Buscar a atualização permanente da sua própria formação"
+
+  - id: requisitos-do-intermediario
+    question: "O que um adulto precisa ter cumprido para fazer o curso de nível intermediário da formação?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Ter concluído o Nível Preliminar, ter feito a Promessa Escoteira, estar em dia com o registro e com as
+      obrigações junto à UEL e ter a recomendação do seu Assessor Pessoal de Formação (POR, Regra 130, na redação da
+      Resolução CAN 05/2021).
+    extra:
+      group: requisitos
+      split: controle
+      facts:
+        - "Ter concluído o Nível Preliminar"
+        - "Ter feito a Promessa Escoteira"
+
+  # --- duas_entidades --------------------------------------------------------------------------------------------
+  - id: chefe-de-secao-autonoma
+    question: "Numa seção escoteira autônoma, a quem o chefe de seção se reporta?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Diretamente ao Conselho de Pais; num grupo escoteiro, o chefe de seção se reporta à Diretoria de Métodos
+      Educativos (Perfis: Cargos e Funções — Nível Local, p. 20–21).
+    extra:
+      group: duas_entidades
+      split: desenvolvimento
+      facts:
+        - "Nas seções escoteiras autônomas o chefe de seção dirige-se diretamente ao Conselho de Pais"
+
+  - id: lobinho-acampamento-volante
+    question: "Lobinhos podem fazer acampamento volante ou acampamento de longa duração?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Não: os acampamentos de longa duração não são apropriados para lobinhos, e os volantes não acontecem no Ramo
+      Lobinho (Instrução Regional 01/2014, itens 4 e 5).
+    extra:
+      group: duas_entidades
+      split: desenvolvimento
+      facts:
+        - "Esses acampamentos não são apropriados para Lobinhos"
+        - "Esses acampamentos não acontecem no Ramo Lobinho"
+
+  - id: pioneiro-modalidade-do-mar
+    question: "Um clã pioneiro pode adotar a Modalidade do Mar?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Não como modalidade: as Modalidades do Ar e do Mar se desenvolvem exclusivamente nos Ramos Escoteiro e Sênior, e
+      os Ramos Lobinho e Pioneiro não as desenvolvem, embora possam fazer atividades náuticas ocasionais (Política
+      Nacional de Programa Educativo, Generalidades).
+    extra:
+      group: duas_entidades
+      split: controle
+      facts:
+        - "os Ramos Lobinho e Pioneiro não desenvolvem as Modalidades do Ar e do Mar"
+        - "se desenvolvem exclusivamente nos Ramos Escoteiro e Sênior"
+
+  # --- lista_documentos ------------------------------------------------------------------------------------------
+  - id: instrucoes-normativas-sp
+    question: "Quais instruções normativas a Região Escoteira de São Paulo publicou?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Entre outras: a Instrução Regional 01/2014 (tipos de atividades), as Instruções Normativas 002, 004 e 005 de
+      2017, a 01/2022 (equipe dos comissários distritais), a 2024.02 (iniciativas de formação), a 2024.03 (descritivo
+      de atividades), a 2025.01 (prestação de contas) e a 2025.02 (cartão corporativo).
+    extra:
+      group: lista_documentos
+      split: desenvolvimento
+      facts:
+        - "Instrução Normativa 2024.02"
+        - "Instrução Regional 01/2014"
+        - "Instrução Normativa 2025.01"
+
+  - id: documentos-para-abrir-secao
+    question: "Que documentos orientam quem vai abrir uma seção nova, em cada ramo?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Os manuais "Começando uma Ninhada" (Filhotes) e "Os Primeiros Meses de uma Nova Alcateia", "… de uma Nova Tropa
+      Escoteira", "… de uma Nova Tropa Sênior" e "… de um Novo Clã Pioneiro".
+    extra:
+      group: lista_documentos
+      split: controle
+      facts:
+        - "Os Primeiros Meses de uma Nova Alcateia"
+        - "Os Primeiros Meses de um Novo Clã Pioneiro"
+        - "Começando uma Ninhada"
+
+  # --- lista_itens -----------------------------------------------------------------------------------------------
+  - id: cargos-de-dirigente-local
+    question: "Quais cargos de dirigente de um grupo escoteiro o perfil de cargos do nível local descreve?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Diretor-presidente, diretor de métodos educativos, diretor financeiro, diretor administrativo e membro da
+      comissão fiscal, além do APF (Perfis: Cargos e Funções — Nível Local, linha dirigente).
+    extra:
+      group: lista_itens
+      split: desenvolvimento
+      facts:
+        - "DIRETOR DE MÉTODOS EDUCATIVOS"
+        - "DIRETOR ADMINISTRATIVO"
+        - "MEMBRO DE COMISSÃO FISCAL"
+
+  - id: areas-de-desenvolvimento
+    question: "Quais são as áreas de desenvolvimento em que o Programa Educativo organiza as competências?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Seis: físico, intelectual, social, afetivo, espiritual e caráter (Política Nacional de Programa Educativo, seção
+      7, B).
+    extra:
+      group: lista_itens
+      split: controle
+      facts:
+        - "físico, intelectual, social, afetivo, espiritual e caráter"
+
+  # --- cada_ramo -------------------------------------------------------------------------------------------------
+  - id: nome-do-chefe-de-cada-ramo
+    question: "Qual é o nome do cargo de chefe de seção em cada ramo?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Chefe de Alcateia (Lobinho), Chefe de Tropa Escoteira, Chefe de Tropa Sênior/Guia e Chefe de Clã Pioneiro, o
+      Mestre Pioneiro (Perfis: Cargos e Funções — Nível Local, linha escotista).
+    extra:
+      group: cada_ramo
+      split: desenvolvimento
+      facts:
+        - "CHEFE DE ALCATEIA"
+        - "CHEFE DE TROPA ESCOTEIRA"
+        - "CHEFE DE TROPA SÊNIOR/GUIA"
+        - "MESTRE PIONEIRO"
+
+  - id: acampamentos-por-ano
+    question: "Quantas vezes por ano a alcateia e as tropas devem acampar?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      O ideal é que a alcateia acampe ou acantone no mínimo duas vezes ao ano, e que as tropas acampem de 3 a 6 vezes,
+      buscando 12 dias de acampamento no ano (Instrução Regional 01/2014, item 1).
+    extra:
+      group: cada_ramo
+      split: controle
+      facts:
+        - "a Alcateia acampe/acantone no mínimo duas vezes ao ano"
+        - "acampam de 3 a 6 vezes, procurando alcançar 12 dias de acampamento em um ano"
+
+  # --- situada ---------------------------------------------------------------------------------------------------
+  - id: inah-subsidio-de-cursos
+    question: "O GE Professora Inah de Mello ajuda a pagar cursos de formação dos seus voluntários? Em que condições?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Sim, por reembolso integral ou parcial, para iniciativas formativas da Política Nacional de Adultos ligadas à
+      função do voluntário, com registro ativo na UEB, indicação do Diretor de Gestão de Adultos, recomendação do APF e
+      previsão orçamentária; o voluntário apresenta o certificado (Política de Subsídio de Iniciativas Formativas do
+      GEPIM, arts. 5–7).
+    extra:
+      group: situada
+      split: desenvolvimento
+      facts:
+        - "reembolso integral"
+        - "registro ativo na UEB"
+        - "Indicação do Diretor(a) de Gestão de adultos"
+
+  - id: inah-diretor-de-programa-e-adultos
+    question: "No GE Professora Inah de Mello, que diretor a diretoria de grupo é obrigada a nomear depois de eleita?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Um diretor responsável por programa educativo e gestão de adultos, além dos três eleitos (presidente,
+      financeiro e administrativo) (Estatuto do GE Professora Inah de Mello, art. 10, I).
+    extra:
+      group: situada
+      split: controle
+      facts:
+        - "diretor responsável por programa educativo e gestão de adultos"
+
+  - id: inah-conselho-de-escotistas
+    question: "No GE Professora Inah de Mello, o que é o conselho de escotistas e com que frequência ele se reúne?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      É o órgão consultivo sobre a pedagogia e a aplicação do programa, composto por todos os escotistas do grupo, e se
+      reúne bimestralmente (Estatuto do GE Professora Inah de Mello, art. 18).
+    extra:
+      group: situada
+      split: controle
+      facts:
+        - "O conselho de escotistas é órgão consultivo sobre a pedagogia"
+        - "se reunirá bimestralmente"
+
+  - id: inah-balanco-rejeitado
+    question: "No GE Professora Inah de Mello, quem aprova o balanço anual, e o que acontece se ele for rejeitado?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      A assembleia de grupo delibera sobre as contas e o balanço anual, com o parecer da comissão fiscal de grupo,
+      como manda o Estatuto da UEB (art. 32, V); pelo estatuto do GE, rejeitado o balanço, a diretoria tem 30 dias para
+      reapresentá-lo, e a reunião ordinária fica em sessão permanente (Estatuto do GE, art. 7 do capítulo da
+      assembleia).
+    extra:
+      group: situada
+      split: desenvolvimento
+      facts:
+        - "a diretoria do grupo terá um prazo de 30 dias a contar da data de sua rejeição"
+        - "deliberar sobre as contas e o balanço anual do Grupo Escoteiro, mediante parecer da Comissão Fiscal de Grupo"
+
+  - id: inah-voto-dos-jovens
+    question: "Quem vota na assembleia de grupo do GE Professora Inah de Mello, e por que os jovens podem participar dela?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Votam os beneficiários a partir de 16 anos, os de 6,5 a 15 anos por um dos representantes legais e os demais
+      associados com registro ativo (Estatuto do GE, art. 9º); o Estatuto da UEB admite na assembleia de grupo a
+      representação juvenil, quando prevista no estatuto ou regulamento do grupo (art. 33, V).
+    extra:
+      group: situada
+      split: controle
+      facts:
+        - "Beneficiários a partir de 16 anos"
+        - "de representação juvenil, caso seja prevista no regulamento ou estatuto do Grupo Escoteiro"
+
+  # --- orgao -----------------------------------------------------------------------------------------------------
+  - id: conselho-regional-jovem
+    question: "Quem compõe o Conselho Regional Jovem de São Paulo e com que frequência ele se reúne?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      O Diretor Regional Jovem e adjuntos, os membros eleitos do Núcleo Regional de Jovens Líderes e da Comissão
+      Pioneira Regional e os jovens líderes das pastas da Diretoria Regional; reúne-se ordinariamente uma vez por
+      quadrimestre (Regimento Interno do Conselho Regional Jovem, arts. 2º e 4º).
+    extra:
+      group: orgao
+      split: desenvolvimento
+      facts:
+        - "membros eleitos do Núcleo Regional de Jovens Líderes"
+        - "ordinariamente, uma vez por quadrimestre"
+
+  - id: direcao-do-cla
+    question: "Quem dirige um clã pioneiro, e os escotistas votam na Assembleia de Clã?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      O clã é dirigido por uma Comissão Administrativa (COMAD), definida na Carta Pioneira; a equipe de escotistas
+      participa das reuniões da Assembleia de Clã sem direito a voto (POR, Regras 113 e 114).
+    extra:
+      group: orgao
+      split: controle
+      facts:
+        - "O Clã é dirigido por uma Comissão Administrativa (COMAD)"
+        - "sem que seus integrantes tenham direito a voto"
+
+  # --- historico -------------------------------------------------------------------------------------------------
+  - id: sedes-do-forum-pioneiro
+    question: "Que cidades foram escolhidas para sediar o Fórum Regional Pioneiro de São Paulo de 2023 e de 2024?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Mogi das Cruzes para 2023, escolhida na Assembleia Regional Pioneira de 2022 com 15 votos, e Jundiaí para 2024,
+      eleita no I Fórum Regional Pioneiro (2023) com 17 votos, contra Guarulhos e São Carlos.
+    extra:
+      group: historico
+      split: desenvolvimento
+      facts:
+        - "Cidade-sede do FRPi 2023: Cidade de Mogi das Cruzes"
+        - "eleita a cidade de Jundiaí para sediar o evento, com 17 votos"
+
+  - id: presidencia-da-cp
+    question: "Quem presidia a Comissão Regional Pioneira de São Paulo na gestão 2022, e quem foi o mais votado para a de 2023?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Robert Gabriel de Sousa Santos presidia a CP da gestão 2022; na eleição do I Fórum Regional Pioneiro (2023), o
+      mais votado foi Tyago Ferreira dos Reis, com 17,67% (ata do I Fórum Regional Pioneiro).
+    extra:
+      group: historico
+      split: desenvolvimento
+      facts:
+        - "Robert Gabriel de Sousa Santos, presidente"
+        - "Tyago Ferreira dos Reis (17,67%)"
+
+  - id: regulamento-do-forum-pioneiro
+    question: "Quando o Fórum Regional Pioneiro de São Paulo aprovou o seu regulamento novo, e com quantos votos?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Na Reunião Extraordinária de 16 de fevereiro de 2025, em Campinas, por 19 votos favoráveis, 3 nulos e nenhum
+      contrário (ata da Reunião Extraordinária do Fórum Regional Pioneiro).
+    extra:
+      group: historico
+      split: controle
+      facts:
+        - "o Regulamento foi aprovado por 19 (dezenove) votos favoráveis"
+
+  # --- mudanca ---------------------------------------------------------------------------------------------------
+  - id: mudanca-implantacao-filhotes
+    question: "O que mudou nas regras do POR para abrir uma seção do Ramo Filhotes, e por quais resoluções?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      A Resolução CAN 15/2025 alterou o inciso I da Regra 057: o grupo precisa ter pelo menos três das demais seções;
+      a Resolução CAN 01/2026 alterou o inciso II da Regra 030 para harmonizá-lo com a 057, que era mais restritiva.
+    extra:
+      group: mudanca
+      split: desenvolvimento
+      facts:
+        - "Altera a redação da Regra 057"
+        - "harmonizar a Regra 030 - Novas Seções, com a Regra 057"
+        - "deverá já contar com pelo menos três"
+
+  - id: mudanca-distintivo-de-idiomas
+    question: "Que resolução incluiu a LIBRAS no distintivo de idiomas do POR?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      A Resolução CAN 11/2021, que alterou a então Regra 178 do POR (Distintivo Adicional de Idiomas) para valer também
+      para a Especialidade de LIBRAS no nível 3 e a fluência em LIBRAS; no POR 2025 é a Regra 183.
+    extra:
+      group: mudanca
+      split: controle
+      facts:
+        - "que conquistar a Especialidade de LIBRAS no nível 3"
+        - "Altera a Regra 178 do P.O.R."
+
+  - id: mudanca-distintivo-de-recrutador
+    question: "O distintivo de recrutador mudou? Hoje, quem trazer de volta conta para recebê-lo?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Sim: a Resolução CAN 03/2023 alterou a então Regra 191 do POR (Distintivo de Recrutador), que passou a contar
+      também quem trouxer de volta jovens ou adultos afastados há mais de 1 ano, desde que renovem o registro, com
+      níveis de um a vinte associados, sem limite de tempo.
+    extra:
+      group: mudanca
+      split: desenvolvimento
+      facts:
+        - "Alterar a Regra 191 do P.O.R"
+        - "afastados a mais de 1 ano do Movimento Escoteiro"
+
+  - id: mudanca-tribo-da-terra
+    question: "Como a Tribo da Terra entrou nas regras de insígnias dos Escoteiros do Brasil?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      A Tribo da Terra foi implementada pela Resolução CAN 03/2021, e a Resolução CAN 05/2022 alterou as Regras 171 e
+      174 do POR para orientar o uso das insígnias Campeões da Natureza, Escoteiros pela Energia Solar e Reduzir,
+      Reciclar, Reutilizar e do pin Tribo da Terra.
+    extra:
+      group: mudanca
+      split: controle
+      facts:
+        - "implementada nos Escoteiros do Brasil por meio da Resolução CAN 03/2021"
+        - "Altera as Regras 171 e 174 do P.O.R."
+
+  # --- publicacoes -----------------------------------------------------------------------------------------------
+  - id: dr-sp-cursos-distritais
+    question: "O que a Diretoria Regional de São Paulo estabeleceu para os cursos de formação organizados pelos distritos?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Pela Instrução Normativa 2024.02, os distritos pedem autorização à Região, pelo CDGA ou pelo comissário
+      distrital, com pelo menos 30 dias de antecedência; a iniciativa não finalizada em até 30 dias depois de
+      realizada impede o distrito de pedir outra.
+    extra:
+      group: publicacoes
+      split: desenvolvimento
+      facts:
+        - "Os Distritos Escoteiros podem solicitar à Região autorização para a"
+        - "não for finalizada em até 30 dias após sua"
+
+  - id: dr-sp-atividades-de-lideranca
+    question: "Que atividades para monitores de patrulha a Região de São Paulo descreveu no seu descritivo de atividades?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      A Ponta de Flecha do Ramo Escoteiro e a Ponta de Lança do Ramo Sênior, ambas descentralizadas, aplicadas pelos
+      distritos (Instrução Normativa 2024.03).
+    extra:
+      group: publicacoes
+      split: controle
+      facts:
+        - "Ponta de Flecha do Ramo Escoteiro"
+        - "Ponta de Lança do Ramo Sênior"
+
+  # --- obrigatorio -----------------------------------------------------------------------------------------------
+  - id: adultos-numa-atividade
+    question: "Quantos adultos precisam estar numa atividade escoteira, e qual a proporção de adultos por jovens?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Obrigatório: no mínimo 2 escotistas em tempo integral, um deles com mais de 21 anos e um da seção.
+      Recomendado: o ideal é 1 adulto para cada 6 jovens (Padrões de Atividades Escoteiras, Mobilização de recursos
+      humanos).
+    extra:
+      group: obrigatorio
+      split: desenvolvimento
+      facts:
+        - "Um mínimo de 2 escotistas"
+        - "O ideal é contar com pelo menos 1 adulto para cada 6 jovens"
+
+  - id: familia-no-ramo-filhotes
+    question: "Os pais precisam participar das atividades do Ramo Filhotes? Precisam de algum curso?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Sim: a participação da família é obrigatória, e cada criança vai acompanhada de um responsável legal registrado
+      na UEB que tenha feito o Curso de Proteção Infantojuvenil, Espaços Seguros ou equivalente (POR, Regra 058).
+    extra:
+      group: obrigatorio
+      split: desenvolvimento
+      facts:
+        - "A participação da família no Ramo Filhotes é obrigatória"
+        - "Curso de Proteção Infantojuvenil, Espaços Seguros ou equivalente"
+
+  - id: uniforme-da-modalidade
+    question: "O grupo que adota a Modalidade do Mar é obrigado a usar o uniforme da modalidade?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Não: o uso dos elementos simbólicos das modalidades, como uniformes e distintivos, é recomendável, porém não é
+      obrigatório (Política Nacional de Programa Educativo, Modalidades do Ar e do Mar).
+    extra:
+      group: obrigatorio
+      split: controle
+      facts:
+        - "O uso de tais elementos simbólicos é recomendável, porém não é"
+
+  - id: barraca-dos-escotistas
+    question: "Num acampamento, escotistas e jovens podem dormir na mesma barraca?"
+    reference_time: "2026-11-10T12:00:00-03:00"
+    reference_answer: >-
+      Não: os escotistas devem ter obrigatoriamente uma barraca separada, só para escotistas e assistentes adultos, e
+      nenhum adulto dorme na barraca de membros juvenis (Padrões de Atividades Escoteiras, p. 55).
+    extra:
+      group: obrigatorio
+      split: controle
+      facts:
+        - "os Escotistas devem ter, obrigatoriamente, uma barraca separada"
