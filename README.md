@@ -50,6 +50,37 @@ Tudo ou nada; o que não mudou é reaproveitado. Mudou o chunking ou o modelo: `
 modelo). Um modelo cujo conjunto deixaria trecho sem vetor sai do artefato até ser reindexado. Atualizar o corpus é
 lançar uma versão nova do pack.
 
+## O grafo de domínio
+
+Ao lado do índice, `src/axon_scouting/data/index/graph.jsonl` é o grafo de domínio (spec 106, ADR-064): as entidades
+que uma pergunta pode nomear (órgãos, instituições, cargos, ramos, seções, áreas, conceitos e resoluções pelo número),
+as unidades dos documentos que tratam delas (`SOBRE`, com o modo pelo papel do documento), os eventos das atas, as
+ligações entre normas (`ALTERA`, `REVOGA`, `CITA`, `SUBSTITUI`) e a governança. Toda aresta tem uma fonte: um trecho do
+índice, uma entrada do catálogo curado ou a pasta da taxonomia. A derivação escreve um plano de consultas com nome
+(`sobre`, `aplicavel_a`, `documentos`, `itens`, `linha_do_tempo`, `ligados`), e o retriever o executa à frente da busca.
+
+O grafo é montado offline, sem modelo nem rede, a partir de:
+- `corpus/organizacao.yaml` (tipos de órgão e de instituição, instituições e órgãos reais, cargos e governança) e
+  `corpus/dominio.yaml` (ramos, seções, áreas, conceitos e documentos), os dois curados;
+- a taxonomia (`corpus/taxonomia.yaml`, pelo catálogo do artefato);
+- as fichas das atas (`corpus/resumos/atas/`, ADR-062) e os assuntos propostos das resoluções
+  (`corpus/resumos/resolucoes/assuntos.yaml`), que o build confere contra o texto antes de usar;
+- o artefato do índice (trechos com o caminho na árvore, catálogo e manifesto).
+
+```bash
+uv run python scripts/grafo.py build                                   # grava o graph.jsonl e imprime o relatório
+uv run python scripts/grafo.py query sobre cargo:escotista ramo:pioneiro --modo todas
+uv run python scripts/grafo.py query ligados doc:resolucao-can-2021-11  # o que a resolução alterou ou revogou
+uv run python scripts/grafo.py query itens --tipo-de-unidade especialidade --ramo ramo:senior
+uv run python scripts/grafo.py plan "um pioneiro pode ser escotista?"  # as entidades e o plano que a derivação escreve
+uv run python scripts/grafo.py export --arrows > grafo.arrows.json     # para ver no arrows.app
+```
+
+Refaça o `build` depois de cada ingestão ou reindexação, ficha de ata nova e mudança num YAML curado, e commite o
+`graph.jsonl` junto: um grafo de outro chunking é recusado na carga. O relatório lista as entradas descartadas com o
+motivo (fonte que não resolve, regra do POR sem título casável…), e `tests/rag/graph/test_graph_artifact.py` confere os
+invariantes (toda fonte resolve, todo tipo tem papel, toda ligação tem o trecho numa das pontas).
+
 ## Avaliação
 
 `eval/` guarda o conjunto dourado e a configuração com que ele roda pelo harness da plataforma (`axon eval run`,
