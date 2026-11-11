@@ -69,7 +69,8 @@ conceitos:
   - {id: seguranca, nome: Segurança nas Atividades, aliases: [seguranca], fonte: por-2025.2.1#regra142@p99}
   - {id: vestuario, nome: Vestuário e Uniforme, aliases: [vestuario, uniforme, uniformes], fonte: por-2025.2.1#regra11@p20}
   - {id: formacao, nome: Formação de Adultos,
-     aliases: [formacao de adultos, processo geral de formacao, gestao da formacao, rota de aprendizagem, cursos],
+     aliases: [formacao de adultos, processo geral de formacao, gestao da formacao, rota de aprendizagem, cursos,
+              iniciativas de formacao, eventos formativos],
      fonte: por-2025.2.1#regra131@p86}
   - {id: transicao, nome: Transição entre os Ramos,
      aliases: [transicao entre os ramos, mudanca para o ramo, passagem], fonte: por-2025.2.1#regra43@p42}

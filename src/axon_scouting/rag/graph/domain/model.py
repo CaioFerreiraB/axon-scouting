@@ -15,6 +15,8 @@ from axon_scouting.rag.graph.api import ORIGINS, EventType, Origin, Role
 GRAPH_VERSION: Final = 2
 GOVERNANCE: Final = frozenset({"ELEGE", "COMPOE", "INTEGRA", "CONVOCA", "FISCALIZA", "APRECIA_RECURSO_DE", "DIRIGE"})
 """As relações de governança: no grafo, com a fonte, e fora da busca automática (FR-007, decisão 4 do mantenedor)."""
+LINKS: Final = ("ALTERA", "REVOGA", "SUBSTITUI", "CITA")
+"""As ligações entre documentos e unidades (G5): só `ligados` as segue."""
 
 Record = Mapping[str, Any]
 
@@ -41,6 +43,10 @@ class VersionRec:
     scope: str | None = None
     date: date | None = None
     bodies: tuple[str, ...] = ()
+    chunk_ids: tuple[str, ...] = ()
+    """Os trechos da versão (G5): o que `documentos` e `ligados` entregam quando a evidência é o documento inteiro."""
+    ementa: str | None = None
+    """A ementa da resolução, lida por regra na primeira página (G5)."""
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -144,6 +150,8 @@ def from_records(records: Iterable[Record]) -> DomainGraph:
                     scope=raw.get("scope"),
                     date=date.fromisoformat(raw["date"]) if raw.get("date") else None,
                     bodies=tuple(raw.get("bodies") or ()),
+                    chunk_ids=tuple(str(c) for c in raw.get("chunk_ids") or ()),
+                    ementa=raw.get("ementa"),
                 )
             elif kind == "unit":
                 units[str(raw["unit_id"])] = UnitRec(

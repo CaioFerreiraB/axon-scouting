@@ -1,0 +1,203 @@
+# Assuntos das resoluções vigentes que a ementa não resolve por regra (spec 106 G5, FR-020; research R22).
+#
+# Proposta de modelo offline — Claude (claude-opus-5-5), lendo a ementa e a 1ª página na sessão do G5, em 2026-11-11,
+# no lugar da rodada paga pelo OpenRouter (decisão do mantenedor). O build confere cada proposta: a entidade tem de
+# estar no catálogo curado e o trecho, num trecho da própria resolução; só então entra o SOBRE `modelo_conferido`.
+#
+# Critério: a resolução disciplina a entidade (não só a menciona). Ato individual (comissão de medalha para uma
+# pessoa, intervenção num grupo), orçamento, registro, governança e órgãos ficam sem assunto: o catálogo curado não
+# tem entidade para eles, e órgão e instituição já vêm de EMITIDO_POR e APLICA_SE_A. Medalha não é
+# conceito:reconhecimento, que no catálogo é o Reconhecimento de Ramo.
+version: 1
+proposto_por: claude-opus-5-5
+data: '2026-11-11'
+propostas:
+  - {doc_key: resolucao-can-2015-02-1, entidades: [conceito:vestuario], trecho: "traje escoteiro"}
+  - {doc_key: resolucao-can-2020-05-1, entidades: [conceito:especialidade, conceito:modalidade], trecho: "especialidades relacionadas às modalidades"}
+  - {doc_key: resolucao-can-2021-01-1, entidades: [ramo:filhotes], trecho: "crianças com idade de 5 a 6 anos e meio"}
+  - {doc_key: resolucao-can-2021-03-1, entidades: [conceito:insignia], trecho: "insígnia"}
+  - {doc_key: resolucao-can-2021-05-1, entidades: [conceito:formacao], trecho: "Rota de Aprendizagem"}
+  - {doc_key: resolucao-can-2021-11-1, entidades: [conceito:especialidade], trecho: "Especialidade de LIBRAS"}
+  - {doc_key: resolucao-can-2022-05-1, entidades: [conceito:insignia], trecho: "insígnias de interesse especial"}
+  - {doc_key: sp-resolucao-regional-04-2021-certificados-digitais-assinado-1, entidades: [conceito:formacao], trecho: "certificados de competência do nível regional"}
+  - {doc_key: sp-resolucaoregional022018-procedimentos-prevencao-contra-febre-amarela-nas-atividades-escoteiras-1-1, entidades: [conceito:seguranca], trecho: "prevenção contra a febre amarela nas atividades escoteiras"}
+sem_assunto:
+  - resolucao-can-1995-08-1
+  - resolucao-can-1996-04-1
+  - resolucao-can-1998-04-1
+  - resolucao-can-1998-11-1
+  - resolucao-can-1999-01-1
+  - resolucao-can-1999-02-1
+  - resolucao-can-1999-10-1
+  - resolucao-can-1999-11-1
+  - resolucao-can-2000-03-1
+  - resolucao-can-2001-12-1
+  - resolucao-can-2001-13-1
+  - resolucao-can-2001-14-1
+  - resolucao-can-2002-07-1
+  - resolucao-can-2004-04-1
+  - resolucao-can-2007-01-1
+  - resolucao-can-2009-01-1
+  - resolucao-can-2009-02-1
+  - resolucao-can-2009-03-1
+  - resolucao-can-2011-03-1
+  - resolucao-can-2012-01-1
+  - resolucao-can-2012-03-1
+  - resolucao-can-2012-05-1
+  - resolucao-can-2013-02-1
+  - resolucao-can-2013-06-1
+  - resolucao-can-2013-07-1
+  - resolucao-can-2013-08-1
+  - resolucao-can-2014-04-1
+  - resolucao-can-2015-03-1
+  - resolucao-can-2016-01-1
+  - resolucao-can-2016-02-1
+  - resolucao-can-2016-03-1
+  - resolucao-can-2017-01-1
+  - resolucao-can-2017-05-1
+  - resolucao-can-2018-01-1
+  - resolucao-can-2018-02-1
+  - resolucao-can-2018-04-1
+  - resolucao-can-2018-05-1
+  - resolucao-can-2018-06-1
+  - resolucao-can-2019-03-1
+  - resolucao-can-2019-06-1
+  - resolucao-can-2019-08-1
+  - resolucao-can-2019-11-1
+  - resolucao-can-2020-02-1
+  - resolucao-can-2020-04-1
+  - resolucao-can-2020-06-1
+  - resolucao-can-2020-07-1
+  - resolucao-can-2020-08-1
+  - resolucao-can-2021-02-1
+  - resolucao-can-2021-04-1
+  - resolucao-can-2021-07-1
+  - resolucao-can-2021-08-1
+  - resolucao-can-2021-09-1
+  - resolucao-can-2021-10-1
+  - resolucao-can-2021-12-1
+  - resolucao-can-2021-13-1
+  - resolucao-can-2021-14-1
+  - resolucao-can-2021-16-1
+  - resolucao-can-2022-01-1
+  - resolucao-can-2022-02-1
+  - resolucao-can-2022-06-1
+  - resolucao-can-2022-07-1
+  - resolucao-can-2022-09-1
+  - resolucao-can-2022-10-1
+  - resolucao-can-2023-01-1
+  - resolucao-can-2023-02-1
+  - resolucao-can-2023-03-1
+  - resolucao-can-2023-04-1
+  - resolucao-can-2023-05-1
+  - resolucao-can-2023-09-1
+  - resolucao-can-2024-01-1
+  - resolucao-can-2024-02-1
+  - resolucao-can-2024-04-1
+  - resolucao-can-2024-05-1
+  - resolucao-can-2024-06-1
+  - resolucao-can-2025-01-1
+  - resolucao-can-2025-03-1
+  - resolucao-can-2025-04-1
+  - resolucao-can-2025-06-1
+  - resolucao-can-2025-07-2025.11.29
+  - resolucao-can-2025-08-1
+  - resolucao-can-2025-12-1
+  - resolucao-can-2025-13-1
+  - resolucao-can-2025-14-1
+  - resolucao-can-2025-16-1
+  - resolucao-can-2026-02-1
+  - resolucao-can-2026-04-1
+  - resolucao-can-2026-05-1
+  - resolucao-can-den-2019-01-1
+  - resolucao-den-2013-01-1
+  - resolucao-den-2015-01-1
+  - resolucao-den-2015-02-1
+  - resolucao-den-2015-04-1
+  - resolucao-den-2016-01-1
+  - resolucao-den-2019-01-1
+  - resolucao-den-2019-03-1
+  - resolucao-den-2020-01-1
+  - resolucao-den-2020-02-1
+  - resolucao-den-2020-04-1
+  - resolucao-den-2021-01-1
+  - resolucao-den-2021-03-1
+  - resolucao-den-2021-04-1
+  - resolucao-den-2021-05-1
+  - resolucao-den-2022-02-1
+  - resolucao-den-2022-03-1
+  - resolucao-den-2022-04-1
+  - resolucao-den-2022-06-1
+  - resolucao-den-2022-07-1
+  - resolucao-den-2022-08-1
+  - resolucao-den-2023-01-1
+  - resolucao-den-2023-03-1
+  - resolucao-den-2025-01-1
+  - resolucao-den-2025-02-1
+  - resolucao-den-2025-03-1
+  - resolucao-sp-2020-02-1
+  - resolucao-sp-2022-02-1
+  - resolucao-sp-2022-04-1
+  - resolucao-sp-2022-05-1
+  - resolucao-sp-2022-07-1
+  - resolucao-sp-2022-08-1
+  - resolucao-sp-2022-09-1
+  - resolucao-sp-2023-01-1
+  - resolucao-sp-2023-03-1
+  - resolucao-sp-2023-05-1
+  - resolucao-sp-2023-06-1
+  - resolucao-sp-2023-07-1
+  - resolucao-sp-2023-08-1
+  - resolucao-sp-2023-09-1
+  - resolucao-sp-2023-11-1
+  - resolucao-sp-2024-01-1
+  - resolucao-sp-2024-03-1
+  - resolucao-sp-2024-04-1
+  - resolucao-sp-2024-05-1
+  - resolucao-sp-2024-06-1
+  - resolucao-sp-2024-07-1
+  - resolucao-sp-2024-08-1
+  - resolucao-sp-2024-09-1
+  - resolucao-sp-2024-10-1
+  - resolucao-sp-2025-01-1
+  - resolucao-sp-2025-02-1
+  - resolucao-sp-2025-03-1
+  - resolucao-sp-2025-05-1
+  - resolucao-sp-2025-06-1
+  - resolucao-sp-2025-07-1
+  - resolucao-sp-2025-08-1
+  - resolucao-sp-2025-09-1
+  - resolucao-sp-2025-10-1
+  - resolucao-sp-2025-11-1
+  - resolucao-sp-2025-12-1
+  - resolucao-sp-2025-13-1
+  - resolucao-sp-2025-15-1
+  - resolucao-sp-2025-16-1
+  - resolucao-sp-2026-01-1
+  - resolucao-sp-2026-02-1
+  - resolucao-sp-2026-03-1
+  - resolucao-sp-2026-04-1
+  - resolucao-sp-2026-05-1
+  - resolucao-sp-2026-06-1
+  - resolucao-sp-2026-07-1
+  - resolucao-sp-2026-08-1
+  - resolucao-sp-2026-09-1
+  - resolucao-sp-2026-11-1
+  - resolucao-sp-2026-12-1
+  - resolucao-sp-2026-13-1
+  - resolucao-sp-2026-14-1
+  - resolucao-sp-2026-15-1
+  - resolucao-sp-2026-16-1
+  - resolucao-sp-2026-17-1
+  - resolucao-sp-2026-18-1
+  - sp-instrucao-normativa-01-2022-docx-1-1
+  - sp-instrucao-normativa-2025-01-prestacao-de-contas-no-nivel-regional-docx-1-1
+  - sp-instrucao-normativa-2025-02-uso-cartao-corporativo-1
+  - sp-instrucao-normativa-uebsp-004-08set2017-1
+  - sp-instrucao-normativa-uebsp-005-09dez2017-1
+  - sp-resolucao-regional-002-2021-prorroga-intervencao-301sp-ge-quilombo-1
+  - sp-resolucao-regional-03-2021-orcamento-compartilhado-2021-docx-1
+  - sp-resolucaoregional012017-cria-o-conselho-regional-jovem-1
+  - sp-resolucaoregional042017-estruturacao-e-operacao-das-comerps-2-1
+  - sp-resolucaoregional052016-cria-o-conselho-regional-de-portadores-da-medalha-velho-lobo-1
+  - sp-resolucaoregional052019-retifica-o-art-1-resolucao-regional-04-2017-1

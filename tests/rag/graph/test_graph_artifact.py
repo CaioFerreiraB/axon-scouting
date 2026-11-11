@@ -61,6 +61,8 @@ def test_toda_fonte_resolve(grafo: list[dict[str, Any]], chunks: set[str], unida
     curated |= {
         "pasta:" + d["source_file"].removeprefix("ocr/").rsplit("/", 1)[0] for d in _jsonl(INDEX / "documents.jsonl")
     }
+    # G5: SUBSTITUI sai da linhagem de um documento do catálogo.
+    curated |= {"corpus.yaml:" + d["fields"]["document_id"] for d in _jsonl(INDEX / "documents.jsonl")}
     unit_ids = {r["unit_id"] for r in grafo if r["kind"] == "unit"}
     # G4: GERA e DE saem do item da ficha, `<doc_key>#<n>@p<página>`, de uma ata do catálogo.
     versions = {r["doc_key"] for r in grafo if r["kind"] == "version"}
@@ -120,3 +122,25 @@ def test_todo_evento_vem_de_uma_ata_e_tem_os_trechos_da_pagina(grafo: list[dict[
     assert sum(1 for e in events.values() if e["chunk_ids"]) / len(events) > 0.95
     about = {r["from"] for r in grafo if r["kind"] == "edge" and r["type"] == "DE"}
     assert len(about) / len(events) > 0.5
+
+
+def test_ligacoes_tem_a_fonte_numa_das_pontas(grafo: list[dict[str, Any]]) -> None:
+    """G5 (106 US5): `ALTERA`, `REVOGA` e `CITA` têm por fonte um trecho do documento que as escreve — a resolução
+    que altera ou, na passiva ("alterado conforme a Resolução…"), a alterada; nenhuma ligação sem fonte."""
+    units = {r["unit_id"]: r["doc_key"] for r in grafo if r["kind"] == "unit"}
+    problems = []
+    for edge in (r for r in grafo if r["kind"] == "edge" and r["type"] in ("ALTERA", "REVOGA", "CITA")):
+        ends = {units.get(edge["from"], edge["from"]), units.get(edge["to"], edge["to"])}
+        if edge["source"].split("#", 1)[0] not in ends:
+            problems.append(f"{edge['type']} {edge['from']} → {edge['to']}: fonte {edge['source']}")
+    assert problems == []
+    kinds = {r["type"] for r in grafo if r["kind"] == "edge"}
+    assert {"ALTERA", "REVOGA", "CITA"} <= kinds
+
+
+def test_toda_versao_tem_os_trechos_e_toda_resolucao_um_doc(grafo: list[dict[str, Any]], chunks: set[str]) -> None:
+    versions = [r for r in grafo if r["kind"] == "version"]
+    assert all(r["chunk_ids"] and set(r["chunk_ids"]) <= chunks for r in versions)
+    documents = {r["id"] for r in grafo if r["kind"] == "entity" and r["type"] == "doc" and r["terms"]}
+    resolutions = {r["document_id"] for r in versions if r["type"] == "resolucao"}
+    assert {f"doc:{d}" for d in resolutions} <= documents

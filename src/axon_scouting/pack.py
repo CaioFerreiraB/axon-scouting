@@ -46,7 +46,7 @@ if TYPE_CHECKING:
 
     from axon_scouting.rag.index.ports import Embedder
 
-VERSION: Final = "0.15.0"
+VERSION: Final = "0.16.0"
 """Versão do manifest; igual à da distribuição `axon-scouting` (verificado em tests/test_pack.py)."""
 
 COLLECTION: Final = "scouting"

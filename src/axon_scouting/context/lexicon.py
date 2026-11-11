@@ -85,6 +85,12 @@ class Lexicon:
     election_terms: tuple[str, ...] = ()
     """Palavras de eleição ("eleitos", "mandato", "chapa"): na síntese, a linha do tempo fica com os eventos de eleição
     (106 G4)."""
+    change_terms: tuple[str, ...] = ()
+    """Palavras de mudança ("o que mudou", "que resolução alterou", "foi revogada"): a pergunta quer as resoluções que
+    alteram ou revogam o que ela cita (106 G5, US5)."""
+    publication_terms: tuple[str, ...] = ()
+    """Palavras de publicação ("publicou", "estabeleceu", "normatizou"): com um órgão e um assunto, a pergunta quer os
+    documentos do órgão sobre o assunto (106 G5, US5)."""
 
 
 LEXICON: Final = Lexicon(
@@ -425,6 +431,36 @@ LEXICON: Final = Lexicon(
         "mandatos",
         "chapa",
         "chapas",
+    ),
+    change_terms=(
+        "mudou",
+        "mudaram",
+        "o que mudou",
+        "alterou",
+        "alteraram",
+        "foi alterada",
+        "foi alterado",
+        "foram alteradas",
+        "foram alterados",
+        "revogou",
+        "revogaram",
+        "foi revogada",
+        "foi revogado",
+        "que resolucao",
+        "qual resolucao",
+        "quais resolucoes",
+    ),
+    publication_terms=(
+        "publicou",
+        "publicaram",
+        "estabeleceu",
+        "estabeleceram",
+        "emitiu",
+        "editou",
+        "normatizou",
+        "regulamentou",
+        "determinou",
+        "descreveu",
     ),
     catalog_kinds=MappingProxyType(
         {

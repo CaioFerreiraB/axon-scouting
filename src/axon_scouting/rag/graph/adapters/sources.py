@@ -1,5 +1,6 @@
 """`ArtifactSources`: o que a construção offline do grafo lê (spec 106, research R13) — os trechos, o catálogo e o
-manifesto do artefato da 102, os YAML curados do `corpus/` e as fichas das atas. Só offline; o `yaml` fica aqui."""
+manifesto do artefato da 102, os YAML curados do `corpus/`, as fichas das atas e os assuntos das resoluções. Só
+offline; o `yaml` fica aqui."""
 
 from __future__ import annotations
 
@@ -14,8 +15,14 @@ import yaml
 
 class ArtifactSources:
     def __init__(
-        self, index: Path, organization: Path, domain: Path | None = None, minutes: Path | None = None
+        self,
+        index: Path,
+        organization: Path,
+        domain: Path | None = None,
+        minutes: Path | None = None,
+        subjects: Path | None = None,
     ) -> None:
+        self._subjects = subjects
         self._index = index
         self._organization = organization
         self._domain = domain
@@ -65,3 +72,11 @@ class ArtifactSources:
                 raise ValueError(f"{path}: precisa ser um mapeamento")
             found.append(loaded)
         return found
+
+    def resolution_subjects(self) -> Mapping[str, Any]:
+        if self._subjects is None or not self._subjects.exists():
+            return {}
+        loaded = yaml.safe_load(self._subjects.read_text(encoding="utf-8"))
+        if not isinstance(loaded, Mapping):
+            raise ValueError(f"{self._subjects}: precisa ser um mapeamento")
+        return loaded

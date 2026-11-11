@@ -9,7 +9,8 @@ No G1, o grafo é o do ADR-063 no formato novo:
 O G2 acrescenta as entidades de programa e adultos (`dominio.yaml`), o `SOBRE` delas, `E_UM`, `DE_RAMO`, `REGE` e
 `DE_AREA`; o G3, as instituições e os órgãos reais (`inst:`, `orgao:`) com `INSTANCIA_DE` e `PARTE_DE` (também entre
 os tipos), `APLICA_SE_A` e `EMITIDO_POR` pela taxonomia, e o `SOBRE` do documento inteiro cujo título nomeia a
-instituição.
+instituição; o G4, os eventos das atas; o G5, as resoluções (`doc:` pelo número, o `SOBRE` pela ementa, `ALTERA`,
+`REVOGA`, `CITA` e `SUBSTITUI`) e os trechos de cada versão.
 A fonte de uma entidade curada é a entrada do catálogo (`organizacao.yaml:<seção>/<id>`), como o grafo de hoje: o órgão
 cujo `instituido_em` está "a verificar" continua reconhecível (research R18). Puro.
 """
@@ -33,6 +34,14 @@ from axon_scouting.rag.graph.domain.build.organs import (
     relations_from_mapping,
     sections,
 )
+from axon_scouting.rag.graph.domain.build.resolutions import (
+    checked_subjects,
+    lineage_edges,
+    norm_units,
+    number_aliases,
+    resolution_links,
+    resolutions_of,
+)
 from axon_scouting.rag.graph.domain.build.sobre import ROLES_WITH_SOBRE, sobre_graph
 from axon_scouting.rag.graph.domain.build.taxonomy import SOURCE, applies_to, folder_of, issued_by
 from axon_scouting.rag.graph.domain.model import GRAPH_VERSION
@@ -50,6 +59,12 @@ class BuildReport:
     applies: int = 0
     issued: int = 0
     events: int = 0
+    resolutions: int = 0
+    with_ementa: int = 0
+    with_subject: int = 0
+    model_subject: int = 0
+    without_subject: list[str] = field(default_factory=list)
+    links: dict[str, int] = field(default_factory=dict)
     dropped: list[str] = field(default_factory=list)
     per_entity: dict[str, list[str]] = field(default_factory=dict)
 
@@ -83,6 +98,7 @@ def build_records(
     domain: Mapping[str, Any] | None = None,
     domain_sha256: str | None = None,
     minutes: Sequence[Mapping[str, Any]] = (),
+    subjects: Mapping[str, Any] | None = None,
 ) -> tuple[list[dict[str, Any]], BuildReport]:
     """Puro: recebe o que a porta `GraphSources` leu (o `scripts/grafo.py` compõe)."""
     raw = organization
@@ -172,7 +188,29 @@ def build_records(
                 "level": instance.level,
             }
         )
+    # G5: cada resolução é um `doc:` reconhecível pelo número ("resolucao can 15 2025"), com a fonte no 1º trecho.
+    resolutions = resolutions_of(documents)
+    taken = {str(e["id"]) for e in entities}
+    for resolution in resolutions:
+        ident = f"doc:{resolution.document_id}"
+        if resolution.number is None or resolution.first_chunk is None or ident in taken:
+            continue
+        taken.add(ident)
+        entities.append(
+            {
+                "kind": "entity",
+                "id": ident,
+                "type": "doc",
+                "name": resolution.title,
+                "terms": list(number_aliases(resolution.number)),
+                "aliases": [],
+                "source": resolution.first_chunk,
+                "origin": "regra",
+                "level": None,
+            }
+        )
     report.entities = len(entities)
+    ementa_of = {r.doc_key: r.ementa for r in resolutions if r.ementa}
 
     versions: list[dict[str, Any]] = []
     for doc in documents:
@@ -189,6 +227,8 @@ def build_records(
                 "scope": fields.get("scope"),
                 "date": fields.get("effective_date"),
                 "bodies": list(fields.get("bodies") or ()),
+                "chunk_ids": list(doc.get("chunk_ids") or ()),
+                **({"ementa": ementa_of[doc["doc_key"]]} if doc["doc_key"] in ementa_of else {}),
             }
         )
     report.versions = len(versions)
@@ -378,6 +418,63 @@ def build_records(
             edges.append({**_edge("SOBRE", whole, named, whole, "regra"), "mode": MODE_OF[role_of[key]]})
             report.per_entity.setdefault(named, []).append(units[whole]["title"])
 
+    # G5: a ementa de cada resolução vigente dá o assunto dela; as ligações escritas no texto (research R22).
+    names = alias_map([entity for entity in curated if entity.type != "doc"])
+    proposed = checked_subjects(subjects or {}, chunks, {entity.id for entity in curated if entity.type != "doc"})
+    report.dropped.extend(proposed.dropped)
+    report.resolutions = len(resolutions)
+    for resolution in resolutions:
+        key = resolution.doc_key
+        if resolution.ementa:
+            report.with_ementa += 1
+        about = reconhecer(normalize(resolution.ementa), names) if resolution.ementa else ()
+        origin, source = "regra", resolution.first_chunk or f"{key}#documento"
+        if about:
+            report.with_subject += 1
+        elif key in proposed.found:  # o assunto proposto pelo modelo, com o trecho conferido
+            about, source = proposed.found[key]
+            origin = "modelo_conferido"
+            report.model_subject += 1
+        else:
+            report.without_subject.append(key)
+            continue
+        if status_of.get(key) != "vigente" or key not in doc_chunks:
+            continue
+        whole = f"{key}#documento"
+        if whole not in units:
+            units[whole] = {
+                "kind": "unit",
+                "unit_id": whole,
+                "doc_key": key,
+                "unit_kind": "documento",
+                "title": resolution.title,
+                "chunk_ids": doc_chunks[key],
+            }
+            edges.append(_edge("CONTEM", key, whole, whole, "regra"))
+        for target in about:
+            edge = {**_edge("SOBRE", whole, target, source, origin), "mode": MODE_OF[role_of[key]]}
+            edges.append({**edge, "checked": True} if origin == "modelo_conferido" else edge)
+            report.per_entity.setdefault(target, []).append(resolution.title)
+    norms = {
+        str(v["type"]): str(v["doc_key"]) for v in versions if v["status"] == "vigente" and v["scope"] == "nacional"
+    }
+    links = resolution_links(
+        resolutions,
+        chunks,
+        norm_units(chunks, norms.get("por"), "regra"),
+        norm_units(chunks, norms.get("estatuto"), "artigo"),
+    )
+    placed = _unit_places(chunks)
+    for unit_id in sorted(links.units):
+        if unit_id not in units and unit_id in placed:
+            units[unit_id] = {"kind": "unit", "unit_id": unit_id, **placed[unit_id]}
+            edges.append(_edge("CONTEM", placed[unit_id]["doc_key"], unit_id, unit_id, "regra"))
+    lineage = lineage_edges(documents)
+    for edge in [*links.edges, *lineage]:
+        edges.append(edge)
+        report.links[edge["type"]] = report.links.get(edge["type"], 0) + 1
+    report.dropped.extend(dict.fromkeys(links.dropped))
+
     # G4: os eventos das fichas das atas, com GERA e DE (research R21).
     recognizable = {str(e["id"]): tuple(e["terms"]) for e in entities if e["terms"]}
     dated = {str(v["doc_key"]): {"date": v["date"]} for v in versions}
@@ -411,6 +508,24 @@ def build_records(
         "sources": {ORGANIZATION: organization_sha256, **({DOMAIN: domain_sha256} if domain_sha256 else {})},
     }
     return [meta, *entities, *versions, *units.values(), *edges, *minutes_graph.events], report
+
+
+def _unit_places(chunks: Sequence[Mapping[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Cada unidade do caminho dos trechos: o documento, o tipo, o título e os trechos dela e dos de baixo."""
+    found: dict[str, dict[str, Any]] = {}
+    for chunk in chunks:
+        for step in chunk.get("path") or []:
+            unit = found.setdefault(
+                str(step["unit_id"]),
+                {
+                    "doc_key": chunk["doc_key"],
+                    "unit_kind": step.get("kind") or "documento",
+                    "title": step.get("title") or "",
+                    "chunk_ids": [],
+                },
+            )
+            unit["chunk_ids"].append(chunk["chunk_id"])
+    return found
 
 
 def _edge(kind: str, start: str, end: str, source: str, origin: str) -> dict[str, Any]:

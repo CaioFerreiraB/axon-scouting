@@ -48,3 +48,8 @@ class GraphSources(Protocol):
         """As fichas das atas (`corpus/resumos/atas/*.yaml`, ADR-062), já lidas, na ordem do nome do arquivo (G4);
         ausentes, nenhuma."""
         ...
+
+    def resolution_subjects(self) -> Mapping[str, Any]:
+        """As propostas de assunto das resoluções que a ementa não resolve (`corpus/resumos/resolucoes/assuntos.yaml`,
+        G5), já lidas; ausente, `{}`. O build confere cada uma antes de usá-la."""
+        ...

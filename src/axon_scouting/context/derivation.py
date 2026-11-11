@@ -161,9 +161,11 @@ def derive_context(
             else reconhecer(anchored, lexicon.entity_terms)
         ),
         plan=(
-            _plan(entities, branch, branches)
-            if synthesis is None
-            else _timeline(entities, synthesis, _matches(text, lexicon.election_terms))
+            _timeline(entities, synthesis, _matches(text, lexicon.election_terms))
+            if synthesis is not None
+            else _change(entities, branch, _matches(text, lexicon.change_terms))
+            or _publication(entities, _matches(text, lexicon.publication_terms))
+            or _plan(entities, branch, branches)
         ),
     )
 
@@ -376,6 +378,47 @@ def _plan(entities: tuple[str, ...], branch: str | None, branches: tuple[str, ..
     if len(others) >= 2:
         steps.append(QueryStep(q="sobre", args={"entidades": others[:4], "papeis": list(CONTENT_ROLES)}))
     return QueryPlan(consultas=tuple(steps))
+
+
+CHANGES: Final[list[JSONValue]] = ["ALTERA", "REVOGA"]
+
+
+def _change(entities: tuple[str, ...], branch: str | None, changed: bool) -> QueryPlan | None:
+    """ "O que mudou" (106 G5, US5): as resoluções que alteram ou revogam o que a pergunta cita — o documento citado
+    pelo número ("a Resolução CAN 15/2025"), senão as entidades (as regras que tratam delas) e, sem entidade, o ramo.
+    Órgãos e instituições não são o que muda. Sem alvo, `None`: a forma seguinte decide."""
+    if not changed:
+        return None
+    documents = [entity for entity in entities if entity.startswith(DOCUMENT_PREFIX)]
+    others = [entity for entity in entities if not entity.startswith((*ORGAN_PREFIXES, DOCUMENT_PREFIX))]
+    targets = documents[:2] or others[:2] or ([f"ramo:{branch}"] if branch else [])
+    if not targets:
+        return None
+    return QueryPlan(
+        consultas=tuple(QueryStep(q="ligados", args={"alvo": t, "relacoes": list(CHANGES)}) for t in targets)
+    )
+
+
+def _publication(entities: tuple[str, ...], published: bool) -> QueryPlan | None:
+    """ "O que o órgão publicou sobre X" (106 G5, US5): as unidades sobre o assunto nos documentos que o órgão emite
+    (`sobre ∩ documentos(emissor=…)`), com a instituição citada como `aplica_se_a`. Sem órgão ou sem assunto, `None`."""
+    if not published:
+        return None
+    organs = [e for e in entities if e.startswith(ORGAN_PREFIXES) and not e.startswith(INSTITUTION_PREFIX)]
+    institutions = [entity for entity in entities if entity.startswith(INSTITUTION_PREFIX)]
+    others = [entity for entity in entities if not entity.startswith((*ORGAN_PREFIXES, DOCUMENT_PREFIX))]
+    if not organs or not others:
+        return None
+    issued: dict[str, JSONValue] = {"emissor": organs[0]}
+    if institutions:
+        issued["aplica_se_a"] = institutions[0]
+    return QueryPlan(
+        forma="intersecao",
+        consultas=(
+            QueryStep(q="sobre", args={"entidades": list(others[:4]), "papeis": list(CONTENT_ROLES)}),
+            QueryStep(q="documentos", args=issued),
+        ),
+    )
 
 
 TIMELINE_EXCLUDED: Final = ("inst:", "tipo_inst:")

@@ -8,11 +8,11 @@
     uv run python scripts/grafo.py plan "Quem fiscaliza as contas da Diretoria Regional?"
     uv run python scripts/grafo.py export --arrows [--entidade X --saltos N] > grafo.arrows.json
 
-`build` lê `corpus/organizacao.yaml`, `corpus/dominio.yaml`, as fichas das atas (`corpus/resumos/atas/`) e o
-artefato do índice (trechos com o caminho na árvore, catálogo, manifesto) e grava `graph.jsonl` (v2) ao lado do índice
-do pacote. Sem modelo e sem rede; roda em segundos. Refaça depois de cada ingestão, ficha nova ou mudança nos YAML
-curados. Saídas: 0, 1 (invariante: tipo sem papel) e 2 (YAML
-inválido).
+`build` lê `corpus/organizacao.yaml`, `corpus/dominio.yaml`, as fichas das atas (`corpus/resumos/atas/`), os
+assuntos propostos das resoluções (`corpus/resumos/resolucoes/assuntos.yaml`, conferidos no build) e o artefato do
+índice (trechos com o caminho na árvore, catálogo, manifesto) e grava `graph.jsonl` (v2) ao lado do índice do pacote.
+Sem modelo e sem rede; roda em segundos. Refaça depois de cada ingestão, ficha nova ou mudança nos YAML curados.
+Saídas: 0, 1 (invariante: tipo sem papel) e 2 (YAML inválido).
 """
 
 from __future__ import annotations
@@ -38,11 +38,12 @@ INDEX = ROOT / "src" / "axon_scouting" / "data" / "index"
 ORGANIZATION = ROOT / "corpus" / "organizacao.yaml"
 DOMAIN = ROOT / "corpus" / "dominio.yaml"
 MINUTES = ROOT / "corpus" / "resumos" / "atas"
+SUBJECTS = ROOT / "corpus" / "resumos" / "resolucoes" / "assuntos.yaml"
 
 
 def build(args: argparse.Namespace) -> int:
     try:
-        sources = ArtifactSources(args.index, args.organization, args.domain, args.minutes)
+        sources = ArtifactSources(args.index, args.organization, args.domain, args.minutes, args.subjects)
         records, report = build_records(
             organization=sources.organization(),
             chunks=list(sources.chunks()),
@@ -52,6 +53,7 @@ def build(args: argparse.Namespace) -> int:
             domain=sources.domain(),
             domain_sha256=sources.domain_sha256(),
             minutes=list(sources.minutes()),
+            subjects=sources.resolution_subjects(),
         )
     except OrganizationError as error:
         print(f"organizacao.yaml inválido: {error}", file=sys.stderr)
@@ -65,6 +67,11 @@ def build(args: argparse.Namespace) -> int:
         f"{report.relations} relações de governança, {report.applies} APLICA_SE_A, {report.issued} EMITIDO_POR, "
         f"{report.events} eventos "
         f"→ {args.index / GRAPH}"
+    )
+    links = ", ".join(f"{count} {kind}" for kind, count in sorted(report.links.items())) or "nenhuma ligação"
+    print(
+        f"resoluções: {report.resolutions}, {report.with_ementa} com ementa, {report.with_subject} com assunto pela "
+        f"ementa, {report.model_subject} pelo modelo conferido, {len(report.without_subject)} sem assunto; {links}"
     )
     for entity, titles in sorted(report.per_entity.items()):
         print(f"  {entity}: {len(titles)} seção(ões) — " + "; ".join(titles)[:300])
@@ -175,6 +182,7 @@ def main() -> int:
     parser.add_argument("--organization", type=Path, default=ORGANIZATION)
     parser.add_argument("--domain", type=Path, default=DOMAIN)
     parser.add_argument("--minutes", type=Path, default=MINUTES)
+    parser.add_argument("--subjects", type=Path, default=SUBJECTS)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("build", help="monta o grafo e grava graph.jsonl (v2)")
     q = sub.add_parser("query", help="roda uma consulta do grafo, como a busca roda")

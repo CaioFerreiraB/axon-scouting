@@ -718,3 +718,65 @@ def test_fora_da_sintese_o_documento_nao_entra_no_plano() -> None:
     assert derive_context("O que diz o Regulamento Regional sobre a diretoria regional?", DIA, COM_ATAS).plan.to_json()[
         "consultas"
     ] == [{"q": "sobre", "args": {"entidades": ["tipo_orgao:diretoria_regional"], "papeis": ["norma"]}}]
+
+
+# G5 (106 US5, research R22): "o que mudou" → `ligados`; "o que o órgão publicou" → `sobre ∩ documentos`.
+COM_RESOLUCOES = dataclasses.replace(
+    LEXICON,
+    entity_terms=MappingProxyType(
+        {
+            "tipo_orgao:diretoria_regional": ("diretoria regional",),
+            "inst:regiao_sp": ("regiao de sao paulo",),
+            "conceito:formacao": ("cursos", "formacao de adultos"),
+            "conceito:especialidade": ("especialidade", "especialidades"),
+            "doc:resolucao-can-2025-15": ("resolucao can 15 2025", "resolucao can no 15 2025"),
+        }
+    ),
+)
+
+
+def _mudanca(pergunta: str) -> dict[str, object]:
+    return derive_context(pergunta, DIA, COM_RESOLUCOES).plan.to_json()
+
+
+def test_o_que_a_resolucao_citada_pelo_numero_mudou() -> None:
+    contexto = derive_context("O que a Resolução CAN nº 15/2025 alterou?", DIA, COM_RESOLUCOES)
+    assert contexto.entities == ("doc:resolucao-can-2025-15",)
+    assert contexto.plan.to_json()["consultas"] == [
+        {"q": "ligados", "args": {"alvo": "doc:resolucao-can-2025-15", "relacoes": ["ALTERA", "REVOGA"]}}
+    ]
+
+
+def test_o_que_mudou_sobre_a_entidade_e_sem_ela_o_ramo() -> None:
+    assert _mudanca("As regras das especialidades mudaram?")["consultas"] == [
+        {"q": "ligados", "args": {"alvo": "conceito:especialidade", "relacoes": ["ALTERA", "REVOGA"]}}
+    ]
+    assert _mudanca("O que mudou nas regras do Ramo Filhotes, e por quais resoluções?")["consultas"] == [
+        {"q": "ligados", "args": {"alvo": "ramo:filhotes", "relacoes": ["ALTERA", "REVOGA"]}}
+    ]
+
+
+def test_mudanca_sem_alvo_segue_a_busca() -> None:
+    assert derive_context("Que resolução incluiu a LIBRAS no distintivo de idiomas?", DIA, COM_RESOLUCOES).plan.empty
+
+
+def test_o_que_o_orgao_estabeleceu_sobre_o_assunto() -> None:
+    assert _mudanca("O que a Diretoria Regional estabeleceu para os cursos dos distritos?") == {
+        "version": 1,
+        "forma": "intersecao",
+        "consultas": [
+            {"q": "sobre", "args": {"entidades": ["conceito:formacao"], "papeis": ["norma", "orientacao"]}},
+            {"q": "documentos", "args": {"emissor": "tipo_orgao:diretoria_regional"}},
+        ],
+    }
+    # com a instituição citada, os documentos que valem para ela
+    assert _mudanca("O que a diretoria regional da Região de São Paulo publicou sobre cursos?")["consultas"][1] == {
+        "q": "documentos",
+        "args": {"emissor": "tipo_orgao:diretoria_regional", "aplica_se_a": "inst:regiao_sp"},
+    }
+
+
+def test_publicacao_sem_assunto_fica_com_o_plano_do_orgao() -> None:
+    assert _mudanca("O que a Diretoria Regional publicou?")["consultas"] == [
+        {"q": "sobre", "args": {"entidades": ["tipo_orgao:diretoria_regional"], "papeis": ["norma"]}}
+    ]

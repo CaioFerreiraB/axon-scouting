@@ -20,7 +20,7 @@ from axon_scouting.rag.graph.api import (
     QueryName,
     scope_rank,
 )
-from axon_scouting.rag.graph.domain.model import GOVERNANCE, DomainGraph, EdgeRec
+from axon_scouting.rag.graph.domain.model import GOVERNANCE, LINKS, DomainGraph, EdgeRec, VersionRec
 
 SCOPES: Final = ("mundial", "interamericano", "nacional", "regional", "local")
 """A norma de cima primeiro (ADR-061, ADR-063): a regra do nível superior abre a resposta."""
@@ -243,29 +243,146 @@ def linha_do_tempo(
 
 
 def ligados(g: DomainGraph, alvo: str, *, relacoes: Sequence[str] = ()) -> list[Evidence]:
-    """As arestas em que o alvo está numa das pontas, com a fonte: no G1, as relações de governança (o que
-    `NormGraph.relations` dava). O trecho da fonte vem como `chunk_ids`."""
-    wanted = set(relacoes) if relacoes else set(GOVERNANCE)
-    found: list[Evidence] = []
-    for edge in g.edges:
-        if edge.type not in wanted or alvo not in (edge.from_, edge.to):
-            continue
-        doc_key = edge.source.split("#", 1)[0]
-        version = g.versions.get(doc_key)
-        found.append(
-            Evidence(
-                query="ligados",
-                target=edge.to if edge.from_ == alvo else edge.from_,
-                doc_key=doc_key,
-                unit_id=None,
-                chunk_ids=(edge.source,),
-                role=version.role if version else "norma",
-                scope=version.scope if version else None,
-                date=version.date if version else None,
-                edge=_ref(edge),
-            )
+    """As arestas de governança e as ligações (`ALTERA`, `REVOGA`, `SUBSTITUI`, `CITA`) com o alvo numa ponta, com a
+    fonte (sem `relacoes`, todas). O alvo pode ser:
+    - uma unidade ou uma versão (`doc_key`): ela e, na versão, as unidades dela;
+    - um documento (`doc:<document_id>`): as versões dele e as unidades delas;
+    - outra entidade: ela (a governança) e as unidades com `SOBRE` para ela ("o que mudou nas regras dos filhotes").
+    A evidência é a outra ponta: a unidade (com os trechos dela), a versão (o trecho que escreve a ligação primeiro,
+    depois os da versão) ou, na governança, o trecho da fonte. Na ordem do arquivo (a do catálogo)."""
+    wanted = tuple(relacoes) if relacoes else (*sorted(GOVERNANCE), *LINKS)
+    ends = _ends(g, alvo)
+    position = {id(edge): index for index, edge in enumerate(g.edges)}
+    found: dict[tuple[str, str, str], tuple[int, Evidence]] = {}
+    for kind in wanted:
+        for end in ends:
+            for edge, other in (
+                *((e, e.to) for e in g.by_from.get((kind, end), ())),
+                *((e, e.from_) for e in g.by_to.get((kind, end), ())),
+            ):
+                if other in ends or (edge.type, edge.source, other) in found:
+                    continue
+                found[(edge.type, edge.source, other)] = (position[id(edge)], _linked(g, edge, other))
+    return [evidence for _, evidence in sorted(found.values(), key=lambda pair: pair[0])]
+
+
+def _ends(g: DomainGraph, alvo: str) -> set[str]:
+    if alvo.startswith("doc:"):
+        keys = {key for key, version in g.versions.items() if version.document_id == alvo[4:]}
+    elif alvo in g.versions:
+        keys = {alvo}
+    else:
+        keys = set()
+    if keys:
+        return keys | {unit_id for unit_id, unit in g.units.items() if unit.doc_key in keys}
+    if alvo in g.units:
+        return {alvo}
+    return {alvo, *(edge.from_ for target in _with_children(g, alvo) for edge in g.by_to.get(("SOBRE", target), ()))}
+
+
+def _linked(g: DomainGraph, edge: EdgeRec, other: str) -> Evidence:
+    unit = g.units.get(other)
+    if unit is not None:
+        doc_key, unit_id, chunk_ids = unit.doc_key, unit.unit_id, unit.chunk_ids
+    elif other in g.versions:
+        own = (edge.source,) if edge.source.startswith(f"{other}#") else ()
+        doc_key, unit_id, chunk_ids = other, None, tuple(dict.fromkeys((*own, *g.versions[other].chunk_ids)))
+    else:  # governança: a entidade da outra ponta; a evidência é o trecho da fonte
+        doc_key, unit_id, chunk_ids = edge.source.split("#", 1)[0], None, (edge.source,)
+    version = g.versions.get(doc_key)
+    return Evidence(
+        query="ligados",
+        target=other,
+        doc_key=doc_key,
+        unit_id=unit_id,
+        chunk_ids=chunk_ids,
+        role=version.role if version else "norma",
+        scope=version.scope if version else None,
+        date=version.date if version else None,
+        edge=_ref(edge),
+    )
+
+
+def documentos(
+    g: DomainGraph,
+    *,
+    tipo: str | None = None,
+    emissor: str | None = None,
+    aplica_se_a: str | None = None,
+    area: str | None = None,
+    ramo: str | None = None,
+    periodo: Mapping[str, str] | None = None,
+    vigente: bool = True,
+) -> list[Evidence]:
+    """Um item por documento (`unit_id=None`, com os trechos da versão), filtrado pelo tipo, pelo emissor
+    (`EMITIDO_POR`: o órgão; o tipo de órgão vale pelas instâncias dele, e a instituição pelos órgãos dela), pela
+    instituição a que se aplica (a de `aplicavel_a`), pela área (`DE_AREA`), pelo ramo (uma unidade com `SOBRE` para
+    ele ou para uma seção dele) e pelo período da vigência. Na ordem do papel, do nível (de cima para baixo) e do
+    `doc_key` (G5; o G6 a confere com a lista de documentos de hoje, ADR-047)."""
+    chosen: dict[str, EdgeRef] = {
+        key: EdgeRef(type="VERSAO", source=key, origin="regra")
+        for key, version in g.versions.items()
+        if (tipo is None or version.type == tipo) and (not vigente or version.status == "vigente")
+    }
+    if emissor is not None:
+        issuers = _issuers(g, emissor)
+        by_issuer = {edge.from_: _ref(edge) for issuer in issuers for edge in g.by_to.get(("EMITIDO_POR", issuer), ())}
+        chosen = {key: by_issuer[key] for key in chosen if key in by_issuer}
+    if aplica_se_a is not None:
+        applies = {e.doc_key: e.edge for e in aplicavel_a(g, aplica_se_a, papeis=ROLE_ORDER)}
+        chosen = {key: ref for key, ref in chosen.items() if key in applies}
+    if area is not None:
+        areas = {edge.from_: _ref(edge) for edge in g.by_to.get(("DE_AREA", area), ())}
+        chosen = {key: ref for key, ref in chosen.items() if key in areas}
+    if ramo is not None:
+        branched = {
+            g.units[edge.from_].doc_key
+            for target in _with_children(g, ramo)
+            for edge in g.by_to.get(("SOBRE", target), ())
+            if edge.from_ in g.units
+        }
+        chosen = {key: ref for key, ref in chosen.items() if key in branched}
+    if periodo is not None:
+        start, until = periodo.get("de"), periodo.get("ate")
+        chosen = {key: ref for key, ref in chosen.items() if _within(g.versions[key], start, until)}
+    ordered = sorted(
+        chosen,
+        key=lambda key: (
+            ROLE_ORDER.index(g.versions[key].role),
+            scope_rank(SCOPES, g.versions[key].scope),
+            key,
+        ),
+    )
+    return [
+        Evidence(
+            query="documentos",
+            target=emissor or aplica_se_a or area or ramo or tipo or key,
+            doc_key=key,
+            unit_id=None,
+            chunk_ids=g.versions[key].chunk_ids,
+            role=g.versions[key].role,
+            scope=g.versions[key].scope,
+            date=g.versions[key].date,
+            edge=chosen[key],
         )
+        for key in ordered
+    ]
+
+
+def _issuers(g: DomainGraph, emissor: str) -> set[str]:
+    """O órgão; as instâncias do tipo de órgão; os órgãos (e as instâncias deles) da instituição."""
+    found = {emissor, *(edge.from_ for edge in g.by_to.get(("INSTANCIA_DE", emissor), ()))}
+    if emissor.startswith(("inst:", "tipo_inst:")):
+        found |= {edge.from_ for edge in g.by_to.get(("PARTE_DE", emissor), ())}
     return found
+
+
+def _within(version: VersionRec, start: str | None, until: str | None) -> bool:
+    if version.date is None:
+        return start is None and until is None
+    return (start is None or version.date >= date.fromisoformat(start)) and (
+        until is None or version.date <= date.fromisoformat(until)
+    )
 
 
 def _ref(edge: EdgeRec) -> EdgeRef:
@@ -283,7 +400,7 @@ QUERIES: Final[Mapping[QueryName, Callable[..., list[Evidence]]]] = {
     "sobre": sobre,
     "ligados": ligados,
     "aplicavel_a": aplicavel_a,
-    "documentos": _not_yet("documentos"),
+    "documentos": documentos,
     "itens": _not_yet("itens"),
     "linha_do_tempo": linha_do_tempo,
 }
