@@ -57,6 +57,10 @@ def test_toda_fonte_resolve(grafo: list[dict[str, Any]], chunks: set[str], unida
         }
     taxonomy = yaml.safe_load((ROOT / "corpus" / "taxonomia.yaml").read_text(encoding="utf-8"))
     curated |= {f"taxonomia:{entry['categoria']}" for entry in taxonomy["entries"]}
+    # G3: APLICA_SE_A e EMITIDO_POR saem da pasta do arquivo de um documento do catálogo.
+    curated |= {
+        "pasta:" + d["source_file"].removeprefix("ocr/").rsplit("/", 1)[0] for d in _jsonl(INDEX / "documents.jsonl")
+    }
     unit_ids = {r["unit_id"] for r in grafo if r["kind"] == "unit"}
     problems = []
     for record in grafo:
@@ -82,3 +86,19 @@ def test_todo_tipo_tem_papel_e_o_papel_e_o_da_tabela(grafo: list[dict[str, Any]]
 def test_entidades_so_dos_prefixos_e_sem_pessoas(grafo: list[dict[str, Any]]) -> None:
     for record in (r for r in grafo if r["kind"] == "entity"):
         assert record["type"] in PREFIXES and record["id"].startswith(record["type"] + ":")
+
+
+def test_toda_versao_se_aplica_a_uma_instituicao(grafo: list[dict[str, Any]]) -> None:
+    """G3 (106 US3): todo documento do acervo vale para uma instituição do catálogo; a UEL ou a região fora dele
+    apareceria aqui."""
+    versions = {r["doc_key"] for r in grafo if r["kind"] == "version"}
+    applied = {r["from"] for r in grafo if r["kind"] == "edge" and r["type"] == "APLICA_SE_A"}
+    assert versions - applied == set()
+
+
+def test_instancias_tem_tipo_e_a_de_cima(grafo: list[dict[str, Any]]) -> None:
+    instances = {r["id"] for r in grafo if r["kind"] == "entity" and r["type"] in ("inst", "orgao")}
+    typed = {r["from"] for r in grafo if r["kind"] == "edge" and r["type"] == "INSTANCIA_DE"}
+    above = {r["from"] for r in grafo if r["kind"] == "edge" and r["type"] == "PARTE_DE"}
+    assert instances and instances == typed
+    assert instances - above == {"inst:omme", "inst:regiao_interamericana"}

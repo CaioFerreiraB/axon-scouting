@@ -3,13 +3,15 @@
     uv run python scripts/grafo.py build
     uv run python scripts/grafo.py query sobre tipo_orgao:diretoria_regional --papeis norma
     uv run python scripts/grafo.py query ligados tipo_orgao:diretoria_regional
+    uv run python scripts/grafo.py query aplicavel_a inst:ge_inah
     uv run python scripts/grafo.py query reconhecer "Quem fiscaliza as contas da Diretoria Regional?"
     uv run python scripts/grafo.py plan "Quem fiscaliza as contas da Diretoria Regional?"
     uv run python scripts/grafo.py export --arrows [--entidade X --saltos N] > grafo.arrows.json
 
-`build` lê `corpus/organizacao.yaml` e o artefato do índice (trechos com o caminho na árvore, catálogo, manifesto) e
-grava `graph.jsonl` (v2) ao lado do índice do pacote. Sem modelo e sem rede; roda em segundos. Refaça depois de cada
-ingestão ou mudança nos YAML curados. Saídas: 0, 1 (invariante: tipo sem papel) e 2 (YAML inválido).
+`build` lê `corpus/organizacao.yaml`, `corpus/dominio.yaml` e o artefato do índice (trechos com o caminho na árvore,
+catálogo, manifesto) e grava `graph.jsonl` (v2) ao lado do índice do pacote. Sem modelo e sem rede; roda em segundos.
+Refaça depois de cada ingestão ou mudança nos YAML curados. Saídas: 0, 1 (invariante: tipo sem papel) e 2 (YAML
+inválido).
 """
 
 from __future__ import annotations
@@ -57,7 +59,8 @@ def build(args: argparse.Namespace) -> int:
     write_graph_v2(args.index / GRAPH, records)
     print(
         f"{report.entities} entidades, {report.versions} versões, {report.sections} seções (SOBRE), "
-        f"{report.relations} relações de governança → {args.index / GRAPH}"
+        f"{report.relations} relações de governança, {report.applies} APLICA_SE_A, {report.issued} EMITIDO_POR "
+        f"→ {args.index / GRAPH}"
     )
     for entity, titles in sorted(report.per_entity.items()):
         print(f"  {entity}: {len(titles)} seção(ões) — " + "; ".join(titles)[:300])

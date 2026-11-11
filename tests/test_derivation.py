@@ -600,3 +600,63 @@ def test_ramo_e_conceito() -> None:
 def test_com_orgao_o_plano_do_adr_063() -> None:
     _, consultas = _consultas("O que a diretoria regional diz sobre os escotistas?")
     assert consultas == [{"q": "sobre", "args": {"entidades": ["tipo_orgao:diretoria_regional"], "papeis": ["norma"]}}]
+
+
+# --- 106 G3: a instituição citada (101 FR-037, R44; 106 US3) --------------------------------------------------------
+
+COM_INSTITUICOES = dataclasses.replace(
+    LEXICON,
+    entity_terms=MappingProxyType(
+        {
+            "tipo_inst:regiao": ("regiao",),
+            "tipo_orgao:assembleia_de_grupo": ("assembleia de grupo",),
+            "inst:regiao_sp": ("regiao de sao paulo",),
+            "inst:ge_inah": ("professora inah de mello", "inah de mello"),
+            "cargo:monitor": ("monitor", "monitores"),
+            "conceito:patrulha": ("patrulha",),
+        }
+    ),
+)
+
+
+def _plano(pergunta: str) -> dict[str, object]:
+    return derive_context(pergunta, DIA, COM_INSTITUICOES).plan.to_json()
+
+
+def test_a_instituicao_sozinha_e_o_sobre_dela_cortado_pelo_que_vale_para_ela() -> None:
+    contexto = derive_context("No GE Professora Inah de Mello, quem aprova o balanço anual?", DIA, COM_INSTITUICOES)
+    assert contexto.entities == ("inst:ge_inah",)
+    assert contexto.plan.to_json() == {
+        "version": 1,
+        "forma": "intersecao",
+        "consultas": [
+            {"q": "sobre", "args": {"entidades": ["inst:ge_inah"], "papeis": ["norma"]}},
+            {"q": "aplicavel_a", "args": {"instituicao": "inst:ge_inah"}},
+        ],
+    }
+
+
+def test_orgao_e_instituicao_o_orgao_primeiro() -> None:
+    plano = _plano("Quem vota na assembleia de grupo do GE Professora Inah de Mello?")
+    assert plano["forma"] == "intersecao"
+    assert plano["consultas"] == [
+        {
+            "q": "sobre",
+            "args": {"entidades": ["tipo_orgao:assembleia_de_grupo"], "papeis": ["norma"]},
+        },
+        {"q": "aplicavel_a", "args": {"instituicao": "inst:ge_inah"}},
+    ]
+
+
+def test_com_outras_entidades_o_assunto_sao_elas() -> None:
+    """A instituição citada junto de um cargo e de um conceito não muda o plano do G2."""
+    plano = _plano("Que atividades para monitores de patrulha a Região de São Paulo descreveu?")
+    assert plano["forma"] == "simples"
+    assert [c["args"]["entidades"] for c in plano["consultas"]] == [  # type: ignore[index, union-attr]
+        ["cargo:monitor", "conceito:patrulha"],
+        ["cargo:monitor", "conceito:patrulha"],
+    ]
+
+
+def test_o_nome_da_instituicao_vence_o_do_tipo() -> None:
+    assert derive_context("O que diz a Região de São Paulo?", DIA, COM_INSTITUICOES).entities == ("inst:regiao_sp",)

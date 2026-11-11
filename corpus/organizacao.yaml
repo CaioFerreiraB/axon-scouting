@@ -1,9 +1,9 @@
 # Organização do movimento: a parte curada do grafo de domínio do scouting (spec 106, ADR-063 e ADR-064).
 #
 # Lido por `scripts/grafo.py build`: os tipos de órgão e de instituição (com nome e apelidos, que reconhecem a entidade
-# numa pergunta), os cargos e as relações de governança. Os ramos, as seções, as áreas e os conceitos vão para
-# `corpus/dominio.yaml` (106 research R5), e as instituições e os órgãos reais (Região SP, DR-SP, GE Inah…) entram aqui
-# no G3, cada um com a fonte. O desenho está em `Organização Escoteira.revisado.json` (arrows.app).
+# numa pergunta), as instituições e os órgãos reais (Região SP, DR-SP, GE Inah…, 106 G3), cada um com a fonte, os
+# cargos e as relações de governança. Os ramos, as seções, as áreas e os conceitos vão para `corpus/dominio.yaml` (106
+# research R5). O desenho está em `Organização Escoteira.revisado.json` (arrows.app).
 #
 # `fonte` é o `chunk_id` do trecho que prova a relação, e `citacao` é o pedaço do texto, para conferência. Uma relação
 # com `fonte: a verificar` não entra no grafo até ser conferida. As relações de governança ficam no grafo e fora da
@@ -100,6 +100,74 @@ tipos_de_orgao:
      natureza: fiscal, aliases: [comissao fiscal de grupo], instituido_em: estatuto-2024#art37@p26}
   - {id: conselho_de_pais, nome: Conselho de Pais, nivel: local, instituicao: grupo_escoteiro, natureza: apoio,
      aliases: [conselho de pais], instituido_em: estatuto-2024#art40@p26, nota: "um por seção"}
+
+instituicoes:
+  # As instituições reais (106 G3, research R20): o tipo (`instancia_de`), as de cima (`parte_de`, até 5 níveis) e a
+  # fonte, um trecho do acervo. `jurisdicao` (a do catálogo) e `pasta` (a subpasta da UEL na taxonomia) dizem quais
+  # documentos APLICA_SE_A a instituição; nos níveis de uma só instituição (mundial, interamericano, nacional), basta o
+  # nível. Só reconhecem a pergunta as que têm `aliases`: a UEB, a OMME e a Interamericana já são reconhecidas pelo
+  # tipo. Sem fonte no acervo, a instituição fica fora (decisão 1); os distritos e os outros grupos entram quando
+  # tiverem documento e fonte.
+  - {id: omme, nome: Organização Mundial do Movimento Escoteiro, instancia_de: omme, fonte: estatuto-2024#art1@p4,
+     citacao: "titular do registro internacional junto à Organização Mundial do Movimento Escoteiro"}
+  - {id: regiao_interamericana, nome: Região Escoteira Interamericana, instancia_de: regiao_interamericana,
+     fonte: estatuto-2024#art1@p4, citacao: "membro fundador da Conferência Escoteira Interamericana"}
+  - {id: ueb, nome: União dos Escoteiros do Brasil, instancia_de: ueb, parte_de: [regiao_interamericana, omme],
+     fonte: estatuto-2024#art1@p4,
+     citacao: "registro internacional junto à Organização Mundial … membro fundador da Conferência Escoteira Interamericana"}
+  - id: regiao_sp
+    nome: Região Escoteira de São Paulo
+    instancia_de: regiao
+    parte_de: [ueb]
+    jurisdicao: sao-paulo
+    aliases: [regiao escoteira de sao paulo, regiao de sao paulo, regiao sao paulo, regiao sp]
+    fonte: regulamento-regional-sp-2022#art1@p2
+    citacao: "normas complementares ao Estatuto da União dos Escoteiros do Brasil … aplicado à Região Escoteira de São Paulo"
+  - id: ge_inah
+    nome: Grupo Escoteiro Professora Inah de Mello, 147/SP
+    instancia_de: grupo_escoteiro
+    parte_de: [regiao_sp]
+    pasta: grupo-escoteiro-professora-inah-de-mello-147-sp
+    aliases: [grupo escoteiro professora inah de mello, professora inah de mello, inah de mello, ge inah, gepim]
+    fonte: estatuto-gepim-2026#art1@p2
+    citacao: "O Grupo Escoteiro Professora Inah de Mello, 147/SP … filiado a União dos Escoteiros do Brasil"
+    parte_de_fonte: estatuto-gepim-2026#preambulo@p1
+
+orgaos:
+  # Os órgãos reais com documento no acervo (106 G3): o tipo, a instituição de que são parte e a fonte. O documento
+  # fica EMITIDO_POR o órgão quando a pasta dele é a do tipo (`taxonomia` do tipo, nos `bodies` do catálogo) e ele se
+  # aplica à instituição do órgão. Sem `aliases`, não reconhecem a pergunta no G3: o tipo já reconhece.
+  - {id: an, nome: Assembleia Nacional, instancia_de: assembleia_nacional, parte_de: ueb, fonte: estatuto-2024#art12@p9}
+  - {id: can, nome: Conselho de Administração Nacional, instancia_de: conselho_de_administracao_nacional,
+     parte_de: ueb, fonte: estatuto-2024#art16@p11}
+  - {id: den, nome: Diretoria Executiva Nacional, instancia_de: diretoria_executiva_nacional, parte_de: ueb,
+     fonte: estatuto-2024#art18@p14}
+  - {id: ccn, nome: Conselho Consultivo Nacional, instancia_de: conselho_consultivo_nacional, parte_de: ueb,
+     fonte: estatuto-2024#art20@p15}
+  - {id: cfn, nome: Comissão Fiscal Nacional, instancia_de: comissao_fiscal_nacional, parte_de: ueb,
+     fonte: estatuto-2024#art21@p15}
+  - {id: cedn, nome: Comissão de Ética e Disciplina Nacional, instancia_de: comissao_de_etica_nacional, parte_de: ueb,
+     fonte: estatuto-2024#art22@p16}
+  - {id: rnjl, nome: Rede Nacional de Jovens Líderes, instancia_de: rede_de_jovens_lideres, parte_de: ueb,
+     fonte: regulamento-geral-rnjl-2022#art1@p6}
+  - {id: ar_sp, nome: Assembleia Regional de São Paulo, instancia_de: assembleia_regional, parte_de: regiao_sp,
+     fonte: regulamento-regional-sp-2022#art2@p2, citacao: "São órgãos regionais: I. a Assembleia Regional; …"}
+  - {id: dr_sp, nome: Diretoria Regional de São Paulo, instancia_de: diretoria_regional, parte_de: regiao_sp,
+     fonte: regulamento-regional-sp-2022#art2@p2}
+  - {id: ccr_sp, nome: Conselho Consultivo Regional de São Paulo, instancia_de: conselho_consultivo_regional,
+     parte_de: regiao_sp, fonte: regulamento-regional-sp-2022#art2@p2}
+  - {id: cfr_sp, nome: Comissão Fiscal Regional de São Paulo, instancia_de: comissao_fiscal_regional,
+     parte_de: regiao_sp, fonte: regulamento-regional-sp-2022#art2@p2}
+  - {id: cedr_sp, nome: Comissão de Ética e Disciplina Regional de São Paulo, instancia_de: comissao_de_etica_regional,
+     parte_de: regiao_sp, fonte: regulamento-regional-sp-2022#art2@p2}
+  - {id: crj_sp, nome: Conselho Regional Jovem de São Paulo, instancia_de: conselho_regional_jovem, parte_de: regiao_sp,
+     fonte: regimento-conselho-regional-jovem-sp-2019.02.22#art1@p1}
+  - {id: cvl_sp, nome: Conselho Regional dos Portadores da Medalha Velho Lobo de São Paulo,
+     instancia_de: conselho_regional_velhos_lobos, parte_de: regiao_sp,
+     fonte: regimento-conselho-medalha-velho-lobo-sp-2018.12.08#art1@p1}
+  - {id: crp_sp, nome: Comissão Regional Pioneira de São Paulo, instancia_de: comissao_regional_pioneira,
+     parte_de: regiao_sp, fonte: sp-1-ata-xxii-frjl-ordinario-marco-de-2024-assinada-1-1#s24@p9,
+     citacao: "Núcleo Regional de Jovens Líderes, Comissão Regional Pioneira, Diretoria Jovem e Conselho Regional Jovem"}
 
 cargos:
   - {id: presidente_ueb, nome: Presidente da UEB, orgao: diretoria_executiva_nacional, provimento: a verificar,

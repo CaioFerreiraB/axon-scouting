@@ -1,8 +1,7 @@
 """As consultas com nome do grafo de domínio (spec 106 FR-009; research R7; design.md, seção 3).
 
-Funções puras sobre o `DomainGraph`: nenhuma faz I/O nem lê relógio. Devolvem evidência, e não trechos. No G1, `sobre`
-cobre as arestas que o ADR-063 já tinha (órgão e instituição → seções das normas) e `ligados`, as relações de
-governança; as demais chegam nos incrementos seguintes.
+Funções puras sobre o `DomainGraph`: nenhuma faz I/O nem lê relógio. Devolvem evidência, e não trechos. `sobre` (G1,
+G2, G3), `aplicavel_a` (G3) e `ligados` (as relações de governança); as demais chegam nos incrementos seguintes.
 """
 
 from __future__ import annotations
@@ -35,7 +34,8 @@ def sobre(
     periodo: Mapping[str, str] | None = None,
 ) -> list[Evidence]:
     """As unidades com `SOBRE` para as entidades, em camadas:
-    0. as unidades da entidade e das seções do ramo dela (`DE_RAMO`);
+    0. as unidades da entidade e das seções do ramo dela (`DE_RAMO`); a instituição real inclui o tipo dela
+       (`INSTANCIA_DE`) e as partes do tipo (`PARTE_DE`: o que trata da assembleia de grupo trata do grupo; 106 R20);
     1. as do termo genérico (`E_UM`: o que vale para os adultos vale para o escotista);
     2. os documentos inteiros das áreas que regem a entidade (`REGE` + `DE_AREA`; 106 R19).
     Em cada camada, a ordem é a posição da entidade em `entidades` (a da menção), o papel, o nível (de cima para baixo),
@@ -109,8 +109,16 @@ def _strongest(g: DomainGraph, evidence: list[Evidence], required: set[str]) -> 
 
 
 def _with_children(g: DomainGraph, entity: str) -> list[str]:
-    """A entidade e as seções do ramo (`DE_RAMO`): o que trata da alcateia trata do Ramo Lobinho."""
-    return [entity, *(edge.from_ for edge in g.by_to.get(("DE_RAMO", entity), ()))]
+    """A entidade e as seções do ramo (`DE_RAMO`): o que trata da alcateia trata do Ramo Lobinho. A instância inclui o
+    tipo (`INSTANCIA_DE`); a instituição real, também as partes dela e do tipo (`PARTE_DE`) — só a instituição citada
+    numa pergunta: a menção do tipo ("grupo escoteiro") fica com as unidades dele, como no G1."""
+    found = [entity, *(edge.from_ for edge in g.by_to.get(("DE_RAMO", entity), ()))]
+    kinds = [edge.to for edge in g.by_from.get(("INSTANCIA_DE", entity), ())]
+    found.extend(kinds)
+    if entity.startswith("inst:"):
+        for whole in (entity, *kinds):
+            found.extend(edge.from_ for edge in g.by_to.get(("PARTE_DE", whole), ()))
+    return list(dict.fromkeys(found))
 
 
 def _root(g: DomainGraph, entity: str) -> str:
@@ -141,6 +149,53 @@ def _context(g: DomainGraph, unit_id: str, *, documents: bool = True) -> set[str
         for edge in g.by_from.get(("SOBRE", node), ()):
             found.add(_root(g, edge.to))
             found.update(_generics(g, edge.to))
+    return found
+
+
+def aplicavel_a(g: DomainGraph, instituicao: str, *, papeis: Sequence[str] = ("norma",)) -> list[Evidence]:
+    """Os documentos que valem para a instituição: os com `APLICA_SE_A` para ela e para cada uma acima dela pelo
+    `PARTE_DE` (até 5 níveis), de cima para baixo (o nível do documento; depois o `doc_key`). Instituição fora do grafo:
+    nenhum."""
+    chain = [instituicao, *_above(g, instituicao)]
+    found: list[tuple[tuple[int, str], Evidence]] = []
+    for institution in chain:
+        for edge in g.by_to.get(("APLICA_SE_A", institution), ()):
+            version = g.versions.get(edge.from_)
+            if version is None or (papeis and version.role not in papeis):
+                continue
+            found.append(
+                (
+                    (scope_rank(SCOPES, version.scope), version.doc_key),
+                    Evidence(
+                        query="aplicavel_a",
+                        target=institution,
+                        doc_key=version.doc_key,
+                        unit_id=None,
+                        chunk_ids=(),
+                        role=version.role,
+                        scope=version.scope,
+                        date=version.date,
+                        edge=_ref(edge),
+                    ),
+                )
+            )
+    return [evidence for _, evidence in sorted(found, key=lambda pair: pair[0])]
+
+
+def _above(g: DomainGraph, start: str, depth: int = 5) -> list[str]:
+    """As instituições acima pelo `PARTE_DE`, de baixo para cima, até `depth` níveis."""
+    found: list[str] = []
+    frontier = [start]
+    for _ in range(depth):
+        frontier = [
+            edge.to
+            for node in frontier
+            for edge in g.by_from.get(("PARTE_DE", node), ())
+            if edge.to not in found and edge.to != start
+        ]
+        if not frontier:
+            break
+        found.extend(dict.fromkeys(frontier))
     return found
 
 
@@ -184,7 +239,7 @@ def _not_yet(name: str) -> Callable[..., list[Evidence]]:
 QUERIES: Final[Mapping[QueryName, Callable[..., list[Evidence]]]] = {
     "sobre": sobre,
     "ligados": ligados,
-    "aplicavel_a": _not_yet("aplicavel_a"),
+    "aplicavel_a": aplicavel_a,
     "documentos": _not_yet("documentos"),
     "itens": _not_yet("itens"),
     "linha_do_tempo": _not_yet("linha_do_tempo"),

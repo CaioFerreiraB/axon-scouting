@@ -328,21 +328,33 @@ def _has_subject(text: str, lexicon: Lexicon) -> bool:
 
 
 ORGAN_PREFIXES: Final = ("tipo_orgao:", "tipo_inst:", "orgao:", "inst:")
+INSTITUTION_PREFIX: Final = "inst:"
 CONTENT_ROLES: Final = ["norma", "orientacao"]
 
 
 def _plan(entities: tuple[str, ...], branch: str | None, branches: tuple[str, ...]) -> QueryPlan:
-    """A forma da pergunta → o plano (101 FR-037, research R44; 106 G2):
-    - órgãos e instituições: um `sobre` só com eles, nas normas — o do ADR-063, que não muda até o G3;
+    """A forma da pergunta → o plano (101 FR-037, research R44; 106 G2, G3):
+    - órgãos e tipos de instituição: um `sobre` com eles, nas normas — o do ADR-063; com uma instituição real citada
+      (`inst:`), o plano é a interseção com `aplicavel_a` dela (106 US3): as normas que valem para ela e tratam do
+      órgão. A instituição não entra no `sobre`: as partes dela tirariam as vagas do órgão (106 R20);
     - "cada ramo" (as facetas): `para_cada` ramo, com as outras entidades na mesma unidade (`todas`);
     - um ramo citado e outras entidades, ou duas entidades ou mais: as unidades que tratam de todas (`todas`) e, com
-      duas entidades ou mais, também as de cada uma (a unidade que nomeia uma só pode ter a resposta);
+      duas entidades ou mais, também as de cada uma (a unidade que nomeia uma só pode ter a resposta); a instituição
+      citada junto não muda esse plano — o assunto são as entidades;
+    - a instituição real sozinha: a interseção do `sobre` dela (o documento dela, o tipo e as partes) com `aplicavel_a`.
     Normas e orientações. Uma entidade sozinha (um conceito, um cargo) ou o ramo sozinho não pede plano: a busca é mais
     precisa que todas as unidades sobre ela (106 R19, o s01 da semente)."""
-    organs = [entity for entity in entities if entity.startswith(ORGAN_PREFIXES)]
+    institutions = [entity for entity in entities if entity.startswith(INSTITUTION_PREFIX)]
+    organs = [
+        entity for entity in entities if entity.startswith(ORGAN_PREFIXES) and not entity.startswith(INSTITUTION_PREFIX)
+    ]
     others = [entity for entity in entities if not entity.startswith(ORGAN_PREFIXES)]
-    if organs:  # a pergunta sobre um órgão fica com o plano do ADR-063 até o G3 (o emissor e a instituição)
-        return QueryPlan(consultas=(QueryStep(q="sobre", args={"entidades": organs, "papeis": ["norma"]}),))
+    if organs or (institutions and not others):
+        subject = QueryStep(q="sobre", args={"entidades": organs or institutions[:1], "papeis": ["norma"]})
+        if not institutions:
+            return QueryPlan(consultas=(subject,))
+        applies = QueryStep(q="aplicavel_a", args={"instituicao": institutions[0]})
+        return QueryPlan(forma="intersecao", consultas=(subject, applies))
     steps: list[QueryStep] = []
     if len(branches) >= 2:
         args: dict[str, JSONValue] = {"entidades": [EACH, *others[:3]], "papeis": list(CONTENT_ROLES)}

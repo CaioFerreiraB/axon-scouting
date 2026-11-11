@@ -6,6 +6,10 @@ No G1, o grafo é o do ADR-063 no formato novo:
 - `version`: todo documento do catálogo, com o papel (`ROLES`);
 - `unit` e `edge` `CONTEM`/`SOBRE` (modo pelo papel): as seções que disciplinam cada órgão;
 - `edge` de governança: as relações do `organizacao.yaml` com fonte conferida e presente no índice.
+O G2 acrescenta as entidades de programa e adultos (`dominio.yaml`), o `SOBRE` delas, `E_UM`, `DE_RAMO`, `REGE` e
+`DE_AREA`; o G3, as instituições e os órgãos reais (`inst:`, `orgao:`) com `INSTANCIA_DE` e `PARTE_DE` (também entre
+os tipos), `APLICA_SE_A` e `EMITIDO_POR` pela taxonomia, e o `SOBRE` do documento inteiro cujo título nomeia a
+instituição.
 A fonte de uma entidade curada é a entrada do catálogo (`organizacao.yaml:<seção>/<id>`), como o grafo de hoje: o órgão
 cujo `instituido_em` está "a verificar" continua reconhecível (research R18). Puro.
 """
@@ -16,17 +20,20 @@ from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from typing import Any, Final
 
-from axon_scouting.rag.graph.api import MODE_OF, ROLES
+from axon_scouting.rag.graph.api import MODE_OF, ROLES, reconhecer
 from axon_scouting.rag.graph.domain.build.domain import DOMAIN, alias_map, domain_entities, rege
+from axon_scouting.rag.graph.domain.build.instances import Instance, instances_from_mapping, type_parts
 from axon_scouting.rag.graph.domain.build.organs import (
     VERIFY,
     ChunkPlace,
     cargo_terms,
+    normalize,
     organs_from_mapping,
     relations_from_mapping,
     sections,
 )
-from axon_scouting.rag.graph.domain.build.sobre import sobre_graph
+from axon_scouting.rag.graph.domain.build.sobre import ROLES_WITH_SOBRE, sobre_graph
+from axon_scouting.rag.graph.domain.build.taxonomy import SOURCE, applies_to, folder_of, issued_by
 from axon_scouting.rag.graph.domain.model import GRAPH_VERSION
 from axon_scouting.rag.graph.domain.roles import missing_roles
 
@@ -39,6 +46,8 @@ class BuildReport:
     sections: int = 0
     relations: int = 0
     versions: int = 0
+    applies: int = 0
+    issued: int = 0
     dropped: list[str] = field(default_factory=list)
     per_entity: dict[str, list[str]] = field(default_factory=dict)
 
@@ -86,6 +95,9 @@ def build_records(
     found = sections(places, organs)
     relations = relations_from_mapping(raw, {place.chunk_id for place in places})
     cargos = cargo_terms(raw)
+    known_chunks = {place.chunk_id for place in places}
+    instances = instances_from_mapping(raw, known_chunks)
+    report.dropped.extend(instances.dropped)
 
     prefix = {organ.id: ("tipo_inst" if organ.institution else "tipo_orgao") for organ in organs}
     section_of = {organ.id: ("tipos_de_instituicao" if organ.institution else "tipos_de_orgao") for organ in organs}
@@ -141,6 +153,20 @@ def build_records(
                 "source": entity.source,
                 "origin": "curado",
                 "level": None,
+            }
+        )
+    for instance in instances.found:
+        entities.append(
+            {
+                "kind": "entity",
+                "id": instance.id,
+                "type": instance.type,
+                "name": instance.name,
+                "terms": list(instance.terms),
+                "aliases": list(instance.terms),
+                "source": instance.source,
+                "origin": "curado",
+                "level": instance.level,
             }
         )
     report.entities = len(entities)
@@ -314,6 +340,39 @@ def build_records(
                 }
             )
 
+    # G3: as instâncias, as partes e a aplicabilidade (research R20).
+    edges.extend(_instance_edges(instances.found, type_parts(raw, known_chunks)))
+    institutions, organs_found = instances.institutions(), instances.organs()
+    titled = {i.id: i.terms for i in institutions if i.terms}
+    for doc in documents:
+        fields, source_file = doc["fields"], str(doc.get("source_file") or "")
+        applied = applies_to(fields, source_file, institutions)
+        source = f"{SOURCE}{folder_of(source_file)}"
+        if applied is not None:
+            edges.append(_edge("APLICA_SE_A", doc["doc_key"], applied, source, "regra"))
+            report.applies += 1
+        for issuer in issued_by(fields, applied, organs_found):
+            edges.append(_edge("EMITIDO_POR", doc["doc_key"], issuer, source, "regra"))
+            report.issued += 1
+        # O documento cujo título nomeia a instituição trata dela por inteiro (o estatuto do GE, o regulamento de SP).
+        key = doc["doc_key"]
+        if role_of.get(key) not in ROLES_WITH_SOBRE or status_of.get(key) != "vigente" or key not in doc_chunks:
+            continue
+        for named in reconhecer(normalize(str(fields.get("document_title") or "")), titled):
+            whole = f"{key}#documento"
+            if whole not in units:
+                units[whole] = {
+                    "kind": "unit",
+                    "unit_id": whole,
+                    "doc_key": key,
+                    "unit_kind": "documento",
+                    "title": str(fields.get("document_title") or ""),
+                    "chunk_ids": doc_chunks[key],
+                }
+                edges.append(_edge("CONTEM", key, whole, whole, "regra"))
+            edges.append({**_edge("SOBRE", whole, named, whole, "regra"), "mode": MODE_OF[role_of[key]]})
+            report.per_entity.setdefault(named, []).append(units[whole]["title"])
+
     for relation in relations:
         ends = (relation.source, relation.target)
         if any(end not in prefix for end in ends):
@@ -339,3 +398,22 @@ def build_records(
         "sources": {ORGANIZATION: organization_sha256, **({DOMAIN: domain_sha256} if domain_sha256 else {})},
     }
     return [meta, *entities, *versions, *units.values(), *edges], report
+
+
+def _edge(kind: str, start: str, end: str, source: str, origin: str) -> dict[str, Any]:
+    return {"kind": "edge", "type": kind, "from": start, "to": end, "source": source, "origin": origin}
+
+
+def _instance_edges(instances: Sequence[Instance], parts: Sequence[tuple[str, str, str]]) -> list[dict[str, Any]]:
+    """`INSTANCIA_DE` (a instância → o tipo), `PARTE_DE` entre as instâncias e entre os tipos (o tipo de órgão → o tipo
+    de instituição dele), todas curadas."""
+    known = {i.id for i in instances}
+    found = [_edge("INSTANCIA_DE", i.id, i.kind_of, i.source, "curado") for i in instances]
+    for instance in instances:
+        for parent in instance.parents:
+            if parent in known:
+                found.append(
+                    _edge("PARTE_DE", instance.id, parent, instance.parent_source or instance.source, "curado")
+                )
+    found.extend(_edge("PARTE_DE", part, whole, source, "curado") for part, whole, source in parts)
+    return found
