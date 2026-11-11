@@ -52,6 +52,8 @@ class UnitRec:
     chunk_ids: tuple[str, ...]
     branches: tuple[str, ...] = ()
     parent: str | None = None
+    ancestors: tuple[str, ...] = ()
+    """As unidades acima desta (da raiz para baixo) e, no documento de um ramo, o documento inteiro (G2, `todas`)."""
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -136,6 +138,7 @@ def from_records(records: Iterable[Record]) -> DomainGraph:
                     chunk_ids=tuple(str(c) for c in raw["chunk_ids"]),
                     branches=tuple(raw.get("branches") or ()),
                     parent=raw.get("parent"),
+                    ancestors=tuple(raw.get("ancestors") or ()),
                 )
             elif kind == "edge":
                 edges.append(

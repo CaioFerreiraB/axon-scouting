@@ -26,7 +26,7 @@ from axon_ai_contracts import RETRIEVAL_FILTERS_KEY, JSONValue, TurnView
 from axon_scouting.context.lexicon import LEXICON, Lexicon, Topic
 from axon_scouting.context.periods import Validity, find_period
 from axon_scouting.context.text import contains_term, normalize
-from axon_scouting.rag.graph.api import QueryPlan, QueryStep, reconhecer
+from axon_scouting.rag.graph.api import EACH, QueryPlan, QueryStep, reconhecer
 
 CONTEXT_KEY = "context"
 """Chave da fatia com o contexto derivado inteiro — o que a 104 e a 105 leem."""
@@ -158,7 +158,7 @@ def derive_context(
             if synthesis is not None or catalog is not None or enumeration is not None or period is not None
             else reconhecer(anchored, lexicon.entity_terms)
         ),
-        plan=_plan(entities),
+        plan=_plan(entities, branch, branches),
     )
 
 
@@ -327,12 +327,35 @@ def _has_subject(text: str, lexicon: Lexicon) -> bool:
     )
 
 
-def _plan(entities: tuple[str, ...]) -> QueryPlan:
-    """A forma da pergunta → o plano (101 FR-037). No G1, só o que o ADR-063 fazia: um `sobre` com todas as entidades
-    nomeadas, nas normas (um grupo só, da norma de cima para a de baixo)."""
-    if not entities:
-        return QueryPlan()
-    return QueryPlan(consultas=(QueryStep(q="sobre", args={"entidades": list(entities), "papeis": ["norma"]}),))
+ORGAN_PREFIXES: Final = ("tipo_orgao:", "tipo_inst:", "orgao:", "inst:")
+CONTENT_ROLES: Final = ["norma", "orientacao"]
+
+
+def _plan(entities: tuple[str, ...], branch: str | None, branches: tuple[str, ...]) -> QueryPlan:
+    """A forma da pergunta → o plano (101 FR-037, research R44; 106 G2):
+    - órgãos e instituições: um `sobre` só com eles, nas normas — o do ADR-063, que não muda até o G3;
+    - "cada ramo" (as facetas): `para_cada` ramo, com as outras entidades na mesma unidade (`todas`);
+    - um ramo citado e outras entidades, ou duas entidades ou mais: as unidades que tratam de todas (`todas`) e, com
+      duas entidades ou mais, também as de cada uma (a unidade que nomeia uma só pode ter a resposta);
+    Normas e orientações. Uma entidade sozinha (um conceito, um cargo) ou o ramo sozinho não pede plano: a busca é mais
+    precisa que todas as unidades sobre ela (106 R19, o s01 da semente)."""
+    organs = [entity for entity in entities if entity.startswith(ORGAN_PREFIXES)]
+    others = [entity for entity in entities if not entity.startswith(ORGAN_PREFIXES)]
+    if organs:  # a pergunta sobre um órgão fica com o plano do ADR-063 até o G3 (o emissor e a instituição)
+        return QueryPlan(consultas=(QueryStep(q="sobre", args={"entidades": organs, "papeis": ["norma"]}),))
+    steps: list[QueryStep] = []
+    if len(branches) >= 2:
+        args: dict[str, JSONValue] = {"entidades": [EACH, *others[:3]], "papeis": list(CONTENT_ROLES)}
+        if others:
+            args["modo"] = "todas"
+        steps.append(QueryStep(q="sobre", args=args))
+        return QueryPlan(forma="para_cada", consultas=tuple(steps), para_cada=tuple(f"ramo:{b}" for b in branches))
+    joint = [*([f"ramo:{branch}"] if branch else []), *others][:4]
+    if others and len(joint) >= 2:
+        steps.append(QueryStep(q="sobre", args={"entidades": joint, "modo": "todas", "papeis": list(CONTENT_ROLES)}))
+    if len(others) >= 2:
+        steps.append(QueryStep(q="sobre", args={"entidades": others[:4], "papeis": list(CONTENT_ROLES)}))
+    return QueryPlan(consultas=tuple(steps))
 
 
 _YEAR: Final = re.compile(r"\b(19[89]\d|20\d\d)\b")

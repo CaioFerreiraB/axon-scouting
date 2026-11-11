@@ -392,3 +392,11 @@ def test_entidade_com_id_invalido_e_erro_de_filtro() -> None:
 
     with pytest.raises(InvalidFilters):
         entities({"entities": ["diretoria_regional"]})
+
+
+def test_vagas_do_grafo_repartidas_sem_passar_de_8() -> None:
+    from axon_scouting.rag.retrieval.retriever import GRAPH_TOTAL, _shares
+
+    assert GRAPH_TOTAL == 8
+    assert _shares(1) == [8] and _shares(2) == [4, 4] and _shares(3) == [3, 3, 2] and _shares(5) == [2, 2, 2, 1, 1]
+    assert sum(_shares(5)) == 8 and _shares(10) == [1] * 10

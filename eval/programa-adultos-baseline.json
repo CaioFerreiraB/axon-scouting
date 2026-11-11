@@ -196,7 +196,7 @@
     },
     {
       "name": "scouting:fact_recall",
-      "value": 0.8409090909090909,
+      "value": 0.8484848484848485,
       "variance": null,
       "n": 33,
       "deterministic": true,
@@ -627,7 +627,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.25
+        "scouting:fact_recall": 0.5
       },
       "citations": [],
       "flags": [

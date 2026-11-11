@@ -196,7 +196,7 @@
     },
     {
       "name": "scouting:fact_recall",
-      "value": 0.9236111111111112,
+      "value": 0.9548611111111112,
       "variance": null,
       "n": 48,
       "deterministic": true,
@@ -1152,7 +1152,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.5
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -1222,7 +1222,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.5
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -1362,7 +1362,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.0
+        "scouting:fact_recall": 0.5
       },
       "citations": [],
       "flags": [

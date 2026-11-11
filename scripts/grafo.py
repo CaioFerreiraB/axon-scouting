@@ -33,17 +33,20 @@ from axon_scouting.rag.graph.service import DomainGraphService  # noqa: E402
 
 INDEX = ROOT / "src" / "axon_scouting" / "data" / "index"
 ORGANIZATION = ROOT / "corpus" / "organizacao.yaml"
+DOMAIN = ROOT / "corpus" / "dominio.yaml"
 
 
 def build(args: argparse.Namespace) -> int:
     try:
-        sources = ArtifactSources(args.index, args.organization)
+        sources = ArtifactSources(args.index, args.organization, args.domain)
         records, report = build_records(
             organization=sources.organization(),
             chunks=list(sources.chunks()),
             documents=list(sources.documents()),
             manifest=sources.manifest(),
             organization_sha256=sources.organization_sha256(),
+            domain=sources.domain(),
+            domain_sha256=sources.domain_sha256(),
         )
     except OrganizationError as error:
         print(f"organizacao.yaml inválido: {error}", file=sys.stderr)
@@ -163,6 +166,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--index", type=Path, default=INDEX)
     parser.add_argument("--organization", type=Path, default=ORGANIZATION)
+    parser.add_argument("--domain", type=Path, default=DOMAIN)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("build", help="monta o grafo e grava graph.jsonl (v2)")
     q = sub.add_parser("query", help="roda uma consulta do grafo, como a busca roda")

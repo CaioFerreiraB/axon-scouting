@@ -1,0 +1,83 @@
+# Programa educativo e adultos: a parte curada do grafo de domínio que não é organização (spec 106, ADR-064; research
+# R5 — clarificação de 2026-11-10: dois arquivos).
+#
+# Lido por `scripts/grafo.py build`. Cada entrada tem `fonte` (o `chunk_id` de um trecho que a define) e `aliases` (os
+# nomes, que o build casa nos títulos das unidades do acervo — o título da seção, do capítulo, da regra do POR — para
+# ligar a unidade à entidade com `SOBRE`). `reconhece: false` tira a entidade do reconhecimento na pergunta: os ramos já
+# são reconhecidos pelo léxico da 101 (`branches`), que é medido; aqui eles só ligam títulos.
+#
+# Um apelido curto e ambíguo não entra: "escoteiro" casaria com "Grupo Escoteiro"; "guia", com os guias dos ramos.
+version: 1
+
+ramos:
+  - {id: filhotes, nome: Ramo Filhotes, aliases: [ramo filhotes, filhotes, filhote], fonte: por-2025.2.1#regra53@p58,
+     reconhece: false}
+  - {id: lobinho, nome: Ramo Lobinho, aliases: [ramo lobinho, lobinho, lobinhos, lobinha, lobinhas],
+     fonte: por-2025.2.1#regra63@p62, reconhece: false}
+  - {id: escoteiro, nome: Ramo Escoteiro, aliases: [ramo escoteiro], fonte: por-2025.2.1#regra75@p66, reconhece: false}
+  - {id: senior, nome: Ramo Sênior, aliases: [ramo senior, senior, seniores, ramo senior e guia],
+     fonte: por-2025.2.1#regra91@p72, reconhece: false}
+  - {id: pioneiro, nome: Ramo Pioneiro, aliases: [ramo pioneiro, pioneiro, pioneiros, pioneira, pioneiras],
+     fonte: por-2025.2.1#regra107@p78, reconhece: false}
+
+secoes:
+  - {id: ninhada, nome: Ninhada, ramo: filhotes, aliases: [ninhada, ninhadas], fonte: por-2025.2.1#regra55@p58,
+     reconhece: false}
+  - {id: alcateia, nome: Alcateia, ramo: lobinho, aliases: [alcateia, alcateias], fonte: por-2025.2.1#regra65@p62,
+     reconhece: false}
+  - {id: tropa_escoteira, nome: Tropa Escoteira, ramo: escoteiro, aliases: [tropa escoteira, tropas escoteiras],
+     fonte: por-2025.2.1#regra77@p66, reconhece: false}
+  - {id: tropa_senior, nome: Tropa Sênior, ramo: senior, aliases: [tropa senior, tropa senior guia, tropas seniores],
+     fonte: por-2025.2.1#regra93@p72, reconhece: false}
+  - {id: cla, nome: Clã Pioneiro, ramo: pioneiro, aliases: [cla pioneiro, cla, clas], fonte: por-2025.2.1#regra109@p78,
+     reconhece: false}
+
+areas:
+  - {id: programa_educativo, nome: Programa Educativo, categorias: [Programa Educativo],
+     aliases: [programa educativo], fonte: politica-nacional-programa-educativo-4#12@p24}
+  - {id: gestao_de_adultos, nome: Gestão de Adultos, categorias: [Gestão de Adultos],
+     aliases: [gestao de adultos], fonte: politica-nacional-adultos-2022#1@p6}
+  - {id: espacos_seguros, nome: Espaços Seguros, categorias: [Espaços Seguros],
+     aliases: [espacos seguros, protecao infantojuvenil], fonte: politica-nacional-espacos-seguros-2023#10@p27}
+
+conceitos:
+  # "Adultos" é o termo genérico: escotistas e dirigentes são adultos (POR, Regra 018). O que vale para os adultos vale
+  # para cada um deles (E_UM), e a unidade sobre escotistas já trata de adultos.
+  - {id: adulto, nome: Adultos, aliases: [adulto, adultos], abrange: [cargo:escotista, cargo:dirigente],
+     fonte: por-2025.2.1#regra18@p23}
+  - {id: patrulha, nome: Patrulha, aliases: [patrulha, patrulhas], fonte: por-2025.2.1#regra80@p67}
+  - {id: matilha, nome: Matilha, aliases: [matilha, matilhas], fonte: por-2025.2.1#regra68@p63}
+  - {id: equipe_de_interesse, nome: Equipe de Interesse, aliases: [equipe de interesse, equipes de interesse],
+     fonte: por-2025.2.1#regra111@p79}
+  - {id: promessa, nome: Promessa, aliases: [promessa, promessas], fonte: por-2025.2.1#regra4@p14}
+  - {id: lema, nome: Lema, aliases: [lema], fonte: por-2025.2.1#regra64@p62}
+  - {id: progressao_pessoal, nome: Progressão Pessoal,
+     aliases: [progressao pessoal, sistema de progressao pessoal, etapa, etapas, mudanca de etapa],
+     fonte: por-2025.2.1#regra73@p64}
+  - {id: especialidade, nome: Especialidade, aliases: [especialidade, especialidades], fonte: por-2025.2.1#regra174@p131}
+  - {id: insignia, nome: Insígnia, aliases: [insignia, insignias], fonte: por-2025.2.1#regra175@p132}
+  - {id: insignia_de_madeira, nome: Insígnia de Madeira, aliases: [insignia de madeira], fonte: por-2025.2.1#regra134@p89}
+  - {id: reconhecimento, nome: Reconhecimento de Ramo, aliases: [reconhecimento, reconhecimentos],
+     fonte: por-2025.2.1#regra178@p144}
+  - {id: corte_de_honra, nome: Corte de Honra, aliases: [corte de honra], fonte: por-2025.2.1#regra85@p69}
+  - {id: conselho_de_patrulha, nome: Conselho de Patrulha, aliases: [conselho de patrulha], fonte: por-2025.2.1#regra82@p68}
+  - {id: modalidade, nome: Modalidades do Ar e do Mar,
+     aliases: [modalidade do mar, modalidade do ar, modalidades do ar e do mar], fonte: por-2025.2.1#regra177@p143}
+  - {id: marco_simbolico, nome: Marco Simbólico, aliases: [marco simbolico], fonte: por-2025.2.1#regra107@p78}
+  - {id: acampamento, nome: Acampamento, aliases: [acampamento, acampamentos, acantonamento, acantonamentos],
+     fonte: por-2025.2.1#regra141@p98~2}
+  - {id: seguranca, nome: Segurança nas Atividades, aliases: [seguranca], fonte: por-2025.2.1#regra142@p99}
+  - {id: vestuario, nome: Vestuário e Uniforme, aliases: [vestuario, uniforme, uniformes], fonte: por-2025.2.1#regra11@p20}
+  - {id: formacao, nome: Formação de Adultos,
+     aliases: [formacao de adultos, processo geral de formacao, gestao da formacao, rota de aprendizagem, cursos],
+     fonte: por-2025.2.1#regra131@p86}
+  - {id: transicao, nome: Transição entre os Ramos,
+     aliases: [transicao entre os ramos, mudanca para o ramo, passagem], fonte: por-2025.2.1#regra43@p42}
+
+# A área rege os cargos, os ramos e as seções (ADR-064, item 4): a pergunta sobre o cargo alcança os documentos da área.
+rege:
+  - {area: gestao_de_adultos, para: [cargo:escotista, cargo:dirigente, cargo:assistente, cargo:chefe_de_secao,
+     cargo:apf, cargo:formador, conceito:adulto], fonte: politica-nacional-adultos-2022#1@p6}
+  - {area: espacos_seguros, para: [conceito:adulto, cargo:escotista], fonte: politica-nacional-espacos-seguros-2023#10@p27}
+  - {area: programa_educativo, para: [ramo:filhotes, ramo:lobinho, ramo:escoteiro, ramo:senior, ramo:pioneiro],
+     fonte: politica-nacional-programa-educativo-4#12@p24}

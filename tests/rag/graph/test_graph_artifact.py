@@ -45,14 +45,18 @@ def test_o_chunking_e_o_do_indice(grafo: list[dict[str, Any]]) -> None:
 
 
 def test_toda_fonte_resolve(grafo: list[dict[str, Any]], chunks: set[str], unidades: set[str]) -> None:
-    organization = yaml.safe_load((ROOT / "corpus" / "organizacao.yaml").read_text(encoding="utf-8"))
-    curated = {
-        f"organizacao.yaml:{section}/{entry['id']}"
-        for section, entries in organization.items()
-        if isinstance(entries, list)
-        for entry in entries
-        if isinstance(entry, dict) and "id" in entry
-    }
+    curated: set[str] = set()
+    for name in ("organizacao.yaml", "dominio.yaml"):
+        data = yaml.safe_load((ROOT / "corpus" / name).read_text(encoding="utf-8"))
+        curated |= {
+            f"{name}:{section}/{entry['id']}"
+            for section, entries in data.items()
+            if isinstance(entries, list)
+            for entry in entries
+            if isinstance(entry, dict) and "id" in entry
+        }
+    taxonomy = yaml.safe_load((ROOT / "corpus" / "taxonomia.yaml").read_text(encoding="utf-8"))
+    curated |= {f"taxonomia:{entry['categoria']}" for entry in taxonomy["entries"]}
     unit_ids = {r["unit_id"] for r in grafo if r["kind"] == "unit"}
     problems = []
     for record in grafo:

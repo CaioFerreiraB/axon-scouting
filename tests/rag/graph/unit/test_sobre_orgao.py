@@ -25,7 +25,8 @@ def test_a_ordem_da_mencao_vem_primeiro() -> None:
     assert docs[1][0] == "tipo_orgao:diretoria_regional"
 
 
-def test_um_grupo_com_ate_3_documentos() -> None:
+def test_o_executor_entrega_todos_os_documentos_na_ordem() -> None:
+    """O corte em 3 documentos é da 103, que os ordena também pela relevância à pergunta (106 R19)."""
     plano = QueryPlan(
         consultas=(
             QueryStep(
@@ -43,8 +44,8 @@ def test_um_grupo_com_ate_3_documentos() -> None:
         "mundial-2020",
         "estatuto-2024",
         "regulamento-sp-2022",
+        "local-2026",
     ]
-    assert len({e.doc_key for e in grupo.evidence}) <= 3
 
 
 def test_papeis_filtram() -> None:

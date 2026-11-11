@@ -549,3 +549,54 @@ def test_o_plano_vai_aos_filtros_e_e_valido_pelo_esquema() -> None:
     assert filtros_["entities"] == ["tipo_orgao:diretoria_regional"]
     assert QueryPlan.from_json(filtros_["plan"]).consultas[0].q == "sobre"  # type: ignore[arg-type]
     assert "plan" not in to_slice(derive_context("Qual o lema do lobinho?", DIA, COM_ORGAOS))["retrieval_filters"]
+
+
+# --- 106 G2: o plano pela forma da pergunta (101 FR-037, R44) --------------------------------------------------------
+
+COM_DOMINIO = dataclasses.replace(
+    LEXICON,
+    entity_terms=MappingProxyType(
+        {
+            "tipo_orgao:diretoria_regional": ("diretoria regional",),
+            "cargo:escotista": ("escotista", "escotistas"),
+            "conceito:adulto": ("adulto", "adultos"),
+            "conceito:lema": ("lema",),
+        }
+    ),
+)
+
+
+def _consultas(pergunta: str) -> tuple[str, list[dict[str, object]]]:
+    plano = derive_context(pergunta, DIA, COM_DOMINIO).plan.to_json()
+    return str(plano["forma"]), list(plano["consultas"])  # type: ignore[arg-type]
+
+
+def test_cada_ramo_vira_para_cada() -> None:
+    forma, consultas = _consultas("Qual o lema de cada ramo?")
+    assert forma == "para_cada"
+    assert consultas == [
+        {
+            "q": "sobre",
+            "args": {"entidades": ["$cada", "conceito:lema"], "papeis": ["norma", "orientacao"], "modo": "todas"},
+        }
+    ]
+
+
+def test_duas_entidades_todas_e_cada_uma() -> None:
+    forma, consultas = _consultas("Que requisitos um adulto precisa cumprir para atuar como escotista?")
+    assert forma == "simples"
+    assert [c["args"].get("modo") for c in consultas] == ["todas", None]  # type: ignore[union-attr]
+
+
+def test_uma_entidade_sozinha_nao_pede_plano() -> None:
+    assert derive_context("Qual é o lema?", DIA, COM_DOMINIO).plan.empty
+
+
+def test_ramo_e_conceito() -> None:
+    _, consultas = _consultas("Qual o lema do Ramo Lobinho?")
+    assert consultas[0]["args"]["entidades"] == ["ramo:lobinho", "conceito:lema"]  # type: ignore[index]
+
+
+def test_com_orgao_o_plano_do_adr_063() -> None:
+    _, consultas = _consultas("O que a diretoria regional diz sobre os escotistas?")
+    assert consultas == [{"q": "sobre", "args": {"entidades": ["tipo_orgao:diretoria_regional"], "papeis": ["norma"]}}]

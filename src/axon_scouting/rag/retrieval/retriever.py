@@ -23,12 +23,12 @@ from __future__ import annotations
 
 import dataclasses
 import math
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from typing import Final
 
 from axon_ai_contracts import Chunk, JSONValue, NamedRetriever
 
-from axon_scouting.rag.graph.api import DomainGraphSource, QueryPlan
+from axon_scouting.rag.graph.api import DomainGraphSource, Evidence, QueryPlan
 from axon_scouting.rag.index.api import ChunkIndex, IndexedChunk, IndexFilters, Shape
 from axon_scouting.rag.retrieval.domain.catalog import BRANCH_NAMES
 from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
@@ -57,7 +57,16 @@ from axon_scouting.rag.retrieval.domain.terms import bag, idf, query_terms, scor
 
 GRAPH_PER_DOCUMENT: Final = 3
 """Trechos por documento da evidência do grafo, escolhidos pela pergunta (ADR-063; clarify da 106). Os documentos por
-consulta (3) são cortados pelo executor da 106; o teto total das frentes (8 de 20) entra no G2, medido."""
+consulta (3) são cortados pelo executor da 106."""
+GRAPH_DOCUMENTS: Final = 3
+"""Documentos por consulta do plano (ADR-063; clarify da 106): os primeiros pelo papel, pelo nível e pela relevância."""
+GRAPH_DEPTH: Final = 200
+"""Profundidade da busca que ordena os trechos de cada unidade do grafo: o trecho que a busca híbrida põe mais acima
+vence; o BM25 da pergunta desempata e ordena os que ela não alcança (106 R19)."""
+GRAPH_TOTAL: Final = 8
+"""Vagas do grafo à frente da busca (clarify da 106; G2), repartidas por grupo do plano sem passar do total: a busca
+híbrida fica com o resto. Dentro do grupo, os trechos se alternam entre os documentos (o melhor de cada, depois o
+segundo)."""
 
 TOOL_NAME: Final = "search_docs"
 TOOL_DESCRIPTION: Final = (
@@ -111,7 +120,10 @@ class ScoutingRetriever:
         preferred = (suggested_types(filters), suggested_bodies(filters))
         if branches:
             text = query if anchor_ is None else f"{anchor_} {query}"
-            return without_repeats(ordered(await self._by_facet(text, index_filters_, branches, limit, preferred)))
+            anchored = await self._by_plan(query, plan(filters), index_filters_, preferred)
+            room = max(len(branches), limit - len(anchored))  # as facetas repartem o que sobra (106 R17)
+            found_ = await self._by_facet(text, index_filters_, branches, room, preferred)
+            return without_repeats(ordered([*anchored, *found_]))[:limit]
         queries = [query] if anchor_ is None else [f"{anchor_} {query}", query]
         best: dict[str, IndexedChunk] = {}
         for text in queries:
@@ -130,26 +142,39 @@ class ScoutingRetriever:
         filters: IndexFilters,
         preferred: tuple[tuple[str, ...], tuple[str, ...]],
     ) -> list[Chunk]:
-        """Os trechos da evidência do plano, grupo a grupo e, em cada grupo, documento a documento na ordem do executor
-        (a norma de cima primeiro), até `GRAPH_PER_DOCUMENT` por documento — os que mais casam com a pergunta, na ordem
-        do documento. A tool de unidades (`shape`) não usa o grafo."""
+        """Os trechos da evidência do plano (ADR-064; 103 FR-022). Em cada grupo:
+        - os documentos vêm na ordem do papel e do nível (a norma de cima primeiro, como o executor os deu) e, no mesmo
+          papel e nível, pela relevância à pergunta — a nota do melhor trecho, num BM25 sobre os trechos do grupo;
+        - ficam os `GRAPH_DOCUMENTS` primeiros, com até `GRAPH_PER_DOCUMENT` trechos cada, os que mais casam;
+        - os trechos se alternam entre os documentos (o melhor de cada, depois o segundo), até a parte do grupo nas
+          `GRAPH_TOTAL` vagas.
+        A tool de unidades (`shape`) não usa o grafo."""
         if self._graph is None or plan_ is None or self._shape is not None:
             return []
-        groups = await self._graph.run(plan_)
-        chosen: list[tuple[str, str, list[str]]] = []  # (consulta, papel, trechos) por documento, na ordem
-        wanted: list[str] = []
-        for group in groups:
-            documents: dict[str, tuple[str, list[str]]] = {}
-            for evidence in group.evidence:
-                documents.setdefault(evidence.doc_key, (evidence.role, []))[1].extend(evidence.chunk_ids)
-            for role, ids in documents.values():
-                chosen.append((group.query, role, ids))
-                wanted.extend(ids)
+        groups = [group for group in await self._graph.run(plan_) if group.evidence]
+        if not groups:
+            return []
+        wanted = [c for group in groups for e in group.evidence for c in e.chunk_ids]
         chunks = {chunk.chunk_id: chunk for chunk in await self._index.get(list(dict.fromkeys(wanted)))}
         terms = query_terms(query)
+        shares = _shares(len(groups))
+        unbounded = dataclasses.replace(filters, branch=None, bodies=(), scopes=(), document_types=())
+        ranks: dict[str, dict[str, int]] = {}
         result: list[tuple[str, str, IndexedChunk]] = []
-        for query_name, role, ids in chosen:
-            result.extend((query_name, role, chunk) for chunk in _best(ids, chunks, terms, GRAPH_PER_DOCUMENT))
+        seen: set[str] = set()
+        for group, share in zip(groups, shares, strict=True):
+            text = _group_text(query, group.entity)
+            if text not in ranks:  # a ordem da busca híbrida, funda, para escolher dentro das unidades (106 R19)
+                found = await self._index.search(text, filters=unbounded, limit=GRAPH_DEPTH)
+                ranks[text] = {chunk.chunk_id: position for position, chunk in enumerate(found)}
+            best = _documents(group.evidence, chunks, terms, ranks[text])
+            taken = 0
+            for turn in range(GRAPH_PER_DOCUMENT):
+                for role, picked in best:
+                    if taken < share and turn < len(picked) and picked[turn].chunk_id not in seen:
+                        seen.add(picked[turn].chunk_id)
+                        result.append((group.query, role, picked[turn]))
+                        taken += 1
         return [
             dataclasses.replace(
                 marked := _to_chunk(chunk, filters, *preferred),
@@ -199,6 +224,55 @@ class ScoutingRetriever:
                 metadata = {**marked.metadata, FACET: branch, FACET_RANK: rank, FACET_ORDER: order}
                 chunks.append(dataclasses.replace(marked, metadata=metadata))
         return ordered(chunks)[:limit]
+
+
+def _shares(groups: int) -> list[int]:
+    """As `GRAPH_TOTAL` vagas repartidas entre os grupos, sem passar do total: as sobras vão aos primeiros, e cada grupo
+    tem ao menos uma (com mais grupos que vagas, o total passa a ser o número de grupos)."""
+    base, extra = divmod(GRAPH_TOTAL, groups)
+    return [max(1, base + (1 if index < extra else 0)) for index in range(groups)]
+
+
+def _group_text(query: str, entity: str | None) -> str:
+    """A pergunta e, no grupo de um ramo (`para_cada`), o nome dele — como a busca por faceta (ADR-045)."""
+    if entity and entity.startswith("ramo:") and entity[5:] in BRANCH_NAMES:
+        return f"{query} Ramo {BRANCH_NAMES[entity[5:]]}"
+    return query
+
+
+def _documents(
+    evidence: Sequence[Evidence],
+    chunks: Mapping[str, IndexedChunk],
+    terms: list[str],
+    ranks: Mapping[str, int] | None = None,
+) -> list[tuple[str, list[IndexedChunk]]]:
+    """Os `GRAPH_DOCUMENTS` documentos da evidência, com os `GRAPH_PER_DOCUMENT` trechos que mais casam com a pergunta
+    em cada um, o melhor primeiro: na ordem do papel e do nível que o executor deu e, no mesmo papel e nível, pela nota
+    do melhor trecho. A nota é a posição na busca híbrida (`ranks`) e, para os trechos que ela não alcança, o BM25
+    sobre os trechos do grupo."""
+    tiers: dict[str, tuple[int, list[str], str]] = {}
+    rank = 0
+    last: tuple[str, str | None, str] | None = None
+    for item in evidence:
+        tier = (item.role, item.scope, item.edge.type)  # o salto pela área (DE_AREA) vem depois das unidades
+        if tier != last:
+            rank, last = rank + 1, tier
+        if item.doc_key not in tiers:
+            tiers[item.doc_key] = (rank, [], item.role)
+        tiers[item.doc_key][1].extend(item.chunk_ids)
+    present = {c: chunks[c] for _, ids, _ in tiers.values() for c in ids if c in chunks}
+    counts = {chunk_id: bag(chunk.text) for chunk_id, chunk in present.items()}
+    weights = idf(list(counts.values()), terms)
+    scored: list[tuple[int, tuple[int, float], str, str, list[IndexedChunk]]] = []
+    for doc_key, (tier_rank, ids, role) in tiers.items():
+        unique = [c for c in dict.fromkeys(ids) if c in present]
+        if not unique:
+            continue
+        notes = {c: ((ranks or {}).get(c, GRAPH_DEPTH), -score(counts[c], terms, weights)) for c in unique}
+        picked = [present[c] for c in sorted(unique, key=lambda c: notes[c])[:GRAPH_PER_DOCUMENT]]
+        scored.append((tier_rank, min(notes.values()), doc_key, role, picked))
+    scored.sort(key=lambda item: (item[0], item[1]))
+    return [(role, picked) for _, _, _, role, picked in scored[:GRAPH_DOCUMENTS]]
 
 
 def _best(ids: list[str], chunks: Mapping[str, IndexedChunk], terms: list[str], limit: int) -> list[IndexedChunk]:

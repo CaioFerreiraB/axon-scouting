@@ -46,9 +46,12 @@ def test_determinismo_e_ordem(grafo: DomainGraphSource) -> None:
     assert [ordem.index(s) for s in escopos if s in ordem] == sorted(ordem.index(s) for s in escopos if s in ordem)
 
 
-def test_ate_3_documentos_por_grupo(grafo: DomainGraphSource) -> None:
+def test_a_norma_de_cima_primeiro_em_cada_grupo(grafo: DomainGraphSource) -> None:
+    ordem = ["mundial", "interamericano", "nacional", "regional", "local"]
     for grupo in asyncio.run(grafo.run(_plano(_entidade(grafo), "tipo_orgao:assembleia_regional"))):
-        assert len({e.doc_key for e in grupo.evidence}) <= 3
+        for entidade in {e.target for e in grupo.evidence}:
+            niveis = [ordem.index(e.scope) for e in grupo.evidence if e.target == entidade and e.scope in ordem]
+            assert niveis == sorted(niveis)
 
 
 def test_governanca_nunca_no_run(grafo: DomainGraphSource) -> None:

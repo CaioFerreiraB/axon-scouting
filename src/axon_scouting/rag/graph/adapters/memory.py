@@ -37,7 +37,9 @@ class MemorySources:
         manifest: Mapping[str, Any] | None = None,
         organization: Mapping[str, Any] | None = None,
         organization_sha256: str = "0" * 64,
+        domain: Mapping[str, Any] | None = None,
     ) -> None:
+        self._domain = dict(domain or {})
         self._chunks = list(chunks)
         self._documents = list(documents)
         self._manifest = dict(manifest or {"chunking": "memoria"})
@@ -58,3 +60,9 @@ class MemorySources:
 
     def organization_sha256(self) -> str:
         return self._sha
+
+    def domain(self) -> Mapping[str, Any]:
+        return dict(self._domain)
+
+    def domain_sha256(self) -> str | None:
+        return None

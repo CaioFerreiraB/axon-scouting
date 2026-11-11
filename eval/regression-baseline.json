@@ -4,7 +4,7 @@
   "assistant": "scouting",
   "judge": null,
   "started_at": "2026-01-01T12:00:00+00:00",
-  "core_version": "0.7.0rc4",
+  "core_version": "0.7.0rc8",
   "k": [
     5,
     20
@@ -196,7 +196,7 @@
     },
     {
       "name": "scouting:fact_recall",
-      "value": 0.9767857142857144,
+      "value": 0.9696428571428571,
       "variance": null,
       "n": 28,
       "deterministic": true,
@@ -487,7 +487,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.8
+        "scouting:fact_recall": 1.0
       },
       "citations": [],
       "flags": [
@@ -522,7 +522,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 1.0
+        "scouting:fact_recall": 0.8
       },
       "citations": [],
       "flags": [
@@ -592,7 +592,7 @@
         "scouting:current_document_rate": 1.0,
         "scouting:validity_notice_rate": null,
         "scouting:absence_claim_rate": 0.0,
-        "scouting:fact_recall": 0.8
+        "scouting:fact_recall": 0.6
       },
       "citations": [],
       "flags": [

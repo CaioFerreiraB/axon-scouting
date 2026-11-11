@@ -17,6 +17,7 @@ from dataclasses import dataclass, field
 from typing import Any, Final
 
 from axon_scouting.rag.graph.api import MODE_OF, ROLES
+from axon_scouting.rag.graph.domain.build.domain import DOMAIN, alias_map, domain_entities, rege
 from axon_scouting.rag.graph.domain.build.organs import (
     VERIFY,
     ChunkPlace,
@@ -25,6 +26,7 @@ from axon_scouting.rag.graph.domain.build.organs import (
     relations_from_mapping,
     sections,
 )
+from axon_scouting.rag.graph.domain.build.sobre import sobre_graph
 from axon_scouting.rag.graph.domain.model import GRAPH_VERSION
 from axon_scouting.rag.graph.domain.roles import missing_roles
 
@@ -67,6 +69,8 @@ def build_records(
     documents: Sequence[Mapping[str, Any]],
     manifest: Mapping[str, Any],
     organization_sha256: str,
+    domain: Mapping[str, Any] | None = None,
+    domain_sha256: str | None = None,
 ) -> tuple[list[dict[str, Any]], BuildReport]:
     """Puro: recebe o que a porta `GraphSources` leu (o `scripts/grafo.py` compõe)."""
     raw = organization
@@ -100,8 +104,13 @@ def build_records(
                 "level": organ.level or None,
             }
         )
+    curated = domain_entities(domain or {}, raw)
+    curated_ids = {entity.id for entity in curated}
     for entry in raw.get("cargos") or []:
         if not isinstance(entry, Mapping) or not isinstance(entry.get("id"), str):
+            continue
+        if f"cargo:{entry['id']}" in curated_ids:
+            prefix.setdefault(str(entry["id"]), "cargo")
             continue
         fonte = entry.get("fonte")
         entities.append(
@@ -120,6 +129,20 @@ def build_records(
             }
         )
         prefix.setdefault(str(entry["id"]), "cargo")
+    for entity in curated:
+        entities.append(
+            {
+                "kind": "entity",
+                "id": entity.id,
+                "type": entity.type,
+                "name": entity.name,
+                "terms": list(entity.aliases) if entity.recognizable else [],
+                "aliases": list(entity.aliases),
+                "source": entity.source,
+                "origin": "curado",
+                "level": None,
+            }
+        )
     report.entities = len(entities)
 
     versions: list[dict[str, Any]] = []
@@ -141,6 +164,7 @@ def build_records(
         )
     report.versions = len(versions)
     role_of = {v["doc_key"]: v["role"] for v in versions}
+    status_of = {v["doc_key"]: v["status"] for v in versions}
     kind_of = {unit: kind for place in places for unit, kind, _ in place.path}
 
     units: dict[str, dict[str, Any]] = {}
@@ -179,6 +203,117 @@ def build_records(
         report.per_entity.setdefault(section.organ, []).append(f"{section.title} ({section.doc_key})")
     report.sections = len(found)
 
+    # G2: SOBRE das entidades de programa e adultos, por título e pelo ramo do documento (research R6).
+    branch_of = {doc["doc_key"]: doc["fields"]["branch"] for doc in documents if doc["fields"].get("branch")}
+    generic = sobre_graph(
+        chunks,
+        {key: {"role": role_of[key], "status": status_of[key]} for key in role_of},
+        alias_map(curated),
+        branch_of,
+    )
+    for unit_id, unit in generic.units.items():
+        if unit_id in units:
+            units[unit_id]["ancestors"] = unit["ancestors"]
+            continue
+        units[unit_id] = {"kind": "unit", "unit_id": unit_id, **unit}
+        edges.append(
+            {
+                "kind": "edge",
+                "type": "CONTEM",
+                "from": unit["doc_key"],
+                "to": unit_id,
+                "source": unit_id,
+                "origin": "regra",
+            }
+        )
+    for unit_id, target in generic.edges:
+        doc_key = units[unit_id]["doc_key"]
+        edges.append(
+            {
+                "kind": "edge",
+                "type": "SOBRE",
+                "mode": MODE_OF[role_of[doc_key]],
+                "from": unit_id,
+                "to": target,
+                "source": unit_id,
+                "origin": "regra",
+            }
+        )
+        report.per_entity.setdefault(target, []).append(units[unit_id]["title"] or unit_id)
+    for entity in curated:
+        for specific in entity.covers:
+            if specific in curated_ids:
+                edges.append(
+                    {
+                        "kind": "edge",
+                        "type": "E_UM",
+                        "from": specific,
+                        "to": entity.id,
+                        "source": entity.source,
+                        "origin": "curado",
+                    }
+                )
+            else:
+                report.dropped.append(f"E_UM {specific} → {entity.id}: entidade fora do catálogo")
+        if entity.ramo:
+            edges.append(
+                {
+                    "kind": "edge",
+                    "type": "DE_RAMO",
+                    "from": entity.id,
+                    "to": entity.ramo,
+                    "source": entity.source,
+                    "origin": "curado",
+                }
+            )
+    for governing, target, source in rege(domain or {}):
+        if governing in curated_ids and target in curated_ids:
+            edges.append(
+                {"kind": "edge", "type": "REGE", "from": governing, "to": target, "source": source, "origin": "curado"}
+            )
+        else:
+            report.dropped.append(f"REGE {governing} → {target}: entidade fora do catálogo")
+    area_of = {category: entity.id for entity in curated for category in entity.categories}
+    # O documento inteiro de uma área, para o salto REGE + DE_AREA (106 R19): os trechos vigentes de norma e orientação.
+    doc_chunks: dict[str, list[str]] = {}
+    for chunk in chunks:
+        key = chunk["doc_key"]
+        if role_of.get(key) in ("norma", "orientacao") and status_of.get(key) == "vigente":
+            doc_chunks.setdefault(key, []).append(chunk["chunk_id"])
+    for doc in documents:
+        area = area_of.get(str(doc["fields"].get("category")))
+        whole = f"{doc['doc_key']}#documento"
+        if area and doc["doc_key"] in doc_chunks and whole not in units:
+            units[whole] = {
+                "kind": "unit",
+                "unit_id": whole,
+                "doc_key": doc["doc_key"],
+                "unit_kind": "documento",
+                "title": str(doc["fields"].get("document_title") or ""),
+                "chunk_ids": doc_chunks[doc["doc_key"]],
+            }
+            edges.append(
+                {
+                    "kind": "edge",
+                    "type": "CONTEM",
+                    "from": doc["doc_key"],
+                    "to": whole,
+                    "source": whole,
+                    "origin": "regra",
+                }
+            )
+        if area:
+            edges.append(
+                {
+                    "kind": "edge",
+                    "type": "DE_AREA",
+                    "from": doc["doc_key"],
+                    "to": area,
+                    "source": f"taxonomia:{doc['fields'].get('category')}",
+                    "origin": "regra",
+                }
+            )
+
     for relation in relations:
         ends = (relation.source, relation.target)
         if any(end not in prefix for end in ends):
@@ -201,6 +336,6 @@ def build_records(
         "version": GRAPH_VERSION,
         "chunking": manifest.get("chunking"),
         "built_at": manifest.get("built_at"),
-        "sources": {ORGANIZATION: organization_sha256},
+        "sources": {ORGANIZATION: organization_sha256, **({DOMAIN: domain_sha256} if domain_sha256 else {})},
     }
     return [meta, *entities, *versions, *units.values(), *edges], report

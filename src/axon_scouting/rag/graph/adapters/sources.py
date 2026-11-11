@@ -13,9 +13,10 @@ import yaml
 
 
 class ArtifactSources:
-    def __init__(self, index: Path, organization: Path) -> None:
+    def __init__(self, index: Path, organization: Path, domain: Path | None = None) -> None:
         self._index = index
         self._organization = organization
+        self._domain = domain
 
     def chunks(self) -> Iterable[Mapping[str, Any]]:
         with (self._index / "chunks.jsonl").open(encoding="utf-8") as lines:
@@ -37,3 +38,16 @@ class ArtifactSources:
 
     def organization_sha256(self) -> str:
         return hashlib.sha256(self._organization.read_bytes()).hexdigest()
+
+    def domain(self) -> Mapping[str, Any]:
+        if self._domain is None or not self._domain.exists():
+            return {}
+        loaded = yaml.safe_load(self._domain.read_text(encoding="utf-8"))
+        if not isinstance(loaded, Mapping):
+            raise ValueError(f"{self._domain}: precisa ser um mapeamento")
+        return loaded
+
+    def domain_sha256(self) -> str | None:
+        if self._domain is None or not self._domain.exists():
+            return None
+        return hashlib.sha256(self._domain.read_bytes()).hexdigest()

@@ -126,6 +126,23 @@ cargos:
      aliases: [diretor de relacoes institucionais], fonte: regulamento-regional-sp-2022#art26@p9}
   - {id: diretor_presidente_de_grupo, nome: Diretor-Presidente de Grupo, orgao: diretoria_de_grupo, provimento: eleito,
      fonte: estatuto-2024#art35@p24, citacao: "sendo um deles o Diretor-Presidente, que coordena, dirige e representa o Grupo"}
+  # Programa educativo e adultos (spec 106, G2): `aliases` ligam títulos e reconhecem a pergunta; `atua_em`, a seção ou
+  # o órgão (ATUA_EM). Sem `orgao`: não entram nos termos dos órgãos (102 R43).
+  - {id: escotista, nome: Escotista, aliases: [escotista, escotistas], atua_em: [secao], fonte: por-2025.2.1#regra124@p84}
+  - {id: dirigente, nome: Dirigente, aliases: [dirigente, dirigentes], fonte: por-2025.2.1#regra125@p84}
+  - {id: chefe_de_secao, nome: Chefe de Seção,
+     aliases: [chefe de secao, chefes de secao, chefe de alcateia, chefe de tropa, chefe de tropa escoteira,
+               chefe de tropa senior, chefe de cla, mestre pioneiro],
+     atua_em: [secao], fonte: por-2025.2.1#regra101@p75}
+  - {id: assistente, nome: Assistente de Seção, aliases: [assistente, assistentes, assistente de secao],
+     atua_em: [secao], fonte: por-2025.2.1#regra124@p84}
+  - {id: apf, nome: Assessor Pessoal de Formação, aliases: [assessor pessoal de formacao, assessores pessoais de formacao, apf],
+     fonte: por-2025.2.1#regra133@p87}
+  - {id: formador, nome: Formador, aliases: [formador, formadores], fonte: por-2025.2.1#regra127@p85}
+  - {id: monitor, nome: Monitor, aliases: [monitor, monitora, monitores, submonitor, submonitora],
+     fonte: por-2025.2.1#regra81@p67}
+  - {id: diretor_de_metodos_educativos, nome: Diretor de Métodos Educativos, aliases: [diretor de metodos educativos],
+     orgao_local: diretoria_de_grupo, fonte: perfis-cargos-funcoes-local-1.0#s97@p42}
 
 ramos:
   - {id: filhotes, nome: Ramo Filhotes, secao: ninhada}
