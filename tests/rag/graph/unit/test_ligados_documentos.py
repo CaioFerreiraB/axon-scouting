@@ -1,4 +1,5 @@
-"""`ligados` com as ligações entre documentos e `documentos` por emissor (spec 106 G5, US5; research R22)."""
+"""`ligados` com as ligações entre documentos e `documentos` por emissor (spec 106 G5, US5; research R22); a ordem de
+`documentos` e `itens` (G6, US6; research R23)."""
 
 from __future__ import annotations
 
@@ -108,7 +109,7 @@ def test_ligados_dos_dois_lados_da_revogacao() -> None:
 
 def test_documentos_pelo_tipo_de_orgao_e_pela_instituicao() -> None:
     by_type = documentos(G, emissor="tipo_orgao:diretoria_regional")
-    assert [e.doc_key for e in by_type] == ["in-2024-02-1", SEM_ASSUNTO, "oficio-dr-1"]  # a norma, depois o ofício
+    assert [e.doc_key for e in by_type] == ["in-2024-02-1", "oficio-dr-1", SEM_ASSUNTO]  # sem data: pelo doc_key
     assert by_type[0].chunk_ids == ("in-2024-02-1#preambulo@p1", "in-2024-02-1#art1@p1") and by_type[0].unit_id is None
     assert [e.doc_key for e in documentos(G, emissor="inst:regiao_sp", tipo="oficio")] == ["oficio-dr-1"]
     assert [e.doc_key for e in documentos(G, tipo="resolucao", vigente=False) if e.doc_key.startswith("can-2019")] == [
@@ -127,3 +128,77 @@ def test_o_que_o_orgao_publicou_sobre_o_assunto() -> None:
     )
     (grupo,) = executar(G, plano)
     assert [e.unit_id for e in grupo.evidence] == ["in-2024-02-1#documento"]
+
+
+def test_documentos_do_mais_recente_ao_mais_antigo() -> None:
+    records = _records()
+    dates = {"can-2021-11-1": "2021-12-17", "can-2022-10-1": "2022-10-01", "por-2025": "2025-04-01"}
+    for record in records:
+        if record["kind"] == "version" and record["doc_key"] in dates:
+            record["date"] = dates[record["doc_key"]]
+    g = from_records(records)
+    assert [e.doc_key for e in documentos(g, tipo="resolucao")][:2] == ["can-2022-10-1", "can-2021-11-1"]
+
+
+def _with_items() -> Any:
+    records = _records()
+    guide = {
+        "kind": "version",
+        "doc_key": "guia-1",
+        "document_id": "guia",
+        "type": "manual",
+        "role": "orientacao",
+        "status": "vigente",
+        "scope": "nacional",
+    }
+
+    def item(name: str, position: int, branches: list[str]) -> dict[str, Any]:
+        return {
+            "kind": "unit",
+            "unit_id": f"guia-1#u/{name}",
+            "doc_key": "guia-1",
+            "unit_kind": "especialidade",
+            "title": name,
+            "chunk_ids": [f"guia-1#{name}@p1"],
+            "branches": branches,
+            "position": position,
+        }
+
+    units = [item("sustentabilidade", 7, ["pioneiro"]), item("ecoturismo", 3, ["senior", "pioneiro"])]
+    contains = [
+        {
+            "kind": "edge",
+            "type": "CONTEM",
+            "from": "guia-1",
+            "to": u["unit_id"],
+            "source": u["unit_id"],
+            "origin": "regra",
+        }
+        for u in units
+    ]
+    return from_records([*records[:1], guide, *records[1:], *units, *contains])
+
+
+def test_itens_na_ordem_da_arvore_e_pelo_ramo() -> None:
+    from axon_scouting.rag.graph.domain.queries import itens
+
+    g = _with_items()
+    assert [e.unit_id for e in itens(g, tipo_de_unidade="especialidade")] == [
+        "guia-1#u/ecoturismo",
+        "guia-1#u/sustentabilidade",
+    ]
+    assert [e.unit_id for e in itens(g, tipo_de_unidade="especialidade", ramo="ramo:senior")] == ["guia-1#u/ecoturismo"]
+    assert itens(g, tipo_de_unidade="insignia") == []
+    # as regras do POR não têm posição: não são de tipo com nome
+    assert all(e.unit_id != RULE for e in itens(g))
+
+
+def test_itens_de_uma_instituicao_sao_os_orgaos_dela() -> None:
+    from axon_scouting.rag.graph.domain.queries import itens
+
+    records = _records()
+    for record in records:
+        if record.get("type") == "PARTE_DE":
+            record["source"] = "in-2024-02-1#art1@p1"
+    (organ,) = itens(from_records(records), de="inst:regiao_sp")
+    assert (organ.target, organ.chunk_ids) == ("orgao:dr_sp", ("in-2024-02-1#art1@p1",))

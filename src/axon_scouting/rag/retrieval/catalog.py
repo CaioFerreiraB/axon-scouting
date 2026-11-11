@@ -4,6 +4,10 @@ Responde ao pedido de lista que a 101 publicou: uma ficha por documento do acerv
 e o link do original, sob os mesmos filtros de vigência, ramo e tipo da busca por trechos. Sem pedido, não devolve
 nada — no `rag_first` as duas tools rodam sempre, e a ficha só aparece quando a pergunta pede a lista. As fichas
 levam a marca que as põe à frente dos trechos no `MetadataReranker`.
+
+Desde o G6 da 106 (research R23), quais documentos podem entrar é a consulta `documentos` do grafo de domínio, pelo
+tipo; o catálogo da 102 continua dando a vigência dos filtros, a fração dos qualificadores e o texto da ficha, e a
+saída não muda. Sem grafo (um índice sem `graph.jsonl` ao lado), a lista é a do catálogo.
 """
 
 from __future__ import annotations
@@ -13,8 +17,9 @@ from typing import Final
 
 from axon_ai_contracts import Chunk, JSONValue, NamedRetriever
 
+from axon_scouting.rag.graph.api import DomainGraphSource
 from axon_scouting.rag.index.api import DocumentCatalog
-from axon_scouting.rag.retrieval.domain.catalog import card, select
+from axon_scouting.rag.retrieval.domain.catalog import ANY_KIND, card, select
 from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
 from axon_scouting.rag.retrieval.domain.filters import catalog_request, index_filters, suggested_types
 
@@ -29,9 +34,16 @@ TOOL_DESCRIPTION: Final = (
 class CatalogRetriever:
     """Implementa `Retriever` (001) sobre o `DocumentCatalog` da 102."""
 
-    def __init__(self, catalog: DocumentCatalog, config: RetrievalConfig | None = None) -> None:
+    def __init__(
+        self,
+        catalog: DocumentCatalog,
+        config: RetrievalConfig | None = None,
+        *,
+        graph: DomainGraphSource | None = None,
+    ) -> None:
         self._catalog = catalog
         self._config = config or RetrievalConfig()
+        self._graph = graph
 
     async def search(
         self, query: str, *, top_k: int | None = None, filters: Mapping[str, JSONValue] | None = None
@@ -40,7 +52,13 @@ class CatalogRetriever:
         request = catalog_request(filters)
         if request is None:
             return []
-        picked = select(await self._catalog.catalog(filters=base), request)
+        entries = await self._catalog.catalog(filters=base)
+        if self._graph is not None:  # a fachada (106 G6): o grafo diz quais documentos do tipo existem
+            kind = {} if request.kind == ANY_KIND else {"tipo": request.kind}
+            allowed = {e.doc_key for e in await self._graph.query("documentos", vigente=False, **kind)}
+            if allowed or await self._graph.query("documentos", vigente=False):  # sem grafo, a lista de hoje
+                entries = [entry for entry in entries if entry.doc_key in allowed]
+        picked = select(entries, request)
         limit = min(self._config.limit(top_k), self._config.max_cards)
         preferred = suggested_types(filters)
         return [

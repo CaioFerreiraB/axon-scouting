@@ -144,3 +144,14 @@ def test_toda_versao_tem_os_trechos_e_toda_resolucao_um_doc(grafo: list[dict[str
     documents = {r["id"] for r in grafo if r["kind"] == "entity" and r["type"] == "doc" and r["terms"]}
     resolutions = {r["document_id"] for r in versions if r["type"] == "resolucao"}
     assert {f"doc:{d}" for d in resolutions} <= documents
+
+
+def test_toda_unidade_com_nome_esta_no_grafo(grafo: list[dict[str, Any]]) -> None:
+    """G6 (106 US6): `itens` lista sem a árvore da 102, então toda unidade de tipo com nome (ADR-048) está no grafo,
+    com a posição e os trechos."""
+    from axon_scouting.rag.ingestion.domain.tree import TYPED
+
+    named = {u["unit_id"] for d in _jsonl(INDEX / "documents.jsonl") for u in d["units"] if u["kind"] in TYPED}
+    units = {r["unit_id"]: r for r in grafo if r["kind"] == "unit" and "position" in r}
+    assert set(units) == named
+    assert all(unit["chunk_ids"] for unit in units.values())

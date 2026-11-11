@@ -317,8 +317,8 @@ def documentos(
     """Um item por documento (`unit_id=None`, com os trechos da versão), filtrado pelo tipo, pelo emissor
     (`EMITIDO_POR`: o órgão; o tipo de órgão vale pelas instâncias dele, e a instituição pelos órgãos dela), pela
     instituição a que se aplica (a de `aplicavel_a`), pela área (`DE_AREA`), pelo ramo (uma unidade com `SOBRE` para
-    ele ou para uma seção dele) e pelo período da vigência. Na ordem do papel, do nível (de cima para baixo) e do
-    `doc_key` (G5; o G6 a confere com a lista de documentos de hoje, ADR-047)."""
+    ele ou para uma seção dele) e pelo período da vigência. Do mais recente ao mais antigo, como a lista de documentos
+    (ADR-047), e depois pelo `doc_key` (G6)."""
     chosen: dict[str, EdgeRef] = {
         key: EdgeRef(type="VERSAO", source=key, origin="regra")
         for key, version in g.versions.items()
@@ -347,11 +347,7 @@ def documentos(
         chosen = {key: ref for key, ref in chosen.items() if _within(g.versions[key], start, until)}
     ordered = sorted(
         chosen,
-        key=lambda key: (
-            ROLE_ORDER.index(g.versions[key].role),
-            scope_rank(SCOPES, g.versions[key].scope),
-            key,
-        ),
+        key=lambda key: (-(d.toordinal() if (d := g.versions[key].date) else 0), key),
     )
     return [
         Evidence(
@@ -366,6 +362,63 @@ def documentos(
             edge=chosen[key],
         )
         for key in ordered
+    ]
+
+
+def itens(
+    g: DomainGraph, *, tipo_de_unidade: str | None = None, de: str | None = None, ramo: str | None = None
+) -> list[Evidence]:
+    """As unidades de um tipo com nome (ADR-048), na ordem do documento — `doc_key`, depois a posição na árvore —,
+    com o ramo da unidade quando `ramo` vem (`ramo:senior` ou `senior`); ou, com `de`, as entidades filhas dele (os
+    órgãos de uma instituição, pelo `PARTE_DE`), com o trecho da fonte de cada uma (G6)."""
+    if de is not None:
+        found: list[Evidence] = []
+        for edge in g.by_to.get(("PARTE_DE", de), ()):
+            child = g.entities.get(edge.from_)
+            doc_key = edge.source.split("#", 1)[0]
+            version = g.versions.get(doc_key)
+            if child is None or version is None:
+                continue
+            found.append(
+                Evidence(
+                    query="itens",
+                    target=child.id,
+                    doc_key=doc_key,
+                    unit_id=None,
+                    chunk_ids=(edge.source,),
+                    role=version.role,
+                    scope=version.scope,
+                    date=version.date,
+                    edge=_ref(edge),
+                )
+            )
+        return found
+    branch = ramo.removeprefix("ramo:") if ramo else None
+    chosen = sorted(
+        (
+            unit
+            for unit in g.units.values()
+            if unit.position is not None
+            and (tipo_de_unidade is None or unit.unit_kind == tipo_de_unidade)
+            and (branch is None or branch in unit.branches)
+        ),
+        key=lambda unit: (unit.doc_key, unit.position or 0),
+    )
+    contains = {edge.to: edge for edge in g.edges if edge.type == "CONTEM"}
+    return [
+        Evidence(
+            query="itens",
+            target=tipo_de_unidade or unit.unit_kind,
+            doc_key=unit.doc_key,
+            unit_id=unit.unit_id,
+            chunk_ids=unit.chunk_ids,
+            role=g.versions[unit.doc_key].role,
+            scope=g.versions[unit.doc_key].scope,
+            date=g.versions[unit.doc_key].date,
+            edge=_ref(contains[unit.unit_id]),
+        )
+        for unit in chosen
+        if unit.doc_key in g.versions and unit.unit_id in contains
     ]
 
 
@@ -389,19 +442,12 @@ def _ref(edge: EdgeRec) -> EdgeRef:
     return EdgeRef(type=edge.type, source=edge.source, origin=edge.origin)
 
 
-def _not_yet(name: str) -> Callable[..., list[Evidence]]:
-    def query(g: DomainGraph, **_: Any) -> list[Evidence]:
-        raise NotImplementedError(f"{name} chega num incremento seguinte (spec 106)")
-
-    return query
-
-
 QUERIES: Final[Mapping[QueryName, Callable[..., list[Evidence]]]] = {
     "sobre": sobre,
     "ligados": ligados,
     "aplicavel_a": aplicavel_a,
     "documentos": documentos,
-    "itens": _not_yet("itens"),
+    "itens": itens,
     "linha_do_tempo": linha_do_tempo,
 }
 

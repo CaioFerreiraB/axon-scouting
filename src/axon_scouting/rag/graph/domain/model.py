@@ -60,6 +60,8 @@ class UnitRec:
     parent: str | None = None
     ancestors: tuple[str, ...] = ()
     """As unidades acima desta (da raiz para baixo) e, no documento de um ramo, o documento inteiro (G2, `todas`)."""
+    position: int | None = None
+    """A posição da unidade na árvore do documento (pré-ordem), nas dos tipos com nome (G6, `itens`)."""
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -163,6 +165,7 @@ def from_records(records: Iterable[Record]) -> DomainGraph:
                     branches=tuple(raw.get("branches") or ()),
                     parent=raw.get("parent"),
                     ancestors=tuple(raw.get("ancestors") or ()),
+                    position=raw.get("position"),
                 )
             elif kind == "event":
                 event = EventRec(

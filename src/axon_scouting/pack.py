@@ -46,7 +46,7 @@ if TYPE_CHECKING:
 
     from axon_scouting.rag.index.ports import Embedder
 
-VERSION: Final = "0.16.0"
+VERSION: Final = "0.17.0"
 """Versão do manifest; igual à da distribuição `axon-scouting` (verificado em tests/test_pack.py)."""
 
 COLLECTION: Final = "scouting"
@@ -296,8 +296,8 @@ class ScoutingPack(PackBase):
         retrieval = RetrievalConfig(default_limit=config.default_limit, max_limit=config.max_limit)
         return [
             search_docs(ScoutingRetriever(index, retrieval, graph=self._graph(config)), collection=COLLECTION),
-            list_documents(CatalogRetriever(index, retrieval), collection=COLLECTION),
-            list_units(UnitsRetriever(index, index, retrieval), collection=COLLECTION),
+            list_documents(CatalogRetriever(index, retrieval, graph=self._graph(config)), collection=COLLECTION),
+            list_units(UnitsRetriever(index, index, retrieval, graph=self._graph(config)), collection=COLLECTION),
             search_summaries(SummariesRetriever(_summaries(config), graph=self._graph(config)), collection=COLLECTION),
         ]
 

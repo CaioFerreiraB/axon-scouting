@@ -4,6 +4,9 @@ Responde ao pedido de enumeração que a 101 publicou. Com o tipo de unidade, um
 das unidades desse tipo — a árvore da 102, pelos mesmos filtros de vigência, tipo e ramo (o da unidade) da busca —;
 sem tipo, os trechos com forma de lista mais próximos da pergunta, que na busca comum perdem da prosa. Sem pedido, não
 devolve nada. O que ela traz vai à frente dos trechos no `MetadataReranker`, depois das fichas do acervo.
+
+Desde o G6 da 106 (research R23), quais unidades do tipo podem entrar é a consulta `itens` do grafo de domínio; a árvore
+da 102 continua dando os filtros, o caminho e a página da ficha, e a saída não muda. Sem grafo, a árvore decide sozinha.
 """
 
 from __future__ import annotations
@@ -14,6 +17,7 @@ from typing import Final
 
 from axon_ai_contracts import Chunk, JSONValue, NamedRetriever
 
+from axon_scouting.rag.graph.api import DomainGraphSource
 from axon_scouting.rag.index.api import ChunkIndex, DocumentOutline
 from axon_scouting.rag.retrieval.domain.config import RetrievalConfig
 from axon_scouting.rag.retrieval.domain.filters import enumeration_request, facets, index_filters
@@ -41,10 +45,18 @@ e a tool devolve os trechos com forma de lista."""
 class UnitsRetriever:
     """Implementa `Retriever` (001) sobre o `DocumentOutline` e o `ChunkIndex` da 102."""
 
-    def __init__(self, index: ChunkIndex, outline: DocumentOutline, config: RetrievalConfig | None = None) -> None:
+    def __init__(
+        self,
+        index: ChunkIndex,
+        outline: DocumentOutline,
+        config: RetrievalConfig | None = None,
+        *,
+        graph: DomainGraphSource | None = None,
+    ) -> None:
         self._index = index
         self._outline = outline
         self._config = config or RetrievalConfig()
+        self._graph = graph
 
     async def search(
         self, query: str, *, top_k: int | None = None, filters: Mapping[str, JSONValue] | None = None
@@ -53,9 +65,12 @@ class UnitsRetriever:
         request = enumeration_request(filters)
         if request is None:
             return []
-        groups = (
-            [] if request.unit_kind is None else by_document(await self._outline.units(request.unit_kind, filters=base))
-        )
+        found = [] if request.unit_kind is None else await self._outline.units(request.unit_kind, filters=base)
+        if found and self._graph is not None:  # a fachada (106 G6): o grafo diz quais unidades do tipo existem
+            allowed = {e.unit_id for e in await self._graph.query("itens", tipo_de_unidade=request.unit_kind)}
+            if allowed or await self._graph.query("itens"):  # sem grafo, a árvore de hoje
+                found = [entry for entry in found if entry.unit.unit_id in allowed]
+        groups = by_document(found)
         if groups and len(groups) <= MAX_DOCUMENTS:
             kinds = {kind.name: kind for kind in await self._outline.unit_kinds()}
             limit = min(self._config.limit(top_k), self._config.max_cards)

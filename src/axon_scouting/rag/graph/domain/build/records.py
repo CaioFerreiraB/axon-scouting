@@ -63,6 +63,7 @@ class BuildReport:
     with_ementa: int = 0
     with_subject: int = 0
     model_subject: int = 0
+    named_units: int = 0
     without_subject: list[str] = field(default_factory=list)
     links: dict[str, int] = field(default_factory=dict)
     dropped: list[str] = field(default_factory=list)
@@ -99,8 +100,10 @@ def build_records(
     domain_sha256: str | None = None,
     minutes: Sequence[Mapping[str, Any]] = (),
     subjects: Mapping[str, Any] | None = None,
+    named_kinds: frozenset[str] = frozenset(),
 ) -> tuple[list[dict[str, Any]], BuildReport]:
-    """Puro: recebe o que a porta `GraphSources` leu (o `scripts/grafo.py` compõe)."""
+    """Puro: recebe o que a porta `GraphSources` leu (o `scripts/grafo.py` compõe). `named_kinds`: os tipos de unidade
+    com nome próprio do ADR-048 (o `TYPED` da árvore da 102), cujas unidades entram todas, para `itens` (G6)."""
     raw = organization
     report = BuildReport()
 
@@ -474,6 +477,26 @@ def build_records(
         edges.append(edge)
         report.links[edge["type"]] = report.links.get(edge["type"], 0) + 1
     report.dropped.extend(dict.fromkeys(links.dropped))
+
+    # G6: as unidades dos tipos com nome (ADR-048), com a posição na árvore do documento, para `itens` (research R23).
+    for doc in documents:
+        for position, raw_unit in enumerate(doc.get("units") or ()):
+            if raw_unit.get("kind") not in named_kinds:
+                continue
+            unit_id = str(raw_unit["unit_id"])
+            if unit_id not in units:
+                units[unit_id] = {
+                    "kind": "unit",
+                    "unit_id": unit_id,
+                    "doc_key": doc["doc_key"],
+                    "unit_kind": raw_unit["kind"],
+                    "title": str(raw_unit.get("title") or ""),
+                    "chunk_ids": list(placed[unit_id]["chunk_ids"]) if unit_id in placed else [],
+                    "branches": list(raw_unit.get("branches") or ()),
+                }
+                edges.append(_edge("CONTEM", doc["doc_key"], unit_id, unit_id, "regra"))
+            units[unit_id]["position"] = position
+            report.named_units += 1
 
     # G4: os eventos das fichas das atas, com GERA e DE (research R21).
     recognizable = {str(e["id"]): tuple(e["terms"]) for e in entities if e["terms"]}

@@ -33,6 +33,7 @@ from axon_scouting.rag.graph.api import QUERIES, Evidence, PlanInvalid, reconhec
 from axon_scouting.rag.graph.domain.build.organs import OrganizationError  # noqa: E402
 from axon_scouting.rag.graph.domain.build.records import BuildError, build_records  # noqa: E402
 from axon_scouting.rag.graph.service import DomainGraphService  # noqa: E402
+from axon_scouting.rag.ingestion.domain.tree import TYPED  # noqa: E402
 
 INDEX = ROOT / "src" / "axon_scouting" / "data" / "index"
 ORGANIZATION = ROOT / "corpus" / "organizacao.yaml"
@@ -54,6 +55,7 @@ def build(args: argparse.Namespace) -> int:
             domain_sha256=sources.domain_sha256(),
             minutes=list(sources.minutes()),
             subjects=sources.resolution_subjects(),
+            named_kinds=TYPED,
         )
     except OrganizationError as error:
         print(f"organizacao.yaml inválido: {error}", file=sys.stderr)
@@ -73,6 +75,7 @@ def build(args: argparse.Namespace) -> int:
         f"resoluções: {report.resolutions}, {report.with_ementa} com ementa, {report.with_subject} com assunto pela "
         f"ementa, {report.model_subject} pelo modelo conferido, {len(report.without_subject)} sem assunto; {links}"
     )
+    print(f"unidades com nome (itens): {report.named_units}")
     for entity, titles in sorted(report.per_entity.items()):
         print(f"  {entity}: {len(titles)} seção(ões) — " + "; ".join(titles)[:300])
     for line in report.dropped:
