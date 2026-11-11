@@ -14,10 +14,11 @@ from typing import Final
 
 from axon_ai_contracts import Chunk, JSONValue, NamedRetriever
 
+from axon_scouting.rag.graph.api import DomainGraphSource
 from axon_scouting.rag.index.api import MeetingSummaries, SummaryEntry, ValidityStatus
-from axon_scouting.rag.retrieval.domain.filters import index_filters, synthesis_request
+from axon_scouting.rag.retrieval.domain.filters import index_filters, plan, synthesis_request
 from axon_scouting.rag.retrieval.domain.ordering import BODY_MATCH, BRANCH_MATCH, FUSION_SCORE, SUMMARY_RANK, TYPE_MATCH
-from axon_scouting.rag.retrieval.domain.summaries import select
+from axon_scouting.rag.retrieval.domain.summaries import select_with_timeline
 
 TOOL_NAME: Final = "search_summaries"
 TOOL_DESCRIPTION: Final = (
@@ -29,10 +30,12 @@ SECTIONS: Final = {"ficha": "ficha da reunião (resumo da ata)", "linha_do_tempo
 
 
 class SummariesRetriever:
-    """Implementa `Retriever` (001) sobre `MeetingSummaries` da 102."""
+    """Implementa `Retriever` (001) sobre `MeetingSummaries` da 102 e, com o grafo, é a fachada da `linha_do_tempo` da
+    106 (G4): as fichas das atas em que ela acha eventos vão à frente."""
 
-    def __init__(self, source: MeetingSummaries) -> None:
+    def __init__(self, source: MeetingSummaries, *, graph: DomainGraphSource | None = None) -> None:
         self._source = source
+        self._graph = graph
 
     async def search(
         self, query: str, *, top_k: int | None = None, filters: Mapping[str, JSONValue] | None = None
@@ -41,10 +44,18 @@ class SummariesRetriever:
         request = synthesis_request(filters)
         if request is None:
             return []
-        picked = select(await self._source.summaries(), request, query)
+        picked = select_with_timeline(await self._source.summaries(), request, query, await self._event_docs(filters))
         if top_k is not None:
             picked = picked[: max(top_k, 0)]
         return [summary_chunk(entry, rank=rank) for rank, entry in enumerate(picked)]
+
+    async def _event_docs(self, filters: Mapping[str, JSONValue] | None) -> list[str]:
+        """As atas dos eventos da linha do tempo do plano, na ordem dos eventos (por data)."""
+        plan_ = plan(filters)
+        if self._graph is None or plan_ is None or not any(step.q == "linha_do_tempo" for step in plan_.consultas):
+            return []
+        groups = await self._graph.run(plan_)
+        return list(dict.fromkeys(e.doc_key for group in groups for e in group.evidence if e.event is not None))
 
 
 def summary_chunk(entry: SummaryEntry, *, rank: int) -> Chunk:

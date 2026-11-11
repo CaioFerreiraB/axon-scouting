@@ -1,17 +1,20 @@
 """As consultas com nome do grafo de domínio (spec 106 FR-009; research R7; design.md, seção 3).
 
 Funções puras sobre o `DomainGraph`: nenhuma faz I/O nem lê relógio. Devolvem evidência, e não trechos. `sobre` (G1,
-G2, G3), `aplicavel_a` (G3) e `ligados` (as relações de governança); as demais chegam nos incrementos seguintes.
+G2, G3), `aplicavel_a` (G3), `linha_do_tempo` (G4) e `ligados` (as relações de governança); as demais chegam nos
+incrementos seguintes.
 """
 
 from __future__ import annotations
 
 from collections.abc import Callable, Mapping, Sequence
+from datetime import date
 from typing import Any, Final
 
 from axon_scouting.rag.graph.api import (
     ROLE_ORDER,
     EdgeRef,
+    EventRef,
     Evidence,
     PlanInvalid,
     QueryName,
@@ -199,6 +202,46 @@ def _above(g: DomainGraph, start: str, depth: int = 5) -> list[str]:
     return found
 
 
+def linha_do_tempo(
+    g: DomainGraph,
+    alvo: str,
+    *,
+    eventos: Sequence[str] = (),
+    periodo: Mapping[str, str] | None = None,
+) -> list[Evidence]:
+    """Os eventos `DE` o alvo — e, sendo ele um tipo, `DE` as instâncias dele (a Diretoria Regional inclui a DR-SP) —,
+    por data (sem data, por último). `eventos` filtra pelo tipo; `periodo` (`de`/`ate`, datas ISO, cada um opcional)
+    fica com os datados dentro dele. Cada evidência traz o evento e os trechos da ata na página dele."""
+    targets = [alvo, *(edge.from_ for edge in g.by_to.get(("INSTANCIA_DE", alvo), ()))]
+    low = date.fromisoformat(periodo["de"]) if periodo and periodo.get("de") else None
+    high = date.fromisoformat(periodo["ate"]) if periodo and periodo.get("ate") else None
+    found: dict[str, tuple[tuple[date, str], Evidence]] = {}
+    for target in targets:
+        for edge in g.by_to.get(("DE", target), ()):
+            event = g.events.get(edge.from_)
+            if event is None or event.id in found or (eventos and event.type not in eventos):
+                continue
+            if (low or high) and (event.date is None or (low and event.date < low) or (high and event.date > high)):
+                continue
+            version = g.versions.get(event.doc_key)
+            found[event.id] = (
+                (event.date or date.max, event.id),
+                Evidence(
+                    query="linha_do_tempo",
+                    target=alvo,
+                    doc_key=event.doc_key,
+                    unit_id=None,
+                    chunk_ids=event.chunk_ids,
+                    role=version.role if version else "registro",
+                    scope=version.scope if version else None,
+                    date=event.date,
+                    edge=_ref(edge),
+                    event=EventRef(type=event.type, text=event.text, page=event.page),
+                ),
+            )
+    return [evidence for _, evidence in sorted(found.values(), key=lambda pair: pair[0])]
+
+
 def ligados(g: DomainGraph, alvo: str, *, relacoes: Sequence[str] = ()) -> list[Evidence]:
     """As arestas em que o alvo está numa das pontas, com a fonte: no G1, as relações de governança (o que
     `NormGraph.relations` dava). O trecho da fonte vem como `chunk_ids`."""
@@ -242,7 +285,7 @@ QUERIES: Final[Mapping[QueryName, Callable[..., list[Evidence]]]] = {
     "aplicavel_a": aplicavel_a,
     "documentos": _not_yet("documentos"),
     "itens": _not_yet("itens"),
-    "linha_do_tempo": _not_yet("linha_do_tempo"),
+    "linha_do_tempo": linha_do_tempo,
 }
 
 

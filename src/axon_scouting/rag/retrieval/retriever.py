@@ -53,7 +53,8 @@ from axon_scouting.rag.retrieval.domain.ordering import (
     marks,
     ordered,
 )
-from axon_scouting.rag.retrieval.domain.terms import bag, idf, query_terms, score
+from axon_scouting.rag.retrieval.domain.summaries import RECENCY
+from axon_scouting.rag.retrieval.domain.terms import bag, idf, normalize, query_terms, score
 
 GRAPH_PER_DOCUMENT: Final = 3
 """Trechos por documento da evidência do grafo, escolhidos pela pergunta (ADR-063; clarify da 106). Os documentos por
@@ -167,7 +168,10 @@ class ScoutingRetriever:
             if text not in ranks:  # a ordem da busca híbrida, funda, para escolher dentro das unidades (106 R19)
                 found = await self._index.search(text, filters=unbounded, limit=GRAPH_DEPTH)
                 ranks[text] = {chunk.chunk_id: position for position, chunk in enumerate(found)}
-            best = _documents(group.evidence, chunks, terms, ranks[text])
+            # "As três últimas": na linha do tempo, as atas mais recentes primeiro, e não as mais relevantes (106 G4).
+            timeline = group.query == "linha_do_tempo"
+            recent = timeline and bool(RECENCY & set(normalize(query).split()))
+            best = _documents(group.evidence, chunks, terms, ranks[text], recent=recent, timeline=timeline)
             taken = 0
             for turn in range(GRAPH_PER_DOCUMENT):
                 for role, picked in best:
@@ -245,16 +249,25 @@ def _documents(
     chunks: Mapping[str, IndexedChunk],
     terms: list[str],
     ranks: Mapping[str, int] | None = None,
+    *,
+    recent: bool = False,
+    timeline: bool = False,
 ) -> list[tuple[str, list[IndexedChunk]]]:
     """Os `GRAPH_DOCUMENTS` documentos da evidência, com os `GRAPH_PER_DOCUMENT` trechos que mais casam com a pergunta
     em cada um, o melhor primeiro: na ordem do papel e do nível que o executor deu e, no mesmo papel e nível, pela nota
     do melhor trecho. A nota é a posição na busca híbrida (`ranks`) e, para os trechos que ela não alcança, o BM25
-    sobre os trechos do grupo."""
+    sobre os trechos do grupo. Com `recent`, no mesmo papel e nível, o documento mais recente vem antes. Na linha do
+    tempo (`timeline`), a evidência vem por data, e não por papel e nível: as atas ficam numa faixa só, e as cópias de
+    uma reunião (a mesma data) valem uma (106 R21)."""
     tiers: dict[str, tuple[int, list[str], str]] = {}
+    latest: dict[str, int] = {}
+    for item in evidence:
+        if item.date is not None:
+            latest[item.doc_key] = max(latest.get(item.doc_key, 0), item.date.toordinal())
     rank = 0
     last: tuple[str, str | None, str] | None = None
     for item in evidence:
-        tier = (item.role, item.scope, item.edge.type)  # o salto pela área (DE_AREA) vem depois das unidades
+        tier = ("", None, "") if timeline else (item.role, item.scope, item.edge.type)  # DE_AREA vem depois
         if tier != last:
             rank, last = rank + 1, tier
         if item.doc_key not in tiers:
@@ -263,15 +276,26 @@ def _documents(
     present = {c: chunks[c] for _, ids, _ in tiers.values() for c in ids if c in chunks}
     counts = {chunk_id: bag(chunk.text) for chunk_id, chunk in present.items()}
     weights = idf(list(counts.values()), terms)
-    scored: list[tuple[int, tuple[int, float], str, str, list[IndexedChunk]]] = []
+    scored: list[tuple[int, tuple[int, int, float], str, str, list[IndexedChunk]]] = []
     for doc_key, (tier_rank, ids, role) in tiers.items():
         unique = [c for c in dict.fromkeys(ids) if c in present]
         if not unique:
             continue
         notes = {c: ((ranks or {}).get(c, GRAPH_DEPTH), -score(counts[c], terms, weights)) for c in unique}
         picked = [present[c] for c in sorted(unique, key=lambda c: notes[c])[:GRAPH_PER_DOCUMENT]]
-        scored.append((tier_rank, min(notes.values()), doc_key, role, picked))
+        order = -latest.get(doc_key, 0) if recent else 0
+        scored.append((tier_rank, (order, *min(notes.values())), doc_key, role, picked))
     scored.sort(key=lambda item: (item[0], item[1]))
+    if timeline:  # as cópias de uma reunião (a registrada, a do CNPJ da filial) contam como uma ata
+        meetings: set[int] = set()
+        kept: list[tuple[int, tuple[int, int, float], str, str, list[IndexedChunk]]] = []
+        for candidate in scored:
+            when = latest.get(candidate[2])
+            if when is None or when not in meetings:
+                kept.append(candidate)
+                if when is not None:
+                    meetings.add(when)
+        scored = kept
     return [(role, picked) for _, _, _, role, picked in scored[:GRAPH_DOCUMENTS]]
 
 

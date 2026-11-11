@@ -155,10 +155,16 @@ def derive_context(
         synthesis=(synthesis := _synthesis(anchored, reference_day, lexicon, named)),
         entities=(
             entities := ()
-            if synthesis is not None or catalog is not None or enumeration is not None or period is not None
+            if catalog is not None
+            or (enumeration is not None and (synthesis is None or enumeration.unit_kind is not None))
+            or (period is not None and synthesis is None)
             else reconhecer(anchored, lexicon.entity_terms)
         ),
-        plan=_plan(entities, branch, branches),
+        plan=(
+            _plan(entities, branch, branches)
+            if synthesis is None
+            else _timeline(entities, synthesis, _matches(text, lexicon.election_terms))
+        ),
     )
 
 
@@ -329,6 +335,7 @@ def _has_subject(text: str, lexicon: Lexicon) -> bool:
 
 ORGAN_PREFIXES: Final = ("tipo_orgao:", "tipo_inst:", "orgao:", "inst:")
 INSTITUTION_PREFIX: Final = "inst:"
+DOCUMENT_PREFIX: Final = "doc:"
 CONTENT_ROLES: Final = ["norma", "orientacao"]
 
 
@@ -344,6 +351,7 @@ def _plan(entities: tuple[str, ...], branch: str | None, branches: tuple[str, ..
     - a instituição real sozinha: a interseção do `sobre` dela (o documento dela, o tipo e as partes) com `aplicavel_a`.
     Normas e orientações. Uma entidade sozinha (um conceito, um cargo) ou o ramo sozinho não pede plano: a busca é mais
     precisa que todas as unidades sobre ela (106 R19, o s01 da semente)."""
+    entities = tuple(entity for entity in entities if not entity.startswith(DOCUMENT_PREFIX))  # alvo só da síntese
     institutions = [entity for entity in entities if entity.startswith(INSTITUTION_PREFIX)]
     organs = [
         entity for entity in entities if entity.startswith(ORGAN_PREFIXES) and not entity.startswith(INSTITUTION_PREFIX)
@@ -368,6 +376,29 @@ def _plan(entities: tuple[str, ...], branch: str | None, branches: tuple[str, ..
     if len(others) >= 2:
         steps.append(QueryStep(q="sobre", args={"entidades": others[:4], "papeis": list(CONTENT_ROLES)}))
     return QueryPlan(consultas=tuple(steps))
+
+
+TIMELINE_EXCLUDED: Final = ("inst:", "tipo_inst:")
+"""Na síntese, a instituição ("a Região de São Paulo") situa a pergunta e não é o alvo da linha do tempo."""
+
+
+def _timeline(entities: tuple[str, ...], synthesis: SynthesisRequest, elections: bool) -> QueryPlan:
+    """A síntese com uma entidade reconhecida → a linha do tempo dela (106 G4, US4): os eventos das atas que tratam da
+    entidade, por data. Com duas, a interseção das linhas do tempo — os eventos da primeira nas atas que também têm
+    eventos da segunda ("os delegados à Assembleia Nacional que a Assembleia Regional elegeu"). Palavra de eleição →
+    só os eventos de eleição. O período é o citado, do primeiro ao último ano. Sem entidade, plano vazio: a busca de
+    resumos responde sozinha, como no ADR-062."""
+    targets = [entity for entity in entities if not entity.startswith(TIMELINE_EXCLUDED)][:2]
+    if not targets:
+        return QueryPlan()
+    args: dict[str, JSONValue] = {}
+    if elections:
+        args["eventos"] = ["eleicao"]
+    if synthesis.year_from is not None:
+        until = synthesis.year_until or synthesis.year_from
+        args["periodo"] = {"de": f"{synthesis.year_from}-01-01", "ate": f"{until}-12-31"}
+    steps = tuple(QueryStep(q="linha_do_tempo", args={"alvo": target, **args}) for target in targets)
+    return QueryPlan(forma="intersecao" if len(steps) > 1 else "simples", consultas=steps)
 
 
 _YEAR: Final = re.compile(r"\b(19[89]\d|20\d\d)\b")

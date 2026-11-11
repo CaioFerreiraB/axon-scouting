@@ -1,5 +1,5 @@
 """`ArtifactSources`: o que a construção offline do grafo lê (spec 106, research R13) — os trechos, o catálogo e o
-manifesto do artefato da 102 e os YAML curados do `corpus/`. Só offline; o `yaml` fica aqui."""
+manifesto do artefato da 102, os YAML curados do `corpus/` e as fichas das atas. Só offline; o `yaml` fica aqui."""
 
 from __future__ import annotations
 
@@ -13,10 +13,13 @@ import yaml
 
 
 class ArtifactSources:
-    def __init__(self, index: Path, organization: Path, domain: Path | None = None) -> None:
+    def __init__(
+        self, index: Path, organization: Path, domain: Path | None = None, minutes: Path | None = None
+    ) -> None:
         self._index = index
         self._organization = organization
         self._domain = domain
+        self._minutes = minutes
 
     def chunks(self) -> Iterable[Mapping[str, Any]]:
         with (self._index / "chunks.jsonl").open(encoding="utf-8") as lines:
@@ -51,3 +54,14 @@ class ArtifactSources:
         if self._domain is None or not self._domain.exists():
             return None
         return hashlib.sha256(self._domain.read_bytes()).hexdigest()
+
+    def minutes(self) -> Iterable[Mapping[str, Any]]:
+        if self._minutes is None or not self._minutes.is_dir():
+            return []
+        found: list[Mapping[str, Any]] = []
+        for path in sorted(self._minutes.glob("*.yaml")):
+            loaded = yaml.safe_load(path.read_text(encoding="utf-8"))
+            if not isinstance(loaded, Mapping):
+                raise ValueError(f"{path}: precisa ser um mapeamento")
+            found.append(loaded)
+        return found

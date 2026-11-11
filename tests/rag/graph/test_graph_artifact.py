@@ -62,6 +62,13 @@ def test_toda_fonte_resolve(grafo: list[dict[str, Any]], chunks: set[str], unida
         "pasta:" + d["source_file"].removeprefix("ocr/").rsplit("/", 1)[0] for d in _jsonl(INDEX / "documents.jsonl")
     }
     unit_ids = {r["unit_id"] for r in grafo if r["kind"] == "unit"}
+    # G4: GERA e DE saem do item da ficha, `<doc_key>#<n>@p<página>`, de uma ata do catálogo.
+    versions = {r["doc_key"] for r in grafo if r["kind"] == "version"}
+    curated |= {
+        f"{e['doc_key']}#{e['id'].rsplit('#', 1)[1]}@p{e['page']}"
+        for e in grafo
+        if e["kind"] == "event" and e["doc_key"] in versions
+    }
     problems = []
     for record in grafo:
         if record["kind"] not in ("entity", "edge"):
@@ -102,3 +109,14 @@ def test_instancias_tem_tipo_e_a_de_cima(grafo: list[dict[str, Any]]) -> None:
     above = {r["from"] for r in grafo if r["kind"] == "edge" and r["type"] == "PARTE_DE"}
     assert instances and instances == typed
     assert instances - above == {"inst:omme", "inst:regiao_interamericana"}
+
+
+def test_todo_evento_vem_de_uma_ata_e_tem_os_trechos_da_pagina(grafo: list[dict[str, Any]], chunks: set[str]) -> None:
+    """G4 (106 US4): o evento tem a ata (`GERA`), a página e os trechos dela no índice; e trata de alguma coisa."""
+    events = {r["id"]: r for r in grafo if r["kind"] == "event"}
+    generated = {r["to"] for r in grafo if r["kind"] == "edge" and r["type"] == "GERA"}
+    assert events and set(events) == generated
+    assert all(set(e["chunk_ids"]) <= chunks for e in events.values())
+    assert sum(1 for e in events.values() if e["chunk_ids"]) / len(events) > 0.95
+    about = {r["from"] for r in grafo if r["kind"] == "edge" and r["type"] == "DE"}
+    assert len(about) / len(events) > 0.5

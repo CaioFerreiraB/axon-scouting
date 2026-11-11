@@ -8,9 +8,10 @@
     uv run python scripts/grafo.py plan "Quem fiscaliza as contas da Diretoria Regional?"
     uv run python scripts/grafo.py export --arrows [--entidade X --saltos N] > grafo.arrows.json
 
-`build` lê `corpus/organizacao.yaml`, `corpus/dominio.yaml` e o artefato do índice (trechos com o caminho na árvore,
-catálogo, manifesto) e grava `graph.jsonl` (v2) ao lado do índice do pacote. Sem modelo e sem rede; roda em segundos.
-Refaça depois de cada ingestão ou mudança nos YAML curados. Saídas: 0, 1 (invariante: tipo sem papel) e 2 (YAML
+`build` lê `corpus/organizacao.yaml`, `corpus/dominio.yaml`, as fichas das atas (`corpus/resumos/atas/`) e o
+artefato do índice (trechos com o caminho na árvore, catálogo, manifesto) e grava `graph.jsonl` (v2) ao lado do índice
+do pacote. Sem modelo e sem rede; roda em segundos. Refaça depois de cada ingestão, ficha nova ou mudança nos YAML
+curados. Saídas: 0, 1 (invariante: tipo sem papel) e 2 (YAML
 inválido).
 """
 
@@ -36,11 +37,12 @@ from axon_scouting.rag.graph.service import DomainGraphService  # noqa: E402
 INDEX = ROOT / "src" / "axon_scouting" / "data" / "index"
 ORGANIZATION = ROOT / "corpus" / "organizacao.yaml"
 DOMAIN = ROOT / "corpus" / "dominio.yaml"
+MINUTES = ROOT / "corpus" / "resumos" / "atas"
 
 
 def build(args: argparse.Namespace) -> int:
     try:
-        sources = ArtifactSources(args.index, args.organization, args.domain)
+        sources = ArtifactSources(args.index, args.organization, args.domain, args.minutes)
         records, report = build_records(
             organization=sources.organization(),
             chunks=list(sources.chunks()),
@@ -49,6 +51,7 @@ def build(args: argparse.Namespace) -> int:
             organization_sha256=sources.organization_sha256(),
             domain=sources.domain(),
             domain_sha256=sources.domain_sha256(),
+            minutes=list(sources.minutes()),
         )
     except OrganizationError as error:
         print(f"organizacao.yaml inválido: {error}", file=sys.stderr)
@@ -59,7 +62,8 @@ def build(args: argparse.Namespace) -> int:
     write_graph_v2(args.index / GRAPH, records)
     print(
         f"{report.entities} entidades, {report.versions} versões, {report.sections} seções (SOBRE), "
-        f"{report.relations} relações de governança, {report.applies} APLICA_SE_A, {report.issued} EMITIDO_POR "
+        f"{report.relations} relações de governança, {report.applies} APLICA_SE_A, {report.issued} EMITIDO_POR, "
+        f"{report.events} eventos "
         f"→ {args.index / GRAPH}"
     )
     for entity, titles in sorted(report.per_entity.items()):
@@ -170,6 +174,7 @@ def main() -> int:
     parser.add_argument("--index", type=Path, default=INDEX)
     parser.add_argument("--organization", type=Path, default=ORGANIZATION)
     parser.add_argument("--domain", type=Path, default=DOMAIN)
+    parser.add_argument("--minutes", type=Path, default=MINUTES)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("build", help="monta o grafo e grava graph.jsonl (v2)")
     q = sub.add_parser("query", help="roda uma consulta do grafo, como a busca roda")

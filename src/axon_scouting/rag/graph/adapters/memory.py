@@ -38,8 +38,10 @@ class MemorySources:
         organization: Mapping[str, Any] | None = None,
         organization_sha256: str = "0" * 64,
         domain: Mapping[str, Any] | None = None,
+        minutes: Sequence[Mapping[str, Any]] = (),
     ) -> None:
         self._domain = dict(domain or {})
+        self._minutes = list(minutes)
         self._chunks = list(chunks)
         self._documents = list(documents)
         self._manifest = dict(manifest or {"chunking": "memoria"})
@@ -48,6 +50,9 @@ class MemorySources:
 
     def chunks(self) -> Iterable[Mapping[str, Any]]:
         return list(self._chunks)
+
+    def minutes(self) -> Iterable[Mapping[str, Any]]:
+        return list(self._minutes)
 
     def documents(self) -> Iterable[Mapping[str, Any]]:
         return list(self._documents)

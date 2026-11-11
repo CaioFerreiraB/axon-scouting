@@ -82,6 +82,9 @@ class Lexicon:
     meeting_terms: tuple[str, ...] = ()
     """Palavras de reunião ("assembleia", "reunião", "atas"): com um ano citado, a pergunta é sobre o que as atas
     registram, e também é de síntese (ADR-062)."""
+    election_terms: tuple[str, ...] = ()
+    """Palavras de eleição ("eleitos", "mandato", "chapa"): na síntese, a linha do tempo fica com os eventos de eleição
+    (106 G4)."""
 
 
 LEXICON: Final = Lexicon(
@@ -389,6 +392,7 @@ LEXICON: Final = Lexicon(
         "em que reuniao",
         "nas atas",
         "quantos delegados",
+        "quantos votos",
     ),
     meeting_terms=(
         "assembleia",
@@ -404,6 +408,23 @@ LEXICON: Final = Lexicon(
         "eleitos",
         "eleicao",
         "eleicoes",
+        "forum",
+        "foruns",
+    ),
+    election_terms=(
+        "eleito",
+        "eleita",
+        "eleitos",
+        "eleitas",
+        "eleicao",
+        "eleicoes",
+        "eleger",
+        "elegeu",
+        "elegeram",
+        "mandato",
+        "mandatos",
+        "chapa",
+        "chapas",
     ),
     catalog_kinds=MappingProxyType(
         {

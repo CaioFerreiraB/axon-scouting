@@ -81,3 +81,14 @@ rege:
   - {area: espacos_seguros, para: [conceito:adulto, cargo:escotista], fonte: politica-nacional-espacos-seguros-2023#10@p27}
   - {area: programa_educativo, para: [ramo:filhotes, ramo:lobinho, ramo:escoteiro, ramo:senior, ramo:pioneiro],
      fonte: politica-nacional-programa-educativo-4#12@p24}
+
+documentos:
+  # O documento como alvo da linha do tempo das atas (106 G4, research R21): "o que se decidiu sobre o Regulamento
+  # Regional". O id é o `document_id` do catálogo. Os apelidos do título e do número de todo o acervo chegam no G5;
+  # aqui, só os que as atas usam. "POR" fica de fora: a palavra "por" está em toda frase.
+  - {id: regulamento-regional-sp, nome: Regulamento da Região Escoteira de São Paulo,
+     aliases: [regulamento regional, regulamento regional de sao paulo, regulamento da regiao escoteira de sao paulo],
+     fonte: regulamento-regional-sp-2022#art1@p2}
+  - {id: estatuto, nome: Estatuto da União dos Escoteiros do Brasil,
+     aliases: [estatuto da ueb, estatuto dos escoteiros do brasil, estatuto da uniao dos escoteiros do brasil],
+     fonte: estatuto-2024#art1@p4}

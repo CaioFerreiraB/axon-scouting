@@ -23,6 +23,7 @@ from typing import Any, Final
 from axon_scouting.rag.graph.api import MODE_OF, ROLES, reconhecer
 from axon_scouting.rag.graph.domain.build.domain import DOMAIN, alias_map, domain_entities, rege
 from axon_scouting.rag.graph.domain.build.instances import Instance, instances_from_mapping, type_parts
+from axon_scouting.rag.graph.domain.build.minutes import events_graph
 from axon_scouting.rag.graph.domain.build.organs import (
     VERIFY,
     ChunkPlace,
@@ -48,6 +49,7 @@ class BuildReport:
     versions: int = 0
     applies: int = 0
     issued: int = 0
+    events: int = 0
     dropped: list[str] = field(default_factory=list)
     per_entity: dict[str, list[str]] = field(default_factory=dict)
 
@@ -80,6 +82,7 @@ def build_records(
     organization_sha256: str,
     domain: Mapping[str, Any] | None = None,
     domain_sha256: str | None = None,
+    minutes: Sequence[Mapping[str, Any]] = (),
 ) -> tuple[list[dict[str, Any]], BuildReport]:
     """Puro: recebe o que a porta `GraphSources` leu (o `scripts/grafo.py` compõe)."""
     raw = organization
@@ -234,7 +237,7 @@ def build_records(
     generic = sobre_graph(
         chunks,
         {key: {"role": role_of[key], "status": status_of[key]} for key in role_of},
-        alias_map(curated),
+        alias_map([entity for entity in curated if entity.type != "doc"]),  # o documento é alvo de eventos (G4)
         branch_of,
     )
     for unit_id, unit in generic.units.items():
@@ -344,6 +347,7 @@ def build_records(
     edges.extend(_instance_edges(instances.found, type_parts(raw, known_chunks)))
     institutions, organs_found = instances.institutions(), instances.organs()
     titled = {i.id: i.terms for i in institutions if i.terms}
+    issuers: dict[str, list[str]] = {}
     for doc in documents:
         fields, source_file = doc["fields"], str(doc.get("source_file") or "")
         applied = applies_to(fields, source_file, institutions)
@@ -353,6 +357,7 @@ def build_records(
             report.applies += 1
         for issuer in issued_by(fields, applied, organs_found):
             edges.append(_edge("EMITIDO_POR", doc["doc_key"], issuer, source, "regra"))
+            issuers.setdefault(doc["doc_key"], []).append(issuer)
             report.issued += 1
         # O documento cujo título nomeia a instituição trata dela por inteiro (o estatuto do GE, o regulamento de SP).
         key = doc["doc_key"]
@@ -372,6 +377,14 @@ def build_records(
                 edges.append(_edge("CONTEM", key, whole, whole, "regra"))
             edges.append({**_edge("SOBRE", whole, named, whole, "regra"), "mode": MODE_OF[role_of[key]]})
             report.per_entity.setdefault(named, []).append(units[whole]["title"])
+
+    # G4: os eventos das fichas das atas, com GERA e DE (research R21).
+    recognizable = {str(e["id"]): tuple(e["terms"]) for e in entities if e["terms"]}
+    dated = {str(v["doc_key"]): {"date": v["date"]} for v in versions}
+    minutes_graph = events_graph(minutes, chunks, dated, recognizable, issuers)
+    edges.extend(minutes_graph.edges)
+    report.dropped.extend(minutes_graph.dropped)
+    report.events = len(minutes_graph.events)
 
     for relation in relations:
         ends = (relation.source, relation.target)
@@ -397,7 +410,7 @@ def build_records(
         "built_at": manifest.get("built_at"),
         "sources": {ORGANIZATION: organization_sha256, **({DOMAIN: domain_sha256} if domain_sha256 else {})},
     }
-    return [meta, *entities, *versions, *units.values(), *edges], report
+    return [meta, *entities, *versions, *units.values(), *edges, *minutes_graph.events], report
 
 
 def _edge(kind: str, start: str, end: str, source: str, origin: str) -> dict[str, Any]:

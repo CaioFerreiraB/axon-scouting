@@ -15,7 +15,14 @@ from axon_scouting.rag.index.adapters.summaries import ArtifactSummaries, read_s
 from axon_scouting.rag.index.api import SummaryEntry
 from axon_scouting.rag.retrieval.domain.filters import InvalidFilters
 from axon_scouting.rag.retrieval.domain.ordering import SUMMARY_RANK, ordered
-from axon_scouting.rag.retrieval.domain.summaries import MAX_SUMMARIES, PER_GROUP, SynthesisRequest, select
+from axon_scouting.rag.retrieval.domain.summaries import (
+    EVENT_CARDS,
+    MAX_SUMMARIES,
+    PER_GROUP,
+    SynthesisRequest,
+    select,
+    select_with_timeline,
+)
 from axon_scouting.rag.retrieval.summaries import SummariesRetriever, search_summaries
 
 from .corpus import filtros
@@ -192,3 +199,72 @@ def test_resumo_invalido() -> None:
         resumo("Linha Do Tempo/2019", 2019, "x")
     with pytest.raises(ValueError):
         resumo("ata#ficha", 2019, "x", kind="resumo")
+
+
+# --- 106 G4: a fachada da linha do tempo ------------------------------------------------------------------------------
+
+
+def test_sem_eventos_a_fachada_e_a_selecao_de_hoje() -> None:
+    query = "Quem foram os diretores-presidentes eleitos?"
+    assert select_with_timeline(RESUMOS, DESDE_2016, query, []) == select(RESUMOS, DESDE_2016, query)
+
+
+def test_as_fichas_das_atas_da_linha_do_tempo_vao_a_frente() -> None:
+    antiga = resumo("ata-2010#ficha~2", 2010, "eleição: Fulano (Diretor Presidente) mandato", kind="ficha")
+    query = "Quem foram os diretores-presidentes eleitos?"
+    picked = select_with_timeline([*RESUMOS, antiga], DESDE_2016, query, ["ata-2010"])
+    assert picked[0] == antiga  # fora da janela de anos do pedido, mas é onde a linha do tempo achou o evento
+    rest = [e for e in select([*RESUMOS, antiga], DESDE_2016, query) if e != antiga]
+    assert picked[1:] == rest[: MAX_SUMMARIES - 1]
+    assert EVENT_CARDS < MAX_SUMMARIES
+
+
+class Grafo:
+    def __init__(self) -> None:
+        self.planos: list[object] = []
+
+    async def aliases(self) -> dict[str, tuple[str, ...]]:
+        return {}
+
+    async def query(self, name: str, /, **args: object) -> list[object]:
+        return []
+
+    async def run(self, plan: object) -> tuple[object, ...]:
+        from axon_scouting.rag.graph.api import EdgeRef, EventRef, Evidence, FrontGroup
+
+        self.planos.append(plan)
+        evento = Evidence(
+            query="linha_do_tempo",
+            target="tipo_orgao:diretoria_regional",
+            doc_key="ata-2019",
+            unit_id=None,
+            chunk_ids=("ata-2019#p2",),
+            role="registro",
+            scope="regional",
+            date=date(2019, 3, 1),
+            edge=EdgeRef(type="DE", source="ata-2019#1@p2", origin="regra"),
+            event=EventRef(type="eleicao", text="Eleição para Diretoria Regional", page=2),
+        )
+        return (FrontGroup(step=0, query="linha_do_tempo", entity=None, evidence=(evento,)),)
+
+
+def test_a_tool_roda_a_linha_do_tempo_do_plano() -> None:
+    grafo = Grafo()
+    pedido = {"year_from": 2016, "year_until": 2026, "scopes": ["regional"], "bodies": []}
+    plano = {
+        "version": 1,
+        "forma": "simples",
+        "consultas": [
+            {"q": "linha_do_tempo", "args": {"alvo": "tipo_orgao:diretoria_regional", "eventos": ["eleicao"]}}
+        ],
+    }
+    achados = asyncio.run(
+        SummariesRetriever(Fonte(), graph=grafo).search(  # type: ignore[arg-type]
+            "Quem foram os diretores-presidentes eleitos?", filters=filtros(synthesis=pedido, plan=plano)
+        )
+    )
+    assert len(grafo.planos) == 1
+    assert achados[0].chunk_id.startswith("ata-2019#ficha")  # a ficha da ata do evento, à frente
+    # Sem linha do tempo no plano, o grafo não é consultado.
+    asyncio.run(SummariesRetriever(Fonte(), graph=grafo).search("x", filters=filtros(synthesis=pedido)))  # type: ignore[arg-type]
+    assert len(grafo.planos) == 1

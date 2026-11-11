@@ -10,7 +10,7 @@ from datetime import date
 from types import MappingProxyType
 from typing import Any, Final, cast
 
-from axon_scouting.rag.graph.api import ORIGINS, Origin, Role
+from axon_scouting.rag.graph.api import ORIGINS, EventType, Origin, Role
 
 GRAPH_VERSION: Final = 2
 GOVERNANCE: Final = frozenset({"ELEGE", "COMPOE", "INTEGRA", "CONVOCA", "FISCALIZA", "APRECIA_RECURSO_DE", "DIRIGE"})
@@ -57,6 +57,20 @@ class UnitRec:
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
+class EventRec:
+    """Um item conferido da ficha de uma ata (G4): a reunião, uma deliberação ou uma eleição, com a página e os
+    trechos da ata nela."""
+
+    id: str
+    doc_key: str
+    date: date | None
+    type: EventType
+    text: str
+    page: int | None
+    chunk_ids: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True, slots=True, kw_only=True)
 class EdgeRec:
     type: str
     from_: str
@@ -78,6 +92,7 @@ class DomainGraph:
     versions: Mapping[str, VersionRec]
     units: Mapping[str, UnitRec]
     edges: tuple[EdgeRec, ...]
+    events: Mapping[str, EventRec]
     by_to: Mapping[tuple[str, str], tuple[EdgeRec, ...]]
     by_from: Mapping[tuple[str, str], tuple[EdgeRec, ...]]
 
@@ -96,6 +111,7 @@ def from_records(records: Iterable[Record]) -> DomainGraph:
     entities: dict[str, EntityRec] = {}
     versions: dict[str, VersionRec] = {}
     units: dict[str, UnitRec] = {}
+    events: dict[str, EventRec] = {}
     edges: list[EdgeRec] = []
     for line, raw in enumerate(records, start=1):
         kind = raw.get("kind")
@@ -140,6 +156,17 @@ def from_records(records: Iterable[Record]) -> DomainGraph:
                     parent=raw.get("parent"),
                     ancestors=tuple(raw.get("ancestors") or ()),
                 )
+            elif kind == "event":
+                event = EventRec(
+                    id=str(raw["id"]),
+                    doc_key=str(raw["doc_key"]),
+                    date=date.fromisoformat(raw["date"]) if raw.get("date") else None,
+                    type=cast(EventType, raw["type"]),
+                    text=str(raw["text"]),
+                    page=raw.get("page"),
+                    chunk_ids=tuple(str(c) for c in raw.get("chunk_ids") or ()),
+                )
+                events[event.id] = event
             elif kind == "edge":
                 edges.append(
                     EdgeRec(
@@ -155,7 +182,7 @@ def from_records(records: Iterable[Record]) -> DomainGraph:
                 )
         except (KeyError, TypeError, ValueError) as error:
             raise ValueError(f"graph.jsonl, linha {line} ({kind}): {error}") from error
-    known = set(entities) | set(versions) | set(units)
+    known = set(entities) | set(versions) | set(units) | set(events)
     for edge in edges:
         for end in (edge.from_, edge.to):
             if end not in known:
@@ -171,6 +198,7 @@ def from_records(records: Iterable[Record]) -> DomainGraph:
         versions=MappingProxyType(versions),
         units=MappingProxyType(units),
         edges=tuple(edges),
+        events=MappingProxyType(events),
         by_to=MappingProxyType({key: tuple(value) for key, value in by_to.items()}),
         by_from=MappingProxyType({key: tuple(value) for key, value in by_from.items()}),
     )

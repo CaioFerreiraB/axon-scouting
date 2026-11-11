@@ -45,7 +45,8 @@ tipos_de_instituicao:
 tipos_de_orgao:
   # --- nacional (Estatuto, Art. 12) ---------------------------------------------------------------------------------
   - {id: assembleia_nacional, nome: Assembleia Nacional, nivel: nacional, instituicao: ueb, natureza: deliberativo,
-     aliases: [assembleia nacional], taxonomia: assembleias, instituido_em: estatuto-2024#art12@p9}
+     aliases: [assembleia nacional, assembleia escoteira nacional], taxonomia: assembleias,
+     instituido_em: estatuto-2024#art12@p9}
   - {id: conselho_de_administracao_nacional, nome: Conselho de Administração Nacional, nivel: nacional,
      instituicao: ueb, natureza: diretivo, aliases: [can, conselho de administracao nacional],
      taxonomia: conselho_de_administracao_nacional, instituido_em: estatuto-2024#art16@p11}
@@ -66,7 +67,8 @@ tipos_de_orgao:
      natureza: deliberativo, aliases: [assembleia regional], taxonomia: assembleias,
      instituido_em: estatuto-2024#art24@p17}
   - {id: diretoria_regional, nome: Diretoria Regional, nivel: regional, instituicao: regiao, natureza: executivo,
-     aliases: [diretoria regional, dr], taxonomia: diretoria_regional, instituido_em: estatuto-2024#art27@p19}
+     aliases: [diretoria regional, diretorias regionais, direcao regional, dr], taxonomia: diretoria_regional,
+     instituido_em: estatuto-2024#art27@p19}
   - {id: comissao_fiscal_regional, nome: Comissão Fiscal Regional, nivel: regional, instituicao: regiao,
      natureza: fiscal, aliases: [comissao fiscal regional], taxonomia: comissao_fiscal,
      instituido_em: estatuto-2024#art29@p21}

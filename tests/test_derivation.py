@@ -522,8 +522,7 @@ COM_ORGAOS = dataclasses.replace(
         ("Qual o papel do Conselho Consultivo Regional?", ("tipo_orgao:conselho_consultivo_regional",)),
         ("Como funciona o conselho consultivo?", ("tipo_orgao:conselho_consultivo_nacional",)),
         ("Qual o marco simbólico do ramo lobinho?", ()),
-        # Síntese, lista e pergunta histórica não ancoram no grafo.
-        ("Quem foram os presidentes eleitos para a diretoria regional desde 2016?", ()),
+        # Lista e pergunta histórica não ancoram no grafo; a síntese tem a linha do tempo (G4, abaixo).
         ("Quais são as resoluções da diretoria regional?", ()),
         ("Qual era o mandato da diretoria regional em 2010?", ()),
     ],
@@ -660,3 +659,62 @@ def test_com_outras_entidades_o_assunto_sao_elas() -> None:
 
 def test_o_nome_da_instituicao_vence_o_do_tipo() -> None:
     assert derive_context("O que diz a Região de São Paulo?", DIA, COM_INSTITUICOES).entities == ("inst:regiao_sp",)
+
+
+# --- 106 G4: a síntese com entidade vira a linha do tempo (101 FR-037, R44; 106 US4) ---------------------------------
+
+COM_ATAS = dataclasses.replace(
+    LEXICON,
+    entity_terms=MappingProxyType(
+        {
+            "tipo_orgao:diretoria_regional": ("diretoria regional", "diretorias regionais"),
+            "tipo_orgao:assembleia_nacional": ("assembleia nacional",),
+            "tipo_orgao:assembleia_regional": ("assembleia regional",),
+            "inst:regiao_sp": ("regiao de sao paulo",),
+            "doc:regulamento-regional-sp": ("regulamento regional",),
+        }
+    ),
+)
+
+
+def _linha(pergunta: str) -> dict[str, object]:
+    return derive_context(pergunta, DIA, COM_ATAS).plan.to_json()
+
+
+def test_sintese_com_orgao_e_a_linha_do_tempo_dele_so_com_eleicoes() -> None:
+    contexto = derive_context("Quem foram os presidentes eleitos para a diretoria regional desde 2016?", DIA, COM_ATAS)
+    assert contexto.synthesis is not None and contexto.entities == ("tipo_orgao:diretoria_regional",)
+    assert contexto.plan.to_json()["consultas"] == [
+        {
+            "q": "linha_do_tempo",
+            "args": {
+                "alvo": "tipo_orgao:diretoria_regional",
+                "eventos": ["eleicao"],
+                "periodo": {"de": "2016-01-01", "ate": f"{DIA.year}-12-31"},
+            },
+        }
+    ]
+
+
+def test_duas_entidades_a_intersecao_das_linhas_do_tempo() -> None:
+    plano = _linha("Quantos delegados à Assembleia Nacional a Assembleia Regional elegeu em 2022 e 2025?")
+    assert plano["forma"] == "intersecao"
+    assert [c["args"]["alvo"] for c in plano["consultas"]] == [  # type: ignore[index, union-attr]
+        "tipo_orgao:assembleia_nacional",
+        "tipo_orgao:assembleia_regional",
+    ]
+
+
+def test_o_documento_e_alvo_da_linha_do_tempo_e_a_instituicao_nao() -> None:
+    plano = _linha("O que foi decidido sobre o Regulamento Regional nas atas da Região de São Paulo?")
+    assert plano["consultas"] == [{"q": "linha_do_tempo", "args": {"alvo": "doc:regulamento-regional-sp"}}]
+
+
+def test_sem_entidade_a_sintese_fica_so_com_os_resumos() -> None:
+    assert derive_context("O que foi decidido nas assembleias de 2016?", DIA, COM_ATAS).plan.empty
+
+
+def test_fora_da_sintese_o_documento_nao_entra_no_plano() -> None:
+    assert derive_context("O que diz o Regulamento Regional sobre a diretoria regional?", DIA, COM_ATAS).plan.to_json()[
+        "consultas"
+    ] == [{"q": "sobre", "args": {"entidades": ["tipo_orgao:diretoria_regional"], "papeis": ["norma"]}}]

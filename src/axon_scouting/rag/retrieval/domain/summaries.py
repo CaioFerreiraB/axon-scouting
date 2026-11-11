@@ -21,6 +21,8 @@ from axon_scouting.rag.retrieval.domain.terms import bag, idf, normalize, query_
 
 MAX_TIMELINES: Final = 6
 """Linhas do tempo entregues: seis anos cabem inteiros; mais que isso, as que mais casam com a pergunta."""
+EVENT_CARDS: Final = 4
+"""Partes de ficha das atas da linha do tempo (106 G4) que vão à frente; a seleção de hoje completa as vagas."""
 MAX_SUMMARIES: Final = 10
 """Resumos entregues no total — metade das vagas da instalação (20); a outra metade fica com os trechos das atas."""
 WINDOW_AFTER: Final = 3
@@ -67,6 +69,24 @@ def select(entries: Sequence[SummaryEntry], request: SynthesisRequest, query: st
     timelines.sort(key=lambda entry: (entry.year or 0, entry.summary_id))
     cards = _spread([entry for score, entry in scored if entry.kind == "ficha" and score > 0])
     return [*timelines, *cards][:MAX_SUMMARIES]
+
+
+def select_with_timeline(
+    entries: Sequence[SummaryEntry], request: SynthesisRequest, query: str, event_docs: Sequence[str]
+) -> list[SummaryEntry]:
+    """A fachada da linha do tempo (106 G4, US4): as partes das fichas das atas em que a linha do tempo achou eventos
+    da entidade da pergunta — escolhidas pelos termos dela, como as outras, até `EVENT_CARDS` — à frente; depois, a
+    seleção de hoje (`select`). Sem eventos, a seleção de hoje sozinha."""
+    base = select(entries, request, query)
+    if not event_docs:
+        return base
+    wanted = set(event_docs)
+    cards = [entry for entry in entries if entry.kind == "ficha" and entry.doc_keys and entry.doc_keys[0] in wanted]
+    # A linha do tempo já aplicou a entidade e o período; aqui, só os termos (e "as últimas", "onde").
+    anywhere = SynthesisRequest(year_from=None, year_until=None, scopes=(), bodies=())
+    first = select(cards, anywhere, query)[:EVENT_CARDS]
+    taken = {entry.summary_id for entry in first}
+    return [*first, *(entry for entry in base if entry.summary_id not in taken)][:MAX_SUMMARIES]
 
 
 def _of_bodies(candidates: list[SummaryEntry], bodies: tuple[str, ...]) -> list[SummaryEntry]:

@@ -9,7 +9,15 @@ from typing import Any, Final
 
 from axon_scouting.rag.graph.domain.build.organs import VERIFY, OrganizationError, normalize
 
-SECTIONS: Final = (("ramos", "ramo"), ("secoes", "secao"), ("areas", "area"), ("conceitos", "conceito"))
+SECTIONS: Final = (
+    ("ramos", "ramo"),
+    ("secoes", "secao"),
+    ("areas", "area"),
+    ("conceitos", "conceito"),
+    ("documentos", "doc"),
+)
+"""`documentos` (G4): o documento como alvo da linha do tempo ("o que se decidiu sobre o Regulamento Regional"), pelo
+`document_id`; os apelidos do título e do número de todo o acervo são do G5."""
 DOMAIN: Final = "dominio.yaml"
 ORGANIZATION: Final = "organizacao.yaml"
 
